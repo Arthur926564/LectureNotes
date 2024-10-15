@@ -1,0 +1,108 @@
+\usepackage{graphicx} % Required for 
+\usepackage{amsthm}
+\usepackage{mdframed}   
+\usepackage{amsmath}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\usepackage{pgf,pgfplots}
+\usetikzlibrary{math,arrows,positioning,shapes,fit,calc}
+\usepackage{kantlipsum}
+\usepackage{todonotes}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mdframed}  
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+
+\usepackage{xcolor,colortbl,array,amssymb}
+
+\colorlet{myred}{red!90!black}
+\colorlet{myblue}{blue!90!black}
+\colorlet{mypurple}{blue!50!red!80!black!80}
+\tikzstyle{vector}=[->,very thick,veccol]
+\usetikzlibrary{arrows.meta}
+\tikzstyle{thin arrow}=[dashed,thin,-{Latex[length=4,width=3]}]
+
+% les boites
+\newenvironment{deduction}
+  {\begin{tabular}{@{}>{}c<{}@{\enspace}>{}l<{}@{}}\arrayrulecolor{black!50}}
+  {\end{tabular}}
+\newcommand{\premise}[1]{&#1\\}
+\newcommand{\conclusion}[1]{\cline{2-2}\therefore&#1}
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remarque}
+
+% Définir un environnement mdframed spécifique pour les remarques
+\newenvironment{framedremark}
+  {\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]\begin{remark}}
+  {\end{remark}\end{mdframed}}
+
+
+\newenvironment{framedate}
+{
+    \begin{mdframed}[backgroundcolor=white, linecolor=gray, linewidth=0.5pt]\begin{date}}
+    {\end{date}\end{mdframed}}
+
+  \newtheorem{exemple}{Exemple}
+
+\newtheorem{definition2}{Définition}
+\newenvironment{definition}
+{
+    \begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{definition2}}
+    {\end{definition2}\end{mdframed}}
+\setlength\parindent{0pt}
+
+
+\newtheorem{definition1}{Théorème}
+\newenvironment{theoreme}
+{
+    \begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{definition1}}
+    {\end{definition1}\end{mdframed}}
+
+
+\theoremstyle{definition}
+\colorlet{theoreme}{blue!10}
+
+\newtheorem{preuve}{Preuve}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{exemple}{Exemple}
+\newtheorem{note}{Note}
+
+
+%snippets commande vite fait
+\newcommand{\R}[1]{$\mathbb{R}$}
+\newcommand{\Z}[1]{$\mathbb{Z}$}
+\newcommand{\Q}[1]{$\mathbb{Q}$}
+
+\setuptodonotes{color=blue!30}
+\newcommand{\note}[1]{\todo[color=green!40]{#1}}
+
+
