@@ -1,0 +1,170 @@
+\begin{formule
+} Cours 14 30/10/2024
+\end{formule
+}
+\paragraph{Le noyau est un sous-espace}
+\begin{exemple}
+Soit $T : M_{2\times 2}($\R) $\to \mathbb{R}^2$ défini par:
+\[T\begin{pmatrix}
+    a & b \\ c & d
+\end{pmatrix} = \begin{pmatrix}
+    c \\ a-d
+\end{pmatrix} = \begin{pmatrix}
+    0 \\ 0
+\end{pmatrix}\]
+On vérifie que $T$ est linéaire. Le noyau de $T$ est un sous-ensemble de $M_{2\times 2}($\R). Lequel? C'est le sous-espace:
+\[Ker T = \{ \begin{pmatrix}
+    a & b \\ 0 & a
+\end{pmatrix}|a, b \in \mathbb{R}\}\]
+\end{exemple}
+
+\begin{theoreme}
+    Soit $T: V \to W$ une application linéaire. Alors $KerT$ est un sous-espace de $V$.
+\end{theoreme}
+
+\paragraph{Preuve}
+\begin{enumerate}
+    \item $0 \in Ker T$ : $T(0) = 0$ car $T$ est linéaire
+    \item stabilité de $+$: Si $v, v' \in KerT$, on montre que $v+v' \in KerT$, ce qui donne $0 + 0 = 0$ (les images des éléments du noyau sont tous égaux à 0).
+    \item Stabilité de l'action: comme c'est une application linéaire on peut surtout $\alpha$ de l'application, on a donc, $\alpha \cdot 0 = 0$.
+\end{enumerate}
+
+
+\begin{definition}
+Soit $T : V \to W$ une application linéaire. Alors $T$ est injective si et seulement si $\ker T = \{0\}$ 
+\end{definition}
+
+\begin{exemple}
+    On considère $T : \mathbb{R}^4 \to \mathbb{R}^2$ donné par
+    \[A = \begin{pmatrix}
+        1 & -1 & 1 & -1 \\ 1 & 1 & 1 & 1
+    \end{pmatrix}\]
+    On a donc que 
+    \[Ker T = Ker A = \{\vec{v}\in \mathbb{R}^4| A \cdot \vec{v}= \vec{0}\}\]
+    est la solution générale S du système homogène donné par $A$. Si on échelonne la matrice on obtient:
+    \[\begin{pmatrix}
+        1 & -1 & 0 & 0 \\ 0 & 0 & 1 & -1
+    \end{pmatrix}\]
+    On en vient à :
+    \[S = Ker A = Vect \{ \begin{pmatrix}
+        1 \\ 1 \\ 0 \\ 0
+    \end{pmatrix}, \begin{pmatrix}
+        0 \\ 0 \\ 1 \\ 1
+    \end{pmatrix}\}\]
+    Les deux vecteurs ici forment une base de $Ker A$.
+    \\
+    Juste pour expliquer comme on passe de la matrice à vect, on peut par exemple remettre en système d'équation classique du genre:
+    \begin{align*}
+        x -y + 0 + 0 &= 0\\
+        0 + 0 + z - w &= 0
+    \end{align*}
+    On voit qu'il y aura deux variables libres, et donc:
+    \begin{align*}
+        x &= x \\
+        y &= x\\
+        z &= z\\
+        w &= z
+    \end{align*}
+    Voila d'où vient les deux vecteurs, un en fonction de $x$ et l'autre en fonction de $z$.
+\end{exemple}
+
+\begin{definition}
+    L'\textcolor{red}{image} d'une application linéaire $T : V \to W$ est le sous-ensemble $Im T = \{w \in W| \text{il existe } v \in V $ tel que $Tv = w\}$
+\end{definition}
+\begin{framedremark}
+    Le concept d'image généralise la notion du sous-espace $Col A$ engendré par les colonnes d'une matrice A.
+\end{framedremark}
+
+\begin{theoreme}
+    Soit $T : V \to W$ une application linéaire. Alors $Im T$ est un sous espace de $W$.
+\end{theoreme}
+\paragraph{Preuve}
+On voit d'abord que $0 = T(0)$ appartient à l'image. Il reste à montrer la stabilité de la somme et de l'action. Traitons le cas de la somme. Soient donc $w, w'$ deux vecteurs de $Im T$. Nous devons montrer que $w + w'$ aussi appartient à $Im T$.
+\\
+On sait que $w, w' \in ImT$, donc il existe $v, v' \in V \text{tq} T(v) = w $ et $T(v') = w'$.\\
+On choisit $v_2 = v + v'$ et on calcule par linéarité de $T$ : \[T(v_2) = T(v + v') = T(v) + T(v') = w + w'\]
+Donc, $w + w' \in Im T$  (on a le droit de faire tout ça parce que $T$ est une application linéaire.
+\\
+Pour ce qui est de l'action, on peut juste faire le même procédé et grâce au faite que $T$ est une application linéaire, ça marchera aussi.
+
+
+\begin{framedremark}
+    Soit $T : V \to W$ une application linéaire. Alors $Ker T$ est un sous-espace de $V$, mais $Im T$ est un sous-espace de $W$. (Attention à où vit ces ensembles)
+\end{framedremark}
+
+\begin{exemple}
+    Soit $D : \mathbb{P}_3 \to \mathbb{P}_3$ la dérivation, $D(p) = p'$.
+    \begin{itemize}
+        \item $Ker D = \{p \in \mathbb{P}_3 | p' = 0\} = \{a \in \mathbb{P}_3 | a \in $ \R $\}$ (le polynôme constants \[= Vect\{1\}\]
+
+        \item $Im D = \{q \in \mathbb{P}_3 | \exists p \in \mathbb{P}_3$ avec $D(p)  = q\}$
+\[= Vect\{1, t, t^2\} \subset \mathbb{P}_3\]
+Pour expliquer un peu, on sait que tout les polynômes qui ont que des constantes vont sur $0$ donc on prend le vecteur des constantes qui lui nous ramène de toutes les constantes à $0$.\\
+De l'autre côté, l'image reprends tout ce qui arrive de l'autre côté, on voit qu'il y a pas $t^3$ dans l'image, quand on dérive un polynôme, il devient de degrés $2$. Donc la base de l'image va, "\textit{avec le noyau}" et $t^2$
+
+    \end{itemize}
+\end{exemple}
+
+\paragraph{Méthode de calcul}
+Soit $T : \mathbb{R}^n \to \mathbb{R}^m$ une application linéaire, représentée par une matrice $A \in M_{m\times n}(\mathbb{R})$.
+\begin{itemize}
+    \item Pour calculer le \textcolor{red}{noyau} de $T$ on échelonne et réduit la matrice $A$ selon les \textcolor{red}{lignes}.
+    \item Pour calculer l'\textcolor{blue}{image} de $T$ on ne garde que les \textcolor{blue}{colonnes-pivotss}. Si nécessaire on échelonne et réduit $A$ selon les \textcolor{blue}{colonnes}.
+\end{itemize}
+
+\begin{framedremark}{espace-colonne}
+    On appelle parfois \textcolor{red}{espace-colonne} le sous-espcae $ColA$ engendré par les colonnes de $A$. Il s'agit donc de $Im A$
+\end{framedremark}
+\paragraph{explication de pourquoi ça marche}
+Soit $A \in M_{m\times n}(\mathbb{R})$ et $B$ la matrice échelonnée associée ($B$ est juste la matrice échelonnée).
+\\
+SI une colonne n'a pas de pivot, le système $A\vec{x} = \vec{0} $ a une infinitén de solutions (les mêmes que $B\vec{x} = \vec{0}$), on peut écrire
+\[x_1\vec{a}_1 + \dots + x_n\vec{a}_n = \vec{0}\]
+
+
+\begin{framedremark}
+    Les colonnes sans pivot sont combinaison linéaire des autres colonnes.\\ Les colonnes de $A$ vérifient les mêmes relations de dépendance linéaire que celles de $B$
+\end{framedremark}
+On peut donc enlever une telle colonne pour engendrer $ColA = ImA$. Les k colonnes-pivot restantes de $A$ sont libres puisque la matrice $m\times k$ formée de ces k colonnes a $k$ pivots.
+
+\begin{exemple}
+    On donnt une application linéaire donnée par $A$ tel que:
+    \[A = \begin{pmatrix}
+        1 & 0 & 0 & -1\\
+        -1 & 1 & 0 & 0\\
+        0 & -1 & 1 & 0 \\
+        0 & 0 & -1 & 1
+    \end{pmatrix} \to \begin{pmatrix}
+         1 & 0 & 0 & -1\\
+        0 & 1 & 0 & -1\\
+        0 & 0 & 1 & -1 \\
+        0 & 0 & 0 & 0
+    \end{pmatrix}\]
+    On voit qu'il y a une colonne sans pivot, donc le noyau a qu'une seule variable libre et donc comme on l'avait fait auparavant, on fixe le dernier l'élément, et on voit aussi que chaque $x_1, x_2, x_3$ sont égaux à $1$ ($1 -1  = 0 \to 1 = 1)$ on trouve que:
+    \[Ker A = Vect\{\begin{pmatrix}
+        1 \\ 1 \\1 \\1 \\
+    \end{pmatrix}\}\]
+    
+\end{exemple}
+
+\paragraph{Rappel critère d'injéctivité (encore)}
+Le critère d'injectivité d'une application linéaire permet de ramener la démonstration de l'injectivité au calcul du noyau. Le noyau mesure donc le \textcolor{red}{défaut d'injectivité}.
+\begin{theoreme}
+    Une application linéaire $T: V \to W$ est injective si et seulement si $Ker T = \{0\}$ 
+\end{theoreme}
+\paragraph{Espaces-lignes: $LgnA$}
+Soit $A$ et $B$ deux matrices de taille $m\times n$ On note $A  \textasciitilde B$ quand elles sont équivalentes selon les lignes.
+\begin{theoreme}
+    Si $A \textasciitilde B$ alors les lignes de $A$ et $B$ engendrent le même sous-espace de $\mathbb{R}^n$.   
+\end{theoreme}
+\textbf{Pourquoi?} Les opération élémentaires produisent de nouvelles lignes qui sont cominaison linéaires des précédentes.
+\begin{theoreme}
+    Les lignes d'une forme échelonnée de $A$ forment une base du sous-espace engendré par les lignes de $A$.
+\end{theoreme}
+\textbf{Pourquoi?} Aucune ligne non nulle de la forme échelonnée ne peut être combinaison linéaire des autres (à cause de son pivot)
+
+\paragraph{Espaces-colonnes: $ColA$}
+Soit $A$ une matrice de taille $m \times n$.
+\begin{theoreme}
+    Les colonnes pivots de $A$ forment une base de $ColA = Im A$.
+\end{theoreme}

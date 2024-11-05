@@ -1,0 +1,268 @@
+\paragraph{Générateurs}
+Soit $W$ un sous espace vectoriel $V$.
+\begin{itemize}
+    \item Le sous espace $W = Vect(v_1, \dots, v_k)$ est le sous espace engendré par les vecteurs $v_1, \dots, v_k$.
+    \item Les vecteurs $v_1, \dots, v_k$ sont les générateurs de $W$
+    \item L'ensemble $\{v_1, \dots, v_k\}$ forme ue \textbf{partie génératrice}de $W$.
+\end{itemize}
+\begin{exemple}
+    Il existe en général plusieurs parties génératrices:
+    \[Vect\]
+\end{exemple}
+\paragraph{Partie libres}
+Soit $W$ un sous-espace vectoriel de $V$.
+\begin{itemize}
+    \item Les vecteurs $v_1, \dots, v_k$ de $W$ sont linéairement indépendants si la seul combinaison linéaire $\alpha_1v_1 + \cdots + \alpha_kv_k$ qui donne le vecteur nul est la combinaison linéaire triviale:
+    \[\alpha_1 = \cdots = \alpha_k = 0\]
+
+    \item On dit que l'ensemble $\{v_1, \dots, v_k\}$ est une \textcolor{red}{partie libre} de $W$.
+\end{itemize}
+
+
+\paragraph{Bases canoniques}
+
+\subparagraph{Le cas de $\mathbb{R}^n$}
+La base canonique est 
+\begin{formule}
+
+\[
+\mathcal{C}an = (\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n)
+\]
+\end{formule}
+C'est une base car nous avons vu que tout vecteur de \R$^n$ s'écrit comme combinaison linéaire des $\vec{e}_i$.
+\\
+\subparagraph{Le cas de $P_n$}
+La base canonique est 
+\begin{formule}
+    
+
+\[
+\mathcal{C}an = (1, t, t^2, \ldots, t^n)
+\]
+\end{formule}
+Ici aussi tout vecteur de $\mathbb{P}_n$, i.e. tout polynôme de degré $\leq$ n s'écrit comme combinaison linéaire de ces monômes $t^i$, car un tel polynôme est de la forme $a_0\cdot 1 + a_1\cdot t + \dots + a_n\cdot t^n$.
+\subparagraph{Le cas de $M_{m \times n}(\mathbb{R})$}
+La base canonique est 
+\begin{formule}
+\[
+\mathcal{C}an = (e_{11}, \ldots, e_{1n}, e_{21}, \ldots, e_{m1}, \ldots, e_{mn})
+\]
+\end{formule}
+où $e_{ij}$ est la matrice constituée de zéros, sauf le coefficient $(i, j)$ qui vaut 1. Dans $M_{3\times 2}$(\R), la base canonique est donnée dans cet ordre :
+\\
+\[e_{11} = \begin{pmatrix}
+    1 & 0\\
+    0 & 0 \\
+    0 & 0
+\end{pmatrix}, e_{12} = \begin{pmatrix}
+    0 & 1 \\ 0 & 0 \\ 0 & 0
+\end{pmatrix}, e_{22} = \begin{pmatrix}
+    0 & 0 \\ 1 & 0 \\ 0 & 0
+\end{pmatrix} \dots, e_{32} = \begin{pmatrix}
+    0 & 0 \\ 0 & 0 \\ 0 & 1
+\end{pmatrix} \]
+
+\subparagraph{Exemple}
+Soit $W$ le plan dans \R$^3$ donné par l'équation $x + y + z = 0$. L'inconnue $x$ est principale, les inconnues, $y, z$ sont secondaires et seront nos paramètres.
+\[x = -y -z\]
+Les vecteurs $\vec{b_1} = \begin{pmatrix}
+    -1 \\ 1 \\ 0
+\end{pmatrix}$ et $\vec{b_2} =  \begin{pmatrix}
+    -1 \\ 0  \\1
+\end{pmatrix}$ forment une base $\beta = (\vec{b_1}, \vec{b_2}$) de $W$.
+\begin{framedremark}
+    Il n'y a pas de base canonique dans $W$. Nous avons fait des choix de paramètres, Il y a pas une "\textit{norme}" pour la base canonique ici.
+\end{framedremark}
+\begin{exemple}
+    Si on considère $x, y$ comme inconnues libres, $z$ en principales, alors on trouve une autre base:
+    \[c = \begin{pmatrix}
+        
+    \begin{pmatrix}
+        1 \\ 0 \\ -1
+    \end{pmatrix}, & \begin{pmatrix}
+        0 \\ 1 \\ -1
+    \end{pmatrix}\end{pmatrix}\]
+\end{exemple}
+\subparagraph{Théroème de la base extraite}
+Soit $\{v_1, \dots, v_k\}$ une famille de vecteurs qui engendrent $V$.
+\begin{theoreme}
+    \begin{itemize}
+        \item Si l'un des vecteurs $v_i$ est combinaison linéaire des autres, alors la famille obtenue en supprimant $v_i$ engendre encore $V$.
+        \item Si $V \neq \{0\}$, il existe une sous-famille de $\{v_1, \dots, v_k\}$ qui forme une base de $V$
+    \end{itemize}
+\end{theoreme}
+\subparagraph{Preuve} \textbf{(A)} pour $i = k$. On suppose que
+\begin{formule}
+    \[v_k = \alpha_1v_i + \dots + \alpha_{k-1}v_{k-1}\]
+\end{formule}
+Puisque la famille $\{v_1, \dots, v_k\}$ engendre $V$, tout vecteur $v \in V$ est combinaison linéaire de $v_i$.
+\begin{align*}
+v &= \beta_1 v_1 + \cdots + \beta_{k-1} v_{k-1} + \beta_k v_k \\
+  &= \beta_1 v_1 + \cdots + \beta_{k-1} v_{k-1} + \beta_k (\alpha_1 v_1 + \cdots + \alpha_{k-1} v_{k-1}) \\
+  &= (\beta_1 + \beta_k \alpha_1) v_1 + \cdots + (\beta_{k-1} + \beta_k \alpha_{k-1}) v_{k-1}
+\end{align*}
+Nous avons montré que $v$ est combinaison linéaire de $v_1, \dots, v_{k-1}$.
+\\
+\textbf{(B)} Si la famille est libre on arrête tout, sinon il suffit de prendre notre point (A) et d'enlever un générateur $v_i$ et en enlevant un denouveau et un autre et un autre... jusqu'à que la famille soit libre. Le processus s'arrête puisque le nombre de vecteur au départ est \textbf{fini}.
+
+
+
+
+
+
+
+
+
+\subparagraph{Combinéaisons linéaires d'une base}
+Soit $V$ un espace vectoriel et $\mathcal{B} = (e_1 + \dots, e_n)$ une base.
+\begin{theoreme}
+    Tout vecteur $x$ de $V$ s'écrit de manière unique comme combinaison linéaire $x = x_1e_1 + \dots + x_ne_n$, pour des nombres réels $x_1, \dots, x_n$.
+\end{theoreme}
+\textbf{Existence} Une base est un \textcolor{red}{système de générateurs}!
+\\
+\textbf{Unicité} Si $x_1e_1 + \dots + x_ne_n = y_1e_1 + \dots y_ne_n$ alors, 
+\[(x_1 - y_1)e_1 + \dots +(x_n - y_n)e_n = 0\]
+Une base est \textcolor{red}{libre}, ainsi $x_1 = y_1, \dots, x_n = y_n$
+\paragraph{Coordonnées}
+\begin{definition}
+    Les composantes ou coordonnées d'un vecteur $x$ dans la base $\mathcal{B}$ sont les coefficients réels $x_1, \dots, x_n$ tel que
+    \[x = x_1e_1 + \dots + x_ne_n\]
+\end{definition}
+J'affirme que $
+B = \left(
+\begin{pmatrix}
+1 \\
+0 \\
+-1
+\end{pmatrix},
+\begin{pmatrix}
+1 \\
+-1 \\
+0
+\end{pmatrix},
+\begin{pmatrix}
+0 \\
+1 \\
+1
+\end{pmatrix}
+\right)
+$ est une base de \(\mathbb{R}^3\). En effet, $\begin{pmatrix}
+    1 & 1 & 0 \\
+    0 & -1 & 1 \\
+    -1 & 0 & 1
+\end{pmatrix}$ est inversible. Le vecteur $\vec{u} = \begin{pmatrix}
+    1 \\ 2 \\ 3
+\end{pmatrix}$ de \R$^3$ s'exprime comme combinaison linéaire des $\vec{b}_i$ et on cherche $(\vec{u})_\mathcal{B}$. On doit résoudre :
+
+\[\left ( \begin{array}{ccc|c}
+    1 & 1 & 0 & 1 \\
+    0 & -1 & 1 & 2 \\
+    -1 & 0 & 1 & 3
+\end{array} \right) \to \left (\begin{array}{ccc|c}
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 1 \\
+    0 & 0 & 1 & 3 
+\end{array}\right )\]
+
+La solution est :
+$(\vec{u})_\mathcal{B} =  \begin{pmatrix}
+    0 \\ 1 \\ 3
+\end{pmatrix}$ et $(\vec{u})_{\mathcal{C}
+an} = \begin{pmatrix}
+    1 \\ 2 \\ 3
+\end{pmatrix}$
+\subparagraph{Comparaison avec \R$^n$}
+\begin{definition}
+    Une application linéaire bijective et appelée \textcolor{red}{isomorphisme}
+\end{definition}
+Un isomorphisme permet d'identifier la source et le but de cette application linéaire $T : V \to W$. Les éléments de $V$ et $W$ se correspondent parfaitement, et les opérations de somme et d'action aussi.
+\begin{theoreme}
+    Soit $V$ une espace vectoriel et $\mathcal{B}$ une base de $n$ vecteurs. \\
+    L'application $T : V \to \mathbb{R}^n$ définie par $T(x) = (x)_{\mathcal{B}}$ est un isomorphisme.
+\end{theoreme}
+\begin{dem}
+    Nous devons prouver quatre points, les deux premiers pour montrer que $T$ est linéaire, les deux autres pour établir l'injectivité, et enfin la surjectivité.
+    \begin{itemize}
+        \item $T(\lambda v) = \lambda T(v)$ pour tout $\lambda \in$ \R et tout $v \in V$;
+        \item $T(v + w) = T(v) + T(w)$ pour tous $v, w \in V$;
+        \item $T(v) = \vec{0} \implies v = 0$ (critère d'injectivité);
+        \item Pour tout $\vec{b} \in$ \R$^n$ il existe $v \in V$ tel que $T(v) = \vec{b}$
+
+    \end{itemize}
+    Soit donc $\lambda \in$ \R et $v, w \in V$ que nous écrivons de manière unique! comme $v = x_1e_1 + \dots + x_ne_n$ et $w = y_1e_1 + \dots + y_ne_n$.
+\end{dem}
+Prouve que le premier point:
+
+\begin{align*}
+T(\lambda v) &= T ( \lambda(v_1b_1 + \dots + v_nb_n)) \\
+&= T(\lambda v_1 b_1 + \dots + \lambda v_nb_n) \\
+&= T\begin{pmatrix}
+    \lambda v_1 \\
+    .\\\\. \\ \lambda v_n
+\end{pmatrix} = \lambda \begin{pmatrix}
+    v_1 \\ \\. \\. \\v_n
+\end{pmatrix} = \lambda T(v)
+\end{align*}
+
+\begin{exemple}
+    \begin{itemize}
+        \item $T : M_{x\times2}(\mathbb{R}) \to $ \R$^4$ est un isomorphisme. Pour la base canonique $\mathcal{C}an = (e_{11}, e_{12}, e_{21}, e_{22})$, on a:
+\[T\begin{pmatrix}
+    a & b \\ c & d
+\end{pmatrix} = \left ( \begin{pmatrix}
+    a & b \\ c & d
+\end{pmatrix}\right )_{\mathbf{C}can} = \begin{pmatrix}
+    a \\ b \\ c \\ d
+\end{pmatrix}\]
+        \item $T : \mathbb{P}_3 \to $\R$^4$ est un isomorphisme. Pour la base canonique $\mathcal{C}an = (1, t, t^2, t^3)$ on a
+\[T(a + bt + ct^2 + dt^3) = \begin{pmatrix}
+    a \\ b \\ c \\ d
+\end{pmatrix}\]
+\item Soit $W$ le plan dans \R$^3$ donné par l'équation $x + y + z = 0$ et $\mathcal{B}$ la base formée des vecteurs $\vec{b}_1 = \begin{pmatrix}
+    -1 \\ 1 \\ 0
+\end{pmatrix}$ et $\vec{b}_2 =  \begin{pmatrix}
+    -1 \\ 0 \\ 1
+\end{pmatrix}$
+On a l'application $T : W \to \mathbb{R}^2$
+\[w \to \begin{pmatrix}
+    a \\ b
+\end{pmatrix} \text{ si } w = a\cdot\vec{b_1} + b\cdot\vec{b}_2\]
+\end{itemize}
+
+\end{exemple}
+
+
+\subparagraph{Base et coordonnées}
+\begin{definition}[pivots]
+    La famille $(p, q, r)$ est une base de $\mathbb{P}^2$ si et seulement si la matrice carrée $A$ a trois pivots. Où $A$ est la matrice d'application avec les vecteurs $(p, q, r)$ fourni dans la base canonique.
+\end{definition}
+
+\paragraph{Cardinalité d'une base}
+Pour généraliser ce qu'on a dit avant:
+\begin{itemize}
+    \item $V$ est un espace vectoriel
+    \item $\mathcal{B} = (b_1, \dots, b_n)$ une base $V$
+    \item $\mathcal{C} = (c_1, \dots, c_m)$ une famille ordonnée de vecteurs de $V$.
+\end{itemize}
+
+\begin{theoreme}
+    La famille ordonnée de $\mathcal{C}$ est une base de $V$ si et seulement si la matrice $A = ((c_1)_{\mathcal{B}}, \dots, (c_m)_{\mathcal{B}})$ a un pivot dans chaque ligne et chaque colonne.
+\end{theoreme}
+\begin{framedremark}
+    En particulier $A$ est une matrice carrée ($m = n$) et inversible
+\end{framedremark}
+\begin{theoreme}
+    Deux bases de $V$ ont le même nombre d'éléments
+\end{theoreme}
+\begin{corollaire}
+Si $V$ admet une base de $n$ vecteurs, alors une famille $\{v_1, \dots, v_k\}$ de vecteurs de $V$ avec $k > n$ est liée.
+\end{corollaire}
+\begin{definition}
+    Soit $V$ un espacevectoriel et $\mathcal{B} = (e_1, \dots, e_n)$ une base. La \textcolor{red}{dimension} de $V$ est $n$. On note $dim V = n$.
+\end{definition}
+
+\begin{itemize}
+    \item $dim \mathbb{R}^n = n$
+    \item $dim \mathbb{P}_n = n+1$
+    \item $M{m\times n}(\mathbb{R}) = mn$
+\end{itemize}
