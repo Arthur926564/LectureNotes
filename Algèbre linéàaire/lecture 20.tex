@@ -1,0 +1,389 @@
+\lecture{20}{2024-11-21}{Diagonalisation}{}
+
+\begin{parag}{Quizz du début}
+\begin{subparag}{Niveau 1}
+    
+
+    On considère $\mathbb{P_2}$ la ban canonique $\cmath an = (1, t, t^2)$ et la base $\bmath = (1, 1 + t, 1 + t + t^2)$. Alors la matrice de changement de base $P = (Id)_\bmath^{\cmath an}$ est:
+    \begin{itemize}
+        \item a) $\begin{pmatrix}
+            1 & 0 & 0\\
+            1 & 1 & 0\\
+            1 & 1 & 1
+        \end{pmatrix}$
+        \item b) $\begin{pmatrix}
+            1 & -1 & 0 \\
+            0 & 1 & -1\\
+            0 & 0 & 1
+        \end{pmatrix}$
+        \item c) $\begin{pmatrix}
+            1 & 1 & 1 \\
+            0 & 1 & 1 \\
+            0 & 0 & 1
+        \end{pmatrix}$
+        \item d) Aucune, $\bmath$, n'est pas une base!
+    \end{itemize}
+    Ici la question au beaucoup plus triviale que ça en a l'air, la question est comme écrire la base $\bmath$ dans la base canonique, on voit très bien que la base canonique, c'est las base canonique ce qui nous suffit donc juste d'écrire chaque vecteurs dans une colonne, ce qui donne $(c)$ comme réponse.
+    \end{subparag}
+    \begin{subparag}{Niveau 2}
+        On considère dans $M_{2\times 3}(\mathbb{R})$ le sous-espace $W$ enfendré par les matrices $A = \begin{pmatrix}
+            1 & -1 & 0\\
+            1 & 0 & -1
+        \end{pmatrix}$ et $B = \begin{pmatrix}
+            -1 & 0 & 1\\
+            0 & -1 & 1
+        \end{pmatrix}$.
+        \\
+        On choisit deux base $W$. la base $\bmath = (A, B)$ et la base:
+        \[\cmath = \left(\begin{pmatrix}
+            1 & -2 & 1\\ 2 & -1 & -1
+        \end{pmatrix}, \begin{pmatrix}
+            -1 & -1 & 2 \\ 1 & -2 & 1
+        \end{pmatrix}\right)\]
+        Alors, la matrice de changement de base $P = (Id)_\bmath^\cmath$ est:
+        \begin{itemize}
+            \item a) $\frac{1}{3}\begin{pmatrix}
+                2 & -1 \\ -1 & 2
+            \end{pmatrix}$
+            \item b) $\begin{pmatrix}
+                2 & 1 \\ 1 & 2
+            \end{pmatrix}$
+            \item c) $\frac{1}{3} \begin{pmatrix}
+                2 & 1 \\ 1 &  2
+            \end{pmatrix}$
+            \item d) $\begin{pmatrix}
+                2 & -1 \\ -1 & 2
+            \end{pmatrix}$
+        \end{itemize}
+        On a ici deux moyen de faire le premier qui est brute force est de juste écrire les matrices de $\bmath$ dans la base $\cmath$ c'est à dire, $(Id)_\bmath^\cmath = \left((A)_\cmath (B)_\cmath\right)$
+        Il faut donc écrire la matrice :
+        \[\begin{pmatrix}
+            1 & -1 &| & 1 & -1 \\
+            -2 & -1 &| & -1 & 0 \\
+            1 & 2 &| & 0 & 1 \\
+            2 & 1 &| & 1 & 0 \\
+            -1 & -2 &| & 0 & -1 \\
+            1 & 1 &| & -1 & 1 
+        \end{pmatrix} \to \begin{pmatrix}
+            1 & 0&| & 2/3 & -1/3\\
+            0 & 1&|& 1/3 & 2/3\\
+            ... & ...& & ... & ...
+        \end{pmatrix}\]
+        \\
+        La deuxième façon est de voir que la matrice de changement de $\cmath$ à $\bmath$ est juste $C = 2\cdot A + B$ et $D = A + 2\cdot B$ il suffit juste de faire l'inverse de cette matrice pour trouver la matrice qu'on chercher.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Diagonalisation}
+    \begin{definition}
+        Une matrice est \textcolor{red}{diagonalisable} si elle est semblable à une matrice diagonale, i.e il existe $P$ inversible telle que $P^{-1}AP$ est diagonale.
+    \end{definition}
+    \begin{theoreme}
+        Une matrice $A$ de taille $n\times n$ est diagonalisable si et seulement si il existe une base $\bmath$ de \R$^n$ formée de vecteurs propres de $A$.
+    \end{theoreme}
+    \begin{subparag}{Observations}
+        Soit $A$ la matrice d'une applicaiton linéaire $T$ exprimée dans la base canonique, $A = (T)_{\cmath an}^{\cmath an}$. Soit $D$ la matrice  de $T$ exprimée dans une base $\bmath$, de sorte que $D = (T)_\bmath^\bmath$ est diagonale.
+        \begin{enumerate}
+            \item Les colonees de la matrice de changement de base 
+        \end{enumerate}
+    \end{subparag}
+    \begin{subparag}{Exemple}
+        Soit $T: M_{2\times 2}(\mathbb{R}) \to M_{2\times 2}(\mathbb{R})$ l'applicaiton linéaire déginie par:
+        \[T\begin{pmatrix}
+            a & b \\ c & d
+        \end{pmatrix} = \begin{pmatrix}
+            a + d & b - c\\ c-b & a + d
+        \end{pmatrix}\]
+        On commence par écrire la matrice e $T$ dans la base canonique.
+        \\
+        Cette matrice a donc une taille $4 \times 4$ car on a $4$ vecteurs qui ont $4$ composantes. Faisons l'applicaiton de chacun de ces 4 vecteurs.
+        \begin{itemize}
+            \item \[T(e_{11}) = T\begin{pmatrix}
+                1 & 0 \\ 0 & 0
+            \end{pmatrix} = \begin{pmatrix}
+                1 & 0 \\ 0 & 1
+            \end{pmatrix} \text{ et } \begin{pmatrix}
+                1 & 0\\0 & 1
+            \end{pmatrix}_{\cmath an} = \begin{pmatrix}
+                1 \\0\\0\\1
+            \end{pmatrix}\]
+            \item Ce qui donne si on réecris tout:
+            \[A = (T)_{\cmath an}^{\cmath an} = \begin{pmatrix}
+                1 & 0 & 0 & 1\\
+                0 & 1 & -1 & 0\\
+                0 & -1 & 1 & 0\\
+                1 & 0 & 0 & 1
+            \end{pmatrix}\]
+        \end{itemize}
+        On va maintenant calculer le polynôme caractéristique:
+        \begin{align*}
+            
+        
+        c_A(t) = \begin{vmatrix}
+                1-t & 0 & 0 & 1\\
+                0 & 1-t & -1 & 0\\
+                0 & -1 & 1-t & 0\\
+                1 & 0 & 0 & 1-t
+            \end{vmatrix}=_{L_3 + L_2}^{L_4 + L_1} \begin{vmatrix}
+                1-t & 0 & 0 & 1\\
+                0 & 1-t & -1 & 0\\
+                0 & -t & -t & 0\\
+                2-t & 0 & 0 & 2-t
+            \end{vmatrix}
+            =_{lin. de ||}^{} t\cdot (2-t)\begin{vmatrix}
+                1-t & 0 & 0 & 1\\
+                0 & 1-t & -1 & 0\\
+                0 & -1 & -1 & 0\\
+                1 & 0 & 0 & 1
+            \end{vmatrix} = t\cdot (2-t)\cdot t\begin{vmatrix}
+                2-t & -1 & 0 \\
+                0 & -1 & 0 \\
+                0 & 0 & 1
+            \end{vmatrix}\\
+            = -t\cdot(2-t)\cdot t \cdot (2-t)(-1)\cdot 1\\
+            = t^2(2-t)^2
+            \end{align*}
+            On voit ici qu'il y a deux solutions, $0, 2$, $mult(0) = 2, mult(2)=2$. On va donc chercher leur espaces propres:
+            \begin{itemize}
+                \item \[E_0 = \ker(A - 0\cdot I_4) = \ker A = Vect\left\{\begin{pmatrix}
+                    -1\\0\\0\\1
+                \end{pmatrix}, \begin{pmatrix}
+                    0\\1\\1\\0
+                \end{pmatrix}\right\}\]
+                \item $E_2 = \ker(A - 2I_4) = \ker \begin{pmatrix}
+                    -1 & 0 & 0 & 1\\
+                    0 & -1 & -1 & 0\\
+                    0 & 1 & -1 & 0\\
+                    1 &0 & 0 & 1
+                \end{pmatrix}$ on voit que les deux dernière lignes s'enlève lorsqu'on échelonne ce qui donnt que le rang de cette matrice est $2$:
+                \\
+                \[E_2 = Vect \left\{\begin{pmatrix}
+                    0\\-1\\1\\1
+                \end{pmatrix}, \begin{pmatrix}
+                    1 \\0\\0\\1
+                \end{pmatrix}\right\}\]
+            \end{itemize}
+            Nos $4$ vecteurs propres de $A$ forment une base de \R$^4$ qui permet de diagonaliser $A$. Pour diagonaliser $T$, on choisit une base de $M_{2\times 2}(\mathbb{R})$ qui est donc nos 4 vecteurs retransformé en matrice:
+            \[\bmath = \left(\begin{pmatrix}
+                -1 & 0\\0&1
+            \end{pmatrix}, \begin{pmatrix}
+                0 & 1\\1 & 0
+            \end{pmatrix}, \begin{pmatrix}
+                0 & -1 \\ 1 & 0
+            \end{pmatrix}, \begin{pmatrix}
+                1 & 0 \\ 0 & 1
+            \end{pmatrix}\right)\]
+            On a donc si on récrit nos application $T$ dans la base $\bmath$ : 
+            \[(T)_\bmath^\bmath = \begin{pmatrix}
+                0 & 0 & 0 & 0\\
+                0 & 0 & 0 & 0 \\
+                0 & 0 & 2 & 0\\
+                0 &0 & 0 & 2
+            \end{pmatrix}\]
+            On met dans cet odre parce qu'on a mis dans le même ordre dans la base $\bmath$
+    \end{subparag}
+\end{parag}
+
+
+\begin{parag}{Premier critère de diagonalisation}
+    \begin{theoreme}
+        Soit $A$ une matrice de taille $n \times n$ ayant $n$ valeurs propres distinctes. Alors $A$ est diagonalisable.
+    \end{theoreme}
+    \begin{subparag}{Preuve}
+        Pour chaque valeur prorpe on a un vecteur propre. Ces $n$ vecteurs sont libre et forment alors une base de \R$^n$.
+    \end{subparag}
+        \begin{subparag}{Remarque}
+        \begin{framedremark}
+            
+        
+        La réciproque est fausse, il existe bien comme dans l'exemple précédent on a que deux valeurs propres mais la matrice est quand même diagonalisable, il faudra check si leur espace propre respectifs matche leur multiplicité géomètrique.
+        \end{framedremark}
+    \end{subparag}
+
+    \begin{subparag}{Proposition}
+        Soient $\lambda$ et $\mu$ deux valeurs propres distinctes de $A$. Alors $E_\lambda \cap E_\mu = \{\vec{0}\}$
+    \end{subparag}
+    \begin{subparag}{Preuve}
+        Soit $\vec{x} \in E_\lambda \cap E_\mu$, Alors, $A\vec{x} = \mu\vec{x}$. comme $\mu \neq \lambda$, alors $\vec{x}= \vec{0}$
+    \end{subparag}
+    \begin{subparag}{Remarque}
+        \begin{framedremark}
+            Les espaces propres $E_\lambda$ et $E_\mu$ forment une sommes direct $E_\lambda \oplus E_\mu$
+        \end{framedremark}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Mutlitplicité}
+    \begin{subparag}{Proposition}
+    \begin{theoreme}
+        Soit $\lambda$ une valeur propre de $A$. Alors $1 \leq \dim E_\lambda \leq mult(\lambda)$
+    \end{theoreme}
+    On le voit assez bien que la dimension de l'espace ne peut pas être plus grand que la multiplicité algébrique
+    \end{subparag}
+    
+\end{parag}
+
+
+\begin{parag}{Critère de diagonalisation}
+    Pour pouvoir diagonaliser, il faut qu'il y ait assez de valeurs propres réelles \textcolor{red}{et} assez de vecteurs propres.
+    \begin{theoreme}
+        Une matrice $A$ est diagonalisable (sur \R) si et seulement si:
+        \begin{enumerate}
+            \item Le polynôme caractéristique est \textcolor{red}{scindé}: il se décompose en produit de facteur $(\lambda - t)$ avec des $\lambda \in \mathbb{R}$.
+            \item Pour tout $\lambda$, on a $\dim E_\lambda = mult(\lambda)$
+        \end{enumerate}
+        Si $A$ est diagonalisable, on forme une base de vecteurs propres en réunissant les vecteurs de base de chaque espace propre.
+        
+    \end{theoreme}
+    \begin{framedremark}
+            On voit ici que si on aurait que la dimension d'un espace propre était plus petit que le nombre de fois que la valeur propre soit solution, on aurait comme la base des vecteurs manque un ou plusieurs vecteurs pour pouvoir être de même taille que la matrice de base ce qui est absurde.
+        \end{framedremark}
+        \begin{subparag}{Petit exemple qui peut servivr lors de petite question}
+        \begin{enumerate}
+            \item $A = \begin{pmatrix}
+                0 & 1\\ -1 & 0
+            \end{pmatrix}$ on a donc son polynôme caractéristique qui est 
+            \[c_A(t) = \begin{vmatrix}
+                -t & 1\\ -1 & -t
+            \end{vmatrix} = t^2 + 1\]
+            On voit bien ici qu'on ne trouve pas de racine et que donc, elle est irréductible sur \R. Comme $A$ n'a pas assez de valeurs propres réelles, A n'est pas diagonalisable sur \R.
+            \\
+            Néanmoins, sur $\mathbb{C}$, on a $t^2 + 1 = (t-i)(t+1)$, $A$ est diagonalisable.
+            \item $B = \begin{pmatrix}
+                3 & 2\\0 & 3
+            \end{pmatrix}$, $c_B(t) = (t-3)^2$. Il y a assez de valeurs propres $\lambda = 3, mult(3) = 2$.
+            \\
+            On va donc chercher sont espace propres pour checker si ça matche:
+            \[E_3 =\ker(B - 3I_2) =  \ker \begin{pmatrix}
+                0 & 2\\ 0 & 0
+            \end{pmatrix}\]
+            On voit bien ici que la dimension de cet espace est de 1, $\dim E_3 = 1$ (grâce au théroème du rang)\\
+            On voit donc qu'il n'y a pas assez de vecteurs propres, $B$ n'est pas diagonalisable ni sur \R, ni sur $\mathbb{C}$
+        \end{enumerate}
+    
+            
+        \end{subparag}
+\end{parag}
+
+\chapter{Les corps}
+\begin{parag}{Les corps}
+    Jusqu'ici nous avons développé des méthodes qui permettent de travailler avec des matrices à coefficients dans \R et nous avons aussi constaté que cela fonctionne dans $\mathbb{Q}$. Il y a beaucoup d'autre \textit{corps} de nombres! Vous connaissez bien sûr les nombres complexes, $\mathbb{C}$, et on pourrait refaire la théorie de la diagonalisation sur les complexes, nous en verrons d'autres.
+    \begin{definition}
+        Un \textcolor{red}{corps} $K$ est un ensemble muni d'une addition $+$ et d'une multiplication $\cdot$ pour lesquelles les règles de calcul "\textit{usuelles}" s'appliquent.
+    \end{definition}
+
+    Plus précisément on demande que:
+    \begin{enumerate}
+        \item $(K, +)$ est un \textcolor{red}{groupe abélien}: il vérifie les axiomes d'associativité, de commutativité, il y a un élément neutre $0$ et chaque nombre $x$ admet un opposé $-x$.
+        \item Le produit est associatif, commutatif, il existe un élément neutre $1$ et chaque nombre ($x \neq 0$) admet un inverse $x^{-1}$.
+        \item La multiplication est distributive par rapport à l'addition : 
+        \[x(y + z) = xy + zy \forall x, y, z \in K\]
+    \end{enumerate}
+    \begin{subparag}{Exemple}
+        Soit $\mathbb{F}_2 = \{0, 1\}$. On définit somme et produit par les tables:
+        \begin{center}
+            
+        
+        \begin{tabular}{|c||c|c|}
+        \hline
+           +  & 0 & 1 \\
+           \hline
+           \hline
+            0 & 0 & 1\\
+            \hline
+            1 & 1 & 0\\
+            \hline
+        \end{tabular}
+
+        
+        \begin{tabular}{|c||c|c|}
+        \hline
+           $\cdot$  & 0 & 1 \\
+           \hline
+           \hline
+            0 & 0 & 1\\
+            \hline
+            1 & 0 & 1\\
+            \hline
+        \end{tabular}
+
+
+        \end{center}
+
+
+        \begin{framedremark}
+            La symmétrie des tableaux montre la commutativité des opérations. Pour $+$ la ligne $0$ montre que c'est un éléments neutre et pour $\cdot$ c'est celle de $1$ qui le prouve.
+        \end{framedremark}
+        \begin{framedremark}
+            Petit remarque vite fait, On voit que ce corps est le plus petit possible parce qu'il y a seulement 2 éléments.
+        \end{framedremark}
+    \end{subparag}
+
+\end{parag}
+
+\begin{parag}{Application: Le code de Hamming}
+    En 1946 l'ingénieur Hamming invente le premier code autocorrecteur pour ordinateurs à cartes perforées.
+    \\
+    Son idée est d'ajouter à chaque mot de $4$ bits $d_1d_2d_3d_4$ dans $(\mathbb{F_2)^4}$ un mot de 
+    3 bits de contrôle formé par les sommes dans $\mathbb{F_2}$:
+    \begin{itemize}
+        \item $d_1 + d_2 + d_4$
+        \item $d_1 + d_3 + d_4$
+        \item $d_2 +d_3 + d_4$
+    \end{itemize}
+    On utilise $16$ signes comme alphabet de base : $0000, 0001, \dots, 1110, 1111$. On visualise les bits de contrôles $p_1, p_2, p_3$ comme suit:
+    \begin{tikzpicture}
+    \begin{scope}[fill opacity = .4]
+        
+    
+       \draw[fill=red](0, 0) circle (1);
+       \end{scope}
+    \end{tikzpicture}
+\end{parag}
+
+\begin{parag}{Le corps des nombre}
+    après
+\end{parag}
+
+\begin{parag}{Les matrice de taille $2 \times 2$}
+    En gros les matrices de taille $2 \times 2$ ne forment pas un corps. Néanmoins il existe des sous-ensebmle de $M_{2\times 2}(\mathbb{R})$ qui sont des corps:
+    
+\end{parag}
+\begin{parag}{Sous-anneaux des matrice de taille $2 \times 2$}
+    \begin{enumerate}
+        \item Soit $S = \{A \in M_{2\times 2}(\mathbb{R})| A \textbf{ est scalaire}\}$. Alors $S$ fun corps pour la somme et le produit de maitrces. En fait l'application $f: \mathbb{R} \to S$ définie par $f(a) = aI_2$ est un isomorphisme qui identidie $S$ avec le corps des nombres réels.
+        \item Soit $M = \{A \in M_{2\times 2}(\mathbb{R})| a_{11} = a_{22} \text{ et } a_{12} = a_{21}\}$. Alors $M$ forme un corps.
+    \end{enumerate}
+    \\
+    On a en premier lieu:
+    \[M = \left\{\begin{pmatrix}
+        a & b \\ -b & a
+    \end{pmatrix}| a, b \in \mathbb{R}\right\}\]
+    \begin{enumerate}
+        \item A part $\begin{pmatrix}
+            0 & 0 \\ 0 & 0
+        \end{pmatrix}$, élément neutre pour $t$, toutes les matrices ont un inverse: $\det \begin{pmatrix}
+            a & b\\ -b & a
+        \end{pmatrix} = a^2 + b^2 \geq 0$ et ce det $= 0$ si et seulement si $a = b = 0$.
+        \item Dans $M$ la multiplication est commutative, 
+        \[\begin{pmatrix}
+            a & b \\ -b & a
+        \end{pmatrix}\begin{pmatrix}
+            c & d \\ -d & c
+        \end{pmatrix} = \begin{pmatrix}
+            ac - bd & ad + bc \\ -bc- ad & -bd + ac
+        \end{pmatrix} = \begin{pmatrix}
+            c & d \\ -d & c
+        \end{pmatrix}\begin{pmatrix}
+            a & b \\ -b & a
+        \end{pmatrix}\]
+        \\
+        \textbf{Conclusion : } $(M, +, \cdot)$ est un corps. En fait on a un isomorphisme $f : \mathbb{C} \to M$ tel que 
+        \[a + bi \to \begin{pmatrix}
+            a & b \\ -b & a
+        \end{pmatrix}\]
+    \end{enumerate}
+\end{parag}
+\begin{parag}{Arithmétique modulaire}
+    Comme pour $\mathbb{F_2} = \{0,1\}$ on peut considérer l'ensemble des nombres entiers $\{0, 1, 2 \dots, n-1\}$.
+\end{parag}

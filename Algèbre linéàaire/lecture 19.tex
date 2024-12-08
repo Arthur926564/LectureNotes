@@ -1,0 +1,117 @@
+\lecture{19}{2024-11-19}{Polymôme caractéristique}{}
+
+\begin{parag}{Polynôme caractéristique}
+    \begin{definition}
+        
+    Soit $A$ une matrice $n \times n$. Le \textcolor{red}{polynôme caractéristique} de $A$ est:
+    \[c_A(t) = \det (A-tI_n)\]
+
+    \end{definition}
+    \begin{theoreme}
+        Une nombre $\lambda$ est valeur propre de $A$ si et seulement si c'est une racine de $c_A(t)$, i.e $\det (A - \lambda I_n) = 0$.
+    \end{theoreme}
+    Sa multiplicité en tant que racine est appelée \textcolor{red}{multiplicité algébrique}.
+    \begin{definition}
+        Soit $\lambda$ une valeur propre de $A$. La \textcolor{red}{multiplicité géométrique} de $\lambda$ est $\dim \ker (A- \lambda I_n)$.
+    \end{definition}
+
+\end{parag}
+
+
+
+\begin{parag}{Similitude}
+\begin{definition}
+    Deux matrices carrées $A$ et $B$ de taille $n \times n$ sont semblables s'il existe une matrice inversible $P$ de taille $n \times n$ telle que:
+    \[A = P^{-1}BP\]
+    
+    On note $A \approx B$.
+\end{definition}
+\begin{theoreme}
+    Deux matrices semblables ont le même polynôme caractéristique. Elles ont donc en particulier les mêmes valeurs propres.
+\end{theoreme}
+    \begin{subparag}{Remarque personnelle}
+        La réciproque est fausse, puisque la matrice nulle n'est semblable qu'à elle-même, mais la matrice $\begin{pmatrix}
+            0 & 1 \\ 0 & 0
+        \end{pmatrix}$ a également $t^2$ comme polynôme caractéristique.
+    \end{subparag}
+    \begin{subparag}{Exemple}
+        Deux matrices ayant les mêmes valeurs propres ne sont pas semblables en général. La matrice $A$ est un \textcolor{red}{bloc de jordan} :
+        \[A = \begin{pmatrix}
+            5 &1 \\ 0 & 5
+        \end{pmatrix} \; \; \; \;\; \; \; \; B = \begin{pmatrix}
+            5 & 0\\ 0 & 5
+        \end{pmatrix}\]
+        La seule valeur propre de $A$ et de $B$ est $5$, de multiplicité algébrique $2$ car $c_A(t) = (t-5)^2 = c_B(t)$. Mais:
+        \begin{formule}
+            \[A \not\approx B\]
+        \end{formule}
+        Si on développe tout ça on a
+        \[P\cdot B \cdot P^{-1} = P \cdot (5I_2)\cdot P^{-1} = 5 P \cdot I_2 \cdot P^{-1} = 5I_2 = B\]
+        La multiplicité géométrique de $5$ est $1$ pour la matrice $A$, mais $2$ pour $B$.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Les relations $\sim$ et $\approx$}
+
+    \begin{enumerate}
+        \item Deux matrice $A$ et $B$ de $M_{n \times n}(\mathbb{R})$ sont équivalents selon les lignes et les colonnes s'il existe des opérations élémentaires sur les lignes et les colonnes qui transforment $A$ en $B$.
+        \item Or, effectuer des opérations sur les lignes de $A$ revient à multiplier $A$ à \textcolor{red}{gauche} par une matrice inversibles $P$;
+        \item Et effectuer des opérations sur les colonnes de $A$ revient à multiplier $A$ à \textcolor{red}{droite} par une matrice inversible $Q$.
+    \end{enumerate}
+    \begin{definition}
+        Les matrices $A$ et $B$ sont \textcolor{red}{équivalentes} s'il existe deux matrices inversibles $P$ et $Q$ telles que 
+        \[PAQ = B\]
+        On le note :
+        \[A \sim B\]
+    \end{definition}
+    \begin{subparag}{Remarque}
+        \begin{framedremark}
+            On voit ici que si deux matrices sont semblable, elles sont équivalents:
+            \[A \approx B \implies A \sim B\]
+        \end{framedremark}
+    \end{subparag}
+\end{parag}
+\begin{parag}{Calcul de polynôme caractéristique}
+    Soit $A = \begin{pmatrix}
+        4 & 0 & -1\\
+        -1 & 0 & 4 \\
+        0 & 2 & 3
+    \end{pmatrix}$ on calcule avec la règle de sarrus le polynôme caracteristique:
+\[\begin{vmatrix}
+    4-t & 0 & -1\\
+    -1 &-t & 4\\
+    0 & 2 & 3-t
+\end{vmatrix} = -t^3 + 7t^2 -4t -30\]
+On nous calcule directement les racines qui sont: $5, 1 \pm \sqrt{7}$.
+\end{parag}
+
+
+\begin{parag}{Diagonalisation}
+    \begin{definition}
+        Une matrice est \textcolor{red}{diagonalisable} si elle est semblable à une matrice diagonale, i.e il existe $P$ inversible telle que $P^{-1}AP$ est diagonale.
+    \end{definition}
+    \begin{theoreme}
+        Une matrice $A$ de taille $n \times n$ est diagonalisable si et seulement si il existe une base $\bmath$ de \R$^n$ formée de vecteurs propres de $A$.
+        \end{theoreme}
+        \begin{subparag}{Observations}
+            \begin{enumerate}
+                \item Les colonnes de la matrice de changement de base $P = (Id)_\bmath^{\cmath an}$ sont les vectuers propres de la base $\bmath$.
+                \item $A = PDP^{-1}$ et $D$ est diagonale, les valeurs propre $\lambda_1, \dots, \lambda_n$ de $A$ se trouvent dans la diagonale, dans l'ordre choisi pour construire la base.
+                \item Le déterminant de $A$ est le produit des caleurs propres (avec multiplicité).\\ En effet:
+                \begin{align*}
+                    \det A &= \det (PDP^{-1}) = \det P \det D \det (P^{-1})\\
+                    &= \det D = \lambda_1\cdot\lambda_2\cdots\lambda_n
+                \end{align*}
+            \end{enumerate}
+        \end{subparag}
+        \begin{subparag}{Exemple}
+            Soit $T: M_{2\times 2}(\mathbb{R}) \to M_{2 \times 2}(\mathbb{R})$ l'application linéaire définie par : 
+            \[T\begin{pmatrix}
+                a & b \\ c & d
+            \end{pmatrix} = \begin{pmatrix}
+                a + d & b - c\\
+                c -b & a + d
+            \end{pmatrix}\]
+            On commence par écrire la matrice $T$ dans la base canonique (je vais pas faire la suite par flemme mais on connaît déjà)
+        \end{subparag}
+\end{parag}

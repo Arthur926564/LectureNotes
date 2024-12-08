@@ -104,9 +104,14 @@
 \newcommand{\premise}[1]{&#1\\}
 \newcommand{\conclusion}[1]{\cline{2-2}\therefore&#1}
 
+\newcommand{\bmath}[0]{\mathcal{B}}
+\newcommand{\cmath}[0]{\mathcal{C}}
+\newtheorem{savoir}{Truc}
+\newenvironment{truc}{
+    \begin{mdframed}[backgroundcolor=orange!7,
+    linecolor=orange!20, linewidth=1pt]\begin{savoir}}
+    {\end{savoir}\end{mdframed}}
 
-\theoremstyle{remark}
-\newtheorem*{remark}{Remarque}
 
 % Définir un environnement mdframed spécifique pour les remarques
 \newenvironment{framedremark}
@@ -146,13 +151,11 @@
 \newcommand{\Z}[0]{$\mathbb{Z}$}
 \newcommand{\Q}[0]{$\mathbb{Q}$}
 \newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
-\setuptodonotes{color=blue!30}
-\newcommand{\note}[1]{\todo[color=green!40]{#1}}
 
 \newtheorem{dem}{Démonstration}
 
 \newenvironment{formule}
-{\begin{mdframed}[backgroundcolor=white, linecolor=black, linewidth=0.5pt]}
+{\begin{mdframed}[linecolor=black, linewidth=0.5pt]}
 {\end{mdframed}}
 
 
@@ -668,19 +671,19 @@ linewidth=1pt]\begin{cor}}
 % DTMWeekdayname should work, but it does not in French
 \def\DTMfrenchweekdayname#1{%
   \ifcase#1
-  Jeudi%
+  Lundi%
+  \or
+  Mardi%
+  \or
+  Mercredi%
+  \or
+  Jeudi%d
   \or
   Vendredi%
   \or
-  Samedi%
+  Samedi
   \or
   Dimanche%
-  \or
-  Lundi%
-  \or
-  Mardi
-  \or
-  Mercredi%
   \fi
 }
 

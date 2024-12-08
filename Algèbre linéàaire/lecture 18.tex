@@ -1,0 +1,264 @@
+\lecture{19}{2024-11-13}{Valeur propre}{}
+\begin{parag}{Rappels sur les espaces propres}
+On traite le cas d'une application linéaire $T : V \to V$ (aussi appelé \textcolor{red}{endomorpgisme} car la source et le but de $T$ coincident).
+\begin{definition}
+    Un vecteur \textbf{non nul} $x \in V$ est un \textcolor{red}{vecteur propre} de $T$ s'il existe un nombre réel $\lambda$ tel que $T(x) = \lambda x$. On appelle alors $\lambda$ une valeur propre  
+\end{definition}
+\end{parag}
+\begin{parag}{Proposition}
+    Si $\lambda$ est une valeur propre, l'\textcolor{red}{espace propre} $E_\lambda$ est le sous-espace de $\ker(T - \lambda Id)$.
+    
+\end{parag}
+
+\begin{parag}{Valeurs propres et noyaux}
+\begin{subparag}
+    Chercher une valeur propre $\lambda$ de la matrice $A \in M_{n \times n}(\mathbb{R})$ revient à chercher un nombre $\lambda$ tel que Ker$(A - \lambda I_n)$ est de dimension $\geq 1$.\\
+    Par le Théorème du rang, ceci revient à chercher $\lambda$ avec $rang(A - \lambda I_n) < n$, ou encore \textcolor{red}{$A - \lambda I_n$ non inversible}.
+\end{subparag}
+\begin{subparag}{Exemple}
+La matrice de rotation $R_\alpha = \begin{pmatrix}
+    \cos \alpha & -\sin \alpha\\
+    \sin \alpha & \cos \alpha
+\end{pmatrix}$
+    le nombre $\lambda$ est valeur propre de $R_\alpha$ si et seulement si:
+    $R_\alpha - \lambda I_2 = \begin{pmatrix}
+        \cos \alpha - \lambda & -\sin \alpha\\
+        \sin \alpha& \cos \alpha - \lambda
+    \end{pmatrix}$ n'a pas d'inverse. On sait donc qu'une matrice n'est pas inversible lorsque sont déterminant est égal à $0$:
+    \\
+    On a donc le déterminant qui est donnée par:
+    \begin{align*}
+    0 &= (\cos \alpha - \lambda)^2 + \sin^2 \alpha \\
+    &= \cos^2\alpha - 2\lambda\cos\alpha + \lambda^2 + \sin^2\alpha = 0\\
+    &= \lambda^2 -2\cos\alpha \lambda + 1
+    \end{align*}
+    On peut donc faire le delta ce qui nous donne trois cas de figure
+    \begin{itemize}
+        \item Cas 1: si $\cos\alpha = \pm 1\; , \; \alpha = 0 \text{ ou }\alpha = \pi $\\
+        \begin{align*}
+            \lambda^2 - 2\lambda + 1 = 0 \to 
+        \end{align*}
+    \end{itemize}
+    
+\end{subparag}
+    \begin{subparag}{La valeur propre nulle}
+        Un vecteur propre doit être non nul, mais zéro peut être une valeur propre.
+    \end{subparag}
+    \begin{subparag}{Exemple}
+        La matrice $\begin{pmatrix}
+            1 & -1 \\ -1 & 1
+        \end{pmatrix}$ admet $0$ comme valeur propre puisque:
+        \[\begin{pmatrix}
+            1 & -1 \\ -1 & 1
+        \end{pmatrix}\begin{pmatrix}
+            1 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            0 \\ 0
+        \end{pmatrix}\]
+    \end{subparag}
+    \begin{subparag}{Proposition}
+        Les valeurs propres d'une matrice triangulaire sont les coefficients diagonaux.
+    \end{subparag}
+    \begin{subparag}{Exemple}
+        Soit $A = \begin{pmatrix}
+            -5 & -1 & 7 & 11\\
+            0 & -5  &1 & 0\\
+            0 & 0 & 0 & -3\\
+            0 & 0 & 0 & 12
+        \end{pmatrix}$
+        Le rang de cette matrice nous donne une indication sur une valeur propre évidente:
+        \begin{enumerate}
+            \item $rang A = 3 < 4$, $\dim \ker A = 1$ par le théorème du rang, $0$ est valeur propre et $E_0 = \ker A$.
+            \item $12$ est valeur propre de $A$, car la $4^{eme}$ ligne de $A - 12I_4$, donc $rang(A - 12I_4) = 3$, ici : 
+            \[\dim \ker (A - 12 I_4) = 1 = \dim E_{12}\]
+
+            \item $5$ est valeur propre,
+            \[A - (-5)I_4 = \begin{pmatrix}
+            0 & -1 & 7 & 11\\
+            0 & 0  &1 & 0\\
+            0 & 0 & 5 & -3\\
+            0 & 0 & 0 & 17
+        \end{pmatrix} \text{  est de rang }3\]
+        $E_5 = \ker (A - (-5)I_4)$ est de $\dim 1$.
+        \\
+        \textbf{Attention!} $-5$ apparaît deux fois dans la diagonale, c'est une valeur propre "\textit{double}". Mais $\dim E_{-5} = 1$
+        \end{enumerate}
+    \end{subparag}
+\end{parag}
+\begin{parag}{Vecteur propres libres, les cas $n= 1, 2$}
+    \begin{itemize}
+        \item Soit $\vec{v_1}$ un vecteur propre de la matrice carrée $A$. Alors la famille $\{\vec{v_1}\}$ est libre car un vecteur propre est non nul.
+        \item Soit $\vec{v_1}, \vec{v_2}$ deux vecteurs proprews de la matrice carrée $A$ pour des valeurs propres $\lambda_1$ et $\lambda_2$ \textcolor{red}{difflrentes}. Alors la famille $\{\vec{v_1}, \vec{v_2}\}$ est libre.
+    \end{itemize}
+
+    On a donc que $A\cdot \vec{v_1} = \lambda_1\vec{v_1}$ et $A\cdot \vec{v_2} = \lambda_2\vec{v_2}$.
+    \\
+    Si $\vec{v_1} = \alpha \vec{v_2}$ Alors:
+    \begin{align*}
+        A\cdot\vec{v_1} &= A \cdot(\alpha \cdot \vec{v_2})\\
+        \lambda_1\vec{v_1} &= \alpha \cdot A \cdot \vec{v_2} = \alpha \cdot \lambda_2 \cdot\vec{v_2}\\
+        \lambda_1\alpha\vec{v_2} \Leftrightarrow \alpha\lambda_2\vec{v_2} &= \alpha \cdot\lambda_2 \cdot \vec{v_2}\\
+        \Leftrightarrow \lambda_1 = \lambda_2
+    \end{align*}
+\end{parag}
+
+\begin{parag}{Vecteurs propres libres}
+    \begin{theoreme}
+    Soit $\lambda_1, \dots, \lambda_k$ des valeurs propres \textcolor{red}{distinctes} et $\vec{v_1}, \dots, \vec{v_k}$ des vecteurs propres d'une matrice carrée $A$ (pour chacune de ces valeurs propres). Alors la famille $\{\vec{v_1}, \dots, \vec{v_k}\}$ est libre.
+    \end{theoreme}
+    \begin{subparag}{Preuve}
+        Par récurrence sur $k$. Si $k = 1$ le résultat a déja été prouvé juste au dessus.
+        \\
+        Supposons que $k > 1$ et que le résultat est vrai pour moins de $k$ vecteurs. Supposons que:
+        \[\alpha_1\vec{v_1} + \cdots + \alpha_{k-1}\vec{v_{k-1}} + \alpha_k\vec{v_k} = \0\]
+
+        Nous devons montrer que tous les scalaires $\alpha_1, \dots, \alpha_k$ soient nuls.\\
+        Reprenons: $\alpha_1\vec{v_1} + \cdots + \alpha_{k-1}\vec{v_{k-1}} + \alpha_k\vec{v_k} = 0$ Alors:
+        \begin{align*}
+            \vec{0} = A(\alpha_1\vec{v_1} + \cdots + \alpha_k\vec{v_k}) = \alpha_1A\vec{v_1} + \cdots + \alpha_{k-1}A\vec{v_{k-1}} + \alpha_kA\vec{v_k}\\
+            \Rightarrow 
+        \end{align*}
+    \end{subparag}
+\end{parag}
+\begin{parag}{Le polynôme caractéristique}
+    Un nombre $\lambda$ est une valeur propre de $A$ si et seulement si la matrice $A - \lambdaI$ n'est pas inversible. Or une matrice est inversible si et seulemet si son déterminant est non nul.
+    \begin{theoreme}
+        Un nombre $\lambda$ est valeur propre de $A$ si et seulement si $\det (A - \lambda I) = 0$.
+    \end{theoreme}
+    \begin{definition}
+        Soit $A$ une matrice $n \times n$. Le \textcolor{red}{polynôme caractéristique} de $A$ est $c_A(t) = \det(A - tI_n)$.
+    \end{definition}
+    Une valeur propre est une racine de $c_A(t)$. Sa multiplicité en tant que racine est appelée \textcolor{red}{multiplicité algébrique}
+
+
+    \begin{subparag}{Exemple}
+        Soit $A = \begin{pmatrix}
+            0 & 1 \\ 1 & 0
+        \end{pmatrix}$. quelles sont ses valeurs propres?
+        \\
+        $A$ transorme $\vec{e_1}$ en $\vec{e_2}$ et $\vec{e_2}$ en $\vec{e_1}$. On reconnaît ici la symmètrie axiale d'axe $x = y$ dans \R$^2$\\
+        Calculons algébriquement les valeurs propres.
+        \\
+        Les valeurs propres sont les racines du polynôme caractéristique:
+        \[C_A(t) = |A - -tI_2| = \begin{vmatrix}
+            -t & 1 \\ 1 & -t
+        \end{vmatrix} = t^2 -1 = (t-1)(t+1)\]
+        Les racines sont $1$ et $-1$, de mulitplicité algébrique de $1$ chacune.\\
+        Cherchons dorénavant les espaces des valeurs propres:
+        \begin{itemize}
+            \item $E_1 = \ker(A - I_2) = \ker \begin{pmatrix}
+                -1 & 1 \\ 1 & -1
+            \end{pmatrix} = Vect\left\{\begin{pmatrix}
+                1 \\ 1
+            \end{pmatrix}\right\}$
+            \item $E_{-1} = \ker(A - (-1)I_2) = \ker \begin{pmatrix}
+                1 & 1 \\ 1 & 1
+            \end{pmatrix} = Vect\left\{\begin{pmatrix}
+                -1 \\ 1
+            \end{pmatrix}\right\}$
+            
+        \end{itemize}
+        Ainsi on voit que $E_1$ est l'axe de symmétrique ($x =y$) et que $E_{-1}$ est perpendiculaire ($x = -y)$
+        \\
+        On choisit maintenant $\bmath = \left(\begin{pmatrix}
+            1 \\ 1
+        \end{pmatrix}, \begin{pmatrix}
+            -1 \\ 1
+        \end{pmatrix}\right) = \left(\vec{b_1}, \vec{b_2}\right)$ comme base de \R$^2$.
+        \\
+        Alors si $S : \mathbb{R}^2 \to \mathbb{R}^2 $ tel que $(S)_{\cmath an}^{\cmath an} = A = \begin{pmatrix}
+            0 & 1 \\ 1 & 0
+        \end{pmatrix}$, Alors, puisque $s(\vec{b_1})= \vec{b_1}$, $s(\vec{b_2}) = -\vec{b_2}$,
+        \[(S)_\bmath^\bmath  \begin{pmatrix}
+            1 & 0 \\ 0 & -1
+        \end{pmatrix}\]
+        On voit ici qu'il y a les valeurs propres dans la diagonale, on identifie immédiatement une droite fixé.
+    \end{subparag}
+    
+\end{parag}
+
+
+\begin{parag}{La multiplicité algébrique}
+    La multiplicité algébrique d'une valeur propre est sa multiplicé en tant que racin du polynôme caractéristique.
+    \begin{subparag}{Exemple}
+        Soit $A \in M_{5 \times 5}(\mathbb{R})$ et supposons que 
+        \begin{itemize}
+            \item $c_A(t) = t^3(t + 3)^2$. Alors on voit qu'il a une multiplicité algébrique de $5$.
+            \item $c_A(t) = (t^2 + 1)^2(t-2)$. Alors
+        \end{itemize}
+        Dan tous le cas il y a autant de valeurs propres. \textcolor{red}{en comptant leur mulitplicité algébrique}, que de colonnes dans la matrice, ici $5$.
+        \end{subparag}
+
+        \begin{subparag}{remarque personnelle}
+            On le voit en faisant le déterminant avec les matrices $3 \times 3$ et la règle de Sarrus, on multiplie tout les polynômes ($a_{ii} - \lambda$) ensemble ce qui créer le polynôme avec le degrès le plus haut.
+        \end{subparag}
+        
+        \begin{subparag}{multiplicité géométrique}
+        \begin{definition}
+            La \textcolor{red}{multiplicité géométrique} d'une valeur propre $\lambda$ est la dimension de l'espace propre $E_\lambda$.
+        \end{definition}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Matrice semblables}
+    Deux matrice $A$ et $B$ de taille $n \times n$ sont \textcolor{red}{semblblaes} si elles représentent la même application linéaire, mais pour des choix de bases différentes. Concrétement, si $T : V \to V$ et $\mathcal{B}, \mathcal{C}$ sont deux bases de $V$, alors $(T)_\bmath^\bmath$ et $(T)_\cmath^\cmath$ sont semblable. Or, si $P = (Id)_\bmath^\cmath$ est la matrice inversible de changement de base, alors:
+    \[P^{-1}BP = (Id)_\cmath^\bmath(T)_\cmath^\cmath(Id)_\bmath^\cmath = (T)_\bmath^\bmath = A\]
+
+    \begin{definition}
+        Deux matrices carrées $A$ et $B$ de taille $n\times n$ sont \textcolor{red}{semblables} s'il existe une matrice inversible $P$ de taille $n \times n$ telle que 
+        \begin{formule}
+            \[A = P^{-1}BP\]
+        \end{formule}
+    \end{definition}
+
+    \begin{subparag}{Exemple}
+        La symétrie axiale $S$ par rapport à la droite $x = y$. Nous avons vu que
+        \[A = (S)_{\cmath an}^{\cmath an} = \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix} \approx \begin{pmatrix}
+            1 & 0 \\ 0 & -1
+        \end{pmatrix} = (S)_\bmath^\bmath = B\]
+        Les matrices de changement de base sont:
+        $P = (Id)_\bmath^{\cmath an} = \begin{pmatrix}
+            1 & 1 \\ 1 & -1
+        \end{pmatrix}$ et $P^{-1} = (Id)_{\cmath an}^\bmath = \frac{1}{2}\begin{pmatrix}
+            1 & 1 \\ 1 & -1
+        \end{pmatrix}$
+        \\
+        Pour vérifier il suffit de recalculer $P^{-1}\cdot A \cdot P$ pour que se soit égal à $B$.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Similitude et valeurs propres}
+    \begin{theoreme}
+        Deux matrices semblables ont le même polynôme caractlristique. Elles ont donc en particulier les mêmes valeurs propres.
+    \end{theoreme}
+    \begin{subparag}{Preuve}
+        Soit $A$ et $B$ deux matrice non semblables. C'et à dire, il existe une matrice inversible $P$, de taille $n \times n$ telles que $PAP^{-1} = B$.\\
+        \begin{align*}
+            C_B(t) = C_{PAP^{-1}}(t) &= \det (PAP^{-1} - t\cdot I_n)\\
+            &= \det (PAP^{-1} - t\cdot p\cdot P^{-1})\\
+            &= \det(P) \cdot \det(A - t\cdot I_n) \cdot \det(P^{-1})\\
+            &= \frac{\det(P) \cdot \det(A-t\cdot I_n)}{\det(P)} = \det(A - t\cdot I_n)\\
+            &= C_A(t)
+        \end{align*}
+    \end{subparag}
+
+    \begin{subparag}{Remaruqe}
+        Deux matrices ayant les mêmes valeurs propres ne sont pas semblables en général.
+        \[A = \begin{pmatrix}
+            5 & 1 \\ 0 & 5
+        \end{pmatrix} \; B = \begin{pmatrix}
+            5 & 0 \\ 0 & 5
+        \end{pmatrix}\]
+        La seule valeur propre de $A$ et de $B$ est $5$, de mulitplicité algébrique $2$ car $c_A(t) = (t-5)^2 = c_B(t)$. Mais:
+        \begin{formule}
+            \[ A \not\approx B\]
+        \end{formule}
+    \end{subparag}
+\end{parag}
+
+
+
+

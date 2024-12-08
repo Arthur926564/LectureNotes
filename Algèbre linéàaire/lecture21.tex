@@ -1,0 +1,301 @@
+\lecture{21}{2024-11-26}{Corps et diagonalisation}{}
+
+
+\begin{parag}{Arithmétique modulaire}
+    Comme pour $\mathbb{F_2} = \{0, 1\}$ on peut considérer l'ensemble des nombres entiers $\{0, 1, 2, \dots, n\}$.
+    \\
+    On regarde ces nombres comme tous les restes possible de la division par $n$, ce qui nous permet de définir une somme et un produit en calculant dans $\mathbb{Z}$, mais en gardant que le reste de la division. Ainsi:
+    \begin{enumerate}
+        \item Dans $\{0, 1, 2\}$ on calcule $2 + 2 = 1$
+        \item Dans $\{0, 1, 2\}$ on calcule $2^3 =2 $
+        \item Dans $\{0, 1, 2, 3, 4\}$ on calcule $3 \cdot 4 = 2$
+        \item Dans $\{0, 1, 2, 3, 4\}$ on calcule $1 - 4 = 2 $
+        \item Dans $\{0, 1, 2, 3, \dots, 10, 11\}$ on calcule $10 \cdot 6 = 0 $
+    \end{enumerate}
+\end{parag}
+
+\begin{parag}{Le corps $\mathbb{F_\rho}$}
+\begin{subparag}{Proposition}
+    \begin{theoreme}{Proposition}
+        Lorsque $n$ n'est pas un nombre premier les opérations définies ci-dessus ne forment pas un corps.
+    \end{theoreme}
+\end{subparag}
+\begin{subparag}{Preuve}
+    Comme $n$ n'est pas premier, $n = a \cdot b$ pour $1 < a, b < n$.
+    Ainsi le nouveau produit $a \cdot b$ est nul. Alors $a$ ne peut pas avoir d'inverse car sinon $b = 1 \cdot b = a^{-1} \cdot 0 = 0$.
+\end{subparag}   
+\begin{theoreme}
+    lorsque $\rho$ est un nombre premier les opérations définies ci-dessus forment un corps $\mathbb{F_\rho}$.
+\end{theoreme}
+Les seules propriétés qui ne découlent pas de celle de la somme et du produit dans $\mathbb{Z}$ sont l'existence d'opposé et d'inverse.
+\begin{subparag}{Preuve}
+    \begin{itemize}
+        \item Opposé: Si $o \leq k < p$ alors son opposé est $p-k$ car $k + (p-k) = p = 0$.\\
+        Si $k = 0$, son opposé est $0$.
+        \item Inverse: Soit $0 < k <$, on doit trouver $0 < a  < p$ tel que $a \cdot k = 1$. On considère $\phi : \{0, 1, \dots, p-1\} \to \{0, 1, \dots, p_1\} : x \to x \cdot k $\\
+        On montre que $\phi$ est injective, ce qui montrera en même temps que $\phi$ est aussi surjective: il existe un $a$ tel que $\phi(a) = 1$.
+    \end{itemize}
+    \begin{framedremark}
+        C'est le piegeonhole principle en AICC:
+        \\
+        Si il y a 400 cadeaux avec des noms différents alors chacun a son cadeau si on a 400 éléves, donc si chaque éléments a un $\phi(k)$ qui est différents on a alors chaque cadeau qui est différents, et si on a le même nombre de cadeau et d'éléves alors on a forcémment un cadeau par éléves
+    \end{framedremark}
+    \begin{itemize}
+        \item Pour cela si $0 < x, y<p$, supposons que $\phi(x) = \phi(y)$, on doit montrer que $x = y$. On sait : $x \cdot k = y \cdot k$ ce qui revient à dire $(x-y)\cdot k = 0$,dans $\mathbb{Z} (x-y)\cdot k$ est un multiple de $p$. mais $k$ est un nombre $< p$, donc $p$ divise $x - y$ mais comme à leur tour $0 < x, y < p$, $x = y$
+    \end{itemize}
+    \begin{framedremark}
+        En gros comme $x - y$ est plus petit que $p$ lui même, la seul possibilité pour que se soit vrai, c'est que $x - y = 0$
+    \end{framedremark}
+\end{subparag}
+\begin{subparag}{Exemple}
+\begin{enumerate}
+    \item Dans $\mathbb{F}_3$, $2^{-1} = 2$
+    \item Dans $\mathbb{F}_5, 2^{-1} = 3$ car $2\cdot 3 = 6 = 1$
+    \item Dans $\mathbb{F}_p, (p-1)^{-1}  = (-1)^{-1} ) -1 = p-1 $
+    \\
+    Ou alors $(p-1)(p-1) = p^2-2p + 1 = 1$ car $p^2$ et $-2p$ sont divisibles par $p$.
+\end{enumerate}
+\begin{framedremark}
+    Attention! par exemple
+    \[\mathbb{F}_6, \; 2^{-1} \]
+    n'existe pas car $6$ n'est pas un nombre premier.
+\end{framedremark}
+\end{subparag}
+\begin{subparag}{Remarque}
+\begin{framedremark}
+    On va pouvoir former des espaces vectoriels sur $\mathbb{F}_p$ comme:
+    \\
+    $(\mathbb{F}_p)^n$, $\mathbb{F}_p[t]$ polynôme à coefficient dans $\mathbb{F}_p$ ou alors, $M_{2\times 3}(\mathbb{F}_p)$
+\end{framedremark}
+\end{subparag}
+\end{parag}
+
+
+\begin{parag}{Critère de diagonalisation}
+    En général, pour diagonaliser une matrice sur \R, il faut qu'il y ait assez de valeurs propres réelles \textcolor{red}{et} assez de vecteurs propres.
+    \begin{theoreme}
+        Une matrice $A$ est diagonalisable sur \R si et seulement si 
+        \begin{enumerate}
+            \item Le polynôme caractéristique est \textcolor{red}{scindé} sur \R : il se décompose en produit de facteurs $(\lambda - t)$ avec $\lambda \in $ \R
+            \item Pour tout $\lambda$, on a $\dim E_\lambda = mult(\lambda)$.
+        \end{enumerate}
+    \end{theoreme}
+    Si $A$ est diagonalisable on forme un base de vecteur propres en réunissant les vecteurs de base de chaque espace propres.
+    \begin{subparag}{Exemple}
+        Soit $A = \begin{pmatrix}
+            -3 & 2 & 2\\
+            2 & -3 & 2\\
+            2 & 2 & -3
+        \end{pmatrix}$. On constate sans faire de calcules:
+        \begin{enumerate}
+            \item Dans chaque lignes la somme des coefficient vaut $-3 + 2 + 2 = 1$ donc $1$ est valeur propre et $\begin{pmatrix}
+                1 \\ 1 \\ 1
+            \end{pmatrix}$ est vecteurs propre.
+            \item $A + 5I_2 = \begin{pmatrix}
+                2 & 2 &2\\
+                2 & 2 &2\\
+                2 & 2 &2
+            \end{pmatrix}$ est de rang $1$ et $\ker (A + 5I_2) = Vect\left\{\begin{pmatrix}
+                -1 \\ 1 \\0 
+            \end{pmatrix}, \begin{pmatrix}
+                -1 \\ 0 \\ 1
+            \end{pmatrix}\right\}$ est de $\dim 2$.
+            \item Donc $\dim E_1 = 1, \dim E_{-5} = 2$ et on trouve une base de vecteurs propres 
+            \[\left(\begin{pmatrix}
+                1 \\ 1 \\ 1
+            \end{pmatrix}, \begin{pmatrix}
+                -1 \\ 1 \\ 0
+            \end{pmatrix}, \begin{pmatrix}
+                -1 \\ 0 \\ 1
+            \end{pmatrix}\right)\]
+            \item $c_A(t) = -(t-1)(t+5)^2$
+        \end{enumerate}
+        Ainsi $ A \approx \begin{pmatrix}
+            1 & 0 & 0\\
+            0 & -5 & 0\\
+            0 & 0 & -5
+        \end{pmatrix}$
+        \\
+        La matrice de changement de base est donc $(Id)_\bmath^{\cmath an} = \begin{pmatrix}
+            1 & -1 & -1 \\
+            1 & 1 & 0\\
+            1 & 0 & 1
+        \end{pmatrix} = P$ et $(Id)_{\cmath an}^\bmath = P^{-1}$.
+    \end{subparag}
+    \begin{subparag}{Suite, changement de base}
+        $D = \begin{cases}
+            P\cdot A \cdot P^{-1}\\
+            P^{-1}\cdot A \cdot P
+        \end{cases}$ et $A = P\cdot D \cdot P^{-1}$
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Diagonalisabilité : Néthode}
+    Soit $T : V \to V$ une application linéaire.
+    \begin{enumerate}
+        \item Choisir une base $\cmath$ de $V$ (la base canonique si elle existe)
+        \item Ecrire la matrice $A = (T)_{\cmath}^\cmath$ de $T$ dans cette base
+        \item Calculer le polynôme caractéristique $c_A(t)$.
+        \item $c_A(t)$ n'est pas scindé, $A$ n'est pas \textcolor{red}{diagonalisable}.
+        \item Si $c_A(t)$ est scindé, extraire les racines de $\lambda$ de $c_A(t)$ et calculer les multiplicité algébrique.
+        \item Calculer les espaces propres $E_\lambda$ et les multiplicités géomtrétriques.
+        \item Si $\dim E_\lambda = mult(\lambda)$ pour une valeur propre $\lambda$, alors $A$ n'est pas \textcolor{red}{diagonalisable}.
+        \item Si $\dim E_\lambda = mult(\lambda)$ pour tout $\lambda$, alors $A$ est \textcolor{green}{diagonalisable}.
+    \end{enumerate}
+    Dès lors
+    \begin{enumerate}
+        \item Soit $T : V \to V$ une application linéaire \textcolor{green}{diagonalisable}.
+        \item Choisir une base $\bmath_\lambda$ de $E_\lambda$ pour toute valeur propres $\lambda$.
+        \item Réunir les $\bmath_\lambda$ pour former une base de $\bmath$ de $V$.
+        \item $D = (T)_\bmath^\bmath$ est diagonale. Les valeurs propres apparaissent dans la diagonale dans l'ordre choisi pour construire la base $\bmath$.
+        \item Les colonnes de la matrice de changemet de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en cooronnées dans $\cmath$.
+        \item $D = P^{-1}AP$ et $A = PDP^{-1}$.
+    \end{enumerate}
+    \begin{subparag}{Exemple}
+        Soit $W$ le plan de $\mathbb{R}^3$ donné par l'équation $x + y + z = 0$. On considère l'application linéaire $T: W \to W$ donnée par la formule :
+        \[T\begin{pmatrix}
+            -y -z \\ y \\ z
+        \end{pmatrix} = \frac{1}{5}\begin{pmatrix}
+            9y + z\\
+            3y -8z \\
+            -12 y + 7z
+        \end{pmatrix}\]
+        \begin{enumerate}
+            \item On vérifie d'abord que $T\vec{w} \in W$ pour tout $\vec{w} \in W$.
+            \item On choisit ensuite une base $\cmath$ de $W$, par exemple
+            $\left(\begin{pmatrix}
+                -1 \\ 1 \\ 0
+            \end{pmatrix}, \begin{pmatrix}
+                -1 \\0 \\ 1
+            \end{pmatrix}\right)$
+        \end{enumerate}
+        On peut maintenant calculer la matrice $A$ de $T$, par rapport à la base $\cmath$. Il faut toutefois calculer les images des vecteurs de base:
+        \begin{align*}
+            T(c_1) &= \frac{1}{5}\begin{pmatrix}
+                9 \\ 3 \\ -12
+            \end{pmatrix} = \frac{3}{5}\begin{pmatrix}
+                -1 \\ 1 \\ 0
+            \end{pmatrix} - \frac{12}{5}\begin{pmatrix}
+                -1 \\ 0 \\ 1
+            \end{pmatrix} = \frac{3}{5}c_1 - \frac{12}{5}c_2\\
+            T(c_2) &= \frac{1}{5}\begin{pmatrix}
+                1 \\ -8 \\ 7
+            \end{pmatrix} = -\frac{8}{5}c_1 + \frac{7}{5}c_2
+        \end{align*}
+        On a donc $A = \frac{1}{5}\begin{pmatrix}
+            3 & -8 \\ -12 & 7
+        \end{pmatrix}$
+        On va donc chercher les valeurs propres:
+        \[c_A(t) = \begin{vmatrix}
+            \frac{3}{5}-t & -\frac{8}{5}\\
+            -\frac{12}{5} & \frac{7}{5} - t
+        \end{vmatrix} = t^2 -2t -3 = (t-3)(t+1)\]
+        On calcule ensuite les espaces propres:
+        \begin{align*}
+            E_{-1} &= Vect\left\{\begin{pmatrix}
+                1 \\ 1
+            \end{pmatrix}\right\}\\
+            E_3 &= Vect\left\{\begin{pmatrix}
+                -2 \\ 3
+            \end{pmatrix}\right\}
+        \end{align*}
+        ON a donc que la base est donnée par:
+        \[\bmath' = \left(\begin{pmatrix}
+            1 \\ 1
+        \end{pmatrix}, \begin{pmatrix}
+            -2 \\ 3
+        \end{pmatrix}\right)\]
+        Qui est une base de \R$^2$ formé de vecteurs propres de $A$.
+        On arrive donc à $A \approx \begin{pmatrix}
+            -1 & 0 \\ 0 & 3
+        \end{pmatrix} = D$.\\
+        On doit revenir à notre problème de départ $T : W \to W$
+        \\
+        Ces vecteurs sont donnés en coordonnées dans la base $\cmath$ puisque $A$ est la matrice de $T$ par rapport à $\cmath$:
+        \[(T)_\cmath^\cmath (x)_\cmath = (T(x))_\cmath\]
+        Par exemple $b_1 = c_1 + c_2$. Ainsi
+        \[\bmath = \left(\begin{pmatrix}
+            -2 \\ 1 \\ 1
+        \end{pmatrix}, \begin{pmatrix}
+            -1 \\-2 \\ 3
+        \end{pmatrix}\right)\]
+        La signification géomètrique de $T$ est maintenant transparente.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{La trace}
+    \begin{defintion}
+        Soit $A$ une amtrice $n \times n$. La \textcolor{red}{trace} $Tr A = a_{11} + a_{22} + \cdots + a_{nn}$.
+    \end{defintion}
+    \begin{subparag}{Exemple}
+        Soit $A = \begin{pmatrix}
+            a & c \\ b & d
+        \end{pmatrix}$. Alors $TrA = a + d$ Or
+
+  \[
+c_A(t) = (a - t)(d - t) - bc = t^2 - (a + d)t + (ad - bc) = t^2 - \text{Tr}A \cdot t + \det A
+\]
+Soit:
+\[
+A = 
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+\quad \text{et} \quad \text{Tr}A = a_{11} + a_{22} + a_{33}.
+\]
+
+\[
+c_A(t) = (a_{11} - t)(a_{22} - t)(a_{33} - t) + \text{polynôme de degré 1}
+= -t^3 + (a_{11} + a_{22} + a_{33})t^2 + \dots
+\]
+    \end{subparag}
+    \begin{subparag}{Proposition}
+        \begin{theoreme}
+            Soit $A$ une matrice de taille $n \times n$. Alors $(-1)^{n-1}TrA$ est le coefficient de $t^{n-1}$ de $c_A(t)$ et $\det A$ est le coefficient constant
+        \end{theoreme}
+
+        \begin{theoreme}{Lemme}
+            Soit $A, B, \in M_{n \times n}(\mathbb{R}) $ Alors $Tr(AB) = Tr(BA)$
+        \end{theoreme}
+        \begin{theoreme}
+            Si $A$ est diagonalisable, alors la trace de $A$ est égal à la somme des valeurs propres.
+        \end{theoreme}
+    \end{subparag}
+    \begin{subparag}{Preuve}
+        \begin{enumerate}
+            \item 
+            \begin{align*}
+                
+            Tr(A\cdot B) &= \sum_{i = 1}^n(A \cdot B)_{ii} = \sum_{i = 1}^n(\sum_{j=1}^n a_{ij}\cdot b_{ji})\\
+            &\sum_{j=1}^n(\sum_{i=1}^n b_{ji}\cdot a_{ij})\\
+            &= \sum_{j=1}^n (B\cdot A)_{jj} = Tr(BA)
+            \end{align*}
+            \item Si $A \approx B$, il existe $P$ inversible tel que $A = PBP^{-1}$ et donc 
+            \begin{align*}
+                Tr(A) = Tr(PBP^{-1}) = Tr(P^{-1}PB) = Tr(B)
+            \end{align*}
+            Si $A \approx D $ oû $D$ est la diagonale de $A$ alors:
+            \[TrA = TrD = \lambda_1 + \cdots + \lambda_n\]
+            \textbf{Rappel:} $\det A = \lambda_1\cdot \lambda_2 \cdots \lambda_n$
+        \end{enumerate}
+    \end{subparag}
+    
+\end{parag}
+\begin{parag}{Deux compléments}
+    \begin{theoreme}
+        Soit $A$ une matrice carrée telle que $c_A(t)$ est scindé. Alors $A$ est  \textcolor{red}{triangularisable} ($A$ est semblable à une matrice triangulaire).
+    \end{theoreme}
+    Le théorème suivant affirme que le polynôme caractéristique "\textit{annule}" la matrice $A$.
+    \begin{theoreme}{Théorème de Cayley-Hamilton}
+        Soit $c_A(t) = t^n + a_{n-1}t^{n-1} + \cdots a_n t + a_0$ le polynôme caractéristique de $A$ alors:
+        \begin{formule}
+            \[A^n + a_{n-1}A^{n-1} + \cdots + a_1A + a_0I_n = 0\]
+        \end{formule}
+    \end{theoreme}
+    \begin{subparag}{Exemple}
+        \[c_B(t) ? t^2 - 5t + 2\]
+        Alors $B^2 - 5B + 2I_2 = 0$
+    \end{subparag}
+\end{parag}

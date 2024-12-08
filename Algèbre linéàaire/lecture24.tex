@@ -1,0 +1,217 @@
+\lecture{24}{2024-12-05}{moindre carré équation normale et les corps}{}
+
+
+\begin{parag}{Suite de l'exemple}
+    
+\end{parag}
+\begin{parag}{Rappels}
+    Soit $A$ une matrice de taille 
+    $n \times m$. Alors $A^T$ est de taille $m \times n$.
+    \begin{enumerate}
+        \item Les lignes de $A^T$ sont les \textcolor{red}{colonnes} $\vec{a_i}$ de $A$
+        \item $A^T\vec{x} = \vec{0}$ si et seulement si $\vec{x} \perp ImA$
+        \item Les coefficients $(A^TA)_{ij}$ sont les produits scalaires $\vec{a_i} \cdot \vec{a}_j$
+        \item Les colonnes de $A$ sont orthogonales si et seulement si $A^TA$ est diagonale
+        \item Les coefficients de $AA^T$ sont les produits scalaires des \textcolor{red}{lignes} de $A$
+        \item Les lignes de $A$ sont orthogonales si et seulement si $AA^T$ est diagonale
+    \end{enumerate}
+\end{parag}
+
+\begin{parag}{Le procédé de Gram-Schmidt : Théorie}
+    \textbf{But} trouver une base orthogonale ou orthonromée d'un sous-espace $W$ de $\mathbb{R}^n$.
+    \\
+    \textbf{Idée} utilise de manière inductive les projection orthogonales.
+    \begin{theoreme}
+        Soit $(\vec{u_1}, \dots, \vec{u_k})$ une base de $W$, sous-espace de $\mathbb{R}^n$\\
+        Les vecteurs suivant forment une base orthogonale de $W$
+        \begin{enumerate}
+            \item $\vec{v_1} = \vec{u_1}$
+            \item $\vec{v_1} = \vec{u_2} - \frac{\vec{u_2}\cdot \vec{v_1}}{||\vec{v_1}||^2}\vec{v_1}$
+            \item $\vec{v_k} = \vec{u_k} - \frac{\vec{u_k}\cdot\vec{v_1}}{||\vec{v_1}||^2}\vec{v_1} - \cdots - \frac{\vec{u}_k\cdot\vec{u}_{k-1}}{||\vec{v}_{k-1}||^2}\vec{v}_{k-1}$
+        \end{enumerate}
+    \end{theoreme}
+\end{parag}
+
+\begin{parag}{Factorisation $QR$}
+    \begin{definition}
+        Soit $A$ une matrice $m \times n$ dont les colonnes sont libres. Alors il existe une factorisation $A = QR$ où les colonnes de $Q \in M_{m\times n}(\mathbb{R})$ sont \textcolor{red}{orthonormées} et $R\in M_{n\times n}(\mathbb{R})$ est triangulaire supérieure et inversible avec des coefficients diagonaux strictement positifs.
+    \end{definition}
+    \begin{subparag}{Preuve}
+        L'idée de la preuve et d'applique la méthode de Gram-Schmidt pour obtenir une base orthogonale $Q$ de $ImA$ à partir des colonnes de $A$ (sans en changer l'ordre), puis on normlaise les vecteurs. On forme $Q$ avec ces vecteurs (colonnes).
+        \\
+        La $k$-ème colonne de $A$ est combinaison linéaire des $k$ première colonnes de $Q$ et le dernier coefficients est toujours positif. On constate cela en utilisant les formules de Gram-Schmidtage, ou alternativement on se souvient que la base orthogonale construire consiste é soustraire à $\vec{a}_k$ sa projection orthogonale sur l'espace engendrés par les colonnes précédentes. Après normalisation le k-ème coefficient reste positif.
+        \\
+        La matrice $R$  a pour colonnes ces coefficient $\vec{r}_k = (\vec{a}_k)_Q$
+    \end{subparag}
+
+    \begin{subparag}{Exemple}
+        Soit $A = \begin{pmatrix}
+            1 & 0\\ 1 & 1\\
+            1 & 1 \\
+             0 & 1
+        \end{pmatrix}$. On cherche sa factorisation $QR$.
+        \\
+        \begin{enumerate}
+            \item $\vec{c_1} = \begin{pmatrix}
+                1  \\ 1 \\ 1 \\ 0
+            \end{pmatrix}$, $\vec{c_2} = \vec{a_2} - \hat{a}_2$\\
+            \[\hat{a}_2 = \frac{\vec{a}_2\cdot\vec{c_1}}{||\vec{c_1}||^2}\cdot \vec{c_1} = \frac{2}{3}\begin{pmatrix}
+                1 \\ 1 \\ 1 \\ 0
+            \end{pmatrix} \; \; \; \vec{c_2} = \begin{pmatrix}
+                -2 \\ 1 \\ 1 \\ 3
+            \end{pmatrix}\]
+            \item Normalisation: $\vec{q_1} = \begin{pmatrix}
+                1/\sqrt{3}\\
+                1/\sqrt{3}\\
+                1/\sqrt{3}
+                \\
+                0
+            \end{pmatrix}$, ensuite $\vec{q_2} = \frac{\vec{c_2}}{||\vec{c_2}||} = \frac{\vec{c_2}'}{||\vec{c_2}||'}$
+            \[= \begin{pmatrix}
+                -2/\sqrt{15}\\
+                1/\sqrt{15}\\
+                1/\sqrt{15}\\
+                3/\sqrt{15}
+            \end{pmatrix}\]
+        \item \[Q = \begin{pmatrix}
+            1/\sqrt{3} & -2/\sqrt{15}\\
+            1/\sqrt{3} & 1/\sqrt{15}\\
+            1/\sqrt{3} & 1/\sqrt{15}\\
+            0 &3/\sqrt{15}
+        \end{pmatrix}\]   
+        \item écrire $\vec{a_1}, \vec{a_2}$ comme combiaison linéaire de $\vec{q_1}, \vec{q_2}$.
+        \begin{itemize}
+            \item $\vec{a_1} = \vec{c_1} = \sqrt{3}\vec{q_1}$, par la suite 
+            $\vec{a_2} = \vec{c_2} + \hat{a}_2 = \frac{\sqrt{15}}{3}\begin{pmatrix}
+                -2 \\ 1 \\ 1 \\ 3
+            \end{pmatrix} + \frac{2}{3}\begin{pmatrix}
+                1 \\ 1 \\ 1 \\ 0
+            \end{pmatrix}$
+            \item $\vec{c_2} = \frac{\sqrt{15}}{3}\cdot\begin{pmatrix}
+                -2/\sqrt{15} \\ 1/\sqrt{15} \\ 1/\sqrt{15} \\ 3/\sqrt{15}
+            \end{pmatrix} =  \frac{\sqrt{15}}{3}\vec{q_2} + \frac{2\sqrt{3}}{3}\vec{q_1}$
+        \end{itemize}
+        On a donc 
+        \[ R = \begin{pmatrix}
+            \sqrt{3} & \frac{2\sqrt{3}}{3}\\
+            0 & \frac{\sqrt{15}}{3}
+        \end{pmatrix}\]
+        $R$ est la matrice qui a dans ses coefficients de $\vec{a_1}$ et dans sa deuxième colonnes les coefficients de $\vec{a_2}$
+        \end{enumerate}
+        C'est une méthode qui peut s'utiliser dans la pratique, on l'utilise dans la méthode des moindre carées
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Méthode des moindre carrés}
+    On chercher la "\textit{meilleure solution possible}" d'un système \textcolor{red}{incompatible} $A\vec{x} = \vec{b}$, où $A$ est une matrice $m \times n$.
+    \begin{definition}
+        Un vecteurs $\hat{x} \in \mathbb{R}^n$ est une \textcolor{red}{solution au sens des moindres carrés} pour le système $A\vec{x} = \vec{b}$ si, pour tout $\vec{x} \in \mathbb{R}^n$
+        \begin{formule}
+            \[||\vec{b}-A\hat{x}|| \leq ||\vec{b} - A\vec{x}||\]
+        \end{formule}
+        
+    \end{definition}
+    Comme $A\vec{x} \in ImA$, le système est incompatible si $\vec{b} \notin ImA$. Le vecteur le plus proche de $\vec{b}$ dans $ImA$ est sa projection orthogonale
+    \begin{formule}
+        \[\hat{b} = \text{proj}_{ImA}\vec{b}\]
+    \end{formule}
+    \begin{subparag}{Problème équivalent}
+        pour trouver les solutions \hat{x} du système incompatible
+        \[A\vec{x} = \vec{b}\]
+        Au sens des moindre carrés, il faut résoudre le système
+        \begin{formule}
+            \[A\hat{x} = \hat{b}\]
+        \end{formule}
+        \begin{framedremark}
+            Il y a en général une infinité de solution au sens des moindres carrés, à moins que l'application linéaire représentée par $A$ ne soit injective.
+        \end{framedremark}
+        Supposons que $\hat{x}$ soit solution au sens des moindres carrésm si bien que $A\hat{x} = \hat{b} = $ proj$_{ImA}\vec{b}$
+        \\
+        Alors $\vec{b} - \hat{b} \perp ImA$ et $\vec{b} - \hat{b} = \vec{b} - A\hat{x}$ donc $\vec{b} - A\hat{x} \perp \vec{a_i} \; \; \; \forall i$ Autrement dit:
+        \[\vec{a_i}(\vec{b} - A\hat{x}) = 0 \; \; \forall i\]
+        Et que donc on peur le réécrire
+        \[\vec{a_i}^T(\vec{b} - A\hat{x}) = \vec{a_i}^T\vec{b} - \vec{a}_i^TA\hat{x}\]
+        Ainsi
+        \begin{equation}
+            A^T\cdot\vec{b} = A^TA\hat{x}
+        \end{equation}
+        $\hat{x}$ est solution de l'équation  (1) 
+        
+    \end{subparag}
+\end{parag}
+\begin{parag}{Equation normale}
+\begin{theoreme}
+    
+
+l'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est égal à l'ensemble non-vide des solutions de l'\textcolor{red}{équation normale}:
+\begin{formule}
+    \[A^TA\hat{x} = A^T\vec{b}\]
+\end{formule}
+\end{theoreme}
+\begin{subparag}{Preuve}
+    Soit $\hat{x}$ une solution de l'équation normale. Nous devons montrer que $A\hat{x} = \hat{b}$. Nous savons que $A^T(\vec{b} - A\hat{x}) = \vec{0}$. Le vecteurs $\vec{z} = \vec{b} - A\hat{x}$ est donc orthogonal à $ImA$. Mais alors 
+    \begin{formule}
+        \[\vec{b}  = A\hat{x} + \vec{z}\]
+    \end{formule}
+    Avec $A\hat{x}\in ImA$ et $Z \in (ImA)^\perp$. Cette écriture est \textcolor{red}{unique} ainsi;
+    \[A\hat{x} = \hat{b}\]
+\end{subparag}
+\end{parag}
+\begin{parag}{Question de l'unicité}
+    Soit $\hat{x}$ une solution au sens des moindres carrées du systèmes $A\vec{x} = \vec{b}$
+    \begin{definition}
+        La norme du vecteurs $\vec{b}-A\hat{x}$ est appelée \textcolor{red}{àcart quadratique}
+    \end{definition}
+    \begin{theoreme}
+        La solution $\hat{x}$ au sens des moindres carrées est unique si et seulement si les colonnes de $A$ sont libres, ce qui est équivalent à exiger que la matrice $A^TA$ est inversible
+    \end{theoreme}
+    Si $A^TA$ est inversible, alors on tire de $
+    A^TA\hat{x} = T\vec{b}$ que 
+    \begin{formule}
+        \[\hat{x} = (A^TA)^{-1}A^T\vec{b}\]
+    \end{formule}
+    \begin{subparag}{Preuve}
+        Supposons d'abord que les colonnes de $A$ sont libres, si bien que le noyau de $A$ est nul. On va montrer que la matrice carrée $A^TA$ est inversible en prouvant que son noyau est nul.
+        \\
+        Supposons que $A^TA\vec{x} = \vec{0}$, alors $A\vec{x} \perp ImA$ or $A\vec{x} \in ImA$ et aussi $(ImA)^\perp$. Donc $A\vec{x} = \vec{0}$. Comme $\ker A = \{\vec{0}\}, \; \vec{x} = \vec{0}$.
+        \\
+        Réciproquement, si $A^TA$ est inversible, $A^TA$ est injective. Pour montrer que les colonnes de $A$ sont libres calculons le noyau de $A$. Si $A\vec{x} = \vec{0}$, Alors $A^TA = \vec{x} = A^T\vec{0} = \vec{0}$. Par hypothèse $\vec{x} = \vec{0}$
+    \end{subparag}
+\end{parag}
+\begin{parag}{Le corps $\mathbb{F}_4$}
+    Nous avons rencontré les corps $ \mathbb{F}_p$ qui ont un nombre $p$,premier, d'éléments. Il s'agit des nombres entiers \textcolor{red}{modulo $p$} que l'on considère comme le restes possibles de la division par $p$.
+    \begin{framedremark}
+        Les entiers modulo $4$ ne forment pas un corps car $2 \cdot 2 = 0$. Le produit $\mathbb{F}_2 \times \mathbb{F}_2$ non plus car $(1, 0) \cdot (0, 1) = (0, 0)$.
+    \end{framedremark}
+    Nous allons maintenant remplacer les entiers par les polynômes $\mathbb{F}_2[t]$ et la division euclidienne par la division polynomiale.
+    \begin{enumerate}
+        \item les restes de la division par un polynôme de degré plus petit, on travaille donc dans l'ensemble
+        \[\{0, 1, t, t+1\}\]
+        Nous connaissons tous les polynômes de degré $2$, il s'agit de $t^2 = t\cdot t, t^2 + t = t(t+1), t^2+1 = (t+1)^2$ et $t^2 + t + 1$
+    \end{enumerate}
+    \begin{framedremark}
+        Si on choisit un polynôme non irréductible, le résultats peut être divisé et donc le produit est nul.
+    \end{framedremark}
+    \begin{subparag}{L'addition dans $
+    \mathbb{F}_4$}
+        
+        \begin{table}
+            \centering
+            \begin{tabular}{cccc}
+            \hline
+                 $+$&0  & $t$ &$t+1$ \\
+                 \hline
+                 0&  &  & \\
+                 \hline
+                 1&  &  & \\
+                 \hline
+                 $t$&  &  & \\
+                 \hline
+                 $t+1$ & 0 &
+                 \hline
+            \end{tabular}
+            \caption{Caption}
+            \label{tab:my_label}
+        \end{table}
+    \end{subparag}
+\end{parag}

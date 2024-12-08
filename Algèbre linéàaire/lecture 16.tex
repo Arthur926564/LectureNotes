@@ -1,0 +1,212 @@
+\lecture{16}{2024-11-7}{Matrice d'application linéaire et changement de base}{}
+
+
+\begin{parag}{La matrice d'une application linéaire}
+    \begin{itemize}
+        \item $V$ est un espace vectoriel muni d'une base $\mathcal{B} = \left(e_1, \dots, e_n \right)$,
+        \item $W$ est un espace vectoriel muni d'une base $\mathcal{C} = \left(f_1, \dots, f_n\right)$,
+        \item $T : V \to W$ est une application linéaire.
+    \end{itemize}
+
+
+    \begin{definition}
+        La matrice $A$ de $T$ (pour ce choix de bases) est la mtrice $\left(T\right)_{\mathcal{B}}^{\mathcal{C}}$ de taille $m \times n$ dont les colonnes sont $\left(Te_1\right)_{\mathcal{C}}, \dots, \left(Te_n\right)_{\mathcal{C}}$.
+    \end{definition}
+    \begin{subparag}{Slogan}
+        On place dans les \textcolor{red}{colonnes} de $\left(T\right)_{\mathcal{B}}^{\mathcal{C}}$ les images des vecteurs de la base $\mathcal{B}$ exprimées en coordonnées dans la base $\mathcal{C}$.
+        \\
+        \textbf{Porposition:} \\
+        $\left(T\right)_{\mathcal{B}}^{\mathcal{C}}\left(v\right)_{\mathcal{B}} = \left(Tv\right)_{\mathcal{C}}$
+    \end{subparag}
+    \begin{subparag}{Preuve}
+        Soit $v \in V$ et $\left(v\right)_{\mathcal{B}} = \begin{pmatrix}
+            x_1 \\ . \\ . \\ x_n
+        \end{pmatrix}$. On calcule:
+        \[ = A \cdot \left(v\right)_{\mathcal{B}} \left(T\right)_{\mathcal{B}}^{\mathcal{C}}\cdot\left(v\right)_{\mathcal{B}} = \left(T\left(e_1\right)_{\mathcal{C}} \dots T\left(e_n\right)_{\mathcal{C}}\right)\left(v\right)_{\mathcal{B}}\]
+        Par la définition de $\cdot$:
+        \[= x_1 \cdot T\left(e_1\right)_{\mathcal{C}} + \dots + x_n \cdot T\left(e_n\right)_{\mathcal{C}}\]
+
+        Linéaire dans la base:
+        \[= \left(x_1\cdot T\left(e_1\right) + \dots + x_n \cdot T\left(e_n\right)\right)_{\mathcal{C}}\]
+        Grâce à la linéairité de $T$:
+        \[= \left(T\left(x_1 e_1 + \dots + x_n e_n \right) \right)_{\mathcal{C}}\]
+        On sait que $\left(x_1 e_1 + \dots + x_n e_n \right)  = v$ et donc:
+\[ = \left(T\left(v\right)\right)_{\mathcal{C}}\]
+    \end{subparag}
+    \begin{subparag}{Remarque}
+    \begin{framedremark}
+        Lorsque $V = \mathhbb{R}^n, W = \mathhbb{R}^m$ et que les bases choisies sont les bases canoniques, la matrice d'une applicartion linéaire $T : \mathhbb{R}^n \to \mathhbb{R}^m$ est la matrice de $T$ au sens du chapitre 1.9.
+    \end{framedremark}
+        
+    \end{subparag}
+
+    \begin{subparag}{Exemple}
+        Soit $r : \mathhbb{R}^2 \to \mathhbb{R}^2$ la rotation de centre $\left(0;0\right)$ et d'angle $\frac{\pi}{2}$.\\
+        On connait $\left(r\right)_{\mathcal{C}an}^{\mathcal{C}an}$ = \begin{pmatrix}
+            0 & -1 \\ 1 & 0
+        \end{pmatrix}
+        Mais, si on choisit la base canonique pour l'espaec vectoriel de départ \R$^2$, et à l'arrivée la nouvelle base $\mathcal{C}$ donnée par:
+        \[\vec{f}_1 = \begin{pmatrix}
+            0 \\ 1
+        \end{pmatrix} \; \; \vec{f}_2 = \begin{pmatrix}
+            -1 \\ 0
+        \end{pmatrix}\]
+        \begin{formule}
+            \[r\left(\vec{e}_1\right) = \vec{f}_1 \text{ et } r\left( \vec{e}_2\right) = \vec{f}_2\]
+        \end{formule}
+        \[\left(r\right)_{\mathcal{C}an}^{\mathcal{C}} = \begin{pmatrix}
+            1 & 0 \\ 0 & 1
+        \end{pmatrix} = I_2\]
+        On voit ici qu'on perd trop d'information lorsqu'on permet de choisir des base arbitraires au départ et à l'arrivée. 
+        \\
+        La seule information qui reste est le \textcolor{red}{rang} de l'application linéaire: deux matrice de même taille et de même rang représentent la même application linéaire.
+        \begin{definition}{c'est pas une définition}
+            Pour étudier des applications linéaire $T: V \ to V$ nous choisirons une seule base de $V$, la même pour l'espace vectoriel de départ et d'arrivée.
+        \end{definition}
+    \end{subparag}
+    
+\end{parag}
+
+\begin{parag}{Changement de base}
+\begin{itemize}
+    \item $V$ est un espace vectoriel,
+    \item $\mathcal{B} = \left(e_1, \dots, e_n\right)$ est une base $V$,
+    \item $\mathcal{C} = \left(f_1, \dots,f_n \right)$
+\end{itemize}
+        \begin{definition}
+            La matrice de \textcolor{red}{Changement de base} de $\mathcal{B}$ vers $\mathcal{C}$ est la matrice $\left(Id_B\right)_{\mathcal{B}}^{\mathcal{C}}$ de taille $n \times n$ donc les colonnes sont $\left(e_1\right)_{\mathcal{C}}, \dots, \left(e_n\right)_{\mathcal{C}}$
+        \end{definition}
+        La matrice de changement de base est don la matrice de l'application llinéaire identité,m mais pour des choix différent en général de base au départ et à l'arrivée. Ici $Id_V\left(e_i\right) = e_i$.
+\\
+
+La matrice de changement de base permet de calculer les coordonnées dans la \textcolor{red}{nouvelle base} $\mathcal{C}$ si on connaît celles dans l'\textcolor{blue}{ancienne base } $\mathcal{B}$.
+        \begin{theoreme}
+        \[\left(T\right)_{\mathcal{B}}^{\mathcal{C}}\left(v\right)_{\mathcal{B}} = \left(Tv\right)_{\mathcal{C}}\]
+        \end{theoreme}
+
+        \begin{subparag}{exemple}
+                On fait juste quelque exemple de changement de base:
+                \[\mathcal{C}an = \left(\begin{pmatrix}
+                    1 \\ 0
+                \end{pmatrix}, \begin{pmatrix}
+                    0 \\ 1
+                \end{pmatrix} \right) \; \mathcal{B} = \left( \begin{pmatrix}
+                    1 \\ 1
+                \end{pmatrix}, \begin{pmatrix}
+                    1 \\ -1
+                \end{pmatrix} \right)\]
+        \[P = \left(Id\right)_{\mathcal{B}}^{\mathcal{C}an} = \left(\left(\vec{b_1}\right)_{\mathcal{C}an} \left(\vec{b_2}\right)_{\mathcal{C}an}\right) = \begin{pmatrix}
+            1 & 1 \\ 1 & -1
+        \end{pmatrix}\]
+        Plus dur: $Q = \left(Id\right)_{\mathcal{C}an}^\mathcal{B} =  \left(\left(\vec{e_1}\right)_{\mathcal{B}} \left(\vec{e_2}\right)_{\mathcal{B}}\right)$ 
+        \\
+        Or $\vec{e_1} = \frac{1}{2}\vec{b_1} + \frac{1}{2}\vec{b_2}$ et $\vec{e_2} = \frac{1}{2}\vec{b_1} - \frac{1}{2}\vec{b_2}$
+        Donc 
+        \[Q = \begin{pmatrix}
+            \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2}
+        \end{pmatrix}\]
+        Ici $Q = P^{-1}$, $(Id)_{can}^{B} = \left( (Id)_B^{can})\right)^{-1}$
+        Car la mult. mat. correspond à la compostion $P \cdot Q$ etc..
+        \end{subparag}
+        
+\end{parag}
+\begin{parag}{La composition}
+    \begin{enumerate}
+        \item Soit $U$ un espace vectoriel minus d'une base $B$
+        \item Soit $V$ un espace vectoriel munis d'une base C, et
+        \item soit $W$ un espave vectoriel munis d'une base $D$
+        \item Soit $S : U \to V$ une application linéaire, et
+        \item Soit $T : V \to W$ une application linéaire.
+
+
+    \end{enumerate}
+    \begin{subparag}{Proposition}
+       \begin{align*}
+\text{Les matrices } (T \circ S)_{\mathcal{D}}^{\mathcal{B}} \text{ et } (T)_{\mathcal{D}}^{\mathcal{C}} \cdot (S)_{\mathcal{C}}^{\mathcal{B}} \text{ sont égales.}
+\end{align*}
+
+    \end{subparag}
+    \begin{subparag}{Preuve}
+        A faire plus tard même si pas voila
+    \end{subparag}
+    \begin{subparag}{Exemple}
+        Sois $h$ une homothétie de rapport $3$ dans \R$^3$ et p la projection orthogonlae sur le plan $\pi$ d'équation
+        \[x + y + z = 0\]
+        \[T = p \circ h\]
+        Dans la base canonoique $\mathcal{C}an$ la matrice $H = (h)_{\mathcal{C}an}^{\mathcal{C}an}$ est diagonale avec des $3$ dans la diagonale. Pour trouver la matrice $P$ de $p$, dans $\mathcal{C}an$ on calcule les projections des vecteurs de cette base.\\
+        Il existe $\vec{u}\perp \pi$ tel que $p(\vec{e_1}) + \vec{u} = \vec{e_1}$
+        \[\vec{u} = \alpha\begin{pmatrix}
+            1 \\ 1 \\ 1
+        \end{pmatrix} \text{ Pour tout} \alpha \in \mathbb{R}\]
+        \[\text{Donc} p(\vec{e_1}) = \vec{e_1} - \alpha \begin{pmatrix}
+            1 \\ 1 \\ 1
+        \end{pmatrix} = \begin{pmatrix}
+            1 \ \alpha \\ -\alpha \\ -\alpha 
+        \end{pmatrix} \in \pi\]
+        Donc ce vecteur vérifie $x + y + z = 0$ :
+        \[(1 - \alpha) - \alpha - \alpha = 0 \text{ , } \; \alpha = \frac{1}{3}    \]
+        Et $p(\vec{e_1}) = \begin{pmatrix}
+            \frac{2}{3} \\ -\frac{1}{3} \\ -\frac{1}{3}
+        \end{pmatrix}$ de même $p(\vec{e_2}) = \begin{pmatrix}
+            -\frac{1}{3} \\ \frac{2}{3} \\ -\frac{1}{3}
+        \end{pmatrix}$, $p(\vec{e_3}) = \begin{pmatrix}
+            -\frac{1}{3} \\ - \frac{1}{3} \\ \frac{2}{3} 
+        \end{pmatrix}$
+        Et donc la matrice est donnée par:
+\[(P)_{can}^{can} = \begin{pmatrix}
+     \frac{2}{3} & -\frac{1}{3} & -\frac{1}{3}\\
+      -\frac{1}{3}& \frac{2}{3} & -\frac{1}{3}\\
+      -\frac{1}{3}& -\frac{1}{3} & \frac{2}{3}
+\end{pmatrix}\]
+La matrice $A = (F)_{can}^{can} = P \cdot H = \cdots = \begin{pmatrix}
+    2 & -1 & -1 \\
+    -1 & 2 & -1 \\
+    -1 & -1 & 2
+\end{pmatrix}$
+Peut être juste pour expliquer ce qui se passe,  On a trouver la matrice de $p$ qui est la projection orthogonale sur le plan $\pi$ ET ENSUITE, fais grandir le vecteur d'un facteur trois, (c'est un peu du hasard que ca fait tout propre)
+\\
+Le rang de $A$ est $2$ car $\begin{pmatrix}
+    1 \\ 1 \\ 1
+\end{pmatrix} \in \ker A$ . Et on voit que $rang\; A > 1$ car les lignes ne sont pas proportionnelles (et par le théorème du rang)
+Si on prend la base de $\pi$ donnée par
+\[\mathcal{B} = \left( \begin{pmatrix}
+    -1 \\ 1 \\ 
+\end{pmatrix}, \begin{pmatrix}
+    a faire
+\end{pmatrix}\right)\]
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Changement de base, rappel}
+    \begin{itemize}
+        \item $V$ est un espace vectoriel
+        \item $B$  = $(e_1, \dots, e_n)$ est une base de $V$
+        \item $C = (f_1, \dots, f_n)$ est une base de $V$
+    \end{itemize}
+
+\begin{definition}
+    La matrice de changement de base de $B$ vers $C$ est la matrice ($Id_v)_b^c$ de taille $n \times n$ dont les colonnes sont 
+\end{definition}
+\begin{subparag}{Invers de changement de base}
+   \[ \left((Id_V)_B^C\right)^{-1} = (Id_V)_B^C \]
+\end{subparag}
+\begin{subparag}{Exemple}
+    On considère les base $\mathcal{B} = (\vec{b_1}, \vec{b_2})$ et $\mathcal{C} = ( \vec{c_1}, \vec{c_2})$ de \R$^2$ où
+    \[\vec{b_1} = \begin{pmatrix}
+        -1 \\ 8
+    \end{pmatrix} \vec{b_2} = \begin{pmatrix}
+        1 \\-7
+    \end{pmatrix} \vec{c_1} = \begin{pmatrix}
+        1 \\ 2
+    \end{pmatrix} \vec{c_2} = \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix}\]
+    On écrit la matrice comme ce qu'on faisait pour trouver l'inverse d'une matrice: 
+    A trouver comme faire mais en gros:
+\[\begin{pmatrix}
+    1 & 1 & | & -1 & 1 \\
+    2 & 1 & | & 8 & -7
+\end{pmatrix}\]
+\end{subparag}
+\end{parag}
+

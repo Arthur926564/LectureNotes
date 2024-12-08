@@ -1,0 +1,251 @@
+\lecture{18}{2024-11-12}{Changement de base}{}
+
+\begin{parag}{Rappels: changement de base}
+    Soit $V$ un espace vectoriel de dimension $n$:
+    \begin{enumerate}
+        \item Soit $\mathcal{B} = (e_1, \dots, e_n)$ une base. On peut alors écrire un vecteur $x \in V$ en \textcolor{red}{coorodnnées} $(x)_\bmath$, où $x = e_1x_1 + \cdots + e_nx_n$.
+        \item Soit $\cmath = (f_1, \dots, f_n)$ une autre base. On peut alors écrire un vecteur $x \in V$ en \textcolor{red}{coordonnées} $(x)_\cmath$
+        \item Pour passer de $(x)_\bmath$ à $(x)_\cmath$, on utilise la matrice de changement de base $P = (Id)_\bmath^\cmath$ donc les colonnes sont $(e_i)_\cmath$.
+        \\
+        Alors
+        \item La matrice de changement de base inverse $Q = (id)_\cmath^\bmath = P^{-1}$
+    \end{enumerate}
+
+
+
+    \begin{subparag}{Exemple}
+        On travaille dans l'espace vectoriel $W$ des matrices symétriue de taille $2 \tims 2$ (tel que $A = A^t$). Ainsi:
+        \[W = \left\{ \begin{pmatrix}
+            a & b \\ b & c
+        \end{pmatrix}| a, b, c \in \mathbb{R} \right\}\]
+        On considère deux base $\bmath = (B_1, B_2, B_3)$ et $\cmath = (C_+, C_2, C_3)$:
+        \begin{align*}
+            \bmath &= \left(\begin{pmatrix}
+                1 & 0 \\ 0 & 0
+            \end{pmatrix}, \begin{pmatrix}
+                0 & 1 \\ 1 & 0
+            \end{pmatrix}, \begin{pmatrix}
+                0 & 0 \\ 0 & 1
+            \end{pmatrix}\textbf{}\right) \\
+            \cmath &= \left(\begin{pmatrix}
+                1 & 0 \\0 & 1
+            \end{pmatrix}, \begin{pmatrix}
+                -1 & 0 \\ 0 & 1
+            \end{pmatrix}, \begin{pmatrix}
+                0 & 1 \\ 1 & 0
+            \end{pmatrix}\right)
+        \end{align*}
+        \[C_1 = B_1 + B_3, C_2 = -B_1 +B_3 , C_3 = B_2 \]
+        Si on exprime donc les colonnes de $C$ en fonction de $\bmath$ on a:
+        \[\left((C_1)_B (C_2)_B (C_3)_B \right) = \begin{pmatrix}
+            1 & -1 & 0 \\
+            0 & 0 & 1\\
+            1 & 1 & 0
+        \end{pmatrix} = (Id)_\cmath^\bmath = P\]
+        On a aussi l'info que $(Id)_\bmath^\cmath = P^{-1}$ qui se calcule avec la méthode de Gauss:
+        \[\begin{pmatrix}
+            1 & 1 & 0 & | & 1  & 0 & 0\\
+            0 & 0 & 1 & | & 0 & 1 & 0 \\
+            1 & 1 & 0 & | & 0 & 0 & 1
+        \end{pmatrix}\]
+    
+    \end{subparag}
+\end{parag}
+
+
+\begin{parag}{Double changement de base}
+    Soient $\bmath, \cmath$ et $\mathcal{D}$ trois base de $V$.
+    \begin{formule}
+        \[(Id)_\cmath^{\mathcal{D}}(Id)_\bmath^\cmath = (Id)_\bmath^{\mathcal{D}}\]
+    \end{formule}
+    \begin{subparag}{Preuve}
+        La composition $(V, \bmath) \to (V, \cmath) \to (V, \mathcal{D})$ est l'identité. La multiplication matricielle correspond à la composition.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Diagonalistion}
+    Soit $T: V \to V$ une application linéaire
+    \begin{subparag}{Objectif}
+        Trouver une base $\bmath$ de $V$ telle que $(T)_\bmath^\bmath$ soit facilement compréhensible
+    \end{subparag}
+    \begin{subparag}{exemple}
+        Soit $f : \mathbb{R}^3 \to \mathbb{R}^3$ l'application linare donnée par:
+        \[f\begin{pmatrix}
+            x \\ y \\ z
+        \end{pmatrix} = \begin{pmatrix}
+            -y + z \\ -3x -2y + 3z\\
+            -2x -2y + 3z
+        \end{pmatrix}\]
+
+        Alors:
+        \[A = (f)_{\cmath an} ^{\cmath an} = \begin{pmatrix}
+            0 & -1 & 1\\
+            -3 & -2 & 3\\
+            -2 & -2 & 3
+        \end{pmatrix} \]
+        On voit ici que certains vecteur sont \textcolor{red}{fixés} par $f$ alors que d'autres sont \textcolor{red}{renversés}.\\
+        Autrement dit:
+        \begin{enumerate}
+            \item Il existe des vecteurs $\vec{x} \in \mathbb{R}^3$ tel que $A\vec{x} = \vec{x}$
+            \item Il existe des vecteurs $\vec{x} \in \mathbb{R}^3$ tel que $A\vec{x} = -\vec{x}$
+        \end{enumerate}
+        
+
+    \begin{enumerate}
+        \item On choisit $\vec{x} \in \mathbb{R}^3$ tel que $f(\vec{x}) = \vec{x} \Leftrightarrow A\vec{x} = \vec{x} \Leftrightarrow A\vec{x} = I_b \vec{x}$
+        \\
+        \[(A - I_b)\vec{x} = \vec{0} \Leftrightarrow \vec{x} \in \ker (A - I_b)\]
+        Calculons ce noyau:
+        \[(A - I_b) = \begin{pmatrix}
+            -1 & -1 & 1 \\
+            -3  & -3 & 3 \\
+            -2  & -2 & 2
+        \end{pmatrix} \to \begin{pmatrix}
+            1 & 1 & -1 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0 
+        \end{pmatrix}\]
+    \item On chercher $\vec{x} \in \mathbb{R}^3$ tel que $f(\vec{x}) = -\vec{x} \Leftrightarrow A\vec{x} = -\vec{x} = -I_b\cdot\vec{x} \Leftrightarrow A\vec{x} + I_b\vec{x} = \vec{0} \Leftrightarrow (A + I_b)\vec{x} = 0 \Leftrightarrow \vec{x} \in \ker (A + I_b)$
+
+    On chercher donc ce noyau:
+\[A + I_3 = \begin{pmatrix}
+    1 & -1 & 1\\
+    -3 & -1 & 3\\
+    -2 & -2 & 4
+\end{pmatrix} \to \begin{pmatrix}
+    1 & 0 & -\frac{1}{2}\\
+    0 & 1 & -\frac{3}{2}\\
+    0 & 0 & 0
+\end{pmatrix}\]
+
+Donc, Ker$(A + I_3)$ est la droite $D = Vect\left\{ \begin{pmatrix}
+    \frac{1}{2}\\ \frac{3}{2} \\ 1
+\end{pmatrix}\right\} =  Vect \left\{\begin{pmatrix}
+    1 \\ 3 \\ 2
+\end{pmatrix}\right\} = Vect \{b_3\}$
+    \item Conclusion, Au final on a trouvé trois vecteurs linéairement indépendant (à verifier dans le prochain cours) on a $3$ vecteur qui forme une base;
+    \[\bmath = \left(\vec{b_1}, \vec{b_2}, \vec{b_3} \right) \text{ dans } \mathbb{R}^3\]
+    On a vu que $f(\vec{b}_1) = \vec{b_1}$, $f(\vec{b_2})= \vec{b_2}$, $f(\vec{b_3}) = -\vec{b_3}$\\
+    \[(f)_{\cmath an}^{\cmath an} = A, (f)_\bmath^\bmath = \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}\]
+    $f$ est la symmétrie qui fixe $W$ dans la direction $D$.
+    \end{enumerate}
+    \\
+    La matrice de $f$ dans la base nouvelle $\bmath$ est \textcolor{red}{diagonale}!
+    \begin{enumerate}
+        \item Elle est plus parlante géométriquement
+        \item Elle est plus facile à manipuler algébriquement, par exemple  pour calculer ses puissances.
+    \end{enumerate}
+    \end{subparag}
+    \begin{subparag}{Remarque personnelle}
+        Juste pour que ce soit clair de comment on a trouver la droite on a juste "\textit{reécris}" en mode système et on arrive a trouver donc que un système d'équation qui est une droite.\\
+        On verra plus tard ici que ces vecteurs sont en fait les vecteurs propres.
+    \end{subparag}
+\end{parag}
+
+
+\begin{parag}{Valeurs propres et vecteurs propres}
+Soit $A$ une matrice carrée de taille $n \times n$
+    \begin{definition}
+        Un vecteur non nul $\vec{x}$ de \R$^n$ est un \textcolor{red}{vecteur propre} de $A$ s'il exsite un nombre $\lambda$ tel que $A\vec{x} = \lambda \vec{x}$. On appelle alors $\lambda$ une \textcolor{red}{valeur propre} de $A$. L'\textcolor{red}{espace propre} $E_\lambda$ est formé de TOUS les vecteurs $\vec{x}$ tels que $A\vec{x} = \lambda\vec{x}$
+    \end{definition}
+    \begin{subparag}{ATTENTION}
+        Pour tout $\lambda \in \mathbb{R}$ on a $A\vec{0} = \lambda \vec{0}$. Il est crucial de demander que $\vec{x}$ soit non nul! Une baleur propre est une dentrée rare! Par contre $\vec{0} \in E_\lambda$.
+    \end{subparag}
+
+    \begin{definition}
+        Soit $T : V \to V$ une application linéaire. Un vecteur non nul $x \in V$ est un vecteur propre de $T$ si $T(x) = \lambda x$
+    \end{definition}
+
+    \begin{subparag}{Comparaison}
+        Soit $V$ un espace vectoriel et $\bmath$ une base. Soit $T: V \to V$ une application linéaire.
+        \\
+        Soit $A = (T)_\bmath^\bmath$ la matrice $T$ dans la base $\bmath$
+
+    \end{subparag}
+
+
+    \begin{subparag}{Propostion}
+        Une vectuer $x$ est un vecteur propore de $T$ pour la valeur propre $\lambda$ si et seulement si $(x)_\bmath$ est un vecteur propre de $A$ pour la même valeur propre $\lambda$.
+        \end{subparag}
+    \begin{subparag}{Preuve}
+        \[A(x)_\bmath = (T)_\bmath^\bmath(x)_\bmath = (T(x))_\bmath\]
+        Ainsi $T(x) = \lambda x$ si et seulement si $A(x)_\bmath = \lambda(x)\bmath$
+    \end{subparag}
+
+    \begin{subparag}{Exemple}
+        Soit $T : \mathbb{P_1} \to \mathbb{P_1}$ l'application linéaire définie par : 
+        \[T(a + bt) = -a + 3b + (2a + 4b)t\]
+        Si on prend comme base $\cmath an = \{1, t\}$, on a
+        \begin{align*}
+            T(1) &= -1 + 2t\\
+            T(t) &= 3 + 4t
+        \end{align*}
+        Ce qui donne comme matrice:
+        \[(T)_{\cmath an}^{\cmath an} = \begin{pmatrix}
+            -1  & 3 \\ 2 &  4
+        \end{pmatrix} = A\]
+        On observe, avec un peu de change que:
+        \[A + 2I_2 = \begin{pmatrix}
+            1 & 3 \\ 2 & 6
+        \end{pmatrix} \text{ est de rang }1\]
+        $A + 2I_2$ a un noyau non nul, de dim $1$ (Théorème du rang) donné par $Vect\left\{ \begin{pmatrix}
+            -3 \\ 1
+        \end{pmatrix}\right\}$\\
+        Ainsi, $\begin{pmatrix}
+            -3 \\ 1
+        \end{pmatrix}$ est un vecteur propre de $A$ $\left(A\begin{pmatrix}
+            -3 \\ 1
+        \end{pmatrix} = -2 \cdot\begin{pmatrix}
+            -3 \\ 1
+        \end{pmatrix}\right)$\\
+        $-3 + t$ est bien un vecteur propre de $T$.\\
+        Essayons de voir ce qui se passe avec la nouvelle base:
+        \[\bmath = \{-3 + t, t\} = \{p_1, p_2\} \text{ de } \mathbb{P_1}\]
+        \[T(p_1= -2P_1 \; \; \; \hspace{1cm} T(t) = 3 + 4t = -(-3 + t) + 5\cdot t = -1 p_1 + 5p_2\]
+        \[(T)_\bmath^\bmath = \begin{pmatrix}
+            -2 & -1 \\ 0 & 5
+        \end{pmatrix} = B \hspace{3cm} \text{ Pas encore diagonale, mais triangulaire}\]
+        Cela noud aise à voir que 5 est eaussi une valeur propre car Ker$(B - 5I_2) = Ker \begin{pmatrix}
+            -7 & -1 \\ 0 & 0
+        \end{pmatrix} = Vect\left\{\begin{pmatrix}
+            -1 \\ +7
+        \end{pmatrix}\right\}$\\
+        Ainsi, $\begin{pmatrix}
+            -1 \\ 7
+        \end{pmatrix}$ est un vecteur propre de $B$, la matrice de $T$ dans la base $\bmath$, donc $-1\cdot p_1$ + 7\cdot p_2 A faire j'ai pas\\
+        On choisit une nouvelle base $\cmath = (-3 + t, 1 + 2t) = (q_1, q_2)$.\\
+        \begin{align*}
+            T(q_1) &= -2\cdot q_1\\
+            T(q_2) &= 5\cdot q_2
+        \end{align*}
+        Ce qui implique que:
+        \[(T)_\cmath^\cmath ) \begin{pmatrix}
+            -2 & 0 \\ 0 & 5
+        \end{pmatrix}\]
+    \end{subparag}
+    \end{parag}     
+
+    \begin{parag}{Valeur propre et noyau}
+        \begin{subparag}{Proposition}
+            Un nombre $\lambda$ est valeur propre de $A$ si et seulement si le noyau de $A - \lambda I_n$ est non nul.
+        \end{subparag}
+        
+        \begin{subparag}{Preuve}
+            Si $\lambda$ est valeur propre de $A$, il existe un vecteur non nul $\vec{x}$ tel que $A\vec{x} = \lambda \vec{x}$. Autrement dit:
+            \[\vec{0} = A\vec{x} - \lambda \vec{x} =  A\vec{x} - \lambda I_n\vec{x} = (A - \lambda I_n)\vec{x}\]
+            Par distributivité de la multiplication matricielle. Ainsi un vecteur propre est une solution non nulle de l'équation homogène $(A - \lambda I_n)\vec{x} = \vec{0}$. En conclusion un vecteur propre existe pour $\lambda$ si et seulement si Ker$(A - \lambda I_n)$ est non nul.
+        \end{subparag}
+    \end{parag}
+
+    
+
+
+
+
+
+
+

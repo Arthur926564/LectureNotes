@@ -1,0 +1,193 @@
+\textbf{Résume court}
+\lecture{1}{2024-01-01}{Résumé du court}{}
+On voit juste mettre les formule et les trucs à savoir vite fait.\\
+\begin{parag}{Indépendance linéaire}
+    \begin{truc}
+        Des vecteurs sont linéairement indépendants lorsque la seule solution de l'équation:
+        \[\alpha_1v_1 + \cdots + \alpha_n v_n = 0\]
+        Est:
+        \[\alpha_1 = \alpha_2 + \cdots + \alpha_n = 0\]
+        On voit que c'est le même principe que lorsqu’on cherche le noyau, on prend la matrice dans une base (canonique c'est souvent plus simple) et on échelonne. et s'il y a moins de colonnes pivots que de colonnes, alors les vecteurs sont dépendants.
+        
+    \end{truc}
+    \begin{truc}
+        Si la matrice des vecteurs est carrée, on peut faire le déterminant et voir si il est égal à 0.
+    \end{truc}
+    
+    
+\end{parag}
+
+
+\begin{parag}{Injectivité}
+    Il y a plein de propriétés lorsqu'une matrice est injective:
+    \begin{truc}
+        \begin{itemize}
+            \item Une seul solution et elle est trivial pour $A\vec{x} = \vec{0}$
+            \item $\ker A = \{0\}$
+            \item Les colonnes sont linéairement indépendantes
+        \end{itemize}
+        Si la matrice est carrée et de taille $n \times n$:
+        \begin{itemize}
+            \item La matrice $A$ est inversible
+            \item $\det A \neq 0$
+            \item Les colonnes de $A$ forment une base de \R$^n$
+            \item $Im\; A = n$
+            \item $\ker A = \{0\}$
+            \item $dim\; Ker\; A = 0$
+        \end{itemize}
+    \end{truc}
+    On voit que si une application est injective, a vraiment beaucoup de propriétés qui en ressort.
+\end{parag}
+
+\begin{parag}{Surjectivité}
+    \begin{truc}
+        Une application $f : V \to W$ entre deux espaces vectoriels $V$ et $W$ est dite surjective si pour chaque vecteur $w \in W$, il existe au moins un vecteur $v \in V$ tel que $f(v) = w$.
+    \end{truc}
+     En d'autres termes, l'image de $f$ couvre tout l'espace $W$.
+    \\
+    Si $f$  est surjective, alors:
+    \begin{truc}
+        \[dim\; Imf = dim\; W\]
+    \end{truc}  
+    Donc, pour qu'une application soit surjective, le rang de $f$ doit être égal à la dimension de l'espace \textbf{d'arrivée} $W$.
+    \begin{itemize}
+        \item Cas où $dim\;V \> dim\;W$:
+        \\
+        Dans ce cas il est possible pour $f$ d'être surjective
+        \item Cas où $dim\;V = dim\;W$
+        Dans ce cas, la dimension du noyau de $f$ doit être égal à $0$. 
+        \item Cas où $dim \; V < dim\; W$
+        \\
+        Dans ce cas, il est impossible que $f$ soit surjective.
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Application linéaire}
+    \begin{truc}
+        Soit $T$ une application linéaire. Alors:
+        \[T(\alpha u + \beta v) = \alpha T(u) + \beta T(v)\]
+        \[T(0) = 0\]
+    \end{truc}
+\end{parag}
+
+\begin{parag}{Espace vectoriel}
+    C'est le même principe que l'application linéaire:
+    \begin{itemize}
+        \item \textbf{L'addition}, si on prend deux vecteur de $V$ et qu'on les additions, ils doivent rester dans $V$.
+        \item Si on multiplie par un réel un vecteur de $V$, il doit rester dans $V$.
+    \end{itemize}
+    
+\end{parag}
+
+
+\begin{parag}{Noyau}
+    \begin{truc}
+        Le noyau est la solution générale du système homogène.
+        \[A\vec{x} = \vec{0} \]
+    \end{truc}
+    \begin{truc}
+        Le noyau appartient à l'espace de départ 
+    \end{truc}
+\end{parag}
+    
+\begin{parag}{Image}
+    L'image est tout ce qui peut être comme résultats de l'application.\\
+    Elle généralise la notion de sous-espace $ColA$ engendré par les colonnes d'une matrice $A$.
+    \begin{truc}
+        L'image appartient à l'espace d'arrivée.
+    \end{truc}
+    \begin{truc}
+        L'image d'une application linéaire $T: v \to W$ est le sous-ensemble $ImT = \{ w \in W| \text{ il existe } v \in V \text{ tel que } Tv = w\}$.
+    \end{truc}
+    
+\end{parag}
+
+\begin{parag}{Espace-colonne, Espaces-lignes}
+    \begin{truc}
+        L'espace colonne est l'espace engendré par les colonnes de $A$, donc ce sont les vecteurs où il y a des colonnes pivots.
+    \end{truc}
+    \begin{truc}
+        L'espace ligne est l'espace engendré par les lignes de $A$ qui ont un pivot. Pour donner l'espace ligne, on met les lignes où il y a un pivot et on les réécrit en vecteur (en colonne).
+    \end{truc}
+    \begin{truc}
+        \[dim\; ColA = dim\; LgnA\]
+    \end{truc}
+    Pourquoi ça marche:
+    \begin{itemize}
+        \item Le nombre de lignes linéairement indépendantes est égal au nombre de lignes contenant un pivot
+        \item Le nombre de colonnes linéairement indépendantes est égal au nombre de colonnes contenant un pivot.
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Théorème du rang}
+Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions finies.
+    \begin{truc} 
+        le rang est la dimension de l'image
+    \end{truc}
+    \begin{truc}
+        \begin{formule}
+            \[\rang\; T + dim\; KerT = dim\; V\]
+        \end{formule}
+    \end{truc}
+    que la dimension de l'image et la dimension du noyau ensemble sont égales à la dimension de l'ensemble de départ.\\
+    C'est fort parce que l'image de base réside donc l'espace d'arrivée donc on arrive grâce à ce théorème à relier l'image à l'espace de départ. 
+    \\
+    Grâce à ce théorème on peut vraiment vraiment rapidement trouver plusieurs dimensions avec la matrice d'application de taille $n \times m$.
+    \begin{itemize}
+        \item $dim\; KerA = $nombre de colonnes sans pivot
+        \item $dim\; ImA = \text{rang}A = $ nombre de colonnes-pivot
+        \item nombre de colonnes-pivot + colonnes sans pivot $= n$.
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Changement de base}
+    Si on veut passer de la base $\mathcal{B}$ à la base $\mathcal{C}$ on a le théorème:
+    \begin{truc}
+        \[(Id_V)_{\mathcal{B}}^\mathcal{C}(v)_{\mathcal{B}} = (v)_{\mathcal{V}}\]
+    \end{truc}
+    Donc ici $Id_V$ est la matrice de changement de base. En gros. on a le vecteur $v$ exprimé dans la base $\mathcal{B}$ et ensuite le vecteur $v$ exprimé dans la base $\mathcal{C}$.
+    \begin{truc}
+        La matrice de changement de base $(Id_V)_{\mathcal{B}}^\mathcal{C}$ est construite en écrivant les vecteurs de la base $\mathcal{B}$ en fonction de la base $\mathcal{C}$\\
+        En exprimant chaque $b_i$ en fonction de $c_j$ on obtient la matrice $(Id_V)_{\mathcal{B}}^\mathcal{C}$.
+    \end{truc}
+    \begin{truc}
+        Soit $\mathcal{B}$ et $\mathcal{C}$ deux bases de l'espace vectoriel de \R$^n$.\\
+        Soit $P = (Id)_{\mathcal{B}}^{\mathcal{C}}$ la matrice de changement de base de $\mathcal{B}$ vers $\mathcal{C}$.
+        \begin{itemize}
+            \item La matrice $P$ est inversible
+            \item la matrice inverse $p^{-1}$ est une matrice de changement de base de $\mathcal{C}$ vers $\mathcal{B}$.
+            \item Toute matrice inversible de taille $n \times n$ est une matrice de changement de base,
+        \end{itemize}
+    \end{truc}
+\end{parag}
+\begin{parag}{Diagonalisation}
+    \begin{truc}
+        Si la somme des coefficients de chaque lignes est égal à $\phi$ alors $\phi$ est une valeur propre et $\begin{pmatrix}
+            \phi \\ \phi \\ \phi
+        \end{pmatrix}$ est un vecteur propre
+    \end{truc}
+    \begin{truc}
+        Si $A - \phi I_n = \begin{pmatrix}
+            \phi & \phi & \phi\\
+            \phi & \phi & \phi\\
+            \phi & \phi & \phi
+        \end{pmatrix}$ alors par exemple ici le rang est $1$ et la $\dim \ker = 2$ est donc on sait que l'espace propre est $2$ et que $\phi$ est valeur propre
+    \end{truc}
+    \begin{truc}
+        Soit $A$ pas inversible alors $\ker A \neq \{\vec{0}\}$ et donc $0$ est valeur propre de $A$ et donc \\
+        \begin{itemize}
+            \item $c_A(0) =0$\\
+            \item $c_A(t)$ a coefficient constant nul
+            \item $t$ divise $c_A(t)$
+        \end{itemize}
+    \end{truc}
+\end{parag}
+
+\begin{parag}{Orthogonalisation}
+    \begin{definition}
+     Une famille $(\vec{u}_1, \dots, \vec{u}_k)$ de vecteurs $\mathbb{R}^n$ est \textcolor{red}{orthogonale} si $\vec{u}_i \perp \vec{u_j}$ pour tout $i \neq j$. Cette famille est orthonormée si de plus $||\vec{u}_i|| = 1$ pour tout $i$.
+    \end{definition}
+    \begin{truc}
+        Une famille orthogonale de vecteurs non nuls est libres
+    \end{truc}
+\end{parag}
