@@ -194,24 +194,26 @@ l'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est �
     \end{framedremark}
     \begin{subparag}{L'addition dans $
     \mathbb{F}_4$}
+    Le produit est donéée par le produit des polynôme. Nous avions calculé le produit $t\cdot t$ par division euclidienne, on peut aussi simplement utiliser le fait que $t^2 + t + 1 = 0$ dans $\mathbb{F}_4$
+    \[t\cdot t = t^2 = t^2 + t + 1 + t + 1 = t + 1 \text{ et } t(t+1) = t^2 + t + 1 + 1 = 1\]
         
-        \begin{table}
-            \centering
-            \begin{tabular}{cccc}
-            \hline
-                 $+$&0  & $t$ &$t+1$ \\
-                 \hline
-                 0&  &  & \\
-                 \hline
-                 1&  &  & \\
-                 \hline
-                 $t$&  &  & \\
-                 \hline
-                 $t+1$ & 0 &
-                 \hline
-            \end{tabular}
-            \caption{Caption}
-            \label{tab:my_label}
-        \end{table}
+       
+           \begin{tabular}{|c||c|c|c|c|}
+           \hline
+               $\cdot$ &0  & 1 & $t$ & $t+1$\\
+               \hline
+               \hline
+               $0$ & 0 & 1 & t & $t+1$\\
+               \hline
+                1&0& 1 & $t$ & $t+1$ \\
+                \hline
+                $t$& 0 & $t$ & $t+1$ &1 \\
+                \hline
+                $t+1$& 0 & $t+1$ & $1$ & $t$\\
+                \hline
+           \end{tabular}
+        \\
+        Les autres produits manquants s'effectuent de la même manière.
+        
     \end{subparag}
 \end{parag}

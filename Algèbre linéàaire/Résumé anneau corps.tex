@@ -1,0 +1,162 @@
+\chapter{Anneau et Corps}
+\begin{parag}{Introduction}
+    
+Je fais ce petit chapître qui n'est pas tout dans le cours parce que je suis pas bien au clair sur ce qu'est les corps (qui eux sont dans le cours). Pour commencer, il est logique de commencer par un anneau qui est la chose qui "\textit{precède}" les corps tel qu'un corps est un anneau avec des caractéristique en plus.
+\end{parag}
+
+\begin{parag}{Anneau}
+    Par définition un anneau est la prolongation d'une groupe avec un $+$ et un $\times$. Un anneau est une structure algébrique qui commence a ressembler aux nombres tel que $\mathbb{Z}$. Et donc si on prends seulement l'addition l'anneau est donc aussi un groupe.
+    \begin{subparag}{Définition}
+        \begin{definition}
+            Un anneau $A$ est noté tel que
+            \[(A, +, \times)\]
+        \end{definition}
+        Il a plusieurs critères, comme il redescend d'une groupe il y reprends ces critères: 
+        \begin{itemize}
+            \item $(A, +)$ est un groupe
+            \begin{enumerate}
+                \item $+$ est une loi de complétion interne
+                \\
+                (Cela veut dire que le plus prends deux éléments de $A$ et renvoie un élément de $A$ tel que $A \times A \to A$,
+                \item $+$ associative
+                \item élément neutre $0$
+                \item toute éléments possède un opposé $-x$
+                \item $+$ est commutative
+            \end{enumerate}
+            Est ce que donc on muni $A$ de la multiplication devient un groupe? et bien pas dans les anneaux, si on munissait $A$ de la multiplication il y aurait donc un inverse pour toute éléments de $A$ et cela serait un Corps. Et donc pour les anneaux la multiplication n'a pas forcémment d'inverse
+            \item $(A, \times)$ est un monoïde
+            \begin{enumerate}
+                \item $\times$ LCI (loi de composition interne)
+                \item $\times$ associative
+                \item éléments neutres $1$
+            \end{enumerate}
+            \begin{enumerate}
+                \item $axc + axb = ax(c + b)$
+                \item $cxa + bxa = (c+b)xa$
+            \end{enumerate}
+        \end{itemize}
+        Ce qu'on cherche maintenant c'est de trouver un lien entre la multiplication et l'addition. Comme on le sait déjà, une multiplication est une répétition d'addition. La multiplication s'obtient en répétant plusieurs fois une opération d'addition. Donc par exemple :
+        \[3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 = 5\cdot 3\]
+        On voit ici que le $5$ est le compte de $3$ qui sont multiplier. Mais maintenant si on prends le même schéma avec des fonctions on pourrait faire :
+        \[f\circ f \circ f \circ f \circ f = 5 \; \Box \; f\]
+        (j'ai mis le carré de façons complétement arbitraire c'est juste un symbol comme ça) et bien on voit ici qu'il y a un petit soucis, le résultats de l'addition nous donne un nombre multiplier avec $f$ ce qui n'est pas une loi de composition \textbf{interne}. Et donc lorsqu'on parle d'anneau, et de sa multiplication, il faudra utiliser un groupe qui permet de se "\textit{compter lui même}". Ici on se rapproche dangereusement des nombres qu'on connait, c'est pour ça qu'on écrit avec $+$ $\times$ et $0$ $1$ pour les éléments neutres et $-x$ pour l'opposé de l'addition.
+        \\
+    
+    \end{subparag}
+    \begin{subparag}{Comutativité}
+        Pour la comutativité, on ne pouvait pas le dire avant à cause des fonctions (on ne pouvait pas inverser l'ordre lorsqu'on parlait de fonction) mais grâce au rajout de la multiplication, les fonctions sont par la définition enlevée (apart les fonctions numérique). Et donc la commutativité devient une propriétés d'un anneau.        
+    \end{subparag}
+    \begin{subparag}{Distributivité}
+        La définition de la distributivité est :
+        \[axc + axb = ax(c + b)\]
+        Si on prends que $c$ et $b$ soient égal à $1$ alors
+        \[ax1 + ax1 = ax(1+1)\]
+        et donc
+        \[a + a = a \times 2\]
+        Si on continue avec plusieurs parenthèse on obtient le même principe que le calcule $5 \times 3$ précédent. Et donc la distributivité contient ce principe.
+        \\
+        Si on regarde la définition, elle est écrite en deux cas. Elle l'est car la multiplication n'est pas encore commutative et donc qu'on doit marqué les deux cas de figures
+    \end{subparag}
+\end{parag}
+\begin{parag}{Corps}
+    \begin{definition}
+        Un corps est noté
+    \[(K, +, \times)\]
+    \end{definition}
+    \begin{subparag}{Définition}
+        Un corps $(K, +, \times)$ est un anneau. On lui rajoute les propriétés :
+        \begin{enumerate}
+            \item Commutatif
+            \item tout les nombres ont un inverse pour la multiplication sauf le nombre $0$.
+        \end{enumerate}
+        Cet dernier critère peut paraître un peu comme un truc qu'on rajouter pour que ça marche pour les ensembles qu'on connaît nous $\mathbb{R}, \mathbb{Z}...$ Mais en fait, il est bien justifier :
+        \\
+        On peut par exemple calculer le produit : 
+        \[ 0 \times x\]
+        Le but et que cela soit égal à $1$ qui est l'éléments neutre du $\times$ tel  que
+        \[0 \times x = 1\]
+        Or, comme $0$ est l'éléments neutre de l'addition et donc $0 + 0 = 0$ on peut le reécrire 
+        \[0 \times x = (0 + 0) \times x\]
+        Et comme la multiplication est distributive (dans un anneau)
+        \[0 \times x = 0\times x + 0\times x\]
+        On peut donc soustraire $0 \times x$ des deux côtés ce qui nous donne:
+        \[0 = 0 \times x\]
+        Et donc
+        \begin{lemme}
+            Dans n'importe quelle anneau, la multiplication de n'importe quelle nombre par l'éléments neutre de l'addition donne $0$ : 
+            \[0 = 0 \times x\]
+            
+        \end{lemme}
+        Et donc $0$ ne peut \textbf{jamais} avoir d'inverse.
+
+    \end{subparag}
+\end{parag}
+\begin{parag}{Exemple de corps avec des polynôme}
+    Par exemple on peut en premier lieu expliquer que dans ce cours. Le corps $\mathbb{F}_5$ a pour addition est multiplication les additions et multiplications des nombres "normaux" avec un modulo $p$ qui est $5$ ici. et donc $5 + 8 \cdot 3= 29$ ce qui donne modulo $5$: $4$.
+    \\
+    Pour les polynômes, c'est exactement le même principe
+\end{parag}
+
+\begin{parag}{Le corps $\mathbb{F}_4$}
+    Les restes de la division par un polynôme de degré 2 sont de degré plus petit, on travaille donc dans l'ensemble
+    \[\{0, 1,t, t+1\}\]
+    Nous connaissons tous les polynômes de degré 2, il s'agit de tout les possibilités d'arrangement de ces polynômes qui seront de degrés 2:
+    \[t^2 + t\cdot t, \; t^2 + t = t\cdot (t+1), \; t^2 + 1 = (t+1)^2 \text{ et } t^2 + t + 1\]
+    \begin{framedremark}
+        Si on choisit un polynôme irréductible, le résultat n'est pas nul ( le résultat de la division euclidienne n'a pas de restes) cela veut dire qu'il existe deux polynômes qui forment notre grand polynôme. Et donc, il existe deux restes non nuls dont le produit est nul.
+    \end{framedremark}
+    \begin{definition}
+        Soit $p(t) = t^2 + t + 1$. La somme et le produit de restes de division par $p(t)$ font de $\{0, 1, t, t+1\}$ un corps à quatre éléments, $\mathbb{F}_4$.
+    \end{definition}
+    \begin{subparag}{L'addition dans $\mathbb{F}_4$}
+        L'addition est donnée par l'addition des polynômes:
+        \begin{tabular}{|c||c|c|c|c|}
+        \hline
+            $+$ & $0$ & $1$ & $t$ & $t+1$  \\
+            \hline
+            \hline
+            $0$ & $0$ & $1$ & $t$ & $t+1$ \\
+            \hline
+            $1$ & $1$ & $0$ & $t+1$ & $t$ \\
+            \hline
+            $t$ & $t$ & $t+1$ & $0$ & $1$ \\
+            \hline
+            $t+1$ & $t+1$ & $t$ & $1$ & $0$ \\
+            \hline
+        \end{tabular}
+        \begin{framedremark}
+            \begin{itemize}
+                \item La symétrie de la table montre la commutativité
+                \item Les zàros dans la diagonale montre que chaque élément est son opposé
+            \end{itemize}
+        \end{framedremark}
+    \end{subparag}
+    \begin{subparag}{La multiplication dans $\mathbb{F}_4$}
+        Le produit est donnée par le produit des polynômes :\\
+                \begin{tabular}{|c||c|c|c|c|}
+        \hline
+            $\cdot$ & $0$ & $1$ & $t$ & $t+1$  \\
+            \hline
+            \hline
+            $0$ & $0$ & $0$ & $0$ & $0$ \\
+            \hline
+            $1$ & $0$ & $1$ & $t$ & $t+1$ \\
+            \hline
+            $t$ & $0$ & $t$ & $t+1$ & $1$ \\
+            \hline
+            $t+1$ & $0$ & $t+1$ & $1$ & $0$ \\
+            \hline
+        \end{tabular}
+        Pour calculer $t\cdot t$ on doit passer par le fait que $t^2 + t + 1 = 0$. Si on divise $t^2$ par $t^2 + t +1$ on obtient $1$ et le reste $t+1$
+        \\
+        On peut y réfléchir tel que $t\cdot t = t^2$ on sait que $2t + 2 = 0$ on peut le rajouter d'une manière "spécial" tel que $t^2 = t^2 + t + 1 + t + 1$ et on sait que $t(t+1) = t^2 + t + 1 + 1 = 1$ car $t+1$ est l'inverse de $t$ Et comme on sait que $t^2 + t + 1 = 0$ on peut isoler $t^2$ : 
+        
+        \[t^2 = t + 1\]
+        Ici on a mis l'opposer de l'autre côté et l'opposé ici c'est $t+1$ (comme par magie...)
+        \begin{framedremark}
+            Le but ici en fait est de réduire $t^2$ modulo $t^2 + t + 1$ et comme c'est le même principe qu'avec le chiffre, on fait la division est le résultat du modulo est le reste de la division. et donc par exemple si on divisait $t^2 + t + 1$ par $t+1$ on trouverait qu'on ne pourrait enlever que $t+1$ ce qui renvoie à la solution $t^2$.
+        \end{framedremark}
+    \end{subparag}
+\end{parag}
+
+

@@ -1,0 +1,298 @@
+\lecture{26}{2024-12-12}{Dernier cours peut être?}{}
+
+\begin{parag}{Suite}
+
+    
+\begin{framedremark}
+    Si $\lambda$ est une valeurs propre de multiplicité $\geq 2$, alors la base de vecteurs prorpres de $E_\lambda$ fournie par la méthode de Gauss n'est pas orthogonale en général, il faut \textcolor{red}{Gram-Schmidter} pour obtenir une base orthonormée de vecteurs propres.
+\end{framedremark}
+\begin{subparag}{Exemple}
+    \[A = \begin{pmatrix}
+        4 & 1 & 3 & 1\\
+        1 & 4 & 1 & 3\\
+        3 & 1 & 4 & 1\\
+        1 & 3 & 1 & 4
+    \end{pmatrix}\]
+    On cherche $c_A(t)$ :
+    \begin{align*}
+        (1-t)^2\begin{vmatrix}
+            4-t & 1 & 3 & 1\\
+            1 & 4-t & 1 & 3\\
+            0 & -1 & 0 & 1
+        \end{vmatrix} &= (1-t)^2\cdot1\begin{pmatrix}
+            7-t & 2 & 1\\
+            2 & 7-t & 3\\
+            0 & 0 & 1
+        \end{pmatrix}\\ 
+        &= (1-t)^2\begin{vmatrix}
+            7-t  & 2\\
+            2 & 7-z
+        \end{vmatrix} \\
+        &= (1-t)^2(t^2 - 14t + 45)\\
+        &= (1-t)^2(t-5)(t-9)
+    \end{align*}
+    On a donc trois valeurs propres 5, 9 et 1. avec $mult(1) = 2$.
+    \\
+    On peut maintenant trouver les espaces propres:
+\begin{align*}
+    E_5 = Vect\left\{\begin{pmatrix}
+        -1/2\\
+        1/2 \\ -1/2 \\ 1/2
+    \end{pmatrix}\right\} \; \; \; \; E_9 = Vect\left\{\begin{pmatrix}
+        1/2\\1/2\\1/2\\1/2
+    \end{pmatrix}\right\} 
+\end{align*}
+On verifie ensuite $E_5 \perp E_9$.\\
+On doit encore calculer $E_1$ et trouver une base orthonormée de $E_1$ pour orthodiagonaliser $A$.
+\begin{align*}
+    E_1 &= \ker(A - I_4) = \ker\begin{pmatrix}
+        3 & 1 & 3 & 1\\
+        1 & 3 & 1 & 3\\
+        3 & 1 & 3 & 1\\
+        1 & 3 & 1 & 3
+    \end{pmatrix}\\
+    &= \ker \begin{pmatrix}
+        3 & 1 & 3 & 1\\
+        1 & 3 & 1 & 3\\
+        0 & 0& 0 & 0\\
+        0 & 0& 0 & 0
+    \end{pmatrix}\\
+    &= \ker\begin{pmatrix}
+        0 & -8 & 0 & -8\\
+        1 & 3 & 1 &3\\ 
+        que & des & 0
+    \end{pmatrix} = \ker\begin{pmatrix}
+        0 & 1 & 0 & 1\\
+        1 & 0 & 1 & 0
+    \end{pmatrix}
+\end{align*}
+Ce qui nous donne que base:
+\begin{align*}
+    Vect\left\{\begin{pmatrix}
+        -1 \\ 0 \\ 1 \\ 0
+    \end{pmatrix}, \begin{pmatrix}
+        0 \\ -1 \\ 0 \\ 1
+    \end{pmatrix}\right\} = Vect\left\{\begin{pmatrix}
+        -\sqrt{2}/2\\
+        0 \\
+        \sqrt{2}/2\\
+        0
+    \end{pmatrix}, \begin{pmatrix}
+        0 \\ -\sqrt{2}/2\\ 0 \\ \sqrt{2}/2
+    \end{pmatrix}\right\}
+\end{align*}
+On obtient une base orthonormée de vecteurs propres:
+$\bmath = \left(\begin{pmatrix}
+        -\sqrt{2}/2\\
+        0 \\
+        \sqrt{2}/2\\
+        0
+    \end{pmatrix}, \begin{pmatrix}
+        0 \\ -\sqrt{2}/2\\ 0 \\ \sqrt{2}/2
+    \end{pmatrix}, \begin{pmatrix}
+        -1/2\\
+        1/2 \\ -1/2 \\ 1/2
+    \end{pmatrix}, \begin{pmatrix}
+        1/2\\1/2\\1/2\\1/2
+    \end{pmatrix}\right)$
+    \\
+    \[U = \begin{pmatrix}
+        -\sqrt{2}/2 & 0 & -1/2 & 1/2\\
+        0 & -\sqrt{2}/2 & 1/2 & 1/2\\
+        \sqrt{2}/2 & 0 & -1/2 & 1/2\\
+        0 & \sqrt{2}/2 & 1/2 & 1/2
+    \end{pmatrix}\]
+    On trouve donc:
+    \\
+    $U^{-1} = U^T$ et $U^T AU = diag(1, 1, 5, 9)$
+    \begin{framedremark}
+        Le but ici c'est de trouver une base qui est orthonormée et donc lorsqu'on trouve la base qui est $U$ on peut faire un changement de base et c'est la formule de base $P^{-1}AP = B$ où $B$ est la matrice dans la base changée qui est donc une diagonale.
+    \end{framedremark}
+\end{subparag}
+\end{parag}
+\begin{parag}{Méthode}
+\begin{enumerate}
+    \item Vérifie que $A$ est symétrique
+    \item Calculer $c_A(t)$ et en extraire les racines (valeurs propres)
+    \item Calculer les espaces propres pour chacun, le procédé de Gram-Schmidt donne une base orthonormée.
+    \item En assem blant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
+    \item La matrice $P$ dont les colonnes sont les vectteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
+\end{enumerate}   
+\begin{framedremark}
+    L'avantage ici c'est que l'inverse de la matrice de changement de base est juste sa transposée
+\end{framedremark}
+\end{parag}
+\begin{parag}{Matrice de projection}
+    Soit $\vec{u}$ un vecteurs unitaire et $A = \vec{u}\vec{u}^T$. Alors
+    \begin{formule}
+        \[A\vec{x} = \vec{u}(\vec{u}^T\vec{x}) = (\vec{u}\cdot\vec{x})\vec{u}\]
+    \end{formule}
+    \begin{enumerate}
+        \item $\vec{u}$ est un vecteur propre de $A$ pour la valeur propre $1$ car $(\vec{u}\cdot\vec{u})\vec{u} = \vec{u}$
+        \item Posons $W = Vect(\vec{u})$. Alors $W^\perp$ est le noyau de $A$
+        \item Ainsi $E_1 = W$ et $E_0 = W^\perp$
+    \end{enumerate}
+    \begin{subparag}{Proposition}
+        La matrice $A = \vec{u}\vec{u}^T$ est la matrice de la projection orthogonale sur $W = Vect(\vec{u}).$ On a $A\vec{x} = \text{proj}_\vec{u}\vec{x}$
+    \end{subparag}
+    C'est un cas particulier que nous avons vu pour $UU^T$, matrice de projection orthogonale quand les colonnes de $U$ sont orthonormées.
+    \begin{subparag}{Exemple}
+        \begin{enumerate}
+            \item $\vec{u} = \begin{pmatrix}
+                1 \\ 0
+            \end{pmatrix}$ Alors $\vec{u}\vec{u}^T = \begin{pmatrix}
+                1 & 0 \\ 0 & 0
+            \end{pmatrix}$ qui est une projection orthognonale sur $Ox$.
+            \item $\vec{u} = \begin{pmatrix}
+                \sqrt{2}/2\\ \sqrt{2}/2
+            \end{pmatrix}$ Alors $\vec{u}\vec{u}^T = \begin{pmatrix}
+                1/2 & 1/2\\ 1/2 & 1/2
+            \end{pmatrix}$ qui est une projection orthogonal sur l'axe $x = y$
+            \item $\vec{u} = \begin{pmatrix}
+                1 \\ 1
+            \end{pmatrix}$ Alors $\vec{u}\vec{u}^T = \begin{pmatrix}
+                1 & 1\\ 1 & 1
+            \end{pmatrix}$ qui n'est pas une matrice de projection
+        \end{enumerate}
+        C'est en fait même la projection de $(2)$ suivie d'une homothétie de rapport $2$.
+    \end{subparag}
+\end{parag}
+\begin{parag}{Décomposition spectrale}
+    \begin{definition}
+        Soit $A$ symétrique, $U$ orthogonale et $U^TAU = D$ diagonale. L'ensemble des valeurs propres de $A$ est appelé \textcolor{red}{spectre} de $A$
+    \end{definition}
+    On prends $A =UDU^T = (\vec{u}_1, \vec{u}_2, \dots, \vec{u}_n)\begin{pmatrix}
+        \lambda_1 & 0 & \cdots & 0\\
+        0 & \lambda_2 & 0 & 0\\
+        \vdots & \ddots & \ddots & 0\\
+        0 & \cdots & 0 & \lambda_n
+    \end{pmatrix}\begin{pmatrix}
+        \vec{u}_1^T\\ \vec{u_2}^T\\
+        \vdots \\
+        \vec{u_n}^T
+    \end{pmatrix}$
+    \\
+    $= (\lambda_1\vec{u}_1\dots\lambda_n\vec{u}_n)\begin{pmatrix}
+        \vec{u}_1^T\\ \vec{u_2}^T\\
+        \vdots \\
+        \vec{u_n}^T
+    \end{pmatrix} = \lambda_1\vec{u_1}\vec{u_1}^T + \cdots + \lambda_n\vec{u}_n\vec{u_n}^T = A$ et qui est la décomposition spectrale.
+    \begin{subparag}{exemple}
+        Soit $A = \begin{pmatrix}
+            1 & 2 \\ 2 & 1
+        \end{pmatrix}$ la matrice symétrique que nous avons orthodiagonalisée mardi. Nous avonstrouve une base orthonormée de vecteurs propres (pour les valeurs propres -1 et 3):
+        \[\mathcal{U} = (\vec{u_1}, \vec{u_2}) = \left(\begin{pmatrix}
+            -\sqrt{2}/2 \\
+            \sqrt{2}/2
+        \end{pmatrix}, \begin{pmatrix}
+            \sqrt{2}/2 \\ \sqrt{2}/2
+        \end{pmatrix}\right)\]
+        La décomposition spectrale de $A$ est donc
+        \[A = -1\cdot\vec{u_1}\vec{u_1}^T + 3\cdot\vec{u}_2\vec{u}_2^T\]
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{La caractéristique d'un corps fini}
+    Soit $K$ un corps fini (ayant un nombre fini d'éléments). Considérons l'ensemble de tous les multiples entiers de $1_K$ dans $K$, c'est à dire les éléments de la forme $n \times 1 = 1_K + \cdots + 1_K$.\\
+    Comme $K$ est fini, $\{n\cdot 1_K| n \in \mathbb{Z}\}$ aussi est fini. Autrement dit, il existe des entiers n tels que $n \cdot 1_K = 0$ (si $m \cdot 1_k = m'\cdot 1_K$, alors $(m-m')\cdot 1_K = 0_K$)
+    \begin{definition}
+        Le plus petit entier non nul $n$ tel que $n\cdot 1_K = 0$ s'appelle la \textcolor{red}{caractéristique} de $K$ et on le not $carK$.
+    \end{definition}
+    \begin{theoreme}
+        La caractéristique d'un corps fini $K$ est un nombre premier.
+    \end{theoreme}
+    \begin{framedremark}
+        La caractéristique d'un corps est un nombre entiers, ce n'est \textbf{pas} un élément du corps.
+    \end{framedremark}
+    \begin{subparag}{Exemple}
+        \begin{enumerate}
+            \item $car\mathbb{F}_2 = 2$ et $\mathbb{F}_p = p$, premier
+            \item $car\mathbb{F}_4 = 2$
+            \item $car\mathbb{R} = 0$ $n\cdot1 \neq 0$
+        \end{enumerate}
+        \begin{lemme}
+            Dans un corps $K$, si $x, y \neq 0$, alors $x\cdot y = 0$
+        \end{lemme}
+        \textbf{Preuve} On montre que si $x\cdot y = 0$, alors $x$ ou $y$ est nul. Supposons que l'un des deux est non nul, disons que c'est $x$. On doit prouver que $y = 0$.\\
+        Comme $x \neq 0$, $x^{-1}$ existe Alors
+        \[0 = x^{-1}\cdot 0 = x^{-1}(x\cdot y) = (x^{-1}x)y = 1_K\cdot y = y = 0\]
+        Soit $K$ un corps fini et $n = car(K) \in \mathbb{N}^*$. On motre que si $n = a\cdot b$, alors $a$ ou $b$ $= 1$.
+        \\
+        Comme $n \neq 1$ car $1\cdot 1_K = 1_K \neq 0$, n sera donc premier.
+        \\
+        Ce qu'on sait dès le début c'est $0 = n\cdot 1_K = a\cdot b \cdot 1_K = 1_K + \cdots + 1_K = $ par distributivité $ = (1_K + \cdots + 1_K)\cdot (1_K + \cdots + 1_K)$ où la premier parenthèse est $a$ et la deuxième est $b$ on a alors $= (a\cdot 1_K)\cdot (b\cdot 1_K)$
+        \\
+        Par le lemme, soit $a\cdot 1_K = 0$, soit $b\cdot 1_K ) 9$. Or $n$ est le plus petit entier non nul tel que $n \cdot 1_K = 0$.
+        \\
+        Donc soit $a = n$ et $b = 1$, soit $b = n$ et $a = 1$.
+    \end{subparag}
+\end{parag}
+\begin{parag}{La cardinalité d'un corps fini}
+    Soit $p = \text{car}K$. Alors le corps $\mathbb{F}_p$ agit sur $K$ par multiplication
+    \begin{definition}
+        Soit $k \in \mathbb{F}_p$ et $x \in K$. On pose $k \cdot x = (k\cdot 1_K)\cdot x$
+    \end{definition}
+    Cette action est bien défini puisque $p\cdot 1_K = 0$. Les propriétés de l'action sont toutes conséquence du fait que $K$ est un corps.
+    \begin{proposition}
+        Soit $K$ un corps fini et $p = \text{car}K$. Alors $K$ est un $\mathbb{F}_p$-espace vectoriel.
+    \end{proposition}
+    \begin{theoreme}
+        Soit $K$ un corps fini et $p = $car$K$. Alors il existe $n$ tel que $K$ a $p^n$ éléments. On appelle ce nombre la \textcolor{red}{cardinalité} de $K$. 
+    \end{theoreme}
+    \begin{subparag}{preuve}
+        Si $K$ est fini, $\dim_{\mathbb{F}_p}K < \infty$ et on peut choisir une base $\bmath$ qui a $n$ éléments. Le passage en coordonées $()_\bmath : K \to (\mathbb{F}_p)^n$ tel que $x \to (x)_\bmath$
+        \\
+        Ce passage est une application bijective. Et donc commme vu en AICC, Le nombre d'élément de le domaine et le codomaine est le même. La cardinalité de $K$ est la même que celle de $(\mathbb{F}_p)^n$ et sa cardinalité vaut $p^n$.
+    \end{subparag}
+    \begin{subparag}{Exemple}
+        \begin{itemize}
+            \item $Card(\mathbb{F}_p) = p$
+            \item  $Card(\mathbb{F}_4) = 2^2$
+            \item $Card(K) = 6$ est impossible
+        \end{itemize}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Construction de corps finis}
+    La construction de $\mathbb{F}_4$ n'est pas isolé, la méthode générale fonctionne de la même manière. Soit $p$ un nombre premier.
+    \begin{itemize}
+        \item Trouver un polynôme $p(t)$ unitaire irréductible de degré $n$ dans $\mathbb{F}_p[t]$
+        \item Considérer l'ensemble $K$ de tous les restes de division par $p(t)$. il y en a $p^n$
+        \item Définir la somme dans $K$ comme dans $\mathbb{F}_p[t]$
+        \item Défini le produit dans $K$ par celui de $\mathbb{F}_p[t]$, \textcolor{red}{modulo} $p(t)$
+        \item Alors $K$ est un corps de cardinalité $p^n$
+    \end{itemize}
+
+    \begin{subparag}{Exemple : le corps $\mathbb{F}_{49}$}
+        Nous cherchons un polynôme irréductible de degré $2$
+        \begin{proposition}
+            Soit $K$ un corps et $p(t) = t^2 - a$ si $a$ n'est pas un carré (dans $K$), alors $p(t)$ est irréductible.
+        \end{proposition}
+        \textbf{Preuve}
+        En effet $p(t)$ est irreduvtible si et seulement si il n'a pas de racine (car il est de degré 2), si et seulement si $p(x) \neq 0$ pour tout $x \in K$.
+        \\
+        Or, $p(x) = x^2 - a = 0$ si et seulement si $a = x^2$ est un carré
+        \begin{framedremark}
+            Pour trouver un polynôme irréductible de degré $2$ à coefficients dans $\mathbb{F}_7$, nous cherchons à comprendre quels éléments sont des carrés.
+        \end{framedremark}
+
+            \begin{tabular}{c||c|c|c|c|c|c|c|}
+                x &0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+                \hline
+                 $x^2$& 0 & 1 & 4 & 2 & 2 & 4 & 1 
+            \end{tabular}
+            \\
+            Par exemple $3$ n'est pas un carrl dans $\mathbb{F}_7$, donc $t^2-3$ est irréductible.
+            \\
+            $\mathbb{F}_{49}$ est l'ensemble des restes de la division par $t^2 - 3$ tel que
+            \[ = \{a\cdot t + b | a, b \in \mathbb{F}_7\}\]
+            \begin{itemize}
+                \item Somme: $(3t + 2) + (3t + 5) = 6t + 7 = 6t = -t$
+                \item Poroduit $(t+1)(t+4) = t^2 + 5t + 4 = 3 + 5t + 4 = 5t$ car on peut simplifer par $t^2 - 3$ on fait la division euclidienne par $t^2 - 3$ et on trouve $1$ et le reste $5t$.
+                \\
+                On pose $\alpha = [t]$ et comme $[t^2 - 3] = 0$ dans $\mathbb{F}_{49}$
+                \[\mathbb{F}_{49} = \{a \cdot \alpha + b | a, b \in \mathbb{F}_7\}\]
+                le produit est déterminé par $\alpha^2 = 3$
+            \end{itemize}
+    \end{subparag}
+\end{parag}
