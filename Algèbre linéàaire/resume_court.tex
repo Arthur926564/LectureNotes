@@ -1,6 +1,78 @@
 \textbf{Résume court}
 \lecture{1}{2024-01-01}{Résumé du court}{}
 On voit juste mettre les formule et les trucs à savoir vite fait.\\
+\begin{parag}{Déterminant}
+    \begin{subparag}{Opération élémentaire}
+        Application des opération élémentaire sur le déterminant:
+        \begin{itemize}
+            \item Type I: Interchanger des lignes entre elle ne change pas le determinant
+            \item Type II: changer le signe de la matrice change le signe du déterminant
+            \item Type III: En mutlipliant une ligne par un scalaire $\alpha \in \mathbb{R}$, le déterminant est aussi multiplier par ce scalaire.
+        \end{itemize}
+    \end{subparag}
+    Soit une matrice $A$, 
+    \begin{truc}
+        Si une ligne de $A$ est combinaison linéaire des autres lignes, alors $\det A = 0$
+    \end{truc}
+    \begin{theoreme}
+        \begin{itemize}
+            \item $\det (A^t) = \det A$
+            \item $\det(AB) = \det A \cdot \det B$
+            \item Si $A$ est inversible, alors $\det(A^{-1}) = \frac{1}{\det(A)}$
+        \end{itemize}
+    \end{theoreme}
+    
+\end{parag}
+\begin{parag}{Famille génératrice}
+    Soit $W$ un sous espace vectoriel de $V$.
+    \begin{itemize}
+        \item Le sous espace $W = Vec(v_1, \dots, v_k)$ est le sous espace engendré par les vecteurs $v_1, \dots, v_k$
+        \item Les vecteurs $v_1, \dots, v_k$ sont les générateurs de $W$
+        \item L'ensemble $\{v_1, \dots, v_k\}$ forme une \textbf{partie génératrice} de $W$
+    \end{itemize}
+    \begin{subparag}{Extraire des bases etc...}
+        \begin{theoreme}
+            Si l'un des vecteurs $v_i$ est combinaison linéaire des autres, alors la famille obtenue en supprimant $v_i$ engendre encore $V$.
+            si $V \neq \{0\}$, il existe une sous famille de $\{v_1, \dots, v_k\}$ qui forme une base de $V$.
+        \end{theoreme}
+    \end{subparag}
+    \begin{subparag}{Cardinalité d'une base}
+    Soit:
+    \begin{itemize}
+        \item $V$ un espace vectoriel
+        \item $\bmath = (b_1, \dots, b_n)$ une base de $V$
+        \item $\cmath = (c_1, \dots, c_n)$ une famille ordonnée de vecteurs de $V$
+    \end{itemize}
+    \begin{theoreme}
+        La famille ordonnée de $\cmath$ est une base de $V$ si et seulement si la matrice $A = ((c_1)_\bmath, \dots, (c_m)_\bmath)$ a un pivot dans chaque ligne et chaque colonne.
+    \end{theoreme}
+    \begin{framedremark}
+        Cela ce "marie" très bien avec une matrice carré et inversible qui rejoint tout ensemble
+    \end{framedremark}
+        
+    \end{subparag}
+    \begin{theoreme}{de la base incomplète}
+        Soit $V$ un espace vectoriel de dimension $n$ et $\{e_1, \dots, e_k\}$ une famille libre de vecteurs de $V$. Il existe alors des vecteurs $e_{k+1}, \dots, e_n$ tels que $(e_1, \dots, e_n)$ forme une base de $V$.
+    \end{theoreme}
+    \begin{truc}
+        On utilise les parenthèse pour une base et des acollades pour les familles de vecteurs§
+    \end{truc}
+\end{parag}
+\begin{parag}{Décomposition $LU$}
+    Le but est d'avoir une matrice triangulaire inferieur ($L$) et une supérieur:
+    \begin{itemize}
+        \item $U$ est juste la matrie échelonnée (on s'arrête en bas)
+        \item $L$ est la matrice qui comment à $I_n$ et on fait l'opposé des opération faite sur la matrice (si on ajoute $1/2$ a une ligne, on enlève $1/2$ sur la colonne du même indice)
+        \item $A = LU$
+    \end{itemize}
+\end{parag}
+\begin{parag}{Inverse de matrices et déterminants}
+    L'inverse d'une matrice est donné par:
+    \[A^{-1} = \frac{1}{\det A}(Com A)^t\]
+    
+\end{parag}
+
+
 \begin{parag}{Indépendance linéaire}
     \begin{truc}
         Des vecteurs sont linéairement indépendants lorsque la seule solution de l'équation:
@@ -60,8 +132,19 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
         \\
         Dans ce cas, il est impossible que $f$ soit surjective.
     \end{itemize}
+    \begin{truc}
+        Si une application est surjective Alors:
+        \[A^T\vec{y} = \vec{0} \text{ Possède une solution unique}\]
+        
+    \end{truc}
 \end{parag}
 
+\begin{parag}{Bijectivité}
+    Une bijection est une application qui est injective et surjective en même temps.
+    \begin{definition}
+        Une application linéaire bijective est appelée \textcolor{red}{isomorphisme}
+    \end{definition}
+\end{parag}
 \begin{parag}{Application linéaire}
     \begin{truc}
         Soit $T$ une application linéaire. Alors:
@@ -145,6 +228,9 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
     \begin{truc}
         \[(Id_V)_{\mathcal{B}}^\mathcal{C}(v)_{\mathcal{B}} = (v)_{\mathcal{V}}\]
     \end{truc}
+    \begin{theoreme}
+        \[(T)_\bmath^\cmath (v)_\bmath = (Tv)_\cmath\]
+    \end{theoreme}
     Donc ici $Id_V$ est la matrice de changement de base. En gros. on a le vecteur $v$ exprimé dans la base $\mathcal{B}$ et ensuite le vecteur $v$ exprimé dans la base $\mathcal{C}$.
     \begin{truc}
         La matrice de changement de base $(Id_V)_{\mathcal{B}}^\mathcal{C}$ est construite en écrivant les vecteurs de la base $\mathcal{B}$ en fonction de la base $\mathcal{C}$\\
@@ -159,8 +245,32 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
             \item Toute matrice inversible de taille $n \times n$ est une matrice de changement de base,
         \end{itemize}
     \end{truc}
+    \begin{definition}
+        Deux matrices carrées $A$ et $B$ de taille $n \times n$ sont \textcolor{red}{semblables} s'il existe une matrice inversible $P$ de taille $n \times n$ telle que 
+        \begin{formule}
+            \[A = P^{-1}BP\]
+        \end{formule}
+    \end{definition}
+    \begin{truc}
+        Deux matrice semblables ont le même polynôme caractéristique
+    \end{truc}
+    \begin{subparag}{les relations $\sim$ et $\approx$}
+    \begin{definition}
+        Les matrices $A$ et $B$ sont équivalentes selon les lignes et les colonnes s'il existe des opérations élémentaires sur les lignes et les colonnes qui transforment $A$ en $B$. Il existe dont deux matrices inversible $P$ et $Q$ telle que:
+        \[PAQ = B\]
+        On le note
+        \[A \sim B\]
+    \end{definition}
+    \begin{truc}
+    \[A \approx B \implies A \sim B\]
+    \end{truc}
+        
+    \end{subparag}
 \end{parag}
 \begin{parag}{Diagonalisation}
+    \begin{theoreme}
+        Une matrice $A$ de taille $n \times n$ est diagonalisable si et seulement s'il existe une base $\bmath$ de $\mathbb{R}^n$ formée de vecteurs propres de $A$
+    \end{theoreme}
     \begin{truc}
         Si la somme des coefficients de chaque lignes est égal à $\phi$ alors $\phi$ est une valeur propre et $\begin{pmatrix}
             \phi \\ \phi \\ \phi
@@ -173,6 +283,13 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
             \phi & \phi & \phi
         \end{pmatrix}$ alors par exemple ici le rang est $1$ et la $\dim \ker = 2$ est donc on sait que l'espace propre est $2$ et que $\phi$ est valeur propre
     \end{truc}
+    \begin{theoreme}
+        Soit $A$ une matrice de taille $n \times n$ ayant $n$ valeurs propres distinctes. Alors $A$ est diagonalisable
+    \end{theoreme}
+
+    \begin{truc}
+        Soit $\lambda$ une valeur propre de $A$, alors $1 \leq \dim E_\lambda \leq mult(\lambda)$
+    \end{truc}
     \begin{truc}
         Soit $A$ pas inversible alors $\ker A \neq \{\vec{0}\}$ et donc $0$ est valeur propre de $A$ et donc \\
         \begin{itemize}
@@ -181,12 +298,80 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
             \item $t$ divise $c_A(t)$
         \end{itemize}
     \end{truc}
+    \begin{subparag}{Critère de diagonalisation}
+        Une matrice $A$ est diagonalisable (sur $\mathbb{R}$) si et seulement si:
+        \begin{enumerate}
+            \item Le polynôme caractéristique est \textcolor{red}{scindé}: il se décompose en produit de facteur $(\lambda - t)$ avec $\lambda \in \mathbb{R}$
+            \item Pour tout $\lambda$, on a $\dim E_\lambda = mult(\lambda)$
+        \end{enumerate}
+        Si $A$ est diagonalisable, on forme une base de vecteurs propres en réunissant les vecteurs de base de chaque espace propre.
+    \end{subparag}
+    \begin{subparag}{Méthode de diagonalisation}
+        Soit $T: V \to V$ une application linéaire
+        \begin{enumerate}
+            \item Choirsir une base $\cmath$ de $V$ (la base canonique si elle existe)
+            \item Ecrire la matrice $A = (T)_\cmath^\cmath$ de $T$ dans cette base
+            \item Calculer le polynôme caractérsitque $c_a(t)$
+            \item Si $c_A(t)$ n'est pas scindé, $A$ n'est pas \textcolor{red}{diagonalisable}.
+            \item $c_A(t)$ est scindé, extraire les racines de $\lambda$ de $c_a(t)$ et calculer les multiplicité algébrique
+            \item Calculer les espaces propres $E_\lambda$ et les multiplicités géométriques
+            \item Si $\dim E_\lambda = mult(\lambda)$ pour une valeur propre $\lambda$, alors $A$ n'est pas \textcolor{red}{diagonalisable}
+            \item Si $\dim E_\lambda = mult(\lambda)$ pour tout $\lambda$, alors $A$ est \textcolor{green}{diagonalisable}
+        \end{enumerate}
+        Dès lors
+        \begin{enumerate}
+            \item Soit $T: V \to V$ une application linéaire \textcolor{green}{diagonalisable}
+            Choisir une base $\bmath_\lambda$ de $E_\lambda$ pour toute valeurs de $\lambda$
+            \item Réunir les $\bmath_\lambda$ pour former une base $\bmath$ de $V$
+            \item $D = (T)_\bmath^\bmath$ est diagonale. Les valeurs propres apparaissent dans la diagonale dans l'ordre choisi pour contruire la base $\bmath$
+            \item Les colonnes de la matrice de changement de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en coordonnées dans $\cmath$
+            \item Les colonnes de la matrice de changement de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en coordonnées dans $\cmath$:
+        \end{enumerate}
+    \end{subparag}
+    \begin{truc}
+        Soit $A$ une matrice de taille $n \times n$. Alors $(-1)^{n-1}TrA$ est le coefficient de $t^{n-1}$ de $c_A(t)$ et $\det A$ est le coefficient constant
+    \end{truc}
+    \begin{truc}
+        Si $A$ est diagonalisable, alors la trace de $A$ est égal à la somme des valeurs propres
+    \end{truc}
 \end{parag}
 
 \begin{parag}{Orthogonalisation}
+    \begin{subparag}{Produit scalaire}
+    \begin{definition}{Produit scalaire}
+        Soit $\vec{u}, \vec{v}$ deux vecteurs de $\mathbb{R}^n$. Le produit scalaire est:
+        \begin{formule}
+            \[\vec{u}\cdot \vec{v} = \vec{u}\vec{v} = u_1v_1 + \cdots + u_nv_n\]
+        \end{formule}
+    \end{definition}
+    \textbf{Propriétés}
+    \begin{itemize}
+        \item Commutativité
+        \item Distributivité
+        \item Compataibilité avec l'action scalaire
+        \item Positivité $\vec{u}\cdot \vec{u} \geq 0$ et $\vec{u}\cdot \vec{u} = 0 \Leftrightarrow \vec{u} = \vec{0}$
+    \end{itemize}
+        
+    \end{subparag}
     \begin{definition}
      Une famille $(\vec{u}_1, \dots, \vec{u}_k)$ de vecteurs $\mathbb{R}^n$ est \textcolor{red}{orthogonale} si $\vec{u}_i \perp \vec{u_j}$ pour tout $i \neq j$. Cette famille est orthonormée si de plus $||\vec{u}_i|| = 1$ pour tout $i$.
     \end{definition}
+    \begin{theoreme}
+        Les colonnes d'une matrice $U$ de taille $m \times n$ sont orthogonales si et seulement si $U^TU = I_n$
+    \end{theoreme}
+    \begin{theoreme}
+        Soit $U$ la matrice dont les colonnes sont les vecteurs $\vec{u_1}, \dots, \vec{u_k}$ d'une base \textcolor{red}{orthonormée} de $W$. Alors
+        \begin{formule}
+            \[proj_W\vec{y} = UU^T\vec{y}\]
+        \end{formule}
+    \end{theoreme}
+    \begin{subparag}{Approximation quadratique}
+        La distance minimale entre un vecteur $\vec{y}$ et un sous espace $W$ de $\mathbb{R}^n$ est réalisée par $\vec{z} = \vec{y} - proj\vec{y}$
+        \begin{theoreme}
+            Pour tout $\vec{w}\in W$ on a $||\vec{y} - \vec{w}|| \geq || \vec{y} - proj_W\vec{y}||$
+        \end{theoreme}
+        On note $\hat{y}$ la meilleur approximation quadratique de $\vec{y}$ dans $W$.
+    \end{subparag}
     \begin{truc}
         Une famille orthogonale de vecteurs non nuls est libres
     \end{truc}
@@ -201,4 +386,74 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
             \item $UU^T$ est une projection orthogonale sur $ImA$
         \end{itemize}
     \end{truc}
+\begin{enumerate}
+    \item Vérifie que $A$ est symétrique
+    \item Calculer $c_A(t)$ et en extraire les racines (valeurs propres)
+    \item Calculer les espaces propres pour chacun, le procédé de Gram-Schmidt donne une base orthonormée.
+    \item En assemblant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
+    \item La matrice $P$ dont les colonnes sont les vecteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
+\end{enumerate}   
+\begin{framedremark}
+    L'avantage ici c'est que l'inverse de la matrice de changement de base est juste sa transposée
+\end{framedremark}
+\end{parag}
+
+\begin{parag}{Méthode des moindres carrés}
+La meilleurs solution possible d'une système incompatible tel que $A\vec{x} = \vec{b}$ où $A$ est une matrice $m \times n$.
+    \begin{definition}
+        Une vecteur $\hat{x} \in \mathbb{R}^n$ est une \textcolor{red}{solution au sens des moindres carrés} pour le système $A\vec{x} = \vec{b}$ si, pour tout $\vec{x} \in \mathbb{R}^n$
+        \begin{formule}
+            \[||\vec{b} - A\hat{x}|| \leq || \vec{b} - A\vec{x}||\]
+        \end{formule}
+    \end{definition}
+    \begin{truc}
+        Comme $A\vec{x} \in ImA$, le système est incomptabile si $b \notin ImA$. Le vecteur le plus proche de $\vec{b}$ dans $ImA$ est sa projection orthogonale.
+        \begin{formule}
+            \[\hat{b} = \text{proj}_{ImA}\vec{b}\]
+        \end{formule}
+    \end{truc}
+    \begin{subparag}{Equation normale}
+        \begin{theoreme}
+            L'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est égal à l'ensemble non-vide des solutions de l'\textcolor{red}{équation normale} : 
+            \begin{formule}
+                $A^TA\hat{x} = A^T\vec{b}$
+            \end{formule}
+        \end{theoreme}
+        \begin{truc}
+            La norme du vecteurs $\vec{b} - A\hat{x}$ est appelée \textcolor{red}{écart quadratique}
+        \end{truc}
+        \begin{theoreme}
+            La solution $\hat{x}$ au sens des moindres carrées est unique si et seulement si les colonnes de $A$ sont libres, ce qui est équivalent à exiger que la matrice $A^TA$ est inversible
+        \end{theoreme}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Régression linéaire}
+    \begin{enumerate}
+        \item On représente les point $(x_i, y_i)$ à l'aide de deux matrices:
+        \begin{itemize}
+            \item $A$ contient les coordonnées $x_i$ et une colonne de $1$ pour représenter $b$, 
+            \item $Y$ contient les ordonnées $y_i$
+        \end{itemize}
+        Ainsi
+        \[A = \begin{pmatrix}
+            x_1 & 1\\
+            x_2 & 2\\
+            \vdots & \vdots\\
+            x_n & 1
+        \end{pmatrix}, \; \; Y = \begin{pmatrix}
+            y_1 \\ y_2 \\ \vdots \\ y_n
+        \end{pmatrix}\]
+        \item On cherche un vecteur $p = \begin{pmatrix}
+            a \\ b
+        \end{pmatrix}$ tel que
+        \[Ap \approx Y\]
+        \item Equation normales : 
+        \[A^TAp = A^TY\]
+        \item Résoudre le système ce qui donne la droite de régression $y = ax + b$
+    \end{enumerate}
+\end{parag}
+
+\begin{parag}{Théorème et décomposition spectrale}
+    
 \end{parag}
