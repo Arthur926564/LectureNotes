@@ -12,7 +12,13 @@ Soit $W$ un sous espace vectoriel $V$.
     \[W = Vect\left\{\begin{pmatrix}
         1 \\ 0 \\ 1
     \end{pmatrix}, \begin{pmatrix}
-        
+        1 \\ 1 \\ 0
+    \end{pmatrix}, \begin{pmatrix}
+        0 \\ -1 \\ 1
+    \end{pmatrix}\right\} = Vect\left\{\begin{pmatrix}
+        1 \\ 0 \\ 1
+    \end{pmatrix}, \begin{pmatrix}
+        1 \\ 1 \\ 0
     \end{pmatrix}\right\}\]
 \end{exemple}
 \paragraph{Partie libres}
@@ -24,6 +30,9 @@ Soit $W$ un sous-espace vectoriel de $V$.
     \item On dit que l'ensemble $\{v_1, \dots, v_k\}$ est une \textcolor{red}{partie libre} de $W$.
 \end{itemize}
 
+\begin{definition}
+    Une famille \redColor{ordonnée} de vecteur $\bmath = (b_1, \dots, b_k)$ de $W$ est une \redColor{base} de $W$ si c'est une partie libre qui engendre $W$ 
+\end{definition}
 
 \paragraph{Bases canoniques}
 
@@ -240,7 +249,7 @@ On a l'application $T : W \to \mathbb{R}^2$
 
 \subparagraph{Base et coordonnées}
 \begin{definition}[pivots]
-    La famille $(p, q, r)$ est une base de $\mathbb{P}^2$ si et seulement si la matrice carrée $A$ a trois pivots. Où $A$ est la matrice d'application avec les vecteurs $(p, q, r)$ fourni dans la base canonique.
+    La famille $(p, q, r)$ est une base de $\mathbb{P}_2$ si et seulement si la matrice carrée $A$ a trois pivots. Où $A$ est la matrice d'application avec les vecteurs $(p, q, r)$ fourni dans la base canonique.
 \end{definition}
 
 \paragraph{Cardinalité d'une base}
@@ -264,7 +273,7 @@ Pour généraliser ce qu'on a dit avant:
 Si $V$ admet une base de $n$ vecteurs, alors une famille $\{v_1, \dots, v_k\}$ de vecteurs de $V$ avec $k > n$ est liée.
 \end{corollaire}
 \begin{definition}
-    Soit $V$ un espacevectoriel et $\mathcal{B} = (e_1, \dots, e_n)$ une base. La \textcolor{red}{dimension} de $V$ est $n$. On note $dim V = n$.
+    Soit $V$ un espace vectoriel et $\mathcal{B} = (e_1, \dots, e_n)$ une base. La \textcolor{red}{dimension} de $V$ est $n$. On note $dim V = n$.
 \end{definition}
 
 \begin{itemize}

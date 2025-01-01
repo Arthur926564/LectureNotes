@@ -1,10 +1,12 @@
 
 \lecture{10}{2024-10-10}{Déterminant et opération élémentaire}
-\subsection{Application des opération élémentaire sur le déterminant}
+\subsection{Application des opérations élémentaires sur le déterminant}
+\begin{parag}{Opération sur le déterminant}
+    
 \begin{itemize}
     \item Type I: Interchanger des lignes entre elle ne change pas le déterminant
     \item Type II: changer le signe de la matrice change le signe du déterminant
-    \item Type III: En multipliant une ligne par un scalaire $\alpha \in \mathbb{R}$ , le déterminant est aussi multiplier par ce scalaire.
+    \item Type III: En multipliant une ligne par un scalaire $\alpha \in \mathbb{R}$ , le déterminant est aussi multiplié par ce scalaire.
 
      
 \end{itemize}
@@ -17,8 +19,8 @@ On suppose donc le résultat vrai pour les matrices de taille $\leq n$ et on pas
 \end{framedremark}
     
 
-\begin{exemple}
-Le détérminant  de:
+\begin{subparag}{Exemple}
+Le déterminant  de:
 \[\begin{vmatrix}
 5 & 4 & 4 & 1\\
 2 & 3 & 2 & -2 \\
@@ -77,8 +79,13 @@ Ce qui nous donne à la fin:
 \end{vmatrix} = -2\cdot 1 [-52 + 14] = 76\]
 
 
-\end{exemple}
-\paragraph{Propriétés du déterminant}
+
+    
+\end{subparag}
+\end{parag}
+\begin{parag}{Propriétés du déterminant}
+    
+
 \\
 
 Soit $A$ une matrice de taille $n \times n$ et $\lambda \in \mathbb{R}$ Alors, $det (\lambda A) = \lambda^n \cdot det A $.
@@ -88,9 +95,9 @@ Soit $A$ une matrice de taille $n \times n$ et $\lambda \in \mathbb{R}$ Alors, $
     \begin{framedremark}
         Si une ligne de $A$ est combinaison linéaire des autres lignes, alors $det A = 0$.
     \end{framedremark}
-    \begin{theorem}
+    \begin{theoreme}
         Une matrice carrée est inversible si et seulement si det$A \neq 0$.
-    \end{theorem}
+    \end{theoreme}
     \begin{preuve}
         Une matrice carré est inversible $n\times n$ iff elle a $n$ pivots iff il existe des opérations élémentaires qui transforment A en une matrice échelonnée avec des pivots, non nuls, sur la diagonale.
         \\
@@ -113,16 +120,19 @@ Soit $A$ une matrice de taille $n \times n$ et $\lambda \in \mathbb{R}$ Alors, $
 
     \end{thm}
     \begin{preuve}
-        La preuve se fait en deux parties selon, selon que la matrice A est inversible ou non. 
+        La preuve se fait en deux parties selon les deux cas où la matrice est inversible ou non.
         \begin{itemize}
-            \item Supposons que $A$ soit inversible. Alors nous savons que $A$ peut s'écrire comme produit des matrices élémentaire. La preuve se fait par induction sur le nombre de matrices élémentaires.
-            \item Pour initialiser l'induction on doit traiter le as où $A$ est une matrice élémentaire. Il y a donc trois sous-cas.
+            \item Supposons que $A$ soit inversible. Alors nous savons que $A$ peut s'écrire comme produit des matrices élémentaires. La preuve se fait par induction sur le nombre de matrices élémentaires.
+            \item Pour initialiser l'induction on doit traiter le cas où $A$ est une matrice élémentaire. Il y a donc trois sous-cas.
 
         \end{itemize}
     \end{preuve}
     \begin{enumerate}
-        \item $A = E_{ij}(\lambda)$ est de type I. Comme elle est triangulaire et que sa fiagonale est constituée de 1, on a à $det(E_{ij}(\lambda) = 1$. Il faut encore calculer $det(E_{ij}(\lambda)B)$. \\ det
-        \item $A = E_{ij}$, $det E_{ij} = -1$ car c'est $I_n$ avec $L_i$ et $L_j$ élanguées.
+        \item $A = E_{ij}(\lambda)$ est de type I. Comme elle est triangulaire et que sa diagonale est constituée de 1, on a à $det(E_{ij}(\lambda) = 1$. Il faut encore calculer $det(E_{ij}(\lambda)B)$. \\ 
+        On peut le faire car comme la matrice est triangulaire supérieur, sont déterminant ne veux seulement le produit des éléments qui sont trouvent dans sa diagonales (que des $1$ dans notre cas) et donc:
+        \\ 
+        \[\det(E_{ij}(\lambda)\cdot B) = \det E_{ij}(\lambda)\cdot \det B = 1 \cdot \det B\]
+        \item $A = E_{ij}$, $det E_{ij} = -1$ car c'est $I_n$ avec $L_i$ et $L_j$ échangées.
         \item $A = E_i(\lambda)$, $det(E_i(\lambda) = \lambda$ (diagonale. $det(E_i(\lambda)\cdot B) = \lambda \cdot detB = det E_{j}(\lambda)\cdot det B$.
 
 
@@ -138,12 +148,15 @@ Soit $A$ une matrice de taille $n \times n$ et $\lambda \in \mathbb{R}$ Alors, $
     det(E_{n+1}\cdot E_n ... E_1)\cdot B
     \]
 
-    \paragraph{$2^{e}$ cas: } $A$ non inversible, Alors par le thèorème précédent, $det A = 0$. Donc $det(A) \cdot det(B) = 0$.\\
+    \paragraph{$2^{e}$ cas: } $A$ non inversible, Alors par le théorème précédent, $det A = 0$. Donc $det(A) \cdot det(B) = 0$.\\
     On montre que $A\cdot B $ n'est pas inversible si bien que $det(A\cdot B) = 0$. Si $AB$ est inversible il existe $C$ tel que $(AB)C = I_n$ et $A(BC) = I_n$ mais on sait que $A$ n'est pas inversible, \textbf{Contradiction}.
     \\
-    \paragraph{Corollaire} Si $A$ est inversible, alors \[det(A^{-1}) = \frac{1}{det A}\]
+    \begin{corollaire}
+       Si $A$ est inversibles, alors
+       \[\det A^{-1} = \frac{1}{\det A}\]
+    \end{corollaire}  
     \begin{framedremark}
-        Même si en général $AB \neq BA$ on a toujours $det(AB) = (detBA)$ car les deux détérminants donnent $det A \cdot det B = det B \cdot det A$.
+        Même si en général $AB \neq BA$ on a toujours $det(AB) = (detBA)$ car les deux déterminants donnent $det A \cdot det B = det B \cdot det A$.
     \end{framedremark}
     \begin{framedremark}
         
@@ -152,7 +165,7 @@ Soit $A$ une matrice de taille $n \times n$ et $\lambda \in \mathbb{R}$ Alors, $
         Le déterminant n'est pas \textbf{linéaire} comme application, $det : M{n\times n} \to \mathbb{R}$.
     
     \end{framedremark}
-
+\end{parag}
 
     \paragraph{Linéarité du déterminant comme fonction \textbf{d'une colonne}}
     Le déterminant est linéaire comme fonction d'une colonne, pour cela nous devons vérifier:
@@ -208,7 +221,7 @@ Soit $A$ une matrice carrée \textbf{inversible}. Pour tout vecteur $\vec{b}$ on
     x_i = \frac{detA_i(\vec{b})}{det A}
     \]
 \subparagraph{Preuve.}
-Soit $B_i = (I_n)_i(\vec{x}) = (\vec{e}_1,\dots, \vec{e}_{i-1}, .., \vec{e}_{i+1}, .., \vec{e}_n  $.
+Soit $B_i = (I_n)_i(\vec{x}) = (\vec{e}_1,\dots, \vec{e}_{i-1}, .., \vec{e}_{i+1}, .., \vec{e}_n  )$.
 \\
 La ligne $L_i$ est constituées de zéros, saut le coefficient $x_i$ en position $(i, i)$, si bien que $\det (B_i) = x_i$.
 \\

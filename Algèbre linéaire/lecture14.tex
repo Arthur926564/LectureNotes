@@ -79,7 +79,7 @@ Soit $T : V \to W$ une application linéaire. Alors $T$ est injective si et seul
 \paragraph{Preuve}
 On voit d'abord que $0 = T(0)$ appartient à l'image. Il reste à montrer la stabilité de la somme et de l'action. Traitons le cas de la somme. Soient donc $w, w'$ deux vecteurs de $Im T$. Nous devons montrer que $w + w'$ aussi appartient à $Im T$.
 \\
-On sait que $w, w' \in ImT$, donc il existe $v, v' \in V \text{tq} T(v) = w $ et $T(v') = w'$.\\
+On sait que $w, w' \in ImT$, donc il existe $v, v' \in V \text{ tel que } T(v) = w $ et $T(v') = w'$.\\
 On choisit $v_2 = v + v'$ et on calcule par linéarité de $T$ : \[T(v_2) = T(v + v') = T(v) + T(v') = w + w'\]
 Donc, $w + w' \in Im T$  (on a le droit de faire tout ça parce que $T$ est une application linéaire.
 \\
@@ -151,11 +151,11 @@ Le critère d'injectivité d'une application linéaire permet de ramener la dém
     Une application linéaire $T: V \to W$ est injective si et seulement si $Ker T = \{0\}$ 
 \end{theoreme}
 \paragraph{Espaces-lignes: $LgnA$}
-Soit $A$ et $B$ deux matrices de taille $m\times n$ On note $A  \textasciitilde B$ quand elles sont équivalentes selon les lignes.
+Soit $A$ et $B$ deux matrices de taille $m\times n$ On note $A  \sim B$ quand elles sont équivalentes selon les lignes.
 \begin{theoreme}
-    Si $A \textasciitilde B$ alors les lignes de $A$ et $B$ engendrent le même sous-espace de $\mathbb{R}^n$.   
+    Si $A \sim B$ alors les lignes de $A$ et $B$ engendrent le même sous-espace de $\mathbb{R}^n$.   
 \end{theoreme}
-\textbf{Pourquoi?} Les opération élémentaires produisent de nouvelles lignes qui sont cominaison linéaires des précédentes.
+\textbf{Pourquoi?} Les opération élémentaires produisent de nouvelles lignes qui sont combinaison linéaires des précédentes.
 \begin{theoreme}
     Les lignes d'une forme échelonnée de $A$ forment une base du sous-espace engendré par les lignes de $A$.
 \end{theoreme}
@@ -166,3 +166,7 @@ Soit $A$ une matrice de taille $m \times n$.
 \begin{theoreme}
     Les colonnes pivots de $A$ forment une base de $ColA = Im A$.
 \end{theoreme}
+\textbf{Pourquoi?} Si une colonne de $A$ est combinaison linéaire d'autres colonnes, alors la même combinaison linéaire se retrouve pour les colonnes d'une matrice $B \sim A$. \\
+Si $B$ est une forme échelonnée de $A$, alors les colonnes-picots sont libres et les autres colonnes sont combinaisons linéaire des colonnes pivots.
+\\
+Il en va donc de même pour les colonnes de $A$.

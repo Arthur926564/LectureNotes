@@ -7,13 +7,13 @@
 Soit $A$ une matrice de taille $m \times n$.
 \begin{theoreme}
 
-    $dim ColA = dim\; LgnA$
+    $\dim ColA = \dim\; LgnA$
 
 \end{theoreme}
 \begin{itemize}
     \item Le nombre de lignes linéairement indépendantes est égal au nombre de lignes contenant un pivot.
     \item Le nombre de colonnes linéairement indépendantes est égal au nombre de colonnes contenant un pivot.
-    \item En résumé, $dim\; ColA = dim\; LgnA$ car les deux dimensions coïncident avec le nombre de pivots.
+    \item En résumé, $\dim\; ColA = \dim\; LgnA$ car les deux dimensions coïncident avec le nombre de pivots.
 
 \end{itemize}
     
@@ -25,10 +25,10 @@ Soit $A$ une matrice de taille $m \times n$.
 Le cas d'une matrice $2\times 2$.
 Soit $A =  \begin{pmatrix}
     0 & 0 \\ 0 & 0
-\end{pmatrix}$, alors $dim\; LgnA = 0 = dim \; ColA$.\\
+\end{pmatrix}$, alors $\dim\; LgnA = 0 = \dim \; ColA$.\\
 Supposons que $A \neq 0$, alors $A = \begin{pmatrix}
     a & b \\ c & d
-\end{pmatrix}$. Si les deux colonnes sont proportionelles, $dim\; ColA = 1$  On peut supposer que $\begin{pmatrix}
+\end{pmatrix}$. Si les deux colonnes sont proportionnelles, $\dim\; ColA = 1$  On peut supposer que $\begin{pmatrix}
     b \\ d
 \end{pmatrix} = \begin{pmatrix}
     \lambda a \\ \lambda c
@@ -36,11 +36,11 @@ Supposons que $A \neq 0$, alors $A = \begin{pmatrix}
 \[A = \begin{pmatrix}
     a & \lambda a \\ c & \lambda c
 \end{pmatrix}\]
-\textbf{Premier cas:} $a = 0$, aussi $\lambda a = 0$ et comme $A \neq 0$, $dim \; LgnA = 1$ ca la $2^e$ ligne est non nulle.
+\textbf{Premier cas:} $a = 0$, aussi $\lambda a = 0$ et comme $A \neq 0$, $\dim \; LgnA = 1$ ça la $2^e$ ligne est non nulle.
 \\
 \textbf{deuxième cas} $a \neq 0$ $\begin{pmatrix}
     a & \lambda a \\ c & \lambda c
-\end{pmatrix}  $ a deux lignes proportionnelles car $\left(c \; \lambda c\right) = \frac{c}{a}\left(a \; \lambda a\right)$. Ici aussi $dim \; LgnA = 1$.
+\end{pmatrix}  $ a deux lignes proportionnelles car $\left(c \; \lambda c\right) = \frac{c}{a}\left(a \; \lambda a\right)$. Ici aussi $\dim \; LgnA = 1$.
     
 \end{subparag}
 
@@ -61,28 +61,28 @@ Supposons que $A \neq 0$, alors $A = \begin{pmatrix}
 
 \begin{theoreme}{théorème du rang}
     
-        \[rangT + dim\; KerT  = dimV\]
+        \[rangT + \dim\; \kerT  = \dimV\]
     
 \end{theoreme}
 \begin{itemize}
-    \item Grâce aux coordonnées on identifire $V$ avec \R$^n$ et W avec \R$^m$.
-    \item Ainsi on identifire $T$ avec une application linéaire $S: \mathbb{n} \to \mathbb{R}^m$.
+    \item Grâce aux coordonnées on identifie $V$ avec \R$^n$ et W avec \R$^m$.
+    \item Ainsi on identifie $T$ avec une application linéaire $S: \mathbb{N} \to \mathbb{R}^m$.
     \item Celle-ci est donnée par la multiplication matricielle \[\vec{x} \to A\vec{x} = S\left(\vec{x}\right)\]
-    \item $dim \; KerA = $ nombre de colonnes sans pivot
-    \item $dim \; ImA = \text{rang}A = $ nombre de colonnes-pivot
+    \item $\dim \; \ker A = $ nombre de colonnes sans pivot
+    \item $\dim \; ImA = \text{rang}A = $ nombre de colonnes-pivot
     \item  nombre de colonnes-pivot $+$ colonnes sans pivot $= n$.
 \end{itemize}
 
 \begin{subparag}{Idée de la preuve}
     
 
-Si $dim V = n$, $dim \; KerT = k \leq n$ car $KerT \subset V$. On choisit une base $\left(e_1, \dots, e_k\right)$ de $KerT$. Grâce au Théorème de la base complétée, il existe $\left(e_{k+1}, \dots, e_n\right)$  tel que $\left(e_1, \dots, e_k, e_{k+1}, \dots, e_n\right) $ est une base de V. 
+Si $\dim V = n$, $\dim \; \ker T = k \leq n$ car $\ker T \subset V$. On choisit une base $\left(e_1, \dots, e_k\right)$ de $\ker T$. Grâce au Théorème de la base complétée, il existe $\left(e_{k+1}, \dots, e_n\right)$  tel que $\left(e_1, \dots, e_k, e_{k+1}, \dots, e_n\right) $ est une base de V. 
 \\
 Alors $\{T\left(e_1\right), \dots, T\left(e_k\right), T\left(e_{k+1}\right), \dots, T\left(e_n\right)\}$ engendrent $ImT$.
 \\
 Donc $\{T\left(e_{k+1}, \dots, T\left(e_n\right)\right)\}$ engendrent $ImT$.
 \\
-Mais T | $Vect\{e_{k+1}, \dots, e_n\}$ est injective car $KerT \cap U = \{0\}$.
+Mais T | $Vect\{e_{k+1}, \dots, e_n\}$ est injective car $\kerT \cap U = \{0\}$.
 Donc $T\left(e_{k+1}\right), \dots, T\left(e_n\right)$ sont libres, donc forment une base. Conclusion \[RangT  = n - k\]
 \end{subparag}
 
@@ -91,17 +91,17 @@ Donc $T\left(e_{k+1}\right), \dots, T\left(e_n\right)$ sont libres, donc forment
 Soit $T : V \to W$ une application linéaire entre espaces vectoriels de dimension finies.
 \\
 Le \textcolor{red}{rang} de $T$ est la dimension de l'image de $T$ : 
-\[rang T = dim \; ImT\]
+\[rang T = \dim \; ImT\]
 \end{definition}
 
 \begin{definition}
 Soit $A$ une matrice $m \times n$, représentant une application linéaire.
 \\
-    Le \textcolor{red}{rang} de $A$ est la dimension de l0image de $A: $ $rangA = dim\; ImA$.
+    Le \textcolor{red}{rang} de $A$ est la dimension de l'image de $A: $ $rangA = \dim\; ImA$.
 \end{definition}
 \begin{theoreme}{théorème du rang}
-    
-        \[rangT + dim\; KerT  = dimV\]
+
+        \[rangT + \dim \; \ker T  = \dim V\]
     
 \end{theoreme}
     \begin{subparag}{Exemple}
@@ -119,11 +119,11 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
         \end{itemize}
 
         \begin{align*}
-        Ker T &= \{p \in \mathbb{P}_2 | p\left(0\right) = 0 = p\left(1\right)\}\\
+        \ker T &= \{p \in \mathbb{P}_2 | p\left(0\right) = 0 = p\left(1\right)\}\\
             &= \{p \in \mathbb{P}_2 | p\left(t\right) = a\cdot t\cdot \left(t - 1\right) \text{ , pour un } a \in \mathbb{R}\} \\
             &= Vect\{\left(t-1\right)\} \text{ de dimension 1.}
         \end{align*}
-        Par le théorème du rang, $rang T + dim\;KerT = 3$ donc $rang T = 2 = dim \mathbb{R}^2$.
+        Par le théorème du rang, $rang T + \dim\;\kerT = 3$ donc $rang T = 2 = \dim \mathbb{R}^2$.
         \\
         L'interprétation suit: si $p\left(t\right)$ s'annule en $0$ et en $1$, alors $p\left(t\right) = a \cdot t \cdot \left(t- 1\right)$ pour $a \in $ \R.
     \end{subparag}
@@ -134,10 +134,10 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
          \item La matrice $A$ est inversible
          \item les colonnes de $A$ forment une base de $\mathbb{R}^n$.
          \item $ImA = \mathbb{R}^n$ \hspace{5cm} $A$ est surjective
-         \item $dim \; Im A = n$.
+         \item $\dim \; Im A = n$.
          \item $rang\; A = n$
-         \item $Ker\;A = \{0\}$ \hspace{4.75cm} $A$ est injective
-         \item $dim\; Ker\; A = 0$.
+         \item $\ker\;A = \{0\}$ \hspace{4.75cm} $A$ est injective
+         \item $\dim\; \ker\; A = 0$.
      \end{enumerate}
      \begin{subparag}{Exemple}
          Pour quelles valeurs du paramètre réel $a$ la matrice $A$ suivante est-elle inversible?
@@ -156,7 +156,7 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
          (les opérations sont $L_1 - L-4$, $L-2 - L_1'$, $L_3  L_1'$, $L_4 - a\cdot L_1'$)
          Si $a - 1 = 0$ alors $a = 1$ donc:
          \\
-         $rang\; A = 1$, $dim \; Ker A = 3$
+         $rang\; A = 1$, $\dim \; \ker A = 3$
          \\
          Si $a \neq 1$, on peut diviser chaque ligne par $a-1$, on obtient alors:
  \[\begin{pmatrix}
@@ -217,7 +217,7 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
      Le théroème du rang peut nous permettre de faire de grand raccourci lors de choix multiple.
      \begin{itemize}
          \item Le rang d'une matrice $A$ de taille $n \times m$ ne peut pas dépasser $n$.
-         \[Rang  A + dim\; KerA = n\]
-         \item Pour rappel, si on prend une application $A :$ $V \to W$ on a que $Ker A$ est dans $V$ et que $Im A$ est dans $W$.                               
+         \[Rang  A + \dim\; \kerA = n\]
+         \item Pour rappel, si on prend une application $A :$ $V \to W$ on a que $\ker A$ est dans $V$ et que $Im A$ est dans $W$.                               
      \end{itemize}
  \end{parag}

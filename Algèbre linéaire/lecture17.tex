@@ -18,7 +18,7 @@
         \[W = \left\{ \begin{pmatrix}
             a & b \\ b & c
         \end{pmatrix}| a, b, c \in \mathbb{R} \right\}\]
-        On considère deux base $\bmath = (B_1, B_2, B_3)$ et $\cmath = (C_+, C_2, C_3)$:
+        On considère deux base $\bmath = (B_1, B_2, B_3)$ et $\cmath = (C_1, C_2, C_3)$:
         \begin{align*}
             \bmath &= \left(\begin{pmatrix}
                 1 & 0 \\ 0 & 0
@@ -69,7 +69,7 @@
         Trouver une base $\bmath$ de $V$ telle que $(T)_\bmath^\bmath$ soit facilement compréhensible
     \end{subparag}
     \begin{subparag}{exemple}
-        Soit $f : \mathbb{R}^3 \to \mathbb{R}^3$ l'application linare donnée par:
+        Soit $f : \mathbb{R}^3 \to \mathbb{R}^3$ l'application linéaire donnée par:
         \[f\begin{pmatrix}
             x \\ y \\ z
         \end{pmatrix} = \begin{pmatrix}
@@ -83,7 +83,7 @@
             -3 & -2 & 3\\
             -2 & -2 & 3
         \end{pmatrix} \]
-        On voit ici que certains vecteur sont \textcolor{red}{fixés} par $f$ alors que d'autres sont \textcolor{red}{renversés}.\\
+        On voit ici que certains vecteurs sont \textcolor{red}{fixés} par $f$ alors que d'autres sont \textcolor{red}{renversés} (je dis on voit dans le sens on peut le voir, pas en mode c'est obvious).\\
         Autrement dit:
         \begin{enumerate}
             \item Il existe des vecteurs $\vec{x} \in \mathbb{R}^3$ tel que $A\vec{x} = \vec{x}$
@@ -118,12 +118,14 @@
     0 & 0 & 0
 \end{pmatrix}\]
 
-Donc, Ker$(A + I_3)$ est la droite $D = Vect\left\{ \begin{pmatrix}
+Donc, Ker$(A + I_3)$ est la droite \\
+\[D = Vect\left\{ \begin{pmatrix}
     \frac{1}{2}\\ \frac{3}{2} \\ 1
 \end{pmatrix}\right\} =  Vect \left\{\begin{pmatrix}
     1 \\ 3 \\ 2
-\end{pmatrix}\right\} = Vect \{b_3\}$
-    \item Conclusion, Au final on a trouvé trois vecteurs linéairement indépendant (à verifier dans le prochain cours) on a $3$ vecteur qui forme une base;
+\end{pmatrix}\right\} = Vect \{b_3\}\]
+
+    \item Au final on a trouvé trois vecteurs linéairement indépendant (à vérifier dans le prochain cours) on a $3$ vecteurs qui forme une base;
     \[\bmath = \left(\vec{b_1}, \vec{b_2}, \vec{b_3} \right) \text{ dans } \mathbb{R}^3\]
     On a vu que $f(\vec{b}_1) = \vec{b_1}$, $f(\vec{b_2})= \vec{b_2}$, $f(\vec{b_3}) = -\vec{b_3}$\\
     \[(f)_{\cmath an}^{\cmath an} = A, (f)_\bmath^\bmath = \begin{pmatrix}
@@ -142,7 +144,7 @@ Donc, Ker$(A + I_3)$ est la droite $D = Vect\left\{ \begin{pmatrix}
     \end{subparag}
     \begin{subparag}{Remarque personnelle}
         Juste pour que ce soit clair de comment on a trouver la droite on a juste "\textit{reécris}" en mode système et on arrive a trouver donc que un système d'équation qui est une droite.\\
-        On verra plus tard ici que ces vecteurs sont en fait les vecteurs propres.
+        On verra plus tard que ces vecteurs sont en fait les vecteurs propres.
     \end{subparag}
 \end{parag}
 
@@ -153,7 +155,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
         Un vecteur non nul $\vec{x}$ de \R$^n$ est un \textcolor{red}{vecteur propre} de $A$ s'il exsite un nombre $\lambda$ tel que $A\vec{x} = \lambda \vec{x}$. On appelle alors $\lambda$ une \textcolor{red}{valeur propre} de $A$. L'\textcolor{red}{espace propre} $E_\lambda$ est formé de TOUS les vecteurs $\vec{x}$ tels que $A\vec{x} = \lambda\vec{x}$
     \end{definition}
     \begin{subparag}{ATTENTION}
-        Pour tout $\lambda \in \mathbb{R}$ on a $A\vec{0} = \lambda \vec{0}$. Il est crucial de demander que $\vec{x}$ soit non nul! Une baleur propre est une dentrée rare! Par contre $\vec{0} \in E_\lambda$.
+        Pour tout $\lambda \in \mathbb{R}$ on a $A\vec{0} = \lambda \vec{0}$. Il est crucial de demander que $\vec{x}$ soit non nul! Une valeur propre est une denrée rare! Par contre $\vec{0} \in E_\lambda$.
     \end{subparag}
 
     \begin{definition}
@@ -168,8 +170,8 @@ Soit $A$ une matrice carrée de taille $n \times n$
     \end{subparag}
 
 
-    \begin{subparag}{Propostion}
-        Une vectuer $x$ est un vecteur propore de $T$ pour la valeur propre $\lambda$ si et seulement si $(x)_\bmath$ est un vecteur propre de $A$ pour la même valeur propre $\lambda$.
+    \begin{subparag}{Proposition}
+        Une vecteur $x$ est un vecteur propre de $T$ pour la valeur propre $\lambda$ si et seulement si $(x)_\bmath$ est un vecteur propre de $A$ pour la même valeur propre $\lambda$.
         \end{subparag}
     \begin{subparag}{Preuve}
         \[A(x)_\bmath = (T)_\bmath^\bmath(x)_\bmath = (T(x))_\bmath\]
@@ -177,7 +179,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
     \end{subparag}
 
     \begin{subparag}{Exemple}
-        Soit $T : \mathbb{P_1} \to \mathbb{P_1}$ l'application linéaire définie par : 
+        Soit $T : \mathbb{P}_1 \to \mathbb{P}_1$ l'application linéaire définie par : 
         \[T(a + bt) = -a + 3b + (2a + 4b)t\]
         Si on prend comme base $\cmath an = \{1, t\}$, on a
         \begin{align*}
@@ -192,7 +194,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
         \[A + 2I_2 = \begin{pmatrix}
             1 & 3 \\ 2 & 6
         \end{pmatrix} \text{ est de rang }1\]
-        $A + 2I_2$ a un noyau non nul, de dim $1$ (Théorème du rang) donné par $Vect\left\{ \begin{pmatrix}
+        $A + 2I_2$ a un noyau non nul, de $\dim 1$ (Théorème du rang) donné par $Vect\left\{ \begin{pmatrix}
             -3 \\ 1
         \end{pmatrix}\right\}$\\
         Ainsi, $\begin{pmatrix}
@@ -204,8 +206,8 @@ Soit $A$ une matrice carrée de taille $n \times n$
         \end{pmatrix}\right)$\\
         $-3 + t$ est bien un vecteur propre de $T$.\\
         Essayons de voir ce qui se passe avec la nouvelle base:
-        \[\bmath = \{-3 + t, t\} = \{p_1, p_2\} \text{ de } \mathbb{P_1}\]
-        \[T(p_1= -2P_1 \; \; \; \hspace{1cm} T(t) = 3 + 4t = -(-3 + t) + 5\cdot t = -1 p_1 + 5p_2\]
+        \[\bmath = \{-3 + t, t\} = \{p_1, p_2\} \text{ de } \mathbb{P}_1\]
+        \[T(p_1)= -2p_1 \; \; \; \hspace{1cm} T(t) = 3 + 4t = -(-3 + t) + 5\cdot t = -1 p_1 + 5p_2\]
         \[(T)_\bmath^\bmath = \begin{pmatrix}
             -2 & -1 \\ 0 & 5
         \end{pmatrix} = B \hspace{3cm} \text{ Pas encore diagonale, mais triangulaire}\]
@@ -216,8 +218,15 @@ Soit $A$ une matrice carrée de taille $n \times n$
         \end{pmatrix}\right\}$\\
         Ainsi, $\begin{pmatrix}
             -1 \\ 7
-        \end{pmatrix}$ est un vecteur propre de $B$, la matrice de $T$ dans la base $\bmath$, donc $-1\cdot p_1$ + 7\cdot p_2 A faire j'ai pas\\
-        On choisit une nouvelle base $\cmath = (-3 + t, 1 + 2t) = (q_1, q_2)$.\\
+        \end{pmatrix}$ est un vecteur propre de $B$, la matrice de $T$ dans la base $\bmath$, le $\det$ dans la base $\bmath$, donc $-1p_1 + 7\cdot p_2 = 3 +  6t$ est un vecteur propre de $T$.\\
+        Mais alors $1 + 2t$ est aussi un vecteur propre de $T$.
+        \\
+        On choisit $\cmath = (-3 + t, 1 + 2t) = (q_1, q_2)$m composée de vecteurs propres tel que $T(q_1) = -2q_1$ et $T(q_2) = 5\cdot q_2$.
+        \\
+        Si on écrit maintenant notre matrice dans la nouvelle base créée:
+        \[(T)_\cmath^\cmath = \begin{pmatrix}
+            -2  & 0 \\ 0 & 5
+        \end{pmatrix}\]
         \begin{align*}
             T(q_1) &= -2\cdot q_1\\
             T(q_2) &= 5\cdot q_2
@@ -231,7 +240,9 @@ Soit $A$ une matrice carrée de taille $n \times n$
 
     \begin{parag}{Valeur propre et noyau}
         \begin{subparag}{Proposition}
+        \begin{proposition}
             Un nombre $\lambda$ est valeur propre de $A$ si et seulement si le noyau de $A - \lambda I_n$ est non nul.
+        \end{proposition}
         \end{subparag}
         
         \begin{subparag}{Preuve}

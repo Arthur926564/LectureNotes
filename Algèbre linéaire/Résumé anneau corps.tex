@@ -127,7 +127,7 @@ Je fais ce petit chapître qui n'est pas tout dans le cours parce que je suis pa
         \begin{framedremark}
             \begin{itemize}
                 \item La symétrie de la table montre la commutativité
-                \item Les zàros dans la diagonale montre que chaque élément est son opposé
+                \item Les zéros dans la diagonale montre que chaque élément est son opposé
             \end{itemize}
         \end{framedremark}
     \end{subparag}
@@ -144,7 +144,7 @@ Je fais ce petit chapître qui n'est pas tout dans le cours parce que je suis pa
             \hline
             $t$ & $0$ & $t$ & $t+1$ & $1$ \\
             \hline
-            $t+1$ & $0$ & $t+1$ & $1$ & $0$ \\
+            $t+1$ & $0$ & $t+1$ & $1$ & $t$ \\
             \hline
         \end{tabular}
         Pour calculer $t\cdot t$ on doit passer par le fait que $t^2 + t + 1 = 0$. Si on divise $t^2$ par $t^2 + t +1$ on obtient $1$ et le reste $t+1$
@@ -156,7 +156,14 @@ Je fais ce petit chapître qui n'est pas tout dans le cours parce que je suis pa
         \begin{framedremark}
             Le but ici en fait est de réduire $t^2$ modulo $t^2 + t + 1$ et comme c'est le même principe qu'avec le chiffre, on fait la division est le résultat du modulo est le reste de la division. et donc par exemple si on divisait $t^2 + t + 1$ par $t+1$ on trouverait qu'on ne pourrait enlever que $t+1$ ce qui renvoie à la solution $t^2$.
         \end{framedremark}
+        Par la suite comme $t$ c'est la variable d'un polynôme, et que nous on parle d'élément dans $\mathbb{F}_4$, on veut différencier avec le reste de la division, on va le noter $\alpha$, le reste $t$, ou plus précisément la classe $[t]$ de $t$ dans "l'anneau des polynômes $\mathbb{F}_2[t]$ modulo $t^2 + t + 1$".
+        \\
+        On peut donc remplacer $t$ par $\alpha$ dans la définition de l'ensemble tel que:
+        \begin{itemize}
+            \item $\mathbb{F}_4 = \{0, 1, \alpha, \alpha + 1\}$
+            \item On a vu précédemment que l'addition est celles des polynômes, chaque élément est son propre opposé
+            \item La mutliplication est aussi celle des polynômes modulo $t^2 + t + 1$ on a donc $\alpha^2 = \alpha  + 1$ et donc $\mathbb{F}_4 = \{0, 1, \alpha, \alpha^2\}$
+
+        \end{itemize}
     \end{subparag}
 \end{parag}
-
-

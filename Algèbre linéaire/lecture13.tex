@@ -1,35 +1,20 @@
 \paragraph{La dimension rappel}
 \lecture{13}{2024-10-29}{Base, noyau, image}{}
-\begin{theoreme}
-    Deux bases $V$ de ont le même nombre d'éléments
-\end{theoreme}
-
-\begin{definition}
-    Soit $V$ un espace vectoriel et $\mathcal{B} = (e_1, \dots, e_n)$ une base. La \textcolor{red}{dimension} de $V$ est $n$. On note $dim V = n$.
-\end{definition}
-\begin{framedremark}
-    On peut prendre par exemple les bases les plus connues:
-    \begin{itemize}
-        \item $dim $\R$^n = n$
-        \item $dim \mathbb{P}_n = n + 1$
-        \item $dim M_{m \times n}($\R$) = mn$
-    \end{itemize}
-\end{framedremark}
 
 \begin{definition}
     Un espace vectoriel $V$ est de dimension nulle si et seulement si $V = \{0\}$.
 \end{definition}
-0 est un vecteur linéairement dépendant, il ne peut donc faire partie d'aucune base. La convention dite auparavant est : $Vect\{\emptyset\} = \{0\}$. Ainsi l'ensemble vide est une famille livre de générateur de $\{0\}$.
+0 est un vecteur linéairement dépendant, il ne peut donc faire partie d'aucune base. La convention dite auparavant est : $Vect\{\emptyset\} = \{0\}$. Ainsi l'ensemble vide est une famille libre de générateur de $\{0\}$.
 
 \begin{theoreme}[de la base incomplète]
-    Soit $V$ un espace vectoriel de dimension $n$ et $\{e_1, \dots, e_k\}$ une famille libre de veteurs de $V$. Il exciste alors des vecteurs $e_{k+1}, \dots, e_n$ tels que ($e_1, \dots, e_n)$ forme un base de $V$.
+    Soit $V$ un espace vectoriel de dimension $n$ et $\{e_1, \dots, e_k\}$ une famille libre de vecteurs de $V$. Il existe alors des vecteurs $e_{k+1}, \dots, e_n$ tels que ($e_1, \dots, e_n)$ forme un base de $V$.
 \end{theoreme}
 \begin{framedremark}
-    Attention à ne pas confondre une base et des vecteurs c'est pour ça qu'ici on choisit des parenthèse pour une base et des allocalade pour une famille de vecteurs.
+    Attention à ne pas confondre une base et des vecteurs c'est pour ça qu'ici on choisit des parenthèse pour une base et des ac?dallades pour une famille de vecteurs.
 \end{framedremark}
 
-\subparagraph{preuve} So $(e_1, \dots, e_k)$ forme déjà une base de $V$, on s'arrête là.\\
-Sinon il existe un veteur $e_{k+1}$ qui n'est pas dans $Vect\{e_1, \dots, e_k\}$. J'affirme que $\{e_1, \dots, e_k, e_{k+1}\}$ est libre.
+\subparagraph{preuve} Si $(e_1, \dots, e_k)$ forme déjà une base de $V$, on s'arrête là.\\
+Sinon il existe un vecteur $e_{k+1}$ qui n'est pas dans $Vect\{e_1, \dots, e_k\}$. J'affirme que $\{e_1, \dots, e_k, e_{k+1}\}$ est libre.
 \\
 \begin{itemize}
     \item En effet si $\alpha_1e_1, \cdots + \alpha_ke_k + \alpha_{k+1}e_{k+1} = 0$ alors $\alpha_{k+1} = 0$ car $e_{k+1}$ n'est pas combinaison linéaire des autres $e_j$ par construction.
@@ -63,7 +48,7 @@ Si on écrit ces matrices dans la base canonique de $M_{2\times 3}(\mathbb{R}), 
     0 & 0 & 0 & 1 & 0 & 0 \\
     0 & 0 & 0 & 0 & - 2 & 0 \\
 \end{pmatrix} \]
-On voit ici qu'il y a deux vecteurs be sibt oas des colonnes pivots ($e_{13}, e_{23})$, il ne sont donc pas combinaison linéaire de $A'$ ni de $A$.
+On voit ici qu'il y a deux vecteurs ne sont pas des colonnes pivots ($e_{13}, e_{23})$, il ne sont donc pas combinaison linéaire de $A'$ ni de $A$.
 \\
 Et donc $(A, B, C, D, e_{13}, e_{23})$ est une base de $M_{2\times 3}(\mathbb{R})$.
 \begin{framedremark}
@@ -72,15 +57,14 @@ Et donc $(A, B, C, D, e_{13}, e_{23})$ est une base de $M_{2\times 3}(\mathbb{R}
 \end{exemple}
 
 \paragraph{Deux points de vue sur les bases}
-Soit $V$ un espace vetoriel de dimension $n$. Une \textcolor{red}{base} est une famille ordonnée de générateurs libre de $V$. Nous avons vu que toute base est composée du même nombre $n$ de vecteurs.
+Soit $V$ un espace vectoriel de dimension $n$. Une \textcolor{red}{base} est une famille ordonnée de générateurs libre de $V$. Nous avons vu que toute base est composée du même nombre $n$ de vecteurs.
 \\
 \textbf{Critères}
 \begin{itemize}
-    \item Une famille libre $\mathcal{L}$ de $n$ vecteurs forem une base de $V$
+    \item Une famille libre $\mathcal{L}$ de $n$ vecteurs forme une base de $V$
     \item une famille génératrice $\mathcal{G}$ de $n$ vecteurs forme une base de $V$.
 \end{itemize}
 \\
-
 Soit $\mathcal{F}  = \{f_1, \dots, f_k\}$ une famille génératrice de $V$ et $\mathcal{B} = (e_1, \dots, e_n)$ une base de $V$. Pour extraire une base de $\mathcal{F}:$
 \begin{itemize}
     \item trouver les composantes des $f_j$ dans la base $\mathcal{B}$
@@ -145,17 +129,26 @@ Soit $V$ et $W$ deux espaces vectoriels.
 \end{definition}
 \begin{exemple}
     \begin{enumerate}
-        \item La dérivée $D : \mathcal{C}^\infty(\mathbb{R}) \to \mathcal{C}^\infty(\mathbb{R}) $ des a faire plus tard
+        \item La dérivée $D : \mathcal{C}^\infty(\mathbb{R}) \to \mathcal{C}^\infty(\mathbb{R}) $ des applications $\infty-$dérivables est linéaire. Ici $D(f) = f'$.
+        \\
+        En effet $(f+g)' = f' + g'$ et $(\alpha\cdot f)' = \alpha f'$
+        \item La dérivée $D : \mathbb{P}_n \to \mathbb{P}_{n-1}$ est linéaire. Ici $D(p) = p'$. En particulier $D(t^k) = kt^{k-1}$
+        \\
+        On peut prendre cela comme définition et "\textit{étendre par linéarité}", c'est à dire définir
+        \[D(a_nt^n + a_{n-1}t^{n-1} + \cdots + a_1t + a_0) \text{ comme }\]
+        \begin{formule}
+            \[n\cdot a_n t^{n-1} + (n-1)\cdot a_{n-1}t^{n-2} + \cdots + a_1 \]
+        \end{formule}
     \end{enumerate}
+    \begin{framedremark}
+        On voit ici que l'application $D(1) = 0$ ce qui signifie plusieurs choses qui sont équivalentes. On voit en premier lieu que l'application n'est pas injective et aussi que le noyau n'est clairement pas nul et qu'il est même de dimension $1$ qui est le vecteur des constantes.
+    \end{framedremark}
 
     Contre exemple:
     \\ 
-    L'application $C : \mathbb{P}_2 \to \mathbb{P_4}$ définie par 
+    L'application $C : \mathbb{P}_2 \to \mathbb{P}_4$ définie par 
     \begin{formule}
-\begin{center}
-    $p \to p^2$
-    \end{center}
-
+    \[p \to p^2\]
     \end{formule}
     n'est pas linéaire. En effet on voit par exemple que:
     \[C(2t) = (2t)^2 = 4t^2 \neq 2t^2 = 2C(t)\]
