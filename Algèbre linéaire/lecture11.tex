@@ -28,7 +28,7 @@
 
 \paragraph{Cofacteur et inverse}
 Soit $A$ une matrice $n \times n$ inversible. On pose:
-\[A_j(\vec{e}_i) = (\vec{a}_1 ... \vec{a}_{j-1} \vec{e}_i \vec{a}_{j+1} ... \vec{a}_n\]
+\[A_j(\vec{e}_i) = (\vec{a}_1 ... \vec{a}_{j-1} \vec{e}_i \vec{a}_{j+1} ... \vec{a}_n)\]
 La seule solution du système $A\vec{x} = \vec{e}_i$ est donnée par la formule:
 \begin{definition}[Formules de Cramer]
     \begin{equation*}
@@ -143,12 +143,12 @@ Soit $\begin{pmatrix} a \\ c \end{pmatrix}$ et $\begin{pmatrix} b \\ d \end{pmat
 \subparagraph{Preuve.}
 Quitte  échanger les vecteur $\vec{u}$ et $\vec{v}$ (resp. les colonnes de $A$), on peut supposer que $a_{11} \neq 0$ sans changer l'aire du parallélogramme (resp. sans changer la valeur absolue de $\det A$).
 \\
-En effectuant une opération de type I sur les colonnes de $A$ on obtient $0$ sur $a_{12}$ sans changer $\det A$, ni l'aire du parallélograme.
+En effectuant une opération de type I sur les colonnes de $A$ on obtient $0$ sur $a_{12}$ sans changer $\det A$, ni l'aire du parallélogramme.
 \\
 En effectuant une deuxième opération de type I sur les colonne de A, on se retrouve à une matrice $\begin{pmatrix}
     \alpha & 0\\
     0 & \beta
-\end{pmatrix}$ le $\det$ vaut $\alpha \cdot \beta$, c'est l'aire du rectangle construit sur $\alpha \cdot \uvec{e}_1$, $\beta\cdot\uvec{e}_2$
+\end{pmatrix}$ le $\det$ vaut $\alpha \cdot \beta$, c'est l'aire du rectangle construit sur $\alpha \cdot \hat{e}_1$, $\beta\cdot\hat{e}_2$
 
 \begin{exemple}
 Prenons les points $A(1, 2), B(4, 3), C(8, 1), D(5, -1)$
@@ -181,9 +181,9 @@ Prenons les points $A(1, 2), B(4, 3), C(8, 1), D(5, -1)$
 
 \end{center}
 
-On a donc que l'aire = $\begin{pmatrix}
-    
-\end{pmatrix}$
+On a donc que Aire$(\beta) = \left|\det (\vec{AB}, \vec{AD})\right| = \left|\det \begin{pmatrix}
+    3 & 4 \\ 2 & -2
+\end{pmatrix}\right| = 14$
 \end{exemple}
 
 

@@ -1,0 +1,25 @@
+\lecture{2}{2024-09-12}{Vecteur}{}
+\begin{parag}{Espaces vectoriels}
+    \begin{definition}
+        Un \important{espace vectoriel} est un ensemble $V$ non vide dont les éléments sont appelés \important{vecteurs}. Il est muni de deux opérations
+        \begin{itemize}
+            \item \textbf{addition} $+ : V \times V \to V$ qui associe deux vecteurs $(u, v)$ leur somme $u + v$
+            \item \textbf{action} \R$ \times V \to V$ qui associe à un nombre $\alpha$ et un vecteur $u$ leur produit $\alpha u$
+        \end{itemize}
+    \end{definition}
+    \begin{subparag}{Espaces vectoriels : axiomes}
+        \begin{enumerate}
+            \item commutativité de $+ : u + v = v + u$
+            \item associativité de $+ : (u+v) + w = u + (v + w)$
+            \item vecteur nul: il existe un élément $0$ de $V$ tel que $u  +0 = u$
+            \item opposé: il existe un vecteur $-u$ de $V$ tel que $u + (-u) = 0$
+            \item distributivité 1: $\alpha(u + v) = \alpha u + \alpha v$
+            \item distributivité 2: $(\alpha + \beta) u = \alpha u + \beta u$
+            \item "\textit{compatibilité}": $(\alpha\beta)u = \alpha(\beta u)$
+            \item unité: $1 \cdot u = u$
+        \end{enumerate}
+    \end{subparag}
+    \begin{framedremark}
+        Donc un espace vectoriel peut être un peu n'importe quoi tant que ces règles sont respectés, cela pourrait être des fonctions, des polynômes, des suites etc...
+    \end{framedremark}
+\end{parag}
