@@ -1,0 +1,470 @@
+\chapter{Théorème regroupé}
+    
+    \begin{definition}
+        Les emplacements des coefficients principaux sont des \important{pivots} (ou échelons). Les colonnes de ces coefficients sont les colonnes pivots.
+    \end{definition}
+    \begin{definition}
+        Un système d'équation linéaire est \important{compatible} s'il admet au moins une solution. Sinon il est dit incompatible
+    \end{definition}
+        \begin{definition}
+        Un \important{espace vectoriel} est un ensemble $V$ non vide dont les éléments sont appelés \important{vecteurs}. Il est muni de deux opérations
+        \begin{itemize}
+            \item \textbf{addition} $+ : V \times V \to V$ qui associe deux vecteurs $(u, v)$ leur somme $u + v$
+            \item \textbf{action} \R$ \times V \to V$ qui associe à un nombre $\alpha$ et un vecteur $u$ leur produit $\alpha u$
+        \end{itemize}
+    \end{definition}
+     \begin{theoreme}
+        Une matrice carrée est inversible si et seulement si det$A \neq 0$.
+    \end{theoreme}
+        \begin{theoreme}
+        $det(A^t) = detA$
+    \end{theoreme}
+        \begin{corollaire}
+       Si $A$ est inversibles, alors
+       \[\det A^{-1} = \frac{1}{\det A}\]
+    \end{corollaire} 
+    \begin{definition}
+    \begin{equation*}
+        A^{-1} = \frac{1}{\det A}(ComA)^t
+    \end{equation*}
+\end{definition}
+\begin{theorem}
+    L'aire du parallélogramme construit sur $\begin{pmatrix} a \\ c \end{pmatrix}$ et $\begin{pmatrix} b \\ d \end{pmatrix}$ vaut $|\det A|$.
+\end{theorem}
+\begin{definition}
+    Une famille \redColor{ordonnée} de vecteur $\bmath = (b_1, \dots, b_k)$ de $W$ est une \redColor{base} de $W$ si c'est une partie libre qui engendre $W$ 
+\end{definition}
+Soit $\{v_1, \dots, v_k\}$ une famille de vecteurs qui engendrent $V$.
+\begin{theoreme}
+    \begin{itemize}
+        \item Si l'un des vecteurs $v_i$ est combinaison linéaire des autres, alors la famille obtenue en supprimant $v_i$ engendre encore $V$.
+        \item Si $V \neq \{0\}$, il existe une sous-famille de $\{v_1, \dots, v_k\}$ qui forme une base de $V$
+    \end{itemize}
+\end{theoreme}
+Soit $V$ un espace vectoriel et $\mathcal{B} = (e_1 + \dots, e_n)$ une base.
+\begin{theoreme}
+    Tout vecteur $x$ de $V$ s'écrit de manière unique comme combinaison linéaire $x = x_1e_1 + \dots + x_ne_n$, pour des nombres réels $x_1, \dots, x_n$.
+\end{theoreme}
+\begin{definition}
+    Les composantes ou coordonnées d'un vecteur $x$ dans la base $\mathcal{B}$ sont les coefficients réels $x_1, \dots, x_n$ tel que
+    \[x = x_1e_1 + \dots + x_ne_n\]
+\end{definition}
+\begin{definition}
+    Une application linéaire bijective et appelée \textcolor{red}{isomorphisme}
+\end{definition}
+\begin{theoreme}
+    Soit $V$ une espace vectoriel et $\mathcal{B}$ une base de $n$ vecteurs. \\
+    L'application $T : V \to \mathbb{R}^n$ définie par $T(x) = (x)_{\mathcal{B}}$ est un isomorphisme.
+\end{theoreme}
+\begin{theoreme}[de la base incomplète]
+    Soit $V$ un espace vectoriel de dimension $n$ et $\{e_1, \dots, e_k\}$ une famille libre de vecteurs de $V$. Il existe alors des vecteurs $e_{k+1}, \dots, e_n$ tels que ($e_1, \dots, e_n)$ forme un base de $V$.
+\end{theoreme}
+Soit $V$ et $W$ deux espaces vectoriels.
+\begin{definition}[application linéaire]
+    Une application $T : V \to W$ est \textcolor{red}{linéaire} si
+    \begin{enumerate}
+        \item $T(u + v) = Tu + Tv$ pour tous $u, v \in V$
+        \item $T(\alpha v) = \alpha Tv$ pour tous $v \in V$ et $\alpha \in $\R
+    \end{enumerate}
+\end{definition}
+Soit $T: V \to W$ une application linéaire.
+\begin{definition}
+    Le \textcolor{red}{noyau} de $T$ est le sous-ensemble $Ker T = \{v \in V | Tv = 0\}$.
+\end{definition}
+
+\begin{theoreme}
+    Soit $T: V \to W$ une application linéaire. Alors $KerT$ est un sous-espace de $V$.
+\end{theoreme}
+\begin{definition}
+Soit $T : V \to W$ une application linéaire. Alors $T$ est injective si et seulement si $\ker T = \{0\}$ 
+\end{definition}
+\begin{definition}
+    L'\textcolor{red}{image} d'une application linéaire $T : V \to W$ est le sous-ensemble $Im T = \{w \in W| \text{il existe } v \in V $ tel que $Tv = w\}$
+\end{definition}
+\begin{theoreme}
+    Soit $T : V \to W$ une application linéaire. Alors $Im T$ est un sous espace de $W$.
+\end{theoreme}
+\begin{theoreme}
+    Une application linéaire $T: V \to W$ est injective si et seulement si $Ker T = \{0\}$ 
+\end{theoreme}
+\paragraph{Espaces-lignes: $LgnA$}
+Soit $A$ et $B$ deux matrices de taille $m\times n$ On note $A  \sim B$ quand elles sont équivalentes selon les lignes.
+\begin{theoreme}
+    Si $A \sim B$ alors les lignes de $A$ et $B$ engendrent le même sous-espace de $\mathbb{R}^n$.   
+\end{theoreme}
+\textbf{Pourquoi?} Les opération élémentaires produisent de nouvelles lignes qui sont combinaison linéaires des précédentes.
+\begin{theoreme}
+    Les lignes d'une forme échelonnée de $A$ forment une base du sous-espace engendré par les lignes de $A$.
+\end{theoreme}
+\textbf{Pourquoi?} Aucune ligne non nulle de la forme échelonnée ne peut être combinaison linéaire des autres (à cause de son pivot)
+
+\paragraph{Espaces-colonnes: $ColA$}
+Soit $A$ une matrice de taille $m \times n$.
+\begin{theoreme}
+    Les colonnes pivots de $A$ forment une base de $ColA = Im A$.
+\end{theoreme}
+Soit $A$ une matrice de taille $m \times n$.
+\begin{theoreme}
+
+    $\dim ColA = \dim\; LgnA$
+
+\end{theoreme}
+\begin{theoreme}{théorème du rang}
+    
+        \[rangT + \dim\; \kerT  = \dimV\]
+    
+\end{theoreme}
+\begin{definition}
+Soit $T : V \to W$ une application linéaire entre espaces vectoriels de dimension finies.
+\\
+Le \textcolor{red}{rang} de $T$ est la dimension de l'image de $T$ : 
+\[rang T = \dim \; ImT\]
+\end{definition}
+
+\begin{definition}
+Soit $A$ une matrice $m \times n$, représentant une application linéaire.
+\\
+    Le \textcolor{red}{rang} de $A$ est la dimension de l'image de $A: $ $rangA = \dim\; ImA$.
+\end{definition}
+\begin{parag}{Changement de base}
+    
+\begin{definition}
+        La matrice $A$ de $T$ (pour ce choix de bases) est la matrice $\left(T\right)_{\mathcal{B}}^{\mathcal{C}}$ de taille $m \times n$ dont les colonnes sont $\left(Te_1\right)_{\mathcal{C}}, \dots, \left(Te_n\right)_{\mathcal{C}}$.
+    \end{definition}
+    \begin{subparag}{Slogan}
+        On place dans les \textcolor{red}{colonnes} de $\left(T\right)_{\mathcal{B}}^{\mathcal{C}}$ les images des vecteurs de la base $\mathcal{B}$ exprimées en coordonnées dans la base $\mathcal{C}$.
+        \\
+        \textbf{Porposition:} \\
+        $\left(T\right)_{\mathcal{B}}^{\mathcal{C}}\left(v\right)_{\mathcal{B}} = \left(Tv\right)_{\mathcal{C}}$
+    \end{subparag}
+\end{parag}
+        \begin{theoreme}
+        \[\left(T\right)_{\mathcal{B}}^{\mathcal{C}}\left(v\right)_{\mathcal{B}} = \left(Tv\right)_{\mathcal{C}}\]
+        \end{theoreme}
+\begin{definition}
+    La matrice de changement de base de $B$ vers $C$ est la matrice ($Id_v)_b^c$ de taille $n \times n$ dont les colonnes sont 
+\end{definition}
+    \begin{definition}
+        Un vecteur non nul $\vec{x}$ de \R$^n$ est un \textcolor{red}{vecteur propre} de $A$ s'il existe un nombre $\lambda$ tel que $A\vec{x} = \lambda \vec{x}$. On appelle alors $\lambda$ une \textcolor{red}{valeur propre} de $A$. L'\textcolor{red}{espace propre} $E_\lambda$ est formé de TOUS les vecteurs $\vec{x}$ tels que $A\vec{x} = \lambda\vec{x}$
+    \end{definition}
+    \begin{definition}
+        Soit $T : V \to V$ une application linéaire. Un vecteur non nul $x \in V$ est un vecteur propre de $T$ si $T(x) = \lambda x$
+    \end{definition}
+    \begin{theoreme}
+    Soit $\lambda_1, \dots, \lambda_k$ des valeurs propres \textcolor{red}{distinctes} et $\vec{v_1}, \dots, \vec{v_k}$ des vecteurs propres d'une matrice carrée $A$ (pour chacune de ces valeurs propres). Alors la famille $\{\vec{v_1}, \dots, \vec{v_k}\}$ est libre.
+    \end{theoreme}
+    \begin{theoreme}
+        Un nombre $\lambda$ est valeur propre de $A$ si et seulement si $\det (A - \lambda I) = 0$.
+    \end{theoreme}
+    \begin{definition}
+        Soit $A$ une matrice $n \times n$. Le \textcolor{red}{polynôme caractéristique} de $A$ est $c_A(t) = \det(A - tI_n)$.
+    \end{definition}
+        \begin{definition}
+            La \textcolor{red}{multiplicité géométrique} d'une valeur propre $\lambda$ est la dimension de l'espace propre $E_\lambda$.
+        \end{definition}
+    \begin{definition}
+        Deux matrices carrées $A$ et $B$ de taille $n\times n$ sont \textcolor{red}{semblables} s'il existe une matrice inversible $P$ de taille $n \times n$ telle que 
+        \begin{formule}
+            \[A = P^{-1}BP\]
+        \end{formule}
+    \end{definition}
+    \begin{theoreme}
+        Deux matrices semblables ont le même polynôme caractéristique. Elles ont donc en particulier les mêmes valeurs propres.
+    \end{theoreme}
+    \begin{definition}
+        Les matrices $A$ et $B$ sont \textcolor{red}{équivalentes} s'il existe deux matrices inversibles $P$ et $Q$ telles que 
+        \[PAQ = B\]
+        On le note :
+        \[A \sim B\]
+    \end{definition}
+    \begin{definition}
+        Une matrice est \textcolor{red}{diagonalisable} si elle est semblable à une matrice diagonale, i.e il existe $P$ inversible telle que $P^{-1}AP$ est diagonale.
+    \end{definition}
+    \begin{theoreme}
+        Une matrice $A$ de taille $n\times n$ est diagonalisable si et seulement si il existe une base $\bmath$ de \R$^n$ formée de vecteurs propres de $A$.
+    \end{theoreme}
+    \begin{theoreme}
+        Soit $A$ une matrice de taille $n \times n$ ayant $n$ valeurs propres distinctes. Alors $A$ est diagonalisable.
+    \end{theoreme}
+    \begin{theoreme}
+        Soit $\lambda$ une valeur propre de $A$. Alors $1 \leq \dim E_\lambda \leq mult(\lambda)$
+    \end{theoreme}
+    Pour pouvoir diagonaliser, il faut qu'il y ait assez de valeurs propres réelles \textcolor{red}{et} assez de vecteurs propres.
+    \begin{theoreme}
+        Une matrice $A$ est diagonalisable (sur \R) si et seulement si:
+        \begin{enumerate}
+            \item Le polynôme caractéristique est \textcolor{red}{scindé}: il se décompose en produit de facteur $(\lambda - t)$ avec des $\lambda \in \mathbb{R}$.
+            \item Pour tout $\lambda$, on a $\dim E_\lambda = mult(\lambda)$
+        \end{enumerate}
+        Si $A$ est diagonalisable, on forme une base de vecteurs propres en réunissant les vecteurs de base de chaque espace propre.
+    \end{theoreme}
+\begin{parag}{Exemple matrice}
+        \begin{subparag}{Petit exemple qui peut servir lors de petite question}
+        \begin{enumerate}
+            \item $A = \begin{pmatrix}
+                0 & 1\\ -1 & 0
+            \end{pmatrix}$ on a donc son polynôme caractéristique qui est 
+            \[c_A(t) = \begin{vmatrix}
+                -t & 1\\ -1 & -t
+            \end{vmatrix} = t^2 + 1\]
+            On voit bien ici qu'on ne trouve pas de racine et que donc, elle est irréductible sur \R. Comme $A$ n'a pas assez de valeurs propres réelles, A n'est pas diagonalisable sur \R.
+            \\
+            Néanmoins, sur $\mathbb{C}$, on a $t^2 + 1 = (t-i)(t+1)$, $A$ est diagonalisable.
+            \item $B = \begin{pmatrix}
+                3 & 2\\0 & 3
+            \end{pmatrix}$, $c_B(t) = (t-3)^2$. Il y a assez de valeurs propres $\lambda = 3, mult(3) = 2$.
+            \\
+            On va donc chercher sont espace propres pour checker si ça matche:
+            \[E_3 =\ker(B - 3I_2) =  \ker \begin{pmatrix}
+                0 & 2\\ 0 & 0
+            \end{pmatrix}\]
+            On voit bien ici que la dimension de cet espace est de 1, $\dim E_3 = 1$ (grâce au théroème du rang)\\
+            On voit donc qu'il n'y a pas assez de vecteurs propres, $B$ n'est pas diagonalisable ni sur \R, ni sur $\mathbb{C}$
+        \end{enumerate}
+    
+            
+        \end{subparag}
+\end{parag}        
+    \begin{definition}
+        Un \textcolor{red}{corps} $K$ est un ensemble muni d'une addition $+$ et d'une multiplication $\cdot$ pour lesquelles les règles de calcul "\textit{usuelles}" s'appliquent.
+    \end{definition}
+    \begin{theoreme}{Proposition}
+        Lorsque $n$ n'est pas un nombre premier les opérations définies ci-dessus ne forment pas un corps.
+    \end{theoreme}
+\begin{theoreme}
+    lorsque $p$ est un nombre premier les opérations définies ci-dessus forment un corps $\mathbb{F_p}$.
+\end{theoreme}
+    En général, pour diagonaliser une matrice sur \R, il faut qu'il y ait assez de valeurs propres réelles \textcolor{red}{et} assez de vecteurs propres.
+    \begin{theoreme}
+        Une matrice $A$ est diagonalisable sur \R si et seulement si 
+        \begin{enumerate}
+            \item Le polynôme caractéristique est \textcolor{red}{scindé} sur \R : il se décompose en produit de facteurs $(\lambda - t)$ avec $\lambda \in $ \R
+            \item Pour tout $\lambda$, on a $\dim E_\lambda = mult(\lambda)$.
+        \end{enumerate}
+    \end{theoreme}
+    
+\begin{parag}{Diagonalisabilité : méthode}
+    Soit $T : V \to V$ une application linéaire.
+    \begin{enumerate}
+        \item Choisir une base $\cmath$ de $V$ (la base canonique si elle existe)
+        \item Ecrire la matrice $A = (T)_{\cmath}^\cmath$ de $T$ dans cette base
+        \item Calculer le polynôme caractéristique $c_A(t)$.
+        \item $c_A(t)$ n'est pas scindé, $A$ n'est pas \textcolor{red}{diagonalisable}.
+        \item Si $c_A(t)$ est scindé, extraire les racines de $\lambda$ de $c_A(t)$ et calculer les multiplicité algébrique.
+        \item Calculer les espaces propres $E_\lambda$ et les multiplicités géomtrétriques.
+        \item Si $\dim E_\lambda = mult(\lambda)$ pour une valeur propre $\lambda$, alors $A$ n'est pas \textcolor{red}{diagonalisable}.
+        \item Si $\dim E_\lambda = mult(\lambda)$ pour tout $\lambda$, alors $A$ est \textcolor{green}{diagonalisable}.
+    \end{enumerate}
+    Dès lors
+    \begin{enumerate}
+        \item Soit $T : V \to V$ une application linéaire \textcolor{green}{diagonalisable}.
+        \item Choisir une base $\bmath_\lambda$ de $E_\lambda$ pour toute valeur propres $\lambda$.
+        \item Réunir les $\bmath_\lambda$ pour former une base de $\bmath$ de $V$.
+        \item $D = (T)_\bmath^\bmath$ est diagonale. Les valeurs propres apparaissent dans la diagonale dans l'ordre choisi pour construire la base $\bmath$.
+        \item Les colonnes de la matrice de changemet de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en cooronnées dans $\cmath$.
+        \item $D = P^{-1}AP$ et $A = PDP^{-1}$.
+    \end{enumerate}
+    \end{parag}
+    \begin{defintion}
+        Soit $A$ une amtrice $n \times n$. La \textcolor{red}{trace} $Tr A = a_{11} + a_{22} + \cdots + a_{nn}$.
+    \end{defintion}
+        \begin{theoreme}
+            Soit $A$ une matrice de taille $n \times n$. Alors $(-1)^{n-1}TrA$ est le coefficient de $t^{n-1}$ de $c_A(t)$ et $\det A$ est le coefficient constant
+        \end{theoreme}
+        \begin{theoreme}{Lemme}
+            Soit $A, B, \in M_{n \times n}(\mathbb{R}) $ Alors $Tr(AB) = Tr(BA)$
+        \end{theoreme}
+        \begin{theoreme}
+            Si $A$ est diagonalisable, alors la trace de $A$ est égal à la somme des valeurs propres.
+        \end{theoreme}
+    \begin{theoreme}
+        Soit $A$ une matrice carrée telle que $c_A(t)$ est scindé. Alors $A$ est  \textcolor{red}{triangularisable} ($A$ est semblable à une matrice triangulaire).
+    \end{theoreme}
+    Le théorème suivant affirme que le polynôme caractéristique "\textit{annule}" la matrice $A$.
+    \begin{theoreme}{Théorème de Cayley-Hamilton}
+        Soit $c_A(t) = t^n + a_{n-1}t^{n-1} + \cdots a_n t + a_0$ le polynôme caractéristique de $A$ alors:
+        \begin{formule}
+            \[A^n + a_{n-1}A^{n-1} + \cdots + a_1A + a_0I_n = 0\]
+        \end{formule}
+    \end{theoreme}
+    \begin{definition}
+        Deux vecteurs $\vec{u}$ et $\vec{v}$ de $\mathbb{R}^n$ sont \textcolor{red}{orthogonaux} si 
+        \begin{formule}
+            \[\vec{u}\cdot \vec{v} = 0\]
+        \end{formule}
+    \end{definition}
+    \begin{definition}
+        Deux vecteurs $\vec{u}$ et $\vec{v}$ de $\mathbb{R}^n$ sont \textcolor{red}{orthogonaux} si 
+        \begin{formule}
+            \[\vec{u}\cdot \vec{v} = 0\]
+        \end{formule}
+    \end{definition}
+    \begin{theoreme}
+        Soit $A$ une matrice de taille $m \times n$
+        \begin{enumerate}
+            \item $\ker A = (LignA)^\perp$
+            \item $(ImA)^\perp = \ker(A^T)$
+        \end{enumerate}
+    \end{theoreme}
+ Le produit scalaire permet aussi de calculer l'angle entre deux vecteurs:
+ \begin{theoreme}
+     Loi du cosinus:
+     \[\vec{u}\cdot \vec{v} = ||\vec{u}||\cdot ||\vec{v}||\cos \alpha\]
+ \end{theoreme}
+    \begin{definition}
+        Une famille $\{\vec{u_1}, \dots, \vec{u_k}\}$ des vecteurs de $\mathbb{R}^n$ est \textcolor{red}{orthogonale} si $\vec{u_i}\perp \vec{u_j}$ pour tout $i \neq j$. Cette famille est \textcolor{red}{orthonormée} si de plus $||\vec{u_i}|| = 1$ pour tout $i$.
+    \end{definition}
+    \begin{theoreme}
+        Une famille orthogonale de vecteurs non nuls est libres.
+    \end{theoreme}
+    \begin{theoreme}
+        Pour tout vecteur $\vec{w} \in W$, on a $\vec{w} = \alpha_1\vec{u_1} + \cdots + \alpha_k\vec{u_k}$ et 
+        \begin{formule}
+            \[\alpha_j = \frac{\vec{w}\cdot\vec{u_j}}{||\vec{u_j}||^2}\]
+        \end{formule}
+    \end{theoreme}
+    \begin{definition}
+        Une famille $(\vec{u}_1, \dots, \vec{u}_k)$ de vecteurs $\mathbb{R}^n$ est \textcolor{red}{orthogonale} si $\vec{u}_i \perp \vec{u_j}$ pour tout $i \neq j$. Cette famille est orthonormée si de plus $||\vec{u}_i|| = 1$ pour tout $i$.
+    \end{definition}
+    Soit $W$ un sous-espace de $\mathbb{R}^n$ et $(\vec{u}_1, \dots, \vec{u}_k)$ une base \textcolor{red}{orthogonale} de $W$.
+    \begin{theoreme}
+        Pour tout vecteurs $\vec{w}\in W$, on a $\vec{w} = \alpha_1\vec{u_1} + \cdots + \alpha_k\vec{u_k}$ et
+        \[\alpha_j = \frac{\vec{w}\cdot\vec{u_j}}{||\vec{u_j}||^2}\]
+    \end{theoreme}
+    \begin{theoreme}
+        Les colonnes d'une matrice $U$ de taille $m\times n$ sont orthonormées si et seulement si $U^TU = I_n$
+    \end{theoreme}
+    \begin{definition}
+        Une matrice \textcolor{red}{carrée} $U$ est \textcolor{red}{orthogonale} si $U^TU = I_n$. Autrement dit $U^{-1} = U^T \Leftrightarrow$ colonnes (et lignes!) de $U$ sont orthonormées.
+    \end{definition}
+    \begin{theoreme}
+        Soit $U$ une matrice orthogonale. Alors
+        \begin{itemize}
+            \item $||U\vec{x}|| = ||\vec{x}||$ pour tout $\vec{x} \in \mathbb{R}^n$
+            \item $U\vec{x}\cdot U\vec{y} = \vec{x}\cdot \vec{y}$
+            \item $U\vec{x} \perp U\vec{y} \Leftrightarrow \vec{x}\perp \vec{y}$
+        \end{itemize}
+    \end{theoreme}
+    Si $U$ est orthogonale, alors aussi $UU^T = I_n$ Mais
+    \begin{itemize}
+        \item si $A$ est carrée avec $A^TA$ diagonale, $AA^T$ n'est pas diagonale en général
+        \item Si $A$ n'est pas carrée avec $AA^T = I_n$, alors $A^TA \neq I_m$ en général
+    \end{itemize}
+    \begin{theoreme}
+        Tout vecteurs $\vec{y}$ de $\mathbb{R}^n$ s'écrit de manière unique $\vec{y} = \hat{y}+\vec{z}$ où $\hat{y}\in W$ et $\vec{z}\in W^\perp$
+    \end{theoreme}
+\begin{parag}{Méthode}
+    \begin{enumerate}
+        \item Vérifier que la base de $W$ est orthogonale! tester toute les pairs $\vec{u_i}\cdot\vec{u}_j = 0$ pour tout les $i \neq j$
+        \item Calculer les normes au carré des vecteurs de base $\vec{u_i}$
+        \item Calculer les produits scalaires $\vec{y}\cdot\vec{u_i}$
+        \item Calculer la projection
+        \begin{formule}
+            \[\hat{y} = \frac{\vec{y}\cdot \vec{u}_1}{||\vec{u_1}||^2}\vec{u_1} + \cdots + \frac{\vec{y}\cdot\vec{u}_k}{||\vec{u}_k||^2}\vec{u}_k\]
+        \end{formule}
+        \item Calculer $\vec{z} = \vec{y}-\hat{y}$ et \textcolor{red}{vérifier} que $\vec{z}\perp W$.
+        \item \textbf{Remarque} Si $\vec{y} \in W$, alors $\hat{y} = \vec{y}$ et $\vec{z} = \vec{0}$
+    \end{enumerate}
+\end{parag}
+    \begin{theoreme}
+        Soit $U$ la matrice dont les colonnes sont les vecteurs $\vec{u}_1, \dots, \vec{u}_k$ d'une base \textcolor{red}{orthonormée} de $W$. Alors:
+
+        \begin{formule}
+            \[\text{proj}_W\vec{y} = UU^T\vec{y}\]
+        \end{formule}
+    \end{theoreme}
+    La distance minimale entre un vecteurs $\vec{y}$ et un sous-espace $W$ de $\mathbb{R}^n$ est réalisée par $\vec{z} = \vec{y} - \text{proj}\vec{y}$
+    \begin{theoreme}
+        Pour tout $\vec{w} \in W$ on a $||\vec{y} - \vec{w}|| \geq ||\vec{y} - \text{proj}_W\vec{y}||$
+    \end{theoreme}
+    \begin{theoreme}
+        Soit $(\vec{u_1}, \dots, \vec{u_k})$ une base de $W$, sous-espace de $\mathbb{R}^n$\\
+        Les vecteurs suivant forment une base orthogonale de $W$
+        \begin{enumerate}
+            \item $\vec{v_1} = \vec{u_1}$
+            \item $\vec{v_1} = \vec{u_2} - \frac{\vec{u_2}\cdot \vec{v_1}}{||\vec{v_1}||^2}\vec{v_1}$
+            \item $\vec{v_k} = \vec{u_k} - \frac{\vec{u_k}\cdot\vec{v_1}}{||\vec{v_1}||^2}\vec{v_1} - \cdots - \frac{\vec{u}_k\cdot\vec{u}_{k-1}}{||\vec{v}_{k-1}||^2}\vec{v}_{k-1}$
+        \end{enumerate}
+    \end{theoreme}
+    \begin{definition}
+        Un vecteurs $\hat{x} \in \mathbb{R}^n$ est une \textcolor{red}{solution au sens des moindres carrés} pour le système $A\vec{x} = \vec{b}$ si, pour tout $\vec{x} \in \mathbb{R}^n$
+        \begin{formule}
+            \[||\vec{b}-A\hat{x}|| \leq ||\vec{b} - A\vec{x}||\]
+        \end{formule}
+        
+    \end{definition}
+\begin{theoreme}
+l'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est égal à l'ensemble non-vide des solutions de l'\textcolor{red}{équation normale}:
+\begin{formule}
+    \[A^TA\hat{x} = A^T\vec{b}\]
+\end{formule}
+\end{theoreme}
+    \begin{definition}
+        La norme du vecteurs $\vec{b}-A\hat{x}$ est appelée \textcolor{red}{écart quadratique}
+    \end{definition}
+    \begin{theoreme}
+        La solution $\hat{x}$ au sens des moindres carrées est unique si et seulement si les colonnes de $A$ sont libres, ce qui est équivalent à exiger que la matrice $A^TA$ est inversible
+    \end{theoreme}
+            \begin{deinition}
+                Soit $V$ un espace vectoriel. Une \textcolor{red}{forme bilinéaire symétrique} est une application $V \times V \to \mathbb{R}$ qui associe à tout couple de vecteurs $(u, v)$ un nombre réel $\langle u, v \rangle$ tel que
+                \begin{enumerate}
+                    \item commutativité $\langle u, v \rangle ) \langle v, u \rangle$
+                    \item distributivité $\langle u + u', v \rangle = \langle u, v \rangle + \langle u' , v \rangle$
+                    \item linéairité $\langle \alpha u, v \rangle = \alpha \langle u, v \rangle$
+                \end{enumerate}
+                \begin{framedremark}
+                    Une forme linéaire est une application linéaire $V \to \mathbb{R}$
+                \end{framedremark}
+            \end{deinition}
+                \begin{theoreme}
+                    On représente une forme bilinéaire symétrique sur $\mathbb{R}^n$ par une matrice symétrique $A$ carrée de taille $n \times n$. 
+                \end{theoreme}
+            \begin{definition}
+                Une matrice carrée $A$ est \textcolor{red}{diagonalisable par un changement de base orthonormée} ou \textcolor{red}{orthodiagonalisable} s'il existe une matrice $P$ orthogonale telle que $P^TAP$ est diagonale.
+            \end{definition}
+            \begin{theoreme}
+                Une matrice $A$ est orthodiagonalisable si et seulement si elle est symétrique
+            \end{theoreme}
+            \begin{theoreme}
+                Soit $A$ une matrice symétrique. Alors
+                \begin{enumerate}
+                    \item A admet $n$ valeurs propres réelles, compte tenu de leur multiplicité
+                    \item Pour toute valeurs propres $\lambda$ on a $mult(\lambda) = \dim E_\lambda$
+                    \item Si $\lambda \neq \mu$ alors $E_\lambda \perp E_\mu$
+                    \item $A$ est orthodiagonalisable
+                \end{enumerate}
+            \end{theoreme}
+\begin{parag}{Méthode}
+\begin{enumerate}
+    \item Vérifie que $A$ est symétrique
+    \item Calculer $c_A(t)$ et en extraire les racines (valeurs propres)
+    \item Calculer les espaces propres pour chacun, le procédé de Gram-Schmidt donne une base orthonormée.
+    \item En assemblant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
+    \item La matrice $P$ dont les colonnes sont les vecteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
+\end{enumerate}   
+\begin{framedremark}
+    L'avantage ici c'est que l'inverse de la matrice de changement de base est juste sa transposée
+\end{framedremark}
+\end{parag}
+    \begin{definition}
+        Soit $A$ symétrique, $U$ orthogonale et $U^TAU = D$ diagonale. L'ensemble des valeurs propres de $A$ est appelé \textcolor{red}{spectre} de $A$
+    \end{definition}
+    \begin{definition}
+        Le plus petit entier non nul $n$ tel que $n\cdot 1_K = 0$ s'appelle la \textcolor{red}{caractéristique} de $K$ et on le not $carK$.
+    \end{definition}
+    \begin{theoreme}
+        La caractéristique d'un corps fini $K$ est un nombre premier.
+    \end{theoreme}
+      
+        \begin{lemme}
+            Dans un corps $K$, si $x, y \neq 0$, alors $x\cdot y = 0$
+        \end{lemme}
+    \begin{definition}
+        Soit $k \in \mathbb{F}_p$ et $x \in K$. On pose $k \cdot x = (k\cdot 1_K)\cdot x$
+    \end{definition}
+    \begin{theoreme}
+        Soit $K$ un corps fini et $p = $car$K$. Alors il existe $n$ tel que $K$ a $p^n$ éléments. On appelle ce nombre la \textcolor{red}{cardinalité} de $K$. 
+    \end{theoreme}
+        \begin{proposition}
+            Soit $K$ un corps et $p(t) = t^2 - a$ si $a$ n'est pas un carré (dans $K$), alors $p(t)$ est irréductible.
+        \end{proposition}

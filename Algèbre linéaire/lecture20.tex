@@ -82,13 +82,13 @@
         Une matrice $A$ de taille $n\times n$ est diagonalisable si et seulement si il existe une base $\bmath$ de \R$^n$ formée de vecteurs propres de $A$.
     \end{theoreme}
     \begin{subparag}{Observations}
-        Soit $A$ la matrice d'une applicaiton linéaire $T$ exprimée dans la base canonique, $A = (T)_{\cmath an}^{\cmath an}$. Soit $D$ la matrice  de $T$ exprimée dans une base $\bmath$, de sorte que $D = (T)_\bmath^\bmath$ est diagonale.
+        Soit $A$ la matrice d'une application linéaire $T$ exprimée dans la base canonique, $A = (T)_{\cmath an}^{\cmath an}$. Soit $D$ la matrice  de $T$ exprimée dans une base $\bmath$, de sorte que $D = (T)_\bmath^\bmath$ est diagonale.
         \begin{enumerate}
-            \item Les colonees de la matrice de changement de base 
+            \item Les colonnes de la matrice de changement de base 
         \end{enumerate}
     \end{subparag}
     \begin{subparag}{Exemple}
-        Soit $T: M_{2\times 2}(\mathbb{R}) \to M_{2\times 2}(\mathbb{R})$ l'applicaiton linéaire déginie par:
+        Soit $T: M_{2\times 2}(\mathbb{R}) \to M_{2\times 2}(\mathbb{R})$ l’application linéaire définie par:
         \[T\begin{pmatrix}
             a & b \\ c & d
         \end{pmatrix} = \begin{pmatrix}
@@ -96,7 +96,7 @@
         \end{pmatrix}\]
         On commence par écrire la matrice e $T$ dans la base canonique.
         \\
-        Cette matrice a donc une taille $4 \times 4$ car on a $4$ vecteurs qui ont $4$ composantes. Faisons l'applicaiton de chacun de ces 4 vecteurs.
+        Cette matrice a donc une taille $4 \times 4$ car on a $4$ vecteurs qui ont $4$ composantes. Faisons l’application de chacun de ces 4 vecteurs.
         \begin{itemize}
             \item \[T(e_{11}) = T\begin{pmatrix}
                 1 & 0 \\ 0 & 0
@@ -180,7 +180,7 @@
                 0 & 0 & 2 & 0\\
                 0 &0 & 0 & 2
             \end{pmatrix}\]
-            On met dans cet odre parce qu'on a mis dans le même ordre dans la base $\bmath$
+            On met dans cet ordre parce qu'on a mis dans le même ordre dans la base $\bmath$
     \end{subparag}
 \end{parag}
 
@@ -194,9 +194,7 @@
     \end{subparag}
         \begin{subparag}{Remarque}
         \begin{framedremark}
-            
-        
-        La réciproque est fausse, il existe bien comme dans l'exemple précédent on a que deux valeurs propres mais la matrice est quand même diagonalisable, il faudra check si leur espace propre respectifs matche leur multiplicité géomètrique.
+        La réciproque est fausse, il existe bien comme dans l'exemple précédent on a que deux valeurs propres mais la matrice est quand même diagonalisable, il faudra check si leur espace propre respectifs matche leur multiplicité géométrique.
         \end{framedremark}
     \end{subparag}
 
@@ -238,7 +236,7 @@
     \begin{framedremark}
             On voit ici que si on aurait que la dimension d'un espace propre était plus petit que le nombre de fois que la valeur propre soit solution, on aurait comme la base des vecteurs manque un ou plusieurs vecteurs pour pouvoir être de même taille que la matrice de base ce qui est absurde.
         \end{framedremark}
-        \begin{subparag}{Petit exemple qui peut servivr lors de petite question}
+        \begin{subparag}{Petit exemple qui peut servir lors de petite question}
         \begin{enumerate}
             \item $A = \begin{pmatrix}
                 0 & 1\\ -1 & 0

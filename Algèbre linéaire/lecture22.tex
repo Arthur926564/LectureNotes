@@ -24,10 +24,10 @@ D^k =
 \end{pmatrix}
 \]
 
-\begin{parag}{Evolution de populations}
+\begin{parag}{Évolution de populations}
     On étudie les populations de Lausanne et du Gros de Vaud. La situation (sans lien avec la réalité du canton) est représenté par la situation suivante:
     \begin{center}
-        \includegraphics[scale=0.4]{Algèbre linéàaire/Screenshot 2024-11-28 081103.png}
+        \includegraphics[scale=0.4]{Algèbre linéaire/Screenshot 2024-11-28 081103.png}
     \end{center}
     Appelons $u_k$ la population urbaine l'année $k$ (en pourcents) et $r_k$ la population rurale.
     \\ 
@@ -40,7 +40,7 @@ D^k =
         u_{k+1} = \frac{3}{4}u_k + \frac{1}{2}r_k\\
         r_{k+1} = \frac{1}{4}u_k + \frac{1}{2}r_k
     \end{cases}\]
-    Nous avons modélisé matriciellemment cette situtation et posons:
+    Nous avons modélisé matriciellemment cette situation et posons:
 \[A = \begin{pmatrix}
     3/4 & 1/2\\ 1/4 & 1/2
 \end{pmatrix}\]
@@ -120,7 +120,7 @@ Comme $\lim_{k\to \infty} \frac{1}{4}^k = 0$ on peut facilement trouver que $u_\
 \begin{enumerate}
     \item \R$^n$ est non seulement un espace vectoriel, c'est un espace \textcolor{red}{euclidien}.
     \item  Nous avons une notion de distance et d'angle
-    \item La base canonique est composée de vecteurs \textcolor{red}{orthgonaux} deux à deux et \textcolor{red}{unitaires} (de longueur 1).
+    \item La base canonique est composée de vecteurs \textcolor{red}{orthogonaux} deux à deux et \textcolor{red}{unitaires} (de longueur 1).
 \end{enumerate}
 
 \end{parag}
@@ -214,7 +214,7 @@ Comme $\lim_{k\to \infty} \frac{1}{4}^k = 0$ on peut facilement trouver que $u_\
             C'est un sous-espace de $\mathbb{R}^n$ (série 11)
         \end{subparag}
         \begin{subparag}{Exemple}
-            Soit $W$ le sousespace de $\mathbb{R}^3$ donné par 'éaquation $2x -y + 3z = 0$. On veut décrire ce plan et $W^\perp$.
+            Soit $W$ le sous espace de $\mathbb{R}^3$ donné par l'équation $2x -y + 3z = 0$. On veut décrire ce plan et $W^\perp$.
             \\
             On choisit une base de $W$ : 
             \[\bmath = \left(\begin{pmatrix}
@@ -252,7 +252,7 @@ Comme $\lim_{k\to \infty} \frac{1}{4}^k = 0$ on peut facilement trouver que $u_\
 
 \begin{parag}{Lien entre perpendicularité et image et noyau}
     \begin{subparag}{Proposition}
-        La droite perpendiculaire au plan déquation $ac + by + cz = 0$, et passant par l'origine \R$^3$, est engendrée par $\begin{pmatrix}
+        La droite perpendiculaire au plan d’équation $ac + by + cz = 0$, et passant par l'origine \R$^3$, est engendrée par $\begin{pmatrix}
             a \\b \\ c
         \end{pmatrix}$.
     \end{subparag}
@@ -282,7 +282,7 @@ Comme $\lim_{k\to \infty} \frac{1}{4}^k = 0$ on peut facilement trouver que $u_\
  \begin{enumerate}
      \item Nul quand $\cos\alpha = 0$ les vecteurs sont perpendiculaire
      \item maximal quand $\cos \alpha = 1$ les vecteurs sont colinéaire et de même sens
-     \item minimmal quand $\cos\alpha = -1$.Les vecteurs sont colinéaires et de sens opposé.
+     \item minimal quand $\cos\alpha = -1$.Les vecteurs sont colinéaires et de sens opposé.
  \end{enumerate}
 \end{parag}
 
@@ -301,7 +301,7 @@ Comme $\lim_{k\to \infty} \frac{1}{4}^k = 0$ on peut facilement trouver que $u_\
         On doit montrer que $\alpha_1 = \cdots = \alpha_k = 0$.
         \\
         On calcule $0 = (\alpha_1\vec{u_1} + \cdots + \alpha_k\vec{u_k})\cdot \vec{u_i}$\\
-        Par la ditributivité on a que c'est égal à $ = \alpha_1\vec{u_1}\cdot\vec{u_i} + \cdots + \alpha_k\vec{u_k}\cdot\vec{u_i}$\\
+        Par la distributivité on a que c'est égal à $ = \alpha_1\vec{u_1}\cdot\vec{u_i} + \cdots + \alpha_k\vec{u_k}\cdot\vec{u_i}$\\
         Mais comme $\vec{u_i}\perp\vec{u_j}$ alors la seule possibilité est que tout les $\alpha_i = 0$
         
         

@@ -18,7 +18,7 @@
 \end{parag}
 
 \begin{parag}{Le procédé de Gram-Schmidt : Théorie}
-    \textbf{But} trouver une base orthogonale ou orthonromée d'un sous-espace $W$ de $\mathbb{R}^n$.
+    \textbf{But} trouver une base orthogonale ou orthonormée d'un sous-espace $W$ de $\mathbb{R}^n$.
     \\
     \textbf{Idée} utilise de manière inductive les projection orthogonales.
     \begin{theoreme}
@@ -37,9 +37,9 @@
         Soit $A$ une matrice $m \times n$ dont les colonnes sont libres. Alors il existe une factorisation $A = QR$ où les colonnes de $Q \in M_{m\times n}(\mathbb{R})$ sont \textcolor{red}{orthonormées} et $R\in M_{n\times n}(\mathbb{R})$ est triangulaire supérieure et inversible avec des coefficients diagonaux strictement positifs.
     \end{definition}
     \begin{subparag}{Preuve}
-        L'idée de la preuve et d'applique la méthode de Gram-Schmidt pour obtenir une base orthogonale $Q$ de $ImA$ à partir des colonnes de $A$ (sans en changer l'ordre), puis on normlaise les vecteurs. On forme $Q$ avec ces vecteurs (colonnes).
+        L'idée de la preuve et d'applique la méthode de Gram-Schmidt pour obtenir une base orthogonale $Q$ de $ImA$ à partir des colonnes de $A$ (sans en changer l'ordre), puis on normalise les vecteurs. On forme $Q$ avec ces vecteurs (colonnes).
         \\
-        La $k$-ème colonne de $A$ est combinaison linéaire des $k$ première colonnes de $Q$ et le dernier coefficients est toujours positif. On constate cela en utilisant les formules de Gram-Schmidtage, ou alternativement on se souvient que la base orthogonale construire consiste é soustraire à $\vec{a}_k$ sa projection orthogonale sur l'espace engendrés par les colonnes précédentes. Après normalisation le k-ème coefficient reste positif.
+        La $k$-ème colonne de $A$ est combinaison linéaire des $k$ première colonnes de $Q$ et le dernier coefficients est toujours positif. On constate cela en utilisant les formules de Gram-Schmidt, ou alternativement on se souvient que la base orthogonale construire consiste é soustraire à $\vec{a}_k$ sa projection orthogonale sur l'espace engendrés par les colonnes précédentes. Après normalisation le k-ème coefficient reste positif.
         \\
         La matrice $R$  a pour colonnes ces coefficient $\vec{r}_k = (\vec{a}_k)_Q$
     \end{subparag}
@@ -125,7 +125,7 @@
         \begin{framedremark}
             Il y a en général une infinité de solution au sens des moindres carrés, à moins que l'application linéaire représentée par $A$ ne soit injective.
         \end{framedremark}
-        Supposons que $\hat{x}$ soit solution au sens des moindres carrésm si bien que $A\hat{x} = \hat{b} = $ proj$_{ImA}\vec{b}$
+        Supposons que $\hat{x}$ soit solution au sens des moindres carrés si bien que $A\hat{x} = \hat{b} = $ proj$_{ImA}\vec{b}$
         \\
         Alors $\vec{b} - \hat{b} \perp ImA$ et $\vec{b} - \hat{b} = \vec{b} - A\hat{x}$ donc $\vec{b} - A\hat{x} \perp \vec{a_i} \; \; \; \forall i$ Autrement dit:
         \[\vec{a_i}(\vec{b} - A\hat{x}) = 0 \; \; \forall i\]
@@ -141,8 +141,6 @@
 \end{parag}
 \begin{parag}{Equation normale}
 \begin{theoreme}
-    
-
 l'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est égal à l'ensemble non-vide des solutions de l'\textcolor{red}{équation normale}:
 \begin{formule}
     \[A^TA\hat{x} = A^T\vec{b}\]
@@ -160,7 +158,7 @@ l'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est �
 \begin{parag}{Question de l'unicité}
     Soit $\hat{x}$ une solution au sens des moindres carrées du systèmes $A\vec{x} = \vec{b}$
     \begin{definition}
-        La norme du vecteurs $\vec{b}-A\hat{x}$ est appelée \textcolor{red}{àcart quadratique}
+        La norme du vecteurs $\vec{b}-A\hat{x}$ est appelée \textcolor{red}{écart quadratique}
     \end{definition}
     \begin{theoreme}
         La solution $\hat{x}$ au sens des moindres carrées est unique si et seulement si les colonnes de $A$ sont libres, ce qui est équivalent à exiger que la matrice $A^TA$ est inversible
@@ -192,8 +190,7 @@ l'ensemble des solutions $A\vec{x} = \vec{b}$ au sens des moindres carrés est �
     \begin{framedremark}
         Si on choisit un polynôme non irréductible, le résultats peut être divisé et donc le produit est nul.
     \end{framedremark}
-    \begin{subparag}{L'addition dans $
-    \mathbb{F}_4$}
+    \begin{subparag}{L'addition dans $\mathbb{F}_4$}
     Le produit est donéée par le produit des polynôme. Nous avions calculé le produit $t\cdot t$ par division euclidienne, on peut aussi simplement utiliser le fait que $t^2 + t + 1 = 0$ dans $\mathbb{F}_4$
     \[t\cdot t = t^2 = t^2 + t + 1 + t + 1 = t + 1 \text{ et } t(t+1) = t^2 + t + 1 + 1 = 1\]
         

@@ -1,6 +1,6 @@
 \lecture{19}{2024-11-13}{Valeur propre}{}
 \begin{parag}{Rappels sur les espaces propres}
-On traite le cas d'une application linéaire $T : V \to V$ (aussi appelé \textcolor{red}{endomorpgisme} car la source et le but de $T$ coincident).
+On traite le cas d'une application linéaire $T : V \to V$ (aussi appelé \textcolor{red}{endomorphisme} car la source et le but de $T$ coïncident).
 \begin{definition}
     Un vecteur \textbf{non nul} $x \in V$ est un \textcolor{red}{vecteur propre} de $T$ s'il existe un nombre réel $\lambda$ tel que $T(x) = \lambda x$. On appelle alors $\lambda$ une valeur propre  
 \end{definition}
@@ -121,7 +121,7 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
     \end{subparag}
 \end{parag}
 \begin{parag}{Le polynôme caractéristique}
-    Un nombre $\lambda$ est une valeur propre de $A$ si et seulement si la matrice $A - \lambdaI$ n'est pas inversible. Or une matrice est inversible si et seulemet si son déterminant est non nul.
+    Un nombre $\lambda$ est une valeur propre de $A$ si et seulement si la matrice $A - \lambdaI$ n'est pas inversible. Or une matrice est inversible si et seulement si son déterminant est non nul.
     \begin{theoreme}
         Un nombre $\lambda$ est valeur propre de $A$ si et seulement si $\det (A - \lambda I) = 0$.
     \end{theoreme}
@@ -136,14 +136,14 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
             0 & 1 \\ 1 & 0
         \end{pmatrix}$. quelles sont ses valeurs propres?
         \\
-        $A$ transorme $\vec{e_1}$ en $\vec{e_2}$ et $\vec{e_2}$ en $\vec{e_1}$. On reconnaît ici la symmètrie axiale d'axe $x = y$ dans \R$^2$\\
+        $A$ transforme $\vec{e_1}$ en $\vec{e_2}$ et $\vec{e_2}$ en $\vec{e_1}$. On reconnaît ici la symétrie axiale d'axe $x = y$ dans \R$^2$\\
         Calculons algébriquement les valeurs propres.
         \\
         Les valeurs propres sont les racines du polynôme caractéristique:
         \[C_A(t) = |A - -tI_2| = \begin{vmatrix}
             -t & 1 \\ 1 & -t
         \end{vmatrix} = t^2 -1 = (t-1)(t+1)\]
-        Les racines sont $1$ et $-1$, de mulitplicité algébrique de $1$ chacune.\\
+        Les racines sont $1$ et $-1$, de multiplicité algébrique de $1$ chacune.\\
         Cherchons dorénavant les espaces des valeurs propres:
         \begin{itemize}
             \item $E_1 = \ker(A - I_2) = \ker \begin{pmatrix}
@@ -232,10 +232,10 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
 
 \begin{parag}{Similitude et valeurs propres}
     \begin{theoreme}
-        Deux matrices semblables ont le même polynôme caractlristique. Elles ont donc en particulier les mêmes valeurs propres.
+        Deux matrices semblables ont le même polynôme caractéristique. Elles ont donc en particulier les mêmes valeurs propres.
     \end{theoreme}
     \begin{subparag}{Preuve}
-        Soit $A$ et $B$ deux matrice non semblables. C'et à dire, il existe une matrice inversible $P$, de taille $n \times n$ telles que $PAP^{-1} = B$.\\
+        Soit $A$ et $B$ deux matrice non semblables. C'est à dire, il existe une matrice inversible $P$, de taille $n \times n$ telles que $PAP^{-1} = B$.\\
         \begin{align*}
             C_B(t) = C_{PAP^{-1}}(t) &= \det (PAP^{-1} - t\cdot I_n)\\
             &= \det (PAP^{-1} - t\cdot p\cdot P^{-1})\\
@@ -245,14 +245,14 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
         \end{align*}
     \end{subparag}
 
-    \begin{subparag}{Remaruqe}
+    \begin{subparag}{Remarque}
         Deux matrices ayant les mêmes valeurs propres ne sont pas semblables en général.
         \[A = \begin{pmatrix}
             5 & 1 \\ 0 & 5
         \end{pmatrix} \; B = \begin{pmatrix}
             5 & 0 \\ 0 & 5
         \end{pmatrix}\]
-        La seule valeur propre de $A$ et de $B$ est $5$, de mulitplicité algébrique $2$ car $c_A(t) = (t-5)^2 = c_B(t)$. Mais:
+        La seule valeur propre de $A$ et de $B$ est $5$, de multiplicité algébrique $2$ car $c_A(t) = (t-5)^2 = c_B(t)$. Mais:
         \begin{formule}
             \[ A \not\approx B\]
         \end{formule}

@@ -51,9 +51,9 @@
             -2 \\ 3 \\ 13
         \end{pmatrix}, \begin{pmatrix}
             2 \\ -3 \\ 1
-        \end{pmatrix}\right)$ est  une famille orthogonale de vecteurs non nuls de $\mathbb{R}^3$, ele en forme donc une base.
+        \end{pmatrix}\right)$ est  une famille orthogonale de vecteurs non nuls de $\mathbb{R}^3$, elle en forme donc une base.
         \begin{framedremark}
-            Ce qu'on fait ici c'est quon a un plan dans un espace et on y rajouter un vecteurs qui y est orthogonale pour pouvoir avoir accès à tout l'espace, c'est commme si on pouvait "\textit{translater}" le plan dans l'espace.
+            Ce qu'on fait ici c'est qu'on a un plan dans un espace et on y rajouter un vecteurs qui y est orthogonale pour pouvoir avoir accès à tout l'espace, c'est comme si on pouvait "\textit{translater}" le plan dans l'espace.
         \end{framedremark}
         On cherche maintenant $(\vec{u})_\bmath$ qui est donné par:
         \[\vec{u} = \begin{pmatrix}
@@ -76,7 +76,7 @@
         \end{pmatrix}\]
     \end{subparag}
     \begin{subparag}{schéma du prof}
-    \includegraphics[scale = 0.75]{Algèbre linéàaire/Screenshot 2024-12-04 101913.png}
+    \includegraphics[scale = 0.75]{Algèbre linéaire/Screenshot 2024-12-04 101913.png}
     
     \end{subparag}
     \begin{framedremark}
@@ -89,15 +89,15 @@
         Les colonnes d'une matrice $U$ de taille $m\times n$ sont orthonormées si et seulement si $U^TU = I_n$
     \end{theoreme}
     \begin{framedremark}
-        ATTENTION, la réciproque ne marche pas $UU^T \neq I_n$ Ca ne marche pas dutout
+        ATTENTION, la réciproque ne marche pas $UU^T \neq I_n$ ça ne marche pas du tout
     \end{framedremark}
     \begin{subparag}{Preuve}
         Si $U = (\vec{u}_1, \dots, \vec{u}_n)$, alors le coefficient $(i, j)$ de la matrice $U^TU$ est exactement $\vec{u_i}^T\vec{u}_j = \vec{u}_i\vec{u}_j$. 
     \end{subparag}
     \begin{definition}
-        Une matrice \textcolor{red}{carrée} $U$ est \textcolor{red}{orthogonale} si $U^TU = I_n$. Autremenet dit $U^{-1} = U^T \Leftrightarrow$ colonnes (et lignes!) de $U$ sont orthonormées.
+        Une matrice \textcolor{red}{carrée} $U$ est \textcolor{red}{orthogonale} si $U^TU = I_n$. Autrement dit $U^{-1} = U^T \Leftrightarrow$ colonnes (et lignes!) de $U$ sont orthonormées.
     \end{definition}
-    Une matrice orthogonale représente un transofrmation linéaire qui préserve les distantes et l'orthogonalité (c'est donc une \textcolor{red}{isométrie} de $\mathbb{R}^n$, par exemple une rotation ou une symmétrie)
+    Une matrice orthogonale représente un transformation linéaire qui préserve les distantes et l'orthogonalité (c'est donc une \textcolor{red}{isométrie} de $\mathbb{R}^n$, par exemple une rotation ou une symétrie)
 \end{parag}
 
 \begin{parag}{Préservation des longueurs}
@@ -174,7 +174,7 @@
     \begin{theoreme}
         Pour tout $\vec{w} \in W$ on a $||\vec{y} - \vec{w}|| \geq ||\vec{y} - \text{proj}_W\vec{y}||$
     \end{theoreme}
-    On appelle ce vecteurs $\hat{y}$ la meilleure approcimation quadratique de $\vec{y}$ dans $W$ dans le sens où elle minimuse le carré de la distance qui eest calculée par la somme des carrées des coordonnées.
+    On appelle ce vecteurs $\hat{y}$ la meilleure approximation quadratique de $\vec{y}$ dans $W$ dans le sens où elle minimise le carré de la distance qui est calculée par la somme des carrées des coordonnées.
     \begin{subparag}{Idée de la preuve}
             L'idée est d'écrire un vecteurs $\vec{w}$ de $W$ de manière compliquée $\vec{w} = \hat{y} + (\vec{w} - \hat{y})$ afin de diviser en deux parti le vecteurs une qui est dans $W^\perp$ et l'autre dans $W$.
     \end{subparag}
@@ -219,7 +219,7 @@
         \[\vec{c_3} = \vec{b_3} - \hat{b}_3 = \begin{pmatrix}
             -1/6 \\ -1/3 \\ -1/6 \\ 1
         \end{pmatrix}\]
-        Nous avons ainsi contrsuire une base orthogonale $\cmath = (\vec{c_1}, \vec{c_2}, \vec{c}_3)$ de $W$. elle a les propriétés suivantes:
+        Nous avons ainsi construire une base orthogonale $\cmath = (\vec{c_1}, \vec{c_2}, \vec{c}_3)$ de $W$. elle a les propriétés suivantes:
         \begin{itemize}
             \item Le vecteur $\vec{c_1} = \vec{b_1}$
             \item Le vecteurs $\vec{c_k}$ est combinaison linéaire des vecteurs $\vec{b_1}, \dots, \vec{b_k}$, en particulier c'est un vecteurs de $W$.

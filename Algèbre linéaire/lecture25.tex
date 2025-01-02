@@ -5,7 +5,7 @@
         Pour ne pas confondre l'indéterminée $t$ des polynômes et l'élément $t$ donné comme reste de division, on choisit d'appeler $\alpha$ le reste $t$ ou plus précisément la classe $[t]$ de $t$ dans "\textit{l'anneau des polynôme $\mathbb{F}_2[t]$ modulo $t^2 + t + 1$}"
         \begin{enumerate}
             \item Comme \textcolor{red}{ensemble} $\mathbb{F}_4 = \{0, 1, \alpha, \alpha + 1\}$
-            \item \textcolor{red}{l'addition} est celle des polynômes, chaque éléments est son propres opposé.
+            \item \textcolor{red}{l'addition} est celle des polynômes, chaque éléments est son propre opposé.
             \item la \textcolor{red}{multiplication} est celle des polynôme, modulo $t^2 + t + 1$, en particulier $\alpha^2 = \alpha + 1$. On a donc aussi $\mathbb{F}_4 = \{0, 1, \alpha, \alpha^2\}$   
         \end{enumerate}
         On peut par exemple prendre $\alpha \cdot \alpha^2 = \alpha^3 = 1$
@@ -44,9 +44,9 @@
 
         \begin{parag}{Régression linéaire : Objectif}
             On se donne un "\textit{nuage}" de points dans le plan, donnés par leurs ordonnées ($x_1, y_1), \dots, (x_n, y_n)$ et on aimerait trouver la droite qui donne la meilleures approximation :
-            \includegraphics[scale=0.3]{Algèbre linéàaire/Screenshot 2024-12-10 153727.png}
-            On cherche la droite d'équation $y = at + b$ la plus proche des points $(x_1, y_1)\dots (x_n, y_n)$ dans le sens où les distances verticales entre les point et la droite sont minimisées (voici un exemple tié de UC Buisness Analytics R programming Guide)
-            \includegraphics[scale = 0.5]{Algèbre linéàaire/Screenshot 2024-12-10 153930.png}
+            \includegraphics[scale=0.3]{Algèbre linéaire/Screenshot 2024-12-10 153727.png}
+            On cherche la droite d'équation $y = at + b$ la plus proche des points $(x_1, y_1)\dots (x_n, y_n)$ dans le sens où les distances verticales entre les point et la droite sont minimisées (voici un exemple tiré de UC Buisness Analytics R programming Guide)
+            \includegraphics[scale = 0.5]{Algèbre linéaire/Screenshot 2024-12-10 153930.png}
         \end{parag}
         \begin{parag}{Forme Matricielle}
             On écrit le système ci-dessus sous forme matricielle 
@@ -239,11 +239,11 @@
                     \item $\langle1, t\rangle = \int_{-1}^1 tdt = 0$, ainsi les polynômes $1$ et $t$ sont orthogonaux
                     \item $\langle t, t\rangle = \int_{-1}^1t^2 = 2/3$
                 \end{enumerate}
-                Dans $\mathbb{P}_1$, ce produit scalaire est représenté par la matice
+                Dans $\mathbb{P}_1$, ce produit scalaire est représenté par la matrice
                 \[\begin{pmatrix}
                     2 & 0 \\ 0 & 2/3
                 \end{pmatrix}\]
-                On peut continuer avec toute les autres paires possible jusqu'à pourvoir contruire la matrice de $\mathbb{P}_2$ tel que
+                On peut continuer avec toute les autres paires possible jusqu'à pourvoir construire la matrice de $\mathbb{P}_2$ tel que
                 \[A = \begin{pmatrix}
                     2 & 0 & 2/3\\
                     0 & 2/3 & 0\\
@@ -252,7 +252,7 @@
                 Cela signifie que le produit scalaire $\langle p(t), q(t) \rangle$ se calcule en effectuant le produit matriciel
                 \[(p(t))_{\cmath an}^T A(q(t))_{\cmath an}\]
                 La base canonique n'est pas orthogonale. Le procédé de Gram Schmidt permet de la rendre orthogonale: $(1, t, t^2 - 1/3)$, ici $1/3$ est la projection orthogonale de $t^2$ sur $Vect\{1, t\}$
-                \includegraphics[scale = 0.5]{Algèbre linéàaire/Screenshot 2024-12-10 163537.png}
+                \includegraphics[scale = 0.5]{Algèbre linéaire/Screenshot 2024-12-10 163537.png}
                 
             \end{subparag}
             

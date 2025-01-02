@@ -42,7 +42,7 @@
         1/2\\1/2\\1/2\\1/2
     \end{pmatrix}\right\} 
 \end{align*}
-On verifie ensuite $E_5 \perp E_9$.\\
+On vérifie ensuite $E_5 \perp E_9$.\\
 On doit encore calculer $E_1$ et trouver une base orthonormée de $E_1$ pour orthodiagonaliser $A$.
 \begin{align*}
     E_1 &= \ker(A - I_4) = \ker\begin{pmatrix}
@@ -115,8 +115,8 @@ $\bmath = \left(\begin{pmatrix}
     \item Vérifie que $A$ est symétrique
     \item Calculer $c_A(t)$ et en extraire les racines (valeurs propres)
     \item Calculer les espaces propres pour chacun, le procédé de Gram-Schmidt donne une base orthonormée.
-    \item En assem blant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
-    \item La matrice $P$ dont les colonnes sont les vectteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
+    \item En assemblant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
+    \item La matrice $P$ dont les colonnes sont les vecteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
 \end{enumerate}   
 \begin{framedremark}
     L'avantage ici c'est que l'inverse de la matrice de changement de base est juste sa transposée
@@ -211,7 +211,7 @@ $\bmath = \left(\begin{pmatrix}
             \item $car\mathbb{R} = 0$ $n\cdot1 \neq 0$
         \end{enumerate}
         \begin{lemme}
-            Dans un corps $K$, si $x, y \neq 0$, alors $x\cdot y = 0$
+            Dans un corps $K$, si $x, y \neq 0$, alors $x\cdot y \neq 0$
         \end{lemme}
         \textbf{Preuve} On montre que si $x\cdot y = 0$, alors $x$ ou $y$ est nul. Supposons que l'un des deux est non nul, disons que c'est $x$. On doit prouver que $y = 0$.\\
         Comme $x \neq 0$, $x^{-1}$ existe Alors
@@ -269,7 +269,7 @@ $\bmath = \left(\begin{pmatrix}
             Soit $K$ un corps et $p(t) = t^2 - a$ si $a$ n'est pas un carré (dans $K$), alors $p(t)$ est irréductible.
         \end{proposition}
         \textbf{Preuve}
-        En effet $p(t)$ est irreduvtible si et seulement si il n'a pas de racine (car il est de degré 2), si et seulement si $p(x) \neq 0$ pour tout $x \in K$.
+        En effet $p(t)$ est irreductible si et seulement si il n'a pas de racine (car il est de degré 2), si et seulement si $p(x) \neq 0$ pour tout $x \in K$.
         \\
         Or, $p(x) = x^2 - a = 0$ si et seulement si $a = x^2$ est un carré
         \begin{framedremark}
@@ -282,13 +282,13 @@ $\bmath = \left(\begin{pmatrix}
                  $x^2$& 0 & 1 & 4 & 2 & 2 & 4 & 1 
             \end{tabular}
             \\
-            Par exemple $3$ n'est pas un carrl dans $\mathbb{F}_7$, donc $t^2-3$ est irréductible.
+            Par exemple $3$ n'est pas un carré dans $\mathbb{F}_7$, donc $t^2-3$ est irréductible.
             \\
             $\mathbb{F}_{49}$ est l'ensemble des restes de la division par $t^2 - 3$ tel que
             \[ = \{a\cdot t + b | a, b \in \mathbb{F}_7\}\]
             \begin{itemize}
                 \item Somme: $(3t + 2) + (3t + 5) = 6t + 7 = 6t = -t$
-                \item Poroduit $(t+1)(t+4) = t^2 + 5t + 4 = 3 + 5t + 4 = 5t$ car on peut simplifer par $t^2 - 3$ on fait la division euclidienne par $t^2 - 3$ et on trouve $1$ et le reste $5t$.
+                \item Produit $(t+1)(t+4) = t^2 + 5t + 4 = 3 + 5t + 4 = 5t$ car on peut simplifier par $t^2 - 3$ on fait la division euclidienne par $t^2 - 3$ et on trouve $1$ et le reste $5t$.
                 \\
                 On pose $\alpha = [t]$ et comme $[t^2 - 3] = 0$ dans $\mathbb{F}_{49}$
                 \[\mathbb{F}_{49} = \{a \cdot \alpha + b | a, b \in \mathbb{F}_7\}\]

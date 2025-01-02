@@ -25,7 +25,7 @@
     Ainsi le nouveau produit $a \cdot b$ est nul. Alors $a$ ne peut pas avoir d'inverse car sinon $b = 1 \cdot b = a^{-1} \cdot 0 = 0$.
 \end{subparag}   
 \begin{theoreme}
-    lorsque $\rho$ est un nombre premier les opérations définies ci-dessus forment un corps $\mathbb{F_\rho}$.
+    lorsque $p$ est un nombre premier les opérations définies ci-dessus forment un corps $\mathbb{F_p}$.
 \end{theoreme}
 Les seules propriétés qui ne découlent pas de celle de la somme et du produit dans $\mathbb{Z}$ sont l'existence d'opposé et d'inverse.
 \begin{subparag}{Preuve}
@@ -38,7 +38,7 @@ Les seules propriétés qui ne découlent pas de celle de la somme et du produit
     \begin{framedremark}
         C'est le piegeonhole principle en AICC:
         \\
-        Si il y a 400 cadeaux avec des noms différents alors chacun a son cadeau si on a 400 éléves, donc si chaque éléments a un $\phi(k)$ qui est différents on a alors chaque cadeau qui est différents, et si on a le même nombre de cadeau et d'éléves alors on a forcémment un cadeau par éléves
+        Si il y a 400 cadeaux avec des noms différents alors chacun a son cadeau si on a 400 élèves, donc si chaque éléments a un $\phi(k)$ qui est différents on a alors chaque cadeau qui est différents, et si on a le même nombre de cadeau et d’élèves alors on a forcément un cadeau par élèves
     \end{framedremark}
     \begin{itemize}
         \item Pour cela si $0 < x, y<p$, supposons que $\phi(x) = \phi(y)$, on doit montrer que $x = y$. On sait : $x \cdot k = y \cdot k$ ce qui revient à dire $(x-y)\cdot k = 0$,dans $\mathbb{Z} (x-y)\cdot k$ est un multiple de $p$. mais $k$ est un nombre $< p$, donc $p$ divise $x - y$ mais comme à leur tour $0 < x, y < p$, $x = y$
@@ -130,7 +130,7 @@ Les seules propriétés qui ne découlent pas de celle de la somme et du produit
     \end{subparag}
 \end{parag}
 
-\begin{parag}{Diagonalisabilité : Néthode}
+\begin{parag}{Diagonalisabilité : méthode}
     Soit $T : V \to V$ une application linéaire.
     \begin{enumerate}
         \item Choisir une base $\cmath$ de $V$ (la base canonique si elle existe)
@@ -148,7 +148,7 @@ Les seules propriétés qui ne découlent pas de celle de la somme et du produit
         \item Choisir une base $\bmath_\lambda$ de $E_\lambda$ pour toute valeur propres $\lambda$.
         \item Réunir les $\bmath_\lambda$ pour former une base de $\bmath$ de $V$.
         \item $D = (T)_\bmath^\bmath$ est diagonale. Les valeurs propres apparaissent dans la diagonale dans l'ordre choisi pour construire la base $\bmath$.
-        \item Les colonnes de la matrice de changemet de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en cooronnées dans $\cmath$.
+        \item Les colonnes de la matrice de changement de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en cooronnées dans $\cmath$.
         \item $D = P^{-1}AP$ et $A = PDP^{-1}$.
     \end{enumerate}
     \begin{subparag}{Exemple}
@@ -225,7 +225,7 @@ Les seules propriétés qui ne découlent pas de celle de la somme et du produit
 
 \begin{parag}{La trace}
     \begin{defintion}
-        Soit $A$ une amtrice $n \times n$. La \textcolor{red}{trace} $Tr A = a_{11} + a_{22} + \cdots + a_{nn}$.
+        Soit $A$ une matrice $n \times n$. La \textcolor{red}{trace} $Tr A = a_{11} + a_{22} + \cdots + a_{nn}$.
     \end{defintion}
     \begin{subparag}{Exemple}
         Soit $A = \begin{pmatrix}
