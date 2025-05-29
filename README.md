@@ -23,3 +23,4 @@ Pendant ce semestre j'ai changé à vim grâce à Joachim Favre (le goat), j'ai 
 Pour FDS j'ai arrêté de prendre au milieu du semestre donc voila le début quand même...
 - [FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6)[PDF]([FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511405/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf)
 )
+[AICC_II_Prof__Michael_Gastpar_EPFL.pdf](https://github.com/user-attachments/files/20511419/AICC_II_Prof__Michael_Gastpar_EPFL.pdf)
