@@ -2,12 +2,13 @@
 
 
 ### EPFL Computer Science Bachelor
-#### Bachelor semester 1 (Autumn 2024)
+
 
 ## Remarque
 Pour cette prise de note j'ai utilisé les notes de Joachim Favre [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master). Ces cours ne m'appartiennent pas, Les explications provienent des professeurs et des livres de cours.
 
-# Note
+# Notes
+#### Bachelor semester 1 (Autumn 2024)
 Pour ce qui est de la prise de note, pour le premier semestre je le faisais avec overleaf
 - [Overleaf AICC I](https://www.overleaf.com/read/httyzkgthpwd#14e403)  | [AICC_quiz_1.pdf](https://github.com/user-attachments/files/20511443/AICC_quiz_1.pdf)
 
