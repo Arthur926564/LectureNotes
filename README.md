@@ -5,7 +5,7 @@
 
 
 ## Remarque
-Pour cette prise de note j'ai utilisé les notes de Joachim Favre [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master). Ces cours ne m'appartiennent pas, Les explications provienent des professeurs et des livres de cours.
+Pour cette prise de note j'ai utilisé le fichier style de Joachim Favre [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master). Ces cours ne m'appartiennent pas, Les explications provienent des professeurs et des livres de cours.
 
 # Notes
 #### Bachelor semester 1 (Autumn 2024)
@@ -28,6 +28,8 @@ Pendant ce semestre j'ai changé à vim grâce à Joachim Favre (le goat), j'ai 
 )
 Pour FDS j'ai arrêté de prendre au milieu du semestre donc voila le début quand même...
 
-- [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf)
+- [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf) 
+
+### Bachelor semester 3
 
 
