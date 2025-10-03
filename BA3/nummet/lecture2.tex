@@ -1,0 +1,87 @@
+\lecture{2}{2025-09-18}{}{}
+\begin{parag}{Catastrophic cancellation}
+    Of all the mathematical operations, one particular case is \important{especially dangerous}
+    \begin{align*} a - b \mathspace \left(a \approx b\right) \end{align*}
+    The also happens for $a + b$ when $a \approx -b$ This can lead to catastrophic cancellation even if the substraction is done without error (this can happend not only if the there is an rounding error in the operation but maybe from before).
+    \begin{subparag}{Example}
+        For instance $3.140 = 2^1 \cdot 1.10010010$ and $-3.149 = + 2^1 1.10010010$
+	When you sum both you get:
+	\begin{align*} = -2^{-7} 1.0_2 \end{align*}
+    \end{subparag}
+\end{parag}
+
+
+\begin{parag}{Quantiying error}
+    \begin{itemize}
+	    \item Absolute error: $\left|\text{true value} - \text{aprroximate value}\right|$
+		    \begin{itemize}
+			    \item Example 2cm $\pm 0.1 cm$
+		    \end{itemize}
+	    \item Relative error: $\frac{\text{absolute error}}{\left|\text{true value}\right|}$
+		    \begin{itemize}
+			    \item Example: 2cm $\pm 0.1 \%$
+			    \item Another common notation (true value) (1 $\pm $relative error)
+		    \end{itemize}
+		    
+    \end{itemize}
+    
+\end{parag}
+\begin{parag}{Forward ans Backward Error}
+    \begin{subparag}{Example}
+        For instance let us take
+	\begin{align*} f(x) := \sqrt{x} \\
+	y =  f(x)\\
+\bhat{y} = f_{IEE754}(x)\end{align*}
+    \end{subparag}
+    Here is you wanted to compute the the backward error you would do it like this:
+    \begin{align*} error = x - \left(f_{IEE754}(x)\right)^2 \end{align*}
+\end{parag}
+\begin{parag}{Conditioning of numerical problems}
+    
+\end{parag}
+
+\section{Linear systems}
+
+\begin{parag}{Geometric intrerpretation of matrix-vector product}
+	\begin{align*} \left(Ax\right)_i = \sum_{k= 1}^{n}A_{ik}x_k \text{ where } A = \begin{pmatrix} \mid & \mid & \mid \\ a^{\left(1\right)} & a^{\left(2\right)} & a^{\left(3\right)}\\ \mid & \mid & \mid \end{pmatrix}  \end{align*}
+
+    
+\end{parag}
+
+
+
+\begin{parag}{Basic matric transformation in 2D}
+	\begin{subparag}{Scaling}
+	    \begin{align*} \begin{pmatrix} v_x' \\ v_y' \end{pmatrix} = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} v_x \\ v_y \end{pmatrix}  \end{align*}
+	\end{subparag}
+	\begin{subparag}{Rotation}
+	    \begin{align*} \begin{pmatrix} v_x' \\ v_y' \end{pmatrix} = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} \begin{pmatrix} v_x \\ v_y \end{pmatrix}  \end{align*}
+	\end{subparag}
+    
+\end{parag}
+
+
+\begin{parag}{Whyshould we care about linear function?}
+    \begin{itemize}
+	    \item Solving linear problems is one of the (few) numerical problems that we know to solve \important{really well}
+	    \item When you can turn something into a linear system $\to$ good job, you are done.
+	    \item Nonlinear method are fragile
+    \end{itemize}
+    Almost everything boils down to a linear system
+    \begin{definition}
+    Matrix multiplication:
+    \begin{align*} \left(AB\right)_{ij}=  \sum_{k =  1}^{n}A_{ik}B_{kj} \end{align*}
+    \end{definition}
+    The question however is why is it defined this way?\\
+    For instance if we take $f\left(x\right) =  Ax, g\left(x\right) = Bx$ then you get that
+    \begin{align*} g\left(f \left(x\right)\right) BAx \end{align*}
+    
+\end{parag}
+
+
+
+\begin{parag}{Pure versus numerical mathematics}
+	\begin{align*} \begin{pmatrix} 1 & 0 \\ 1 & \epsilon \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}  \end{align*}
+    
+\end{parag}
+
