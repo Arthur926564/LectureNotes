@@ -17,7 +17,7 @@ Pour ce qui est de la prise de note, pour le premier semestre je le faisais avec
 
 
 ### Bachelor semester 2 (Spring 2025)
-##Remarque
+## Remarque
 Pendant ce semestre j'ai changé à vim grâce à Joachim Favre (le goat), j'ai aussi utilisé ses fichiers styles donc merci!
 
 - [Overleaf Analyse II](https://www.overleaf.com/read/hcfrbrtbtkfq#d26d64) |  [Analyse_II_Prof__Lachowska_Anna_EPFL.pdf](https://github.com/user-attachments/files/20511446/Analyse_II_Prof__Lachowska_Anna_EPFL.pdf)
