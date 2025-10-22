@@ -1,0 +1,31 @@
+% !TeX program = lualatex
+% Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
+
+\documentclass[a4paper]{article}
+
+% Expanded on !p snip.rv = get_formatted_date() at !p snip.rv = get_formatted_time().
+% ===== Language and Encoding (LuaLaTeX version) =====
+\usepackage{fontspec}
+
+% ===== Document Geometry =====
+\usepackage[bottom=2.5cm, top=2.5cm]{geometry}
+\setlength{\columnsep}{0.5cm}
+
+% ===== Useful Formatting =====
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[all]{nowidow}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks, breaklinks]{hyperref}
+
+
+\title{Computer Architecture \\ Prof. Paulo Ienne}
+\author{Arthur Herbette}
+\date{Saturday 11 October 2025}
+
+\begin{document}
+\maketitle
+test
+
+\end{document}
