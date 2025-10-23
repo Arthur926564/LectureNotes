@@ -1,34 +1,31 @@
 \section{2a. Multicycle Processor}
-In this section will more go into the detail of the \important{hardware} behind the cpu especialy multicycle processor.\\
+In this section, we will more go into the detail of the \important{hardware} behind the cpu. Especialy multicycle processor.\\
 As seen before, the CPU has more than one part:
 \begin{center}
 \includegraphics[scale=0.2]{screenshots/2025-10-21_5.png}
 \end{center}
-However the red part (entourer des pointille rouges) here is in fact just a \important{big finite-state machine}. This means that we can create a diagram for it.
-\begin{parag}{Single cycle processor} For instance the fsm of a single-cycle processor is very easy: 
+However the red part (les pointilles rouges) here is in fact a \important{big finite-state machine}. This means that we can create a state diagram for it.
+\begin{parag}{Single cycle processor} For instance the state diagram of a single-cycle processor is very easy: 
 \begin{center}
-	    
-	
 \begin{tikzpicture}[
     state/.style=
 	{circle, mininum size=9cm, draw, align=center, ->, >, >=stealth', auto, semithick },
     >=Stealth
 ]
 
-% Nodes
 \node[state]  at (0, 0)(execute) {Execute an\\instruction};
 \node[state, right=3cm of execute]at (1, -2) (halt) {Halt};
 
-% Arrows
-% Loop back arrows
 \draw (execute) edge[loop above] node {PC $\leftarrow$ PC + 4} (exectute);
 \draw (halt) edge[loop above] node {not} (halt.west);
 
-% Break arrow to halt
-\draw (execute) edge[bend left] node {\tt break} (halt);
+\draw[->] (execute) edge[bend left] node {\tt break} (halt);
 
 \end{tikzpicture}
 \end{center}
+\begin{subparag}{Remark}
+    If someone knows how to makes the break here above or below the line I will be curious how.
+\end{subparag}
 There is only two state which means that every instruction is done at a seperate time (single cycle). This directly implies that the longest \important{combinational path} determines the operating frequncy: \important{critical path}.\\
 If we wanted to increase frequency then the critical path would be halved into another cycle.
 \end{parag}
@@ -105,6 +102,7 @@ At the moment not really, before we had 1 instruction \important{per cycle} at f
 \draw[arrow] (execute)  edge[bend left](fetch1);
 
 \end{tikzpicture}
+\\
 The goal here is:
 \begin{enumerate}
     \item \important{not} to have \important{too many} stages 
@@ -185,45 +183,53 @@ The goal here is:
 \end{tikzpicture}
 I spent an hour on this so please appreciate.\\
 \begin{parag}{$\;$}
-    The definition of the mealy fsm is that the output depeneds on the \important{input and state}. On the other hand, the definition of the moor fsm is that the output depends on the \important{state only}. \\
-	As a human the moore machine is \textbf{way} easier to develop test, etc. We \textbf{always} want to implement a fsm as a moore one. And good news: it is possible\\
+    The definition of the mealy fsm is that the output depeneds on the \important{input and state}. On the other hand, the definition of the moore fsm is that the output depends on the \important{state only}. \\
+	As a human the moore machine is \textbf{way} easier to develop test, etc. We \textbf{always} want to implement a fsm as a moore machine. And good news: it is always possible (almost)\\
 	All we have to do is to retard the current output to the next cycle and put our output as a \textit{state} of the fsm. This way: the next output (which becomes the current) is just a \important{state}.
 
 \end{parag}
-\paragraph{Building the circuit}%
-\label{par:Building the circuit}
+\subsection{Building the circuit}
 
-    What we are goind to do now is to build the circuit. To do so, we'll do it step by step, adding progressiely what we need.\\
-	First, we need an instruction register which store the current instruction (so that it doesn't die after one cycle). We will also need a Controller and the \texttt{pc}.
+    What we are going to do now is to build the circuit. To do so, we'll do it step by step, adding progressiely what we need.\\
+	First, we need an instruction register which store the current instruction (so that it doesn't die after one cycle). We will also need a Controller and the \texttt{pc}.\\
+
 \textbf{I-Type instructions Need \texttt{RF} and \texttt{ALU}}\\
-	Type I is the instruction with immediate, this means that there is only one value as input (that's why I put value and not values after).
-    To be able now to \texttt{add}, \texttt{sub}, etc. We need two things:
+	Type I is the instruction with immediate, this means that there is only one value as input (that's why I put value and not values).
+    To be able now to \texttt{add}, \texttt{sub}, etc. We need three things:
 	\begin{itemize}
 	    \item Value to be computed
 	    \item Somewhere to compute
 	    \item Value to store the result
 	\end{itemize}
-	The value to be computed and the calue to store the result are in the same place: the register file. Where we will compute those are in the ALU (Arithmetic Logic unit)\\
+	The value to be computed and the value to store the result are in the same place: the \important{register file}. The location where we'll compute the instructions are in the ALU (Arithmetic Logic unit)\\
+
 \textbf{R-Type}\\
-	Those need two values as input, to do so we will use the same ALU as the one before and we'll just add a multiplexer to choose from the immediate and the register value.
+	we'll go over instructions with two values as input. To do so, we'll use the same ALU as the one before and we'll just add a multiplexer to choose from the immediate and the register value.\\
+
 \textbf{U-Type instructions write an immediate}\\
-    Those instruction will then need a multiplexer \important{after} the \texttt{ALU}, because we need to choose to write either the result of the \texttt{ALU} or the immediate.\\
+    We now need to store immediate instead of the result of the ALU. Therefore, those instructions will need a multiplexer \important{after} the \texttt{ALU} in order to choose to write either the result of the \texttt{ALU} or the immediate.\\
+
 \textbf{Load and Store produces a memory address}\\
     For those we will need to output the address. At  the moment the only \textit{load} that we did is on the program with the \texttt{pc}. However now we will also need to load from the memory data. In order to do this, we will need to choose to load either the pc or the output of the \texttt{ALU} as an address $\implies$ we add a multiplexer.\\
+
 \textbf{Loads write the read data into \texttt{RF}}\\
-    So now we can access the memory however after accessing the memory we get a \texttt{rdata} which we still need to manage. To do so we will output as it is an output from the \texttt{ALU} by adding a multiplexer after this output, we will need a signal to know wether we are choosing from memory or from the ALU \texttt{sel\_mem}.\\
+    So now we can access the memory however after accessing the memory we get a \texttt{rdata} which we still need to manage. To do so we will treat it as it is an output from the \texttt{ALU} by \important{adding} a multiplexer. After this output, we will need a signal to know wether we are choosing from memory or from the ALU \texttt{sel\_mem}.\\
+
 \textbf{Stores send an operant to memory}\\
-	Now the instruction we want to implement is the \texttt{sw t0, 16(t1)} instruction. For this instruction we will choose the \texttt{b} signal as the \texttt{t0} and the \texttt{a} as the address(as we did before). Therefore we need to connect the b into the memory with the new signal \texttt{wdata}. The difference between the store and the load is the \texttt{we} (write enable) signal that serve the memory to know wether we are reading or writing into it.\\
+	Now the instruction we want to implement is the \texttt{sw t0, 16(t1)} instruction. For this instruction, we will choose the \texttt{b} signal as the \texttt{t0} and the \texttt{a} as the address(as we did before). Therefore we need to connect the b into the memory with the new signal \texttt{wdata}. The difference between the store and the load is the \texttt{we} (write enable) signal that serve the memory to know wether we are reading or writing into it.\\
+
 \textbf{Branches need to write an offset to the \texttt{PC}}\\
-	We if want to implement the instruction \texttt{beq t0, t1, 1234}, we want to do is change the pc based on a condition, this condition will be compute in the \texttt{ALU}, the alu will output in his lsb wether or not the \texttt{PC} will be updated. We want to replace the current \texttt{PC} by the immediate which leads us to add a path from the controller into the \texttt{PC}, a new branch of the \texttt{imm} signal. The controller has to also informed the \texttt{PC} wether or not we have to enable the writting.\\
-	Here we have two clause:
+	 To implement the instruction \texttt{beq t0, t1, 1234}, what we do is to change the \texttt{pc} based on a condition, this condition will be compute in the \texttt{ALU}, the \texttt{alu} will output in his lsb wether or not the \texttt{PC} will be updated.\\
+	  If the branch is succesful, we want to replace the current \texttt{PC} by the immediate which leads us to add a path from the controller into the \texttt{PC}, a new branch of the \texttt{imm} signal. The controller has to also informed the \texttt{PC} wether or not we have to enable the writting.\\
+
+	Here we have two clauses:
 	\begin{enumerate}
 	    \item \texttt{branch\_op} \textrightarrow informs us of if we are in a branch operation 
 	    \item \texttt{alu\_res} which is the lsb of the \texttt{ALU} as said before
 	\end{enumerate}
 	If those two signal are up $\implies$ we enable the write of the \texttt{PC}.
     \begin{framedremark}
-    As we can see now, the \texttt{PC} is no longer just a simpler register, it contains some logic to compute the new value.
+    As we can see now, the \texttt{PC} is no longer just a simple register, it contains some logic to compute new values.
     \end{framedremark}
 \textbf{jump and link need to store \texttt{PC + 4} in the \texttt{RF}}\\
     To do so, we therefore need another output from the \texttt{PC} which can be stored into the register file based on a signal \texttt{sel\_mem} (whic has to be 0, the inverse of what we have used for before) and the \texttt{sel\_pc} signal.\\
@@ -422,8 +428,8 @@ I spent an hour on this so please appreciate.\\
 	\end{center}
 	I know it is very ugly but this was \important{loong to do}. (for those intrested I used \url{https://tikzmaker.com}, to do it)
 
-\begin{parag}{Detail complexe combinational modules}
-	As you can guess each part of those module has more into them, for instance the \texttt{ALU} has 4 sub module (which we will implement in the second and third lab).
+\begin{parag}{Detail complex combinational modules}
+	As you can guess each part of those module has more into them, for instance the \texttt{ALU} has 4 sub modules (which we will implement in the first part of the second lab).
     \begin{center}
     \includegraphics[scale=0.2]{screenshots/2025-10-22_3.png}
     \end{center}

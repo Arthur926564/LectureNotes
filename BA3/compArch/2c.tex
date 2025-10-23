@@ -1,5 +1,5 @@
 \section{2c: Interrupts}
-The solution of our previous problem is interrupts! Instead of waiting for each I/O to responds, we can do our work and \important{when a I/O} \textit{shouts} we do what he want us to do. We have them \textit{ask} for \important{attention}\\
+The solution of our previous problem is interrupts! Instead of waiting for each I/O to responds, we can do our work and \important{when a I/O} \textit{shouts} we do what he want us to do. We have them \important{ask} for \important{attention}\\
 \begin{parag}{Seen this already in some languages}
 	We maybe, have already seen this mecanics in some languages:
 	\begin{itemize}
@@ -9,7 +9,7 @@ The solution of our previous problem is interrupts! Instead of waiting for each 
 \end{parag}
 \begin{parag}{The basic Idea of I/O interrupts}
     \begin{center}
-    \includegraphics[scale=0.2]{screenshots/2025-10-22_12.png}
+    \includegraphics[scale=0.3]{screenshots/2025-10-22_12.png}
     \end{center}
 	We use the \texttt{read\_adc} address which is where we handle the I/O interrups. The interrupt request serve to trigger the interruption.\\
 	However the is several issues to take care of and behaviours to define:
@@ -45,6 +45,9 @@ The solution of our previous problem is interrupts! Instead of waiting for each 
 			\includegraphics[scale=0.2]{screenshots/2025-10-22_14.png}
 			\caption{tiaming diagram}
 		\end{figure}
+\begin{framedremark}
+	On the software side, it works with the same code we used before for polling. However, the \texttt{read\_adc} function is now called by the interrupt handler. The interrupt handler stores the address of the program that manages all interrupt requests, and from there, it launches the program that handles the ADC.
+\end{framedremark}
 \begin{framedremark}
 It is a very good practice to just look at the timing diagram and "\textit{guess}" how the circuit would look like.
 \end{framedremark}

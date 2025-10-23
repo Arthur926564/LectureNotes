@@ -29,16 +29,16 @@
 \contentsline {paragraph}{Arrays in high-level languages}{21}{section*.19}%
 \contentsline {paragraph}{Adding Positive elements}{22}{section*.20}%
 \contentsline {paragraph}{Adding positive elements (Type 1)}{22}{section*.21}%
-\contentsline {paragraph}{Adding positive element Type 2}{22}{section*.22}%
+\contentsline {paragraph}{Adding positive element Type 2}{23}{section*.22}%
 \contentsline {paragraph}{Adding positive element Type 3}{23}{section*.23}%
-\contentsline {paragraph}{Adding positive elements (variation on c)}{23}{section*.24}%
+\contentsline {paragraph}{Adding positive elements (variation on type 3)}{23}{section*.24}%
 \contentsline {paragraph}{Linked list}{24}{section*.25}%
 \contentsline {section}{\numberline {2.5}1.e: Instruction Set architecture Arithmetic}{26}{section.2.5}%
 \contentsline {paragraph}{Notation}{26}{section*.26}%
 \contentsline {paragraph}{Numbers}{26}{section*.27}%
-\contentsline {paragraph}{unsigned integers}{26}{section*.28}%
-\contentsline {paragraph}{Additoin is unchanged from unsigned}{26}{section*.29}%
-\contentsline {paragraph}{Overflow in hardware}{26}{section*.30}%
+\contentsline {paragraph}{Unsigned Integers}{26}{section*.28}%
+\contentsline {paragraph}{Addition is unchanged from unsigned}{26}{section*.29}%
+\contentsline {paragraph}{Overflow in hardware}{27}{section*.30}%
 \contentsline {paragraph}{Overflow in software}{27}{section*.31}%
 \contentsline {paragraph}{$A + \overline {A} = -1$}{27}{section*.32}%
 \contentsline {paragraph}{Two's complement Add/Subtract Units}{27}{section*.33}%
@@ -50,48 +50,48 @@
 \contentsline {paragraph}{Multi cycle Processor}{30}{section*.37}%
 \contentsline {paragraph}{Mealy or Moore?}{30}{section*.38}%
 \contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{31}{section*.39}%
-\contentsline {paragraph}{Building the circuit}{31}{paragraph*.40}%
-\contentsline {paragraph}{Detail complexe combinational modules}{33}{section*.41}%
-\contentsline {section}{\numberline {3.2}2b. Processor, Inputs and Outputs}{33}{section.3.2}%
-\contentsline {paragraph}{The cpu}{33}{section*.42}%
-\contentsline {paragraph}{Memory}{33}{section*.43}%
-\contentsline {paragraph}{Input and Outputs device}{34}{section*.44}%
-\contentsline {paragraph}{Accessing I/Os: Port Mapped I/O (PMIO)}{34}{section*.45}%
-\contentsline {paragraph}{Accessing I/Os: Memory Mapped I/O (MMIO)}{34}{section*.46}%
-\contentsline {paragraph}{Example: A/D converter}{35}{section*.47}%
-\contentsline {paragraph}{Example: Simple bus interface}{36}{section*.48}%
-\contentsline {paragraph}{A/D converter: software}{37}{section*.49}%
-\contentsline {paragraph}{Programmed I/Os}{37}{section*.50}%
+\contentsline {subsection}{\numberline {3.1.1}Building the circuit}{31}{subsection.3.1.1}%
+\contentsline {paragraph}{Detail complex combinational modules}{33}{section*.40}%
+\contentsline {section}{\numberline {3.2}2b. Processor, Inputs and Outputs}{34}{section.3.2}%
+\contentsline {paragraph}{The cpu}{34}{section*.41}%
+\contentsline {paragraph}{Memory}{34}{section*.42}%
+\contentsline {paragraph}{Input and Outputs device}{34}{section*.43}%
+\contentsline {paragraph}{Accessing I/Os: Port Mapped I/O (PMIO)}{34}{section*.44}%
+\contentsline {paragraph}{Accessing I/Os: Memory Mapped I/O (MMIO)}{35}{section*.45}%
+\contentsline {paragraph}{Example: A/D converter}{36}{section*.46}%
+\contentsline {paragraph}{Example: Simple bus interface}{36}{section*.47}%
+\contentsline {paragraph}{A/D converter: software}{37}{section*.48}%
+\contentsline {paragraph}{Programmed I/Os}{38}{section*.49}%
 \contentsline {subsection}{\numberline {3.2.1}A Classic UART}{38}{subsection.3.2.1}%
-\contentsline {paragraph}{Definition}{38}{section*.51}%
-\contentsline {paragraph}{I/O polling}{38}{section*.52}%
+\contentsline {paragraph}{Definition}{38}{section*.50}%
+\contentsline {paragraph}{I/O polling}{39}{section*.51}%
 \contentsline {section}{\numberline {3.3}2c: Interrupts}{39}{section.3.3}%
-\contentsline {paragraph}{Seen this already in some languages}{39}{section*.53}%
-\contentsline {paragraph}{The basic Idea of I/O interrupts}{39}{section*.54}%
-\contentsline {paragraph}{I/O Interrupt priorities}{40}{section*.55}%
-\contentsline {paragraph}{Interrup controller}{41}{section*.56}%
-\contentsline {subsection}{\numberline {3.3.1}Direct Memory Access (DMA)}{41}{subsection.3.3.1}%
-\contentsline {paragraph}{Without DMA}{41}{section*.57}%
-\contentsline {paragraph}{With the DMA}{41}{section*.58}%
-\contentsline {paragraph}{Direct Memory Access}{42}{section*.59}%
-\contentsline {paragraph}{Timer and Periodic DMA Operations}{42}{section*.60}%
-\contentsline {paragraph}{Bus Control and Processor Cooperation}{42}{section*.61}%
-\contentsline {paragraph}{Advantages of DMA}{43}{section*.62}%
-\contentsline {paragraph}{Example Sequence with Timer and DMA}{43}{section*.63}%
-\contentsline {section}{\numberline {3.4}Exceptions}{43}{section.3.4}%
-\contentsline {paragraph}{Levels of Priviledge = Processors modes}{44}{section*.65}%
-\contentsline {subsubsection}{Processor tasks on Exceptions}{45}{subsubsection*.66}%
-\contentsline {paragraph}{Priorities}{45}{section*.67}%
-\contentsline {paragraph}{Writing the handlers is very \textcolor {maincolour}{{\boldmath \textbf {very}}} tricky}{45}{section*.68}%
-\contentsline {paragraph}{Processor design Issue with Exceptions}{45}{section*.69}%
-\contentsline {paragraph}{A/D converter: startADC}{47}{section*.70}%
-\contentsline {paragraph}{Handler}{47}{section*.71}%
-\contentsline {paragraph}{A/D converter: insertIntoBuffer}{48}{section*.72}%
-\contentsline {paragraph}{Parti 1a: Connecting an Input Peripheral}{49}{section*.74}%
-\contentsline {paragraph}{Circuit}{49}{section*.75}%
+\contentsline {paragraph}{Seen this already in some languages}{39}{section*.52}%
+\contentsline {paragraph}{The basic Idea of I/O interrupts}{39}{section*.53}%
+\contentsline {paragraph}{I/O Interrupt priorities}{41}{section*.54}%
+\contentsline {paragraph}{Interrup controller}{41}{section*.55}%
+\contentsline {subsection}{\numberline {3.3.1}Direct Memory Access (DMA)}{42}{subsection.3.3.1}%
+\contentsline {paragraph}{Without DMA}{42}{section*.56}%
+\contentsline {paragraph}{With the DMA}{42}{section*.57}%
+\contentsline {paragraph}{Direct Memory Access}{43}{section*.58}%
+\contentsline {paragraph}{Timer and Periodic DMA Operations}{43}{section*.59}%
+\contentsline {paragraph}{Bus Control and Processor Cooperation}{43}{section*.60}%
+\contentsline {paragraph}{Advantages of DMA}{43}{section*.61}%
+\contentsline {paragraph}{Example Sequence with Timer and DMA}{43}{section*.62}%
+\contentsline {section}{\numberline {3.4}Exceptions}{44}{section.3.4}%
+\contentsline {paragraph}{Levels of Priviledge = Processors modes}{45}{section*.64}%
+\contentsline {subsubsection}{Processor tasks on Exceptions}{45}{subsubsection*.65}%
+\contentsline {paragraph}{Priorities}{45}{section*.66}%
+\contentsline {paragraph}{Writing the handlers is very \textcolor {maincolour}{{\boldmath \textbf {very}}} tricky}{46}{section*.67}%
+\contentsline {paragraph}{Processor design Issue with Exceptions}{46}{section*.68}%
+\contentsline {paragraph}{A/D converter: startADC}{47}{section*.69}%
+\contentsline {paragraph}{Handler}{48}{section*.70}%
+\contentsline {paragraph}{A/D converter: insertIntoBuffer}{49}{section*.71}%
+\contentsline {paragraph}{Parti 1a: Connecting an Input Peripheral}{49}{section*.73}%
+\contentsline {paragraph}{Circuit}{50}{section*.74}%
 \contentsline {chapter}{\numberline {4}Memory Hierarchy}{51}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Caches}{51}{section.4.1}%
-\contentsline {paragraph}{What memory to use?}{52}{section*.77}%
-\contentsline {paragraph}{Spatial and Temporal locality}{52}{section*.78}%
-\contentsline {paragraph}{Our placment policy most be:}{52}{section*.79}%
-\contentsline {subsubsection}{Cache: The idea}{53}{subsubsection*.80}%
+\contentsline {paragraph}{What memory to use?}{52}{section*.76}%
+\contentsline {paragraph}{Spatial and Temporal locality}{52}{section*.77}%
+\contentsline {paragraph}{Our placment policy most be:}{52}{section*.78}%
+\contentsline {subsubsection}{Cache: The idea}{53}{subsubsection*.79}%

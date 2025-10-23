@@ -10,12 +10,12 @@
 	\end{center}
 	We assume that the ram begins at the  address \texttt{0x80000000} and then add what is needed to be added:
 	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_4.png}
+	\includegraphics[scale=0.25]{screenshots/2025-10-22_4.png}
 	\end{center}
 \end{parag}
 \begin{parag}{Input and Outputs device}
     As said before we only have 5 classic components of a computer, from where can we get our I/Os then? the way of doing this, is to use memory, we say that the device are just some value in memory with a certain address. However for this we have somme issue:\\
-	Some device are way faster than other for instance here's a table of some example.
+	Some device are way \important{faster} than other for instance here's a table of some examples:
 \end{parag}
 	\begin{table}[h!]
 \centering
@@ -55,27 +55,27 @@
 \begin{parag}{Accessing I/Os: Memory Mapped I/O (MMIO)}
     In this way, we don't make any difference between memory and I/Os.
 	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_4.png}
+	\includegraphics[scale=0.2]{screenshots/2025-10-22_5.png}
 	\end{center}
 	This means that there are no special hardware needed in the cpu $\implies$ no special instructions needed. For intsance in our example if we wanted to write a new value in the led:
-	\begin{lstlistings}[language={[RISC-V]Assembler}]
+	\begin{lstlisting}[language={[RISC-V]Assembler}]
 lui t0, 0x10000 # pointer to I/Os
 sw t1, 0(t0) # write LEDs
-	\end{lstlistings}
-	This means that we have a big data bus and depending on the value \important{the bus} choose between the Memory and the I/O 
+	\end{lstlisting}
+	This means that we have a big data bus and depending on the value \important{the bus} choose between the Memory and the I/Os:
 	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_5.png}
+	\includegraphics[scale=0.2]{screenshots/2025-10-22_6.png}
 	\end{center}
 \end{parag}
 \begin{parag}{Example: A/D converter}
     An A/D converter is a device that \important{converts an analog signal into a digital signal}. What we need is:
 	\begin{enumerate}
-	    \item \important{Start} (\texttt{START}): input; when active begins a new conversion
-	    \item \important{Data Valid} (\texttt{/DV}): outputl when active, D7-D0 are valid
+	    \item \important{Start} (\texttt{START}): input; when active \textrightarrow begins a new conversion
+	    \item \important{Data Valid} (\texttt{/DV}): output when active \textrightarrow D7-D0 are valid
 	    \item \important{Data} (D7-D0): output; last conversion result
 	\end{enumerate}
 	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_5.png}
+	\includegraphics[scale=0.2]{screenshots/2025-10-22_7.png}
 	\end{center}
 	
 \end{parag}
@@ -85,10 +85,10 @@ sw t1, 0(t0) # write LEDs
     Suppose that a 8-bit processor has the following signals:
 	\begin{itemize}
 	    \item \important{Address} (A23-A0): output; address bus
-		\item \important{Data} (D7-D0): inputl data bus 
+		\item \important{Data} (D7-D0): input data bus 
 		\item \important{Adress Strobe} (/AS) output, signals the presence of a valid address on the Address bus during a memory access cycle
 		\item \important{Read/Write} (R/W): output; signal the direction of the data flow
-		\item \important{Data Acknowledge} (/DTACK): input; must be activated at the end of a memory access, when the written data have been latched or the read data are ready 
+		\item \important{Data Acknowledge} (/DTACK): input; must be activated at the end of a memory access, when the written data have been latched or the read data are ready
 	\end{itemize}
 	This is similar but not identical to the MC6800
 	\begin{framedremark}
@@ -99,7 +99,7 @@ sw t1, 0(t0) # write LEDs
 	
 \end{parag}
 The goal now for us is to create a circuit that is able to connect the A/D converter to the processor (the MC68000). For this we will use a \important{memory mapped interface}. \\
-We want that:
+We want: 
 \begin{itemize}
     \item \important{any access} (\texttt{R} or \texttt{W}) to address \texttt{0xFFFF0} starts a \important{new conversion}
     \item The \important{data valid} signal can be read by the processor at address \texttt{0xFFFF4} (bit 0)
@@ -132,20 +132,23 @@ Here's a little diagram of the state
 
 To be able to construc the circuit we have to be careful about the timing diagram here; the fact that the ADDR and the /AS responds only at the clock edge gives us the information that we will need a \textit{register} which stores the DTACK signal and then output the As and ADDR signal after. This big register here is the \important{processor}.
 \begin{center}
-\includegraphics[scale=0.2]{screenshots/2025-10-22_8.png}
+\includegraphics[scale=0.25]{screenshots/2025-10-22_8.png}
 \end{center}
-\begin{center}
-\includegraphics[scale=0.2]{screenshots/2025-10-22_9.png}
-\end{center}
+	\begin{figure}[h!]
+	    \centering
+\includegraphics[scale=0.3]{screenshots/2025-10-22_9.png}
+\caption{A/D converter circuit}
+	\end{figure}
+	
 \begin{framedremark}
-Here we can see that we have two tri-state buffer, but why? It is pretty rare for us to see tri-state buffer so why are they usefule here?\\
-The answer is that they serve as a multiplexer between the DV and D7-D0, you can look at it and if you thing about it the two tri state buffer really serve as a \textit{decentralized} multiplexer.
+Here we can see that we have two tri-state buffer, but why? It is pretty rare for us to see tri-state buffer so why are they useful here?\\
+The answer is that they serve as a multiplexer between the DV and D7-D0, you can look at it and if you think about it, the two tri-state buffers really serve as a \textit{decentralized} multiplexer.
 \end{framedremark}
 
 \begin{parag}{A/D converter: software}
     Let us now loot at it as a software person which is pretty easy because of the MMIO:
-	\begin{lstlistings}[language={[RISC-V]Assembler}]
-read\_adc: 
+	\begin{lstlisting}[language={[RISC-V]Assembler}]
+read_adc: 
 	lui t1, 0xfff 
 	addi t1, t1, 0xff0 #t1 = 0xfffff0
 	sw zero, 0(t1) # start conversion 
@@ -156,7 +159,7 @@ poll:
 end:
 	lw a0, 8(t1) # a0 = A/D output 
 	ret
-	\end{lstlistings}
+	\end{lstlisting}
 \end{parag}
 
 
@@ -188,30 +191,32 @@ end:
 			\item A \important{data input} register where the received  data are available to the processor
 			\item A \important{data output} register where the processor places data to send
 	\end{itemize}
+
 \end{parag}
+
 \begin{lstlisting}[language={[RISC-V]Assembler}]
-UART\_CTRL\_ADDR = 0x10000000 # UART status register address
-UART\_ENABLE\_BIT = 0x80 # Enable bit (bit 7)
-UART\_SPEED\_9600 = 0x01 # Speed setting for 9600 baud (4 bits, [3:0])
-UART\_STATUS\_ADDR = 0x10000004 # UART status register address
-TX\_READY\_BIT = 0x01 # Transmitter ready bit (bit 0)
-UART\_DATAIN\_ADDR = 0x10000008 # UART data input (receive) register address
-UART\_DATAOUT\_ADDR = 0x1000000C # UART data output (send) register address
-send\_string:
-	li t0, UART\_CTRL\_ADDR # Get UART control address
-	li t1, UART\_STATUS\_ADDR # Get UART status address
-	li t2, UART\_DATAOUT\_ADDR # Get UART data address
-	li t3, UART\_ENABLE\_BIT # Get enable bit (0x80)
-	li t4, UART\_SPEED\_9600 # Get speed setting (0x01)
+UART_CTRL_ADDR = 0x10000000 # UART status register address
+UART_ENABLE_BIT = 0x80 # Enable bit (bit 7)
+UART_SPEED_9600 = 0x01 # Speed setting for 9600 baud (4 bits, [3:0])
+UART_STATUS_ADDR = 0x10000004 # UART status register address
+TX_READY_BIT = 0x01 # Transmitter ready bit (bit 0)
+UART_DATAIN_ADDR = 0x10000008 # UART data input (receive) register address
+UART_DATAOUT_ADDR = 0x1000000C # UART data output (send) register address
+send_string:
+	li t0, UART_CTRL_ADDR # Get UART control address
+	li t1, UART_STATUS_ADDR # Get UART status address
+	li t2, UART_DATAOUT_ADDR # Get UART data address
+	li t3, UART_ENABLE_BIT # Get enable bit (0x80)
+	li t4, UART_SPEED_9600 # Get speed setting (0x01)
 	or t4, t3, t4 # Combine enable and speed bits
 	sw t4, 0(t0) # Configure using the UART control register
-next\_char:
+next_char:
 	lb t5, 0(a0) # Load first byte of the string
 	beqz t5, finish # If byte is zero (null terminator), finish
-check\_tx\_ready:
+check_tx_ready:
 	lw t6, 0(t1) # Load UART status register
-	andi t6, t6, TX\_READY\_BIT # Check if TX\_READY\_BIT is set
-	beqz t6, check\_tx\_ready # If not ready, loop back and check again
+	andi t6, t6, TX_READY_BIT # Check if TX_READY_BIT is set
+	beqz t6, check_tx_ready # If not ready, loop back and check again
 	sw t5, 0(t2) # Store the character in UART data register
 	addi a0, a0, 1 # Increment string pointer (move to next char)
 	j next_char # Jump back to send the next character
@@ -222,7 +227,7 @@ finish:
 	
 
 \begin{parag}{I/O polling}
-    Everything we did is nice however there is still some issue: \important{polling}\\ The issue with polling is that the cpu is \textit{waiting} until the polling is done which is slowing down the cpu (a lot). Moreover, how do we even know if a peripheral has data for us (key pressed, packet arrrived, etc.)? we are not able to polled everything. \\
+    Everything we did here is nice however there is still some issue: \important{polling}\\ The issue with polling is that the cpu is \textit{waiting} until the polling is done which is slowing down the cpu (a lot). Moreover, how do we even know if a peripheral has data for us (key pressed, packet arrrived, etc.)? we are not able to polled everything. \\
 	For something like a keyboard which would only need to check every ms (approximatively) it would be \textit{okay} however imagine a usb or an ethernet cable this is not managable.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-10-22_11.png}

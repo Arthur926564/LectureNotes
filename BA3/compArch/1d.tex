@@ -4,20 +4,25 @@ Data structures is one of the main concept in computer science, even in this cou
 	\begin{lstlisting}[language=Scala]
 val myData: Array[Short] = Array(10407, -16533, -22715, 123133, 12512)
     \end{lstlisting}
+Here we have a sequence of number that are indexed, the question however is how do we store them?\\
+We have a lot of ways to do so (three), we can:\\
+have a pointer to the first element, and the having the other element following this one. With this method the issue is when does the array stops? here's three example of how to store arrays:
+\begin{enumerate}
+    \item One way to do so is to put a \textit{null} element at the end of the array so that we know that this is the end of the array.  The definition of string are in fact an array of char with the 0 char at the end.
+	\item A whole other way is to have, at the start of the array the length of the array. You have a pointer at the start of the array which is the length of the array and then you do your computing as usual
+	\item Another way with this is just to to do nothing. Having a pointer to the start of the array and then hoping that the programmer knows what he is his doing. \texttt{C} Arrays for instance are built like this.
+\end{enumerate}
+
+
 \end{parag}
-Here we have a sequence of number that are indexed, the question however is how do we store them.\\
-We have a lot of ways to do so (three), we can have a pointer to the first element, and the having the other following this one. With this methode the issue is when does the array stops?\\
-One way to do so is to put a \textit{null} element at the end of the array so that we know that this is the end of the array.  The definition of string are in fact an array of char with the 0 char at the end.\\
-Another way with this is just to to do nothing. Having a pointer to the start of the array and the hoping t hat the programmer knows what is his doing. \texttt{C} Arrays for instance are built like this.\\
-A whole other way is to have, at the start of the array the length of the array. You have a pointer at the start of the array which is the length of the array and then you do your computing as usual
 \begin{center}
 \includegraphics[scale=0.3]{screenshots/2025-10-21.png}
 \end{center}
 \begin{parag}{Adding Positive elements}
-    To add all the positie elements in an array of signed 16-bit integers we would:
+    To add all the positive elements in an array of signed 16-bit integers we would:
 	\begin{itemize}
-	    \item At call time, \texttt{a0} points to the array (and, in type 3, \texttt{a1} is the length)
-	    \item At return time, \texttt{a0} contain the result
+	    \item At call time \textrightarrow \texttt{a0} points to the array (and, in type 3, \texttt{a1} is the length)
+	    \item At return time \textrightarrow \texttt{a0} contain the result
 	\end{itemize}
 	The result for the type 3 (written in \texttt{c}):
 	\begin{lstlisting}[language=c]
@@ -33,7 +38,7 @@ short add_positive(short myData[], int N) {
 	\end{lstlisting}
 \end{parag}
 \begin{parag}{Adding positive elements (Type 1)}
-    For the first type let us write the code for this in RISC-V:
+    For the first type let us write the code in RISC-V:
 	\begin{lstlisting}[language={[RISC-V]Assembler}]
 add_positive:
 	li t0, 0  #t0 will hold the sum (initialized to 0)
@@ -104,13 +109,13 @@ end:
 
 \end{parag}
 
-\begin{parag}{Adding positive elements (variation on c)}
+\begin{parag}{Adding positive elements (variation on type 3)}
 	Let us add positive elements in an array of signed 16-bits integers:
 	\begin{itemize}
-	    \item At call time, \texttt{a0} points to the arrays and \texttt{a1} is the length of the arr
-	    \item At return time \texttt{a0} contains the result
+	    \item At call time \textrightarrow \texttt{a0} points to the arrays and \texttt{a1} is the length of the array
+	    \item At return time \textrightarrow \texttt{a0} contains the result
 	\end{itemize}
-	Write it by incrementing the index of the array:\\
+	The way od doing it is to incremented the index of the array:\\
 	\begin{lstlisting}[language=c]
 int i = 0;
 while (i < N) {
@@ -130,7 +135,7 @@ for (i = 0; i < n; i++) {
 }
 	\end{lstlisting}
 	
-	Here we see that we have a variable \texttt{i}  which is incremented by one, therefore, the way of doing this if we were to be compiled would be by having a variable that is incremented by 1 in very loop \textbf{then} be multiplied by the sizeof the data (2 bytes).
+	Here we see that we have a variable \texttt{i}  which is incremented by one, therefore, the way of doing this if we were to be compiled would be by having a variable that is incremented by 1 in every loop \textbf{then} be multiplied by the size of the data (2 bytes).
 	\begin{lstlisting}[language={[RISC-V]Assembler}]
 addi_positive:
 	li t0, 0 #t0 will hold the sum (initialized to 0)
@@ -152,9 +157,10 @@ end:
 	ret # Return to caller
 	\end{lstlisting}
 	
-	\begin{subparag}{Which is better}
-	    We have now two different way to do the same type (type 3), however which one is faster? this question can be easily answers: the first one that we have written has less intrustion $\implies$ faster. (this is not always that simple)\\
-		But this points out an issue, we need \important{good compiler}, we need a compiler that can translated our code into the fastest assembly possible.
+	\begin{subparag}{Which one is better?}
+	    We have now two different way to do the same type (type 3), however which one is faster? this question can be easily answers: \\
+		the first one that we have written has less intrustion $\implies$ faster. (this is not always that simple)\\
+		But this points out an issue, we need \important{good compiler}, we need a compiler that can translated our code into the \important{fastest assembly code possible}.
 	\end{subparag}
 \end{parag}
 
@@ -193,9 +199,8 @@ end:
 	ret # Return to caller
 	\end{lstlisting}
 	
-	As we can see here: this is not much more complex. but is it more efficient: no. The instruction of loading and storing are way slower than the other instruction, the fact that this way of computing leads to a lot more of load makes it way slower.
-	
-	
+	As we can see here: this is not much more complex. but is it more efficient?\\
+	\important{no}. The instruction of loading and storing are way \important{slower} than the other instruction, the fact that this way of computing leads to a lot more of load makes it way slower.
 \end{parag}
 
 
