@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.10.17)  23 OCT 2025 22:08
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.10.17)  24 OCT 2025 11:50
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -123,6 +123,12 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
+! Interruption.
+l.1 
+    20089
+l.56 \RequirePackage{pdftexcmds}[2010/04/01]
+                                            
+? 
 (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -1698,13 +1704,13 @@ Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 ! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
-l.119 ...ssor tasks on Exceptions}{section*.67}{}}
+l.120 ...ssor tasks on Exceptions}{section*.67}{}}
                                                   
 ? 
 ! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
-l.119 ...ssor tasks on Exceptions}{section*.67}{}}
+l.120 ...ssor tasks on Exceptions}{section*.67}{}}
                                                   
 ? 
 
@@ -1714,13 +1720,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.119 ...ssor tasks on Exceptions}{section*.67}{}}
+l.120 ...ssor tasks on Exceptions}{section*.67}{}}
                                                   
 ? 
 ! Extra \endcsname.
 \@namedef ...xpandafter \def \csname #1\endcsname 
                                                   
-l.119 ...ssor tasks on Exceptions}{section*.67}{}}
+l.120 ...ssor tasks on Exceptions}{section*.67}{}}
                                                   
 ? 
 
@@ -2760,10 +2766,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 Package mdframed Info: mdframed works in twoside mode on input line 30.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 32.
-
-LaTeX Warning: Reference `mdf@pagelabel-18' on page 50 undefined on input line 
-32.
-
 )
 
 [50]
@@ -2855,7 +2857,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 76398 strings out of 475506
+ 76419 strings out of 475506
  933267,3417909 words of node,token memory allocated
  1101 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 1 margin_ke
@@ -2863,7 +2865,7 @@ rn, 4 glyph, 10 attribute, 155 glue_spec, 10 attribute_list, 2 shape, 2 write no
 des
    avail lists: 1:9,2:16454,3:9731,4:19454,5:17196,6:145,7:22502,8:58,9:43386,10
 :31,11:1671
- 97055 multiletter control sequences out of 65536+600000
+ 97076 multiletter control sequences out of 65536+600000
  106 fonts using 8135263 bytes
  110i,12n,120p,1953b,1560s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/f
