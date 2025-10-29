@@ -248,7 +248,9 @@ For instance, if we are interested in word, we cannot look for the word at addre
 \end{center}
 As said before when loading a word, it has to be a multiple of 4 so we only care about the 30 most significant bits. The two least significant bits is checked wether there are zero or not and if there are not zero, we would like to \important{throw an exception} which we will see how in a couple of weeks.
 
-\paragraph{Loading byes (\texttt{lb})}%
+\paragraph{Loading bytes (\texttt{lb})}
+\label{par:Loadingbytes}
+
 Here what we are doing is the same as what we did before, we are looking for a word (which is the 30 first bits), and then in the word we choose which 8 bits we wants, this would look like this:
 \begin{center}
 \includegraphics[scale=0.25]{screenshots/2025-10-12_12.png}

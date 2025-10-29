@@ -40,7 +40,8 @@
 \zref@newlabel{mdf@pagelabel-5}{\default{2.3.1}\page{20}\abspage{22}\mdf@pagevalue{20}}
 \@writefile{toc}{\contentsline {subsubsection}{Byte addressed memory}{20}{subsubsection*.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Loading a word (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily  ,options@for=inlinecode}]{lw}) and Instruction}{21}{paragraph*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loading byes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily  ,options@for=inlinecode}]{lb})}{21}{paragraph*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loading bytes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily  ,options@for=inlinecode}]{lb})}{21}{paragraph*.18}\protected@file@percent }
+\newlabel{par:Loadingbytes}{{2.3.1}{21}{Loading bytes (\texttt {lb})}{paragraph*.18}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Arrays and data structures}{21}{section.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Arrays in high-level languages}{21}{section*.19}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Adding Positive elements}{22}{section*.20}\protected@file@percent }
@@ -133,12 +134,50 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Memory Hierarchy}{51}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lectures}{\contentsline {chapter}{{\boldmath  \textbf  {Cours 12 }}\ ---\ {lectureDate}}{51}{section*.75}\protected@file@percent }
+\@writefile{lectures}{\contentsline {chapter}{{\boldmath  \textbf  {Cours 12 : cache}}\ ---\ {lectureDate}}{51}{section*.75}\protected@file@percent }
 \newlabel{lecture12}{{4}{51}{Memory Hierarchy}{section*.75}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Caches}{51}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{What memory to use?}{52}{section*.76}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Spatial and Temporal locality}{52}{section*.77}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Our placment policy most be:}{52}{section*.78}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Cache: The idea}{53}{subsubsection*.79}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-19}{\default{4.1}\page{51}\abspage{53}\mdf@pagevalue{51}}
+\@writefile{toc}{\contentsline {paragraph}{Out goal today}{51}{section*.76}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-20}{\default{4.1}\page{52}\abspage{54}\mdf@pagevalue{52}}
+\@writefile{toc}{\contentsline {paragraph}{What memory to use?}{52}{section*.77}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Spatial and Temporal locality}{53}{section*.78}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Our placment policy most be:}{53}{section*.79}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Cache: The idea}{54}{subsubsection*.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Definition of a Cache}{54}{section*.81}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-21}{\default{4.1}\page{54}\abspage{56}\mdf@pagevalue{54}}
+\zref@newlabel{mdf@pagelabel-22}{\default{4.1}\page{54}\abspage{56}\mdf@pagevalue{54}}
+\@writefile{toc}{\contentsline {paragraph}{The question now is how does it works?}{54}{section*.82}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fully-Associative cache}{55}{paragraph*.83}\protected@file@percent }
+\newlabel{par:Fully-Associative cache}{{4.1}{55}{Fully-Associative cache}{paragraph*.83}{}}
+\zref@newlabel{mdf@pagelabel-23}{\default{4.1}\page{55}\abspage{57}\mdf@pagevalue{55}}
+\@writefile{toc}{\contentsline {paragraph}{The representation}{55}{section*.84}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Cache and Cache controller}{56}{subsubsection*.85}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The cache is a hardware device}{57}{section*.86}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What if the cache is full}{57}{section*.87}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Only exploiting Temporal locality}{58}{section*.88}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-24}{\default{4.1}\page{59}\abspage{61}\mdf@pagevalue{59}}
+\@writefile{toc}{\contentsline {paragraph}{Fully-Associative Cache}{59}{section*.89}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-25}{\default{4.1}\page{60}\abspage{62}\mdf@pagevalue{60}}
+\@writefile{toc}{\contentsline {paragraph}{How can we make it simpler}{60}{section*.90}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{How to generate \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily  ,options@for=inlinecode}]{Addr} and \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily  ,options@for=inlinecode}]{Tag}}{60}{section*.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Direct-mapped Cache}{62}{section*.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Which one is the Best Cache}{62}{subsubsection*.93}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Example}{62}{section*.94}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-26}{\default{4.1}\page{62}\abspage{64}\mdf@pagevalue{62}}
+\@writefile{toc}{\contentsline {paragraph}{Intermediate?}{63}{section*.95}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Set-Associative Cache}{63}{section*.96}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Continuum of Possibilities}{63}{section*.97}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-27}{\default{4.1}\page{63}\abspage{65}\mdf@pagevalue{63}}
+\@writefile{toc}{\contentsline {paragraph}{Validity}{64}{section*.98}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Addressing by Byte}{64}{section*.99}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Write and Cache}{64}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Write Hit}{64}{subsubsection*.100}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Write policies}{65}{section*.101}\protected@file@percent }
+\zref@newlabel{mdf@pagelabel-28}{\default{4.1.1}\page{65}\abspage{67}\mdf@pagevalue{65}}
+\@writefile{toc}{\contentsline {subsubsection}{Write miss}{65}{subsubsection*.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Allocation Policies}{65}{section*.103}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The '3Cs' of caches}{66}{section*.104}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Summary of cache Features}{66}{subsubsection*.105}\protected@file@percent }
 \gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{\m@ne }}
-\gdef \@abspage@last{55}
+\gdef \@abspage@last{68}

@@ -1,14 +1,27 @@
-\lecture{12}{2025-10-17}{}{}
-What we want now is to go back to memory and spent quite a lot of time on this topic. What we will change here is that we will care about the performance of the memory we are building.
+\lecture{12}{2025-10-17}{cache}{}\\
+
+What we want now is to go back to memory and spent quite a lot of time on this topic. What we will change here is that we will care about the \important{performance} of the memory we are building. So far we were only concerned about how does it works, now we have a concern about the quality of memory.
 
 \section{Caches}
 The question we have is what is the problem with memory:
 \begin{center}
-\includegraphics[scale=0.2]{screenshots/2025-10-17_6.png}
+\includegraphics[scale=0.3]{screenshots/2025-10-17_6.png}
 \end{center}
-Processor has been improved a \important{lot} in comparisaison of memory. What memory means here is DRAM.\\
-The issue is that we want a big memory and a fast processor which cannot really work well together, we need to \important{so something} ourself.\\
-What we can do is to use other type of memory which is \important{faster but expensive} 
+\begin{framedremark}
+Here we are talking about the \textit{performance} of our processor, this is not really performance but more the frequence of the processor which has stabalize in the current last year.
+\end{framedremark}
+Processor has been improved a \important{lot} in comparisaison of memory. When we say \textit{memory}, we mean \texttt{DRAM}.\\
+The issue is that we want a \important{big} memory and a \important{fast} processor which cannot really work well together, we need to \important{do something} ourself.\\
+What we can do is to use other type of memory which is \important{faster but costlier} 
+\begin{parag}{Out goal today}
+    What we can do here is to instead of having one memory for everything, we can have \important{two memory}: one that is fast but expensive and one that is slow but cheap.\\
+
+
+\end{parag}
+
+\begin{center}
+    
+
 \begin{tikzpicture}[
     box/.style = {draw, minimum width=2.8cm, minimum height=1cm, align=center, font=\small},
     label/.style = {font=\footnotesize, align=center}
@@ -37,15 +50,20 @@ What we can do is to use other type of memory which is \important{faster but exp
 
 \end{tikzpicture}
 
-
-\begin{center}
-\includegraphics[scale=0.3]{screenshots/2025-10-17_7.png}
 \end{center}
 
+So the fact is: this is not only a technology issue even though we are not able to make \texttt{DRAM} faster. The issue is more in \texttt{SRAM} side, \texttt{SRAM} is a very \textit{maleable} component, it is a part of the logic of our processor, the problem is when we are trying to get big with our \texttt{SRAM}, in term of mega byte (which is still affordable in terms of cost), the speed is not longer the same: it begins to be one or two order of magnitude away (in terms of clock cycle) of the processor.
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-10-26.png}
+\end{center}
+\begin{framedremark}
+Putting two type of memory in the processor is kind of a trivial thing to do, we only have to have two decoder one for the \texttt{DRAM} and one for the \texttt{SRAM}. We check the size of the data and decide based on this where we put our data.
 
-So the fact is: this is not only a technology issue even though we are not able to make \texttt{DRAM} faster. It's not even an issue with \texttt{SRAM} cost, it wouldn't be too costly to make \texttt{SRAM} bigger, the issue is that even though SRAM is pretty maleable, when expanding it, it becomes 2 to 3 degree of magnitude slower (in terms of clock cycles).
+\end{framedremark}
 
-\begin{parag}{What memory to use?} The question is where do we put our data, in which memory.\\
+\begin{parag}{What memory to use?} 
+	When we execute code, there is some thing that we do over and over and on the other side, some code are only executed one. Is there a way that we can \textit{use} this \textit{phenomem} to make memory faster?\\
+	The question is where do we put our data, in which memory?\\
 	For instance let us took a look at this code:
 	\begin{lstlisting}[langage=c]
 i = 0;
@@ -57,8 +75,8 @@ while (i < 1024) {
 	\end{lstlisting}
 	
 	\begin{itemize}
-	    \item Intruction corresponds to line 3-5 that are \important{read over and over}should be in fast memory
-	    \item if variable \texttt{i} and \texttt{sum} are stored in memory, they are also \important{used often} and should be stored in fast memory
+	    \item Intruction corresponds to line 3-5 that are \important{read over and over}, they should be in fast memory
+	    \item if variable \texttt{i} and \texttt{sum} are stored in memory, they are also \important{used often} and should also be stored in fast memory
 	    \item One would like to anticipate the future and load the \important{following} instructions and vector elements.
 	\end{itemize}
 \end{parag}
@@ -78,14 +96,15 @@ while (i < 1024) {
 \end{parag}
 
 \begin{parag}{Our placment policy most be:}
+	The fact that we do not give the choice for the programmer is not something that is impartal and always true. For instance in a lot of emebedded system the programmer can the choice on where to put his data. The fact that this is true for emebedded system is that, when developing those system, there is only one person/team that is developing the program. When the program is done, we ship the product and we never heard about it again (hopefully). It is totally legitimate to think that this is the solution. However here this is not the case, for us, we don't want to bother the programmer about this.
     \begin{subparag}{Invisible to the programmer}
         \begin{itemize}
-            \item One could analyse data structures and program semantics to detect heabily used vairables/arrays and thus decide placment $\to$ OK in some context (emebedded) but we want to have the programmers not to go through this hassle 
+            \item One could analyse data structures and program semantics to detect easily used variables/arrays and thus decide placment $\to$ OK in some context (emebedded) but we want to have the programmers not to go through this hassle 
             \item To do so, we will add \important{hardware} to help
         \end{itemize}
     \end{subparag}
 	\begin{subparag}{Extremly simple and fast}
-		The decision are made in the hardware, they need to be simple. The goal is to accesst memory very fast, in the order of a ns or less:  \important{not much time} to make a complex decision...
+		The decision are made in the hardware, they need to be simple. The goal is to access memory very fast, in the order of a ns or less:  \important{not much time} to make a complex decision...
 	\end{subparag}
 \end{parag}
 
@@ -93,6 +112,353 @@ while (i < 1024) {
 \subsubsection{Cache: The idea}
 The main difference between this and the tree make before is that now as a \important{programmer} I don't know which memory I am using, I am at a level of abstraction above which makes it easier for me to develop software.\\
 The idea behind the cache is the fololowing:\\
-The processor makes a request for an address, we first check if the address is in the dirc
+The processor makes a request for an address, we first check if the address is in the directory if it is \textrightarrow we cut off the main memory and asnswer ourself (as \texttt{SRAM}).
+
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-10-17_8.png}
+\end{center}
+The cache here is the directory + the \texttt{SRAM}.
+
+\begin{parag}{Definition of a Cache}
+    \begin{definition}
+    A \important{cache} is any form of storage which takes \important{automatically} advantage of locality of accesses.
+    \end{definition}
+	\begin{itemize}
+	    \item The idea works so well that now they are \important{not only in processors}
+		\item Web browsers have caches, network routers have routing information and even data chaces, DNSs cache frequent names, databases caches queries, even in cs108 we used a cache.
+	\end{itemize}
+When we find the data required in the cache, we call it a \important{hit}; otherwise it is a \important{miss}.
+\begin{definition}
+\important{hit (or miss) rate} is the numbers of hits (or misses) over the total number of accesses
+\end{definition}
+\end{parag}
+\begin{parag}{The question now is how does it works?}
+	\begin{subparag}{CAM}
+		What a cam is here is only the \important{directory} part here, the difference between \texttt{CAM} and \texttt{RAM} is:
+		\begin{itemize}
+			\item \texttt{RAM} \\
+				\begin{center}
+				    address \textrightarrow content
+				\end{center}
+			\item \texttt{CAM} \\
+				\begin{center}
+				    content \textrightarrow address
+				\end{center}
+		\end{itemize}
+		And as we can see we have the \texttt{Tag} which are the content and the address which is the output of the encoder. 
+	\end{subparag}
+	How do we identify if we have an element, to do so we store a \important{tag} for each elements that is stored, which is stored in a \important{register}. When we are looking for an element, we check all register and if one of them matched, we have a \important{hit} and we then also know which one it is (because each line is different). Then we can just deconde the tag to access the content in the \texttt{SRAM}.\\
+	From the beginning of this course we works with memory access based \important{only from the address} in the memory however here this is different:\\
+	We have a tag which is \important{not} an index but data, we search based on the content instead of the address $\implies$ \texttt{CAM} (Content addressable memory).\\
+	We use a memory that is addressable based on the \important{content of the tag}. 
+\end{parag}
+\paragraph{Fully-Associative cache}%
+\label{par:Fully-Associative cache}
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-10-26_1.png}
+	\end{center}
+
+\begin{framedremark}
+A \important{Fully-Associative cache} is a cache organization in which any block of memory can be stored in a any cache line.\\
+There is three different types of cache organization types:
+\begin{itemize}
+    \item \important{Direct-mapped cache} \textrightarrow each memory block maps to \important{exactly one } cache line.
+    \item \important{Set-associative cache} \textrightarrow each memory block maps to a \important{set of cache lines}, and can go into \important{any line} of them 
+    \item \important{Fully-Associative cache} \textrightarrow a memory block can go \important{anywhere} in the cache.
+\end{itemize}
+
+For our fully associative cache:
+\begin{itemize}
+	\item The cache has no \important{fixed mapping} between memory addresses and cache line
+	\item When a memory request arrives, the cache \important{compares} the address tag with all entries in parallel (using a \important{content addressable memory} \texttt{CAM})
+	\item If a match is found \textrightarrow \important{hit}
+	\item If not \textrightarrow \important{miss}, and the block is loaded into any free line (or one chosen by a replacement policy (which we'll see later)).
+\end{itemize}
+
+\end{framedremark}
+The issue here also is that \important{all those comparators} are pretty expensive, for each tag we have a to have a comparator which is pretty costly.
+
+	\begin{parag}{The representation}
+	    \begin{center}
+	    \includegraphics[scale=0.3]{screenshots/2025-10-26_2.png}
+	    \end{center}
+		So this diagram is \important{the same} as the one above we just simpified to make it easier to \textit{understand}.
+	\end{parag}
+
+	\subsubsection{Cache and Cache controller}
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-10-26_4.png}
+	\end{center}
+	The difference from before is now that the processor \important{talks to the cache} and if the caches doesn't find the content it send the address into the memory:
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-10-26_5.png}
+	\end{center}	
+	The main charactere here is the \important{cache controller}. It is the one that blocks or not the arrows that let us cut or not the memory of the data bus. The cache controller here is a finite state machine. In this course we will not do it but as the professor said if we had a lab d we would then implement it in verilog. But the important thing here is that this is something that is reacting to some signal and do something based on input etc. We exported in some sense a part of the processor. (we took the part which used to talk to memory here) and do the \textbf{cache jobs}.\\
+	For instance if the directory output a \texttt{HIT} then the cache controller would block the address of the processor for the memory:
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-10-26_6.png}
+	\end{center}
+	So When the processor asks for something, the directory says \texttt{HIT} or \texttt{MISS}, if it is a \texttt{HIT} the cache controller cuts the address to the memory and activate the result from \texttt{data}. What is important here is that when searching we used to \important{always do it \textbf{sequentialy}}. However here this is \important{not} the case, we has as many comparators as tag, to figure in a fraction of nano second wether I have the information or not. I want a million of element in the cache, then I need a million of comparators.\\
+	If we have a miss then the controller let the memory works, then takes in the data register the new element. THe reason for this is \important{Temporal locality}, if we seen something passing by, there is a high chance that we will see it again.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-10-29.png}
+	\end{center}
+	\begin{parag}{The cache is a hardware device}
+	    The important thing here is that the cache is \textbf{only on hardware} this means that it is completely invisible from a software perspective.\\ 
+		As the processor we cannot see if when taking a value it will take 1 cycle or 100 cycles.
+	\end{parag}
+	
+	\begin{parag}{What if the cache is full}
+		The question here is what happens when the cache is already full, do we overwrite?
+		\begin{center}
+		\includegraphics[scale=0.2]{screenshots/2025-10-29_2.png}
+		\end{center}
+		Maybe we want to overwrite the one that we used the latest? or the one that was put here the oldest one?
+		\begin{subparag}{Eviction policy}
+		    When there is no appropriate space for a new piece of data, we must ovewrite one of the existing lines (\important{eviction} or \important{replacement})\\
+			Several policies to decide what to evict:
+			\begin{itemize}
+			    \item \important{Least recently used} (LRU)
+					\begin{itemize}
+					    \item Replace the data that have been unused for the longest period of time
+					\end{itemize}
+					\item \important{First in First out} (FIFO)
+						\begin{itemize}
+							\item Replace the data that came in earliest
+						\end{itemize}
+					\item \important{Random} \textrightarrow pick one at random and throw it away
+			\end{itemize}
+			The biggest constraint here is how to implement those policies and be as fast as a fraction of nano second?
+		\end{subparag}
+	\end{parag}
+	\begin{parag}{Only exploiting Temporal locality}
+	    \begin{center}
+	    \includegraphics[scale=0.26]{screenshots/2025-10-29_3.png}
+	    \end{center}
+		At the current moment we are only exploiting the temporal locality (the upper arrows that goes into data when we are fetching from memory).\\
+		A solution here is that when we are fetching the element at address \texttt{0x100} I also store the element at address \texttt{0x100}, \texttt{0x101}, \texttt{0x102}, \texttt{0x103}.
+		\begin{center}
+		\includegraphics[scale=0.27]{screenshots/2025-10-29_4.png}
+		\end{center}
+		Why don't we store the address of the first one as a tag? We where storing here for instance \texttt{0x40} but wht don't we store \texttt{0x100} directly. This works:
+		\begin{center}
+		\includegraphics[scale=0.27]{screenshots/2025-10-29_5.png}
+		\end{center}
+		However here there is a big issue: if the address we are asking is for instance \texttt{0x127} we don't know just from a comparator if the data contains it. What we will have to do is to actually take the range from \texttt{0x125} to \texttt{0x127}. Which we don't have, it would be too slow. How can we recover from this?\\
+		What we can do is to store as a tage only the $n-2$ bits as a tag:
+		\begin{center}
+		\includegraphics[scale=0.25]{screenshots/2025-10-29_6.png}
+		\end{center}
+		Here all our problems are gone! We only have to do a comparison and the data is easily access \textbf{and} it is \important{hardware friendly}. This means that this can be \textit{easily} implementable.\\
+		\begin{framedremark}
+		We have a constraint here is that the family of cache has to be adjacent, so that we don't miss any element. Here we will choose all the number divided by a power of 2.\\
+		So that by a division by two we can find the family of each element.
+		\end{framedremark}
+	\end{parag}
+
+	
+	\begin{parag}{Fully-Associative Cache}
+	    Okay all of this is pretty nice however, there is an issue that has still never been mention, how can we tell to the cache controller when there is a \texttt{hit} or a \texttt{miss}? The easiest way to do so is to put a big \texttt{OR} gate from all the tag. Howver this is slow to do imagine having an \texttt{OR} gate with a million of input. this time growth of this would be a logarithmic one which is not good for us, furthermore, it would be too costly.
+		\begin{center}
+		\includegraphics[scale=0.3]{screenshots/2025-10-29_7.png}
+		\end{center}
+		\begin{framedremark}
+		When we say here cheap here, cheap is compared to the rest of this circuit which are not cheap at all (\texttt{SRAM} is still expensive compared to \texttt{DRAM}).
+		\end{framedremark}
+		THe issue here is that this doesn't work on mega byte of information so we \important{need} to change something:
+		
+	\end{parag}
+	\begin{parag}{How can we make it simpler}
+	    \begin{center}
+	    \includegraphics[scale=0.3]{screenshots/2025-10-29_8.png}
+	    \end{center}
+		Instead of doing what is done one the left, we can do a simpler comparison.\\
+		On the right we can do a cheap \texttt{RAM} (compared to \texttt{CAM}) as the direct output of the \texttt{Tag} which is now an \important{address}. For this to works, every element should go into a \important{single place} of the \texttt{RAM}. I take the address from the processor, I figured the index in the cache, we'll get out \important{one} candidate word, we have the Tag here, we'll read and compare the tag and the content, if it is a \texttt{HIT} then we won else we \texttt{MISS}.
+		\begin{subparag}{Tag}
+		    What I found hard to understand here is that how can we know when accessing the memory that we hit? we have an address that in a memory give the output the tag and the content and with the tag we can know if we have a \texttt{HIT} or \texttt{MISS}?
+		\end{subparag}
+	\end{parag}
+	
+	\begin{parag}{How to generate \texttt{Addr} and \texttt{Tag}}
+	   Now we are looking at the purple box above:
+	   \begin{center}
+	   \includegraphics[scale=0.27]{screenshots/2025-10-29_9.png}
+	   \end{center}
+	   What we want to do is to go from the address in memory which is a 32 bits memory for instance, into a 10 bits memory which is the cache size. How can we do so? We are \textbf{Hashing} here we are taking less bits but  produce the most different combination possible.\\
+	   \begin{subparag}{The simplest hashes}
+	       What we want as a hash here is a hash that is the simplest and \important{fastest}.\\
+		   We can just take some of the bits and we put them in a random (or not) order:
+		   \begin{center}
+		   \includegraphics[scale=0.3]{screenshots/2025-10-29_10.png}
+		   \end{center}
+		   Is this a reasnable hash? It is, \important{only} if there are uniformly distributed. But when we are writting code or writting data, is the data uniformly distributed?\\
+		   No: we are always starting at the bottom of the data, we almost never write something at the address 300 millions something (at the end of the memory). We need to take in our decisions the fact that the most significant bits are very rarely used. This is the reason why taking the \important{least significant bits} is (as we think) the best way of doing it. 
+	   \end{subparag}
+	   
+	    \begin{center}
+	    \includegraphics[scale=0.3]{screenshots/2025-10-29_11.png}
+	    \end{center}
+	\end{parag}
+	\begin{parag}{Direct-mapped Cache}
+	    \begin{center}
+	    \includegraphics[scale=0.3]{screenshots/2025-10-29_12.png}
+	    \end{center}
+		So here: the index of our address is the lsb bits, then as a tag wwe can put the most significant bit. If we are taking the $m$ bits for the index, then we can take the $n-m$ most significant bits as a \texttt{Tag} for our element, then when we are accessing something we can check if the tag at the index is the same as the $n-m$ msb of our address.
+		\begin{subparag}{What about it?}
+		    This is a \important{very} simple cache here \important{and} it is \important{fast} For each access, we only need to do \important{one} comparison which is very fast.\\
+			But is it better that the previous cache: \\
+			\important{NO}: we have a \important{lot of constraint} here if we have to important element to store in the cache but are in the same hashing index then we are screwed... 
+		\end{subparag}
+	\end{parag}
+	
+	\subsubsection{Which one is the Best Cache}
+	The question we will try to answer is:
+	    
+	\begin{center}
+	    Which one is the best cache:
+		\begin{itemize}
+			\item Fully-Associative Cache
+			\item Direct-Mapped Cache
+		\end{itemize}
+	\end{center}
+	\begin{parag}{Example}
+	    Consider a \important{fully-associative} and \important{direct-mapped} cache, both with $64$ \important{lines} with \important{four words per lines} \textrightarrow 256 words per cache.\\
+		The question is how good are they, the criteria for this will be the number of hits.
+		\begin{framedremark}
+		For this example I found it pretty hard to explain it without drawing so this is the video CS-200-3a. memory hierarchy (30 octoboer 2024 at 46 min).
+		\end{framedremark}
+		But what we can see here is that sometime the direct mapped cache can be very very inefficient. Is there a way to find the best out of the two worls:\\
+		The speed of the direct mapped and the hit rate of the fully-associative one?\\
+	\end{parag}
+	\begin{parag}{Intermediate?}
+	    Is there an \important{intermediate} between:
+		\begin{itemize}
+		    \item \important{Fully-Associative}: every word can go in every line of the cache (hence the 'full') \textrightarrow associtivity is the number of lines in the cache 
+		    \item \important{Direct-Mapped}: every word is 'mapped' to a single line of the cache \textrightarrow associtivity is 1
+		\end{itemize}
+	\end{parag}
+	\begin{parag}{Set-Associative Cache}
+		\begin{center}
+		\includegraphics[scale=0.28]{screenshots/2025-10-29_13.png}
+		\end{center}
+	   So the idea is to add a second cache map with the exact same direct-mapped structure. By doing this we allow a \important{second} element for the same index
+	\end{parag}
+	\begin{parag}{Continuum of Possibilities}
+		What we can see here is that we have a \important{lot} of choice for a given number of storage. For instance if we have 8 storage units we have the following ways of creating a cache:
+	\begin{center}
+		\includegraphics[scale=0.27]{screenshots/2025-10-29_14.png}
+	\end{center}
+
+		\begin{framedremark}
+		So here there is something very intresting to see is:\\
+		For the first way which is the classical direct-mapped, we only have one comparator, however imagine having to put all the sram next to each other in one set; then we get a cache with 8 comparator $\implies$ We get a fully-associative cache.\\
+		We can see it as the direct-mapped is the \textit{transpose} of the fully-associative and vis versa.
+		\end{framedremark}
+	\end{parag}
+	
+	
+	
+	
+	\begin{parag}{Validity}
+	    All of this is pretty perfect however we have some issue with the implementation, we always said \textit{If there is nothing there then we put something, if there is something then we get and check}, however: how can we know?\\
+		In the memory the initial content is \important{garbage} we don't know if the value that is in the memory is a good one or not.\\
+		To fix this issue, all caches need a special bit (\important{valid bit}) in each cache line to indicate whether something meaningful is in the specific cache line ('0' at reset).
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-10-29_13.png}
+	\end{center}	
+	\end{parag}
+	\begin{parag}{Addressing by Byte}
+		If addressing is \important{by byte} and \important{word size is $2^{n}$ bytes}, the \important{$n$ least significant bits} of the address represent the byte offset and are thus \important{irrelevant}. The last two bits of the address are \important{internal} to the processor and do not even get to the memory system. As we have seen in Section~\ref{par:Loadingbytes} the actual way of loading a byte is just a multiplexer between the 4 bytes of a word based on the last two bits of the address. So the \important{allocation of bits} begin \important{only} after the second bits. (we do not care about the last 2 bits here).
+	\end{parag}
+
+\subsection{Write and Cache}
+\subsubsection{Write Hit}
+
+The question now is if we want to write something in the memory and we have a hit (in the cache controller). The first thing we should do is update the cache so that the next time we are  getting something from this address we access the correct value.\\
+The question we have now is Shall we write also to memory?\\
+This is a legitimate question, by not writting we gain a lot of time. Also if we can avoid to write to memory we let the bus data and address \important{free}.\\
+However there is a big issue, as we have said before, the cache has only \important{copies} of what is in memory so overwritting something was not a big deal because the content was still in the memory. Now this is different, we now wrote in the cache \important{but not} in the memory, this means that the next time we are overwritting the cache our data is gone!\\
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-10-29_16.png}
+\end{center}
+\begin{parag}{Write policies}
+	There is a couple of way to fix this issue:
+	\begin{itemize}
+		\item \important{Write-through}: On a write, data are always immediately written into main memory
+			\begin{itemize}
+				\item Simpler policy
+				\item May keep the memory/buses busy for nothing
+			\end{itemize}
+		\item \important{Write back} or \important{Copy back}: on a write, data are only updated in the cache (hence, main memory data will become wrong/obsolete)
+			\begin{itemize}
+				\item Needs a \important{dirty Bit} to remember that cache \important{data are incoherent with memory}
+				\item When a dirty line is \important{evicted}, first it must be \important{copied back} to main memory
+			\end{itemize}
+			
+	\end{itemize}
+	
+    
+	\begin{framedremark}
+	What we are doing here is like putting a \textit{flag} that says content has changed and will we don't overwrite we don't change the content in memory. This is same principle as lazy evaluation in scala (kind of), we don't change anything until we have to.
+	\end{framedremark}
+\end{parag}
+
+\subsubsection{Write miss}
+The question now is when the cache doesn't have the value yet, shall we put the value in the cache or not. This question has less \textit{issues} that comes with it, however this is still a legitimate questions:
+\begin{center}
+\includegraphics[scale=0.27]{screenshots/2025-10-29_17.png}
+\end{center}
+\begin{parag}{Allocation Policies}
+    \begin{itemize}
+		\item \important{Write-allocate}: on a write miss, data are also placed in the cache
+			\begin{itemize}
+				\item Simple and straightforward 
+				\item Need to \important{fetch the block of data} from memory \important{first}
+				\item If the processor writes a lot of data that it will never read back, it may \important{unnecessarily pollute the cache}
+			\end{itemize}
+		\item \important{Write around} or \important{Write no allocate}: on a write miss, data are only written to memory
+			\begin{itemize}
+				\item If the processor will load from the same address, it will be a \important{read miss}
+			\end{itemize}
+    \end{itemize}
+\end{parag}
 
 
+\begin{parag}{The '3Cs' of caches}
+    There is three types of \important{cache miss}
+	\begin{enumerate}
+		\item \important{Compulsory} \textrightarrow Missed that would happen in an infinitely large fully associative cache with the same block (also called \important{cold-start} misses or \important{first-reference} misses)
+		\item \important{Capacity} \textrightarrow Additional misses that occur because the corresponding block has been evicted due to the \important{limited capacity of the real cache} 
+		\item \important{Conflict} \textrightarrow Further misses that occur because the corresponding block has been evicted due to the \important{limited associativity of the cache}
+	\end{enumerate}
+	Those types of caches miss are useful to understand the \important{soruce of the limited performance}.
+\end{parag}
+\subsubsection{Summary of cache Features}
+Here's the features of a cache and what's make a cache:
+\begin{itemize}
+	\item \important{Cache size}: total data storage (usually excluding tags, valid bits, dirty bits, etc.)
+	\item \important{Addressing} by byte or word
+	\item \important{Line} or \important{block size}: bytes or words per line
+	\item \important{Associativity}: fully-associative, k-way set-associative, direct-mapped
+	\item \important{Replacement policy} (except for direct mapped): LRU, FIFO, random, et.
+	\item \important{Write policy}: write-through or write back
+	\item \important{Allocation policy}: write-allocate or write-around
+\end{itemize}
+
+
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-10-29_19.png}
+\end{center}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    

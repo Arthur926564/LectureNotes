@@ -24,7 +24,7 @@
 \contentsline {paragraph}{Why RISC-V instructions are so simple?}{19}{paragraph*.15}%
 \contentsline {subsubsection}{Byte addressed memory}{20}{subsubsection*.16}%
 \contentsline {paragraph}{Loading a word (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lw}) and Instruction}{21}{paragraph*.17}%
-\contentsline {paragraph}{Loading byes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lb})}{21}{paragraph*.18}%
+\contentsline {paragraph}{Loading bytes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lb})}{21}{paragraph*.18}%
 \contentsline {section}{\numberline {2.4}Arrays and data structures}{21}{section.2.4}%
 \contentsline {paragraph}{Arrays in high-level languages}{21}{section*.19}%
 \contentsline {paragraph}{Adding Positive elements}{22}{section*.20}%
@@ -91,7 +91,34 @@
 \contentsline {paragraph}{Circuit}{50}{section*.74}%
 \contentsline {chapter}{\numberline {4}Memory Hierarchy}{51}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Caches}{51}{section.4.1}%
-\contentsline {paragraph}{What memory to use?}{52}{section*.76}%
-\contentsline {paragraph}{Spatial and Temporal locality}{52}{section*.77}%
-\contentsline {paragraph}{Our placment policy most be:}{52}{section*.78}%
-\contentsline {subsubsection}{Cache: The idea}{53}{subsubsection*.79}%
+\contentsline {paragraph}{Out goal today}{51}{section*.76}%
+\contentsline {paragraph}{What memory to use?}{52}{section*.77}%
+\contentsline {paragraph}{Spatial and Temporal locality}{53}{section*.78}%
+\contentsline {paragraph}{Our placment policy most be:}{53}{section*.79}%
+\contentsline {subsubsection}{Cache: The idea}{54}{subsubsection*.80}%
+\contentsline {paragraph}{Definition of a Cache}{54}{section*.81}%
+\contentsline {paragraph}{The question now is how does it works?}{54}{section*.82}%
+\contentsline {paragraph}{Fully-Associative cache}{55}{paragraph*.83}%
+\contentsline {paragraph}{The representation}{55}{section*.84}%
+\contentsline {subsubsection}{Cache and Cache controller}{56}{subsubsection*.85}%
+\contentsline {paragraph}{The cache is a hardware device}{57}{section*.86}%
+\contentsline {paragraph}{What if the cache is full}{57}{section*.87}%
+\contentsline {paragraph}{Only exploiting Temporal locality}{58}{section*.88}%
+\contentsline {paragraph}{Fully-Associative Cache}{59}{section*.89}%
+\contentsline {paragraph}{How can we make it simpler}{60}{section*.90}%
+\contentsline {paragraph}{How to generate \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Addr} and \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Tag}}{60}{section*.91}%
+\contentsline {paragraph}{Direct-mapped Cache}{62}{section*.92}%
+\contentsline {subsubsection}{Which one is the Best Cache}{62}{subsubsection*.93}%
+\contentsline {paragraph}{Example}{62}{section*.94}%
+\contentsline {paragraph}{Intermediate?}{63}{section*.95}%
+\contentsline {paragraph}{Set-Associative Cache}{63}{section*.96}%
+\contentsline {paragraph}{Continuum of Possibilities}{63}{section*.97}%
+\contentsline {paragraph}{Validity}{64}{section*.98}%
+\contentsline {paragraph}{Addressing by Byte}{64}{section*.99}%
+\contentsline {subsection}{\numberline {4.1.1}Write and Cache}{64}{subsection.4.1.1}%
+\contentsline {subsubsection}{Write Hit}{64}{subsubsection*.100}%
+\contentsline {paragraph}{Write policies}{65}{section*.101}%
+\contentsline {subsubsection}{Write miss}{65}{subsubsection*.102}%
+\contentsline {paragraph}{Allocation Policies}{65}{section*.103}%
+\contentsline {paragraph}{The '3Cs' of caches}{66}{section*.104}%
+\contentsline {subsubsection}{Summary of cache Features}{66}{subsubsection*.105}%
