@@ -1,0 +1,14 @@
+\section{3c Virtual memory}
+
+\begin{lstslisting}[language=c]
+#include <stdlib.h>
+#include <stdio.h>
+int main() {
+	int *p = (int *) 1234; \*li t0, 12345*\
+	printf("\%i", p); 		\*la a0, format*\
+							\*lw a1, 0(t0)*\
+							\*jal printf*\
+}
+\end{lstslisting}
+
+

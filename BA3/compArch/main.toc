@@ -119,6 +119,6 @@
 \contentsline {subsubsection}{Write Hit}{64}{subsubsection*.100}%
 \contentsline {paragraph}{Write policies}{65}{section*.101}%
 \contentsline {subsubsection}{Write miss}{65}{subsubsection*.102}%
-\contentsline {paragraph}{Allocation Policies}{65}{section*.103}%
+\contentsline {paragraph}{Allocation Policies}{66}{section*.103}%
 \contentsline {paragraph}{The '3Cs' of caches}{66}{section*.104}%
 \contentsline {subsubsection}{Summary of cache Features}{66}{subsubsection*.105}%

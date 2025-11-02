@@ -342,12 +342,19 @@ The issue here also is that \important{all those comparators} are pretty expensi
 		\includegraphics[scale=0.28]{screenshots/2025-10-29_13.png}
 		\end{center}
 	   So the idea is to add a second cache map with the exact same direct-mapped structure. By doing this we allow a \important{second} element for the same index
-	\end{parag}
+	   \begin{subparag}{Critical path}
+	       Here the critical path is in the \important{multiplexer}, furthermore every comparisaiton that is made.
+	   \end{subparag}
+   \end{parag}
 	\begin{parag}{Continuum of Possibilities}
 		What we can see here is that we have a \important{lot} of choice for a given number of storage. For instance if we have 8 storage units we have the following ways of creating a cache:
 	\begin{center}
 		\includegraphics[scale=0.27]{screenshots/2025-10-29_14.png}
 	\end{center}
+	\begin{subparag}{Power of two}
+	    Do we have to have a power of two as the number of way?\\
+		Do we have to have a power of two as the number of set?
+	\end{subparag}
 
 		\begin{framedremark}
 		So here there is something very intresting to see is:\\
@@ -451,14 +458,3 @@ Here's the features of a cache and what's make a cache:
 \end{center}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-    
