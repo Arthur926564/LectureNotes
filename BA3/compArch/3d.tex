@@ -1,0 +1,93 @@
+\section{3d. Simples virtual Memory example}
+\begin{parag}{Simple translation Scheme}
+	Consider a \important{byte-addressable} virtual memory systemm that uses linear page table with \important{8-KiB pages}, \important{240bit virtual addresses}, \important{18-bit physical addresses} and \important{3 control bits} per page table entry.\\
+	One word is \important{4 bytes}\\
+	\begin{center}
+	What is the wifth of the physical page number field in bits?
+	\end{center}
+	
+	\begin{subparag}{Answer}
+		First let us compute the size of the offset, We have 8-KiB In each pages this implies that the address is contained on : $2^{3}\cdot 2^{10} =  2^{13} \implies 13$ bits. Because virtual memory is only on 24 bits then the remaining bits are $24 - 13 = 11$ However physical address is only on 18 bits which means that we will have to shorten it to: $18 - 13 = 5$ bits
+	\end{subparag}
+\end{parag}
+\begin{parag}{Page Table Entry Size}
+    Consider a \important{word-addressable} virtual meomry system that uses linear page tables with \important{16-KiB pages}, \important{64-bit virtual addresses}, \important{48-bit physical addresses}, and \important{2 control bits} per page table entry.\\
+	Page table entires are \important{byte-aligned}\\
+	\begin{center}
+	    What is the corresponding minimum size of each page table entry, in bytes
+	\end{center}
+	\begin{subparag}{Answer}
+	    We have 16 KiB pages this means that there are 4096 words per pages. This implies that we need 12 bits. For the physical page number we have then: $48 - 12 =  36$ bits and we have 2 control bits  $\implies 38$ bits. Since Page table entry are byte aligned it has to be a multiple of 8 which implies that we need 40 bits or 5 bytes.
+	\end{subparag}
+\end{parag}
+\begin{parag}{Total Page Table Size}
+    Consider a \important{word-addressable} virtual memory system that uses linear page tables with \important{4-KiB pages}, \important{24-bit virtual addresses}, \important{24-bit physical addresses}, and \important{1 control bit} per page table entry.
+	Page table entries are \important{byte-aligned}
+	\begin{center}
+	    Assuming that the page table contains all possible translation, what is going to be its total size?
+	\end{center}
+	\begin{subparag}{Answer}
+	We have 1024 words per pages.  For the physical address we have $24 - 10 = 14$ bits left with 1 control bit $\implies 15$ bits. Therefore we will need 2 bytes for the page table entry.
+	For the Virtual page number we have $24 - 10 =  14$ bits which implied that the total number of virtual page is $2^{14} =  16384$. Therefore We know that each table entry has 2 bytes and that we have 16384 of them, this implies that we have 
+	\begin{align*} 16384 \cdot 2 = 32768 \text{ bytes} =  32768\, \text{KiB} \end{align*}
+	\end{subparag}
+	
+\end{parag}
+
+    
+\begin{parag}{Total Addressable physical Memory}
+    Consider a \important{word-addressable} virtual memory system that uses linear page tables with \important{4-KiB pages}.
+	The \important{physical page number} is encoded on \important{19 bits}
+	Onw word is \important{2 bytes}
+	\begin{center}
+	    What is the total size in words of the addressable physical memory
+	\end{center}
+	\begin{subparag}{Answer}
+		We have 4 KiB per pages this implies that the page table entry is of size 2048 words. The physical page number is encoded on 19 bits this implies that the total number of page is $2^{19}$ where each of them has $2^{11}$ this implies that the total number of word is $2^{30}$ words.
+	\end{subparag}
+	
+\end{parag}
+
+
+
+\begin{parag}{Address Translation}
+    Consider a \important{byte addressable} virtual memory system that uses linear page tables with \important{8-KiB pages}, \important{32-bit virtual addresses}, \important{32-bit physical addresses}.
+	The table to the right contains the first 16 elements of a \important{linear page table}
+	The \important{Valid} bit indicates that the page is allocated and in memory
+	\begin{tabular}{|c|c|c|}
+\hline
+Index & Physical Page & Valid \\
+\hline
+0 & 0x6235 & TRUE \\
+1 & 0x22BB4 & FALSE \\
+2 & 0x2DE8 & FALSE \\
+3 & 0x34120 & FALSE \\
+4 & 0x1BE42 & FALSE \\
+5 & 0x2D5FF & FALSE \\
+6 & 0xCC56 & TRUE \\
+7 & 0x6C7B & TRUE \\
+8 & 0x2ABA & TRUE \\
+9 & 0xFDFB & TRUE \\
+10 & 0x3990B & FALSE \\
+11 & 0x1AB4F & TRUE \\
+12 & 0x8F0D & TRUE \\
+13 & 0x1ACE & TRUE \\
+14 & 0x3465B & FALSE \\
+15 & 0xB586 & FALSE \\
+\hline
+\end{tabular}
+	\begin{center}
+	What is the translation of \texttt{0x12A60}\\
+	And \texttt{0x14C48}
+	\end{center}
+
+	\begin{subparag}{Answer}
+			Here we have $3 + 10 =  13$ bits of offset for each pages. we need $32 - 13 = 19$ bits of page index this implies that we need to take the 19 msb of the virtual address \texttt{0x9}. This gives us  the physical page \texttt{0xFDFB} which is allocated. Therefore we finally need to or it with 13 first bits which gives us:
+			\begin{align*} 0xFDFB1A60 \end{align*}
+			We then need to do the same procedure for the second address \texttt{0x14C48}.The 19 msb gives us the number 10 which then is just addded:
+			\begin{align*} 0x3990B0C48 \end{align*}
+			
+	\end{subparag}
+	
+\end{parag}
+

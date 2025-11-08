@@ -1,7 +1,7 @@
 \section{2b. Processor, Inputs and Outputs}
 
 \begin{parag}{The cpu}
-    As said before, the cpu is a very \important{sequential} component (but from now on we may omit the \important{clock} in diagrams). Therefore here we only have one data bus for read and write in our processor. The question we have is how can we handle input and ouput with only one data bus?
+    As said before, the cpu is a very \important{sequential} component (but from now on we may omit the \important{clock} in diagrams). Therefore, here we only have one data bus for read and write in our processor. The question we have is how can we handle input and ouput with only one data bus?
 \end{parag}
 \begin{parag}{Memory}
     At the moment we only need to speak about memory, connecting the cpu with the memory is pretty \textit{easy} as seen before
@@ -15,7 +15,10 @@
 \end{parag}
 \begin{parag}{Input and Outputs device}
     As said before we only have 5 classic components of a computer, from where can we get our I/Os then? the way of doing this, is to use memory, we say that the device are just some value in memory with a certain address. However for this we have somme issue:\\
-	Some device are way \important{faster} than other for instance here's a table of some examples:
+	Some device are way \important{faster}   than other for instance here's a table of some examples:
+	\begin{framedremark}
+	This is an issue because the CPU doesn't know so sometime it will try to read/write into a \important{slow device} at the same speed, it will \important{stall} or waste cycle waiting for the device.
+	\end{framedremark}
 \end{parag}
 	\begin{table}[h!]
 \centering
@@ -44,93 +47,132 @@
 \end{table}
 \begin{parag}{Accessing I/Os: Port Mapped I/O (PMIO)}
     The way for this is to create a \important{new interface} similar to the memory one.\\
-	We add the to CPU the port \texttt{ctrl-IO} and \texttt{port} Which serves as circuit enable and output enable. (this way, we'll know when accessing memory or I/O).\\
-	It implies that we can create new instructions (e.g., \important{x86} but seldom used):
+		We add to the CPU the port \texttt{ctrl-IO} and \texttt{port} Which serves as circuit enable and output enable. (this way, we'll know when accessing memory or I/O).\\
+		It implies that we can create new instructions (e.g., \important{x86} but seldom used):
+		\begin{itemize}
+			\item \texttt{IN register, port}
+			\item \texttt{OUT port, register}
+			\item For instance \texttt{IN al, Keyboard}
+		\end{itemize}
+	\end{parag}
+	\begin{parag}{Accessing I/Os: Memory Mapped I/O (MMIO)}
+		In this way, we don't make any difference between memory and I/Os.
+		\begin{center}
+		\includegraphics[scale=0.2]{screenshots/2025-10-22_5.png}
+		\end{center}
+		This means that there are no special hardware needed in the cpu $\implies$ no special instructions needed. For intsance in our example if we wanted to write a new value in the led:
+		\begin{lstlisting}[language={[RISC-V]Assembler}]
+	lui t0, 0x10000 # pointer to I/Os
+	sw t1, 0(t0) # write LEDs
+		\end{lstlisting}
+		This means that we have a big data bus and depending on the value \important{the bus} choose between the Memory and the I/Os:
+		\begin{center}
+		\includegraphics[scale=0.2]{screenshots/2025-10-22_6.png}
+		\end{center}
+	\end{parag}
+
+
+	\begin{parag}{Summary}
+		\begin{begin{subparag}}{CPU}
+			The CPU is a \important{sequential} component with a single data bus for both reading and writing. Handling both memory and I/O on the same bus requires special addressing or interfaces.
+	\end{subparag}
+	\begin{subparag}{Memory}
+			Memory is accessed via unique addresses. RAM begins at a base address (e.g., \texttt{0x80000000}) and grows as needed. Connection to the CPU is straightforward.
+	\end{subparag}
+	\begin{subparag}{I/O Devices}
+			I/O devices are mapped to specific addresses in the system. Devices have widely varying speeds, which can cause the CPU to stall if a slow device is accessed at full speed. Examples include keyboards (kbps) and USB 4.0 (up to 40 Gbps).
+	\end{subparag}
+	\begin{subparag}{Port-Mapped I/O (PMIO)}
+			PMIO creates a separate I/O address space. The CPU uses control signals and special instructions (\texttt{IN} and \texttt{OUT}) to access devices. This isolates I/O from memory.
+
+	\end{subparag}
+			\begin{subparag}{Memory-Mapped I/O (MMIO)}
+			MMIO maps devices directly into the memory address space. The CPU accesses I/O using standard memory instructions. No special hardware or instructions are needed; the data bus selects memory or I/O based on the address.
+		\end{subparag}
+	\end{parag}
+
+	\begin{parag}{Conclusion}
+		Both PMIO and MMIO allow the CPU to interact with I/O devices using a single data bus.  
+		\begin{itemize}
+			\item \textbf{PMIO} separates memory and I/O with dedicated instructions and control signals, providing clarity but requiring extra CPU support.  
+			\item \textbf{MMIO} treats I/O devices as memory, simplifying the CPU design and instruction set at the cost of shared address space.  
+		\end{itemize}
+		In modern systems, MMIO is more common because it allows standard memory instructions to handle I/O efficiently, while PMIO is mostly used in legacy systems or for very simple microcontrollers.
+	\end{parag}
+
+
+
+
+
+	\begin{parag}{Example: A/D converter}
+		An A/D converter is a device that \important{converts an analog signal into a digital signal}. What we need is:
+		\begin{enumerate}
+			\item \important{Start} (\texttt{START}): input; when active \textrightarrow begins a new conversion
+			\item \important{Data Valid} (\texttt{/DV}): output when active \textrightarrow D7-D0 are valid
+			\item \important{Data} (D7-D0): output; last conversion result
+		\end{enumerate}
+		\begin{center}
+		\includegraphics[scale=0.2]{screenshots/2025-10-22_7.png}
+		\end{center}
+		
+	\end{parag}
+
+
+	\begin{parag}{Example: Simple bus interface}
+		\begin{subparag}{Remark}
+			Here we are talking about the processor directly this information helps us to do the diagram between the CPU (Here the MC6800) and the A/D converter.\\
+			We are also saying a 8 bits processor because the data bus is 8 bits (this doesn't imply anything about the register in the CPU).
+
+		\end{subparag}
+		Suppose that a 8-bit processor has the following signals:
+		\begin{itemize}
+			\item \important{Address} (A23-A0): output; address bus
+			\item \important{Data} (D7-D0): input data bus 
+			\item \important{Adress Strobe} (/AS) output, signals the presence of a valid address on the Address bus during a memory access cycle
+			\item \important{Read/Write} (R/W): output; signal the direction of the data flow
+			\item \important{Data Acknowledge} (/DTACK): input; must be activated at the end of a memory access, when the written data have been latched or the read data are ready
+		\end{itemize}
+		This is similar but not identical to the MC6800
+		\begin{framedremark}
+		ChatGPT on the mc68000:\\
+		The MC68000 (also called the Motorola 68000) is a 16/32-bit microprocessor that was very popular in the late 1970s and 1980s. It was used in systems like the original Apple Macintosh, Amiga computers, and early Sun workstations. In your example, it’s mentioned as a reference because the bus signals are similar to those on the 68000, but not exactly the same.\\
+		\textbf{in short}: the MC68000 is just a classic CPU used as a reference for teaching how these buses work.
+		\end{framedremark}
+		
+	\end{parag}
+	The goal now for us is to create a circuit that is able to connect the A/D converter to the processor (the MC68000). For this we will use a \important{memory mapped interface}. \\
+	We want: 
 	\begin{itemize}
-	    \item \texttt{IN register, port}
-		\item \texttt{OUT port, register}
-		\item For instance \texttt{IN al, Keyboard}
+		\item \important{any access} (\texttt{R} or \texttt{W}) to address \texttt{0xFFFF0} starts a \important{new conversion}
+		\item The \important{data valid} signal can be read by the processor at address \texttt{0xFFFF4} (bit 0)
+		\item The \important{result of the conversion} can be read by the processor at address \texttt{0xFFFF8}
 	\end{itemize}
-\end{parag}
-\begin{parag}{Accessing I/Os: Memory Mapped I/O (MMIO)}
-    In this way, we don't make any difference between memory and I/Os.
+	Here's a little diagram of the state
 	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_5.png}
+			
+		
+	\begin{tikzpicture}[
+		state/.style=
+		{circle, mininum size=0cm, draw, align=center, ->, >, >=stealth', auto, semithick },
+		>=Stealth
+	]
+
+	% Nodes
+	\node[state]  at (0, 0)(execute) {Start memory\\ access};
+	\node[state] at (-4, 0)(left){};
+	\node[state] at (4, 0)(right){};
+
+	% Arrows
+	% Loop back arrows
+	\draw (execute) edge[loop above] node {\texttt{/DTACK} == 1} (exectute);
+	\draw[->] (execute.west) edge[bend left] node {\texttt{/DTACK} == 0} (left);
+
+	\draw[->] (right) edge[bend left] node {\texttt{mem\_type} == 1} (execute.east);
+	\end{tikzpicture}
+
 	\end{center}
-	This means that there are no special hardware needed in the cpu $\implies$ no special instructions needed. For intsance in our example if we wanted to write a new value in the led:
-	\begin{lstlisting}[language={[RISC-V]Assembler}]
-lui t0, 0x10000 # pointer to I/Os
-sw t1, 0(t0) # write LEDs
-	\end{lstlisting}
-	This means that we have a big data bus and depending on the value \important{the bus} choose between the Memory and the I/Os:
-	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_6.png}
-	\end{center}
-\end{parag}
-\begin{parag}{Example: A/D converter}
-    An A/D converter is a device that \important{converts an analog signal into a digital signal}. What we need is:
-	\begin{enumerate}
-	    \item \important{Start} (\texttt{START}): input; when active \textrightarrow begins a new conversion
-	    \item \important{Data Valid} (\texttt{/DV}): output when active \textrightarrow D7-D0 are valid
-	    \item \important{Data} (D7-D0): output; last conversion result
-	\end{enumerate}
-	\begin{center}
-	\includegraphics[scale=0.2]{screenshots/2025-10-22_7.png}
-	\end{center}
-	
-\end{parag}
 
-
-\begin{parag}{Example: Simple bus interface}
-    Suppose that a 8-bit processor has the following signals:
-	\begin{itemize}
-	    \item \important{Address} (A23-A0): output; address bus
-		\item \important{Data} (D7-D0): input data bus 
-		\item \important{Adress Strobe} (/AS) output, signals the presence of a valid address on the Address bus during a memory access cycle
-		\item \important{Read/Write} (R/W): output; signal the direction of the data flow
-		\item \important{Data Acknowledge} (/DTACK): input; must be activated at the end of a memory access, when the written data have been latched or the read data are ready
-	\end{itemize}
-	This is similar but not identical to the MC6800
-	\begin{framedremark}
-	ChatGPT on the mc68000:\\
-	The MC68000 (also called the Motorola 68000) is a 16/32-bit microprocessor that was very popular in the late 1970s and 1980s. It was used in systems like the original Apple Macintosh, Amiga computers, and early Sun workstations. In your example, it’s mentioned as a reference because the bus signals are similar to those on the 68000, but not exactly the same.\\
-	\textbf{in short}: the MC68000 is just a classic CPU used as a reference for teaching how these buses work.
-	\end{framedremark}
-	
-\end{parag}
-The goal now for us is to create a circuit that is able to connect the A/D converter to the processor (the MC68000). For this we will use a \important{memory mapped interface}. \\
-We want: 
-\begin{itemize}
-    \item \important{any access} (\texttt{R} or \texttt{W}) to address \texttt{0xFFFF0} starts a \important{new conversion}
-    \item The \important{data valid} signal can be read by the processor at address \texttt{0xFFFF4} (bit 0)
-    \item The \important{result of the conversion} can be read by the processor at address \texttt{0xFFFF8}
-\end{itemize}
-Here's a little diagram of the state
-\begin{center}
-	    
-	
-\begin{tikzpicture}[
-    state/.style=
-	{circle, mininum size=0cm, draw, align=center, ->, >, >=stealth', auto, semithick },
-    >=Stealth
-]
-
-% Nodes
-\node[state]  at (0, 0)(execute) {Start memory\\ access};
-\node[state] at (-4, 0)(left){};
-\node[state] at (4, 0)(right){};
-
-% Arrows
-% Loop back arrows
-\draw (execute) edge[loop above] node {\texttt{/DTACK} == 1} (exectute);
-\draw[->] (execute.west) edge[bend left] node {\texttt{/DTACK} == 0} (left);
-
-\draw[->] (right) edge[bend left] node {\texttt{mem\_type} == 1} (execute.east);
-\end{tikzpicture}
-
-\end{center}
-
-To be able to construc the circuit we have to be careful about the timing diagram here; the fact that the ADDR and the /AS responds only at the clock edge gives us the information that we will need a \textit{register} which stores the DTACK signal and then output the As and ADDR signal after. This big register here is the \important{processor}.
+	To be able to construct the circuit we have to be careful about the timing diagram here; the fact that the ADDR and the /AS responds only at the clock edge gives us the information that we will need a \textit{register} which stores the DTACK signal and then output the As and ADDR signal after. This big register here is the \important{processor}.
 \begin{center}
 \includegraphics[scale=0.25]{screenshots/2025-10-22_8.png}
 \end{center}
@@ -171,6 +213,9 @@ end:
 	\includegraphics[scale=0.2]{screenshots/2025-10-22_10.png}
 	\end{center}
 \end{parag}
+\begin{framedremark}
+Here we can see an issue that we will solvel later, the \texttt{poll} part of the function. The code that we wrote here \important{implies directly} that when we start our conversion we \textbf{have to wait} \important{until} it is done. But we don't know anything about the time that this is going to take, it can take forever. Imagine have an a bug in the A/D converter which makes it not work, we would be polling forever! The only way for us to stop it would be to turn down the computer (not very practical). Therefore we will need to resolve this issue...
+\end{framedremark}
 
 \subsection{A Classic UART}
 
@@ -192,6 +237,12 @@ end:
 			\item A \important{data output} register where the processor places data to send
 	\end{itemize}
 
+\end{parag}
+
+\begin{parag}{Example: Send a String}
+    For instance we can try to send a String into the UART:\\
+	Just to remember, a \texttt{String} is an array of char which is terminated by the null character.\\
+	The goal here will be to send each char (bytes) to the data bus. To do so we'll need to check if the UART is ready $\implies$ is the transmitter is ready. If it is, we can store our bytes into the UART data register which will then do the rest for us.
 \end{parag}
 
 \begin{lstlisting}[language={[RISC-V]Assembler}]
@@ -223,6 +274,7 @@ check_tx_ready:
 finish:
 	ret # Return when the string is done
 \end{lstlisting}
+
 	
 	
 

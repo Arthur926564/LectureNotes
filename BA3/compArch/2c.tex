@@ -1,9 +1,9 @@
 \section{2c: Interrupts}
-The solution of our previous problem is interrupts! Instead of waiting for each I/O to responds, we can do our work and \important{when a I/O} \textit{shouts} we do what he want us to do. We have them \important{ask} for \important{attention}\\
+The solution of our previous problem is interrupts! Instead of waiting for each I/O to respond, we can do our stuff and \important{when a I/O} \textbf{shouts} we do what he want us to do. We have them \important{asking} for \important{attention}\\
 \begin{parag}{Seen this already in some languages}
 	We maybe, have already seen this mecanics in some languages:
 	\begin{itemize}
-	    \item Callbacks, Action, or \important{Event Listeners} (PPO), signals, promises, Futures, Hooks
+	    \item Callbacks, Action, or \important{Event Listeners} (JavaFX), signals, promises, Futures, Hooks
 	\end{itemize}
 	However does are done by the \important{compiler}/ \important{interpreters}. Here, we are dealing with the cpu directly so how can we do this?
 \end{parag}
@@ -11,8 +11,8 @@ The solution of our previous problem is interrupts! Instead of waiting for each 
     \begin{center}
     \includegraphics[scale=0.3]{screenshots/2025-10-22_12.png}
     \end{center}
-	We use the \texttt{read\_adc} address which is where we handle the I/O interrups. The interrupt request serve to trigger the interruption.\\
-	However the is several issues to take care of and behaviours to define:
+	We use the \texttt{read\_adc} address which is where we handle the I/O interrupts. The interrupt request serves to trigger the interruption.\\
+	However there are several issues to take care of and behaviours to define:
 	\begin{itemize}
 	    \item We need to know \important{who needs attention} -- we do not have only one peripheral
 			\begin{itemize}
@@ -20,10 +20,10 @@ The solution of our previous problem is interrupts! Instead of waiting for each 
 				\item \important{I/O peripheral sends identification}
 			\end{itemize}
 		\item \important{Different priorities} need to be expressed -- some peripheral can wait long, some cannot
-		\item \important{Impact on current execution}: Current instruction(s) can complete? One? Five? Twenty? What ahhpens of the program that was executing?
+		\item \important{Impact on current execution}: Current instruction(s) can complete? One instruction? Five instructions? Twenty instructions? What happens of the program that was being executed?
 	\end{itemize}
 	\begin{subparag}{How do many peripheral connect to a single IRQ}
-	    In order to do so, we have more than one way, the easiest and most intuitive is a or with $n$ inputs.\\
+	    In order to do so, we have more than one way, the easiest and most intuitive is an \texttt{OR} with $n$ inputs.\\
 		On the other hand, what we also can do is to use tri-state buffers, one for each IRQ$_n$.
 	\end{subparag}
 	\begin{center}
@@ -35,7 +35,7 @@ The solution of our previous problem is interrupts! Instead of waiting for each 
 	        \item Processor signals when it is ready to serve peripheral through IACK "\textit{acknowledges}" the interrupt)
 	        \item peripheral signals its identity
 	        \item Processor takes appropriate action --transfer control to the appropriate Exception handler
-	        \item Processor reverts to the interrupt task
+	        \item Processor return to the interrupt task
 	    \end{enumerate}
 	
 	\end{subparag}
@@ -95,10 +95,10 @@ This idea shortly is:
 	    \item The Processor load the data from the peripheral
 	    \item The processor store the data into the memory
 	\end{enumerate}
-	This processor can be done for like 1,000,00 times.
+	This process can be done for like 1,000,00 times.
 \end{parag}
 \begin{parag}{With the DMA}
-    The idea now is to:
+    The idea now is: 
 	\begin{enumerate}
 	    \item The peripheral launch a interrupt request
 	    \item The processor launch it back to the DMA (with the needed informations)

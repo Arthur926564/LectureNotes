@@ -1,14 +1,422 @@
 \section{3c Virtual memory}
+\begin{parag}{Segmentation Fault? Bus Error?}
+    
 
-\begin{lstslisting}[language=c]
+
+\begin{lstlisting}[language=c]
 #include <stdlib.h>
 #include <stdio.h>
 int main() {
 	int *p = (int *) 1234; \*li t0, 12345*\
-	printf("\%i", p); 		\*la a0, format*\
-							\*lw a1, 0(t0)*\
-							\*jal printf*\
+	printf("\%i", p); 	\*la a0, format*\
+				\*lw a1, 0(t0)*\
+				\*jal printf*\
 }
-\end{lstslisting}
+\end{lstlisting}
+
+This program tries to read at the address 1234? But here is the output:
+\begin{lstlisting}[language=c]
+Segmentation fault (core dumped)
+\end{lstlisting}
+Here the system sends us a message that this instruction cannot be done, we cannot \textit{steal} an element from memory.
+\end{parag}
+But now at the moment we cannot do this (with our current CPU), for us if we gave an address, the processor gives us the element that is stored at the address.
+\begin{parag}{Overview}
+    There is \important{three problems}:
+	\begin{itemize}
+		\item How to \important{protect memory} so that each program (processes). Running \textit{simultaneously} in the system can only access its own data? How can we isolate processes?
+		\item What happens if the main \important{memory} (\texttt{DRAM}) is \important{not sufficient} for the execution of program? Can we use our disk? How?
+		\item How do we run several programs (processes) "simultaneously"? \\ How do we load \important{multiple programs in memory}? Where?
+	\end{itemize}
+	This is where we need multiprogrammed system
+\end{parag}
+\begin{parag}{Needs of Multiprogrammed System}
+    \begin{itemize}
+		\item Relocation 
+			\begin{itemize}
+				\item All programs must be written without knowledge of where they will be in memory
+			\end{itemize}
+		\item Protection 
+			\begin{itemize}
+				\item Programs can access only their own data
+			\end{itemize}
+		\item Space
+			\begin{itemize}
+				\item If several program run at the same time, memory shortage will be even more a problem
+			\end{itemize}
+    \end{itemize}
+	What this means is that for instance gcc compiles a c file, it puts it into the address \texttt{0x0} (by convention). However how can we compile more than just one program here? The simple solution is to relocate our load into memory each time
+\end{parag}
+\begin{parag}{Simples solution: Relocation at Load Time}
+	\begin{lstlisting}[language={[RISC-V]Assembler}]
+0x0000: add v0, zero, zero # v0 = 0
+		add t0, zero, zero # t0 = 0
+0x0008: sltu t2, t0, a1 # t2 = (t0 < a1)
+		beq t2, zero, 0x003C # if (!t2) goto fin
+		lw t3, 0(a0) # t3 = mem[a0]
+		addi t4, zero, 32 # t4 = 32
+0x0014: beq t4, zero, 0x0030 # if (!t4) goto next
+		andi t1, t3, 1 # t1 = t3 & 1
+		add v0, v0, t1 # v0 = v0 + t1
+		srl t3, t3, 1 # t3 = t3 >> 1
+		subi t4, t4, 1 # t4 = t4 - 1
+		j 0x0014 # goto inner
+0x0030: addi t0, t0, 1 # t0 = t0 + 1
+		addi a0, a0, 4 # a0 = a0 + 4
+		j 0x0008 # goto outer
+0x003c: ret # return to caller
+    \end{lstlisting}
+	So if we want to add a new program at this address we can just relocate this one (the code above) at address for instance 0x1234, which will gives us
+    	\begin{lstlisting}[language={[RISC-V]Assembler}]
+0x1234: add v0, zero, zero # v0 = 0
+		add t0, zero, zero # t0 = 0
+0x123c: sltu t2, t0, a1 # t2 = (t0 < a1)
+		beq t2, zero, 0x1270 # if (!t2) goto fin
+		lw t3, 0(a0) # t3 = mem[a0]
+		addi t4, zero, 32 # t4 = 32
+0x1248: beq t4, zero, 0x1264 # if (!t4) goto next
+		andi t1, t3, 1 # t1 = t3 & 1
+		add v0, v0, t1 # v0 = v0 + t1
+		srl t3, t3, 1 # t3 = t3 >> 1
+		subi t4, t4, 1 # t4 = t4 - 1
+		j 0x1248 # goto inner
+0x1264: addi t0, t0, 1 # t0 = t0 + 1
+		addi a0, a0, 4 # a0 = a0 + 4
+		j 0x123c # goto outer
+0x1270: ret # return to caller
+    \end{lstlisting}
+	The relocation \important{must} take place at a \important{binary} level, not \important{assembly code}.\\
+	We need \important{relocation tables} to know \important{where} are the addresses to change
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-06.png}
+	\end{center}
+	This idea has been used for many many years, and it is still used, this is a simple but very useful solution. However this is still a not the best for us but why?
+\end{parag}
+\paragraph{Limitations}
+\label{par:Limitations}
+
+\begin{parag}{$\;$}
+	So when we are running for instance programm 1, 2 and 3 at the same time we get this at memory
+    \begin{center}
+    \includegraphics[scale=0.2]{screenshots/2025-11-06_1.png}
+    \end{center}
+	However as we can see there is \important{gaps} here.\\
+	So here we have a lot of \important{garbage} that we need to collect to have again some space. For instance if we wanted to add a fourth program and it is bigger than the individual gaps, how can we do it? The solution is the one that we said before,  we need a \important{garbage collector} (which we don't have on our processor nor on our OS).\\
+	The limitations of this is that 
+	\begin{itemize}
+		\item Large amount of work to do at load time 
+		\item \important{inflexible} \textrightarrow cannot be changed later
+	\end{itemize}
+	Howevere we cannot move any program here. We would think that moving a program is just moving it into a new address and renew the \texttt{PC} to the current line that is being executed.
+	\important{BUT} What if we are in a function that has a return address that is stored \important{in the stack} how would we know? From a hardware perspective the memory is \important{only storing somes bytes here and there}. It doesn't know if it is a program, data, or anything else. Therefore it is impossible to put a program somewhere else \important{during its execution}. (Try this with a a program that calls a function into another function (If we changed everything line by a certain offset then the return that was in the stack is not changed which make the program break.))
+	\begin{framedremark}
+	What is important (from what I see) is the fact that this is not an issue of something too hard or too slow. This is just \important{impossible} to do. we cannot shift a program \\
+	The issue is \textbf{static}, the fact that we have choosen the address of the program \important{staticly} makes it impossible to move before, this is the same issue as in Section~\ref{sub:Functions}
+	\end{framedremark}
+\end{parag}
+\begin{parag}{Relocation in hardware:\\ Base and Bounds MMU}
+	Now Instead of doing it \important{before} it run, we can do it \important{while it runs}. What we want is that from a software perspective we use a virtual address (which thinks that the program start a \texttt{0x0}) which is \important{true} from a software point of view. Where the Program is in fact at address \texttt{0x1234}.
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-11-06_2.png}
+	\end{center}
+    
+\end{parag}
+\begin{parag}{Memory, Management Unit}
+	Here what we have to do is just to put some gates between the processor and the memory That lies  to us(the memory lies). We transform \important{at runtime} the real memory into virtual memory.
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-11-06_4.png}
+	\end{center}
+	
+	\begin{subparag}{Virtual Memory}
+	    This is a memory that the OS allows a program to believe it has.
+	\end{subparag}
+	\begin{subparag}{Virtual address}
+	    Conventional address used by a program \textrightarrow the MMU must translate it into physical address at the time of an access
+	\end{subparag}
+	\begin{subparag}{Physical Memory}
+		Memory actually available in the computer
+	\end{subparag}
+	\begin{subparag}{Physical Address}
+	    Real location in physical memory; identifies actual storage.
+	\end{subparag}
+\end{parag}
+
+
+\begin{parag}{Virtual and Physical Memory}
+	So here Hows it work is now very clean. 
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-06_7.png}
+	\end{center}
+	But this is only from a software perspective. But in reality (physical memory) this is the exact same thing as in section~\ref{par:Limitations}. If we are able to do the change on the fly then program \important{become movable}. If we return to \texttt{0x100}, in respective of where I am in the program, I will always return to \texttt{0x100}. Now the view of the address space does not change.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-06_8.png}
+	\end{center}
+
+	\begin{framedremark}
+	If we take the example of the stack of before, the issue was that when we were accessing returning but the memory was shift then the program was lost. However now, even when we are changing anything in the physical memory, the stack from a software perspective stays the exact same. The MMU handles the translation to wherever the physical stack actually lives at any given moment.
+	\end{framedremark}
+    
+	There is two very nice things here We have the fist offset that is being computed here. \important{AND} an not very costly part which checks wether or not the address that we are asking is too big or not. The part with the Bounds and Fault is checking if the program is asking for an address that is too big.
+\end{parag}
+\begin{parag}{Why we check}
+    The reason of this check is very important. For instance if we are the second program and we want to fish something from another program then we can just access something that is further from our scope.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-06_9.png}
+	\end{center}
+	The \important{Base} and \important{Bounds} value are different for each program\\
+	On a \important{context switch} (changing the program running), the OS must \important{reload these registers}
+\end{parag}
+\begin{parag}{Needs of multiprogrammed}
+    Now:
+	\begin{itemize}
+		\item All programs must be written without knowledge of where they will be in memory
+			\begin{itemize}
+				\item Space allocation may need \important{garbge collection}, \important{moving programs} and \important{data}, etc.
+			\end{itemize}
+		\item Programs can access only their own data
+			\begin{itemize}
+				\item Protection is a bit crude: \important{one chunk of memory}
+			\end{itemize}
+	\end{itemize}
+	\begin{subparag}{Was is still not good}
+	    If several programs run at the same time, memory shortage will be even more a problem
+	\end{subparag}
+	
+\end{parag}
+
+\begin{parag}{Segmentation and Paging}
+	\begin{subparag}{Segmentation}
+		An \important{Segmentation} (an extension of \important{Base \& Bounds}) splits the physical memory exactly as needed by each program
+		\begin{itemize}
+			\item Artbitrary start of a block
+			\item Artbitrary length
+			\item Multiple block per application
+		\end{itemize}
+	\end{subparag}
+	\begin{subparag}{Paging}
+	    \important{Paging} splits the memory in equal small block (e.g., 4-64KiB) and assigns as many as needed to each program.
+	\end{subparag}
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-06_11.png}
+	\end{center}
+	From there, there is a lot of questions on in which page are we now? Where in the current page are we now?\\ 
+	In other word
+\end{parag}
+\begin{parag}{How do we translate?}
+    For instance let us take the previous example and assume that we are in the virtual address \texttt{0x2345} and that pages are \texttt{0x1000} in size.\\
+	To know in which page we currently are we can just do a integer division: \texttt{0x2345 / 0x1000} $= $ page 2 and to know the position in the page we only have to take the modulo: \texttt{0x2345 mod 0x1000} $= $ \texttt{0x345}. Then we need a \important{table} that tells us the physical memory of each page.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-06_12.png}
+	\end{center}
+\end{parag}
+\begin{parag}{What if the page's size is a power of $2$?}
+    If the length of the page is a power of 2 then this has became totally \important{trivial}: All we have to do is to take the first $n$ bits for the offset and the $32 - n$ last bits as the input for the page table.
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-11-06_13.png}
+	\end{center}
+	\begin{framedremark}
+	We need a page table \important{for each program}.
+	\end{framedremark}
+\end{parag}
+\begin{parag}{Address Translation in a Paged MMU}
+    The question now is where do we store all those table, In the MMU or in the memory? The answer is the \important{memory} Instead of having the offset in the MMU we have the address of the page table.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-07.png}
+	\end{center}
+\end{parag}
+\begin{parag}{Memory Allocation is easy now}
+	Now what is nice is the fact that there is gap is not an issue now \\
+	From a programmer, the address will always be the same (e.g., starting for \texttt{ox0}) Which is not an issue because of the virtual memory. And the the fact of what we put where is not a complicated thing to do, is we have empty space in memory then we just have empty page which can be allocated to a program.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-07_1.png}
+	\end{center}
+\end{parag}
+
+\begin{parag}{Page Tables Can Be Big}
+    Page table could be very large, for instance 64GiB of memory of memory in 4KiB pages requires $2^{24}$ entries or approximately \important{64 MiB}.\\
+	For a program that uses only a few MB, \important{most entries are empty}.\\
+	There is a big sparness for the table, those table are gigantic but we most of what we'll use is only a thousand.\\
+	As computer scientist we can encode those to optimize. Several possible solutions exist:
+	\begin{itemize}
+		\item Hashed Tables
+		\item Pages Segmentation
+		\item \important{Multilevel Page Tables}
+	\end{itemize}
+\end{parag}
+\begin{parag}{Multilevel (Or hierachical) page tables}
+	What we want is a multilevel page stable. Instead of taking the 21 msb bits and put them in a table, we instead take the 10 msb bits as the index of the first table. This first \important{contains only index} of the second tables. We have one thousand tables that points to one thousand tables, this means that we have 1 million tables at the end of the day. 
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-07_2.png}
+	\end{center}
+	This is kind of weird at first, we are adding a new table, how can we gain time or space by addings something in memory?\\
+	But now we don't have to allocate all this space directly in the first place, what we can is only allocate in page tables in memory when it is needed (when the OS decide to allocate). 
+	\begin{framedremark}
+	So here we gain a \important{lot} of space. The reason why we can do this is that the table is a \important{sparse table} and we can exploit this in order to use less memory.
+	\end{framedremark}
+    
+\end{parag}
+\begin{parag}{But, Two memory accesses every time?}
+	So we need to have two memory acceses for each access in memory, this is \important{slow}.
+    \begin{center}
+    \includegraphics[scale=0.25]{screenshots/2025-11-07_3.png}
+    \end{center}
+\end{parag}
+\begin{parag}{A Specialized 'cache' for the translations}
+    A solution for this is that maybe we can use a cache, but a very specific cache.\\
+	How do we do it?
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-11-07_4.png}
+	\end{center}
+	What we want is to do a comparaison in parallel.\\
+	Remark, this is \texttt{CAM} as we have seen before.\\
+	The question now is what should the 'cache' do when we miss? This is an engineering question, we will assume that we usually don't miss. When we say this, rare here means every thousand, millions instruction we would miss.\\
+	But we don't really want to implement a cache controller which is something really hard to do (as said before). Instead when we would miss, we'll raise an exception \texttt{TLB Miss Exception} this miss that we stopped what we  are currently doing, then we access again in the memory the page tables (this can be done with the two table as seen before) we put our element in the cache \important{and finally} return to the program that was running.
+	\begin{subparag}{To be a cache or not a cache}
+		This is a cache by the definition we gave before section~\ref{sec:cache}. But we don't have all the technology with the cache controller etc... This is more a \important{software management cache}. It depends on the software system to reload some stuff.
+	\end{subparag}
+\end{parag}
+\begin{parag}{TLB Miss}
+	The processor get an \important{exception}
+	\begin{itemize}
+		\item The user program \important{stops execution}
+		\item The OS is invoked and \important{searches} the translation in the \important{page table}
+		\item If it \important{does not find the translation}, the suer is trying to access memory that has not been allocated to \textrightarrow \important{kill the program} and we are done
+		\item Otherwise, it \important{places the translation in the TLB}
+		\item \important{Restart execution} from the user program's memory instruction that generated the TLB miss
+		\item By construction, this time the \important{TLB will hit and the user program will continue}
+	\end{itemize}
+    
+\end{parag}
+
+\begin{parag}{Memory Protection}
+	Typically \important{Page table} entries have several arritbutes (OS specific):
+	\begin{itemize}[label=--]
+		\item Valid (to indicate presence in main memory)
+		\item Allocated (to indicae existence)
+		\item Dirty (to indicate a copy-back is needed)
+		\item Used (to help determine which page to replace)
+		\item \important{Readable}
+		\item \important{Writable}
+		\item \important{Executable}
+		\item  ...
+	\end{itemize}
+	If the \important{TLB can be written only by the OS} (e.g, kernel mode), the OS can \important{protect the Pages Tables} (prevent users from writing them), \important{protect its code}, and thus control completely \important{memory access rights}.\\
+
+	So now we have the Relocation and the protection issue \important{achieved}! The only issue that is left is \important{space}. The amount of memory that we used before is now splited by a lot of other programs. Memory shortage become even more an issue here.
+\end{parag}
+\begin{parag}{Not All Pages need to be in main memory}
+	So what can't we just put our data in a disk storage when the memory is full? from the processor this is not possible (the load instruction takes only load from the RAM memory). But now there is the MMU between the memory and the processor, we can make the processor believe that everything is in memory and as the MMU we redirige the address into a load from a disk storage.
+	\begin{center}
+	\includegraphics[scale=0.23]{screenshots/2025-11-07_5.png}
+	\end{center}
+	So now space is not an issue anymore, the only issue now is performance. We now have practily infinite memory. 
+\end{parag}
+\begin{parag}{TLB miss - Revised}
+    But here we have to rechange our TLB miss because the address can now be also on the disk this miss that:\\
+	When the OS \important{Reaches the page table} after a TLB miss, now there is a new possiblity: the \important{addressed page is on disk}
+	\begin{itemize}
+		\item Copy another \important{page from memory to disk} to make space (Swap, Evict)
+		\item \important{Bring back into memory} the addressed page (Swap)
+		\item \important{update} the page table
+		\item \important{update} the TLB
+		\item Continus as usual
+	\end{itemize}
+	However where are these page on disk? It depends on the OS 
+	\begin{itemize}
+		\item Linux puts them in a special \important{raw} partition called swap
+		\item Windows puts them in the file \texttt{pagefile.sys}
+	\end{itemize}
+	
+	
+
+\end{parag}
+
+\begin{parag}{Cache vs. Virtual Memory}
+    \begin{center}
+    \includegraphics[scale=0.3]{screenshots/2025-11-07_6.png}
+    \end{center}
+	\begin{subparag}{Cache}
+		\begin{itemize}
+			\item Cache holds the most frequently used blocks
+			\item If cache is full \textrightarrow evict (LRU, etc.)
+			\item Cache miss \textrightarrow penalty 10x-100x
+			\item A cache block is typically 64 bytes
+		\end{itemize}
+		Some caches can be write-through
+		
+		\begin{framedremark}
+		A page fault is resolved in \important{HARDWARE}
+		\end{framedremark}
+	    
+	\end{subparag}
+	\begin{subparag}{Virtual Memory}
+		\begin{itemize}
+			\item Main memory holds the most frequently use pages
+			\item 	If main memory is fulle \textrightarrow evict/swap (LRU, etc.)
+			\item Page fault \textrightarrow \important{penalty 100,1000x - 10,000,000x}
+			\item A page is typically 4,096 bytes
+		\end{itemize}
+		\begin{framedremark}
+		A page fault is resolved in \important{SOFTWARE}
+		\end{framedremark}
+		Virtual memory can only be copy-back \textrightarrow dirty bit. We cannot go back and write back into memory this would be a performance disaster. But here what we can do is some clever replacement policies, furthermore timestamps can be implemented (which is not the cae for a usual cache). We can have a lot of help to make our decisions.
+	
+	\end{subparag}
+\end{parag}
+
+
+
+\begin{parag}{Page table Attributes - Revisited}
+	Typically \important{page table} entries have several attributes (OS specifig):
+	\begin{itemize}[label=--]
+		\item \important{Valid} (to indicate in main memory)
+		\item \important{Allocated} (to indicate existence)
+		\item \important{Dirty} (to indicate a copy-back is needed)
+		\item \important{used} (to help determine which page to replace)
+		\item Readable
+		\item Writable
+		\item Executable
+		\item ... 
+	\end{itemize}
+\end{parag}
+\begin{parag}{Virtual Memory $\iff$ Cache}
+	But where do we put fist, the cache or the MMU
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-07_7.png}
+	\end{center}
+	The reason why the most common one is the second is implementation. the MMU translate virtual address into physical address which is then process by the cache. Therefore the cache is the same for every programs while on the other hand if we go the other way around. The cache \important{is} different for each program. This implies a lot of issue, should we all clear the cache when we are switching program, this looks pretty costly how does the cache know wether or not it is changing of program etc.
+\end{parag}
+
+\begin{parag}{TLB Misses, Caches misses and Page faults}
+	\begin{center}
+	\includegraphics[scale=0.30]{screenshots/2025-11-07_8.png}
+	\end{center}
+\end{parag}
+\subsubsection{Overall Picture: The System Side}
+\begin{center}
+\includegraphics[scale=0.4]{screenshots/2025-11-07_9.png}
+\end{center}
+\subsubsection{OVerall Piccture: The Programmer Side}
+\begin{center}
+\includegraphics[scale=0.4]{screenshots/2025-11-07_10.png}
+\end{center}
+\section{Summary}
+\begin{itemize}
+	\item \important{Virtual memory} offers the illusion of a perfectly uniform and identical memory to each individual program
+	\item Additionally, \important{virtual memory} is a form of caching between main memory and seconday storage
+	\item A \important{Memory Management Unit} implements mechanisms to translate virtual addresses into physical ones
+	\item \important{Translation Lookaside Buffers} are special the 'caches' (software managed!) used to perform the translation efficiently in the MMUs
+	\item As with caches, all this is \important{transparent to users}: programs read and write memory oblivious of all this - and exceptions are used to correct problems
+	\item It is a complex interaction of hardware (MMU, TLB, caches) and software; \important{exceptions are an essential ingredient}
+\end{itemize}
+
+
+
+
+
+
+
+
+
 
 

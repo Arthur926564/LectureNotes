@@ -26,7 +26,7 @@ However the red part (les pointilles rouges) here is in fact a \important{big fi
 \begin{subparag}{Remark}
     If someone knows how to makes the break here above or below the line I will be curious how.
 \end{subparag}
-There is only two state which means that every instruction is done at a seperate time (single cycle). This directly implies that the longest \important{combinational path} determines the operating frequncy: \important{critical path}.\\
+There is only two state which means that every instruction is done at a seperate time (single cycle). This directly implies that the longest \important{combinational path} determines the operating frequency: \important{critical path}.\\
 If we wanted to increase frequency then the critical path would be halved into another cycle.
 \end{parag}
 \begin{parag}{Two-cycle Processor}
@@ -58,7 +58,7 @@ If we wanted to increase frequency then the critical path would be halved into a
 \end{tikzpicture}
 \end{center}
 The question we must ask now is: Did we gain anything?\\
-At the moment not really, before we had 1 instruction \important{per cycle} at frequncy $F$. Now, we have 1 instruction every \important{two cycles} at frequncy $2F$.
+At the moment not really, before we had 1 instruction \important{per cycle} at frequency $F$. Now, we have 1 instruction every \important{two cycles} at frequency $2F$.
 \end{parag}
 \begin{parag}{Not all paths are born equal}
     That's something sad to say but not all path are born equal, some are slower than other, and this is okay (graine de sarrasins). For instance the \texttt{andi} instruction is much faster than the \texttt{lw} instruction.
@@ -183,14 +183,14 @@ The goal here is:
 \end{tikzpicture}
 I spent an hour on this so please appreciate.\\
 \begin{parag}{$\;$}
-    The definition of the mealy fsm is that the output depeneds on the \important{input and state}. On the other hand, the definition of the moore fsm is that the output depends on the \important{state only}. \\
+    The definition of the mealy fsm is that the output depends on the \important{input and state}. On the other hand, the definition of the moore fsm is that the output depends on the \important{state only}. \\
 	As a human the moore machine is \textbf{way} easier to develop test, etc. We \textbf{always} want to implement a fsm as a moore machine. And good news: it is always possible (almost)\\
-	All we have to do is to retard the current output to the next cycle and put our output as a \textit{state} of the fsm. This way: the next output (which becomes the current) is just a \important{state}.
+	All we have to do is to retard the current output to the next cycle and put our output as a \textit{state} of the fsm. This way: the next output (which becomes the current) is just a \important{part of the state}.
 
 \end{parag}
 \subsection{Building the circuit}
 
-    What we are going to do now is to build the circuit. To do so, we'll do it step by step, adding progressiely what we need.\\
+    What we are going to do now is to build the circuit. To do so, we'll do it step by step, adding progressively what we need.\\
 	First, we need an instruction register which store the current instruction (so that it doesn't die after one cycle). We will also need a Controller and the \texttt{pc}.\\
 
 \textbf{I-Type instructions Need \texttt{RF} and \texttt{ALU}}\\
