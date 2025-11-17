@@ -20,15 +20,15 @@ Segmentation fault (core dumped)
 \end{lstlisting}
 Here the system sends us a message that this instruction cannot be done, we cannot \textit{steal} an element from memory.
 \end{parag}
-But now at the moment we cannot do this (with our current CPU), for us if we gave an address, the processor gives us the element that is stored at the address.
+But now at the moment we could steal this data (with our current CPU), for us if we gave an address, the processor gives us the element that is stored at the address.
 \begin{parag}{Overview}
     There is \important{three problems}:
 	\begin{itemize}
-		\item How to \important{protect memory} so that each program (processes). Running \textit{simultaneously} in the system can only access its own data? How can we isolate processes?
+		\item How to \important{protect memory} so that each program (processes) running \textit{simultaneously} in the system can only access its own data? How can we isolate processes?
 		\item What happens if the main \important{memory} (\texttt{DRAM}) is \important{not sufficient} for the execution of program? Can we use our disk? How?
 		\item How do we run several programs (processes) "simultaneously"? \\ How do we load \important{multiple programs in memory}? Where?
 	\end{itemize}
-	This is where we need multiprogrammed system
+	This is where we need \important{multiprogrammed system} 
 \end{parag}
 \begin{parag}{Needs of Multiprogrammed System}
     \begin{itemize}
@@ -45,7 +45,7 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 				\item If several program run at the same time, memory shortage will be even more a problem
 			\end{itemize}
     \end{itemize}
-	What this means is that for instance gcc compiles a c file, it puts it into the address \texttt{0x0} (by convention). However how can we compile more than just one program here? The simple solution is to relocate our load into memory each time
+	What this means is that for instance gcc compiles a c file, it puts it into the address \texttt{0x0} (by convention). However how can we compile more than just one program here (the second would overwrite the first file)? The simple solution is to relocate our load into memory each time
 \end{parag}
 \begin{parag}{Simples solution: Relocation at Load Time}
 	\begin{lstlisting}[language={[RISC-V]Assembler}]
@@ -90,39 +90,40 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-06.png}
 	\end{center}
-	This idea has been used for many many years, and it is still used, this is a simple but very useful solution. However this is still a not the best for us but why?
+	This idea has been used for many many years, and it is still used to this day. This is a simple but very useful solution. However this is still a not the best for us but why?
 \end{parag}
 \paragraph{Limitations}
 \label{par:Limitations}
 
 \begin{parag}{$\;$}
-	So when we are running for instance programm 1, 2 and 3 at the same time we get this at memory
+	When we are running for instance programm 1, 2 and 3 at the same time we get this in our memory
     \begin{center}
     \includegraphics[scale=0.2]{screenshots/2025-11-06_1.png}
     \end{center}
-	However as we can see there is \important{gaps} here.\\
-	So here we have a lot of \important{garbage} that we need to collect to have again some space. For instance if we wanted to add a fourth program and it is bigger than the individual gaps, how can we do it? The solution is the one that we said before,  we need a \important{garbage collector} (which we don't have on our processor nor on our OS).\\
-	The limitations of this is that 
+	As we can see there is \important{gaps} here.\\
+	We have a lot of \important{garbage} that we need to collect to have again some space. For instance if we wanted to add a fourth program and it is bigger than the individual gaps, how can we do it? The solution is the one that we said before,  we need a \important{garbage collector} (which we don't have on our processor nor on our OS).\\
+	The limitations of garbage collector is that :
 	\begin{itemize}
 		\item Large amount of work to do at load time 
 		\item \important{inflexible} \textrightarrow cannot be changed later
 	\end{itemize}
-	Howevere we cannot move any program here. We would think that moving a program is just moving it into a new address and renew the \texttt{PC} to the current line that is being executed.
-	\important{BUT} What if we are in a function that has a return address that is stored \important{in the stack} how would we know? From a hardware perspective the memory is \important{only storing somes bytes here and there}. It doesn't know if it is a program, data, or anything else. Therefore it is impossible to put a program somewhere else \important{during its execution}. (Try this with a a program that calls a function into another function (If we changed everything line by a certain offset then the return that was in the stack is not changed which make the program break.))
+	We cannot move any program here. We would think that moving a program is just moving it into a new address and renew the \texttt{PC} to the current line that is being executed.
+	\important{BUT}, what if we are in a function that has a return address which is stored \important{in the stack} how would we know? From an hardware perspective the memory is \important{only storing somes bytes here and there}. It doesn't know if it is a program, data, or anything else. Therefore it is impossible to put a program somewhere else \important{during its execution } and before (I am not 100\% for this one please 
+	dm me if it is wrong). (Try this with a a program that calls a function into another function (If we changed everything line by a certain offset then the return that was in the stack is not changed which make the program break.))
 	\begin{framedremark}
-	What is important (from what I see) is the fact that this is not an issue of something too hard or too slow. This is just \important{impossible} to do. we cannot shift a program \\
+	What is important (from what I see) is the fact that this is not an issue of something too hard nor too slow. This is just \important{impossible} to do. we cannot shift a program \\
 	The issue is \textbf{static}, the fact that we have choosen the address of the program \important{staticly} makes it impossible to move before, this is the same issue as in Section~\ref{sub:Functions}
 	\end{framedremark}
 \end{parag}
 \begin{parag}{Relocation in hardware:\\ Base and Bounds MMU}
-	Now Instead of doing it \important{before} it run, we can do it \important{while it runs}. What we want is that from a software perspective we use a virtual address (which thinks that the program start a \texttt{0x0}) which is \important{true} from a software point of view. Where the Program is in fact at address \texttt{0x1234}.
+	Now, instead of doing it \important{before} it run, we can do it \important{while it runs}. What we want is that: from a software perspective we use a virtual address (which thinks that the program start a \texttt{0x0}) which is \important{true} from a software point of view. On the other hand, the program is in fact, at address \texttt{0x1234}.
 	\begin{center}
 	\includegraphics[scale=0.3]{screenshots/2025-11-06_2.png}
 	\end{center}
     
 \end{parag}
 \begin{parag}{Memory, Management Unit}
-	Here what we have to do is just to put some gates between the processor and the memory That lies  to us(the memory lies). We transform \important{at runtime} the real memory into virtual memory.
+	What we have to do is just to put some gates between the processor and the memory in order for the memory to lie to us. We transform \important{at runtime} the real memory into virtual memory.
 	\begin{center}
 	\includegraphics[scale=0.3]{screenshots/2025-11-06_4.png}
 	\end{center}
@@ -143,11 +144,11 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 
 
 \begin{parag}{Virtual and Physical Memory}
-	So here Hows it work is now very clean. 
+	  It works now and it is very clean. 
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-06_7.png}
 	\end{center}
-	But this is only from a software perspective. But in reality (physical memory) this is the exact same thing as in section~\ref{par:Limitations}. If we are able to do the change on the fly then program \important{become movable}. If we return to \texttt{0x100}, in respective of where I am in the program, I will always return to \texttt{0x100}. Now the view of the address space does not change.
+	But this is only from a software perspective. But in reality (physical memory) this is the exact same thing as in section~\ref{par:Limitations}. If we are able to do the change on the fly then programs \important{become movable}. If we return to \texttt{0x100}, in respect of where I am in the program, I will always return to \texttt{0x100}. Now, the view of the address space does not change.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-06_8.png}
 	\end{center}
@@ -155,15 +156,19 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 	\begin{framedremark}
 	If we take the example of the stack of before, the issue was that when we were accessing returning but the memory was shift then the program was lost. However now, even when we are changing anything in the physical memory, the stack from a software perspective stays the exact same. The MMU handles the translation to wherever the physical stack actually lives at any given moment.
 	\end{framedremark}
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-07.png}
+	\end{center}
     
-	There is two very nice things here We have the fist offset that is being computed here. \important{AND} an not very costly part which checks wether or not the address that we are asking is too big or not. The part with the Bounds and Fault is checking if the program is asking for an address that is too big.
+	There is two things here: Fist, the offset that is being computed here. Second, a not very costly part which \important{checks wether or not the address that we are asking} is \important{too big} or not. The part with the Bounds and Fault is checking if the program is asking for an address that is too big.
+
 \end{parag}
 \begin{parag}{Why we check}
     The reason of this check is very important. For instance if we are the second program and we want to fish something from another program then we can just access something that is further from our scope.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-06_9.png}
 	\end{center}
-	The \important{Base} and \important{Bounds} value are different for each program\\
+	The \important{Base} and \important{Bounds} values are different for each programs\\
 	On a \important{context switch} (changing the program running), the OS must \important{reload these registers}
 \end{parag}
 \begin{parag}{Needs of multiprogrammed}
@@ -204,7 +209,8 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 \end{parag}
 \begin{parag}{How do we translate?}
     For instance let us take the previous example and assume that we are in the virtual address \texttt{0x2345} and that pages are \texttt{0x1000} in size.\\
-	To know in which page we currently are we can just do a integer division: \texttt{0x2345 / 0x1000} $= $ page 2 and to know the position in the page we only have to take the modulo: \texttt{0x2345 mod 0x1000} $= $ \texttt{0x345}. Then we need a \important{table} that tells us the physical memory of each page.
+	To know in which page we currently are we can just do a integer division: \texttt{0x2345 / 0x1000} $= $ page 2 and to know the position in the page we only have to take the modulo: \texttt{0x2345 mod 0x1000} $= $ \texttt{0x345}. \\
+	Then we need a \important{table} that tells us the physical memory of each page.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-06_12.png}
 	\end{center}
@@ -215,7 +221,7 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 	\includegraphics[scale=0.25]{screenshots/2025-11-06_13.png}
 	\end{center}
 	\begin{framedremark}
-	We need a page table \important{for each program}.
+	We need a page table \important{for each programs}.
 	\end{framedremark}
 \end{parag}
 \begin{parag}{Address Translation in a Paged MMU}
@@ -269,18 +275,19 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 	\end{center}
 	What we want is to do a comparaison in parallel.\\
 	Remark, this is \texttt{CAM} as we have seen before.\\
-	The question now is what should the 'cache' do when we miss? This is an engineering question, we will assume that we usually don't miss. When we say this, rare here means every thousand, millions instruction we would miss.\\
+	The question now is what should the 'cache' do when we miss? This is an engineering question, we will assume that we usually don't miss. When we say rare here, it means every thousand, millions instruction we would miss.\\
+
 	But we don't really want to implement a cache controller which is something really hard to do (as said before). Instead when we would miss, we'll raise an exception \texttt{TLB Miss Exception} this miss that we stopped what we  are currently doing, then we access again in the memory the page tables (this can be done with the two table as seen before) we put our element in the cache \important{and finally} return to the program that was running.
 	\begin{subparag}{To be a cache or not a cache}
 		This is a cache by the definition we gave before section~\ref{sec:cache}. But we don't have all the technology with the cache controller etc... This is more a \important{software management cache}. It depends on the software system to reload some stuff.
 	\end{subparag}
 \end{parag}
 \begin{parag}{TLB Miss}
-	The processor get an \important{exception}
+	The processor gets an \important{exception}
 	\begin{itemize}
-		\item The user program \important{stops execution}
+		\item The user's program \important{stops execution}
 		\item The OS is invoked and \important{searches} the translation in the \important{page table}
-		\item If it \important{does not find the translation}, the suer is trying to access memory that has not been allocated to \textrightarrow \important{kill the program} and we are done
+		\item If it \important{does not find the translation}, the user is trying to access memory that has not been allocated to \textrightarrow \important{kill the program} and we are done
 		\item Otherwise, it \important{places the translation in the TLB}
 		\item \important{Restart execution} from the user program's memory instruction that generated the TLB miss
 		\item By construction, this time the \important{TLB will hit and the user program will continue}
@@ -312,7 +319,7 @@ But now at the moment we cannot do this (with our current CPU), for us if we gav
 	So now space is not an issue anymore, the only issue now is performance. We now have practily infinite memory. 
 \end{parag}
 \begin{parag}{TLB miss - Revised}
-    But here we have to rechange our TLB miss because the address can now be also on the disk this miss that:\\
+    But here we have to rechange our TLB miss because the address can now be also on the disk. this misses that:\\
 	When the OS \important{Reaches the page table} after a TLB miss, now there is a new possiblity: the \important{addressed page is on disk}
 	\begin{itemize}
 		\item Copy another \important{page from memory to disk} to make space (Swap, Evict)

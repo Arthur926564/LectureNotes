@@ -94,72 +94,80 @@
 \contentsline {paragraph}{Circuit}{51}{section*.77}%
 \contentsline {chapter}{\numberline {4}Memory Hierarchy}{53}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Caches}{53}{section.4.1}%
-\contentsline {paragraph}{Out goal today}{53}{section*.79}%
-\contentsline {paragraph}{What memory to use?}{54}{section*.80}%
-\contentsline {paragraph}{Spatial and Temporal locality}{55}{section*.81}%
-\contentsline {paragraph}{Our placment policy most be:}{55}{section*.82}%
-\contentsline {subsubsection}{Cache: The idea}{56}{subsubsection*.83}%
-\contentsline {paragraph}{Definition of a Cache}{56}{section*.84}%
-\contentsline {paragraph}{The question now is how does it works?}{56}{section*.85}%
-\contentsline {paragraph}{Fully-Associative cache}{57}{paragraph*.86}%
-\contentsline {paragraph}{The representation}{57}{section*.87}%
-\contentsline {subsubsection}{Cache and Cache controller}{58}{subsubsection*.88}%
-\contentsline {paragraph}{The cache is a hardware device}{59}{section*.89}%
-\contentsline {paragraph}{What if the cache is full}{59}{section*.90}%
-\contentsline {paragraph}{Only exploiting Temporal locality}{60}{section*.91}%
-\contentsline {paragraph}{Fully-Associative Cache}{61}{section*.92}%
-\contentsline {paragraph}{How can we make it simpler}{62}{section*.93}%
-\contentsline {paragraph}{How to generate \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Addr} and \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Tag}}{62}{section*.94}%
-\contentsline {paragraph}{Direct-mapped Cache}{64}{section*.95}%
-\contentsline {subsubsection}{Which one is the Best Cache}{64}{subsubsection*.96}%
-\contentsline {paragraph}{Example}{64}{section*.97}%
-\contentsline {paragraph}{Intermediate?}{65}{section*.98}%
-\contentsline {paragraph}{Set-Associative Cache}{65}{section*.99}%
-\contentsline {paragraph}{Continuum of Possibilities}{65}{section*.100}%
-\contentsline {paragraph}{Validity}{66}{section*.101}%
-\contentsline {paragraph}{Addressing by Byte}{66}{section*.102}%
-\contentsline {subsection}{\numberline {4.1.1}Write and Cache}{66}{subsection.4.1.1}%
-\contentsline {subsubsection}{Write Hit}{66}{subsubsection*.103}%
-\contentsline {paragraph}{Write policies}{67}{section*.104}%
-\contentsline {subsubsection}{Write miss}{67}{subsubsection*.105}%
-\contentsline {paragraph}{Allocation Policies}{68}{section*.106}%
-\contentsline {paragraph}{The '3Cs' of caches}{68}{section*.107}%
-\contentsline {subsubsection}{Summary of cache Features}{68}{subsubsection*.108}%
+\contentsline {paragraph}{Remark}{54}{paragraph*.79}%
+\contentsline {paragraph}{Out goal today}{54}{section*.80}%
+\contentsline {paragraph}{What memory to use?}{55}{section*.81}%
+\contentsline {paragraph}{Spatial and Temporal locality}{55}{section*.82}%
+\contentsline {paragraph}{Our placment policy most be:}{55}{section*.83}%
+\contentsline {subsubsection}{Cache: The idea}{56}{subsubsection*.84}%
+\contentsline {paragraph}{Definition of a Cache}{56}{section*.85}%
+\contentsline {paragraph}{The question now is how does it works?}{56}{section*.86}%
+\contentsline {paragraph}{Fully-Associative cache}{57}{paragraph*.87}%
+\contentsline {paragraph}{The representation}{57}{section*.88}%
+\contentsline {subsubsection}{Cache and Cache controller}{58}{subsubsection*.89}%
+\contentsline {paragraph}{The cache is a hardware device}{59}{section*.90}%
+\contentsline {paragraph}{What if the cache is full}{59}{section*.91}%
+\contentsline {paragraph}{Only exploiting Temporal locality}{60}{section*.92}%
+\contentsline {paragraph}{Fully-Associative Cache}{61}{section*.93}%
+\contentsline {paragraph}{How can we make it simpler}{62}{section*.94}%
+\contentsline {paragraph}{How to generate \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Addr} and \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Tag}}{62}{section*.95}%
+\contentsline {paragraph}{Direct-mapped Cache}{64}{section*.96}%
+\contentsline {subsubsection}{Which one is the Best Cache}{64}{subsubsection*.97}%
+\contentsline {paragraph}{Example}{64}{section*.98}%
+\contentsline {paragraph}{Intermediate?}{65}{section*.99}%
+\contentsline {paragraph}{Set-Associative Cache}{65}{section*.100}%
+\contentsline {paragraph}{Continuum of Possibilities}{65}{section*.101}%
+\contentsline {paragraph}{Validity}{66}{section*.102}%
+\contentsline {paragraph}{Addressing by Byte}{66}{section*.103}%
+\contentsline {subsection}{\numberline {4.1.1}Write and Cache}{67}{subsection.4.1.1}%
+\contentsline {subsubsection}{Write Hit}{67}{subsubsection*.104}%
+\contentsline {paragraph}{Write policies}{67}{section*.105}%
+\contentsline {subsubsection}{Write miss}{68}{subsubsection*.106}%
+\contentsline {paragraph}{Allocation Policies}{68}{section*.107}%
+\contentsline {paragraph}{The '3Cs' of caches miss}{68}{section*.108}%
+\contentsline {subsubsection}{Summary of cache Features}{68}{subsubsection*.109}%
 \contentsline {section}{\numberline {4.2}3b: Simple Cache Examples}{69}{section.4.2}%
-\contentsline {paragraph}{Compulsory Misses of a Direct Mapped Cache}{69}{section*.109}%
-\contentsline {paragraph}{Hits in a 2-Way Set-Associative}{69}{section*.110}%
-\contentsline {paragraph}{Miss Rate in a 2-Way Set-Associative}{69}{section*.111}%
-\contentsline {paragraph}{Direct-Mapped cache}{69}{section*.112}%
-\contentsline {paragraph}{Tag of a 2-Way Set-Associative}{69}{section*.113}%
-\contentsline {section}{\numberline {4.3}3c Virtual memory}{69}{section.4.3}%
-\contentsline {paragraph}{Segmentation Fault? Bus Error?}{69}{section*.114}%
-\contentsline {paragraph}{Overview}{70}{section*.115}%
-\contentsline {paragraph}{Needs of Multiprogrammed System}{70}{section*.116}%
-\contentsline {paragraph}{Simples solution: Relocation at Load Time}{70}{section*.117}%
-\contentsline {paragraph}{Limitations}{71}{paragraph*.118}%
-\contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{71}{section*.119}%
-\contentsline {paragraph}{Relocation in hardware:\\ Base and Bounds MMU}{72}{section*.120}%
-\contentsline {paragraph}{Memory, Management Unit}{72}{section*.121}%
-\contentsline {paragraph}{Virtual and Physical Memory}{73}{section*.122}%
-\contentsline {paragraph}{Why we check}{74}{section*.123}%
-\contentsline {paragraph}{Needs of multiprogrammed}{74}{section*.124}%
-\contentsline {paragraph}{Segmentation and Paging}{74}{section*.125}%
-\contentsline {paragraph}{How do we translate?}{75}{section*.126}%
-\contentsline {paragraph}{What if the page's size is a power of $2$?}{75}{section*.127}%
-\contentsline {paragraph}{Address Translation in a Paged MMU}{75}{section*.128}%
-\contentsline {paragraph}{Memory Allocation is easy now}{76}{section*.129}%
-\contentsline {paragraph}{Page Tables Can Be Big}{76}{section*.130}%
-\contentsline {paragraph}{Multilevel (Or hierachical) page tables}{76}{section*.131}%
-\contentsline {paragraph}{But, Two memory accesses every time?}{77}{section*.132}%
-\contentsline {paragraph}{A Specialized 'cache' for the translations}{77}{section*.133}%
-\contentsline {paragraph}{TLB Miss}{78}{section*.134}%
-\contentsline {paragraph}{Memory Protection}{78}{section*.135}%
-\contentsline {paragraph}{Not All Pages need to be in main memory}{78}{section*.136}%
-\contentsline {paragraph}{TLB miss - Revised}{79}{section*.137}%
-\contentsline {paragraph}{Cache vs. Virtual Memory}{79}{section*.138}%
-\contentsline {paragraph}{Page table Attributes - Revisited}{80}{section*.139}%
-\contentsline {paragraph}{Virtual Memory $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ Cache}{80}{section*.140}%
-\contentsline {paragraph}{TLB Misses, Caches misses and Page faults}{80}{section*.141}%
-\contentsline {subsubsection}{Overall Picture: The System Side}{81}{subsubsection*.142}%
-\contentsline {subsubsection}{OVerall Piccture: The Programmer Side}{81}{subsubsection*.143}%
+\contentsline {paragraph}{Compulsory Misses of a Direct Mapped Cache}{69}{section*.110}%
+\contentsline {paragraph}{Hits in a 2-Way Set-Associative}{69}{section*.111}%
+\contentsline {paragraph}{Miss Rate in a 2-Way Set-Associative}{69}{section*.112}%
+\contentsline {paragraph}{Direct-Mapped cache}{69}{section*.113}%
+\contentsline {paragraph}{Tag of a 2-Way Set-Associative}{69}{section*.114}%
+\contentsline {section}{\numberline {4.3}3c Virtual memory}{70}{section.4.3}%
+\contentsline {paragraph}{Segmentation Fault? Bus Error?}{70}{section*.115}%
+\contentsline {paragraph}{Overview}{70}{section*.116}%
+\contentsline {paragraph}{Needs of Multiprogrammed System}{70}{section*.117}%
+\contentsline {paragraph}{Simples solution: Relocation at Load Time}{70}{section*.118}%
+\contentsline {paragraph}{Limitations}{72}{paragraph*.119}%
+\contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{72}{section*.120}%
+\contentsline {paragraph}{Relocation in hardware:\\ Base and Bounds MMU}{72}{section*.121}%
+\contentsline {paragraph}{Memory, Management Unit}{73}{section*.122}%
+\contentsline {paragraph}{Virtual and Physical Memory}{73}{section*.123}%
+\contentsline {paragraph}{Why we check}{74}{section*.124}%
+\contentsline {paragraph}{Needs of multiprogrammed}{74}{section*.125}%
+\contentsline {paragraph}{Segmentation and Paging}{75}{section*.126}%
+\contentsline {paragraph}{How do we translate?}{75}{section*.127}%
+\contentsline {paragraph}{What if the page's size is a power of $2$?}{75}{section*.128}%
+\contentsline {paragraph}{Address Translation in a Paged MMU}{76}{section*.129}%
+\contentsline {paragraph}{Memory Allocation is easy now}{76}{section*.130}%
+\contentsline {paragraph}{Page Tables Can Be Big}{76}{section*.131}%
+\contentsline {paragraph}{Multilevel (Or hierachical) page tables}{77}{section*.132}%
+\contentsline {paragraph}{But, Two memory accesses every time?}{77}{section*.133}%
+\contentsline {paragraph}{A Specialized 'cache' for the translations}{77}{section*.134}%
+\contentsline {paragraph}{TLB Miss}{78}{section*.135}%
+\contentsline {paragraph}{Memory Protection}{78}{section*.136}%
+\contentsline {paragraph}{Not All Pages need to be in main memory}{79}{section*.137}%
+\contentsline {paragraph}{TLB miss - Revised}{79}{section*.138}%
+\contentsline {paragraph}{Cache vs. Virtual Memory}{79}{section*.139}%
+\contentsline {paragraph}{Page table Attributes - Revisited}{80}{section*.140}%
+\contentsline {paragraph}{Virtual Memory $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ Cache}{80}{section*.141}%
+\contentsline {paragraph}{TLB Misses, Caches misses and Page faults}{80}{section*.142}%
+\contentsline {subsubsection}{Overall Picture: The System Side}{81}{subsubsection*.143}%
+\contentsline {subsubsection}{OVerall Piccture: The Programmer Side}{82}{subsubsection*.144}%
 \contentsline {section}{\numberline {4.4}Summary}{82}{section.4.4}%
+\contentsline {paragraph}{Remark}{82}{paragraph*.145}%
+\contentsline {section}{\numberline {4.5}3d. Simples virtual Memory example}{82}{section.4.5}%
+\contentsline {paragraph}{Simple translation Scheme}{82}{section*.146}%
+\contentsline {paragraph}{Page Table Entry Size}{83}{section*.147}%
+\contentsline {paragraph}{Total Page Table Size}{83}{section*.148}%
+\contentsline {paragraph}{Total Addressable physical Memory}{83}{section*.149}%
+\contentsline {paragraph}{Address Translation}{83}{section*.150}%

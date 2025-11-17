@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.10.17)  8 NOV 2025 17:54
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.10.17)  10 NOV 2025 16:59
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1726,6 +1726,9 @@ l.127 ...ssor tasks on Exceptions}{section*.70}{}}
 
 LaTeX Warning: Label `lecture12' multiply defined.
 
+
+LaTeX Warning: Label `par:Remark' multiply defined.
+
 )
 \openout1 = main.aux
 
@@ -1750,10 +1753,10 @@ LaTeX Font Info:    ... okay on input line 140.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
 LaTeX Font Info:    ... okay on input line 140.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-Overfull \hbox (36.55551pt too wide) in paragraph at lines 127--13
+Overfull \hbox (58.75552pt too wide) in paragraph at lines 127--13
 []\TU/lmr/m/n/10 tricky3.447Pro-ces-sor tasks on Ex-cep-tion-s-sec-tion*.70    
                                                                                
-                           
+                                     
  []
 
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1929,43 +1932,43 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 [5
 
 ]
-<screenshots/2025-10-11_1.png, id=274, 545.03625pt x 338.26375pt>
+<screenshots/2025-10-11_1.png, id=281, 545.03625pt x 338.26375pt>
 File: screenshots/2025-10-11_1.png Graphic file (type png)
 <use screenshots/2025-10-11_1.png>
-Package luatex.def Info: screenshots/2025-10-11_1.png  used on input line 37.
+Package luatex.def Info: screenshots/2025-10-11_1.png  used on input line 38.
 (luatex.def)             Requested size: 327.02428pt x 202.95981pt.
-<screenshots/2025-10-11_2.png, id=275, 639.38875pt x 302.12875pt>
+<screenshots/2025-10-11_2.png, id=282, 639.38875pt x 302.12875pt>
 File: screenshots/2025-10-11_2.png Graphic file (type png)
 <use screenshots/2025-10-11_2.png>
-Package luatex.def Info: screenshots/2025-10-11_2.png  used on input line 41.
+Package luatex.def Info: screenshots/2025-10-11_2.png  used on input line 42.
 (luatex.def)             Requested size: 383.6362pt x 181.27864pt.
-<screenshots/2025-10-11_3.png, id=276, 1118.1775pt x 573.14125pt>
+<screenshots/2025-10-11_3.png, id=283, 1118.1775pt x 573.14125pt>
 File: screenshots/2025-10-11_3.png Graphic file (type png)
 <use screenshots/2025-10-11_3.png>
-Package luatex.def Info: screenshots/2025-10-11_3.png  used on input line 45.
+Package luatex.def Info: screenshots/2025-10-11_3.png  used on input line 46.
 (luatex.def)             Requested size: 223.63153pt x 114.6262pt.
 
 
 [6<./screenshots/2025-10-11_1.png><./screenshots/2025-10-11_2.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 47.
+(hyperref)                than one, level fixed on input line 48.
 
-<screenshots/2025-10-11_4.png, id=281, 904.37875pt x 482.80376pt>
+<screenshots/2025-10-11_4.png, id=288, 904.37875pt x 482.80376pt>
 File: screenshots/2025-10-11_4.png Graphic file (type png)
 <use screenshots/2025-10-11_4.png>
-Package luatex.def Info: screenshots/2025-10-11_4.png  used on input line 50.
+Package luatex.def Info: screenshots/2025-10-11_4.png  used on input line 51.
 (luatex.def)             Requested size: 271.31572pt x 144.84224pt.
-<screenshots/2025-10-11_5.png, id=282, 506.89375pt x 487.8225pt>
+<screenshots/2025-10-11_5.png, id=289, 506.89375pt x 487.8225pt>
 File: screenshots/2025-10-11_5.png Graphic file (type png)
 <use screenshots/2025-10-11_5.png>
-Package luatex.def Info: screenshots/2025-10-11_5.png  used on input line 55.
+Package luatex.def Info: screenshots/2025-10-11_5.png  used on input line 56.
 (luatex.def)             Requested size: 152.06929pt x 146.34787pt.
 
 
 [7<./screenshots/2025-10-11_3.png><./screenshots/2025-10-11_4.png><./screenshots
 /2025-10-11_5.png>]) (./1b.tex
-<screenshots/2025-10-11_6.png, id=288, 1138.2525pt x 506.89375pt>
+<screenshots/2025-10-11_6.png, id=295, 1138.2525pt x 506.89375pt>
 File: screenshots/2025-10-11_6.png Graphic file (type png)
 <use screenshots/2025-10-11_6.png>
 Package luatex.def Info: screenshots/2025-10-11_6.png  used on input line 5.
@@ -1999,7 +2002,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-<screenshots/2025-10-11_7.png, id=396, 1298.8525pt x 662.475pt>
+<screenshots/2025-10-11_7.png, id=403, 1298.8525pt x 662.475pt>
 File: screenshots/2025-10-11_7.png Graphic file (type png)
 <use screenshots/2025-10-11_7.png>
 Package luatex.def Info: screenshots/2025-10-11_7.png  used on input line 191.
@@ -2007,7 +2010,7 @@ Package luatex.def Info: screenshots/2025-10-11_7.png  used on input line 191.
 ) (./1c.tex
 
 [12<./screenshots/2025-10-11_7.png>]
-<screenshots/2025-10-11_8.png, id=405, 1118.1775pt x 570.13pt>
+<screenshots/2025-10-11_8.png, id=412, 1118.1775pt x 570.13pt>
 File: screenshots/2025-10-11_8.png Graphic file (type png)
 <use screenshots/2025-10-11_8.png>
 Package luatex.def Info: screenshots/2025-10-11_8.png  used on input line 27.
@@ -2017,7 +2020,7 @@ Overfull \hbox (17.25845pt too wide) in paragraph at lines 27--28
  [] 
  []
 
-<screenshots/2025-10-11_9.png, id=406, 1023.825pt x 557.08125pt>
+<screenshots/2025-10-11_9.png, id=413, 1023.825pt x 557.08125pt>
 File: screenshots/2025-10-11_9.png Graphic file (type png)
 <use screenshots/2025-10-11_9.png>
 Package luatex.def Info: screenshots/2025-10-11_9.png  used on input line 31.
@@ -2025,7 +2028,7 @@ Package luatex.def Info: screenshots/2025-10-11_9.png  used on input line 31.
 
 
 [13<./screenshots/2025-10-11_8.png>]
-<screenshots/2025-10-11_10.png, id=412, 1072.005pt x 476.78125pt>
+<screenshots/2025-10-11_10.png, id=420, 1072.005pt x 476.78125pt>
 File: screenshots/2025-10-11_10.png Graphic file (type png)
 <use screenshots/2025-10-11_10.png>
 Package luatex.def Info: screenshots/2025-10-11_10.png  used on input line 37.
@@ -2038,12 +2041,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--45
 
 
 [14<./screenshots/2025-10-11_9.png><./screenshots/2025-10-11_10.png>]
-<screenshots/2025-10-12.png, id=420, 413.545pt x 710.655pt>
+<screenshots/2025-10-12.png, id=427, 413.545pt x 710.655pt>
 File: screenshots/2025-10-12.png Graphic file (type png)
 <use screenshots/2025-10-12.png>
 Package luatex.def Info: screenshots/2025-10-12.png  used on input line 56.
 (luatex.def)             Requested size: 124.06445pt x 213.19814pt.
-<screenshots/2025-10-12_1.png, id=421, 1005.7575pt x 587.19376pt>
+<screenshots/2025-10-12_1.png, id=428, 1005.7575pt x 587.19376pt>
 File: screenshots/2025-10-12_1.png Graphic file (type png)
 <use screenshots/2025-10-12_1.png>
 Package luatex.def Info: screenshots/2025-10-12_1.png  used on input line 60.
@@ -2051,7 +2054,7 @@ Package luatex.def Info: screenshots/2025-10-12_1.png  used on input line 60.
 
 
 [15<./screenshots/2025-10-12.png>]
-<screenshots/2025-10-12_2.png, id=427, 1160.335pt x 548.0475pt>
+<screenshots/2025-10-12_2.png, id=434, 1160.335pt x 548.0475pt>
 File: screenshots/2025-10-12_2.png Graphic file (type png)
 <use screenshots/2025-10-12_2.png>
 Package luatex.def Info: screenshots/2025-10-12_2.png  used on input line 64.
@@ -2061,7 +2064,7 @@ Overfull \hbox (34.12115pt too wide) in paragraph at lines 64--65
  [] 
  []
 
-<screenshots/2025-10-12_3.png, id=428, 979.66pt x 469.755pt>
+<screenshots/2025-10-12_3.png, id=435, 979.66pt x 469.755pt>
 File: screenshots/2025-10-12_3.png Graphic file (type png)
 <use screenshots/2025-10-12_3.png>
 Package luatex.def Info: screenshots/2025-10-12_3.png  used on input line 78.
@@ -2070,12 +2073,12 @@ Package luatex.def Info: screenshots/2025-10-12_3.png  used on input line 78.
 
 [16<./screenshots/2025-10-12_1.png><./screenshots/2025-10-12_2.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 81.
-<screenshots/2025-10-12_4.png, id=433, 948.54375pt x 521.95pt>
+<screenshots/2025-10-12_4.png, id=440, 948.54375pt x 521.95pt>
 File: screenshots/2025-10-12_4.png Graphic file (type png)
 <use screenshots/2025-10-12_4.png>
 Package luatex.def Info: screenshots/2025-10-12_4.png  used on input line 100.
 (luatex.def)             Requested size: 189.70538pt x 104.38814pt.
-<screenshots/2025-10-12_6.png, id=434, 1096.095pt x 401.5pt>
+<screenshots/2025-10-12_6.png, id=441, 1096.095pt x 401.5pt>
 File: screenshots/2025-10-12_6.png Graphic file (type png)
 <use screenshots/2025-10-12_6.png>
 Package luatex.def Info: screenshots/2025-10-12_6.png  used on input line 115.
@@ -2083,12 +2086,12 @@ Package luatex.def Info: screenshots/2025-10-12_6.png  used on input line 115.
 
 
 [17<./screenshots/2025-10-12_3.png><./screenshots/2025-10-12_4.png>]
-<screenshots/2025-10-12_7.png, id=444, 985.6825pt x 409.53pt>
+<screenshots/2025-10-12_7.png, id=451, 985.6825pt x 409.53pt>
 File: screenshots/2025-10-12_7.png Graphic file (type png)
 <use screenshots/2025-10-12_7.png>
 Package luatex.def Info: screenshots/2025-10-12_7.png  used on input line 133.
 (luatex.def)             Requested size: 246.42001pt x 102.38225pt.
-<screenshots/2025-10-12_8.png, id=445, 993.7125pt x 412.54124pt>
+<screenshots/2025-10-12_8.png, id=452, 993.7125pt x 412.54124pt>
 File: screenshots/2025-10-12_8.png Graphic file (type png)
 <use screenshots/2025-10-12_8.png>
 Package luatex.def Info: screenshots/2025-10-12_8.png  used on input line 145.
@@ -2118,7 +2121,7 @@ File: lstlang2.sty 2024/09/23 1.10c listings language file
 (/usr/share/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2024/09/23 1.10c listings language file
 )
-<screenshots/2025-10-12_9.png, id=453, 820.06375pt x 356.33125pt>
+<screenshots/2025-10-12_9.png, id=460, 820.06375pt x 356.33125pt>
 File: screenshots/2025-10-12_9.png Graphic file (type png)
 <use screenshots/2025-10-12_9.png>
 Package luatex.def Info: screenshots/2025-10-12_9.png  used on input line 232.
@@ -2126,7 +2129,7 @@ Package luatex.def Info: screenshots/2025-10-12_9.png  used on input line 232.
 
 
 [19]
-<screenshots/2025-10-12_10.png, id=474, 1081.03876pt x 539.01375pt>
+<screenshots/2025-10-12_10.png, id=481, 1081.03876pt x 539.01375pt>
 File: screenshots/2025-10-12_10.png Graphic file (type png)
 <use screenshots/2025-10-12_10.png>
 Package luatex.def Info: screenshots/2025-10-12_10.png  used on input line 242.
@@ -2137,13 +2140,13 @@ Package luatex.def Info: screenshots/2025-10-12_10.png  used on input line 242.
 [20<./screenshots/2025-10-12_9.png><./screenshots/2025-10-12_10.png>]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 244.
-<screenshots/2025-10-12_11.png, id=479, 1198.4775pt x 496.85625pt>
+<screenshots/2025-10-12_11.png, id=486, 1198.4775pt x 496.85625pt>
 File: screenshots/2025-10-12_11.png Graphic file (type png)
 <use screenshots/2025-10-12_11.png>
 Package luatex.def Info: screenshots/2025-10-12_11.png  used on input line 247.
 
 (luatex.def)             Requested size: 299.61864pt x 124.21375pt.
-<screenshots/2025-10-12_12.png, id=480, 1141.26375pt x 472.76625pt>
+<screenshots/2025-10-12_12.png, id=487, 1141.26375pt x 472.76625pt>
 File: screenshots/2025-10-12_12.png Graphic file (type png)
 <use screenshots/2025-10-12_12.png>
 Package luatex.def Info: screenshots/2025-10-12_12.png  used on input line 256.
@@ -2161,7 +2164,7 @@ File: lstlang3.sty 2024/09/23 1.10c listings language file
 )
 
 [21<./screenshots/2025-10-12_11.png><./screenshots/2025-10-12_12.png>]
-<screenshots/2025-10-21.png, id=491, 1159.33125pt x 529.98pt>
+<screenshots/2025-10-21.png, id=498, 1159.33125pt x 529.98pt>
 File: screenshots/2025-10-21.png Graphic file (type png)
 <use screenshots/2025-10-21.png>
 Package luatex.def Info: screenshots/2025-10-21.png  used on input line 19.
@@ -2178,7 +2181,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--119
 [23]
 
 [24]
-<screenshots/2025-10-21_1.png, id=612, 855.195pt x 662.475pt>
+<screenshots/2025-10-21_1.png, id=619, 855.195pt x 662.475pt>
 File: screenshots/2025-10-21_1.png Graphic file (type png)
 <use screenshots/2025-10-21_1.png>
 Package luatex.def Info: screenshots/2025-10-21_1.png  used on input line 171.
@@ -2193,7 +2196,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 34.
 
 
 [26]
-<screenshots/2025-10-21_2.png, id=644, 1331.97626pt x 567.11874pt>
+<screenshots/2025-10-21_2.png, id=651, 1331.97626pt x 567.11874pt>
 File: screenshots/2025-10-21_2.png Graphic file (type png)
 <use screenshots/2025-10-21_2.png>
 Package luatex.def Info: screenshots/2025-10-21_2.png  used on input line 47.
@@ -2203,7 +2206,7 @@ Overfull \hbox (63.4855pt too wide) in paragraph at lines 47--48
  [] 
  []
 
-<screenshots/2025-10-21_3.png, id=645, 1620.0525pt x 773.89125pt>
+<screenshots/2025-10-21_3.png, id=652, 1620.0525pt x 773.89125pt>
 File: screenshots/2025-10-21_3.png Graphic file (type png)
 <use screenshots/2025-10-21_3.png>
 Package luatex.def Info: screenshots/2025-10-21_3.png  used on input line 75.
@@ -2215,7 +2218,7 @@ Package luatex.def Info: screenshots/2025-10-21_3.png  used on input line 75.
 [28<./screenshots/2025-10-21_3.png>]
 Chapter 3.
 (./2a.tex
-<screenshots/2025-10-21_5.png, id=661, 1153.30875pt x 770.88pt>
+<screenshots/2025-10-21_5.png, id=668, 1153.30875pt x 770.88pt>
 File: screenshots/2025-10-21_5.png Graphic file (type png)
 <use screenshots/2025-10-21_5.png>
 Package luatex.def Info: screenshots/2025-10-21_5.png  used on input line 5.
@@ -2425,7 +2428,7 @@ Overfull \hbox (29.17456pt too wide) in paragraph at lines 427--428
  [] 
  []
 
-<screenshots/2025-10-22_3.png, id=691, 741.77126pt x 743.77875pt>
+<screenshots/2025-10-22_3.png, id=698, 741.77126pt x 743.77875pt>
 File: screenshots/2025-10-22_3.png Graphic file (type png)
 <use screenshots/2025-10-22_3.png>
 Package luatex.def Info: screenshots/2025-10-22_3.png  used on input line 434.
@@ -2437,7 +2440,7 @@ File: screenshots/2025-10-22_3.png Graphic file (type png)
 <use screenshots/2025-10-22_3.png>
 Package luatex.def Info: screenshots/2025-10-22_3.png  used on input line 9.
 (luatex.def)             Requested size: 222.5331pt x 223.13535pt.
-<screenshots/2025-10-22_4.png, id=698, 1287.81125pt x 590.205pt>
+<screenshots/2025-10-22_4.png, id=705, 1287.81125pt x 590.205pt>
 File: screenshots/2025-10-22_4.png Graphic file (type png)
 <use screenshots/2025-10-22_4.png>
 Package luatex.def Info: screenshots/2025-10-22_4.png  used on input line 13.
@@ -2448,12 +2451,12 @@ Package mdframed Info: mdframed inside a box
 
 
 [34<./screenshots/2025-10-22_4.png>]
-<screenshots/2025-10-22_5.png, id=706, 743.77875pt x 695.59875pt>
+<screenshots/2025-10-22_5.png, id=713, 743.77875pt x 695.59875pt>
 File: screenshots/2025-10-22_5.png Graphic file (type png)
 <use screenshots/2025-10-22_5.png>
 Package luatex.def Info: screenshots/2025-10-22_5.png  used on input line 61.
 (luatex.def)             Requested size: 148.75311pt x 139.11728pt.
-<screenshots/2025-10-22_6.png, id=707, 1357.07pt x 654.445pt>
+<screenshots/2025-10-22_6.png, id=714, 1357.07pt x 654.445pt>
 File: screenshots/2025-10-22_6.png Graphic file (type png)
 <use screenshots/2025-10-22_6.png>
 Package luatex.def Info: screenshots/2025-10-22_6.png  used on input line 70.
@@ -2497,7 +2500,7 @@ Type  H <return>  for immediate help.
 l.78 	\end{subparag}
                     
 ? 
-<screenshots/2025-10-22_7.png, id=718, 1117.17375pt x 477.785pt>
+<screenshots/2025-10-22_7.png, id=725, 1117.17375pt x 477.785pt>
 File: screenshots/2025-10-22_7.png Graphic file (type png)
 <use screenshots/2025-10-22_7.png>
 Package luatex.def Info: screenshots/2025-10-22_7.png  used on input line 115.
@@ -2578,12 +2581,12 @@ l.163 	\node[state]
 
 
 [37<./screenshots/2025-10-22_7.png>]
-<screenshots/2025-10-22_8.png, id=734, 752.8125pt x 363.3575pt>
+<screenshots/2025-10-22_8.png, id=741, 752.8125pt x 363.3575pt>
 File: screenshots/2025-10-22_8.png Graphic file (type png)
 <use screenshots/2025-10-22_8.png>
 Package luatex.def Info: screenshots/2025-10-22_8.png  used on input line 177.
 (luatex.def)             Requested size: 188.20265pt x 90.83914pt.
-<screenshots/2025-10-22_9.png, id=735, 960.58875pt x 640.3925pt>
+<screenshots/2025-10-22_9.png, id=742, 960.58875pt x 640.3925pt>
 File: screenshots/2025-10-22_9.png Graphic file (type png)
 <use screenshots/2025-10-22_9.png>
 Package luatex.def Info: screenshots/2025-10-22_9.png  used on input line 181.
@@ -2592,7 +2595,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 185.
 
 
 [38<./screenshots/2025-10-22_8.png><./screenshots/2025-10-22_9.png>]
-<screenshots/2025-10-22_10.png, id=744, 1226.5825pt x 609.27625pt>
+<screenshots/2025-10-22_10.png, id=751, 1226.5825pt x 609.27625pt>
 File: screenshots/2025-10-22_10.png Graphic file (type png)
 <use screenshots/2025-10-22_10.png>
 Package luatex.def Info: screenshots/2025-10-22_10.png  used on input line 213.
@@ -2602,7 +2605,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 216.
 
 
 [39<./screenshots/2025-10-22_10.png>]
-<screenshots/2025-10-22_11.png, id=763, 1238.6275pt x 397.485pt>
+<screenshots/2025-10-22_11.png, id=770, 1238.6275pt x 397.485pt>
 File: screenshots/2025-10-22_11.png Graphic file (type png)
 <use screenshots/2025-10-22_11.png>
 Package luatex.def Info: screenshots/2025-10-22_11.png  used on input line 285.
@@ -2611,53 +2614,53 @@ Package luatex.def Info: screenshots/2025-10-22_11.png  used on input line 285.
 ) (./2c.tex
 
 [40<./screenshots/2025-10-22_11.png>]
-<screenshots/2025-10-22_12.png, id=798, 1110.1475pt x 553.06625pt>
+<screenshots/2025-10-22_12.png, id=805, 1110.1475pt x 553.06625pt>
 File: screenshots/2025-10-22_12.png Graphic file (type png)
 <use screenshots/2025-10-22_12.png>
-Package luatex.def Info: screenshots/2025-10-22_12.png  used on input line 12.
+Package luatex.def Info: screenshots/2025-10-22_12.png  used on input line 13.
 (luatex.def)             Requested size: 333.04681pt x 165.92114pt.
-<screenshots/2025-10-22_13.png, id=799, 1519.6775pt x 639.38875pt>
+<screenshots/2025-10-22_13.png, id=806, 1519.6775pt x 639.38875pt>
 File: screenshots/2025-10-22_13.png Graphic file (type png)
 <use screenshots/2025-10-22_13.png>
-Package luatex.def Info: screenshots/2025-10-22_13.png  used on input line 30.
+Package luatex.def Info: screenshots/2025-10-22_13.png  used on input line 31.
 (luatex.def)             Requested size: 303.93011pt x 127.87547pt.
 
 
 [41<./screenshots/2025-10-22_12.png>]
-<screenshots/2025-10-22_14.png, id=806, 1353.055pt x 562.1pt>
+<screenshots/2025-10-22_14.png, id=813, 1353.055pt x 562.1pt>
 File: screenshots/2025-10-22_14.png Graphic file (type png)
 <use screenshots/2025-10-22_14.png>
-Package luatex.def Info: screenshots/2025-10-22_14.png  used on input line 45.
+Package luatex.def Info: screenshots/2025-10-22_14.png  used on input line 46.
 (luatex.def)             Requested size: 270.6062pt x 112.418pt.
-Package mdframed Info: mdframed works in twoside mode on input line 48.
-Package mdframed Info: mdframed works in twoside mode on input line 51.
+Package mdframed Info: mdframed works in twoside mode on input line 49.
+Package mdframed Info: mdframed works in twoside mode on input line 52.
 File: screenshots/2025-10-22_14.png Graphic file (type png)
 <use screenshots/2025-10-22_14.png>
-Package luatex.def Info: screenshots/2025-10-22_14.png  used on input line 63.
+Package luatex.def Info: screenshots/2025-10-22_14.png  used on input line 64.
 (luatex.def)             Requested size: 270.6062pt x 112.418pt.
 
 
 [42<./screenshots/2025-10-22_13.png><./screenshots/2025-10-22_14.png>]
-<screenshots/2025-10-22_15.png, id=818, 1491.5725pt x 505.89pt>
+<screenshots/2025-10-22_15.png, id=825, 1491.5725pt x 505.89pt>
 File: screenshots/2025-10-22_15.png Graphic file (type png)
 <use screenshots/2025-10-22_15.png>
-Package luatex.def Info: screenshots/2025-10-22_15.png  used on input line 80.
+Package luatex.def Info: screenshots/2025-10-22_15.png  used on input line 81.
 (luatex.def)             Requested size: 298.30922pt x 101.1762pt.
-<screenshots/2025-10-22_16.png, id=819, 1403.2425pt x 733.74126pt>
+<screenshots/2025-10-22_16.png, id=826, 1403.2425pt x 733.74126pt>
 File: screenshots/2025-10-22_16.png Graphic file (type png)
 <use screenshots/2025-10-22_16.png>
-Package luatex.def Info: screenshots/2025-10-22_16.png  used on input line 110.
+Package luatex.def Info: screenshots/2025-10-22_16.png  used on input line 111.
 
 (luatex.def)             Requested size: 280.64352pt x 146.74565pt.
-Package mdframed Info: mdframed works in twoside mode on input line 112.
+Package mdframed Info: mdframed works in twoside mode on input line 113.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 114.
+ mdframed uses option nobreak mdframed on input line 115.
 
 
 [43<./screenshots/2025-10-22_15.png>]
-Package mdframed Info: mdframed works in twoside mode on input line 117.
+Package mdframed Info: mdframed works in twoside mode on input line 118.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 124.
+ mdframed uses option nobreak mdframed on input line 125.
 
 
 [44<./screenshots/2025-10-22_16.png>]) (./2d.tex
@@ -2683,7 +2686,7 @@ LaTeX Warning: Hyper reference `lecturesummary10' on page 45 undefined on input
 l.1 ...{10}{2025-10-11}{Processor and converter}{}
                                                   
 ? 
-<screenshots/2025-10-15.png, id=846, 1202.4925pt x 591.20876pt>
+<screenshots/2025-10-15.png, id=853, 1202.4925pt x 591.20876pt>
 File: screenshots/2025-10-15.png Graphic file (type png)
 <use screenshots/2025-10-15.png>
 Package luatex.def Info: screenshots/2025-10-15.png  used on input line 7.
@@ -2721,12 +2724,12 @@ Package mdframed Info: mdframed inside a box
 
 
 [47]
-<screenshots/2025-10-17.png, id=871, 1062.97125pt x 569.12625pt>
+<screenshots/2025-10-17.png, id=878, 1062.97125pt x 569.12625pt>
 File: screenshots/2025-10-17.png Graphic file (type png)
 <use screenshots/2025-10-17.png>
 Package luatex.def Info: screenshots/2025-10-17.png  used on input line 85.
 (luatex.def)             Requested size: 318.89384pt x 170.73918pt.
-<screenshots/2025-10-17_1.png, id=872, 1166.3575pt x 265.99374pt>
+<screenshots/2025-10-17_1.png, id=879, 1166.3575pt x 265.99374pt>
 File: screenshots/2025-10-17_1.png Graphic file (type png)
 <use screenshots/2025-10-17_1.png>
 Package luatex.def Info: screenshots/2025-10-17_1.png  used on input line 101.
@@ -2736,7 +2739,7 @@ Overfull \hbox (13.79948pt too wide) in paragraph at lines 101--102
  [] 
  []
 
-<screenshots/2025-10-17_2.png, id=873, 918.43124pt x 575.14874pt>
+<screenshots/2025-10-17_2.png, id=880, 918.43124pt x 575.14874pt>
 File: screenshots/2025-10-17_2.png Graphic file (type png)
 <use screenshots/2025-10-17_2.png>
 Package luatex.def Info: screenshots/2025-10-17_2.png  used on input line 107.
@@ -2778,7 +2781,7 @@ LaTeX Warning: Hyper reference `lecturesummary12' on page 51 undefined on input
 l.1 ...5-10-17}{Example of I/O/s and Exceptions}{}
                                                   
 ? 
-<screenshots/2025-10-17_3.png, id=954, 861.2175pt x 567.11874pt>
+<screenshots/2025-10-17_3.png, id=961, 861.2175pt x 567.11874pt>
 File: screenshots/2025-10-17_3.png Graphic file (type png)
 <use screenshots/2025-10-17_3.png>
 Package luatex.def Info: screenshots/2025-10-17_3.png  used on input line 13.
@@ -2832,27 +2835,454 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
  []
 
-<screenshots/2025-10-17_6.png, id=966, 1008.76875pt x 494.84875pt>
+<screenshots/2025-10-17_6.png, id=973, 1008.76875pt x 494.84875pt>
 File: screenshots/2025-10-17_6.png Graphic file (type png)
 <use screenshots/2025-10-17_6.png>
 Package luatex.def Info: screenshots/2025-10-17_6.png  used on input line 9.
 (luatex.def)             Requested size: 302.63297pt x 148.45576pt.
 Package mdframed Info: mdframed works in twoside mode on input line 11.
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+[53<./screenshots/2025-10-17_6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
-
-
-[53<./screenshots/2025-10-17_6.png>]
-<screenshots/2025-10-26.png, id=973, 1007.765pt x 691.58376pt>
+<screenshots/2025-10-26.png, id=979, 1007.765pt x 691.58376pt>
 File: screenshots/2025-10-26.png Graphic file (type png)
 <use screenshots/2025-10-26.png>
-Package luatex.def Info: screenshots/2025-10-26.png  used on input line 58.
+Package luatex.def Info: screenshots/2025-10-26.png  used on input line 62.
 (luatex.def)             Requested size: 302.33183pt x 207.47672pt.
-Package mdframed Info: mdframed works in twoside mode on input line 60.
+Package mdframed Info: mdframed works in twoside mode on input line 64.
 
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 67.
+
+
+Overfull \vbox (11.08574pt too high) detected at line 67
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 67.
+
+Overfull \vbox (12.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (13.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (14.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (15.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (16.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (17.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (18.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (19.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (20.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (21.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (22.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (23.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (24.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (25.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (26.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (27.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (28.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (29.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (30.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (31.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (32.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (33.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (34.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (35.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (36.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (37.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (38.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (39.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (40.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (41.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (42.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (43.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (44.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (45.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (46.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (47.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (48.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (49.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (50.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (51.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (52.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (53.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (54.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (55.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (56.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (57.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (58.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (59.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (60.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (61.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (62.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (63.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (64.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (65.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (66.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (67.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (68.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (69.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (70.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (71.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (72.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (73.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (74.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (75.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (76.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (77.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (78.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (79.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (80.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (81.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (82.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (83.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (84.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (85.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (86.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (87.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (88.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (89.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (90.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (91.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (92.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (93.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (94.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (95.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (96.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (97.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (98.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (99.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (100.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (101.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (102.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (103.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (104.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (105.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (106.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (107.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (108.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (109.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (110.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (111.08574pt too high) detected at line 67
+ []
+
+
+Overfull \vbox (112.08574pt too high) detected at line 67
+ []
+
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 67.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 67.
+
+
+[54<./screenshots/2025-10-26.png>]
 
 ! Package xkeyval Error: `langage' undefined in families `lst'.
 
@@ -2860,281 +3290,303 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.69 	\begin{lstlisting}[langage=c]
+l.73 	\begin{lstlisting}[langage=c]
                                    
 ? 
 
 
-[54<./screenshots/2025-10-26.png>]
+[55]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 113.
+(hyperref)                than one, level fixed on input line 119.
 
-<screenshots/2025-10-17_8.png, id=986, 1184.425pt x 582.175pt>
+<screenshots/2025-10-17_8.png, id=1003, 1184.425pt x 582.175pt>
 File: screenshots/2025-10-17_8.png Graphic file (type png)
 <use screenshots/2025-10-17_8.png>
-Package luatex.def Info: screenshots/2025-10-17_8.png  used on input line 119.
+Package luatex.def Info: screenshots/2025-10-17_8.png  used on input line 125.
 (luatex.def)             Requested size: 355.33025pt x 174.65384pt.
-
-
-[55]
-Package mdframed Info: mdframed works in twoside mode on input line 124.
+Package mdframed Info: mdframed works in twoside mode on input line 130.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 126.
-Package mdframed Info: mdframed works in twoside mode on input line 132.
+ mdframed uses option nobreak mdframed on input line 132.
+Package mdframed Info: mdframed works in twoside mode on input line 138.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 134.
+ mdframed uses option nobreak mdframed on input line 140.
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 
  []
 
 
 
 [56<./screenshots/2025-10-17_8.png>]
-<screenshots/2025-10-26_1.png, id=1004, 1168.365pt x 754.82pt>
+<screenshots/2025-10-26_1.png, id=1013, 1168.365pt x 754.82pt>
 File: screenshots/2025-10-26_1.png Graphic file (type png)
 <use screenshots/2025-10-26_1.png>
-Package luatex.def Info: screenshots/2025-10-26_1.png  used on input line 159.
+Package luatex.def Info: screenshots/2025-10-26_1.png  used on input line 170.
 (luatex.def)             Requested size: 350.5122pt x 226.44775pt.
-Package mdframed Info: mdframed works in twoside mode on input line 162.
-<screenshots/2025-10-26_2.png, id=1005, 1332.98pt x 618.31pt>
-File: screenshots/2025-10-26_2.png Graphic file (type png)
-<use screenshots/2025-10-26_2.png>
-Package luatex.def Info: screenshots/2025-10-26_2.png  used on input line 184.
-(luatex.def)             Requested size: 399.89708pt x 185.49443pt.
-
-Overfull \hbox (63.78662pt too wide) in paragraph at lines 184--185
- [] 
- []
-
+Package mdframed Info: mdframed works in twoside mode on input line 173.
 
 
 [57<./screenshots/2025-10-26_1.png>]
-<screenshots/2025-10-26_4.png, id=1013, 1040.88875pt x 595.22375pt>
+<screenshots/2025-10-26_2.png, id=1020, 1332.98pt x 618.31pt>
+File: screenshots/2025-10-26_2.png Graphic file (type png)
+<use screenshots/2025-10-26_2.png>
+Package luatex.def Info: screenshots/2025-10-26_2.png  used on input line 195.
+(luatex.def)             Requested size: 399.89708pt x 185.49443pt.
+
+Overfull \hbox (63.78662pt too wide) in paragraph at lines 195--196
+ [] 
+ []
+
+<screenshots/2025-10-26_4.png, id=1021, 1040.88875pt x 595.22375pt>
 File: screenshots/2025-10-26_4.png Graphic file (type png)
 <use screenshots/2025-10-26_4.png>
-Package luatex.def Info: screenshots/2025-10-26_4.png  used on input line 191.
+Package luatex.def Info: screenshots/2025-10-26_4.png  used on input line 202.
 (luatex.def)             Requested size: 260.22154pt x 148.80557pt.
-<screenshots/2025-10-26_5.png, id=1014, 1007.765pt x 635.37375pt>
+<screenshots/2025-10-26_5.png, id=1022, 1007.765pt x 635.37375pt>
 File: screenshots/2025-10-26_5.png Graphic file (type png)
 <use screenshots/2025-10-26_5.png>
-Package luatex.def Info: screenshots/2025-10-26_5.png  used on input line 195.
+Package luatex.def Info: screenshots/2025-10-26_5.png  used on input line 206.
 (luatex.def)             Requested size: 251.94063pt x 158.84305pt.
 
 
 [58<./screenshots/2025-10-26_2.png><./screenshots/2025-10-26_4.png><./screenshot
 s/2025-10-26_5.png>]
-<screenshots/2025-10-26_6.png, id=1019, 1063.975pt x 583.17876pt>
+<screenshots/2025-10-26_6.png, id=1027, 1063.975pt x 583.17876pt>
 File: screenshots/2025-10-26_6.png Graphic file (type png)
 <use screenshots/2025-10-26_6.png>
-Package luatex.def Info: screenshots/2025-10-26_6.png  used on input line 200.
+Package luatex.def Info: screenshots/2025-10-26_6.png  used on input line 213.
 (luatex.def)             Requested size: 319.19496pt x 174.95497pt.
-<screenshots/2025-10-29.png, id=1020, 1192.455pt x 756.8275pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+<screenshots/2025-10-29.png, id=1028, 1192.455pt x 756.8275pt>
 File: screenshots/2025-10-29.png Graphic file (type png)
 <use screenshots/2025-10-29.png>
-Package luatex.def Info: screenshots/2025-10-29.png  used on input line 205.
+Package luatex.def Info: screenshots/2025-10-29.png  used on input line 220.
 (luatex.def)             Requested size: 238.48677pt x 151.36281pt.
-<screenshots/2025-10-29_2.png, id=1021, 877.2775pt x 544.0325pt>
+<screenshots/2025-10-29_2.png, id=1029, 877.2775pt x 544.0325pt>
 File: screenshots/2025-10-29_2.png Graphic file (type png)
 <use screenshots/2025-10-29_2.png>
-Package luatex.def Info: screenshots/2025-10-29_2.png  used on input line 215.
+Package luatex.def Info: screenshots/2025-10-29_2.png  used on input line 230.
 (luatex.def)             Requested size: 175.4524pt x 108.80457pt.
 
 
 [59<./screenshots/2025-10-26_6.png><./screenshots/2025-10-29.png>]
-<screenshots/2025-10-29_3.png, id=1029, 1262.7175pt x 532.99126pt>
+<screenshots/2025-10-29_3.png, id=1037, 1262.7175pt x 532.99126pt>
 File: screenshots/2025-10-29_3.png Graphic file (type png)
 <use screenshots/2025-10-29_3.png>
-Package luatex.def Info: screenshots/2025-10-29_3.png  used on input line 237.
+Package luatex.def Info: screenshots/2025-10-29_3.png  used on input line 252.
 (luatex.def)             Requested size: 328.29881pt x 138.57445pt.
-<screenshots/2025-10-29_4.png, id=1030, 926.46124pt x 443.6575pt>
+<screenshots/2025-10-29_4.png, id=1038, 926.46124pt x 443.6575pt>
 File: screenshots/2025-10-29_4.png Graphic file (type png)
 <use screenshots/2025-10-29_4.png>
-Package luatex.def Info: screenshots/2025-10-29_4.png  used on input line 242.
+Package luatex.def Info: screenshots/2025-10-29_4.png  used on input line 257.
 (luatex.def)             Requested size: 250.14787pt x 119.78912pt.
-<screenshots/2025-10-29_5.png, id=1031, 810.02625pt x 370.38374pt>
+<screenshots/2025-10-29_5.png, id=1039, 810.02625pt x 370.38374pt>
 File: screenshots/2025-10-29_5.png Graphic file (type png)
 <use screenshots/2025-10-29_5.png>
-Package luatex.def Info: screenshots/2025-10-29_5.png  used on input line 246.
+Package luatex.def Info: screenshots/2025-10-29_5.png  used on input line 261.
 (luatex.def)             Requested size: 218.71pt x 100.00494pt.
-<screenshots/2025-10-29_6.png, id=1032, 1108.14pt x 550.055pt>
+<screenshots/2025-10-29_6.png, id=1040, 1108.14pt x 550.055pt>
 File: screenshots/2025-10-29_6.png Graphic file (type png)
 <use screenshots/2025-10-29_6.png>
-Package luatex.def Info: screenshots/2025-10-29_6.png  used on input line 251.
+Package luatex.def Info: screenshots/2025-10-29_6.png  used on input line 266.
 (luatex.def)             Requested size: 277.03432pt x 137.51341pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 254.
+Package mdframed Info: mdframed works in twoside mode on input line 269.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 257.
+ mdframed uses option nobreak mdframed on input line 272.
 
 
 [60<./screenshots/2025-10-29_2.png><./screenshots/2025-10-29_3.png><./screenshot
 s/2025-10-29_4.png>]
-<screenshots/2025-10-29_7.png, id=1038, 1050.92625pt x 507.8975pt>
+<screenshots/2025-10-29_7.png, id=1046, 1050.92625pt x 507.8975pt>
 File: screenshots/2025-10-29_7.png Graphic file (type png)
 <use screenshots/2025-10-29_7.png>
-Package luatex.def Info: screenshots/2025-10-29_7.png  used on input line 264.
+Package luatex.def Info: screenshots/2025-10-29_7.png  used on input line 280.
 (luatex.def)             Requested size: 315.2803pt x 152.37042pt.
-Package mdframed Info: mdframed works in twoside mode on input line 266.
+Package mdframed Info: mdframed works in twoside mode on input line 282.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 268.
+ mdframed uses option nobreak mdframed on input line 284.
 
 
 [61<./screenshots/2025-10-29_5.png><./screenshots/2025-10-29_6.png>]
-<screenshots/2025-10-29_8.png, id=1044, 1212.53pt x 605.26125pt>
+<screenshots/2025-10-29_8.png, id=1052, 1212.53pt x 605.26125pt>
 File: screenshots/2025-10-29_8.png Graphic file (type png)
 <use screenshots/2025-10-29_8.png>
-Package luatex.def Info: screenshots/2025-10-29_8.png  used on input line 274.
+Package luatex.def Info: screenshots/2025-10-29_8.png  used on input line 290.
 (luatex.def)             Requested size: 363.76181pt x 181.57976pt.
 
-Overfull \hbox (27.65135pt too wide) in paragraph at lines 274--275
- [] 
- []
-
-<screenshots/2025-10-29_9.png, id=1045, 1260.71pt x 565.11125pt>
-File: screenshots/2025-10-29_9.png Graphic file (type png)
-<use screenshots/2025-10-29_9.png>
-Package luatex.def Info: screenshots/2025-10-29_9.png  used on input line 286.
-(luatex.def)             Requested size: 340.39626pt x 152.58208pt.
-
-Overfull \hbox (4.2858pt too wide) in paragraph at lines 286--287
+Overfull \hbox (27.65135pt too wide) in paragraph at lines 290--291
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--1
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+<screenshots/2025-10-29_10.png, id=1053, 571.13374pt x 585.18625pt>
+File: screenshots/2025-10-29_10.png Graphic file (type png)
+<use screenshots/2025-10-29_10.png>
+Package luatex.def Info: screenshots/2025-10-29_10.png  used on input line 305.
+
+(luatex.def)             Requested size: 154.20818pt x 158.0024pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--1
 
  []
 
 
 
 [62<./screenshots/2025-10-29_7.png><./screenshots/2025-10-29_8.png>]
-<screenshots/2025-10-29_10.png, id=1052, 571.13374pt x 585.18625pt>
-File: screenshots/2025-10-29_10.png Graphic file (type png)
-<use screenshots/2025-10-29_10.png>
-Package luatex.def Info: screenshots/2025-10-29_10.png  used on input line 293.
-
-(luatex.def)             Requested size: 171.34145pt x 175.55722pt.
-<screenshots/2025-10-29_11.png, id=1053, 1263.72125pt x 586.19pt>
+<screenshots/2025-10-29_11.png, id=1060, 1263.72125pt x 586.19pt>
 File: screenshots/2025-10-29_11.png Graphic file (type png)
 <use screenshots/2025-10-29_11.png>
-Package luatex.def Info: screenshots/2025-10-29_11.png  used on input line 300.
+Package luatex.def Info: screenshots/2025-10-29_11.png  used on input line 312.
 
 (luatex.def)             Requested size: 379.11931pt x 175.85835pt.
 
-Overfull \hbox (43.00885pt too wide) in paragraph at lines 300--301
+Overfull \hbox (114.14072pt too wide) in paragraph at lines 312--313
+ [] 
+ []
+
+File: screenshots/2025-10-29_11.png Graphic file (type png)
+<use screenshots/2025-10-29_11.png>
+Package luatex.def Info: screenshots/2025-10-29_11.png  used on input line 319.
+
+(luatex.def)             Requested size: 379.11931pt x 175.85835pt.
+
+Overfull \hbox (43.00885pt too wide) in paragraph at lines 319--320
  [] 
  []
 
 
 
-[63<./screenshots/2025-10-29_9.png><./screenshots/2025-10-29_10.png>]
-<screenshots/2025-10-29_12.png, id=1058, 877.2775pt x 540.0175pt>
+[63<./screenshots/2025-10-29_10.png><./screenshots/2025-10-29_11.png>]
+<screenshots/2025-10-29_12.png, id=1065, 877.2775pt x 540.0175pt>
 File: screenshots/2025-10-29_12.png Graphic file (type png)
 <use screenshots/2025-10-29_12.png>
-Package luatex.def Info: screenshots/2025-10-29_12.png  used on input line 305.
+Package luatex.def Info: screenshots/2025-10-29_12.png  used on input line 324.
 
 (luatex.def)             Requested size: 263.18527pt x 162.0065pt.
-Package mdframed Info: mdframed works in twoside mode on input line 328.
+Package mdframed Info: mdframed works in twoside mode on input line 347.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 330.
+ mdframed uses option nobreak mdframed on input line 349.
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
 
  []
 
 
 
-[64<./screenshots/2025-10-29_11.png><./screenshots/2025-10-29_12.png>]
-<screenshots/2025-10-29_13.png, id=1065, 1258.7025pt x 611.28375pt>
+[64<./screenshots/2025-10-29_12.png>]
+<screenshots/2025-10-29_13.png, id=1072, 1258.7025pt x 611.28375pt>
 File: screenshots/2025-10-29_13.png Graphic file (type png)
 <use screenshots/2025-10-29_13.png>
-Package luatex.def Info: screenshots/2025-10-29_13.png  used on input line 343.
+Package luatex.def Info: screenshots/2025-10-29_13.png  used on input line 362.
 
 (luatex.def)             Requested size: 352.4343pt x 171.15828pt.
 
-Overfull \hbox (16.32384pt too wide) in paragraph at lines 343--344
+Overfull \hbox (16.32384pt too wide) in paragraph at lines 362--363
  [] 
  []
 
-<screenshots/2025-10-29_14.png, id=1066, 1325.95375pt x 554.07pt>
+<screenshots/2025-10-29_14.png, id=1073, 1325.95375pt x 554.07pt>
 File: screenshots/2025-10-29_14.png Graphic file (type png)
 <use screenshots/2025-10-29_14.png>
-Package luatex.def Info: screenshots/2025-10-29_14.png  used on input line 353.
+Package luatex.def Info: screenshots/2025-10-29_14.png  used on input line 372.
 
 (luatex.def)             Requested size: 358.0123pt x 149.60089pt.
 
-Overfull \hbox (21.90184pt too wide) in paragraph at lines 353--354
+Overfull \hbox (21.90184pt too wide) in paragraph at lines 372--373
  [] 
  []
 
 
 
 [65<./screenshots/2025-10-29_13.png><./screenshots/2025-10-29_14.png>]
-Package mdframed Info: mdframed works in twoside mode on input line 360.
+Package mdframed Info: mdframed works in twoside mode on input line 379.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 364.
+ mdframed uses option nobreak mdframed on input line 383.
 File: screenshots/2025-10-29_13.png Graphic file (type png)
 <use screenshots/2025-10-29_13.png>
-Package luatex.def Info: screenshots/2025-10-29_13.png  used on input line 375.
+Package luatex.def Info: screenshots/2025-10-29_13.png  used on input line 394.
 
 (luatex.def)             Requested size: 377.61366pt x 183.38654pt.
 
-Overfull \hbox (41.5032pt too wide) in paragraph at lines 375--376
+Overfull \hbox (41.5032pt too wide) in paragraph at lines 394--395
  [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--389
-
  []
 
 
 
 [66]
-<screenshots/2025-10-29_16.png, id=1082, 1085.05376pt x 578.16pt>
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--409
+
+ []
+
+<screenshots/2025-10-29_16.png, id=1089, 1085.05376pt x 578.16pt>
 File: screenshots/2025-10-29_16.png Graphic file (type png)
 <use screenshots/2025-10-29_16.png>
-Package luatex.def Info: screenshots/2025-10-29_16.png  used on input line 390.
+Package luatex.def Info: screenshots/2025-10-29_16.png  used on input line 410.
 
 (luatex.def)             Requested size: 325.51863pt x 173.44933pt.
-Package mdframed Info: mdframed works in twoside mode on input line 409.
+Package mdframed Info: mdframed works in twoside mode on input line 430.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 411.
-<screenshots/2025-10-29_17.png, id=1083, 1091.07625pt x 541.02126pt>
+ mdframed uses option nobreak mdframed on input line 433.
+
+
+[67<./screenshots/2025-10-29_16.png>]
+<screenshots/2025-10-29_17.png, id=1095, 1091.07625pt x 541.02126pt>
 File: screenshots/2025-10-29_17.png Graphic file (type png)
 <use screenshots/2025-10-29_17.png>
-Package luatex.def Info: screenshots/2025-10-29_17.png  used on input line 417.
+Package luatex.def Info: screenshots/2025-10-29_17.png  used on input line 441.
 
 (luatex.def)             Requested size: 294.59453pt x 146.07768pt.
-
-
-[67<./screenshots/2025-10-29_16.png><./screenshots/2025-10-29_17.png>]
-<screenshots/2025-10-29_19.png, id=1089, 1400.23125pt x 702.625pt>
+<screenshots/2025-10-29_19.png, id=1096, 1400.23125pt x 702.625pt>
 File: screenshots/2025-10-29_19.png Graphic file (type png)
 <use screenshots/2025-10-29_19.png>
-Package luatex.def Info: screenshots/2025-10-29_19.png  used on input line 458.
+Package luatex.def Info: screenshots/2025-10-29_19.png  used on input line 482.
 
 (luatex.def)             Requested size: 420.07262pt x 210.78912pt.
-)
-(./3b.tex
 
-[68<./screenshots/2025-10-29_19.png>]
+
+[68<./screenshots/2025-10-29_17.png>]) (./3b.tex
 Package mdframed Info: mdframed works in twoside mode on input line 47.
-) (./3c.tex
 
-[69]
-<screenshots/2025-11-06.png, id=1110, 1323.94624pt x 637.38126pt>
+
+[69<./screenshots/2025-10-29_19.png>]
+Package mdframed Info: Not enough space on this page on input line 49.
+) (./3c.tex
+<screenshots/2025-11-06.png, id=1116, 1323.94624pt x 637.38126pt>
 File: screenshots/2025-11-06.png Graphic file (type png)
 <use screenshots/2025-11-06.png>
 Package luatex.def Info: screenshots/2025-11-06.png  used on input line 91.
@@ -3142,198 +3594,221 @@ Package luatex.def Info: screenshots/2025-11-06.png  used on input line 91.
 
 
 [70]
-<screenshots/2025-11-06_1.png, id=1147, 1030.85126pt x 311.1625pt>
+
+[71<./screenshots/2025-11-06.png>]
+<screenshots/2025-11-06_1.png, id=1175, 1030.85126pt x 311.1625pt>
 File: screenshots/2025-11-06_1.png Graphic file (type png)
 <use screenshots/2025-11-06_1.png>
 Package luatex.def Info: screenshots/2025-11-06_1.png  used on input line 101.
 (luatex.def)             Requested size: 206.1666pt x 62.23138pt.
-Package mdframed Info: mdframed works in twoside mode on input line 112.
+Package mdframed Info: mdframed works in twoside mode on input line 113.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 115.
-
-
-[71<./screenshots/2025-11-06.png><./screenshots/2025-11-06_1.png>]
-<screenshots/2025-11-06_2.png, id=1172, 1179.40625pt x 600.2425pt>
+ mdframed uses option nobreak mdframed on input line 116.
+<screenshots/2025-11-06_2.png, id=1177, 1179.40625pt x 600.2425pt>
 File: screenshots/2025-11-06_2.png Graphic file (type png)
 <use screenshots/2025-11-06_2.png>
-Package luatex.def Info: screenshots/2025-11-06_2.png  used on input line 120.
+Package luatex.def Info: screenshots/2025-11-06_2.png  used on input line 121.
 (luatex.def)             Requested size: 353.8246pt x 180.07413pt.
 
-Overfull \hbox (17.71414pt too wide) in paragraph at lines 120--121
+Overfull \hbox (17.71414pt too wide) in paragraph at lines 121--122
  [] 
  []
 
-<screenshots/2025-11-06_4.png, id=1173, 1045.9075pt x 503.8825pt>
+
+
+[72<./screenshots/2025-11-06_1.png>]
+<screenshots/2025-11-06_4.png, id=1186, 1045.9075pt x 503.8825pt>
 File: screenshots/2025-11-06_4.png Graphic file (type png)
 <use screenshots/2025-11-06_4.png>
-Package luatex.def Info: screenshots/2025-11-06_4.png  used on input line 127.
+Package luatex.def Info: screenshots/2025-11-06_4.png  used on input line 128.
 (luatex.def)             Requested size: 313.77467pt x 151.16591pt.
-
-
-[72<./screenshots/2025-11-06_2.png>]
-<screenshots/2025-11-06_7.png, id=1181, 1449.415pt x 476.78125pt>
+<screenshots/2025-11-06_7.png, id=1187, 1449.415pt x 476.78125pt>
 File: screenshots/2025-11-06_7.png Graphic file (type png)
 <use screenshots/2025-11-06_7.png>
-Package luatex.def Info: screenshots/2025-11-06_7.png  used on input line 148.
+Package luatex.def Info: screenshots/2025-11-06_7.png  used on input line 149.
 (luatex.def)             Requested size: 289.87787pt x 95.35455pt.
-<screenshots/2025-11-06_8.png, id=1183, 1728.4575pt x 300.12125pt>
+<screenshots/2025-11-06_8.png, id=1189, 1728.4575pt x 300.12125pt>
 File: screenshots/2025-11-06_8.png Graphic file (type png)
 <use screenshots/2025-11-06_8.png>
-Package luatex.def Info: screenshots/2025-11-06_8.png  used on input line 152.
+Package luatex.def Info: screenshots/2025-11-06_8.png  used on input line 153.
 (luatex.def)             Requested size: 345.68538pt x 60.02318pt.
 
-Overfull \hbox (9.57492pt too wide) in paragraph at lines 152--153
+Overfull \hbox (9.57492pt too wide) in paragraph at lines 153--154
  [] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 155.
+Package mdframed Info: mdframed works in twoside mode on input line 156.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 157.
-
-
-[73<./screenshots/2025-11-06_4.png><./screenshots/2025-11-06_7.png><./screenshot
-s/2025-11-06_8.png>]
-<screenshots/2025-11-06_9.png, id=1190, 1159.33125pt x 570.13pt>
-File: screenshots/2025-11-06_9.png Graphic file (type png)
-<use screenshots/2025-11-06_9.png>
-Package luatex.def Info: screenshots/2025-11-06_9.png  used on input line 164.
-(luatex.def)             Requested size: 231.86214pt x 114.02397pt.
-<screenshots/2025-11-06_11.png, id=1191, 1384.17125pt x 664.4825pt>
-File: screenshots/2025-11-06_11.png Graphic file (type png)
-<use screenshots/2025-11-06_11.png>
-Package luatex.def Info: screenshots/2025-11-06_11.png  used on input line 200.
-
-(luatex.def)             Requested size: 276.82935pt x 132.89413pt.
-
-
-[74<./screenshots/2025-11-06_9.png>]
-<screenshots/2025-11-06_12.png, id=1199, 1574.88374pt x 275.0275pt>
-File: screenshots/2025-11-06_12.png Graphic file (type png)
-<use screenshots/2025-11-06_12.png>
-Package luatex.def Info: screenshots/2025-11-06_12.png  used on input line 209.
-
-(luatex.def)             Requested size: 314.97118pt x 55.00452pt.
-<screenshots/2025-11-06_13.png, id=1200, 1234.6125pt x 616.3025pt>
-File: screenshots/2025-11-06_13.png Graphic file (type png)
-<use screenshots/2025-11-06_13.png>
-Package luatex.def Info: screenshots/2025-11-06_13.png  used on input line 215.
-
-(luatex.def)             Requested size: 308.65237pt x 154.07524pt.
-Package mdframed Info: mdframed works in twoside mode on input line 217.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 219.
-<screenshots/2025-11-07.png, id=1201, 1204.5pt x 637.38126pt>
+ mdframed uses option nobreak mdframed on input line 158.
+<screenshots/2025-11-07.png, id=1190, 1204.5pt x 637.38126pt>
 File: screenshots/2025-11-07.png Graphic file (type png)
 <use screenshots/2025-11-07.png>
-Package luatex.def Info: screenshots/2025-11-07.png  used on input line 224.
+Package luatex.def Info: screenshots/2025-11-07.png  used on input line 160.
 (luatex.def)             Requested size: 240.89574pt x 127.47398pt.
 
 
-[75<./screenshots/2025-11-06_11.png><./screenshots/2025-11-06_12.png><./screensh
-ots/2025-11-06_13.png>]
-<screenshots/2025-11-07_1.png, id=1209, 1317.92375pt x 652.4375pt>
+[73<./screenshots/2025-11-06_2.png><./screenshots/2025-11-06_4.png><./screenshot
+s/2025-11-06_7.png>]
+<screenshots/2025-11-06_9.png, id=1197, 1159.33125pt x 570.13pt>
+File: screenshots/2025-11-06_9.png Graphic file (type png)
+<use screenshots/2025-11-06_9.png>
+Package luatex.def Info: screenshots/2025-11-06_9.png  used on input line 169.
+(luatex.def)             Requested size: 231.86214pt x 114.02397pt.
+
+
+[74<./screenshots/2025-11-06_8.png><./screenshots/2025-11-07.png><./screenshots/
+2025-11-06_9.png>]
+<screenshots/2025-11-06_11.png, id=1205, 1384.17125pt x 664.4825pt>
+File: screenshots/2025-11-06_11.png Graphic file (type png)
+<use screenshots/2025-11-06_11.png>
+Package luatex.def Info: screenshots/2025-11-06_11.png  used on input line 205.
+
+(luatex.def)             Requested size: 276.82935pt x 132.89413pt.
+<screenshots/2025-11-06_12.png, id=1206, 1574.88374pt x 275.0275pt>
+File: screenshots/2025-11-06_12.png Graphic file (type png)
+<use screenshots/2025-11-06_12.png>
+Package luatex.def Info: screenshots/2025-11-06_12.png  used on input line 215.
+
+(luatex.def)             Requested size: 314.97118pt x 55.00452pt.
+<screenshots/2025-11-06_13.png, id=1207, 1234.6125pt x 616.3025pt>
+File: screenshots/2025-11-06_13.png Graphic file (type png)
+<use screenshots/2025-11-06_13.png>
+Package luatex.def Info: screenshots/2025-11-06_13.png  used on input line 221.
+
+(luatex.def)             Requested size: 308.65237pt x 154.07524pt.
+Package mdframed Info: mdframed works in twoside mode on input line 223.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 225.
+
+
+[75<./screenshots/2025-11-06_11.png><./screenshots/2025-11-06_12.png>]
+File: screenshots/2025-11-07.png Graphic file (type png)
+<use screenshots/2025-11-07.png>
+Package luatex.def Info: screenshots/2025-11-07.png  used on input line 230.
+(luatex.def)             Requested size: 240.89574pt x 127.47398pt.
+<screenshots/2025-11-07_1.png, id=1215, 1317.92375pt x 652.4375pt>
 File: screenshots/2025-11-07_1.png Graphic file (type png)
 <use screenshots/2025-11-07_1.png>
-Package luatex.def Info: screenshots/2025-11-07_1.png  used on input line 231.
+Package luatex.def Info: screenshots/2025-11-07_1.png  used on input line 237.
 (luatex.def)             Requested size: 263.58008pt x 130.48518pt.
-<screenshots/2025-11-07_2.png, id=1210, 1304.875pt x 637.38126pt>
+
+
+[76<./screenshots/2025-11-06_13.png><./screenshots/2025-11-07_1.png>]
+<screenshots/2025-11-07_2.png, id=1223, 1304.875pt x 637.38126pt>
 File: screenshots/2025-11-07_2.png Graphic file (type png)
 <use screenshots/2025-11-07_2.png>
-Package luatex.def Info: screenshots/2025-11-07_2.png  used on input line 249.
+Package luatex.def Info: screenshots/2025-11-07_2.png  used on input line 255.
 (luatex.def)             Requested size: 260.97038pt x 127.47398pt.
-Package mdframed Info: mdframed works in twoside mode on input line 253.
+Package mdframed Info: mdframed works in twoside mode on input line 259.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 255.
-
-
-[76<./screenshots/2025-11-07.png><./screenshots/2025-11-07_1.png>]
-<screenshots/2025-11-07_3.png, id=1218, 1275.76625pt x 637.38126pt>
+ mdframed uses option nobreak mdframed on input line 261.
+<screenshots/2025-11-07_3.png, id=1224, 1275.76625pt x 637.38126pt>
 File: screenshots/2025-11-07_3.png Graphic file (type png)
 <use screenshots/2025-11-07_3.png>
-Package luatex.def Info: screenshots/2025-11-07_3.png  used on input line 261.
+Package luatex.def Info: screenshots/2025-11-07_3.png  used on input line 267.
 (luatex.def)             Requested size: 318.94078pt x 159.34492pt.
-<screenshots/2025-11-07_4.png, id=1219, 1295.84125pt x 645.41125pt>
+<screenshots/2025-11-07_4.png, id=1225, 1295.84125pt x 645.41125pt>
 File: screenshots/2025-11-07_4.png Graphic file (type png)
 <use screenshots/2025-11-07_4.png>
-Package luatex.def Info: screenshots/2025-11-07_4.png  used on input line 268.
+Package luatex.def Info: screenshots/2025-11-07_4.png  used on input line 274.
 (luatex.def)             Requested size: 323.95952pt x 161.35242pt.
 
-
-[77<./screenshots/2025-11-07_2.png><./screenshots/2025-11-07_3.png><./screenshot
-s/2025-11-07_4.png>]
-
-LaTeX Warning: Reference `sec:cache' on page 78 undefined on input line 275.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 276--279
 
  []
 
-<screenshots/2025-11-07_5.png, id=1226, 1363.0925pt x 668.4975pt>
+
+
+[77<./screenshots/2025-11-07_2.png><./screenshots/2025-11-07_3.png>]
+
+LaTeX Warning: Reference `sec:cache' on page 78 undefined on input line 282.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+
+
+[78<./screenshots/2025-11-07_4.png>]
+<screenshots/2025-11-07_5.png, id=1239, 1363.0925pt x 668.4975pt>
 File: screenshots/2025-11-07_5.png Graphic file (type png)
 <use screenshots/2025-11-07_5.png>
-Package luatex.def Info: screenshots/2025-11-07_5.png  used on input line 310.
+Package luatex.def Info: screenshots/2025-11-07_5.png  used on input line 317.
 (luatex.def)             Requested size: 313.50468pt x 153.75119pt.
-
-
-[78]
-<screenshots/2025-11-07_6.png, id=1234, 1283.79625pt x 226.8475pt>
+<screenshots/2025-11-07_6.png, id=1240, 1283.79625pt x 226.8475pt>
 File: screenshots/2025-11-07_6.png Graphic file (type png)
 <use screenshots/2025-11-07_6.png>
-Package luatex.def Info: screenshots/2025-11-07_6.png  used on input line 336.
+Package luatex.def Info: screenshots/2025-11-07_6.png  used on input line 343.
 (luatex.def)             Requested size: 385.14185pt x 68.05476pt.
 
-Overfull \hbox (49.03139pt too wide) in paragraph at lines 336--337
+Overfull \hbox (49.03139pt too wide) in paragraph at lines 343--344
  [] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 347.
+Package mdframed Info: mdframed works in twoside mode on input line 354.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 349.
-Package mdframed Info: mdframed works in twoside mode on input line 359.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 361.
+ mdframed uses option nobreak mdframed on input line 356.
 
 
 [79<./screenshots/2025-11-07_5.png><./screenshots/2025-11-07_6.png>]
-<screenshots/2025-11-07_7.png, id=1242, 1423.3175pt x 642.4pt>
+Package mdframed Info: mdframed works in twoside mode on input line 366.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 368.
+<screenshots/2025-11-07_7.png, id=1249, 1423.3175pt x 642.4pt>
 File: screenshots/2025-11-07_7.png Graphic file (type png)
 <use screenshots/2025-11-07_7.png>
-Package luatex.def Info: screenshots/2025-11-07_7.png  used on input line 385.
+Package luatex.def Info: screenshots/2025-11-07_7.png  used on input line 392.
 (luatex.def)             Requested size: 284.65846pt x 128.47772pt.
-<screenshots/2025-11-07_8.png, id=1243, 1081.03876pt x 517.935pt>
+
+
+[80<./screenshots/2025-11-07_7.png>]
+<screenshots/2025-11-07_8.png, id=1257, 1081.03876pt x 517.935pt>
 File: screenshots/2025-11-07_8.png Graphic file (type png)
 <use screenshots/2025-11-07_8.png>
-Package luatex.def Info: screenshots/2025-11-07_8.png  used on input line 392.
+Package luatex.def Info: screenshots/2025-11-07_8.png  used on input line 399.
 (luatex.def)             Requested size: 324.31413pt x 155.38168pt.
 
 
-[80<./screenshots/2025-11-07_7.png><./screenshots/2025-11-07_8.png>]
-
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 395.
+(hyperref)                than one, level fixed on input line 402.
 
-<screenshots/2025-11-07_9.png, id=1251, 1198.4775pt x 658.46pt>
+<screenshots/2025-11-07_9.png, id=1258, 1198.4775pt x 658.46pt>
 File: screenshots/2025-11-07_9.png Graphic file (type png)
 <use screenshots/2025-11-07_9.png>
-Package luatex.def Info: screenshots/2025-11-07_9.png  used on input line 397.
+Package luatex.def Info: screenshots/2025-11-07_9.png  used on input line 404.
 (luatex.def)             Requested size: 479.3825pt x 263.37933pt.
 
-Overfull \hbox (49.37788pt too wide) in paragraph at lines 397--398
+Overfull \hbox (49.37788pt too wide) in paragraph at lines 404--405
  [] 
  []
 
-<screenshots/2025-11-07_10.png, id=1252, 975.645pt x 492.84125pt>
+<screenshots/2025-11-07_10.png, id=1259, 975.645pt x 492.84125pt>
 File: screenshots/2025-11-07_10.png Graphic file (type png)
 <use screenshots/2025-11-07_10.png>
-Package luatex.def Info: screenshots/2025-11-07_10.png  used on input line 401.
+Package luatex.def Info: screenshots/2025-11-07_10.png  used on input line 408.
 
 (luatex.def)             Requested size: 390.25108pt x 197.133pt.
 
 
-[81<./screenshots/2025-11-07_9.png><./screenshots/2025-11-07_10.png>])
+[81<./screenshots/2025-11-07_8.png><./screenshots/2025-11-07_9.png>]) (./3d.tex
 
-[82] (./main.aux
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+
+[82<./screenshots/2025-11-07_10.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+
+
+[83])
+
+[84] (./main.aux
 ! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
@@ -3353,21 +3828,21 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5212CD61997D1C3640C366A892C78C1D;7060.
+(rerunfilecheck)             Checksum: B627F8C1C5F654B10618E6786BB44CFD;7297.
 )
 
 Here is how much of LuaTeX's memory you used:
- 75502 strings out of 475506
- 933318,3417909 words of node,token memory allocated
- 1096 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
+ 75541 strings out of 475506
+ 933313,3417909 words of node,token memory allocated
+ 1103 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 1 margin_ke
 rn, 4 glyph, 10 attribute, 155 glue_spec, 10 attribute_list, 2 shape, 2 write no
 des
-   avail lists: 1:6,2:14054,3:6870,4:19454,5:17238,6:145,7:23281,8:58,9:43386,10
+   avail lists: 1:3,2:14054,3:6870,4:19454,5:17239,6:145,7:23280,8:58,9:43386,10
 :31,11:1671
- 95867 multiletter control sequences out of 65536+600000
+ 95888 multiletter control sequences out of 65536+600000
  106 fonts using 8135263 bytes
- 110i,12n,120p,1953b,2099s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,12n,120p,1953b,2097s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/f
 onts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf-dist/fonts/openty
 pe/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/l
@@ -3394,10 +3869,10 @@ sr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts
 .pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-di
 st/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
 msy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on main.pdf (84 pages, 7550983 bytes).
+Output written on main.pdf (86 pages, 7458498 bytes).
 
-PDF statistics: 1433 PDF objects out of 1440 (max. 8388607)
- 1180 compressed objects within 12 object streams
- 695 named destinations out of 1000 (max. 131072)
- 336 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1458 PDF objects out of 1728 (max. 8388607)
+ 1203 compressed objects within 13 object streams
+ 705 named destinations out of 1000 (max. 131072)
+ 344 words of extra memory for PDF output out of 10000 (max. 100000000)
 
