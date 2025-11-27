@@ -17,7 +17,7 @@ For the first semeestrer, I used overleaf to take my notes.
 
 
 ### Bachelor semester 2 (Spring 2025)
-# Remark
+#### Remark
 During the second semester I changed my workflow, I now use neovim to write my notes and use snippets to allow me to go faster. All of this is possible because of Joachim Favre (again) and Gille Castel [How I manage my LaTeX notes](https://castel.dev/post/lecture-notes-3/)
 
 - [Overleaf Analyse II](https://www.overleaf.com/read/hcfrbrtbtkfq#d26d64) |  [Analyse_II_Prof__Lachowska_Anna_EPFL.pdf](https://github.com/user-attachments/files/20511446/Analyse_II_Prof__Lachowska_Anna_EPFL.pdf)
@@ -31,10 +31,11 @@ I stoped taking notes in FDS during the semester because of the enormous quantit
 - [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf) 
 
 ### Bachelor semester 3
+for this course (which has the same number of schemas as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used a [grim](https://github.com/emersion/grim).
 - Computer Architecture - Prof. Paulo Ienne
 
 ### Contributing
-If by any chance someone is reading this line and find a typo or want to contribut to the notes (i.e., the beginning of the first semester course are not in the notes) don't hesitate to send me a message or create an issue here.
+If by any chance someone is reading this line and find a typo or want to contribute to the notes (i.e., the beginning of the first semester course are not in the notes) don't hesitate to send me a message or create an issue here.
 
 
 
