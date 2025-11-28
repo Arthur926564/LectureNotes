@@ -7,13 +7,48 @@
 
 \usepackage{style}
 
-\title{Numerical Method for visual computing and ML}
+\title{Numerical Method for visual computing and ML\\ Prof. Wenzel Jakob}
 \author{Arthur Herbette}
-\date{Jeudi 18 septembre 2025}
+\date{Thursday 18 September 2025}
 
 \begin{document}
 \maketitle
+\section*{Note before we begin}
+This document is not my lecture notes and it doesn't cover all the materials of the courses. It serves my as a summary and to be able to review the materials without having to brows through all the slides.\\
+Mistakes can also happens so if anyone is reading this, please be aware that if you think something that I said is wrongs, maybe it is.
 
+\begin{parag}{What is the course about}
+	First the course is given by Prof. Wenzel which leads the \textit{Realistic Graphics Lab}. This lab research is on \textit{physically-based rendering} and \textit{inverse rendering}. The topics of this courses is used on a daily basis in their labs.\\
+	But numerical methods is not only use in physics simulation. It is also used in:
+	\begin{itemize}
+		\item Computer Graphics
+		\item Computer Vision
+		\item Machine learning
+		\item Computational Photography
+		\item Weather simulation
+		\item Geometric information systems
+	\end{itemize}
+	
+\end{parag}
+	\begin{parag}{Numerical Methods for rendering}
+	    If we want to have a visual effects it comes down to solve an integral:\\
+		for instance, to compute the color of a pixel it is computed as follow:
+		\begin{align*} \text{pixel color} =  \int \text{light} dx \end{align*}
+		If we want to compute the next frame of a simulation (a physics simulation) it comes down to solve an \important{enormous linear system}:
+		\begin{align*} x =  A^{-1}b \end{align*}
+		As we will see in the third homework, it can also be used for character animation. (we attach a virtual body to a skeleton usin optimization technique)
+		\begin{align*} x = \underbrace{A^{+}}_{\text{Pseudoinverse}}b \end{align*}
+		It is also used to computing derivatives of software for fun and profit (for maching learning), to do so we need to compute the partial derivative (or the hessian, jacobian, etc..) $\frac{\partial f(x)}{\partial x} $
+	\end{parag}
+	\begin{parag}{A certain feeling of familiarity}
+	    So here all  the techniques we saw above, we already know them, we know them from MATH-111 or MATH-101, MATH-106. The goal of this course is to find a way to implement those abstract concept.
+	\end{parag}
+	
+
+	
+    
+
+\include{lecture1}
 \include{lecture2}
 \include{lecture4}
 \end{document}

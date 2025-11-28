@@ -1,0 +1,37 @@
+\subsection{Cost of matrix operations}
+
+\begin{itemize}
+	\item Matrix-Vector multiplication \textrightarrow $O\left(n^2\right)$
+	\item Matrix-Matrix multiplication \textrightarrow $O\left(n^3\right)$
+\end{itemize}
+\begin{parag}{Is it really $O\left(n^3\right)$}
+    \begin{itemize}
+		\item Volker Strassen 1969 \textrightarrow $O\left(n^{2.8074}\right)$
+		\item Virginia Williams et al 2023 \textrightarrow $O\left(n^{2.3751552}\right)$
+    \end{itemize}
+\end{parag}
+\begin{itemize}
+	\item Triangular system solving aka. 'substitution' 
+		\begin{itemize}
+			\item Facorization \textrightarrow $O\left(n^3\right)$
+			\item Substitution \textrightarrow $O\left(n^2\right)$
+		\end{itemize}
+		
+\end{itemize}
+
+
+
+\subsection{Regression}
+Imagine that:
+\begin{itemize}
+	\item We have a model of the \important{expected behaviour}
+	\item The model contains unknown parameter values
+	\item \textbf{Goal}: find parameterrs that best support the data
+	\item Can we express this as a solution to a linear system?
+		\begin{itemize}
+			\item In that case, this is called \important{linear regression}
+		\end{itemize}
+\end{itemize}
+
+
+

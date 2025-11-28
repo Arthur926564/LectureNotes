@@ -1,0 +1,200 @@
+\section{IEEE 754 Floating Point Arithmetic}
+\begin{parag}{From $\mathbb{N}$ to $\mathbb{R}^{n}$}
+	In computer science, everything is discrete, \important{everything}. This means that for instance the representation of $\pi$ is impossible here.
+	\begin{align*} \pi = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253
+421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446
+229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266
+482133936072602491412737245870066063155881748815209209628292540917153643678925903600113305305
+488204665213841469519415116094330572703657595919530921861173819326117931051185480744623799627
+495673518857527248912279381830119491298336733624406566430860213949463952247371907021798609437
+027705392171762931767523846748184676694051320005681271452635608277857713427577896091736371787
+214684409012249534301465495853710507922796892589235420199561121290219608640344181598136297747 \end{align*}
+So we cannot store the $\pi$ directly, we have to make \important{compromise}. The solution for that is: we don't store the correct value of $\pi$...
+\end{parag}
+\begin{parag}{Number Systems}
+	As we have seen in AICC I, AICC II, PPO, FDS, Computer Architecture, there is two main way to represents integer:
+	\begin{itemize}
+		\item Positive integer
+		\item Signed integers (two's complement)
+	\end{itemize}
+	Here is the typical size of each fo them
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\texttt{uint8} & 0 & 255  \\
+		\hline
+		\texttt{int8} & -128 & 127  \\
+		\hline
+		\texttt{uint16} & 0 & 65535  \\
+		\hline
+		\texttt{int16} & -32768 & 32767  \\
+		\hline
+		\texttt{uint32} & 0 & 4294967295  \\
+		\hline
+		\texttt{int32} & -2147483648 & 2147483647 \\
+		\hline
+		\texttt{uint64} & 0 & 18446744073709551615  \\
+		\hline
+		\texttt{int64} & 9223372036854775808 & 9223372036854775807  \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+	
+\end{parag}
+\begin{parag}{Fixed Point Arithmetic}
+    The basic idea for this is just to allow negative exponent. Instead of having our representation begin at the power 0 we make it begin at a hardcode power for instance like this:
+	\begin{align*} (b_3b_2b_1b_0b_{-1}b_{-2}b_{-3}b_{-4}) \end{align*}
+	We are now able to represent the number $12.3125$.
+	\begin{align*} (11000101)_2 = 12.3125_{10} \end{align*}
+	There is two main drawbacks here:
+	\begin{subparag}{Drawback 1}
+	    Big number requires a lot of  storage
+	\end{subparag}
+	\begin{subparag}{Drawback 2}
+	    Growth of exponent range during operations.\\
+		\begin{align*} \left(\sum_{i = -k}^{k}a_k2^{k}\right)\left(\sum_{i = -k}^{k}b_k2^{k}\right)  = a_{-k}b_{-k}2^{-2k} + \cdots + a_kb_k2^{2k}\end{align*}
+	\end{subparag}
+\end{parag}
+\begin{parag}{Rational numbers}
+	Another issue that we have other than irrational number, is rational number. Let us take the number $0.1$ and try to express is with fixed point arithmetic.\\
+	The solution for this is to use the definition of rational number:
+	\begin{align*} \mathbb{Q} = \{\frac{a}{n}: a, b, \in \mathbb{Z}\} \end{align*}
+	This means that in order to represent any rational number all we need is to store two integer. Operation on this representation gives us also the same representation. For intance if we take the addition:
+	\begin{align*} \frac{a}{b} + \frac{c}{d} =  \frac{\left(ad + cb\right)}{bd}\end{align*}
+	However this is not very good alternative. It is pretty costly in terms of computation and of space.
+\end{parag}
+Another issues also with fixed point is the difference of scale. let us take for instance the size of a Proton and the one of a human. The scale is different. This makes it imposssible for us to have a good representation of both of them without using an \important{enormous} amount of memory.\\
+This is where floating poit numbers comes in:
+\begin{align*} \mp 2^{E} \sum_{i = 0}^{n}2^{-i}A_i \end{align*}
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-11-28.png}
+\end{center}
+\begin{parag}{Problem with this current version}
+    \begin{itemize}
+		\item How to represent zero?
+			\begin{itemize}
+				\item Easy, just don't store the leading one. Zero is signed in IEEE
+			\end{itemize}
+		\item What if the number becomes too big during a calculation?
+			\begin{itemize}
+				\item Return special number "infinity" (can be Positive/negative)
+			\end{itemize}
+		\item What if the number becomes too small during a calculation?
+			\begin{itemize}
+				\item Gradual underflow through denormalized numbers
+			\end{itemize}
+		\item What if the user is trying to do a nonsensical calculation?
+			\begin{itemize}
+				\item Return special number 'NaN' (Not a Number). NoN is infectious 
+			\end{itemize}
+		\item What to do when the result of the calculation cannot be represented exaclty (where should we round our error)
+			\begin{itemize}
+				\item Use Banker's rounding (round to nearist tie to even) by default, other modes available.
+			\end{itemize} 
+    \end{itemize}
+    
+\end{parag}
+\begin{parag}{IEEE 754: Nitty Gritty details, contd.}
+	Here's the major innovations of this standard compared to previous ones
+	\begin{subparag}{Accuracy guarantees}
+	    Elementary arithmetic operations (+, -, *, /, sqrt) are done in infinite precision and then rounded to a representable number.\\
+		What this means is that the answer you get for each arithmetic operation must be the closest possible floating point number to the true mathematical answer. 
+		\begin{framedremark}
+		The reason for this being a big innovation is that: before this \textit{correct rounding}, different computers gave different results for the same floating point approximations which means that numerical code was unpredictable across machines.\\
+		IEEE-754 forces everyone to follow the same rule, so:
+		\begin{itemize}
+			\item Every platform produces the same value for (0.1 + 0.2) (hum hum javascript)etc.
+			\item Maximum error is bounded and predictable
+		\end{itemize}
+		
+		\end{framedremark}
+	\end{subparag}
+	\begin{subparag}{Denormalized}
+	    Enables gradual underflow (most controversial feature of IEEE 754)\\
+		Normally a floating-point number has the form
+		\begin{align*} \pm 1.xxx \times 2^{exp}\end{align*}
+		But near zero, the exponent cannot go lower.\\
+		Before IEEE-754, number smaller than a certain size would immediately \important{underflow to zero}. To prevent that, IEEE-754 introduced \important{denormalized numbers} (subnormals)
+		\begin{align*} \pm 0.xxx \times 2^{minExpo} \end{align*}
+		This create a \important{smooth ramp to zero} instead of a sudden drop.\\
+		\begin{framedremark}
+		But why does it matter?\\
+		Imagine if we didn't have denormals, very small results of calculations simply become 0 abruplty. This cause loss of information and instability in algorithms.\\
+		When we add denormals, we get \important{gradual underflow}. You can represent number much closer to 0, though with reduced precision.
+		\end{framedremark}
+		The reason for the \textit{controversial} and slow of denormals is that processing denormals is much more complex for hardware:
+		\begin{itemize}
+			\item Many CPUs handle them using slow microcode
+			\item Operations involving subnormals can be 100-1000x slower
+		\end{itemize}
+		
+	\end{subparag}
+    
+\end{parag}
+\begin{parag}{Special case rules}
+		\begin{center}
+		\begin{tabular}{c|ccccc}
+      		& $-\infty$ & $-0$ & $0$ & $\infty$ & \text{NaN} \\
+		\hline
+		$-\infty$ & $\infty$ & \text{NaN} & \text{NaN} & $-\infty$ & \text{NaN} \\
+		$-0$      & \text{NaN} & $0$ & $-0$ & \text{NaN} & \text{NaN} \\
+		$0$       & \text{NaN} & $-0$ & $0$ & \text{NaN} & \text{NaN} \\
+		$\infty$  & $-\infty$ & \text{NaN} & \text{NaN} & \infty & \text{NaN} \\
+		\text{NaN} & \text{NaN} & \text{NaN} & \text{NaN} & \text{NaN} & \text{NaN} \\
+		\end{tabular}
+		\end{center}
+
+	\begin{lstlisting}[language=python]
+def f(x):
+	if x < 0 or x > 1:
+		raise Exception("Invalid argument")
+	return ..
+    \end{lstlisting}
+	\begin{lstlisting}[language=python]
+def f(x):
+	if not(x >= 0 and x <= 1):
+		raise Exception("Invalid argument")
+	return ..
+	    
+	\end{lstlisting}
+	
+    
+\end{parag}
+
+\begin{parag}{Danger Zone}
+    When dealing with IEEE-754 operations there is a couple of case which are dangerous:
+	\begin{itemize}
+		\item \textbf{Transcendental operations} (sin, cos, atan, exp, log) are much slower (50-300 clock cycles) and less accurate
+		\item \textbf{Fused Multiply-Add} (FMA). Compute a*b+c directly (faster, with only oe rounding step). But now there are two ways to do the same thing.
+		\item \textbf{Compiler optimizations} may violate expected IEEE-754 rounding behavior
+		\item \textbf{Denormalized numbers} are often very slow and cause surprises. Can turn them off
+		\item Carefule when converting floats to integers, and vice versa
+		\item Arithmetic transformation that are 'pointlessc' on pencil and paper can make huge accuracy difference.
+	\end{itemize}
+	
+\end{parag}
+
+
+\subsubsection{Errors}
+\begin{parag}{Catastrophic numerical errors}
+    \begin{itemize}
+		\item Rounding  error accumulation (1991: Patriot battery failed to interecpt missile in Dharan, Saudi Arabia)
+		\item Ariane 5 Rocket failure
+    \end{itemize}
+\end{parag}
+\begin{parag}{Model error}
+    For instance if we wanted to compute the surface of the earth we would model the planet as a sphere which would give for the surface:
+	\begin{align*} A =  4\pi r^2 \end{align*}
+\end{parag}
+\begin{parag}{Truncation error}
+    What if we wanted to approximate the sum of $\frac{1}{3^i}$
+	if we take for intance:
+	\begin{align*} 
+		\sum_{i =  1}^{10} \frac{1}{3^i} \approx 0.499991532\\
+		\sum_{i =  1}^{\infty} \frac{1}{3^i} \approx 0.5
+	\end{align*}
+	We can also take the harmonic serie $\frac{1}{k}$ which converges in IEEE-754 arithmetic:
+	\begin{align*} \sum_{k = 1}^{\infty} \frac{1}{k} = 15.493683 \end{align*}
+\end{parag}
+

@@ -5,7 +5,9 @@
 % ===== Packages for general functionalities =====
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
-% \usepackage[utf8]{inputenc}  % useless for LuaLaTex
+\setmainfont
+
+\setmainfont{TeX Gyre Termes}
 \usepackage[bottom=2.5cm, top=2.5cm]{geometry}
 \setlength{\columnsep}{0.5cm}
 \usepackage{fancyhdr}
@@ -143,11 +145,6 @@
     {\end{definition1}\end{mdframed}}
 
 
-%snippets commande vite fait
-\newcommand{\R}[0]{$\mathbb{R}$}
-\newcommand{\Z}[0]{$\mathbb{Z}$}
-\newcommand{\Q}[0]{$\mathbb{Q}$}
-\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
 
 \newtheorem{dem}{Démonstration}
 

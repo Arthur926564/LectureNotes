@@ -96,7 +96,7 @@
 \contentsline {section}{\numberline {4.1}Caches}{53}{section.4.1}%
 \contentsline {paragraph}{Remark}{54}{paragraph*.79}%
 \contentsline {paragraph}{Out goal today}{54}{section*.80}%
-\contentsline {paragraph}{What memory to use?}{55}{section*.81}%
+\contentsline {paragraph}{What memory to use?}{54}{section*.81}%
 \contentsline {paragraph}{Spatial and Temporal locality}{55}{section*.82}%
 \contentsline {paragraph}{Our placment policy most be:}{55}{section*.83}%
 \contentsline {subsubsection}{Cache: The idea}{56}{subsubsection*.84}%

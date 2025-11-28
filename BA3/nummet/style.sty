@@ -1,11 +1,13 @@
 
 % ##### 01. Includes #####
-\usepackage{luacode}
+%\usepackage{luacode}
+
 % ===== Packages for general functionalities =====
-\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
-% \usepackage[utf8]{inputenc}  % useless for LuaLaTex
+\setmainfont
+
+\setmainfont{TeX Gyre Termes}
 \usepackage[bottom=2.5cm, top=2.5cm]{geometry}
 \setlength{\columnsep}{0.5cm}
 \usepackage{fancyhdr}
@@ -36,15 +38,9 @@
 \usepackage{quantikz} % quantum circuits
 
 % ===== Packages for useful commands ======
-\usepackage{siunitx}
-\sisetup{parse-numbers = false}
-\sisetup{per-mode = symbol}
 \usepackage{xcolor}
 
-\usepackage[super]{nth}  % for the \nth command
 \usepackage{centernot}  % for \centernot command
-\usepackage{emoji}  % absolutely mandatory
-\setemojifont{Twemoji Mozilla}  % This must be installed, see: https://github.com/mozilla/twemoji-colr (you only need to install and execute the TTF file from the release section)
 
 % ===== Packages for useful environments =====
 \usepackage{tabularx}  % tabular environments which allow line breaking
@@ -59,7 +55,6 @@
 \usepackage{ifthen}
 \usepackage{xifthen}
 \usepackage{calc}  % To do computations for lengthes
-\usepackage[useregional, showdow]{datetime2}  % to handle dates
 \usepackage{texdate}  % To display today's date (could probably be merged with datetime2 at some point)
 \usepackage{changepage}  % for adjustwidth environment
 \usepackage{environ}  % To create new environments more easily
@@ -73,10 +68,15 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{pgf,pgfplots}
 \usetikzlibrary{math,arrows,positioning,shapes,fit,calc}
 
 \usepackage{hyperref}
+\hypersetup{
+    pdftitle={Analyse II},
+    pdfpagemode=FullScreen
+}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
@@ -103,12 +103,9 @@
 \newcommand{\premise}[1]{&#1\\}
 \newcommand{\conclusion}[1]{\cline{2-2}\therefore&#1}
 
-
 \newcommand{\bmath}[0]{\mathcal{B}}
 \newcommand{\cmath}[0]{\mathcal{C}}
 \newcommand{\R}[0]{\mathbb{R}}
-\newcommand{\E}[0]{\mathbb{E}}
-
 \newtheorem{savoir}{Truc}
 \newenvironment{truc}{
     \begin{mdframed}[backgroundcolor=orange!7,
@@ -118,11 +115,11 @@
 
 % Définir un environnement mdframed spécifique pour les remarques
 \newenvironment{framedremark}
-  {\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]\begin{remark}}
-  {\end{remark}\end{mdframed}}
+  {\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]}
+  {\end{mdframed}}
 
 
-\newtheorem{resume1}{Summary}
+\newtheorem{resume1}{Résumé}
 \newenvironment{resume}
     {\begin{mdframed}[backgroundcolor=gray!7, linecolor=black!20, linewidth=1pt]\begin{resume1}}
     {\end{resume1}\end{mdframed}}
@@ -142,20 +139,15 @@
 
   \newtheorem{exemple}{Exemple}
 
-\newtheorem{theorem1}{Theorem}
+\newtheorem{definition1}{Theorem}
 \newenvironment{theoreme}
 {
-    \begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{theorem1}}
-    {\end{theorem1}\end{mdframed}}
+    \begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{definition1}}
+    {\end{definition1}\end{mdframed}}
 
 
-%snippets commande vite fait
-\newcommand{\R}[0]{$\mathbb{R}$}
-\newcommand{\Z}[0]{$\mathbb{Z}$}
-\newcommand{\Q}[0]{$\mathbb{Q}$}
-\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
 
-\newtheorem{dem}{Démonstration}
+\newtheorem{dem}{Demonstration}
 
 \newenvironment{formule}
 {\begin{mdframed}[linecolor=black, linewidth=0.5pt]}
@@ -195,7 +187,6 @@ linewidth=1pt]\begin{pro}}
 % ##### You need to compile a latex document using this style with LuaLaTeX, since it uses the        #####
 % ##### luacode package and the luaexec command.                                                      #####
 % #########################################################################################################
-% ##### You may require to install Mozilla Twemoji, see https://github.com/mozilla/twemoji-colr       #####
 % ##### You only need to download and execute the TTF file from their release section on GitHub.      #####
 % #########################################################################################################
 
@@ -711,7 +702,6 @@ linewidth=1pt]\begin{pro}}
 
 \def\hrulefill{\leavevmode\leaders\hrule height 1pt\hfill\kern\z@} % Source: https://latex.org/forum/viewtopic.php?t=8117
 
-\DTMlangsetup[en-GB]{ord=raise}
 \newcommand{\lecture}[4]{  % #1: lecture no, #2: date, #3: title, #4 summary (used in my external compilation program)
     \needspace{5em}
     \vspace{1em}
@@ -983,4 +973,3 @@ linewidth=1pt]\begin{pro}}
     }%
 }
 
-            
