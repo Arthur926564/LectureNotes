@@ -5,12 +5,10 @@
 % ===== Packages for general functionalities =====
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
-\setmainfont
-
-\setmainfont{TeX Gyre Termes}
 \usepackage[bottom=2.5cm, top=2.5cm]{geometry}
 \setlength{\columnsep}{0.5cm}
 \usepackage{fancyhdr}
+\usepackage{amsthm}
 \usepackage{lmodern}
 \usepackage{microtype}
 % This has to be reconsidered. I had issues with it with RGL AE report.
@@ -113,9 +111,11 @@
 
 
 % Définir un environnement mdframed spécifique pour les remarques
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
 \newenvironment{framedremark}
-  {\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]}
-  {\end{mdframed}}
+{\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]\begin{remark}}
+{\end{remark}\end{mdframed}}
 
 
 \newtheorem{resume1}{Résumé}
@@ -124,11 +124,16 @@
     {\end{resume1}\end{mdframed}}
 
 
-\newtheorem{definition2}{Définition}
-\newenvironment{definition}
-{
-    \begin{mdframed}[backgroundcolor=green!10, linecolor=green!20, linewidth=1pt]\begin{definition2}}
-    {\end{definition2}\end{mdframed}}
+\newtheorem{definition2}{Definition}
+\newenvironment{definition}[1][]%
+{%
+    \begin{mdframed}[backgroundcolor=green!10, linecolor=green!20, linewidth=1pt]%
+    \begin{definition2}[#1]%
+}%
+{%
+    \end{definition2}%
+    \end{mdframed}%
+}
 \setlength\parindent{0pt}
 
 \newenvironment{framedate}

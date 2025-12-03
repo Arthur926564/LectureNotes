@@ -1,0 +1,221 @@
+\section{Basic Pipelining}
+\begin{parag}{Circuit Timing and Performance}
+    Most of the time so far, we have mainly discussed circuits at a higher ,level of timing abstraction: what happens every \important{cycle}
+	\begin{itemize}
+		\item Finite State Machines: \texttt{state <= next\_state}
+		\item Function units and memory elements perform one operation over a small number of cycles; e.g., a combinational ALU performs an addition per cycle
+	\end{itemize}
+	To make faster circuits, we need to zoom-in briefly and understand more of \important{signal propagation} and timing limitations
+\end{parag}
+\begin{parag}{Signal propagation}
+    The edge of the \texttt{clock} signal indicates:
+	\begin{itemize}
+		\item When \important{new data can be applied} to the combinational part of the circuit (from the left register to the cloud)
+		\item When old input data have crossed the combinational part of the circuit, the result is ready, and it \important{can be stored} at the output (from the cloud to the right register)
+	\end{itemize}
+	To operate circuits 'as fast as we can', we apply a \texttt{clock} signal whose \important{period is equal to the critical path delay} (that is, the longest delay) of the circuit
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-29_4.png}
+	\end{center}
+	The cloud here is the abstraction of any circuit that we are doing.
+\end{parag}
+\begin{parag}{Example}
+    So if we for example take the following circuit:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-29_5.png}
+	\end{center}
+	\begin{framedremark}
+	What does this circuits do? let us analyse:\\
+	First we will check each bits of the upper register.\\
+	If the first bit is one we put it into the first adder. 
+	If the second bit is one we also put the the lower register in the adder but shifted of 1 (to the left) which makes is $3 \cdot$lower register. 
+	If we take the third bit (the 2 bit in the circuit) then this time we need to shift the lower register by two instead of one. etc.. \\
+	At the end of the day this is a multiplier!
+	\end{framedremark}
+	For this circuit to operate properly, it must be:
+	\begin{align*} T_{CLK, comb} \geq T_{\text{critical path}} \end{align*}
+	A solution in order to make the time of the critical path smaller is to add intermediate registers for instance:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-29_6.png}
+	\end{center}
+	Here we divided our big circuit into three subcircuits which each of them have at most the previous critical divided by three. Therefore, for this new circuit to operate properly, it must be:
+	\begin{align*} T_{CLK, pipe} \geq T_{\text{new critical path}} \overset{\sim}{=} \frac{T_{\text{critical path}}}{3} \end{align*}
+\end{parag}
+\begin{parag}{What has changed?}
+    In terms of functionallity nothing has changed, all we did is divided the clock which has no impact on the output of our circuit.\\
+	But now our \important{clock can run faster}. If we have introduced $N$ stages of intermediate registers evenly, roughly our critical path is $N$ times smaller. this directly implies that our \important{clock can run $N$ time faster}!\\
+	But is this great? Not really, yes our clock run $N$ times faster but now we also need $N$ cycle to do the same thing.
+\end{parag}
+\begin{parag}{So why?}
+    So now we can have multiple Operations in a pipeline, we can use the inactive areas for one operation for \important{other operation}
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-29_7.png}
+	\end{center}
+	\begin{framedremark}
+This is a very important concept to understand.\\
+
+By adding registers, we move from an \important{“artisanal” production model}, where a single worker builds the entire product from start to finish, to a \important{large-scale assembly line}, where each worker performs only a very small part of the process.
+
+Adding registers is like adding more workers to the assembly line.  
+Instead of one person doing all the work, we now have $N$ people working in parallel, which means the system can deliver results up to $N$ times faster.
+\end{framedremark}
+\end{parag}
+\begin{center}
+    
+
+\begin{tikzpicture}[
+    stage/.style={rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=blue!10},
+    reg/.style={rectangle, rounded corners, minimum width=0.5cm, minimum height=1cm, text centered, draw=black, fill=green!20},
+    arrow/.style={thick,->,>=stealth}
+]
+
+
+% ARTISANAL APPROACH
+\node[above, align=center] at (-4,4.5) {\textbf{Artisanal Approach}};
+\node[above, align=center] at (-4,4) {One worker does complete task};
+
+% Single worker doing everything
+\node[stage] (workerA) at (-4,2.5) {Worker A};
+
+% Input and output
+\node[right] at ($(workerA.east) + (0.5,0)$) {Output};
+
+% Arrows for sequential processing
+\draw[arrow] ($(workerA.west) + (-0.8,0)$) -- (workerA.west);
+\draw[arrow] (workerA.east) -- ++ (0.5,0);
+
+% PIPELINE APPROACH
+\node[above, align=center] at (4,4.5) {\textbf{Pipeline Approach}};
+\node[above, align=center] at (4,4) {Task divided into specialized stages};
+
+% Pipeline stages
+\node[stage] (stage1) at (2,2.5) {Stage 1};
+\node[reg] (reg1) at (3.5,2.5) {R};
+\node[stage] (stage2) at (5,2.5) {Stage 2};
+\node[reg] (reg2) at (6.5,2.5) {R};
+\node[stage] (stage3) at (8,2.5) {Stage 3};
+
+% Input and output
+\node[right] at ($(stage3.east) + (0.5,0)$) {Output};
+
+% Horizontal arrows for pipeline flow
+\draw[arrow] ($(stage1.west) + (-0.8,0)$) -- (stage1.west);
+\draw[arrow] (stage1.east) -- (reg1.west);
+\draw[arrow] (reg1.east) -- (stage2.west);
+\draw[arrow] (stage2.east) -- (reg2.west);
+\draw[arrow] (reg2.east) -- (stage3.west);
+\draw[arrow] (stage3.east) -- ++(0.5,0);
+
+\node[left] at ($(workerA.west) + (-0.7,0)$) {Input};
+\node[left] at ($(stage1.west) + (-0.7,0)$) {Input};
+
+% Labels for pipeline stages
+\node[above] at (stage1.north) {Worker A};
+\node[above] at (stage2.north) {Worker B};
+\node[above] at (stage3.north) {Worker C};
+
+\end{tikzpicture}
+
+\end{center}
+\vspace{1cm}
+
+
+
+% \begin{tikzpicture}[font=\small, node distance=1.8cm]
+%
+% % Artisanal
+% \node[draw, rounded corners, minimum width=3.6cm, minimum height=1cm, fill=gray!10] (a1) {Worker does full task};
+% \node[below=0.4cm of a1] (alabel) {\textbf{Artisanal:} one worker does everything};
+%
+% % Arrow to pipeline
+% \draw[thick, ->] (a1.east) -- ++(1.2,0) node[midway, above] {};
+%
+% % Pipeline stages
+% \node[draw, rounded corners, fill=blue!10, minimum width=1.7cm, minimum height=1cm, right=2.8cm of a1] (p1) {Stage 1};
+% \node[draw, rounded corners, fill=blue!10, minimum width=1.7cm, minimum height=1cm, right=1.8cm of p1] (p2) {Stage 2};
+% \node[draw, rounded corners, fill=blue!10, minimum width=1.7cm, minimum height=1cm, right=1.8cm of p2] (p3) {Stage 3};
+%
+% % Registers
+% \node[right=0cm of p1] (r1) {};
+% \draw[thick] (p1.east) -- (p2.west);
+%
+% \node[right=0cm of p2] (r2) {};
+% \draw[thick] (p2.east) -- (p3.west);
+%
+% \node[below=0.4cm of p2] (plabel) {\textbf{Pipeline:} task is split into smaller stages};
+% \end{tikzpicture}
+\begin{parag}{$ $}
+	This means that now, every worker need a third of the original period. So every third of the previous period we are able to output something \textrightarrow we go three time faster.
+\end{parag}
+
+
+
+\vspace{1cm}
+
+\begin{parag}{Any Advantage Now?}
+    The time to compute a single operation is \important{roughly the same} as in the orignal circuit. But now we have new result that are available:
+	\begin{itemize}
+		\item In the original circuit, \important{every original period $T$}
+		\item In the circuit with the registers used for a signle calculation, \important{every $N$ cycles of period $\frac{T}{N}$} \textrightarrow every $T$
+		\item In the circuit with the registers where we inject a new computation every cycle, we get:
+			\begin{center}
+				\textbf{a new result every T/N!}
+			\end{center}
+	\end{itemize}
+	We can generate arbitrarily more result ($N$ large results)?????
+\end{parag}
+\begin{parag}{Latency and Throughput}
+		\begin{definition}[Latency]
+	    Time between a computation begins and result is available
+	    \end{definition}
+		\begin{itemize}
+			\item Original circuit: T
+			\item Pipelined circuit: $\frac{T}{N} \cdot N =  T$
+		\end{itemize}
+		\begin{definition}[Throughput]
+		Number of results available in the unit time
+		\end{definition}
+	    \begin{itemize}
+			\item Original circui: $\frac{1}{T} = f$
+			\item Pipelined circuit: $\frac{1}{\left(\frac{T}{N}\right)} =  \frac{N}{T} = N \cdot f$
+	    \end{itemize}
+	\begin{framedremark}
+	All of this looks great but they only look this great in theory, maybe there is some practical issues...
+	\end{framedremark}
+\end{parag}
+\begin{parag}{Practical Pipelining}
+	When we start cutting our circuit, imagine we cut it perfectly by three, then the critical path of this circuit is the maximum between this sub three paths.\\
+	Now if the critical path of each subcircuit is magically three, then yes this would works but what if we cannot?\\
+	Imagine if we cannot cut perfectly our circuit in third equally subcircuits (which is usually the case), instead of having the critical path being the sum of the three critical paths, we would need to put the maximum critical path among the three multiplied by three.\\
+	Furthemore by adding a register we alse take the delay of this register into our critical path.
+\end{parag}
+    \begin{center}
+    \includegraphics[scale=0.2]{screenshots/2025-11-29_8.png}
+    \end{center}
+
+
+\begin{parag}{Usefule Representaiton of the Pipeline Activity}
+	So here what we see is that in one cycle we actually do three sub operations, which means that every clock cycle, we are able to output something that take us normaly three clock cycles. This is \important{parallelism}. Not necessarly in the way of how we see it but it still is!
+	    \begin{center}
+	    \includegraphics[scale=0.2]{screenshots/2025-11-29_9.png}
+	    \end{center}
+\end{parag}
+
+
+
+
+\subsubsection{Summary}\label{sec:summary:basicpipeline}
+\begin{itemize}
+	\item \important{Pipelining} consits in splitting a task in smaller 'subtasks', and in performing in \important{parallel} each 'subtask' on a different piece of data
+	\item \important{Pipelining} is an extremly general technique to \important{increase the throughput} of a system (circuit, processor, computer, ..)
+	\item \important{Pielining does not improve latency} (actually worsens it!)
+	\item Therefore, pipelining is only effective when one has to reapeat a job on many pieces of data (signal processing, communication packets, and \important{processor instructions}!)
+\end{itemize}
+
+
+
+
+
+
+
+

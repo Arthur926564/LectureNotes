@@ -1,0 +1,304 @@
+\section{Dynamic Scheduling}
+
+\begin{parag}{Starting point}
+    As we have seen before, processor has first been \important{sequential multicycle processor}. Now we wanted to replace it with something else: \important{pipelined processor}.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-03.png}
+	\end{center}
+	For instance, 5-stage pipeline with all forwarding paths. Typical of \important{MIPS} and \important{RISC-V}.
+	The issue with this is that \important{all instructions} has to go through \important{all the stages} $\implies$ we need a very small ISA (MIPS, RISC-V).
+	The other issue is that pipelined need \important{independence}. Every circuits in each stage has to be used \important{only in that stage}.
+	This is the simplest form of \important{Instruction Level Parallelism} (ILP): several instructions are now executed at once.
+\end{parag}
+\begin{parag}{Simple Pipelining}
+    The scope if \important{parallelism is limited}:
+	\begin{itemize}
+		\item \important{Data hazards} limit the usability of the pipeline:
+			\begin{itemize}
+				\item Whenever the next instruction cannot be executed, the pipeline is stalled and no new useful work is done until the 'problem' is solved (e.g., cache miss)
+			\end{itemit
+		\item \important{Control hazards} limit the usability of the pipeline
+			\begin{itemize}
+				\item Must squash fetched and decoded instruction followig a branch
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{parag}
+\begin{parag}{Rigid Sequencing}
+    \begin{itemize}
+		\item Special 'slots' for everything even if sometimes useless (e.g. M)
+		\item Every instruction must be \important{coerced to the same framework} (floating point vs. integer)
+		\item Structural hazards avoided 'by construction'
+    \end{itemize}
+	This means that if we need some floating point arithmetic then we are a bit lost on our RISC processor. We would need to implement the floating point in software (which is slower).
+\end{parag}
+
+\end{parag}
+\paragraph{Dynamic Scheduling: The Idea}%
+\label{par:Dynamic Scheduling: The Idea}
+Let us for instance take a look at the code:
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+divd $f0, $f2, $f4
+addd $f10, $f0, $f8
+subd $f12, $f8, $f14
+\end{lstlisting}
+Here the instruction \texttt{divd} is a long-running instruction which hurt our feeling...it makes our program \important{stalls} for the next instruction \texttt{add f10, f0, f8} which need the value \texttt{f0}. However as we can see the instruction \texttt{subd} is completely independent of the two above. As we have seen before, maybe a way of resolving the stalling is by using a 'smart' compiler which would put the \texttt{subd} instruction between those two. However here our \texttt{divd} takes a long time but how much? how many cycles? We cannot know right? Imagine having a \texttt{load} instruction we wouldn't even know!
+\begin{theoreme}
+Relax a fundamental rule: instructions can be executed \important{out of program order} (but the result must still be \important{correct}).
+\end{theoreme}
+
+\begin{parag}{Break the Rigidity of the Basic Pipelining}
+    For us we need:
+	\begin{itemize}
+		\item \important{Continue fetching and decoding} even and especially if one cannot exevcute previous instructions
+		\item \important{Keep writeback waiting} if there is a structural hazard, without slowing down execution.
+	\end{itemize}
+\end{parag}
+\begin{parag}{Solution}
+    The solution here is the \important{splits the tasks} in independent units/pipelines
+	\begin{itemize}
+		\item \important{Fetch and Decode}
+		\item \important{Execute}
+		\item \important{Writeback}
+	\end{itemize}
+\end{parag}
+\begin{parag}{Dynamically Scheduled Processor}
+	So now the we don't have to go through one big pipeline. Now we break our previous big pipeline into smaller pipeline. We may have a big pipeline for floating point double and a smaller one for 32 bits floating point. 
+    \begin{center}
+    \includegraphics[scale=0.2]{screenshots/2025-12-03_1.png}
+    \end{center}
+	So what is going here is we create a big Execution unit with all the possible instruction (memory, alu, etc.). We then wire them back into our decode just as we did before. Now everything that produce a result we bring it back \important{where} there is a possible use of it.
+	
+\end{parag}
+\begin{framedremark}
+Here what we have is still a finite state machine. The reason why we don't present it as one is that the number of state that is can have is enormous. It the a combinatorial calculation between all the state F, D, E/M1, .., W.
+\end{framedremark}
+
+\subsubsection{Problems to solve}
+Now we have a kind of big work to do, all the previous issues that we had already solved come back again at us here:
+\begin{parag}{Structural Hazards}
+	\begin{itemize}
+		\item Are the required resources available?
+		\item New problem: previously handled by rigid pipeline
+	\end{itemize}
+\end{parag}
+\begin{parag}{RAW Data Hazards}
+    \begin{itemize}
+		\item Are the operands ready to start execution
+		\item Old problem
+    \end{itemize}
+\end{parag}
+\begin{parag}{WAR and WAW Data Hazards}
+	\begin{itemize}
+		\item The new data overwrite something which is still requires?
+		\item WAW is a completely new problen -- impossible before, WAR often cannot occur
+	\end{itemize}
+\end{parag}
+
+\begin{parag}{Raw Data Hazards}
+    Let us start with this one. This problem comes fron the \texttt{RS} register from the previous picture. Maybe what we read the register and the value from it is false. We want  to erase it. The solution here is to use a \important{Reservation Station}
+\end{parag}
+\begin{parag}{Reservation Station}
+	\begin{definition}[Reservation station]
+	checks that the \important{operands are available} (RAW) and that the \important{Execution Unit is free} (Structural Hazards), then starts execution.
+	\end{definition}
+    \begin{center}
+    \includegraphics[scale=0.2]{screenshots/2025-12-03_2.png}
+    \end{center}
+	So here for instance the \texttt{ALU3} means that the value we are waiting for will be the result of the \texttt{ALU3} instruction im the reservation stations.
+	\begin{subparag}{The parking lot}
+	    We can see our Reservation stations as a \important{parking lot} instead of having car we have instructions waiting to be ready. Everytime one is ready then we launch it. This is a completely \important{unordered} 'data structure'.
+		On the bottom we have a ALU that is ready to compute something \important{every cycles}.
+		On the top then we have all the come back pipe which comes to us and tell for intsnace 'I am the result of the MUL3 computation' we then ask ourself if any of us (instructions) is waiting for the \texttt{MUL3} result.
+	\end{subparag}
+\end{parag}
+\begin{center}
+    
+\scalebox{0.7}{
+\begin{tikzpicture}[
+    node distance=2cm,
+    box/.style={
+        draw,
+        minimum width=6cm,
+        minimum height=2.5cm,
+        align=center,
+        fill=red!20
+    },
+    textnode/.style={
+        align=center,
+        text width=6cm
+    },
+    >=Stealth
+]
+
+% Reservation Station box
+\node[box] (RS) {Reservation Station};
+
+% Top-left text
+\node[textnode, above left=1.7cm and -0.3cm of RS] (FD) {
+    \textbf{\underline{Fetch\&Decode Unit and Register File}} \\
+    (1) Fetched operation descriptions and \\
+    (2a) known operands (from RF) \\
+    or (2b) source-operation tags
+};
+
+% Top-right text
+\node[textnode, above right=1.7cm and -0.3cm of RS] (EU) {
+    \textbf{\underline{All Execution Units}} \\
+    (1) Tags of the executed operations \\
+    and (2) corresponding results
+};
+
+% Bottom text
+\node[textnode, below=2cm of RS] (DEU) {
+    \textbf{\underline{Dependent Execution Unit}} \\
+    (1) Description of operations ready to execute \\
+    with (2) corresponding tags and (3) operands
+};
+
+% Arrows
+\draw[->, thick] (FD) -- (RS);
+\draw[->, thick] (EU) -- (RS);
+\draw[->, thick] (RS) -- (DEU);
+
+\end{tikzpicture}
+}
+
+
+
+\end{center}
+
+\begin{parag}{What is a Reservation Station?}
+A \important{reservation station} is a small buffer inside the processor that holds
+instructions after they have been decoded but \important{before} they are executed.
+Its purpose is to allow the CPU to execute instructions \textbf{out of order}
+without violating the correctness of the program.
+
+A reservation station entry contains:
+\begin{itemize}
+    \item the \textbf{operation} to execute (e.g.\ \texttt{add}, \texttt{mul}), 
+    \item the \textbf{operands}, if they are already available,
+    \item or \textbf{tags} indicating that the operand is not available yet,
+    \item and the \textbf{destination tag} where the result must later be written.
+\end{itemize}
+
+The idea is simple: an instruction does \important{not} need to wait for its
+operands in the decode stage. Instead, it is placed in a reservation station
+entry, even if some operands are missing. The entry then ``listens'' to all
+execution units. Whenever a unit finishes and broadcasts a result together with
+its tag, each reservation station checks whether it was waiting for that value.
+
+If an entry collects \important{all} its operands, then that instruction is marked
+as \textbf{ready}. As soon as the corresponding execution unit becomes free,
+the reservation station dispatches the instruction to it.
+
+In short:
+\begin{itemize}
+    \item It solves \textbf{RAW hazards} by waiting for the true operands.
+    \item It helps avoid \textbf{structural hazards} by checking that the execution unit is free.
+    \item It enables \textbf{out-of-order execution}: instructions no longer need to
+          wait in program order if they already have what they need.
+\end{itemize}
+
+A reservation station therefore acts as a \important{smart waiting room} for
+instructions: they enter as soon as they are decoded, wait only for the data
+they require, and are issued to execution as soon as they are ready.
+\end{parag}
+So here our read after write issue is gone. But the WAR or WAW are not resolved. The question the Prof. asked was:
+\begin{center}
+    Why don't we use something simpler for our tag (e.g., the register name)?
+\end{center}
+Our register are not unique, this would work only if we were in an ordered program where each instruction are followed by the next one. If that was the case then yes this would work because as the register t4 we would have the latest value of t4 which is the one we need.
+But what happens if we are in an unordered instruction table (Reservation stations)? Then in that case it could be possible that there is a previous value that is not the correct one in t4, t4 would not be unique.
+
+We need \important{unicity} we have to be sure that when calling a tag then the value of this tag \important{has to be unique}.
+
+So why don't we use the program counter as a tag? By using it then we have a unique identifier for each value right? But what if we have a loop, then for the same pc we would still have two different values.
+
+\begin{parag}{WAW and WAR}
+    Those hazard were not really possible in a simple pipeline (by construction). However here this is different, for instance:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-03_4.png}
+	\end{center}
+	So here we have a new issue. The solution for this would be for instance to rename our register like:
+	Given this code
+	\begin{lstlisting}[language={{RISC-V}Assembler}]
+divd f0, f1, f2 
+addd f3, f0, f4 
+subd f4, f5, f6  #create issue with the f4 of the previous instruction
+adddi f0, f4, 10 #create issue with the f4 of the previous instruction
+	\end{lstlisting}
+	We can change it to:
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+divd f0, f1, f2 
+add f3, f0, f4 
+subd f30, f5, f6 
+f29, f30, 10
+\end{lstlisting}
+	But here our reservation station comes down pretty much as renaming each register as the tag.
+	\begin{itemize}
+	   \item Unavailable operands are identified by the \important{name of the reservation station} in charge of the originating instruction
+	   \item \important{Implicit register renaming}, thus removing WAR and WAW hazards
+	   \item New results are seen at their inputs through special result bus(es)
+	   \item Writeback into the registers can be in-order or, to some extent, out-of-order
+	\end{itemize}
+\end{parag}
+
+\subsection{Dynamically Scheduled Processor}
+So here what we get at the end is:
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-12-03_5.png}
+\end{center}
+What we here as an issue still is how do we know where to write in the register file, we need to be careful about our ordering in our register file. This is the commit unit's job.
+\begin{parag}{Our-of-order Commitment and Exceptions}
+	\begin{itemize}
+		\item Excpetion handlers should know exaclty where a problem has occured, especially for \important{nonterminating exceptions} (e.g., page fault)
+		\item Of course, one assumes that everything before the faulty instruction was executed and everything after was not
+		\item With dynamic execution it might no longer be true...
+	\end{itemize}
+\end{parag}
+\begin{parag}{Problems with exceptions}
+    Now we have an issue again with excpetions:
+	\begin{subparag}{Precise exceptions}
+	    Reordering at commit; user view is that of a fully in order processor
+		\begin{lstlisting}[language={{RISC-V}Assembler}]
+andi t4, t2, 0xff # good code
+andi t5, t4, 0xff # good code
+addi v0m t5, 1  # good code
+srl t2, t2, 8 # good code
+-> lw t3, 8(t6) # now we have our exception
+andi t4, t3, 3  # bad code
+addi t0, t0, 4 # bad code
+addi t1, t1, 4 # bad code
+		\end{lstlisting}
+		So now we need to come back from where were at the exception. To do so we need to save the pc of where the exception has happened we already have it and returning to it is already implemented (the \texttt{ret} in RISC-V).
+		
+	\end{subparag}
+	\begin{subparag}{Imprecise exceptions}
+		\begin{itemize}
+			\item No reordering; out-of-order completion visible to the user
+			\item The OS/programmer must be aware of the problem and take appropriate action (e.g., execute again the complete subroutine where the problem occured)
+		\end{itemize}
+		\begin{lstlisting}[language={{RISC-V}Assembler}]
+andi t4, t2, 0xff # good code
+andi t5, t4, 0xff # bad code
+addi v0m t5, 1  # bad code
+srl t2, t2, 8 # good code
+-> lw t3, 8(t6) # now we have our exception
+andi t4, t3, 3  # bad code
+addi t0, t0, 4 # good code
+addi t1, t1, 4 # bad code
+		\end{lstlisting}
+		Now here we are not able to jump again, if we were, yes our program would run again fine but then that addi here has already been computed (\texttt{addi t0, t0, 4}) would be refetched again which would make our \texttt{to} incremented two times!
+	\end{subparag}
+\end{parag}
+\begin{parag}{Solution}
+    The way of solved this issue is to add a new buffer between the output and the register file:
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-12-03_6.png}
+	\end{center}
+	This one is pretty different from the other buffer. This one \important{has to be ordered}. This buffer works kind of like our pipeline registers.
+\end{parag}
+
+
+

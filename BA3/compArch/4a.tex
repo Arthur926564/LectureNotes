@@ -1,0 +1,228 @@
+\section{Performance}
+For the past chapters, all we have done is \important{adding features} to our processor to make sure that it is ready to construct a modern system.
+We needed some instruction to construct function, jump etc... We also needed some exceptions (i.e. useful to debug our program).\\
+Now we are clear about what we want to do and how to do it. 
+\begin{parag}{What should we do now?}
+    Now we know how to build a processor so let's care about \important{performance}.
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-11-29.png}
+	\end{center}
+	As seen before, we have two ways to improve our performance:
+	\begin{itemize}
+		\item Better transistors
+			\begin{itemize}
+				\item Which is a job that only the physicist, electrical engineer can do.
+			\end{itemize}
+		\item More transistors
+			\begin{itemize}
+				\item By having better transistors \textrightarrow smaller \textrightarrow cheaper transistors. We can therefore add more transistors for the same prices as before, We can double/triple the number every two/three years.
+			\end{itemize}
+	\end{itemize}
+	
+\end{parag}
+\begin{parag}{What and Why?}
+    So now we can add a big number of transistors. The question we will need to answer is: how can we use them in a way to make our processor faster.
+	The answer to that is \important{parallelism:}\\
+	As we have already seen in cs-214, we will use the same principle but at a way lower level
+	\begin{subparag}{Example: OR}
+		For instance what if we wanted to compute an \texttt{or} operation between  20 bits (like an \texttt{OR} gate with 20 inputs). A way of doing that would be to \texttt{or} each element one by one using only one \texttt{or} gate. 
+		\begin{itemize}
+			\item Pros: we only need one gate for all the 20 bits
+			\item Cons: it is \important{slow}, it runs in linear time
+		\end{itemize}
+		As we said before, the number of transistors is not an issue anymore (kind of).\\
+	The better way of doing it is to have a binary tree like of \texttt{OR} gate. This way, instead of having to run in a linear time we can run in a \important{logarithm} one.
+	\end{subparag}
+	\begin{subparag}{Example: ripple carry adder}
+	    Another example would be ripple carry adder as we have seen in FDS-173, this circuit costs us the least amount of operation, but is very \important{sequential} there is no way for us to compute the last bit without having computed \important{all the previous bits}.
+		The question we want to ask is: Can we make our ripple carry adder faster by adding some transistors/redundancy?
+	\end{subparag}
+\end{parag}
+\paragraph{So Far about Performance}%
+\label{par:So Far about Performance}
+
+    Different parts of a system do not benefit equally from manufacturing technology advances:
+	\begin{itemize}
+		\item Memories are 'slower and slower' \textrightarrow \important{Caches}
+	\end{itemize}
+
+	Furthemore at this time in the course, we have done \important{nothing} to speed-up the processor itself.
+
+\begin{parag}{What is 'Performance'}
+    But first performance, what is a processor performance?
+	\begin{itemize}
+		\item \important{processor frequency}?
+			\begin{itemize}
+			    \item Is it better an Intel Core i7-770k at \important{4.2 Ghz} or an AMD Ryzen 5 5600x at \important{3.7Ghz}? And how much better the best one is?
+			\end{itemize}
+		\item Memory speed? Cache efficiency?
+			\begin{itemize}
+				\item Is it better to have 8 MiB of 4-way set associative cache or 16MiB of direct mapped cache?
+				\item Is it better to have three levels of overall smaller chaches or two levels of overall bigger caches?
+			\end{itemize}
+			\begin{center}
+			    \textbf{We need a metric!}
+			\end{center}
+	\end{itemize}
+\end{parag}
+\begin{parag}{Elapsed Time, CPU Time, ..}
+    None of the above matter in itself:\\
+	The most important thing for us is how long it takes to perform a job a user needs!\\
+	For Prof. Ienne is an academic person, so he needs to publish a lot of paper \textrightarrow he compiles a lot of latex file. Let us take the command
+	\begin{lstlisting}
+[110]icvm0100> time latex mypaper >& /dev/null
+0.79u 0.17s 0:01.20 80.0%
+[111]icvm0100>
+\end{lstlisting}
+\begin{framedremark}
+The time keyword allows us to see the elapsed time form the start until the end of the execution.\\
+\begin{itemize}
+	\item the 0.79u means \important{User CPU Time}: the processor has spent 0.79s executing instructions of my program (latex)
+	\item \important{Elapsed Time}: 1.20s after I started it, my job was completed
+	\item \important{System CPU Time}: The proessor has spent 0.17s executing instructions of the operating system on behalf of my program
+	\item The 80.\% here is the pourcentage of the elapsed time that has been spent on my job, the rest has been use for other thing (system I/O, other users, ...)
+\end{itemize}
+
+\end{framedremark}
+His job is to write latex paper. he needs to be fast at this job (that's why neovim is the best). Every time he is compiling my work, this means that he has to wait the elapsed time \important{staring at his screen compiling latex}. This is some time that he is not using for work.
+\vspace{0.5cm}
+So us we are interested in 
+\begin{center}
+    \textbf{Elapsed Time on an Unloaded System}
+\end{center}
+\end{parag}
+
+
+\begin{parag}{Relative Performance}
+    \begin{subparag}{Speedup}
+		For instance we can compute how faster system X is compared to system Y:
+        \begin{align*} 
+			\text{Speedup} = \frac{\text{Performance}_x}{\text{Performance}_y} = \frac{\text{Execution Time}_y}{\text{Execution Time}_x}
+		\end{align*}
+    \end{subparag}
+	\begin{subparag}{Common Performance indices}
+	    Here we are talking about benchmarks. 
+		How we used to do it is by simulating a program and run this 'fake' program on both system to see which one is better.\\
+		This is not very representative on how our system will be doing in the real world right? Why don't we just use a program that \important{everybody} uses and benchmark with it?\\
+		Everybody uses GCC (right?). So the benchmark would look like this:
+		\begin{itemize}
+			\item We take our machine out of the box
+			\item We install our operating system out of the box
+			\item We take a program written in \texttt{C}, \texttt{fortran} etc..
+			\item We compile it \textrightarrow we see how much time it takes
+		\end{itemize}
+		The performance of the operating system is also taking in count. We need a operating system that has a very good cache, etc.
+	\end{subparag}
+	\begin{subparag}{Common indices}
+	    \begin{itemize}
+			\item Speedups of systems compared to a single standard system
+			\item SPEC CPU, Geekbench, Cinebench, and LinPack HPL, EEMBC ('Embassy') CoreMark
+	    \end{itemize}
+	\end{subparag}
+	However with this we have some question when our performance is not good, is it the fault of the processor, the compiler, the operating system?
+	\begin{subparag}{Personal Remark}
+		The modern computing system is a pretty deep stack:
+		\begin{center}
+		    C code \textrightarrow compiler \textrightarrow assembler \textrightarrow machine code \textrightarrow CPU \textrightarrow caches \textrightarrow memory \textrightarrow OS
+		\end{center}
+		A slowdown could hide anywhere in that stack. When you see that System X is slower that System Y, it might be:
+		\begin{itemize}
+		\item the CPU is genuinely slower
+		\item the compiler is not optimized for that architecture
+		\item the OS isn't using the right scheduling policies
+		\item the benchmark's working set doesn't fir in cache on one system
+		\item the filesystem makes tempory files slower 
+		\item $\vdots$
+		\end{itemize}
+		A way of catching the cause is to create microbenchmarks that tests only a specific hardware features (cache, ALU throughput). We can also count the cache misses, stalls, IPC, etc.
+	\end{subparag}
+\end{parag}
+
+\begin{parag}{Relate Performance to Hardware Implementation}
+
+    \begin{itemize}
+		\item In Hardware, our measure of time is the \important{clock period} or \important{cycle}
+		\item We are often interested to relate execution time to this 'hardware quantum'
+		\item \important{Cycles per instruction (CPI)}
+			\begin{itemize}
+				\item Average number of cycles per instruction executed
+					\begin{align*} CPI = \frac{\left(\frac{\text{Execution Time}}{\text{Clock Period}}\right)}{\text{Total Instruction Count}} \end{align*}
+			\end{itemize}
+		\item \important{Instructions per Cycle (IPC) \textleftarrow 1 / CPI}
+			\begin{itemize}
+				\item Average instructions executed per cycle
+				\item Normally below unity, unless the processor executes several instructions in parallel
+			\end{itemize}
+    \end{itemize}
+    
+\end{parag}
+
+\begin{parag}{Improving Performance?}
+	Performance being 1/Execution Time, rewriting the definition of CPI and IPC:
+	\begin{align*} 
+		\text{Performance} &=  \frac{1}{\text{Exectution Time}}\\
+						   &= \frac{f_{clock}}{\text{Instruction Count} \cdot CPI}\\
+						   &= \frac{f_{clock} \cdot IPC}{\text{Instruction Count}}
+	\end{align*}
+	So for us the best thing we could do would be:
+	\begin{itemize}
+		\item Implement the processor in a fast technology (improve $f_{clock}$)
+		\item Execute several instruction in parallel  (improve $IPC$)
+	\end{itemize}
+	
+    
+\end{parag}
+
+
+
+
+
+
+\begin{parag}{Many other Considerations Influence the Performance}
+	\begin{subparag}{A few random examples}
+		Instruction Count depends also from the \important{compiler}. 
+		It is more important to have an instrution-set which a compiler can use very effectively (best instructions for the required job) rather than a 'reduced' or 'complex' instruction-set, otherwise the instruction count will be larger than needed.\\
+		The CPI depends on the \important{cache performance}, if the overall codes size grows, the cache will be less effective (mor misses)...\\
+		Very fast clock cycles will require more often instructions from the memory\\
+		Performance of the cache becomes more critical...
+	\end{subparag}
+    \important{Amdahl's Law} (Law of diminishing returns)
+	\begin{center}
+	    The performance enhancement possible with a given improvement is limited by the amount the improved feature is used
+	\end{center}
+	\begin{subparag}{Typical Softare situation}
+	    If a programs sends 20\% of the time in subroutine X, the maximum reduction in execution time one can get from optimising x is 20\%, that is a speedup of 1/(1 - 0.2) = 1.25x
+	\end{subparag}
+	\begin{subparag}{In a processor}
+	    If the instruction y is used 0.1\% if the time, is it worth to make it faster? It is probably better to look for the instruction which is used 20\% of the time..
+	\end{subparag}
+	\begin{center}
+	    \textbf{Look for where most of the time goes}
+	\end{center}
+	
+	
+\end{parag}
+
+\begin{parag}{Benchmarks}
+    Performance indiced such as SPEC CPU, Geekbench, CInebench, and LinPack HPL, EEMBC('Embassy') CoreMark need a \important{precise definition of the user job(s) to run}. Serious \important{benchmark suites} are collections of large and representative user programs spanning all areas of typical use, often agreed between manufacturers.\\
+	They do not only define the programs, (in C, C++, FORTRAN, Java), but also how to compile them, what data to run them on, etc.\\
+	So for instance this is what a SPEC CPU2017 benchmark look like (SPEC CPU is the most common one today)
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-11-29_2.png}
+	\end{center}
+	As we can see here there is a new Spec which is the rate which measure the number o ftasks performed in the unit of time (throughput test)\\
+	What w ecan also be intrested in is also how do OS and the compiler etc.. works well with the memory, virtual memory
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-11-29_3.png}
+	\end{center}
+\end{parag}
+
+\subsubsection{Summary}
+\begin{itemize}
+	\item Performance measurement is all but easy many \important{heterogeneous parameters} come into the picture
+	\item What really matters most for a user is the \important{elapsed time on an unloaded system}
+	\item \important{CPI} and \important{IPC} help relate hardware features of the processor to performance, but there are \important{many pitfalls}, hidden dependencies, 'second order' effects..
+	\item \important{Benchmarks} are the only practical way to assess performance--and serious unbiased benchmarks are difficult to design
+\end{itemize}
+
+
