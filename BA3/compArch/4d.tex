@@ -16,7 +16,7 @@
 		\item \important{Data hazards} limit the usability of the pipeline:
 			\begin{itemize}
 				\item Whenever the next instruction cannot be executed, the pipeline is stalled and no new useful work is done until the 'problem' is solved (e.g., cache miss)
-			\end{itemit
+			\end{itemize}
 		\item \important{Control hazards} limit the usability of the pipeline
 			\begin{itemize}
 				\item Must squash fetched and decoded instruction followig a branch
@@ -24,6 +24,7 @@
 		\end{itemize}
 	\end{itemize}
 \end{parag}
+
 \begin{parag}{Rigid Sequencing}
     \begin{itemize}
 		\item Special 'slots' for everything even if sometimes useless (e.g. M)
@@ -33,15 +34,14 @@
 	This means that if we need some floating point arithmetic then we are a bit lost on our RISC processor. We would need to implement the floating point in software (which is slower).
 \end{parag}
 
-\end{parag}
 \paragraph{Dynamic Scheduling: The Idea}%
 \label{par:Dynamic Scheduling: The Idea}
 Let us for instance take a look at the code:
-\begin{lstlisting}[language={{RISC-V}Assembler}]
-divd $f0, $f2, $f4
-addd $f10, $f0, $f8
-subd $f12, $f8, $f14
-\end{lstlisting}
+% \begin{lstlisting}[language={{RISC-V}Assembler}]
+% divd $f0, $f2, $f4
+% addd $f10, $f0, $f8
+% subd $f12, $f8, $f14
+% \end{lstlisting}
 Here the instruction \texttt{divd} is a long-running instruction which hurt our feeling...it makes our program \important{stalls} for the next instruction \texttt{add f10, f0, f8} which need the value \texttt{f0}. However as we can see the instruction \texttt{subd} is completely independent of the two above. As we have seen before, maybe a way of resolving the stalling is by using a 'smart' compiler which would put the \texttt{subd} instruction between those two. However here our \texttt{divd} takes a long time but how much? how many cycles? We cannot know right? Imagine having a \texttt{load} instruction we wouldn't even know!
 \begin{theoreme}
 Relax a fundamental rule: instructions can be executed \important{out of program order} (but the result must still be \important{correct}).
@@ -292,13 +292,137 @@ addi t1, t1, 4 # bad code
 		Now here we are not able to jump again, if we were, yes our program would run again fine but then that addi here has already been computed (\texttt{addi t0, t0, 4}) would be refetched again which would make our \texttt{to} incremented two times!
 	\end{subparag}
 \end{parag}
-\begin{parag}{Solution}
+\begin{parag}{Reorder Buffer}
     The way of solved this issue is to add a new buffer between the output and the register file:
 	\begin{center}
 	\includegraphics[scale=0.3]{screenshots/2025-12-03_6.png}
 	\end{center}
-	This one is pretty different from the other buffer. This one \important{has to be ordered}. This buffer works kind of like our pipeline registers.
+	This one is pretty different from the other buffer. This one \important{has to be ordered}. This buffer works kind of like our pipeline registers.\\
+	Now this buffer \important{has to know where the instruction where}. And it also need to know where, what who, etc. So here this is not like the previous parking lot, the order now is important. The purpose of this unit is to make the user believe that everything is sequential.
+	\begin{framedremark}
+	For this part (the example the video is always better than this so this is \textit{cs-200 -- 4d. Instruction Level Parallelism (cont'd) around 20:00}) But I will still try:
+	\end{framedremark}
 \end{parag}
+\begin{parag}{Example}
+	Let us take for example the following reorder table. As we can see with have an head and a tail. The head represent the element which has the smallest \texttt{pc}.
+    \begin{center}
+    \includegraphics[scale=0.2]{screenshots/2025-12-10_1.png}
+    \end{center}
+	So firstly we check the first lane that is at the head: \texttt{0|0x100 0004|  |\$ f3|  |0x627fba5a}. As we can see ther eis no tag or anything that we need to wait for \textrightarrow we can commit the instruction!
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-10_3.png}
+	\end{center}
+	Now this is different: we currenlty don't have the value. We need to wait until the oldest instruction here has its result. As soon has it has the value, then we can write to the memory the value.
+\end{parag}
+
+\begin{parag}{Reordering and Precise Exceptions}
+	However here we still have the big issue of \important{exceptions}:\\
+	So we need some extra bits in the reorder buffer to know wehter or not there is an exception on a given instruction. Okay this is nice now we know when an instruction happens but what should we do?\\
+
+	So now we can always execute the previous instruction without having to worry about anything right? But what happens when the head is on the exception pc?
+	\begin{itemize}
+		\item  When a synchronous exceptions happens, we do no report it but we \important{mark the entry} corresponding to the instruction which caused the exception in the ROB
+		\item When we would be ready to \important{commit} the instruction, we \important{raise the exception} instead
+		\item We also \important{trash} the content of the ROB and all RSs
+	\end{itemize}
+\end{parag}
+\begin{parag}{Example}
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-10_4.png}
+	\end{center}
+	So here what happened here is that we tried to store the value out of the \textbf{MEM1} unit which result in a TLB miss \textrightarrow we simply \important{record the exception}. Now we can still execute the instruction that is at the address \texttt{0x1000 0004} as nothing has happenend.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-10_5.png}
+	\end{center}
+	Now that we are on the current instruction, we \important{need to actually to notify} the world about our problem. We can now raise out tlb Miss exception. But all the thing that we had computed before is rubbish, we cannot know if those value are actually correct or just something that were computed with the wrong values, to solve this issues, we just \important{erase} everything that were in the reorder buffer.
+    
+\end{parag}
+
+\begin{parag}{Problem we need to solve?}
+	The structural hazards were not an issue here, the \important{reservation stations} take care of the contention for execution units. The \important{commit unit} writes back one instruction at a time.\\
+	But what about RAW Data hazards,  but those are taken care of by the \important{reservation stations}
+\end{parag}
+\begin{parag}{Reservation stations}
+    We said as before that: as the decode unit, we get an instruction, if the input are available then we put the arguement and the op etc\ldots of the instruction in the reservation stations, else, we put the tag of the instruction... 
+	\begin{center}
+	    How do we know?
+	\end{center}
+	This is the decode unit problem, the decode unit has to know if the parameter is available, but how can he know. He receive an instruction like "add the register x2 and the register x4" but how can he knows if he can read the value or not?\\
+	Before, what we used to do is to check in the past. In a simple pipeline processor the 'past' is actually on the 'right' of the pipeline, we can check if any instruction on the right of the pipeline has as output one of the register we currenlty have, if yes then we know that we have to wait. Can we do something like this now?\\
+\end{parag}
+\begin{parag}{Decoding and Dependence}
+    \begin{center}
+        The \important{reorder buffer (ROB)} knows of all instructions not yet committed and of their desitnation registers
+    \end{center}
+	\begin{subparag}{Possible situations}
+	    \begin{itemize}
+	        \item \important{No dependence} \textrightarrow Read the \important{value} from the \texttt{RF}
+	        \item \important{Dependence} from an ongoing instruction 
+				\begin{itemize}
+					\item If the value is already computed \textrightarrow Get the \important{value} from the \important{ROB}
+					\item If the value is not yet computed \textrightarrow Get the \important{tag} from the \important{ROB} 
+				\end{itemize}
+	    \end{itemize}
+	    
+	\end{subparag}
+    
+\end{parag}
+
+
+\begin{parag}{Dependences through memory}
+    The way we detect and resolve dependences through memory (a store at some address and a subsequent load from the same address) is the same as for registers\\
+	For every load, check the ROB:
+	\begin{itemize}
+		\item If there is \important{no store to the same address} in the ROB, get the value from memory (i.e., from the cache)
+		\item If there is a \important{store to the same address} in the ROB, either get the value (if ready) or the tag
+			\begin{center}
+			    \textbf{But there is an additional situation now}
+			\end{center}
+		\item If there is a store to an \important{unknown address} in the ROB or if the address of the load is unknown, \important{wait}
+	\end{itemize}
+	\begin{framedremark}
+	The memory and the register file comes down to the same thing, conceptually we have to do the same thing for both.\\
+	The slide difficulty for the implementation of the memory is: when we are looking for a certain register we only have to check ('is there an \texttt{f1} here?'). When we wont to write something, it can happen that the address is not ready yet. So when we want to read at a certain address, but there were a write before at an unknown address, we just cannot know if the value at the certain address will be overwrite or not?
+	\end{framedremark}
+	The solution for this is to use a Load store queue:
+\end{parag}
+\begin{parag}{Load-Store Queue}
+	In practice, the \important{memory part of the ROB} is implemented separately and is called a \important{Load-Store Queue} (in turn, usually implemented as a Load and a Store queues)
+    \begin{center}
+    \includegraphics[scale=0.2]{screenshots/2025-12-10_6.png}
+    \end{center}
+\end{parag}
+
+
+
+\begin{parag}{Second Step: Dynamic Scheduling}
+    So here this is where we are at:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-10_7.png}
+	\end{center}
+	We gain to ability to reorder instructions \textrightarrow \important{unlocks a tangible amout of ILP}
+	\begin{subparag}{Is it easy to implement?}
+	    The question the professor asked is:
+		\begin{center}
+		    Is it easy to implement (in verilog for example)
+		\end{center}
+		Let's take for instance the Reservation Stations, How do we size the table:
+		\begin{itemize}
+			\item If we take a smaller size, it block \textrightarrow we are dead
+			\item The second level of problem is: what is the best number?\\
+				Taking 32 or 16 maybe doesn't change the result but which one is the best for us?
+		\end{itemize}
+		The way of doing this is experiment right? we can try to simulate our processor to see which size is the best!\\
+		But at the end the reservation stations maybe just be a piece of memory right? But The sad thing here is: we have to search everytime we received a new element then we have to check every element if they care or not.
+		Also, we have \important{all the data buses} such as the F and D unit, the EUs and RF which gives information to our reservation stations. all of those big buses has to be 'concentrated' into a couple of flipflop. We have the same issue for the reorder buffer, we have also to search in our big buffer
+	\end{subparag}
+\end{parag}
+\paragraph{Summary: ILP So Far}%
+\label{par:Summary: ILP So Far}
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-10_8.png}
+\end{center}
+How we have seen the reorder buffer and the reservation stations, with the tag that is stored inside the buffer is a pretty naive way of seeing it. Yes it works, but is it practical? Not really
 
 
 

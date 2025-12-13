@@ -242,19 +242,48 @@
 \contentsline {section}{\numberline {4.4}Dynamic Scheduling}{115}{section.4.4}%
 \contentsline {paragraph}{Starting point}{115}{section*.213}%
 \contentsline {paragraph}{Simple Pipelining}{115}{section*.214}%
-\contentsline {paragraph}{Dynamic Scheduling: The Idea}{115}{paragraph*.215}%
-\contentsline {paragraph}{Break the Rigidity of the Basic Pipelining}{116}{section*.216}%
-\contentsline {paragraph}{Solution}{116}{section*.217}%
-\contentsline {paragraph}{Dynamically Scheduled Processor}{116}{section*.218}%
-\contentsline {subsubsection}{Problems to solve}{117}{subsubsection*.219}%
-\contentsline {paragraph}{Structural Hazards}{117}{section*.220}%
-\contentsline {paragraph}{RAW Data Hazards}{117}{section*.221}%
-\contentsline {paragraph}{WAR and WAW Data Hazards}{117}{section*.222}%
-\contentsline {paragraph}{Raw Data Hazards}{117}{section*.223}%
-\contentsline {paragraph}{Reservation Station}{117}{section*.224}%
-\contentsline {paragraph}{What is a Reservation Station?}{118}{section*.225}%
-\contentsline {paragraph}{WAW and WAR}{119}{section*.226}%
+\contentsline {paragraph}{Rigid Sequencing}{115}{section*.215}%
+\contentsline {paragraph}{Dynamic Scheduling: The Idea}{116}{paragraph*.216}%
+\contentsline {paragraph}{Break the Rigidity of the Basic Pipelining}{116}{section*.217}%
+\contentsline {paragraph}{Solution}{116}{section*.218}%
+\contentsline {paragraph}{Dynamically Scheduled Processor}{116}{section*.219}%
+\contentsline {subsubsection}{Problems to solve}{117}{subsubsection*.220}%
+\contentsline {paragraph}{Structural Hazards}{117}{section*.221}%
+\contentsline {paragraph}{RAW Data Hazards}{117}{section*.222}%
+\contentsline {paragraph}{WAR and WAW Data Hazards}{117}{section*.223}%
+\contentsline {paragraph}{Raw Data Hazards}{117}{section*.224}%
+\contentsline {paragraph}{Reservation Station}{117}{section*.225}%
+\contentsline {paragraph}{What is a Reservation Station?}{118}{section*.226}%
+\contentsline {paragraph}{WAW and WAR}{119}{section*.227}%
 \contentsline {subsection}{\numberline {4.4.1}Dynamically Scheduled Processor}{120}{subsection.4.4.1}%
-\contentsline {paragraph}{Our-of-order Commitment and Exceptions}{120}{section*.227}%
-\contentsline {paragraph}{Problems with exceptions}{120}{section*.228}%
-\contentsline {paragraph}{Solution}{121}{section*.229}%
+\contentsline {paragraph}{Our-of-order Commitment and Exceptions}{120}{section*.228}%
+\contentsline {paragraph}{Problems with exceptions}{120}{section*.229}%
+\contentsline {paragraph}{Reorder Buffer}{121}{section*.230}%
+\contentsline {paragraph}{Example}{121}{section*.231}%
+\contentsline {paragraph}{Reordering and Precise Exceptions}{122}{section*.232}%
+\contentsline {paragraph}{Example}{122}{section*.233}%
+\contentsline {paragraph}{Problem we need to solve?}{123}{section*.234}%
+\contentsline {paragraph}{Reservation stations}{123}{section*.235}%
+\contentsline {paragraph}{Decoding and Dependence}{123}{section*.236}%
+\contentsline {paragraph}{Dependences through memory}{123}{section*.237}%
+\contentsline {paragraph}{Load-Store Queue}{124}{section*.238}%
+\contentsline {paragraph}{Second Step: Dynamic Scheduling}{124}{section*.239}%
+\contentsline {paragraph}{Summary: ILP So Far}{125}{paragraph*.240}%
+\contentsline {section}{\numberline {4.5}Scheduling Examples}{125}{section.4.5}%
+\contentsline {paragraph}{Goal}{125}{section*.241}%
+\contentsline {subsection}{\numberline {4.5.1}Architecture 1}{125}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Architecture 2}{126}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Architecture 3}{126}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Architecture 4}{127}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Architecture 5}{128}{subsection.4.5.5}%
+\contentsline {paragraph}{'to do list' for simulating Dynamically Scheduled Processor}{129}{paragraph*.242}%
+\contentsline {paragraph}{Solution}{130}{section*.243}%
+\contentsline {section}{\numberline {4.6}Besides and Beyond Superscalars}{131}{section.4.6}%
+\contentsline {paragraph}{Content of this lecture}{131}{section*.244}%
+\contentsline {paragraph}{To this day}{131}{section*.245}%
+\contentsline {paragraph}{Superscalar Execution}{131}{section*.246}%
+\contentsline {paragraph}{Superscalar Execution}{132}{section*.247}%
+\contentsline {subsubsection}{Intel Processor and Petch}{133}{subsubsection*.248}%
+\contentsline {subsection}{\numberline {4.6.1}Dynamic Branch Prediction}{133}{subsection.4.6.1}%
+\contentsline {paragraph}{One- vs. Two-Bit Prediction Schemes}{133}{section*.249}%
+\contentsline {paragraph}{Speculative Execution}{134}{section*.250}%

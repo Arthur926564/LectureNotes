@@ -1,0 +1,182 @@
+\section{Besides and Beyond Superscalars}
+So far we used to way to optimize our processor: pipelined and dynamic scheduling, for this lecture we will see if we can go a completely different way of what we have done for us:
+
+\begin{parag}{Content of this lecture}
+    \begin{itemize}
+		\item Superscalar processors
+		\item Speculative execution
+		\item Simultaneous multithreading
+		\item Nonblocking caches
+		\item Very long instruction word (VLIW) processors
+    \end{itemize}
+\end{parag}
+\begin{parag}{To this day}
+    So for us our processor look like this:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-13_3.png}
+	\end{center}
+	We have two big \important{seperate parts} in our  circuit:\\
+	\begin{itemize}
+		\item The ordered part: between the commit unit and the registerfile, instruction Fetch and decode unit
+		\item The unordered part: the reservation stations and all the unit
+	\end{itemize}
+	The limits we have is for instance imagine we have 3 alu instruction that are ready, then we have to execute them sequentially which 'slow down'  our processor. The second limitation is that maybe we don't have enough instruction in our reservation station.
+\end{parag}
+\begin{parag}{Superscalar Execution}
+    The solution for this for instance is to add a new ALU execution unit:
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-12-13.png}
+	\end{center}
+	And this is pretty easy to do, instead of looking for one instruction per cycle (as the ALU execution unit), we can look for two instructions per cycle. But this may be not that great right? maybe because of a lot of depencies etc. we don't really gain any time with this principle.\\
+	A solution to did is instead of fetching one instruction at a time (in the Fetch and Decode unit), we can fetch two? Therefore committing two instructions per cycles (maximum). Is it easy to build? if we just copy paste the Decode unit, then we can decode two unit per cycle right?\\
+	\begin{framedremark}
+	What about depencies? What if the second instruction actually depends on the first ones, then searching in the commit unit is not sufficient anymore. We will also need to take a look at the other decode unit to check any depencies.
+	\begin{itemize}
+		\item \important{Fetch more instruction per cycle} no big dufficulty if the instruction cache can sustain the bandwith
+		\item \important{Commit more instruction per cycle}: The ROB and the register file must have enough ports
+		\item Obey data and control depencies: dynamic scheduling already takes care of this
+	\end{itemize}
+	\end{framedremark}
+	\begin{framedremark}
+	\begin{center}
+	    \important{Data and control hazards} are the \important{ultimate limit} to \important{parallelism}
+	\end{center}
+	
+	\end{framedremark}
+\end{parag}
+\begin{parag}{Superscalar Execution}
+	If we take an execution of a code this would be the graph:
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-12-13_1.png}
+	\end{center}
+	\begin{subparag}{Which one was first}
+	    Superscalar was not really created after dynamic scheduling. In fact in the 90s we were already doing superscalar processor before adding dynamic scheduling.\\
+		For instance we had two different pipelines: one for integer and one for floating point. For each fetching, we take two instructions; we hope that one of them is an integer and the other is a floating point, if it is: \important{jackpot} we  put them simultaneously in the pipelines \textrightarrow we gained one cycle. If they are both of the same types then we just forget about the second one and do as we used to do in a classical pipeline!
+	\end{subparag}
+\end{parag}
+
+\subsubsection{Intel Processor and Petch}%
+In the late 70s instruction were not fixed size. This means that some instructions were one byte long, other were 50 bytes long. But why did they do that? At that time memory was a big limitation, imagine if you had 1000 bytes of storage for your program, then you need to compress you code as much as possible \textrightarrow making the most common instruction the smallest and the least common instructions the biggest. This is a very good idea... at \important{that} time. But now memory is not a big issue anymore.\\
+\begin{framedremark}
+How does it works: The way of decoding instruction is kind of like a stack: while the instruction is not done \textrightarrow we add the next byte to the instruction. (adding the next byte wasn't an issue because the memory was byte addressable at that time)
+\end{framedremark}
+Imagine being with instruction that have not a fixed size and that we want to make some decoding in parallel... we are cooked! There is no way for us to know when our instruction stop before actually decoding it.
+
+
+\subsection{Dynamic Branch Prediction}
+All the thing we have said before is nice if and \important{only} if we know where the next instruction is before executing the current now. But this is not always true... 
+\begin{itemize}
+	\item The \important{biggest problem} left to continue extracting instruction level parallelism are:
+		\begin{itemize}
+			\item \important{True data depencies}: instruction \important{cannot} be executed! Not much we can do about...
+			\item \important{Branches}: where to look for other candidate instructions?
+		\end{itemize}
+	\item \important{Static} prediction not very accurate and somehow hard to use 
+		\begin{itemize}
+			\item Never-taken, Always-taken-backward, Compiler-Specified
+			\item How does one know which one is right?
+		\end{itemize}
+	\item \important{Dynamic} prediction: learn from history
+		\begin{itemize}
+			\item Count how ofter a branch was taken in the past
+		\end{itemize}
+\end{itemize}
+
+People tried to predict the branch output, if we know that the branch is usually taken or not, then we can have a better prediction than usual, but how us as the compiler would even know about that?
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-13_2.png}
+\end{center}
+So the prediction's job is given directly to the processor. To do so, it will hash the address of the branch instruction with the taken or not taken information (maybe they will be some overwritting in the table, we don't really care because this is just a prediction at the end so being wrong is not a big deal).\\
+This is kind of easy to do right? we just have to create a big table where we store each branch that we cam through. In fact people do usually something a big more complicated, we use a finite state machine:
+\begin{parag}{One- vs. Two-Bit Prediction Schemes}
+    The simplest one is a one-bit predictor which is basically a 'do the same as last time':
+	
+\end{parag}
+\begin{center}
+    
+
+\begin{tikzpicture}[
+    stage/.style={
+        circle, draw, fill=gray!10,
+        minimum size=2cm, align=center
+    },
+    arrow/.style={
+        -{Stealth}, thick
+    },
+    note/.style={
+        rectangle, rounded corners,
+        draw=red!70!black, fill=yellow!20,
+        very thick, inner sep=10pt, align=left
+    }
+]
+
+% Nodes (pipeline stages)
+\node[stage] (taken) {Taken};
+\node[stage, right=1.6cm of taken] (notTaken) {Not Taken};
+
+\draw[arrow] (notTaken) edge[bend left] node[below] {Taken} (taken) ;
+\draw[arrow] (taken) edge[bend left] node[above] {Not taken} (notTaken) ;
+\draw (taken) edge[loop left] node {Taken} (taken);
+\draw (notTaken) edge[loop right] node {Not taken} (notTaken);
+\end{tikzpicture}
+\end{center}
+A two bit predictor (saturating counter): adding some 'inertia' or 'take some time to change you mind'
+
+\begin{center}
+    
+
+\begin{tikzpicture}[
+    stage/.style={
+        circle, draw, fill=gray!10,
+        minimum size=2cm, align=center
+    },
+    arrow/.style={
+        -{Stealth}, thick
+    },
+    note/.style={
+        rectangle, rounded corners,
+        draw=red!70!black, fill=yellow!20,
+        very thick, inner sep=10pt, align=left
+    }
+]
+
+% Nodes (pipeline stages)
+\node[stage] (taken) {Taken};
+\node[stage, right=1.6cm of taken] (taken2) {Taken};
+\node[stage, right=1.6cm of taken2] (notTaken) {Not Taken};
+\node[stage, right=1.6cm of notTaken] (notTaken2) {Not Taken};
+
+\draw[arrow] (notTaken) edge[bend left] node[below] {Taken} (taken2) ;
+\draw[arrow] (taken2) edge[bend left] node[below] {Taken} (taken) ;
+\draw[arrow] (notTaken2) edge[bend left] node[below] {Taken} (notTaken) ;
+\draw[arrow] (taken) edge[bend left] node[above] {Not taken} (taken2) ;
+\draw[arrow] (taken2) edge[bend left] node[above] {Not taken} (notTaken) ;
+\draw[arrow] (notTaken) edge[bend left] node[above] {Not taken} (notTaken2) ;
+\draw (taken) edge[loop left] node {Taken} (taken);
+\draw (notTaken2) edge[loop right] node {Not taken} (notTaken2);
+\end{tikzpicture}
+\end{center}
+
+So now we can use this guess to try to fetch and decode the right instructions. The question we have is: Can we go further with this, can we actually execute the instructions:
+\begin{parag}{Speculative Execution}
+    \begin{itemize}
+		\item We have been using \important{Dynamic Branch Prediction} only to tentatively \important{Fetch} and \important{Decode} instruction \textrightarrow no effect on registers and memory, so \important{easy to squash}
+		\item More aggressively, one could \important{Execute} instructions (and use their results) before the branch targert is known: \important{Speculative Execution}
+		\item We need to \important{prevent changes to the architectural state} of the processor until the correctness of the prediction is known:
+			\begin{itemize}
+				\item Was it right? Good!
+				\item Was it wrong? \important{Squash it}
+			\end{itemize}
+    \end{itemize}
+	So here after executing the instruction instead of waiting for a value as we did before, we are actually waiting for our branch result to know wether or not we are cottect. This means, the value of our instruction is unknown \important{and} that we are waiting for the branch tag to come up ((BR3 for instance))
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2025-12-13_4.png}
+	\end{center}
+	If we were wrong in our prediction then we do the \important{exact same thing} as exception. So here we must wait until the \textbf{BR3} is known. If we were correct then we can commit the value \texttt{0x10000 0008} instruction \important{and} all the next instruction are already computed for us!\\
+	But what happens if we are wrong then, we need to \important{squash} all the next commit:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-13_5.png}
+	\end{center}
+	A mispredicted branch triggers a squash. As we say in french 'ni vu ni connu' (\textit{Prof. Ienne})
+\end{parag}
+

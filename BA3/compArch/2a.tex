@@ -19,13 +19,10 @@ However the red part (les pointilles rouges) here is in fact a \important{big fi
 \draw (execute) edge[loop above] node {PC $\leftarrow$ PC + 4} (exectute);
 \draw (halt) edge[loop above] node {not} (halt.west);
 
-\draw[->] (execute) edge[bend left] node {\tt break} (halt);
+\draw[->] (execute) edge[bend left] node[above] {\tt break} (halt);
 
 \end{tikzpicture}
 \end{center}
-\begin{subparag}{Remark}
-    If someone knows how to makes the break here above or below the line I will be curious how.
-\end{subparag}
 There is only two state which means that every instruction is done at a seperate time (single cycle). This directly implies that the longest \important{combinational path} determines the operating frequency: \important{critical path}.\\
 If we wanted to increase frequency then the critical path would be halved into another cycle.
 \end{parag}
@@ -51,8 +48,8 @@ If we wanted to increase frequency then the critical path would be halved into a
 % \draw (complete) edge[bend right] node {} (execute);
 %
 % Break arrow to halt
-\draw[->] (execute) edge[bend left] node {\tt break} (halt)
-	(execute) edge[bend left] node {not break} (complete)
+\draw[->] (execute) edge[bend left] node[above] {\tt break} (halt)
+	(execute) edge[bend left] node[right] {not break} (complete)
 	 (complete) edge[bend left] (execute);
  \draw[->] (halt) edge[loop below] (halt);
 \end{tikzpicture}

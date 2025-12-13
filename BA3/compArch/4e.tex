@@ -1,0 +1,245 @@
+\section{Scheduling Examples}
+The is the program that we will want to run:
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+lw x1, 0(x5)
+addi x5, x1, 1
+lw x1, 0(x6)
+add x3, x8, x5
+subi x2, x6, 1
+subi x4, x3, 5
+add x3, x2, x4
+lw x2, 0(x7)
+or x4, x2, x1
+subi x7, x3, 9
+\end{lstlisting}
+\begin{parag}{Goal}
+    The goal for us with this section will be:
+	\begin{itemize}
+		\item Determine the \important{execution schedule} for this code in five different architectures
+		\item \important{Compare the number of cycles} required by the five architectures
+		\item \important{Compute the CPI} (and IPC) of all architectures on this program
+	\end{itemize}
+\end{parag}
+\subsection{Architecture 1}
+For this first architecture, we will use a \important{multicycles} processor without any pipelining. The execution latencies are the following:
+\begin{itemize}
+	\item ALU operations \textrightarrow 4 cycles
+	\item Memory operations \textrightarrow 6 cycles
+\end{itemize}
+So for us here this is very simple to count the number of instructions so here there are three load and 7 ALU operations:
+\begin{align*} 3 \cdot 6 + 7 \cdot 4 = 46 \end{align*}
+What we also want to compute here is the average cycles per instructions:
+\begin{align*} \frac{46}{10} = 4.6 \end{align*}
+
+\subsection{Architecture 2}
+Here we will have a \important{6-stage pipelined} processor without any forwarding paths
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12.png}
+\end{center}
+So here we have two cycles more that every \important{non load/store instructions} has to go through. It can be even worse if we have dependency.\\ 
+The way of doing it is step be steps: first the first instruction \textrightarrow it doesn't depend on anything so we can just put without any dependency. Then we check the second instruction if it has any dependency \textrightarrow it has one: the \texttt{x1} this means that we will need to wait until the writeback for the next instruction is done. we will need to stall our processor four times. Because this is a rigid pipeline, everything in our processor is stalling so we need to fetch again and again our value (even if it is correct) until our CPU is again free. So for the second instructions, we have fetched 5 times the correct value.\\
+At the end here if we continue until the end of the program we get the following:
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_1.png}
+\end{center}
+We needed \important{33} cycles \textrightarrow
+\begin{align*} \text{CPI} =  \frac{33}{10} = 3.3 \end{align*}
+
+\subsection{Architecture 3}
+Now we still have a \important{6-stage pipelined} with \important{some forwarding paths}
+\begin{itemize}
+	\item E \textrightarrow E, M2 \textrightarrow E
+	\item W \textrightarrow D
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_2.png}
+\end{center}
+Let us take the first instruction \texttt{lw x1, 0(x5)}. The result of this instruction will be available after M2 right? which means that as soon as M2 has finished his job \textrightarrow we have that the result is direclty transfered into the Execution stage (M2 \textrightarrow E). In comparaison of what we did before; we gain \important{one whole} cycle.
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_3.png}
+\end{center}
+If we count the number of cycles needed we get $21$:
+
+\begin{align*} \text{CPI} =  \frac{21}{10} = 2.1 \end{align*}
+
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+1: lw x1, 0(x5)
+2: addi x5, x1, 1
+3: lw x1, 0(x6)
+4: add x3, x8, x5
+5: subi x2, x6, 1
+6: subi x4, x3, 5
+7: add x3, x2, x4
+8: lw x2, 0(x7)
+9: or x4, x2, x1
+10: subi x7, x3, 9
+\end{lstlisting}
+
+\subsection{Architecture 4}
+We still have a pipelined processor (the last one), but here we have \important{all the forwarding paths}.
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_4.png}
+\end{center}
+Here the first instruction doesn't change from what we did with the third processor.
+The fourth and the second instruction has a dependency, but this times instead of having to stall the processors we can actually retrieves our value from M1 which makes us gain one cycle. If we following the same principle for all the execution we get:
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_6.png}
+\end{center}
+If we count the number of cycle needed we get 19 which is very good:
+\begin{align*} \text{CPI} =  1.9 \end{align*}
+
+\subsection{Architecture 5}
+Now we have a \important{Dynamically scheduled}, out-of-order (OOO), unlimited RS and ROB size
+\begin{itemize}
+	\item 1 ALU (latency 1) + 1 Memory Unit (latency 3)
+\end{itemize}
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_7.png}
+\end{center}
+So we also need a Reservation Station, one for each execution Unit, in our context, we have two executions unit
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_8.png}
+\end{center}
+We also need a reordering Buffer (ROB)
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-12_9.png}
+\end{center}
+
+\paragraph{'to do list' for simulating Dynamically Scheduled Processor}%
+\label{par:'to do list' for simulating Dynamically Scheduled Processor}
+\begin{itemize}
+	\item At the beginning of each cycle
+		\begin{itemize}
+			\item \textbf{E phase} -- Issue ready instructions:
+				\begin{itemize}
+					\item From all RSs, issue as many ready instructions as there are FUs available
+				\end{itemize}
+			\item \textbf{W phase} -- Writeback results in order:
+				\begin{itemize}
+					\item Remove top entry from ROB if completed (\textbf{ONLY THE TOP})
+				\end{itemize}
+		\end{itemize}
+		\item At the end of each cycle
+			\begin{itemize}
+			\item \textbf{D phase} -- Load result of decoding state:
+				\begin{itemize}
+					\item To the relevant RS, including ready register values
+					\item To the ROB, to prepare the placeholder for the result 
+				\end{itemize}
+			\item \textbf{E phase} -- Broadcast results from all FUs:
+				\begin{itemize}
+					\item To all RSs (incl.deallocation of the entry)
+					\item To all the ROB
+				\end{itemize}
+			\end{itemize}
+\end{itemize}
+\begin{framedremark}
+The explanation on how to run this is 14:00 in \textit{CS-200 -- 4e. Instruction Level Parallelism (cont'd)} from the 4th December
+\end{framedremark}
+So here we have the first two cycles which are the same as the usual pipelined processor, the. We have decoded the first instruction which is a load words with the arguments 0 and 555. So we then put the instruction into the reservation table for the memory unit at for instance \textbf{MEM2}.
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+	& & Op & Tag1 & Tag2 & Arg1 & Arg2 \\
+	\hline 
+	\textbf{MEM1} & & & & & &  \\
+	\hline
+	\textbf{MEM2} &e & lw & -  & - & 0  & 555 \\
+	\hline
+	\textbf{MEM3} & &  &  & &  & \\
+	\hline
+\end{tabular}
+\end{center}
+\begin{framedremark}
+The order or where we put it in the reservation table doesn't matter
+\end{framedremark}
+The decodin also need to keep track of the fact that this instruction exists \textrightarrow is also put the information in the reorder buffer. We put the instruction at the top of the ROB with the following informations:
+\begin{itemize}
+	\item PC = 1
+	\item EX = 0
+	\item At the current time, the tag we are using for this instructions \important{must be unique} here MEM2 \important{has to be unique}
+	\item so the register is \texttt{x1}
+	\item The address is nothing because we don't have to write to the address
+	\item We don't know the value at the current value
+\end{itemize}
+We do now to the next cycle: we check if there is any tag in our MEM2 station, there is none (obviously because this is the first instruction) therefore we can enter into the memory unit. Has we have said before it has a latency of three which means that this instruction is gone for three cycles (there is no going back).
+
+Should we erase this instruction from the reservation table? I mean we don't use it now so why should we keep it?
+
+But if we let someone take our parking spot, then MEM2 becomes the new instruction right? 
+
+But we are not done with the previous MEM2, so we would have a mismatch of MEM2.\\
+
+We need to add a bit of 'state' to know what is up with our tag. the bit would be 1 if we are currenlty executing the instruction else 0.
+
+At the same time the second instruction also is decoded at the second cycle. so this is an immediate instruction \textrightarrow we only need to check one register \texttt{x1}. We check the ROB if we see that there is \texttt{x1} then we know that it is not ready. As we can see there is \texttt{x1} \textrightarrow we check tat tag MEM2 and we store this tag in our reservation station of the ALU unit. we have for instance
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+	& & Op & Tag1 & Tag2 & Arg1 & Arg2 \\
+	\hline 
+	\textbf{ALU1} & & & & & &  \\
+	\hline
+	\textbf{ALU2} & & & & & &  \\
+	\hline
+	\textbf{ALU3} & & add & MEM2 & - &  - & 1 \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2025-12-12_10.png}
+\end{center}
+\begin{parag}{Solution}
+    This is the ALU rs
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+	& & Op & Tag1 & Tag2 & Arg1 & Arg2 \\
+	\hline 
+	\textbf{ALU1} & & & & & &  \\
+	\hline
+	\textbf{ALU2} &w  &add & -  & -  & 257 & 93 \\
+	\hline
+	\textbf{ALU3} & & sub & - & - &  456 & 1 \\
+	\hline
+\end{tabular}
+\end{center}
+And this is the MEM rs
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|}
+	& & Op & Tag1 & Tag2 & Arg1 & Arg2 \\
+	\hline 
+	\textbf{MEM1} & & & & & &  \\
+	\hline
+	\textbf{MEM2} & e & lw & -  & -  & 456 & 0 \\
+	\hline
+	\textbf{MEM3} & &  &  &  &  &  \\
+	\hline
+\end{tabular}
+\end{center}
+This is the ROB
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+	 Excpt. & PC & Tag & Register & Address & Value \\
+	\hline 
+	0 & & & & &  \\
+	\hline
+	0 & 2 & - & x5  & -  & 93 \\
+	\hline
+	0 & 3 & MEM2  & x1 &  -  & ??? \\
+	\hline
+	0 & 4 &ALU2  &  x3  &  - &  ???\\
+	\hline
+	0 & 5 & ALU3 &  x2  & - & ??? \\
+	\hline
+\end{tabular}
+\end{center}
+
+\end{parag}
+
+
+
+
+
+
+
