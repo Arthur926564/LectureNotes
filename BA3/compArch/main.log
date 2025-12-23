@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.12.1)  23 DEC 2025 18:46
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.12.1)  23 DEC 2025 19:03
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1782,13 +1782,13 @@ LaTeX Font Info:    ... okay on input line 140.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
 LaTeX Font Info:    ... okay on input line 140.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-Overfull \hbox (671.47586pt too wide) in paragraph at lines 124--13
+Overfull \hbox (673.69586pt too wide) in paragraph at lines 124--13
 []\TU/lmr/m/n/10 tricky2.453Pro-ces-sor tasks on Ex-cep-tion-s-sec-tion*.69    
                                                                                
                                                                                
                                                                                
                                                                                
-                                                                            
+                                                                             
  []
 
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -8610,6 +8610,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--239
 Plen-tium). we need now
  []
 
+<screenshots/2025-12-16_5.png, id=2199, 905.3825pt x 812.03375pt>
+File: screenshots/2025-12-16_5.png Graphic file (type png)
+<use screenshots/2025-12-16_5.png>
+Package luatex.def Info: screenshots/2025-12-16_5.png  used on input line 301.
+(luatex.def)             Requested size: 226.34506pt x 203.00793pt.
 
 
 [157<./screenshots/2025-12-16_3.png>]
@@ -8618,21 +8623,19 @@ Plen-tium). we need now
 <screenshots/2025-12-16_6.png, id=2209, 1152.305pt x 835.12pt>
 File: screenshots/2025-12-16_6.png Graphic file (type png)
 <use screenshots/2025-12-16_6.png>
-Package luatex.def Info: screenshots/2025-12-16_6.png  used on input line 353.
+Package luatex.def Info: screenshots/2025-12-16_6.png  used on input line 357.
 (luatex.def)             Requested size: 288.07555pt x 208.77948pt.
-Package mdframed Info: mdframed works in twoside mode on input line 355.
+Package mdframed Info: mdframed works in twoside mode on input line 359.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 355.
+(mdframed)              on input line 359.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 357.
-)
+ mdframed uses option nobreak mdframed on input line 361.
 
-[159<./screenshots/2025-12-16_6.png>]
 
-[160
+[159<./screenshots/2025-12-16_5.png>])
 
-]
+[160<./screenshots/2025-12-16_6.png>]
 Chapter 5.
 (./5a.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
@@ -8652,306 +8655,253 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  MMX (1996),
  []
 
-Runaway argument?
-{itemi Us we are intrested in \important {MIMD}. In practice what we \ETC.
-! Paragraph ended before \end  was complete.
-<to be read again> 
-                   \par 
-l.13 	
-      
-? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 [][]\TU/lmr/bx/n/10 MIMD[]\TU/lmr/m/n/10 : Gen-eral form of par-al-lelism with 
 each pro-ces-sor ex-e-cut-ing its own
  []
 
 
-! LaTeX Error: \begin{tcb@savebox} on input line 5 ended by \end{paragbox}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 \end{parag}
-                
-? 
-
-Overfull \hbox (51.21503pt too wide) in paragraph at lines 14--14
-[][]  
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+\TU/lmr/m/n/10 Us we are in-trested in []\TU/lmr/bx/n/10 MIMD[]\TU/lmr/m/n/10 . In prac-tice what we want is to have is mul-ti-ple cpus
  []
 
 
-! LaTeX Error: \begin{paragbox} on input line 5 ended by \end{parag}.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 \end{parag}
-                
-? 
-<screenshots/2025-12-16_7.png, id=2222, 1512.65125pt x 635.37375pt>
+[161
+
+]
+<screenshots/2025-12-16_7.png, id=2228, 1512.65125pt x 635.37375pt>
 File: screenshots/2025-12-16_7.png Graphic file (type png)
 <use screenshots/2025-12-16_7.png>
 Package luatex.def Info: screenshots/2025-12-16_7.png  used on input line 20.
 (luatex.def)             Requested size: 378.16188pt x 158.84305pt.
-<screenshots/2025-12-16_5.png, id=2223, 905.3825pt x 812.03375pt>
-File: screenshots/2025-12-16_5.png Graphic file (type png)
-<use screenshots/2025-12-16_5.png>
-Package luatex.def Info: screenshots/2025-12-16_5.png  used on input line 21.
-(luatex.def)             Requested size: 226.34506pt x 203.00793pt.
 
-
-[161
-warning  (pdf backend): pop empty color page stack 0
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 []\TU/lmr/m/n/10 The other way of do-ing it is to take all of our cpus and con-s
 truct lit-tle sys-tem around
  []
 
-<screenshots/2025-12-18.png, id=2230, 1279.78125pt x 558.085pt>
+<screenshots/2025-12-18.png, id=2229, 1279.78125pt x 558.085pt>
 File: screenshots/2025-12-18.png Graphic file (type png)
 <use screenshots/2025-12-18.png>
-Package luatex.def Info: screenshots/2025-12-18.png  used on input line 27.
+Package luatex.def Info: screenshots/2025-12-18.png  used on input line 26.
 (luatex.def)             Requested size: 319.94453pt x 139.5209pt.
-Package mdframed Info: mdframed works in twoside mode on input line 30.
+Package mdframed Info: mdframed works in twoside mode on input line 29.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 30.
+(mdframed)              on input line 29.
 
-Overfull \hbox (12.65283pt too wide) in paragraph at lines 32--33
-\TU/lmr/m/n/10 have to be phys-i-cal-lly con-nected. For in-stance []https://se-
-tiath-ome.berke-ley.edu/[] was a fa-mous dis-
- []
-
-
-Overfull \hbox (0.90744pt too wide) in paragraph at lines 32--33
-\TU/lmr/m/n/10 tributed com-put-ing project where peo-ple vol-un-teered their co
-m-puter’s idle pro-cess-ing power to
- []
-
-
-Overfull \hbox (8.84924pt too wide) in paragraph at lines 32--33
-\TU/lmr/m/n/10 help anal-yse ra-dio sig-nals from space in the search of ex-trat
-er-res-trial in-tel-li-gence. In-stead of hav-
- []
-
-
-Overfull \hbox (19.92403pt too wide) in paragraph at lines 32--33
-\TU/lmr/m/n/10 ing like a very high tech op-tic fiber In-ter-con-nec-tion Net-wo
-rk, all the com-puter were con-nected with
- []
-
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 33.
-
-
-[162<./screenshots/2025-12-16_7.png><./screenshots/2025-12-16_5.png><./screensho
-ts/2025-12-18.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 []\TU/lmr/m/n/10 Can be im-ple-mented as []\TU/lmr/bx/n/10 Dis-tributed Shared 
 Mem-ory[] \TU/lmr/m/n/10 ([]\TU/lmr/bx/n/10 DSM[]\TU/lmr/m/n/10 ) on sys-tems
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 \TU/lmr/m/n/10 with phys-i-cal-lly dis-tributed mem-ory, lever-ag-ing vir-tual 
 mem-ory ab-strac-tion (e.g.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 []\TU/lmr/bx/n/10 Tread-Marks[] \TU/lmr/m/n/10 for DSM; []\TU/lmr/bx/n/10 Apache
  Spark[] \TU/lmr/m/n/10 (scala!!) for a DSM-like ab-strac-tion in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 []\TU/lmr/m/n/10 Data ex-changed []\TU/lmr/bx/n/10 ex-plic-itly[] \TU/lmr/m/n/1
 0 by send-ing and re-ceiv-ing mes-sages over a net-work or
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 []\TU/lmr/m/n/10 Can also be im-ple-mented on shared-memory sys-tems (e.g., []\
 TU/lmr/bx/n/10 NUMA[]\TU/lmr/m/n/10 ), though
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 \TU/lmr/m/n/10 it may in-tro-duce un-nec-es-sary over-head com-pared to na-tive shared-memory
  []
 
 
+
+[162<./screenshots/2025-12-16_7.png><./screenshots/2025-12-18.png>]
+
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 53.
+(hyperref)                than one, level fixed on input line 52.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
 \TU/lmr/m/n/10 mem-ory is phys-i-cally dis-tributed across pro-ces-sors. Each ca
 che is con-nected to an
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
 \TU/lmr/m/n/10 in-ter-con-nec-tion net-work, of-ten through a ded-i-cated con-tr
 oller (as the yel-low node
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 []\TU/lmr/m/n/10 Mod-ern sys-tems have large ad-dress spaces (e.g., 64-bit), al-
 low-ing some bits of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 []\TU/lmr/m/n/10 If the ad-dress cor-re-sponds to []\TU/lmr/bx/n/10 lo-cal mem-o
 ry[]\TU/lmr/m/n/10 , the cache fetches the data nor-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 \TU/lmr/m/n/10 small re-quest packet and sends it over the in-ter-con-nec-tion 
 net-work to the own-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--90
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
 []\TU/lmr/m/n/10 Be-cause cache re-fills are on the crit-i-cal ex-e-cu-tion path
 , the in-ter-con-nec-tion net-work
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--90
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
 \TU/lmr/m/n/10 must be []\TU/lmr/bx/n/10 very fast[]\TU/lmr/m/n/10 . Al-though 
 re-mote ac-cesses are al-ready costly (e.g., hun-dreds of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 90--93
 []\TU/lmr/m/n/10 This ap-proach ef-fec-tively im-ple-ments a []\TU/lmr/bx/n/10 
 hard-ware Dis-tributed Shared Mem-ory
  []
 
 
-
-[163]
-Underfull \hbox (badness 10000) in paragraph at lines 104--107
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 \TU/lmr/m/n/10 two in-de-pen-dent PCs con-nected by a net-work: each has its own
  mem-ory, op-er-at-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--111
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 []\TU/lmr/m/n/10 At first glance, shar-ing mem-ory seems im-pos-si-ble. How-ever
 , mod-ern sys-tems al-ready
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 []\TU/lmr/m/n/10 In a soft-ware DSM sys-tem, the miss-ing page may in-stead re-s
 ide in the mem-ory of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 []\TU/lmr/m/n/10 From the pro-gram’s per-spec-tive, the mem-ory still ap-pears
  shared. The OS trans-par-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--132
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 []\TU/lmr/m/n/10 When mul-ti-ple pro-ces-sors fre-quently ac-cess the same data,
  pages may mi-grate back
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--132
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 \TU/lmr/m/n/10 and forth be-tween ma-chines, ef-fec-tively im-ple-ment-ing com-m
 u-ni-ca-tion through shared
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--136
+Underfull \hbox (badness 10000) in paragraph at lines 132--135
 []\TU/lmr/m/n/10 Al-though slower than hard-ware DSM, soft-ware DSM can out-per-
 form disk ac-cess and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--136
+Underfull \hbox (badness 10000) in paragraph at lines 132--135
 \TU/lmr/m/n/10 pro-vides a pow-er-ful ab-strac-tion by reusing mech-a-nisms al-r
 eady present in vir-tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+[163]
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 [][]\TU/lmr/bx/n/10 Sym-met-ric Mul-ti-pro-ces-sors[] \TU/lmr/m/n/10 (SMPs) wher
 e the foun-da-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 \TU/lmr/m/n/10 of early su-per-com-put-ers but gave way to distributed-memory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 \TU/lmr/m/n/10 message-passing sys-tems as scal-ing is-sues $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 made SMPs less
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 [][]\TU/lmr/bx/n/10 Chip Mul-ti-pro-ces-sors (CMPs)[] \TU/lmr/m/n/10 or []\TU/l
 mr/bx/n/10 mul-ti-core[] \TU/lmr/m/n/10 pro-ces-sors
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 \TU/lmr/m/n/10 dom-i-nate as the most wides-paread form of par-al-lel com-put-in
 g,
  []
 
+<screenshots/2025-12-18_1.png, id=2246, 632.3625pt x 924.45375pt>
+File: screenshots/2025-12-18_1.png Graphic file (type png)
+<use screenshots/2025-12-18_1.png>
+Package luatex.def Info: screenshots/2025-12-18_1.png  used on input line 166.
+(luatex.def)             Requested size: 126.47026pt x 184.88747pt.
 
 
 [164]
-<screenshots/2025-12-18_1.png, id=2251, 632.3625pt x 924.45375pt>
-File: screenshots/2025-12-18_1.png Graphic file (type png)
-<use screenshots/2025-12-18_1.png>
-Package luatex.def Info: screenshots/2025-12-18_1.png  used on input line 167.
-(luatex.def)             Requested size: 126.47026pt x 184.88747pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\TU/lmr/m/n/10 the sec-ond pro-ces-sor load a par-tic-u-lar value in mem-ory (a miss) is brough up to the
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+\TU/lmr/m/n/10 the sec-ond pro-ces-sor load a par-tic-u-lar value in mem-ory (a miss) is brought up to the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-\TU/lmr/m/n/10 Now both pro-ces-sors have the value of the ad-dress [] in the ca
-che. Now sup-pose
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+\TU/lmr/m/n/10 Sup-pose now that the pro-ces-sor 1 does the same [], we would ge
+t the value
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+\TU/lmr/m/n/10 Now both pro-ces-sors have the value of the ad-dress [] in their re-spec-tive cache. Sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 [] \TU/lmr/m/n/10 reg-is-ter will have the pre-vi-ous value (the pink) and not 
 the cor-rect one (blue).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
-\TU/lmr/m/n/10 But this is-sue is not re-ally new in mul-ti-pro-ces-sors, if we took an i/o like a but-ton for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
-\TU/lmr/m/n/10 in-stance. We poll the but-ton one time, we store the re-sult in cache. When we want to
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+\TU/lmr/m/n/10 But this is-sue is not re-ally new, if we took an i/o like a but-
+ton for in-stance. We poll
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 256--257
+\TU/lmr/m/n/10 the but-ton one time, we store the re-sult in cache. When we want
+ to re-polling the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 \TU/lmr/m/n/10 We can go even with the DMA, the DMA works kind of the same way 
 as the pro-ces-sor
  []
@@ -8959,55 +8909,36 @@ as the pro-ces-sor
 
 
 [165<./screenshots/2025-12-18_1.png>]
-Package mdframed Info: mdframed works in twoside mode on input line 266.
+Package mdframed Info: mdframed works in twoside mode on input line 267.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 266.
+(mdframed)              on input line 267.
 
-Overfull \hbox (15.96877pt too wide) in paragraph at lines 269--270
-[]\TU/lmr/m/n/10 blue has to be in main mem-ory: p1 ac-cess an-other data in mem
--ory which is in the same line
- []
-
-
-Overfull \hbox (17.21436pt too wide) in paragraph at lines 269--270
-\TU/lmr/m/n/10 as the blue one (in the cache) which make the cache []\TU/lmr/bx
-/n/10 evict[] \TU/lmr/m/n/10 the blue data $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 
-needs to be writ-
- []
-
-
-Overfull \hbox (2.89171pt too wide) in paragraph at lines 270--271
-[]\TU/lmr/m/n/10 It has to []\TU/lmr/bx/n/10 throw away[] \TU/lmr/m/n/10 the pin
-k data on the p2 cache ([]\TU/lmr/bx/n/10 and not write it in main mem-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 [][]\TU/lmr/bx/n/10 Preser-va-tion of pro-gram or-der[]\TU/lmr/m/n/10 . If P wri
 tes in X and then P reads in X, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 \TU/lmr/m/n/10 in the mean-time no other pro-ces-sor has writ-ten X, the value 
 re-turned is the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 [][]\TU/lmr/bx/n/10 Co-her-ent view[] \TU/lmr/m/n/10 if P1 write X and P2 read 
 X, and in the mean-time no other
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 \TU/lmr/m/n/10 pro-ces-sor has writ-ten X, the value re-turned is the value pre-
 vi-ously writ-ten by P1,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 [][]\TU/lmr/bx/n/10 Write Se-ri-al-iza-tion[] \TU/lmr/m/n/10 if P1 writes X and P2 writes X, all pro-ces-sors see the
  []
 
@@ -9016,17 +8947,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
 [166]
 Underfull \hbox (badness 10000) in paragraph at lines 292--293
 []\TU/lmr/m/n/10 The bus is used the se-ri-al-ize op-er-a-tions, mean-ing it en-
-sures that all caches see
+sures that all caches see mem-ory
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 292--293
-\TU/lmr/m/n/10 the bus shouts this ac-tion to all caches, so they can all ’met
--tre leur nez’ and
+\TU/lmr/m/n/10 this ac-tion to all caches, so they can all ’met-tre leur nez
+’ and up-date their copies of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 \TU/lmr/m/n/10 Which one de-pends on state of the line and the pro-to-col. State
 ? does that means that
  []
@@ -9039,7 +8970,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.335 	\node[state]
+l.334 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9050,7 +8981,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.335 	\node[state]
+l.334 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9061,7 +8992,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.336 	\node[state]
+l.335 	\node[state]
                     at (0, 2)(valid){Valid};
 ? 
 
@@ -9072,7 +9003,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.336 	\node[state]
+l.335 	\node[state]
                     at (0, 2)(valid){Valid};
 ? 
 
@@ -9086,7 +9017,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.358 	\node[state]
+l.357 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9097,7 +9028,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.358 	\node[state]
+l.357 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9108,7 +9039,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.359 	\node[state]
+l.358 	\node[state]
                     at (0, 2)(valid){Valid};
 ? 
 
@@ -9119,7 +9050,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.359 	\node[state]
+l.358 	\node[state]
                     at (0, 2)(valid){Valid};
 ? 
 
@@ -9133,7 +9064,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.417 	\node[state]
+l.416 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9144,7 +9075,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.417 	\node[state]
+l.416 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9155,7 +9086,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.418 	\node[state]
+l.417 	\node[state]
                     at (0, 2)(valid){Valid};
 ? 
 
@@ -9166,63 +9097,51 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.418 	\node[state]
+l.417 	\node[state]
                     at (0, 2)(valid){Valid};
 ? 
 <screenshots/2025-12-19.png, id=2277, 2182.1525pt x 997.7275pt>
 File: screenshots/2025-12-19.png Graphic file (type png)
 <use screenshots/2025-12-19.png>
-Package luatex.def Info: screenshots/2025-12-19.png  used on input line 430.
+Package luatex.def Info: screenshots/2025-12-19.png  used on input line 429.
 (luatex.def)             Requested size: 436.42278pt x 199.54196pt.
 
-Overfull \hbox (6.41815pt too wide) in paragraph at lines 430--431
+Overfull \hbox (6.41815pt too wide) in paragraph at lines 429--430
  [] 
- []
-
-
-Overfull \hbox (0.13788pt too wide) in paragraph at lines 436--437
-[]\TU/lmr/m/n/10 A way of solv-ing this is-sue is to make a dif-fer-ence for the
- pro-gram-mer. We al-lows the pro-gram-mer 
- []
-
-
-Overfull \hbox (0.16057pt too wide) in paragraph at lines 436--437
-\TU/lmr/m/n/10 to flush the cache when he needs to trans-port some-thing to main
- mem-ory. When he doesn’t need 
  []
 
 
 
 [169<./screenshots/2025-12-19.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 465--466
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 []\TU/lmr/m/n/10 For our pro-ces-sor, we have only two ac-tions: [] $\OMS/lmsy/
 m/n/10 ! $\TU/lmr/m/n/10 pro-ces-sor read and []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
 [][] $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 bus read; Read []\TU/lmr/bx/n/10 with-o
 ut in-tent to mod-ify[]\TU/lmr/m/n/10 , data could come from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
 [][] $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 bus read ex-clu-sive; read []\TU/lmr/b
 x/n/10 with in-tent to mod-ify[]\TU/lmr/m/n/10 , must in-val-i-date all
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 471--472
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
 [][] $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 write-back; cache con-troller puts con-
 tents on bus and mem-ory is
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 473.
+Package mdframed Info: mdframed works in twoside mode on input line 472.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 473.
+(mdframed)              on input line 472.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 475.
+ mdframed uses option nobreak mdframed on input line 474.
 
 ! Package pgfkeys Error: I do not know the key '/tikz/mininum size', to which y
 ou passed '0cm', and I am going to ignore it. Perhaps you misspelled it.
@@ -9231,7 +9150,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.491 	\node[state]
+l.490 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9242,7 +9161,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.491 	\node[state]
+l.490 	\node[state]
                      at (0, 0)(invalid) {Invalid};
 ? 
 
@@ -9253,7 +9172,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.492 	\node[state]
+l.491 	\node[state]
                     at (0, 3)(shared){Shared};
 ? 
 
@@ -9264,7 +9183,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.492 	\node[state]
+l.491 	\node[state]
                     at (0, 3)(shared){Shared};
 ? 
 
@@ -9275,7 +9194,7 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.493 	\node[state]
+l.492 	\node[state]
                     at (0, 6)(modified){Modified};
 ? 
 
@@ -9286,146 +9205,58 @@ See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.493 	\node[state]
+l.492 	\node[state]
                     at (0, 6)(modified){Modified};
 ? 
 
 
 [170]
-Package mdframed Info: mdframed works in twoside mode on input line 509.
+Package mdframed Info: mdframed works in twoside mode on input line 508.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 509.
+(mdframed)              on input line 508.
 
-Overfull \hbox (9.99428pt too wide) in paragraph at lines 510--511
-\TU/lmr/m/n/10 do an-other ex-e-cu-tion. What when per-form-ing a pro-ces-sor wr
-ite from in-valid to mod-i-fied we have
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
+
  []
 
 
-Overfull \hbox (5.4387pt too wide) in paragraph at lines 510--511
-\TU/lmr/m/n/10 to do a bus read ex-clu-sive. Why when we are in in-valid and we try to read we also have to read
- []
-
-
-Overfull \hbox (2.00386pt too wide) in paragraph at lines 513--514
-\TU/lmr/m/n/10 For each tran-si-tion in the MSI pro-to-col, it is im-por-tant to
- un-der-stand why a bus trans-ac-tion is
- []
-
-
-Overfull \hbox (13.08768pt too wide) in paragraph at lines 518--519
-\TU/lmr/m/n/10 If the cache line is in the In-valid state, the cache does not ha
-ve the data. There-fore, it must
- []
-
-
-Overfull \hbox (18.36876pt too wide) in paragraph at lines 518--519
-\TU/lmr/m/n/10 is-sue a [] to get the data from mem-ory or from an-other cache. Since the pro-ces-sor only
- []
-
-
-Overfull \hbox (3.50215pt too wide) in paragraph at lines 521--522
-\TU/lmr/m/n/10 If the pro-ces-sor wants to write to a cache line that is not pre
-sent, the cache must first get
- []
-
-
-Overfull \hbox (11.08012pt too wide) in paragraph at lines 521--522
-\TU/lmr/m/n/10 the data and also make sure no other cache has a copy. A [] fetch
-es the data and in-
- []
-
-
-Overfull \hbox (22.17471pt too wide) in paragraph at lines 524--525
-\TU/lmr/m/n/10 In the Shared state, the same cache line may ex-ist in sev-eral 
-caches. Be-fore writ-ing, the cache
- []
-
-
-Overfull \hbox (27.53192pt too wide) in paragraph at lines 524--525
-\TU/lmr/m/n/10 must en-sure it is the only one with a valid copy. Is-su-ing a [
-] in-val-i-dates the other copies
- []
-
-
-Overfull \hbox (16.62358pt too wide) in paragraph at lines 526--527
+Overfull \hbox (2.83553pt too wide) in paragraph at lines 525--527
 []\TU/lmr/bx/n/10 Pro-ces-sor read or write in the Mod-i-fied state (Mod-i-fied $\OMS/lmsy/m/n/10 !$ \TU/lmr/bx/n/10 Mod-i-fied, [],
  []
 
 
-Overfull \hbox (9.85081pt too wide) in paragraph at lines 527--528
-\TU/lmr/m/n/10 In the Mod-i-fied state, the cache al-ready has the only valid an
-d up-to-date copy of the data.
- []
-
-
-Overfull \hbox (16.58931pt too wide) in paragraph at lines 530--531
-\TU/lmr/m/n/10 If an-other cache is-sues a [], the mod-i-fied cache must pro-vid
-e the up-dated data by writ-
- []
-
-
-Overfull \hbox (4.9001pt too wide) in paragraph at lines 530--531
-\TU/lmr/m/n/10 ing it back on the bus. Af-ter that, the cache no longer has ex-c
-lu-sive own-er-ship and moves
- []
-
-
-Overfull \hbox (39.10242pt too wide) in paragraph at lines 532--533
+Overfull \hbox (27.93103pt too wide) in paragraph at lines 531--533
 []\TU/lmr/bx/n/10 Bus read-exclusive while in the Mod-i-fied state (Mod-i-fied 
 $\OMS/lmsy/m/n/10 !$ \TU/lmr/bx/n/10 In-valid, []) 
  []
 
+Package mdframed Info: Not enough space on this page on input line 538.
 
-Overfull \hbox (5.90973pt too wide) in paragraph at lines 533--534
-\TU/lmr/m/n/10 If an-other cache re-quests ex-clu-sive ac-cess, the mod-i-fied 
-cache must first write back the up-
- []
-
-
-Overfull \hbox (4.02081pt too wide) in paragraph at lines 535--536
-[]\TU/lmr/bx/n/10 Bus read-exclusive while in the Shared state (Shared $\OMS/lm
-sy/m/n/10 !$ \TU/lmr/bx/n/10 In-valid, []) 
- []
-
-
-Overfull \hbox (5.50438pt too wide) in paragraph at lines 536--537
-\TU/lmr/m/n/10 In the Shared state, the data is the same as in mem-ory. When a 
-[] is ob-served, the
- []
-
-Package mdframed Info: Not enough space on this page on input line 539.
-
-Overfull \hbox (0.10046pt too wide) in paragraph at lines 541--542
-[]\TU/lmr/m/n/10 What is the im-por-tant thing here is that now, we are able to PrWr with-out hav-ing to do any thing 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 564--565
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
 \TU/lmr/m/n/10 Let us do a few cases. For the first one we have a cache miss, th
 is means that we go
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--586
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 \TU/lmr/m/n/10 Now p3 reads x, this means that we do ex-actly the same thing as p1 has done. p1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 606--607
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
 \TU/lmr/m/n/10 Now there is some-thing in-trest-ing! Now we have a pro-ces-sor 
 write from a shared state
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
 \TU/lmr/m/n/10 For the fourth step, P1 now reads the new value which makes up to
  date again. And
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--649
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
 \TU/lmr/m/n/10 For the last steps, this is just a clas-si-cal reads which make 
 P2 goes into the shared
  []
@@ -9435,60 +9266,62 @@ P2 goes into the shared
 [171]
 
 [172]
-<screenshots/2025-12-20.png, id=2301, 1126.2075pt x 619.31375pt>
+<screenshots/2025-12-20.png, id=2300, 1126.2075pt x 619.31375pt>
 File: screenshots/2025-12-20.png Graphic file (type png)
 <use screenshots/2025-12-20.png>
-Package luatex.def Info: screenshots/2025-12-20.png  used on input line 696.
+Package luatex.def Info: screenshots/2025-12-20.png  used on input line 695.
 (luatex.def)             Requested size: 281.5512pt x 154.82805pt.
 
 
-[173<./screenshots/2025-12-20.png>]
-<screenshots/2025-12-20_1.png, id=2307, 748.7975pt x 476.78125pt>
+[173
+
+<./screenshots/2025-12-20.png>]
+<screenshots/2025-12-20_1.png, id=2306, 748.7975pt x 476.78125pt>
 File: screenshots/2025-12-20_1.png Graphic file (type png)
 <use screenshots/2025-12-20_1.png>
-Package luatex.def Info: screenshots/2025-12-20_1.png  used on input line 749.
+Package luatex.def Info: screenshots/2025-12-20_1.png  used on input line 748.
 (luatex.def)             Requested size: 187.19891pt x 119.195pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--756
+Underfull \hbox (badness 10000) in paragraph at lines 754--755
 [][]\TU/lmr/bx/n/10 Same state[]\TU/lmr/m/n/10 : If a cache line is marked as ow
 ned/-mod-i-fied in L(n-1) cache, then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 756--757
+Underfull \hbox (badness 10000) in paragraph at lines 755--756
 \TU/lmr/m/n/10 If a bus trans-ac-tion re-quests a cache line in owned/-mod-i-fie
 d state in L3, the []\TU/lmr/bx/n/10 L3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
 \TU/lmr/m/n/10 be in both. How-ever, in the gen-eral case \TU/lmr/bx/n/10 no\TU
 /lmr/m/n/10 : for in-stance, L2 will even-tu-ally de-cide to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 764--765
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
 \TU/lmr/m/n/10 What we need is to []\TU/lmr/bx/n/10 prop-a-gate in-val-i-da-tion
 s[] \TU/lmr/m/n/10 and []\TU/lmr/bx/n/10 evic-tions[] \TU/lmr/m/n/10 up the hi-e
 r-ar-chy to keep,
  []
 
-<screenshots/2025-12-20_2.png, id=2308, 834.11626pt x 585.18625pt>
+<screenshots/2025-12-20_2.png, id=2307, 834.11626pt x 585.18625pt>
 File: screenshots/2025-12-20_2.png Graphic file (type png)
 <use screenshots/2025-12-20_2.png>
-Package luatex.def Info: screenshots/2025-12-20_2.png  used on input line 766.
+Package luatex.def Info: screenshots/2025-12-20_2.png  used on input line 765.
 (luatex.def)             Requested size: 208.52855pt x 146.2962pt.
 
 
 [174<./screenshots/2025-12-20_1.png>]
-Package mdframed Info: mdframed works in twoside mode on input line 770.
+Package mdframed Info: mdframed works in twoside mode on input line 769.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 770.
+(mdframed)              on input line 769.
 <screenshots/2025-12-20_3.png, id=2317, 1484.54625pt x 732.7375pt>
 File: screenshots/2025-12-20_3.png Graphic file (type png)
 <use screenshots/2025-12-20_3.png>
-Package luatex.def Info: screenshots/2025-12-20_3.png  used on input line 778.
+Package luatex.def Info: screenshots/2025-12-20_3.png  used on input line 777.
 (luatex.def)             Requested size: 371.13565pt x 183.18393pt.
 ) (./5b.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
@@ -9576,19 +9409,8 @@ Overfull \hbox (32.28532pt too wide) in paragraph at lines 235--278
  []
 
 
-Overfull \hbox (0.10983pt too wide) in paragraph at lines 279--280
-\TU/lmr/m/n/10 to have an-other pro-ces-sor launch a BusRd, The way of do-ing th
-at is for in-stance hav-ing the P1 to 
- []
-
-
 Overfull \hbox (32.28532pt too wide) in paragraph at lines 281--324
  [] 
- []
-
-
-Overfull \hbox (0.12323pt too wide) in paragraph at lines 325--325
-\TU/lmr/m/n/10 As we can go the same thing from the third pro-ces-sor (both are to-taly the same). And as ev-ery-one 
  []
 
 ! Misplaced \omit.
@@ -9644,12 +9466,6 @@ Overfull \hbox (32.28532pt too wide) in paragraph at lines 578--621
  []
 
 
-Overfull \hbox (0.1463pt too wide) in paragraph at lines 622--623
-\TU/lmr/m/n/10 Bus-RdX on the bus which means, if we have it, you may care to kn
-ow that it is tail. The 0x1200 
- []
-
-
 Overfull \hbox (32.28532pt too wide) in paragraph at lines 625--668
  [] 
  []
@@ -9675,7 +9491,7 @@ rs may show dif-fer-ent
 
 
 [180]
-<screenshots/2025-12-22.png, id=2355, 1225.57875pt x 412.54124pt>
+<screenshots/2025-12-22.png, id=2367, 1225.57875pt x 412.54124pt>
 File: screenshots/2025-12-22.png Graphic file (type png)
 <use screenshots/2025-12-22.png>
 Package luatex.def Info: screenshots/2025-12-22.png  used on input line 56.
@@ -9712,23 +9528,17 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 70.
 
-Overfull \hbox (14.38867pt too wide) in paragraph at lines 73--74
-[]\TU/lmr/m/n/10 the op-er-a-tions of each in-di-vid-ual pro-ces-sor were ex-e-c
-uted the or-der spec-i-fied by its pro-gram,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 79--80
 []\TU/lmr/m/n/10 The idea is to let some time af-ter the write/read for the othe
 r pro-ces-sors/mem-ory to
  []
 
-<screenshots/2025-12-22_1.png, id=2356, 1236.62pt x 482.80376pt>
+<screenshots/2025-12-22_1.png, id=2368, 1236.62pt x 482.80376pt>
 File: screenshots/2025-12-22_1.png Graphic file (type png)
 <use screenshots/2025-12-22_1.png>
 Package luatex.def Info: screenshots/2025-12-22_1.png  used on input line 81.
 (luatex.def)             Requested size: 247.31961pt x 96.55904pt.
-<screenshots/2025-12-22_2.png, id=2357, 1043.9pt x 387.4475pt>
+<screenshots/2025-12-22_2.png, id=2369, 1043.9pt x 387.4475pt>
 File: screenshots/2025-12-22_2.png Graphic file (type png)
 <use screenshots/2025-12-22_2.png>
 Package luatex.def Info: screenshots/2025-12-22_2.png  used on input line 85.
@@ -9741,7 +9551,7 @@ h a switch, they do
 
 
 
-[181<./screenshots/2025-12-22.png>]
+[181<./screenshots/2025-12-22.png><./screenshots/2025-12-22_1.png>]
 <screenshots/2025-12-22_3.png, id=2378, 1348.03625pt x 673.51625pt>
 File: screenshots/2025-12-22_3.png Graphic file (type png)
 <use screenshots/2025-12-22_3.png>
@@ -9752,16 +9562,15 @@ File: screenshots/2025-12-22_4.png Graphic file (type png)
 <use screenshots/2025-12-22_4.png>
 Package luatex.def Info: screenshots/2025-12-22_4.png  used on input line 105.
 (luatex.def)             Requested size: 321.84897pt x 153.93823pt.
-
-
-[182<./screenshots/2025-12-22_1.png><./screenshots/2025-12-22_2.png><./screensho
-ts/2025-12-22_3.png>]
-<screenshots/2025-12-22_5.png, id=2388, 1230.5975pt x 538.01pt>
+<screenshots/2025-12-22_5.png, id=2380, 1230.5975pt x 538.01pt>
 File: screenshots/2025-12-22_5.png Graphic file (type png)
 <use screenshots/2025-12-22_5.png>
 Package luatex.def Info: screenshots/2025-12-22_5.png  used on input line 110.
 (luatex.def)             Requested size: 246.11514pt x 107.60008pt.
 
+
+[182<./screenshots/2025-12-22_2.png><./screenshots/2025-12-22_3.png><./screensho
+ts/2025-12-22_4.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 []\TU/lmr/m/n/10 What we need to check if while we are wait-ing to write our val
 ue, it is in the Re-order
@@ -9796,16 +9605,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 ] \TU/lmr/m/n/10 in the ROB or if the ad-dress of the
  []
 
-
-
-[183<./screenshots/2025-12-22_4.png><./screenshots/2025-12-22_5.png><./screensho
-ts/2025-12-22_6.png>]
-<screenshots/2025-12-22_8.png, id=2396, 1119.18124pt x 486.81876pt>
+<screenshots/2025-12-22_8.png, id=2390, 1119.18124pt x 486.81876pt>
 File: screenshots/2025-12-22_8.png Graphic file (type png)
 <use screenshots/2025-12-22_8.png>
 Package luatex.def Info: screenshots/2025-12-22_8.png  used on input line 145.
 (luatex.def)             Requested size: 223.83228pt x 97.36201pt.
-<screenshots/2025-12-22_9.png, id=2397, 1433.355pt x 665.48625pt>
+
+
+[183<./screenshots/2025-12-22_5.png><./screenshots/2025-12-22_6.png>]
+<screenshots/2025-12-22_9.png, id=2401, 1433.355pt x 665.48625pt>
 File: screenshots/2025-12-22_9.png Graphic file (type png)
 <use screenshots/2025-12-22_9.png>
 Package luatex.def Info: screenshots/2025-12-22_9.png  used on input line 152.
@@ -9826,15 +9634,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--158
 []\TU/lmr/m/n/10 A naive way for us to solve this is []\TU/lmr/bx/n/10 wait-ing[]\TU/lmr/m/n/10 : wait for the ac-knowl-edge-ment of the
  []
 
-<screenshots/2025-12-22_10.png, id=2398, 1648.1575pt x 676.5275pt>
+<screenshots/2025-12-22_10.png, id=2402, 1648.1575pt x 676.5275pt>
 File: screenshots/2025-12-22_10.png Graphic file (type png)
 <use screenshots/2025-12-22_10.png>
 Package luatex.def Info: screenshots/2025-12-22_10.png  used on input line 159.
 
 (luatex.def)             Requested size: 329.62566pt x 135.3031pt.
 
-
-[184<./screenshots/2025-12-22_8.png><./screenshots/2025-12-22_9.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 165--166
 []\TU/lmr/m/n/10 We []\TU/lmr/bx/n/10 change the con-tract[] \TU/lmr/m/n/10 that
  we have by []\TU/lmr/bx/n/10 ex-pos-ing write buffers[] \TU/lmr/m/n/10 to the 
@@ -10019,12 +9825,16 @@ Overfull \hbox (56.7972pt too wide) in paragraph at lines 198--198
  [][]  
  []
 
-<screenshots/2025-12-22_11.png, id=2409, 1266.7325pt x 394.47375pt>
+<screenshots/2025-12-22_11.png, id=2403, 1266.7325pt x 394.47375pt>
 File: screenshots/2025-12-22_11.png Graphic file (type png)
 <use screenshots/2025-12-22_11.png>
 Package luatex.def Info: screenshots/2025-12-22_11.png  used on input line 201.
 
 (luatex.def)             Requested size: 253.34201pt x 78.89334pt.
+
+
+[184<./screenshots/2025-12-22_8.png><./screenshots/2025-12-22_9.png><./screensho
+ts/2025-12-22_10.png>]
 
 ! LaTeX Error: \begin{parag} on input line 163 ended by \end{tcb@savebox}.
 
@@ -10104,12 +9914,18 @@ l.211 \end{parag}
                  
 ? 
 
-! LaTeX Error: \begin{parag} on input line 5 ended by \end{paragbox}.
+! LaTeX Error: \begin{document} ended by \end{paragbox}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
+l.211 \end{parag}
+                 
+? 
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
 l.211 \end{parag}
                  
 ? 
@@ -10162,14 +9978,12 @@ ers[] \TU/lmr/m/n/10 or []\TU/lmr/bx/n/10 fences[] \TU/lmr/m/n/10 ([]\TU/lmr/bx
  []
 
 
-
-[185<./screenshots/2025-12-22_10.png><./screenshots/2025-12-22_11.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 246--247
 []\TU/lmr/m/n/10 The [] guar-an-tee that ev-ery-thing that is be-fore has gone 
 ev-ery-where by the time
  []
 
-<screenshots/2025-12-22_12.png, id=2417, 1316.92pt x 646.415pt>
+<screenshots/2025-12-22_12.png, id=2411, 1316.92pt x 646.415pt>
 File: screenshots/2025-12-22_12.png Graphic file (type png)
 <use screenshots/2025-12-22_12.png>
 Package luatex.def Info: screenshots/2025-12-22_12.png  used on input line 248.
@@ -10182,10 +9996,8 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 252.
 
-LaTeX Warning: Reference `mdf@pagelabel-79' on page 186 undefined on input line
- 252.
 
-
+[185<./screenshots/2025-12-22_11.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 257--259
 \TU/lmr/m/n/10 Atomic in-struc-tions is a com-bi-na-tion of load and store []\T
 U/lmr/bx/n/10 with-out in-ter-fer-ence from
@@ -10229,12 +10041,17 @@ rm across plat-forms[] \TU/lmr/m/n/10 while hid-ing
 [188]
 Chapter 6.
 (./6a.tex
+Package mdframed Info: mdframed works in twoside mode on input line 1.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1.
+(hyperref)                than one, level fixed on input line 4.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 []\TU/lmr/m/n/10 At-tacks on Mem-ory to Break Iso-la-tion and Con-fi-den-tial-it
 y (Cache Side-Channel
  []
@@ -10246,53 +10063,53 @@ y (Cache Side-Channel
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 34.
+(hyperref)                than one, level fixed on input line 37.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 \TU/lmr/m/n/10 We will also speak of []\TU/lmr/bx/n/10 iso-la-tion[]\TU/lmr/m/n
 /10 , that is the pos-si-bil-ity to pre-vent any in-ter-ac-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 []\TU/lmr/m/n/10 DRAMs store []\TU/lmr/bx/n/10 in-for-ma-tion as charge in small
  ca-pac-i-tors[] \TU/lmr/m/n/10 part of the mem-ory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 []\TU/lmr/m/n/10 Fi-rat patented in 1968 by Robert Den-nard, scaled amaz-ingly 
 over decades and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 []\TU/lmr/m/n/10 Charge []\TU/lmr/bx/n/10 leaks off[] \TU/lmr/m/n/10 THE ca-pac-
 i-tors due to par-a-sitic re-sis-tances $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 ev-e
 ry DRAM
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 []\TU/lmr/m/n/10 To in-crease den-sity (i.e., re-duce cost) mem-ory cells have 
 be-com in-cred-i-bly small
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 \TU/lmr/m/n/10 ( $\OMS/lmsy/m/n/10 ! $[]\TU/lmr/bx/n/10 small stor-age ca-pac-i-
 tance, smaller noise margine[]\TU/lmr/m/n/10 ) and word line go
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 []\TU/lmr/m/n/10 Fre-quent []\TU/lmr/bx/n/10 ac-ti-va-tion of word lines[] \TU/
 lmr/m/n/10 neigh-bour-ing par-tic-u-lar cells be-tween
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 [][]\TU/lmr/bx/n/10 Dis-tur-bance er-rors[] \TU/lmr/m/n/10 have been known de-si
 gn is-sue of DRAMs sinve ever, but
  []
@@ -10313,7 +10130,7 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 	\begin{lstlisting}[language=x86]
+l.80 	\begin{lstlisting}[language=x86]
                                       
 ? 
 
@@ -10323,83 +10140,83 @@ See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.77 	\begin{lstlisting}[language=x86]
+l.80 	\begin{lstlisting}[language=x86]
                                       
 ? 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 [][] \TU/lmr/m/n/10 un-priv-i-leged x86 in-struc-tions flush the cache from the value of X and
  []
 
 
 
 [190]
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
 []\TU/lmr/m/n/10 Rowham-mer ef-fec-tively vi-o-lates mem-ory pro-tec-tion (“if
  I can read, I can also write”)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--105
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
 \TU/lmr/m/n/10 By ac-cess-ing lo-ca-tions in neigh-bour-ing rows one could gain un-re-stricted mem-ory ac-cess
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 []\TU/lmr/m/n/10 Re-peat-edly map a file with RW per-mis-sions to fill mem-ory 
 with page ta-ble
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 []\TU/lmr/m/n/10 Use Rowham-mer to flip (semi-ran-domly) a bit in one of these 
 PTEs; it will now
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 []\TU/lmr/m/n/10 Chances are that this phys-i-cal page con-tains PTEs too, so no
 w ac-cess-ing that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 []\TU/lmr/m/n/10 A com-pletely dif-fer-ent prob-lem with stor-ing data on ca-pac
 -i-tors: cells may leak
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 []\TU/lmr/m/n/10 Low-er-ing sig-nif-i-cantly the de-vice tem-per-a-ture (e.g., 
 use spray re-frig-er-ants) makes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 []\TU/lmr/m/n/10 ”A covert chan-nel is an []\TU/lmr/bx/n/10 in-ten-tional com-
 mu-ni-ca-tion[] \TU/lmr/m/n/10 be-tween a sender and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 \TU/lmr/m/n/10 a re-ceiver []\TU/lmr/bx/n/10 via medium not de-signed to be a co
 m-mu-ni-ca-tion chan-nel[]\TU/lmr/m/n/10 ”
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 []\TU/lmr/m/n/10 If we iso-late a crit-i-cal pro-cess in-side a vir-tual ma-chin
 e, a covert chan-nel may
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \TU/lmr/m/n/10 al-low a rogue pro-gramme in-side of the iso-lated pro-cess (a [
 ]\TU/lmr/bx/n/10 Tro-jan horse[]\TU/lmr/m/n/10 ) to leak
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 \TU/lmr/m/n/10 a se-cret to some ma-li-cious re-ceiver with-out any-one to no-ti
 ce (no con-ven-tional
  []
@@ -10407,7 +10224,7 @@ ce (no con-ven-tional
 
 
 [191]
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 []\TU/lmr/m/n/10 A naïve im-ple-men-ta-tion re-turns as soon as a dif-fer-ence is de-tected, re-veal-ing the
  []
 
@@ -10441,17 +10258,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 79455 strings out of 475506
- 1166708,3417909 words of node,token memory allocated
+ 79454 strings out of 475506
+ 1166723,3417909 words of node,token memory allocated
  1105 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
 rn, 4 glyph, 11 attribute, 156 glue_spec, 11 attribute_list, 2 shape, 2 write no
 des
-   avail lists: 1:21,2:14023,3:6848,4:20742,5:18557,6:155,7:25579,8:58,9:46074,1
-0:35,11:1760,12:2
- 98603 multiletter control sequences out of 65536+600000
+   avail lists: 1:22,2:14022,3:6848,4:20743,5:18556,6:153,7:25579,8:58,9:46074,1
+0:35,11:1761,12:3
+ 98601 multiletter control sequences out of 65536+600000
  117 fonts using 8845415 bytes
- 110i,17n,120p,1953b,1931s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,17n,120p,1953b,1860s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf>{/usr/s
 hare/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</u
@@ -10480,10 +10297,10 @@ are/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type
 /share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
 </usr/share/texmf-dist/fonts/type1/public/lm/lmsy9.pfb>
-Output written on main.pdf (196 pages, 15298829 bytes).
+Output written on main.pdf (196 pages, 15299417 bytes).
 
-PDF statistics: 2693 PDF objects out of 2984 (max. 8388607)
- 2223 compressed objects within 23 object streams
- 1272 named destinations out of 1440 (max. 131072)
+PDF statistics: 2694 PDF objects out of 2984 (max. 8388607)
+ 2224 compressed objects within 23 object streams
+ 1273 named destinations out of 1440 (max. 131072)
  712 words of extra memory for PDF output out of 10000 (max. 100000000)
 

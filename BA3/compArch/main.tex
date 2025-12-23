@@ -198,13 +198,11 @@ dm on telegram or ping on issue on the github \href{https://github.com/Arthur926
 \chapter{Multiprocessors}
 
 
-As the end of the course approaches, the focus remains on continuing the same fundamental ideas, but through different mechanisms. Much of modern computer architecture relies on the continuous improvement of transistors: they become smaller, faster, and cheaper, allowing architects to use more of them to achieve greater functionality and performance.
+As the end of the course approaches, the focus stays on continuing the same fundamental ideas, but through different mechanisms. Much of modern computer architecture relies on the continuous improvement of transistors: they become smaller, faster, and cheaper, allowing us, architects to use more of them to achieve greater functionality and performance.
 
-These transistor resources have been invested primarily in two directions. First, they have been used to create features that benefit programmers by abstracting hardware complexity. Examples include virtual memory, which hides details such as physical memory size, location, and addressing, thereby simplifying software development and reducing programmer burden.
+These transistor resources have been invested primarily in two directions. First, they have been used to create features that benefit programmers by abstracting hardware complexity. (Examples: virtual memory, which hides details such as physical memory size, location, and addressing,  simplifying software development and reducing programmer workload).
 
-Second, transistors have been heavily invested in improving system performance. A major example is the use of caches, which consume a large number of transistors but help mitigate the growing performance gap between processors and memory. Since memory technologies do not scale as well as logic, additional transistors are used to reduce memory access latency and improve overall speed.
-
-More recently, transistors have been devoted to designing processors that execute programs faster through dynamically scheduled, out-of-order superscalar architectures. These processors improve performance in two main ways. One approach is through complex control and management logic that extracts instruction-level parallelism from fundamentally sequential programs. This requires hardware to detect and manage data dependencies, which is transistor-intensive.
+Second, transistors have been heavily invested in improving system performance. An example is the use of caches, which consume a large number of transistors but help mitigate the growing performance gap between processors and memory. Since memory technologies do not scale as well as logic, additional transistors are used to reduce memory access latency and improve overall speed.
 
 The second approach is to add multiple execution units, such as several floating-point units, to allow more instructions to be executed simultaneously. However, this strategy is fundamentally limited by data dependencies: when an instruction depends on the result of another, execution must wait. While processors can look ahead in the instruction stream to find independent instructions, the available parallelism is ultimately constrained by these dependencies.
 

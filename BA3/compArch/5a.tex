@@ -8,17 +8,16 @@
 		\item \important{SISD}: Uniprocessors, what we have seen so far
 		\item \important{SIMD}: A single program is run on multiple data sets at one. Classic examples are Vector Architecture for high-performance computing, now fairly rare. More commonly, x86 supports SMID through various ISA extensions: MMX (1996), SSE (1999-2008), and AVX (2011-2016)
 		\item \important{MIMD}: General form of parallelism with each processor executing its own program on its own data
-	\end{itemi
+	\end{itemize}
 	Us we are intrested in \important{MIMD}. In practice what we want is to have is multiple cpus that operate at the same time.
 	
 \end{parag}
 
-	How does it works is: we take our normal system (memory bus, i/o, etc.) and \important{on the same bus}, we add all of our CPU.
+	How does it works is: we take our normal system (memory bus, i/o, etc.) and \important{on the same bus}, we add all of our CPUs.
 \begin{parag}{Share-Memory Multiprocessors}
 	\begin{center}
 	    
     \includegraphics[scale=0.25]{screenshots/2025-12-16_7.png}
-    \includegraphics[scale=0.25]{screenshots/2025-12-16_5.png}
     \end{center}
 \end{parag}
 \begin{parag}{Distributed-Memory Multiprocessors}
@@ -169,7 +168,7 @@ in virtual memory systems.
 \end{parag}
 
 \begin{parag}{Cache Coherence Problem Step 1}
-    Imagine we have this sequence of processors that have their own private caches. When the second processor load a particular value in memory (a miss) is brough up to the processor and now is in the cache.
+    Imagine we have this sequence of processors that have their own private caches. When the second processor load a particular value in memory (a miss) is brought up to the processor and now is in the cache.
 	\begin{center}
 	    
 	
@@ -197,7 +196,7 @@ in virtual memory systems.
 
 \end{tikzpicture}
 	\end{center}
-Suppose now that the processor 1 does the same \texttt{ld r2, x}, we would get without any problem:
+Suppose now that the processor 1 does the same \texttt{ld r2, x}, we would get the value without any problem:
 \begin{center}
     
 
@@ -224,7 +223,7 @@ Suppose now that the processor 1 does the same \texttt{ld r2, x}, we would get w
 
 \end{tikzpicture}
 \end{center}
-Now both processors have the value of the address \texttt{x} in the cache. Now suppose that processors one want the change this value in memory, this new value will be only overwritten in the cache:
+Now both processors have the value of the address \texttt{x} in their respective cache. Suppose now that processor one wants to change the value in memory, this new value will be only overwritten in the cache:
 \begin{center}
     
 
@@ -252,7 +251,9 @@ Now both processors have the value of the address \texttt{x} in the cache. Now s
 \end{tikzpicture}
 \end{center}
 Then when the second processor will try to read \texttt{ld r5, x} we will have an error, the \texttt{r5} register will have the previous value (the pink) and not the correct one (blue). And this is not a matter of the cache not being \important{write-through}\\
-But this issue is not really new in multiprocessors, if we took an i/o like a button for instance. We poll the button one time, we store the result in cache. When we want to repolling the button \textrightarrow cache hit \textrightarrow not pressed. But maybe it is pressed.\\
+
+
+But this issue is not really new, if we took an i/o like a button for instance. We poll the button one time, we store the result in cache. When we want to repolling the button \textrightarrow cache hit \textrightarrow not pressed. But maybe it is pressed.\\
 We can go even with the DMA, the DMA works kind of the same way as the processor one in our case. What can we do?\\
 
 But there we have simpler ad-hoc ways to handle this:
@@ -285,12 +286,10 @@ The issue that we have here is not an issue of time, the  p2 memory will \import
 
 \subsubsection{Snoopy Cache-Coherence Protocols}
 
-So what we will need to do is actually have our p2 processor/cache \important{looking} to main memory to see if any changed is required. The way of doing this is call \important{snoopy cache-coherence protocols} which is the most intuitive and practical method of resolving this issue. We are snooping '\textit{mettre son nez}' \textit{Paulo Ienne}:
+So what we will need to do is actually have our p2 processor/cache \important{looking} to main memory to see if any changed is required. The way of doing this is call \important{snoopy cache-coherence protocols} which is the most intuitive and practical method of resolving this issue. We are snooping: '\textit{mettre son nez}' (\textit{Paulo Ienne}):
 
 \begin{parag}{Bus provides serialization point}
-	\begin{itemize}
-		\item The bus is used the serialize operations, meaning it ensures that all caches see memory updates in consistent order. If one processor writes a value to memory, the bus shouts this action to all caches, so they can all 'mettre leur nez' and update their copies of the data if needed.
-	\end{itemize}
+		The bus is used the serialize operations, meaning it ensures that all caches see memory updates in consistent order. If one processor writes a value to memory, the bus shouts this action to all caches, so they can all 'mettre leur nez' and update their copies of the data if needed.
 \end{parag}
 \begin{parag}{Each cache controller \important{snoops} all bus transactions}
 	Each cache controller listens to the bus for transactions that involve memory addresses \important{it holds}. When it 'snoops' a transaction, it determines wether it needs to:
@@ -315,10 +314,10 @@ Imagine that we want to describe a cache in a formal way (forget what we have se
 			\item BusWr (bus write)
 		\end{itemize}
 \end{itemize}
-First, what we need to understand is that we are not really talking about the state of the cache, we are talkning about the state of a \important{cache line}. So let us first about what we need.
+First, what we need to understand is that we are not really talking about the state of the cache, we are talking about the state of a \important{cache line}. So let us first about what we need.
 
 We need to know wether or not the piece of data that we have is valid or not. This give us two states:
- So let us first about what we need.
+ So let us first go through what we need.
 
  We need to know wether or not the piece of data that we have is valid or not. This give us two states:
 
@@ -342,7 +341,7 @@ We need to know wether or not the piece of data that we have is valid or not. Th
 	\end{tikzpicture}
 
 	\end{center}
-	But is it a bit strange, how can that be right? We never invalidate anything? We miss eviction here, but when we evict something did means that we have a 'new finite state machine'. Each fsm represent one piece of memory and not the other. So it should be more something like this
+	But this is a bit strange, how can that be right? We never invalidate anything? We miss eviction here, but when we evict something what happens is: we have a 'new finite state machine'. Each FSMs represent one piece of memory and not the other. So it should be more something like this:
 
 
 	\begin{center}

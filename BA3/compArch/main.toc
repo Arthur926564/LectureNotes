@@ -306,20 +306,20 @@
 \contentsline {paragraph}{Legacy x86 Features}{156}{section*.260}%
 \contentsline {paragraph}{Registers}{156}{section*.261}%
 \contentsline {paragraph}{Memory Address}{157}{section*.262}%
-\contentsline {paragraph}{Operand Types}{158}{section*.263}%
+\contentsline {paragraph}{Operand Types}{159}{section*.263}%
 \contentsline {paragraph}{Addressing Mode}{159}{section*.264}%
 \contentsline {paragraph}{Number of x86 instructions over time}{159}{section*.265}%
 \contentsline {chapter}{\numberline {5}Multiprocessors}{161}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Cache Coherence}{161}{section.5.1}%
 \contentsline {paragraph}{Flynn's Taxonomy (1966)}{161}{section*.266}%
-\contentsline {paragraph}{Share-Memory Multiprocessors}{161}{section*.267}%
+\contentsline {paragraph}{Share-Memory Multiprocessors}{162}{section*.267}%
 \contentsline {paragraph}{Distributed-Memory Multiprocessors}{162}{section*.268}%
-\contentsline {paragraph}{Programming Paradigms}{163}{section*.269}%
+\contentsline {paragraph}{Programming Paradigms}{162}{section*.269}%
 \contentsline {subsubsection}{Accessing Memory in Distributed Systems}{163}{subsubsection*.270}%
 \contentsline {paragraph}{Hardware-based approach (NUMA / Hardware DSM)}{163}{section*.271}%
-\contentsline {paragraph}{software-based approach (software DSM)}{164}{section*.272}%
+\contentsline {paragraph}{software-based approach (software DSM)}{163}{section*.272}%
 \contentsline {paragraph}{Why (Hardware) Shared Memory}{164}{section*.273}%
-\contentsline {paragraph}{Intel Nehalem (2008)}{165}{section*.274}%
+\contentsline {paragraph}{Intel Nehalem (2008)}{164}{section*.274}%
 \contentsline {paragraph}{Cache Coherence Problem Step 1}{165}{section*.275}%
 \contentsline {paragraph}{Coherent Memory System}{166}{section*.276}%
 \contentsline {subsubsection}{Snoopy Cache-Coherence Protocols}{167}{subsubsection*.277}%
@@ -329,9 +329,9 @@
 \contentsline {paragraph}{A 3-State Write-Back Invalidation Protocol (MSI)}{169}{section*.281}%
 \contentsline {paragraph}{MSI: Processor and Bus Actions}{170}{section*.282}%
 \contentsline {paragraph}{Exampe}{171}{section*.283}%
-\contentsline {paragraph}{4-State (MESI) Invalidation Protocol}{172}{section*.284}%
+\contentsline {paragraph}{4-State (MESI) Invalidation Protocol}{173}{section*.284}%
 \contentsline {subsubsection}{Directory-Based Cache Coherence}{173}{subsubsection*.285}%
-\contentsline {paragraph}{Snoopy vs. Directory-Based}{173}{section*.286}%
+\contentsline {paragraph}{Snoopy vs. Directory-Based}{174}{section*.286}%
 \contentsline {subsubsection}{Multilevel Caches}{174}{subsubsection*.287}%
 \contentsline {paragraph}{Inclusion Property between Caches at levels n-1 and n}{174}{section*.288}%
 \contentsline {paragraph}{Is Inclusion Naturally Maintained?}{174}{section*.289}%
@@ -351,13 +351,13 @@
 \contentsline {paragraph}{More Practical: Sequence Consistency}{181}{section*.301}%
 \contentsline {paragraph}{Correct Actual Memory Path}{183}{section*.302}%
 \contentsline {paragraph}{Dependences through Memory}{183}{section*.303}%
-\contentsline {paragraph}{Load-Store Qeues}{184}{section*.304}%
+\contentsline {paragraph}{Load-Store Qeues}{183}{section*.304}%
 \contentsline {paragraph}{More Challenges to Sequential Consistency}{184}{section*.305}%
 \contentsline {paragraph}{how to get Sequential Consistency}{184}{section*.306}%
-\contentsline {paragraph}{Relaxing Write $\rightarrow \ $Read order: Proeccors Consistency Model}{185}{section*.307}%
+\contentsline {paragraph}{Relaxing Write $\rightarrow \ $Read order: Proeccors Consistency Model}{184}{section*.307}%
 \contentsline {paragraph}{Many Relaxed Consistency Models}{185}{section*.308}%
 \contentsline {paragraph}{Relax Everything: Release Consistency Model}{185}{section*.309}%
-\contentsline {paragraph}{Memory Barriers/ Fences}{186}{section*.310}%
+\contentsline {paragraph}{Memory Barriers/ Fences}{185}{section*.310}%
 \contentsline {paragraph}{Atomic Instructions}{186}{section*.311}%
 \contentsline {paragraph}{Consistency is Hard}{186}{section*.312}%
 \contentsline {subsection}{\numberline {5.3.1}Summary Multiprocessors}{187}{subsection.5.3.1}%
