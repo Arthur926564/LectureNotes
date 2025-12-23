@@ -285,7 +285,7 @@
 \contentsline {subsection}{\numberline {4.6.1}Dynamic Branch Prediction}{141}{subsection.4.6.1}%
 \contentsline {paragraph}{One- vs. Two-Bit Prediction Schemes}{142}{section*.245}%
 \contentsline {paragraph}{Speculative Execution}{142}{section*.246}%
-\contentsline {subsection}{\numberline {4.6.2}Simultaneous Multithreading}{143}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.2}Simultaneous Multithreading}{144}{subsection.4.6.2}%
 \contentsline {subsubsection}{How do we do it?}{145}{subsubsection*.247}%
 \contentsline {paragraph}{Intel SMT: Xeon Hyper-Threading Pipeline}{145}{section*.248}%
 \contentsline {subsection}{\numberline {4.6.3}Non Blocking Caches}{146}{subsection.4.6.3}%
@@ -294,7 +294,7 @@
 \contentsline {paragraph}{What are the problems?}{148}{section*.250}%
 \contentsline {paragraph}{Challenges of VLIW}{148}{section*.251}%
 \contentsline {paragraph}{Compiler Technology}{149}{paragraph*.252}%
-\contentsline {paragraph}{Which one is better?}{152}{section*.253}%
+\contentsline {paragraph}{Which one is better?}{151}{section*.253}%
 \contentsline {paragraph}{Enlarge the Scop for ILP: Loop Unrolling}{152}{section*.254}%
 \contentsline {paragraph}{$ $}{153}{section*.255}%
 \contentsline {paragraph}{$ $}{153}{section*.256}%
@@ -302,7 +302,7 @@
 \contentsline {paragraph}{VLIW Compilation Techniques}{154}{section*.258}%
 \contentsline {subsection}{\numberline {4.6.5}Summary of chapter 4}{154}{subsection.4.6.5}%
 \contentsline {section}{\numberline {4.7}Intel x86 and ARM}{155}{section.4.7}%
-\contentsline {paragraph}{Interl Processors}{155}{paragraph*.259}%
+\contentsline {paragraph}{Intel Processors}{155}{paragraph*.259}%
 \contentsline {paragraph}{Legacy x86 Features}{156}{section*.260}%
 \contentsline {paragraph}{Registers}{156}{section*.261}%
 \contentsline {paragraph}{Memory Address}{157}{section*.262}%
