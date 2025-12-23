@@ -1,0 +1,781 @@
+\section{Cache Coherence}
+
+
+
+\begin{parag}{Flynn's Taxonomy (1966)}
+    So here we can classify our processors based on those criterias:
+	\begin{itemize}
+		\item \important{SISD}: Uniprocessors, what we have seen so far
+		\item \important{SIMD}: A single program is run on multiple data sets at one. Classic examples are Vector Architecture for high-performance computing, now fairly rare. More commonly, x86 supports SMID through various ISA extensions: MMX (1996), SSE (1999-2008), and AVX (2011-2016)
+		\item \important{MIMD}: General form of parallelism with each processor executing its own program on its own data
+	\end{itemi
+	Us we are intrested in \important{MIMD}. In practice what we want is to have is multiple cpus that operate at the same time.
+	
+\end{parag}
+
+	How does it works is: we take our normal system (memory bus, i/o, etc.) and \important{on the same bus}, we add all of our CPU.
+\begin{parag}{Share-Memory Multiprocessors}
+	\begin{center}
+	    
+    \includegraphics[scale=0.25]{screenshots/2025-12-16_7.png}
+    \includegraphics[scale=0.25]{screenshots/2025-12-16_5.png}
+    \end{center}
+\end{parag}
+\begin{parag}{Distributed-Memory Multiprocessors}
+	The other way of doing it is to take all of our cpus and construct little system around each of them. And then link them all together using the Interconnection Network. This way we have more scalability as the previous multiprocessors.
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-12-18.png}
+	\end{center}
+\end{parag}
+	\begin{framedremark}
+		
+		What we mean here by 'Often a real network' is that all those system doesn't have to be physicallly connected. For instance \href{SETI@home}{https://setiathome.berkeley.edu/} was a famous distributed computing project where people volunteered their computer's idle processing power to help analyse radio signals from space in the search of extraterrestrial intelligence. Instead of having like a very high tech optic fiber Interconnection Network, all the computer were connected with the slow internet.
+	\end{framedremark}
+    
+\begin{parag}{Programming Paradigms}
+    \important{Shared-Memory}
+	\begin{itemize}
+		\item Data exchanged \important{implicitly} through shared variables in a comon memory space
+		\item Standard libraries (e.g., \important{OpenMP}) simplify programming
+		\item Natural on shared-memory architectures (e.g., \important{SMP}, \important{NUMA})
+		\item Can be implemented as \important{Distributed Shared Memory} (\important{DSM}) on systems with physicallly distributed memory, leveraging virtual memory abstraction (e.g., \important{TreadMarks} for DSM; \important{Apache Spark} (scala!!) for a DSM-like abstraction in big data)
+	\end{itemize}
+	\important{Message Passing}
+	\begin{itemize}
+		\item Data exchanged \important{explicitly} by sending and receiving messages over a network or interconnect
+		\item Standard libraries (e.g., \important{MPI}) are widely used
+		\item Natural on distributed-memory systems with private memory per processor
+		\item Can also be implemented on shared-memory systems (e.g., \important{NUMA}), though it may introduce unnecessary overhead compared to native shared-memory programming
+	\end{itemize}
+	
+\end{parag}
+
+\subsubsection{Accessing Memory in Distributed Systems}
+
+Suppose a CPU wants to access memory that physically belongs to another CPU.
+There are two main ways to achieve this: a \important{hardware-based approach}
+and a \important{software-based approach}.
+
+\begin{parag}{Hardware-based approach (NUMA / Hardware DSM)}
+
+In a hardware solution, the system exposes a single shared address space,
+even though memory is physically distributed across processors.
+Each cache is connected to an interconnection network, often through a
+dedicated controller (as the yellow node between cache and memory).
+
+When the cache performs a lookup:
+\begin{itemize}
+    \item If the access is a \important{cache hit}, execution proceeds normally.
+    \item If the access is a \important{cache miss}, the cache controller examines the address.
+\end{itemize}
+
+Modern systems have large address spaces (e.g., 64-bit), allowing some bits of the address
+to encode \important{which processor owns the data}.
+\begin{itemize}
+    \item If the address corresponds to \important{local memory}, the cache fetches the data normally.
+    \item If the address corresponds to \important{remote memory}, the cache controller generates
+    a small request packet and sends it over the interconnection network to the owning processor.
+\end{itemize}
+
+The remote processor then:
+\begin{itemize}
+    \item Accesses its local memory,
+    \item Sends the requested data back over the network,
+    \item Allows the requesting cache to be reloaded.
+\end{itemize}
+
+Because cache refills are on the critical execution path, the interconnection network
+must be \important{very fast}. Although remote accesses are already costly
+(e.g., hundreds of cycles), they must not imply millisecond-scale delays.
+
+This approach effectively implements a \important{hardware Distributed Shared Memory (DSM)}.
+The memory is:
+\begin{itemize}
+    \item \important{Distributed} physically,
+    \item \important{Shared} in terms of addressing,
+    \item Managed directly by hardware.
+\end{itemize}
+
+Such systems are classified as \important{NUMA} architectures, since access latency
+depends on whether the memory is local or remote.
+\end{parag}
+
+\begin{parag}{software-based approach (software DSM)}
+The same shared-memory abstraction can also be implemented in software.
+Consider two independent PCs connected by a network:
+each has its own memory, operating system, and private address space.
+
+At first glance, sharing memory seems impossible.
+However, modern systems already rely heavily on \important{virtual memory}.
+Every memory access goes through the \important{TLB}, which is under the control of the operating.
+
+The operating system can exploit this as follows:
+\begin{itemize}
+    \item If a requested page is not present locally, the OS detects this via a TLB miss.
+    \item Traditionally, the missing page is fetched from disk.
+    \item In a software DSM system, the missing page may instead reside
+    in the memory of another machine.
+\end{itemize}
+
+From the program’s perspective, the memory still appears shared.
+The OS transparently:
+\begin{itemize}
+    \item Fetches pages over the network,
+    \item Updates page tables and the TLB,
+    \item Moves pages between machines as needed.
+\end{itemize}
+
+When multiple processors frequently access the same data,
+pages may migrate back and forth between machines,
+effectively implementing communication through shared memory.
+This behavior is sometimes described as \important{page ping-pong}.
+
+Although slower than hardware DSM, software DSM can outperform disk access
+and provides a powerful abstraction by reusing mechanisms already present
+in virtual memory systems.
+
+\end{parag}
+
+\begin{parag}{Why (Hardware) Shared Memory}
+	\begin{subparag}{Advantages}
+		\begin{itemize}
+			\item For applications looks like a multitasking uniprocessor
+			\item For OS only evolutionary extensions required
+			\item Easy to do communication without OS
+			\item Software can worry about correctness first, then performance
+		\end{itemize}
+	\end{subparag}
+	\begin{subparag}{Disadvantages}
+	    \begin{itemize}
+			\item communication is implicit, hence harder to optimize
+			\item Propoer synchronization is complex
+			\item Hardware designers must implement
+	    \end{itemize}
+	\end{subparag}
+	\begin{subparag}{Result}
+	    \begin{itemize}
+			\item \important{Symmetric Multiprocessors} (SMPs) where the foundation of early supercomputers but gave way to distributed-memory message-passing systems as scaling issues \textrightarrow made SMPs less efficient
+			\item \important{Chip Multiprocessors (CMPs)} or \important{multicore} processors dominate as the most widesparead form of parallel computing, driving multibillion-dollar market
+	    \end{itemize}
+	    
+	\end{subparag}
+\end{parag}
+
+\begin{parag}{Intel Nehalem (2008)}
+    If we take an 'old' architecture, we can see that it is done like we have seen before:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-18_1.png}
+	\end{center}
+\end{parag}
+
+\begin{parag}{Cache Coherence Problem Step 1}
+    Imagine we have this sequence of processors that have their own private caches. When the second processor load a particular value in memory (a miss) is brough up to the processor and now is in the cache.
+	\begin{center}
+	    
+	
+	\begin{tikzpicture}[block/.style={rectangle, draw, minimum height=1cm, minimum width=2cm}, node distance=1cm]
+
+% Nodes
+\node[block] (p1) {P1};
+\node[block, right=of p1] (p2) {P2};
+\node[block, below=of $(p1)!0.5!(p2)$] (network) {Interconnection Network};
+\node[block, below=of network] (memory) {Main Memory};
+
+% Dotted line
+\draw[dotted] (memory.west) -- ++(-0.5,0) node[midway, above] {x};
+\draw[ultra thick, pink!80, fill] (memory.west) ++(0.06, -0.15) rectangle ++(1.2, -0.1);
+\draw[ultra thick, pink!80, fill] (p2.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+
+
+% Arrows
+\draw[->] (p1) -- (network);
+\draw[->] (p2) -- (network);
+\draw[->] (network) -- (memory);
+
+% Instruction label
+\node[align=right] at (4, 1.5) {\texttt{Id r2, x}};
+
+\end{tikzpicture}
+	\end{center}
+Suppose now that the processor 1 does the same \texttt{ld r2, x}, we would get without any problem:
+\begin{center}
+    
+
+\begin{tikzpicture}[block/.style={rectangle, draw, minimum height=1cm, minimum width=2cm}, node distance=1cm]
+
+% Nodes
+\node[block] (p1) {P1};
+\node[block, right=of p1] (p2) {P2};
+\node[block, below=of $(p1)!0.5!(p2)$] (network) {Interconnection Network};
+\node[block, below=of network] (memory) {Main Memory};
+
+% Dotted line
+\draw[dotted] (memory.west) -- ++(-0.5,0) node[midway, above] {x};
+\draw[ultra thick, pink!80, fill] (memory.west) ++(0.06, -0.15) rectangle ++(1.2, -0.1);
+\draw[ultra thick, pink!80, fill] (p2.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+\draw[ultra thick, pink!80, fill] (p1.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+
+
+% Arrows
+\draw[->] (p1) -- (network);
+\draw[->] (p2) -- (network);
+\draw[->] (network) -- (memory);
+
+
+\end{tikzpicture}
+\end{center}
+Now both processors have the value of the address \texttt{x} in the cache. Now suppose that processors one want the change this value in memory, this new value will be only overwritten in the cache:
+\begin{center}
+    
+
+\begin{tikzpicture}[block/.style={rectangle, draw, minimum height=1cm, minimum width=2cm}, node distance=1cm]
+
+% Nodes
+\node[block] (p1) {P1};
+\node[block, right=of p1] (p2) {P2};
+\node[block, below=of $(p1)!0.5!(p2)$] (network) {Interconnection Network};
+\node[block, below=of network] (memory) {Main Memory};
+
+% Dotted line
+\draw[dotted] (memory.west) -- ++(-0.5,0) node[midway, above] {x};
+\draw[ultra thick, pink!80, fill] (memory.west) ++(0.06, -0.15) rectangle ++(1.2, -0.1);
+\draw[ultra thick, pink!80, fill] (p2.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+\draw[ultra thick, blue!20, fill] (p1.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+
+
+% Arrows
+\draw[->] (p1) -- (network);
+\draw[->] (p2) -- (network);
+\draw[->] (network) -- (memory);
+
+
+\end{tikzpicture}
+\end{center}
+Then when the second processor will try to read \texttt{ld r5, x} we will have an error, the \texttt{r5} register will have the previous value (the pink) and not the correct one (blue). And this is not a matter of the cache not being \important{write-through}\\
+But this issue is not really new in multiprocessors, if we took an i/o like a button for instance. We poll the button one time, we store the result in cache. When we want to repolling the button \textrightarrow cache hit \textrightarrow not pressed. But maybe it is pressed.\\
+We can go even with the DMA, the DMA works kind of the same way as the processor one in our case. What can we do?\\
+
+But there we have simpler ad-hoc ways to handle this:
+\begin{itemize}
+	\item Flush the cache in software
+	\item Invalidate caches lines in software
+	\item Define \important{noncachable areas of memory} and perform I/O there
+\end{itemize}
+\end{parag}
+
+\begin{framedremark}
+The issue that we have here is not an issue of time, the  p2 memory will \important{never know} the blue data. The only way for the p2 cache to have the blue is:
+\begin{itemize}
+	\item blue has to be in main memory: p1 access another data in memory which is in the same line as the blue one (in the cache) which make the cache \important{evict} the blue data \textrightarrow needs to be written in memory
+	\item It has to \important{throw away} the pink data on the p2 cache (\important{and not write it in main memory})
+	\item reload the data in p2 from main memory
+\end{itemize}
+
+\end{framedremark}
+
+\begin{parag}{Coherent Memory System}
+    \begin{enumerate}
+        \item \important{Preservation of program order}. If P writes in X and then P reads in X, and in the meantime no other processor has written X, the value returned is the value previoulsy written by P
+        \item \important{Coherent view} if P1 write X and P2 read X, and in the meantime no other processor has written X, the value returned is the value previously written by P1, if the read and write are sufficiently separated in time.
+        \item \important{Write Serialization} if P1 writes X and P2 writes X, all processors see the writes in the same order
+    \end{enumerate}
+    
+\end{parag}
+
+
+\subsubsection{Snoopy Cache-Coherence Protocols}
+
+So what we will need to do is actually have our p2 processor/cache \important{looking} to main memory to see if any changed is required. The way of doing this is call \important{snoopy cache-coherence protocols} which is the most intuitive and practical method of resolving this issue. We are snooping '\textit{mettre son nez}' \textit{Paulo Ienne}:
+
+\begin{parag}{Bus provides serialization point}
+	\begin{itemize}
+		\item The bus is used the serialize operations, meaning it ensures that all caches see memory updates in consistent order. If one processor writes a value to memory, the bus shouts this action to all caches, so they can all 'mettre leur nez' and update their copies of the data if needed.
+	\end{itemize}
+\end{parag}
+\begin{parag}{Each cache controller \important{snoops} all bus transactions}
+	Each cache controller listens to the bus for transactions that involve memory addresses \important{it holds}. When it 'snoops' a transaction, it determines wether it needs to:
+	\begin{itemize}
+		\item Invalidate
+		\item Update
+		\item Supply value
+	\end{itemize}
+	Which one depends on state of the line and the protocol. State? does that means that we have a fsm??
+\end{parag}
+
+
+\subsubsection{FSM of a Cache}
+Imagine that we want to describe a cache in a formal way (forget what we have seen before). For our caches we have:
+\begin{itemize}
+	\item write-through, write-no-allocate cache
+	\item action
+		\begin{itemize}
+			\item PrRd (processor read)
+			\item PrWr (processor write)
+			\item BusRd (bus read)
+			\item BusWr (bus write)
+		\end{itemize}
+\end{itemize}
+First, what we need to understand is that we are not really talking about the state of the cache, we are talkning about the state of a \important{cache line}. So let us first about what we need.
+
+We need to know wether or not the piece of data that we have is valid or not. This give us two states:
+ So let us first about what we need.
+
+ We need to know wether or not the piece of data that we have is valid or not. This give us two states:
+
+	\begin{center}
+			
+		
+	\begin{tikzpicture}[
+		state/.style=
+		{circle, mininum size=0cm, draw, align=center, ->, >, >=stealth', auto, semithick },
+		>=Stealth
+	]
+
+	% Nodes
+	\node[state]  at (0, 0)(invalid) {Invalid};
+	\node[state] at (0, 2)(valid){Valid};
+	\draw[->] (invalid.west) edge[bend left] node[left] {PrRd/BusRd} (valid.west);
+	\draw[->] (invalid) edge[loop below] node {PrWr/BusWr} (invalid);
+	\draw[->] (valid) edge[loop above] node {PrRd/--} (valid);
+	\draw[->] (valid) edge[loop right] node {PrWr/BusWr} (valid);
+
+	\end{tikzpicture}
+
+	\end{center}
+	But is it a bit strange, how can that be right? We never invalidate anything? We miss eviction here, but when we evict something did means that we have a 'new finite state machine'. Each fsm represent one piece of memory and not the other. So it should be more something like this
+
+
+	\begin{center}
+			
+		
+	\begin{tikzpicture}[
+		state/.style=
+		{circle, mininum size=0cm, draw, align=center, ->, >, >=stealth', auto, semithick },
+		>=Stealth
+	]
+
+	% Nodes
+	\node[state]  at (0, 0)(invalid) {Invalid};
+	\node[state] at (0, 2)(valid){Valid};
+	\draw[->] (invalid.west) edge[bend left] node[left] {PrRd/BusRd} (valid.west);
+	\draw[->] (invalid) edge[loop below] node {PrWr/BusWr} (invalid);
+	\draw[->] (valid) edge[loop above] node {PrRd/--} (valid);
+	\draw[->] (valid) edge[loop right] node {PrWr/BusWr} (valid);
+	\draw[thick, dotted ,->] (valid) edge[bend left] node[left] {evict} (invalid);
+
+	\end{tikzpicture}
+
+	\end{center}
+	In fact the finite state machine \important{disappear} when we evict our data. The state that we create here has already been here before, the valid bit in our cache is the state of the fsm. So now the problem at step four look more like this:
+
+\begin{center}
+    
+
+\begin{tikzpicture}[block/.style={rectangle, draw, minimum height=1cm, minimum width=2cm}, node distance=1cm]
+
+% Nodes
+\node[block] (p1) {P1};
+\node[block, right=of p1] (p2) {P2};
+\node[block, below=of $(p1)!0.5!(p2)$] (network) {Interconnection Network};
+\node[block, below=of network] (memory) {Main Memory};
+
+% Dotted line
+\draw[dotted] (memory.west) -- ++(-0.5,0) node[midway, above] {x};
+\draw[ultra thick, blue!20, fill] (memory.west) ++(0.06, -0.15) rectangle ++(1.2, -0.1);
+\draw[ultra thick, pink!80, fill] (p2.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+\draw[ultra thick, blue!20, fill] (p1.west) ++(0.06, -0.2) rectangle ++(1.2, -0.1);
+
+
+% Arrows
+\draw[->] (p1) -- (network);
+\draw[->] (p2) -- (network);
+\draw[->] (network) -- (memory);
+
+
+\end{tikzpicture}
+\end{center}
+So now what happens is the following:
+\begin{itemize}
+	\item Someone is writting to his cache \textrightarrow he then perform a \important{bus writing}
+	\item So the bus has the information of a writting
+\end{itemize}
+So us, as the other processors, we also have access to the bus. Everytime there is a bus write and that it doesn't come from our processor, this means that the value in mean memory has been changed \textrightarrow our value is invalid. So now we have a way of knowing when to change:
+
+
+
+
+	\begin{center}
+			
+		
+	\begin{tikzpicture}[
+		state/.style=
+		{circle, mininum size=0cm, draw, align=center, ->, >, >=stealth', auto, semithick },
+		>=Stealth
+	]
+
+	% Nodes
+	\node[state]  at (0, 0)(invalid) {Invalid};
+	\node[state] at (0, 2)(valid){Valid};
+	\draw[->] (invalid.west) edge[bend left] node[left] {PrRd/BusRd} (valid.west);
+	\draw[->] (invalid) edge[loop below] node {PrWr/BusWr} (invalid);
+	\draw[->] (valid) edge[loop above] node {PrRd/--} (valid);
+	\draw[->] (valid) edge[loop right] node {PrWr/BusWr} (valid);
+	\draw[thick,->] (valid.east) edge[bend left] node[right] {BusWr/ --} (invalid.east);
+
+	\end{tikzpicture}
+
+	\end{center}
+Bus this is pretty bad, firstly having one processor being write-through is not very good, this means everytime we are writting to memory, it is a miss. Now imagine this for a multiprocessor. This is even worse than before, maybe even with 2 processors we will have a bottleneck.
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-19.png}
+\end{center}
+
+
+Imagine that we have a program with just a for loop \texttt{for (int i = 0; i < 10; i++)}. At each \texttt{i++} we would need to write to memory even though everybody else doesn't case about our local variables. On the other hand downloading an image, a pdf, etc.. is something important! But as the processor perspective we don't know.
+
+A way of solving this issue is to make a difference for the programmer. We allows the programmer to flush the cache when he needs to transport something to main memory. When he doesn't need to transport, he just doesn't flush \textrightarrow value stays in the cache. But this is not very good, we are adding work to the programmer. Is there a way to solve this issue:
+
+
+\begin{parag}{A 3-State Write-Back Invalidation Protocol (MSI)}
+    First what we have done before:
+	
+	\textbf{2-State Protocol}
+	\begin{itemize}
+		\item Simple hardware and protocol
+		\item \important{Bandwidth} (every write goes on bus)
+	\end{itemize}
+	\textbf{3-State protocol}
+	\begin{itemize}
+		\item \important{M}odified
+			\begin{itemize}
+				\item Only one cache has valid/latest copy
+				\item Memory is stale, that is the content is not up to date
+			\end{itemize}
+		\item \important{S}hared 
+			\begin{itemize}
+				\item One or more caches have valid copy
+			\end{itemize}
+		\item \important{I}valid
+	\end{itemize}
+	It must invalidate all other copies before entering modified state requires bus transaction (order and invalidate). This requires bus transaction (order and invalidate)\\
+
+	This means that now our finite state machine has three states:
+\end{parag}
+\begin{parag}{MSI: Processor and Bus Actions}
+	For our processor, we have only two actions: \texttt{PrRd} \textrightarrow processor read and \texttt{PrWr} \textrightarrow processor write.\\
+
+	On the other hand, for the bus we have:
+	\begin{itemize}
+		\item \texttt{BusRd} \textrightarrow bus read; Read \important{without intent to modify}, data could come from memory or another cache
+		\item \texttt{BusRdX} \textrightarrow bus read exclusive; read \important{with intent to modify}, must invalidate all other caches copies
+		\item  \texttt{BusWB} \textrightarrow writeback; cache controller puts contents on bus and memory is updated
+	\end{itemize}
+	\begin{definition}{cache-to-cache transfer}
+	\important{cache-to-cache transfer} occurs when another cache satisfies \important{BusRd} or \important{BusRdX} request with a \important{BusWB}
+	\end{definition}
+	
+    
+\end{parag}
+
+
+	\begin{center}
+			
+		
+	\begin{tikzpicture}[
+		state/.style=
+		{circle, mininum size=0cm, draw, align=center, ->, >, >=stealth', auto, semithick },
+		>=Stealth
+	]
+
+	% Nodes
+	\node[state]  at (0, 0)(invalid) {Invalid};
+	\node[state] at (0, 3)(shared){Shared};
+	\node[state] at (0, 6)(modified){Modified};
+	\draw[->] (invalid.west) edge[bend left] node[left] {PrWr/BusRdX} (modified.west);
+	\draw[->] (invalid) edge[bend left] node[left] {PrRd/BusRd} (shared);
+	\draw[->] (shared) edge[bend left] node[left] {PrWr/BusRdx} (modified);
+	\draw[->] (modified) edge[loop above] node {PrRd/--, PrWr/ --} (modified);
+	\draw[dotted, thick, ->] (modified) edge[bend left] node[right] {BusRd/ BusWB} (shared);
+	\draw[dotted, thick,->] (modified.east) edge[bend left] node[right] {BusRdX/BusWB} (invalid.east);
+	\draw[dotted, thick,->] (shared) edge[bend left] node[right] {BusRdX/ --} (invalid);
+	\draw[->] (shared) edge[loop below] node[below] {PrRd/ --, BusRd/ --} (shared);
+
+	\end{tikzpicture}
+
+	\end{center}
+
+
+
+\begin{framedremark}
+An important thing to do is to understand for each arrows, why do we have to do another execution. What when performing a processor write from invalid to modified we have to do a bus read exclusive. Why when we are in invalid and we try to read we also have to read from the bus (this is kind of obvious but you get the intuition for the rest).\\
+
+
+For each transition in the MSI protocol, it is important to understand why a bus transaction is needed or not.
+
+\begin{itemize}
+
+\item \textbf{Processor read in the Invalid state (Invalid $\rightarrow$ Shared, \texttt{PrRd / BusRd})}\\
+If the cache line is in the Invalid state, the cache does not have the data. Therefore, it must issue a \texttt{BusRd} to get the data from memory or from another cache. Since the processor only wants to read the data, the line can enter the Shared state.
+
+\item \textbf{Processor write in the Invalid state (Invalid $\rightarrow$ Modified, \texttt{PrWr / BusRdX})}\\
+If the processor wants to write to a cache line that is not present, the cache must first get the data and also make sure no other cache has a copy. A \texttt{BusRdX} fetches the data and invalidates all other copies, so the cache can move to the Modified state.
+
+\item \textbf{Processor write in the Shared state (Shared $\rightarrow$ Modified, \texttt{PrWr / BusRdX})}\\
+In the Shared state, the same cache line may exist in several caches. Before writing, the cache must ensure it is the only one with a valid copy. Issuing a \texttt{BusRdX} invalidates the other copies and allows the transition to the Modified state.
+
+\item \textbf{Processor read or write in the Modified state (Modified $\rightarrow$ Modified, \texttt{PrRd / --}, \texttt{PrWr / --})}\\
+In the Modified state, the cache already has the only valid and up-to-date copy of the data. Therefore, no bus transaction is needed.
+
+\item \textbf{Bus read while in the Modified state (Modified $\rightarrow$ Shared, \texttt{BusRd / BusWB})}\\
+If another cache issues a \texttt{BusRd}, the modified cache must provide the updated data by writing it back on the bus. After that, the cache no longer has exclusive ownership and moves to the Shared state.
+
+\item \textbf{Bus read-exclusive while in the Modified state (Modified $\rightarrow$ Invalid, \texttt{BusRdX / BusWB})}\\
+If another cache requests exclusive access, the modified cache must first write back the updated data and then invalidate its own copy.
+
+\item \textbf{Bus read-exclusive while in the Shared state (Shared $\rightarrow$ Invalid, \texttt{BusRdX / --})}\\
+In the Shared state, the data is the same as in memory. When a \texttt{BusRdX} is observed, the cache simply invalidates its copy without writing back.
+
+\end{itemize}
+\end{framedremark}
+
+What is the important thing here is that now, we are able to PrWr without having to do any thing else. This is possible because of the dirst/modified state that we added. This way we \important{know} that we have in our cache is not shared with main memory and therefore might as well do what we want with it (until it is evicted).
+
+\begin{parag}{Exampe}
+    Now let us take for example the following table of actions:
+	\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|}
+		\hline
+	     & CPU Action & P1 state & P2 state & P3 state & Bus Action & Data from  \\
+	     \hline
+		0 & & - (=|) &- (=|) &- (=|) & &  \\
+		\hline 
+		1 & P1 reads x &  & & & &  \\
+		\hline 
+		2 & P3 reads x &  & & & &  \\
+		\hline 
+		3 & P3 writes x &  & & & &  \\
+		\hline 
+		4 & P1 reads x &  & & & &  \\
+		\hline 
+		5 & P2 reads x &  & & & &  \\
+		\hline 
+	\end{tabular}
+	\end{center}
+	Let us do a few cases. For the first one we have a cache miss, this means that we go from invalid \textrightarrow shared. For the other one everybody care about a bus read (in I)
+
+	\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|}
+		\hline
+	     & CPU Action & P1 state & P2 state & P3 state & Bus Action & Data from  \\
+	     \hline
+		0 & & - (=|) &- (=|) &- (=|) &  &  \\
+		\hline 
+		1 & P1 reads x & S & I  & I & BusRd & MEM \\
+		\hline
+		2 & P3 reads x &  & & & &  \\
+		\hline
+		3 & P3 writes x &  & & & &  \\
+		\hline
+		4 & P1 reads x &  & & & &  \\
+		\hline
+		5 & P2 reads x &  & & & &  \\
+		\hline
+	\end{tabular}
+	\end{center}
+	Now p3 reads x, this means that we do exactly the same thing as p1 has done. p1 doesn't care about a bus read has it is alread in S.
+
+	\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|}
+		\hline
+	     & CPU Action & P1 state & P2 state & P3 state & Bus Action & Data from  \\
+	     \hline
+		0 & & - (=|) &- (=|) &- (=|) &  &  \\
+		\hline 
+		1 & P1 reads x & S & I  & I &BusRd & MEM \\
+		\hline
+		2 & P3 reads x & S  & I  &  S &  BusRd &  MEM \\
+		\hline
+		3 & P3 writes x &  & & & &  \\
+		\hline
+		4 & P1 reads x &  & & & &  \\
+		\hline
+		5 & P2 reads x &  & & & &  \\
+		\hline
+	\end{tabular}
+	\end{center}
+	Now there is something intresting! Now we have a processor write from a shared state \textrightarrow we go to the dirty state M and the Bus is doing a BusRdX. As the other state the P1 was in shared but received a BusRdX \textrightarrow invalid
+
+	\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|}
+		\hline
+	     & CPU Action & P1 state & P2 state & P3 state & Bus Action & Data from  \\
+	     \hline
+		0 & & - (=|) &- (=|) &- (=|) &  &  \\
+		\hline 
+		1 & P1 reads x & S & I  & I &BusRd & MEM \\
+		\hline
+		2 & P3 reads x & S  & I  &  S &  BusRd &  MEM \\
+		\hline
+		3 & P3 writes x &  I &  I & M & BusRdX & MEM \\
+		\hline
+		4 & P1 reads x &  & & & &  \\
+		\hline
+		5 & P2 reads x &  & & & &  \\
+		\hline
+	\end{tabular}
+	\end{center}
+	For the fourth step, P1 now reads the new value which makes up to date again. And now the P3 is now also up to date with everybody \textrightarrow shared:
+
+	\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|}
+		\hline
+	     & CPU Action & P1 state & P2 state & P3 state & Bus Action & Data from  \\
+	     \hline
+		0 & & - (=|) &- (=|) &- (=|) &  &  \\
+		\hline 
+		1 & P1 reads x & S & I  & I &BusRd & MEM \\
+		\hline
+		2 & P3 reads x & S  & I  &  S &  BusRd &  MEM \\
+		\hline
+		3 & P3 writes x &  I &  I & M & BusRdX & MEM \\
+		\hline
+		4 & P1 reads x & S   & I  & S & BusRd  & P3  \\
+		\hline
+		5 & P2 reads x &  & & & &  \\
+		\hline
+	\end{tabular}
+	\end{center}
+	For the last steps, this is just a classical reads which make P2 goes into the shared state:
+
+	\begin{center}
+	\begin{tabular}{c|c|c|c|c|c|c|}
+		\hline
+	     & CPU Action & P1 state & P2 state & P3 state & Bus Action & Data from  \\
+	     \hline
+		0 & & - (=|) &- (=|) &- (=|) &  &  \\
+		\hline 
+		1 & P1 reads x & S & I  & I &BusRd & MEM \\
+		\hline
+		2 & P3 reads x & S  & I  &  S &  BusRd &  MEM \\
+		\hline
+		3 & P3 writes x &  I &  I & M & BusRdX & MEM \\
+		\hline
+		4 & P1 reads x & S   & I  & S & BusRd  & P3  \\
+		\hline
+		5 & P2 reads x & S  & S & S  & BusRd & MEM \\
+		\hline
+	\end{tabular}
+	\end{center}
+
+\end{parag}
+this is pretty nice, but this is not perfect. Because of that, there many other similar protocols that exists. For instance:
+\begin{parag}{4-State (MESI) Invalidation Protocol}
+	Often called the  \textbf{Illinois} protocol
+	\begin{itemize}
+		\item \important{M}odified (dirty)
+		\item \important{E}xclusive (unshared clean = only copy, not dirty)
+		\item \important{S}hared
+		\item \important{I}nvalid
+	\end{itemize}
+	This requires \important{shared} signal to detect if other caches have a copy of block. Also cache flush for cache-to-cache transfers
+	\begin{itemize}
+		\item Only one can do it though
+	\end{itemize}
+	
+\end{parag}
+There is other protocol with more states, different transactions etc... There is a lots of research on how to minimize the coherence traffic (=better detect when it is not necessary)
+\begin{center}
+    An important problem is scalability beyond a few processors/cores \textrightarrow \important{Directory-Based Cache coherence}
+\end{center}
+
+
+\subsubsection{Directory-Based Cache Coherence}
+
+Imagine a system like this:
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-20.png}
+\end{center}
+Imagine now that there is a slow interconnection netwrok.
+
+
+Directory-based cache coherence is a technique used to make cache coherence scalable when the number of processors increases.
+
+Instead of broadcasting coherence requests to all caches (as in snooping-based protocols), the system maintains a \textbf{directory} that keeps track of which caches have a copy of each memory block.
+
+For each memory block, the directory stores:
+\begin{itemize}
+    \item The state of the block (e.g., shared, modified)
+    \item The list of caches that currently hold a copy
+\end{itemize}
+
+When a processor wants to read or write a block, it sends a request to the directory. The directory then:
+\begin{itemize}
+    \item Sends the data if no conflict exists
+    \item Or sends invalidation or update messages only to the caches that actually have a copy
+\end{itemize}
+
+This avoids broadcast traffic on the interconnection network and greatly reduces coherence traffic, making the protocol scalable to many processors, especially when the network is slow.
+
+Directory-based coherence is therefore preferred in large multicore and multiprocessor systems.
+
+\begin{parag}{Snoopy vs. Directory-Based}
+    \begin{itemize}
+		\item \important{snoopy protocols} are distributed coherence protocols at the cache level
+			\begin{itemize}
+				\item Scalability issues
+				\item Unnecessary coherence traffic
+				\item Fast
+			\end{itemize}
+		\item \important{Directory-based protocols} are centralized protocols at the memory level
+			\begin{itemize}
+				\item Scalable
+				\item Coherence traffic only as actually needed
+				\item Latency isues, due to centralization
+				\item Granularity issues, linked to latency issues
+			\end{itemize}
+    \end{itemize}
+    
+\end{parag}
+
+
+
+\subsubsection{Multilevel Caches}
+The other problem is that we don't only have caches, we have \important{multiple level of caches}.\\
+What happens if instead of CPU \textrightarrow cache \textrightarrow Mem, we have CPU \textrightarrow L1 cache \textrightarrow level 2 cache \textrightarrow level 3 cache \textrightarrow  Mem?\\
+What we would need to do is to make each cache level speaks to themselve, we could replicate snooping at all levels.
+
+
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-20_1.png}
+\end{center}
+\begin{parag}{Inclusion Property between Caches at levels n-1 and n}
+    \begin{enumerate}
+		\item \important{Same content}: Content of L(n-1) cache is always a subset of the corresponding L(n)  \\ 
+			A bus transaction an L2 cache is also always relevent for the L3 cache, hence a \important{snoop at L3 is sufficient}
+			\item  \important{Same state}: If a cache line is marked as owned/modified in L(n-1) cache, then it should also be so marked in the corresponding L(n) cache \\
+				If a bus transaction requests a cache line in owned/modified state in L3, the \important{L3 cache can determine this on its own without checking L2}
+    \end{enumerate}
+    So there is no need of snooping any more?
+\end{parag}
+
+
+\begin{parag}{Is Inclusion Naturally Maintained?}
+    In some cases yes: In a Miss, it is, as L1 misses go to L2 and eventually the data will be in both. However, in the general case  \textbf{no}: for instance, L2 will eventually decide to evict a given line and that may be also in L1 \textrightarrow if nothing special is done, \important{inclusion will be violated}\\
+	What we need is to \important{propagate invalidations} and \important{evictions} up the hierarchy to keep, for instance, L1 informed of what happens in L2.
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-12-20_2.png}
+	\end{center}
+\end{parag}
+
+\begin{framedremark}
+Which one is easier between snooping and maintaining inclusion is not trivially determined and well beyond this course... 
+\end{framedremark}
+
+\begin{parag}{Intel core and Intel Nehalem}
+	So if we take a look of what happen on commercial processor, it depends:
+\end{parag}
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-20_3.png}
+\end{center}
+
+

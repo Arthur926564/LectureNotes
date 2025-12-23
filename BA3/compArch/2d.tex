@@ -1,4 +1,3 @@
-\lecture{10}{2025-10-11}{Processor and converter}{}
 \section{Exceptions}
 We we still need to do one thing which is more in the hardware side: how can we handle running multiple programs at the same time? The goal is to \textit{fool} the user into believing that the programs are running at the same time.\\
 The idea on how to do that is to execute each program in small delta time, we run a program for 10ms then we stored all the value of the register somewhere, run the other program for 10 ms, store the registers value, restore the first registers values etc.\\

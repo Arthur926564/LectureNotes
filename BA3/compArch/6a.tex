@@ -1,0 +1,308 @@
+\subsection{Why Hardware Security}
+
+\begin{parag}{Software complexity}
+    \begin{itemize}
+        \item OSes and hypervisors are too complex to be trusted to be bug free
+        \item Who can trus OSes and hypervisors?! \important{Secure processor architextures}
+    \end{itemize}
+\end{parag}
+\begin{parag}{\important{Microarchitectural side-channel} attacks}
+    Sharing with other users gives them the ability to discover our secrets
+	\begin{itemize}
+		\item Shared caches, shared processors (branch predictors, pipelines, etc.) \textleftarrow cs-200
+	\end{itemize}
+\end{parag}
+\begin{parag}{Physical monitoring attacks and \important{physical side-channell attacks}}
+    Users cannot physically protect their computing Hardware
+	\begin{itemize}
+		\item Hardware is often in the cloud
+		\item Hardware is embedded and remote (Internet of Things, IoT)
+	\end{itemize}
+\end{parag}
+\begin{parag}{Outline of This Lecture}
+    \begin{itemize}
+		\item Basic Definitions
+		\item Attacks on Memory to Compromise Integrity (Rowhammer)
+		\item Covert Channels and Side-Channel Attacks
+		\item Attacks on Timing to Break Isolation and Confidentiality (Timing Side-Channel Attack)
+		\item Attacks on Memory to Break Isolation and Confidentiality (Cache Side-Channel Attacks)
+		\item Combined Attacks to Break Isolation and Confidentiality (Meltdown)
+		\item Combined Attacks to Break Isolation and Confidentiality (Spectre)
+    \end{itemize}
+\end{parag}
+
+\subsubsection{Basic Definitions}
+Specification of the threats that a system is protexted against:
+\begin{itemize}
+	\item \important{Trusted Computing Base}: what is the set of trusted hardware and software components
+	\item \important{Security properties}: what the trusted computin base is supposed to guarantee
+	\item \important{Attacker assumptions}: what a potential attacker is assumed capable of 
+	\item \important{Potential vulnerabilities}: what an attacker might be able to gain
+\end{itemize}
+
+
+
+\begin{parag}{Classic Security Properties}
+ 
+	\begin{itemize}
+		\item \important{Confidentiality} \textrightarrow prevent the disclosuer of secret information
+		\item \important{Integrity} \textrightarrow prevent the modification of protected information
+		\item \important{Availability} \textrightarrow guarantee the availability of services and systems
+	\end{itemize}
+	We will also speak of \important{isolation}, that is the possibility to prevent any interaction between users and processes, often used to guarantee confidentiality and integrity
+\end{parag}
+
+
+
+\subsubsection{Attacks on Memory to Compromise Integrity}
+y
+\begin{parag}{Dynamix Random-Access Memory}
+    \begin{itemize}
+		\item DRAMs are the densest (and thus cheapest) form of random-access semiconductor memory
+		\item DRAMs store \important{information as charge in small capacitors} part of the memory cell
+		\item Firat patented in 1968 by Robert Dennard, scaled amazingly over decades and was somehow an important ingredient of the progress of computing systems
+		\item Charge \important{leaks off} THE capacitors due to parasitic resistances \textrightarrow every DRAM cell needs a \important{periodic refresh} (e.g., every 60ms) lest it forgets information.
+    \end{itemize}
+\end{parag}
+\begin{parag}{Apparently only a Reliabilty Issue}
+    \begin{itemize}
+		\item To increase density (i.e., reduce cost) memory cells have becom incredibly small ( \textrightarrow \important{small storage capacitance, smaller noise margine}) and word line go extremely clode to each other (\textrightarrow \important{larger crosstalk capacitive coupling})
+		\item Frequent \important{activation of word lines} neighbouring particular cells between refreshes may \important{flip the cell states} due to various forms of capacitive coupling
+		\item \important{Disturbance errors} have been known design issue of DRAMs sinve ever, but failure in commercial DD3 chips was demonstrated in 2014
+    \end{itemize}
+    \begin{center}
+        Rowhammer
+    \end{center}
+    For instance let us took a remarkably simple code 
+	\begin{lstlisting}[language=x86]
+codela:
+	mov (x), %eax // read from address x 
+	mov (y), %eax // read from address y 
+	clflush (x)
+	clflush (y)
+	mfence
+	jump codela
+	\end{lstlisting}
+	\begin{itemize}
+		\item \texttt{mov} instructions activate neighbouring rows
+		\item \texttt{clflush} unprivileged x86 instructions flush the cache from the value of X and Y (so that future accesses are misses) and \texttt{mfence} roughly waits for the flush
+		\item Repeat as quickly as possible
+	\end{itemize}
+	
+	
+\end{parag}
+
+
+
+
+
+\begin{parag}{An opportunity for Attacks}
+    Rowhammer effectively violates memory protection (“if I can read, I can also write”)
+which is a key ingredient to privilege separation across processes.\\
+
+By accessing locations in neighbouring rows one could gain unrestricted memory
+access and privilege escalation
+
+\begin{itemize}
+    \item Allocate large chunks of memory, try many addresses, learn weak cells
+	\item Release memory to the OS
+	\item  Repeatedly map a file with RW permissions to fill memory with page table entries (PTEs)
+	\item Use Rowhammer to flip (semirandomly) a bit in one of these PTEs; it will now point to the wrong physical page
+	\item Chances are that this physical page contains PTEs too, so now accessing that particular mapping of the file (RW) actually modifies the PTEs, not the file
+	\item  Attacker can arbitrarily change PTEs and memory protection is gone
+\end{itemize}
+Not that simple in practive, tons of difficulties, but people managed to make it work!
+\end{parag}
+
+\begin{parag}{An aside on DRAMs: Data remanence}
+    \begin{itemize}
+		\item A completely different problem with storing data on capacitors: cells may leak information quickly in the worst case but very many do not leak much in typical conditions
+	\item Lowering significantly the device temperature (e.g., use spray refrigerants) makes most cells retain charge for long time (seconds to minutes)
+	\item \important{Coldboot} attacks:
+		\begin{itemize}
+			\item Cool a working DRAM device
+			\item switch off
+			\item Move the device to another computer or  reboot a malicous OS
+			\item Read content (password, secret keys)
+		\end{itemize}
+    \end{itemize}
+\end{parag}
+
+
+\subsection{Covert Channels and Side-Channel Attacks}
+\begin{parag}{Covert Channels}
+    \begin{itemize}
+		\item "A covert channel is an \important{intentional communication} between a sender and a receiver \important{via medium not designed to be a communication channel}" (Szefet, 2019)
+		\item If we isolate a critical process inside a virtual machine, a covert channel may allow a rogue programme inside of the isolated process (a \important{Trojan horse}) to leak a secret to some malicious receiver without anyone to notice (no conventional communication channel visible)
+    \end{itemize}
+\end{parag}
+    
+\begin{parag}{Covert Channels vs Side Channels}
+    \begin{itemize}
+        \item \important{Covert channels}:
+        \begin{itemize}
+            \item Intentional communication between a sender and a receiver
+            \item Both parties collaborate to leak information
+        \end{itemize}
+        \item \important{Side channels}:
+        \begin{itemize}
+            \item The victim is unaware of the information leakage
+            \item The attacker passively observes side effects
+        \end{itemize}
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Types of Covert and Side Channels}
+    \begin{itemize}
+        \item \important{Microarchitectural channels}
+        \begin{itemize}
+            \item Based on microarchitectural state that is not architecturally visible
+            \item Architectural state is defined and protected (except for bugs)
+            \item Exploit shared hardware resources
+            \item Examples:
+            \begin{itemize}
+                \item caches
+                \item branch predictors
+                \item pipelines
+            \end{itemize}
+        \end{itemize}
+        \item \important{Physical channels}
+        \begin{itemize}
+            \item Based on the physical nature of computing systems
+            \item Examples:
+            \begin{itemize}
+                \item power consumption
+                \item electromagnetic emissions
+                \item temperature
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{parag}
+Timing Side-Channel Attacks
+latex
+Copy code
+\subsection{Attacks on Timing to Break Isolation and Confidentiality}
+
+\begin{parag}{Timing Side-Channel Attacks}
+    \begin{itemize}
+        \item Execution time may reveal information about secret data
+        \item Time variability may depend on:
+        \begin{itemize}
+            \item input data values
+            \item execution paths
+            \item microarchitectural effects (caches, virtual memory, instruction scheduling)
+        \end{itemize}
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Example: String Comparison}
+    A naïve implementation returns as soon as a difference is detected, revealing the position of the first incorrect character.\\
+    A \important{constant-time} implementation always processes the entire input before returning.
+\end{parag}
+
+\begin{parag}{Blinding through Constant Time}
+    \begin{itemize}
+        \item Writing constant-time code is difficult
+        \item Compiler optimizations may reintroduce timing variability
+        \item Even branch-free code may leak information due to:
+        \begin{itemize}
+            \item caches
+            \item virtual memory
+            \item instruction latency
+        \end{itemize}
+        \item Many of the attacks discussed later are ultimately timing attacks
+    \end{itemize}
+\end{parag}
+
+
+
+\subsection{Attacks on Memory to Break Isolation and Confidentiality}
+
+\begin{parag}{Cache Side-Channel Attacks}
+    \begin{itemize}
+        \item One of the oldest and most powerful microarchitectural side channels
+        \item Known since the early 1990s, fully demonstrated in 2005
+        \item Cache state is shared but not architecturally visible
+        \item Attackers distinguish cache hits and misses via high-resolution timing
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{General Principle}
+    \begin{itemize}
+        \item Victim memory accesses depend on secret data
+        \item These accesses modify the cache state
+        \item The attacker infers secrets by observing cache behavior
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Prime + Probe}
+    \begin{itemize}
+        \item \important{Prime}: the attacker fills cache sets with its own data
+        \item The victim executes and evicts some cache lines
+        \item \important{Probe}: the attacker reloads its data and measures access time
+        \item Slower accesses indicate victim activity in the corresponding cache set
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Advantages of Prime + Probe}
+    \begin{itemize}
+        \item The attacker measures only its own code
+        \item Better control over noise
+        \item Works without shared memory
+    \end{itemize}
+\end{parag}
+
+
+
+\subsection{Combined Attacks to Break Isolation and Confidentiality (Meltdown)}
+
+\begin{parag}{Meltdown}
+    \begin{itemize}
+        \item Catastrophic attack allowing reads of protected kernel memory
+        \item Caused by microarchitectural implementation choices
+        \item Exploits a race between memory access and permission checks
+        \item Some architectures are accidentally resistant
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Attack Principle}
+    \begin{itemize}
+        \item The attacker performs a forbidden memory access
+        \item The value is transiently loaded during speculative execution
+        \item The value is used to perform a legal memory access
+        \item This access leaves observable cache traces
+        \item A cache side-channel attack reveals the secret
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Affected Processors}
+    \begin{itemize}
+        \item Intel x86: most processors since 1995
+        \item AMD x86: not affected
+        \item ARM, POWER: some implementations affected
+    \end{itemize}
+\end{parag}
+
+
+
+\subsection{Combined Attacks to Break Isolation and Confidentiality (Spectre)}
+
+\begin{parag}{Spectre}
+    \begin{itemize}
+        \item Exploits speculative execution and branch prediction
+        \item Branch predictors are not fully isolated across contexts
+        \item Speculation does not affect architectural state
+        \item Microarchitectural side effects leak information
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Attack Principle}
+    \begin{itemize}
+        \item The attacker trains the branch predictor
+        \item A misprediction forces speculative execution of unsafe code
+        \item Speculative memory accesses depend on secret data
+        \item Cache side effects remain after speculation is squashed
+        \item The attacker recovers the secret via a cache attack
+    \end{itemize}
+\end{parag}
+

@@ -1,289 +1,396 @@
-\contentsline {subsection}{\numberline {0.0.1}Content of the course}{5}{subsection.0.0.1}%
-\contentsline {subsubsection}{Literature}{5}{subsubsection*.2}%
 \contentsline {part}{I\hspace {1em}Midterm}{7}{part.1}%
 \contentsline {chapter}{\numberline {1}Processors and instruction set architecture}{9}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Instruction set architecture}{9}{section.1.1}%
-\contentsline {subsubsection}{The five classic components of a computer}{11}{subsubsection*.3}%
+\contentsline {subsubsection}{The five classic components of a computer}{11}{subsubsection*.2}%
 \contentsline {section}{\numberline {1.2}Instruction set architecture: Branches, Function and stack}{12}{section.1.2}%
-\contentsline {subsubsection}{An if-then-else}{13}{subsubsection*.4}%
-\contentsline {subsubsection}{A Do-while loop}{13}{subsubsection*.5}%
+\contentsline {subsubsection}{An if-then-else}{13}{subsubsection*.3}%
+\contentsline {subsubsection}{A Do-while loop}{13}{subsubsection*.4}%
 \contentsline {subsection}{\numberline {1.2.1}Functions}{14}{subsection.1.2.1}%
-\contentsline {paragraph}{Jump and link}{14}{section*.6}%
-\contentsline {paragraph}{Acquire storage ressource the function needs}{14}{paragraph*.7}%
+\contentsline {paragraph}{Jump and link}{14}{section*.5}%
+\contentsline {paragraph}{Acquire storage ressource the function needs}{15}{paragraph*.6}%
 \contentsline {subsection}{\numberline {1.2.2}The stack}{15}{subsection.1.2.2}%
-\contentsline {paragraph}{Option 2}{16}{paragraph*.8}%
+\contentsline {paragraph}{Option 2}{16}{paragraph*.7}%
 \contentsline {section}{\numberline {1.3}Memory and Addressing Modes}{17}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Memory}{17}{subsection.1.3.1}%
-\contentsline {paragraph}{Types of memory}{17}{paragraph*.9}%
-\contentsline {paragraph}{SRAM}{18}{paragraph*.10}%
-\contentsline {paragraph}{DRAM}{19}{paragraph*.11}%
-\contentsline {paragraph}{Static RAM typical interface}{21}{paragraph*.12}%
-\contentsline {paragraph}{Asynchronous read cycle}{21}{section*.13}%
-\contentsline {paragraph}{synchronous SRAM Read cycle}{22}{section*.14}%
-\contentsline {subsubsection}{Load and store instrucitons}{22}{subsubsection*.15}%
-\contentsline {paragraph}{Why RISC-V instructions are so simple?}{23}{paragraph*.16}%
-\contentsline {subsubsection}{Byte addressed memory}{24}{subsubsection*.17}%
-\contentsline {paragraph}{Loading a word (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lw}) and Instruction}{25}{paragraph*.18}%
-\contentsline {paragraph}{Loading bytes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lb})}{25}{paragraph*.19}%
+\contentsline {paragraph}{Types of memory}{17}{paragraph*.8}%
+\contentsline {paragraph}{SRAM}{18}{paragraph*.9}%
+\contentsline {paragraph}{DRAM}{19}{paragraph*.10}%
+\contentsline {paragraph}{Static RAM typical interface}{21}{paragraph*.11}%
+\contentsline {paragraph}{Asynchronous read cycle}{21}{section*.12}%
+\contentsline {paragraph}{synchronous SRAM Read cycle}{22}{section*.13}%
+\contentsline {subsubsection}{Load and store instrucitons}{22}{subsubsection*.14}%
+\contentsline {paragraph}{Why RISC-V instructions are so simple?}{23}{paragraph*.15}%
+\contentsline {subsubsection}{Byte addressed memory}{24}{subsubsection*.16}%
+\contentsline {paragraph}{Loading a word (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lw}) and Instruction}{25}{paragraph*.17}%
+\contentsline {paragraph}{Loading bytes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lb})}{25}{paragraph*.18}%
 \contentsline {section}{\numberline {1.4}Arrays and data structures}{25}{section.1.4}%
-\contentsline {paragraph}{Arrays in high-level languages}{25}{section*.20}%
-\contentsline {paragraph}{Adding Positive elements}{26}{section*.21}%
-\contentsline {paragraph}{Adding positive elements (Type 1)}{26}{section*.22}%
-\contentsline {paragraph}{Adding positive element Type 2}{27}{section*.23}%
-\contentsline {paragraph}{Adding positive element Type 3}{27}{section*.24}%
-\contentsline {paragraph}{Adding positive elements (variation on type 3)}{27}{section*.25}%
-\contentsline {paragraph}{Linked list}{28}{section*.26}%
+\contentsline {paragraph}{Arrays in high-level languages}{25}{section*.19}%
+\contentsline {paragraph}{Adding Positive elements}{26}{section*.20}%
+\contentsline {paragraph}{Adding positive elements (Type 1)}{26}{section*.21}%
+\contentsline {paragraph}{Adding positive element Type 2}{27}{section*.22}%
+\contentsline {paragraph}{Adding positive element Type 3}{27}{section*.23}%
+\contentsline {paragraph}{Adding positive elements (variation on type 3)}{27}{section*.24}%
+\contentsline {paragraph}{Linked list}{28}{section*.25}%
 \contentsline {section}{\numberline {1.5}1.e: Instruction Set architecture Arithmetic}{30}{section.1.5}%
-\contentsline {paragraph}{Notation}{30}{section*.27}%
-\contentsline {paragraph}{Numbers}{30}{section*.28}%
-\contentsline {paragraph}{Unsigned Integers}{30}{section*.29}%
-\contentsline {paragraph}{Addition is unchanged from unsigned}{30}{section*.30}%
-\contentsline {paragraph}{Overflow in hardware}{31}{section*.31}%
-\contentsline {paragraph}{Overflow in software}{31}{section*.32}%
-\contentsline {paragraph}{$A + \overline {A} = -1$}{31}{section*.33}%
-\contentsline {paragraph}{Two's complement Add/Subtract Units}{31}{section*.34}%
+\contentsline {paragraph}{Notation}{30}{section*.26}%
+\contentsline {paragraph}{Numbers}{30}{section*.27}%
+\contentsline {paragraph}{Unsigned Integers}{30}{section*.28}%
+\contentsline {paragraph}{Addition is unchanged from unsigned}{31}{section*.29}%
+\contentsline {paragraph}{Overflow in hardware}{31}{section*.30}%
+\contentsline {paragraph}{Overflow in software}{31}{section*.31}%
+\contentsline {paragraph}{$A + \overline {A} = -1$}{31}{section*.32}%
+\contentsline {paragraph}{Two's complement Add/Subtract Units}{32}{section*.33}%
 \contentsline {chapter}{\numberline {2}Processors, I/Os, and Exceptions}{33}{chapter.2}%
 \contentsline {section}{\numberline {2.1}2a. Multicycle Processor}{33}{section.2.1}%
-\contentsline {paragraph}{Single cycle processor}{33}{section*.35}%
-\contentsline {paragraph}{Two-cycle Processor}{34}{section*.36}%
-\contentsline {paragraph}{Not all paths are born equal}{34}{section*.37}%
-\contentsline {paragraph}{Multi cycle Processor}{34}{section*.38}%
-\contentsline {paragraph}{Mealy or Moore?}{34}{section*.39}%
-\contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{35}{section*.40}%
-\contentsline {subsection}{\numberline {2.1.1}Building the circuit}{35}{subsection.2.1.1}%
-\contentsline {paragraph}{Detail complex combinational modules}{37}{section*.41}%
-\contentsline {section}{\numberline {2.2}2b. Processor, Inputs and Outputs}{38}{section.2.2}%
-\contentsline {paragraph}{The cpu}{38}{section*.42}%
-\contentsline {paragraph}{Memory}{38}{section*.43}%
-\contentsline {paragraph}{Input and Outputs device}{38}{section*.44}%
-\contentsline {paragraph}{Accessing I/Os: Port Mapped I/O (PMIO)}{39}{section*.45}%
-\contentsline {paragraph}{Accessing I/Os: Memory Mapped I/O (MMIO)}{39}{section*.46}%
-\contentsline {paragraph}{Summary}{40}{section*.47}%
-\contentsline {paragraph}{Conclusion}{40}{section*.48}%
-\contentsline {paragraph}{Example: A/D converter}{40}{section*.49}%
-\contentsline {paragraph}{Example: Simple bus interface}{41}{section*.50}%
-\contentsline {paragraph}{A/D converter: software}{42}{section*.51}%
-\contentsline {paragraph}{Programmed I/Os}{43}{section*.52}%
-\contentsline {subsection}{\numberline {2.2.1}A Classic UART}{43}{subsection.2.2.1}%
-\contentsline {paragraph}{Definition}{43}{section*.53}%
-\contentsline {paragraph}{Example: Send a String}{43}{section*.54}%
-\contentsline {paragraph}{I/O polling}{44}{section*.55}%
-\contentsline {section}{\numberline {2.3}2c: Interrupts}{45}{section.2.3}%
-\contentsline {paragraph}{Seen this already in some languages}{45}{section*.56}%
-\contentsline {paragraph}{The basic Idea of I/O interrupts}{45}{section*.57}%
-\contentsline {paragraph}{I/O Interrupt priorities}{46}{section*.58}%
-\contentsline {paragraph}{Interrup controller}{47}{section*.59}%
-\contentsline {subsection}{\numberline {2.3.1}Direct Memory Access (DMA)}{47}{subsection.2.3.1}%
-\contentsline {paragraph}{Without DMA}{47}{section*.60}%
-\contentsline {paragraph}{With the DMA}{47}{section*.61}%
-\contentsline {paragraph}{Direct Memory Access}{48}{section*.62}%
-\contentsline {paragraph}{Timer and Periodic DMA Operations}{48}{section*.63}%
-\contentsline {paragraph}{Bus Control and Processor Cooperation}{48}{section*.64}%
-\contentsline {paragraph}{Advantages of DMA}{49}{section*.65}%
-\contentsline {paragraph}{Example Sequence with Timer and DMA}{49}{section*.66}%
-\contentsline {section}{\numberline {2.4}Exceptions}{49}{section.2.4}%
-\contentsline {paragraph}{Levels of Priviledge = Processors modes}{50}{section*.68}%
-\contentsline {subsubsection}{Processor tasks on Exceptions}{51}{subsubsection*.69}%
-\contentsline {paragraph}{Priorities}{51}{section*.70}%
-\contentsline {paragraph}{Writing the handlers is very \textcolor {maincolour}{{\boldmath \textbf {very}}} tricky}{51}{section*.71}%
-\contentsline {paragraph}{Processor design Issue with Exceptions}{51}{section*.72}%
-\contentsline {paragraph}{A/D converter: startADC}{53}{section*.73}%
-\contentsline {paragraph}{Handler}{53}{section*.74}%
-\contentsline {paragraph}{A/D converter: insertIntoBuffer}{54}{section*.75}%
-\contentsline {paragraph}{Parti 1a: Connecting an Input Peripheral}{55}{section*.77}%
-\contentsline {paragraph}{Circuit}{55}{section*.78}%
-\contentsline {chapter}{\numberline {3}Memory Hierarchy}{57}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Caches}{57}{section.3.1}%
-\contentsline {paragraph}{Remark}{58}{paragraph*.80}%
-\contentsline {paragraph}{Out goal today}{58}{section*.81}%
-\contentsline {paragraph}{What memory to use?}{59}{section*.82}%
-\contentsline {paragraph}{Spatial and Temporal locality}{59}{section*.83}%
-\contentsline {paragraph}{Our placment policy most be:}{59}{section*.84}%
-\contentsline {subsubsection}{Cache: The idea}{60}{subsubsection*.85}%
-\contentsline {paragraph}{Definition of a Cache}{60}{section*.86}%
-\contentsline {paragraph}{The question now is how does it works?}{60}{section*.87}%
-\contentsline {paragraph}{Fully-Associative cache}{61}{paragraph*.88}%
-\contentsline {paragraph}{The representation}{62}{section*.89}%
-\contentsline {subsubsection}{Cache and Cache controller}{62}{subsubsection*.90}%
-\contentsline {paragraph}{The cache is a hardware device}{64}{section*.91}%
-\contentsline {paragraph}{What if the cache is full}{64}{section*.92}%
-\contentsline {paragraph}{Only exploiting Temporal locality}{64}{section*.93}%
-\contentsline {paragraph}{Fully-Associative Cache}{66}{section*.94}%
-\contentsline {paragraph}{How can we make it simpler}{66}{section*.95}%
-\contentsline {paragraph}{How to generate \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Addr} and \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Tag}}{67}{section*.96}%
-\contentsline {paragraph}{Direct-mapped Cache}{68}{section*.97}%
-\contentsline {subsubsection}{Which one is the Best Cache}{69}{subsubsection*.98}%
-\contentsline {paragraph}{Example}{69}{section*.99}%
-\contentsline {paragraph}{Intermediate?}{69}{section*.100}%
-\contentsline {paragraph}{Set-Associative Cache}{69}{section*.101}%
-\contentsline {paragraph}{Continuum of Possibilities}{70}{section*.102}%
-\contentsline {paragraph}{Validity}{70}{section*.103}%
-\contentsline {paragraph}{Addressing by Byte}{71}{section*.104}%
-\contentsline {subsection}{\numberline {3.1.1}Write and Cache}{71}{subsection.3.1.1}%
-\contentsline {subsubsection}{Write Hit}{71}{subsubsection*.105}%
-\contentsline {paragraph}{Write policies}{72}{section*.106}%
-\contentsline {subsubsection}{Write miss}{72}{subsubsection*.107}%
-\contentsline {paragraph}{Allocation Policies}{72}{section*.108}%
-\contentsline {paragraph}{The '3Cs' of caches miss}{73}{section*.109}%
-\contentsline {subsubsection}{Summary of cache Features}{73}{subsubsection*.110}%
-\contentsline {section}{\numberline {3.2}3b: Simple Cache Examples}{74}{section.3.2}%
-\contentsline {paragraph}{Compulsory Misses of a Direct Mapped Cache}{74}{section*.111}%
-\contentsline {paragraph}{Hits in a 2-Way Set-Associative}{74}{section*.112}%
-\contentsline {paragraph}{Miss Rate in a 2-Way Set-Associative}{74}{section*.113}%
-\contentsline {paragraph}{Direct-Mapped cache}{74}{section*.114}%
-\contentsline {paragraph}{Tag of a 2-Way Set-Associative}{74}{section*.115}%
-\contentsline {section}{\numberline {3.3}3c Virtual memory}{74}{section.3.3}%
-\contentsline {paragraph}{Segmentation Fault? Bus Error?}{74}{section*.116}%
-\contentsline {paragraph}{Overview}{75}{section*.117}%
-\contentsline {paragraph}{Needs of Multiprogrammed System}{75}{section*.118}%
-\contentsline {paragraph}{Simples solution: Relocation at Load Time}{75}{section*.119}%
-\contentsline {paragraph}{Limitations}{76}{paragraph*.120}%
-\contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{76}{section*.121}%
-\contentsline {paragraph}{Relocation in hardware:\\ Base and Bounds MMU}{77}{section*.122}%
-\contentsline {paragraph}{Memory, Management Unit}{77}{section*.123}%
-\contentsline {paragraph}{Virtual and Physical Memory}{78}{section*.124}%
-\contentsline {paragraph}{Why we check}{78}{section*.125}%
-\contentsline {paragraph}{Needs of multiprogrammed}{79}{section*.126}%
-\contentsline {paragraph}{Segmentation and Paging}{79}{section*.127}%
-\contentsline {paragraph}{How do we translate?}{80}{section*.128}%
-\contentsline {paragraph}{What if the page's size is a power of $2$?}{80}{section*.129}%
-\contentsline {paragraph}{Address Translation in a Paged MMU}{80}{section*.130}%
-\contentsline {paragraph}{Memory Allocation is easy now}{80}{section*.131}%
-\contentsline {paragraph}{Page Tables Can Be Big}{81}{section*.132}%
-\contentsline {paragraph}{Multilevel (Or hierachical) page tables}{81}{section*.133}%
-\contentsline {paragraph}{But, Two memory accesses every time?}{81}{section*.134}%
-\contentsline {paragraph}{A Specialized 'cache' for the translations}{82}{section*.135}%
-\contentsline {paragraph}{TLB Miss}{82}{section*.136}%
-\contentsline {paragraph}{Memory Protection}{83}{section*.137}%
-\contentsline {paragraph}{Not All Pages need to be in main memory}{83}{section*.138}%
-\contentsline {paragraph}{TLB miss - Revised}{83}{section*.139}%
-\contentsline {paragraph}{Cache vs. Virtual Memory}{84}{section*.140}%
-\contentsline {paragraph}{Page table Attributes - Revisited}{84}{section*.141}%
-\contentsline {paragraph}{Virtual Memory $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ Cache}{84}{section*.142}%
-\contentsline {paragraph}{TLB Misses, Caches misses and Page faults}{85}{section*.143}%
-\contentsline {subsubsection}{Overall Picture: The System Side}{86}{subsubsection*.144}%
-\contentsline {subsubsection}{OVerall Piccture: The Programmer Side}{86}{subsubsection*.145}%
-\contentsline {section}{\numberline {3.4}Summary}{87}{section.3.4}%
-\contentsline {paragraph}{Remark}{87}{paragraph*.146}%
-\contentsline {section}{\numberline {3.5}3d. Simples virtual Memory example}{87}{section.3.5}%
-\contentsline {paragraph}{Simple translation Scheme}{87}{section*.147}%
-\contentsline {paragraph}{Page Table Entry Size}{87}{section*.148}%
-\contentsline {paragraph}{Total Page Table Size}{87}{section*.149}%
-\contentsline {paragraph}{Total Addressable physical Memory}{88}{section*.150}%
-\contentsline {paragraph}{Address Translation}{88}{section*.151}%
-\contentsline {part}{II\hspace {1em}Final}{91}{part.2}%
-\contentsline {chapter}{\numberline {4}Instruction Level Parallelism}{93}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Performance}{93}{section.4.1}%
-\contentsline {paragraph}{What should we do now?}{93}{section*.152}%
-\contentsline {paragraph}{What and Why?}{93}{section*.153}%
-\contentsline {paragraph}{So Far about Performance}{94}{paragraph*.154}%
-\contentsline {paragraph}{What is 'Performance'}{94}{section*.155}%
-\contentsline {paragraph}{Elapsed Time, CPU Time, ..}{94}{section*.156}%
-\contentsline {paragraph}{Relative Performance}{95}{section*.157}%
-\contentsline {paragraph}{Relate Performance to Hardware Implementation}{96}{section*.158}%
-\contentsline {paragraph}{Improving Performance?}{96}{section*.159}%
-\contentsline {paragraph}{Many other Considerations Influence the Performance}{96}{section*.160}%
-\contentsline {paragraph}{Benchmarks}{97}{section*.161}%
-\contentsline {subsubsection}{Summary}{98}{subsubsection*.162}%
-\contentsline {section}{\numberline {4.2}Basic Pipelining}{98}{section.4.2}%
-\contentsline {paragraph}{Circuit Timing and Performance}{98}{section*.163}%
-\contentsline {paragraph}{Signal propagation}{98}{section*.164}%
-\contentsline {paragraph}{Example}{99}{section*.165}%
-\contentsline {paragraph}{What has changed?}{100}{section*.166}%
-\contentsline {paragraph}{So why?}{100}{section*.167}%
-\contentsline {paragraph}{$ $}{100}{section*.168}%
-\contentsline {paragraph}{Any Advantage Now?}{100}{section*.169}%
-\contentsline {paragraph}{Latency and Throughput}{101}{section*.170}%
-\contentsline {paragraph}{Practical Pipelining}{101}{section*.171}%
-\contentsline {paragraph}{Usefule Representaiton of the Pipeline Activity}{101}{section*.172}%
-\contentsline {subsubsection}{Summary}{102}{subsubsection*.173}%
-\contentsline {section}{\numberline {4.3}Pipelining}{102}{section.4.3}%
-\contentsline {paragraph}{Pipeline for processor}{102}{section*.174}%
-\contentsline {paragraph}{A Simple multicycle CPU}{102}{section*.175}%
-\contentsline {paragraph}{A Simple schedule}{103}{section*.176}%
-\contentsline {paragraph}{Pipelining the processor}{103}{section*.177}%
-\contentsline {paragraph}{No Hardware}{104}{paragraph*.178}%
-\contentsline {paragraph}{Two Main Problems}{104}{paragraph*.179}%
-\contentsline {subsection}{\numberline {4.3.1}CISC vs. RISC}{104}{subsection.4.3.1}%
-\contentsline {paragraph}{FSM vs. Pipeline}{104}{section*.180}%
-\contentsline {paragraph}{Adding an instruction to a Multi-cycle processor}{104}{section*.181}%
-\contentsline {paragraph}{Adding an not so great instruction to a Multi-cycle processor}{104}{section*.182}%
-\contentsline {paragraph}{Adding Instructions to a Pipeline Processor}{105}{section*.183}%
-\contentsline {paragraph}{$ $}{105}{section*.184}%
-\contentsline {paragraph}{Reduced Instruction-Set Computer}{106}{section*.185}%
-\contentsline {paragraph}{Simple 5-Stage MIPS Pipeline}{106}{section*.186}%
-\contentsline {paragraph}{The Laundry Metaphor}{107}{section*.187}%
-\contentsline {paragraph}{Two distinct memory interfaces}{107}{section*.188}%
-\contentsline {paragraph}{What is in the Pipeline Registers}{107}{section*.189}%
-\contentsline {paragraph}{Example of Pipelined Execution}{108}{section*.190}%
-\contentsline {subsection}{\numberline {4.3.2}Instruction are not independent}{108}{subsection.4.3.2}%
-\contentsline {paragraph}{RAW, WAR and WAW Dependences}{108}{section*.191}%
-\contentsline {paragraph}{Data Hazard}{108}{section*.192}%
-\contentsline {paragraph}{Data Hazards Solved by Stallig the Pipeline}{109}{section*.193}%
-\contentsline {paragraph}{Detecting}{109}{section*.194}%
-\contentsline {paragraph}{Stalling}{109}{section*.195}%
-\contentsline {paragraph}{Another Solution}{110}{section*.196}%
-\contentsline {paragraph}{Architecture and Microarchitecture}{110}{section*.197}%
-\contentsline {paragraph}{Data Hazard Solved by Forwarding Values}{110}{section*.198}%
-\contentsline {paragraph}{$ $}{111}{section*.199}%
-\contentsline {paragraph}{ $ $}{111}{section*.200}%
-\contentsline {paragraph}{Classic MIPS pipeline}{111}{section*.201}%
-\contentsline {subsubsection}{Structural Hazards}{112}{subsubsection*.202}%
-\contentsline {paragraph}{What about miss on both side?}{112}{section*.203}%
-\contentsline {paragraph}{Control Hazard}{113}{section*.204}%
-\contentsline {paragraph}{Control hazard solved by stalling}{113}{section*.205}%
-\contentsline {paragraph}{Fetching and decoding do not do any damage}{113}{section*.206}%
-\contentsline {paragraph}{Another solution}{113}{section*.207}%
-\contentsline {paragraph}{Control Hazard Solved by Delay Slot}{114}{section*.208}%
-\contentsline {paragraph}{Use of Delay Slots}{114}{section*.209}%
-\contentsline {paragraph}{Branch Prediction}{114}{section*.210}%
-\contentsline {subsubsection}{Three Types of Hazards Hinder Pipelining}{115}{subsubsection*.211}%
-\contentsline {paragraph}{Solutions}{115}{section*.212}%
-\contentsline {section}{\numberline {4.4}Dynamic Scheduling}{115}{section.4.4}%
-\contentsline {paragraph}{Starting point}{115}{section*.213}%
-\contentsline {paragraph}{Simple Pipelining}{115}{section*.214}%
-\contentsline {paragraph}{Rigid Sequencing}{115}{section*.215}%
-\contentsline {paragraph}{Dynamic Scheduling: The Idea}{116}{paragraph*.216}%
-\contentsline {paragraph}{Break the Rigidity of the Basic Pipelining}{116}{section*.217}%
-\contentsline {paragraph}{Solution}{116}{section*.218}%
-\contentsline {paragraph}{Dynamically Scheduled Processor}{116}{section*.219}%
-\contentsline {subsubsection}{Problems to solve}{117}{subsubsection*.220}%
-\contentsline {paragraph}{Structural Hazards}{117}{section*.221}%
-\contentsline {paragraph}{RAW Data Hazards}{117}{section*.222}%
-\contentsline {paragraph}{WAR and WAW Data Hazards}{117}{section*.223}%
-\contentsline {paragraph}{Raw Data Hazards}{117}{section*.224}%
-\contentsline {paragraph}{Reservation Station}{117}{section*.225}%
-\contentsline {paragraph}{What is a Reservation Station?}{118}{section*.226}%
-\contentsline {paragraph}{WAW and WAR}{119}{section*.227}%
-\contentsline {subsection}{\numberline {4.4.1}Dynamically Scheduled Processor}{120}{subsection.4.4.1}%
-\contentsline {paragraph}{Our-of-order Commitment and Exceptions}{120}{section*.228}%
-\contentsline {paragraph}{Problems with exceptions}{120}{section*.229}%
-\contentsline {paragraph}{Reorder Buffer}{121}{section*.230}%
-\contentsline {paragraph}{Example}{121}{section*.231}%
-\contentsline {paragraph}{Reordering and Precise Exceptions}{122}{section*.232}%
-\contentsline {paragraph}{Example}{122}{section*.233}%
-\contentsline {paragraph}{Problem we need to solve?}{123}{section*.234}%
-\contentsline {paragraph}{Reservation stations}{123}{section*.235}%
-\contentsline {paragraph}{Decoding and Dependence}{123}{section*.236}%
-\contentsline {paragraph}{Dependences through memory}{123}{section*.237}%
-\contentsline {paragraph}{Load-Store Queue}{124}{section*.238}%
-\contentsline {paragraph}{Second Step: Dynamic Scheduling}{124}{section*.239}%
-\contentsline {paragraph}{Summary: ILP So Far}{125}{paragraph*.240}%
-\contentsline {section}{\numberline {4.5}Scheduling Examples}{125}{section.4.5}%
-\contentsline {paragraph}{Goal}{125}{section*.241}%
-\contentsline {subsection}{\numberline {4.5.1}Architecture 1}{125}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Architecture 2}{126}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Architecture 3}{126}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Architecture 4}{127}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Architecture 5}{128}{subsection.4.5.5}%
-\contentsline {paragraph}{'to do list' for simulating Dynamically Scheduled Processor}{129}{paragraph*.242}%
-\contentsline {paragraph}{Solution}{130}{section*.243}%
-\contentsline {section}{\numberline {4.6}Besides and Beyond Superscalars}{131}{section.4.6}%
-\contentsline {paragraph}{Content of this lecture}{131}{section*.244}%
-\contentsline {paragraph}{To this day}{131}{section*.245}%
-\contentsline {paragraph}{Superscalar Execution}{131}{section*.246}%
-\contentsline {paragraph}{Superscalar Execution}{132}{section*.247}%
-\contentsline {subsubsection}{Intel Processor and Petch}{133}{subsubsection*.248}%
-\contentsline {subsection}{\numberline {4.6.1}Dynamic Branch Prediction}{133}{subsection.4.6.1}%
-\contentsline {paragraph}{One- vs. Two-Bit Prediction Schemes}{133}{section*.249}%
-\contentsline {paragraph}{Speculative Execution}{134}{section*.250}%
+\contentsline {paragraph}{Single cycle processor}{33}{section*.34}%
+\contentsline {paragraph}{Two-cycle Processor}{34}{section*.35}%
+\contentsline {paragraph}{Not all paths are born equal}{34}{section*.36}%
+\contentsline {paragraph}{Multi cycle Processor}{34}{section*.37}%
+\contentsline {paragraph}{Mealy or Moore?}{35}{section*.38}%
+\contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{36}{section*.39}%
+\contentsline {subsection}{\numberline {2.1.1}Building the circuit}{36}{subsection.2.1.1}%
+\contentsline {paragraph}{Detail complex combinational modules}{38}{section*.40}%
+\contentsline {section}{\numberline {2.2}2b. Processor, Inputs and Outputs}{39}{section.2.2}%
+\contentsline {paragraph}{The cpu}{39}{section*.41}%
+\contentsline {paragraph}{Memory}{39}{section*.42}%
+\contentsline {paragraph}{Input and Outputs device}{39}{section*.43}%
+\contentsline {paragraph}{Accessing I/Os: Port Mapped I/O (PMIO)}{40}{section*.44}%
+\contentsline {paragraph}{Accessing I/Os: Memory Mapped I/O (MMIO)}{40}{section*.45}%
+\contentsline {paragraph}{Summary}{41}{section*.46}%
+\contentsline {paragraph}{Conclusion}{42}{section*.47}%
+\contentsline {paragraph}{Example: A/D converter}{42}{section*.48}%
+\contentsline {paragraph}{Example: Simple bus interface}{42}{section*.49}%
+\contentsline {paragraph}{A/D converter: software}{43}{section*.50}%
+\contentsline {paragraph}{Programmed I/Os}{44}{section*.51}%
+\contentsline {subsection}{\numberline {2.2.1}A Classic UART}{45}{subsection.2.2.1}%
+\contentsline {paragraph}{Definition}{45}{section*.52}%
+\contentsline {paragraph}{Example: Send a String}{45}{section*.53}%
+\contentsline {paragraph}{I/O polling}{46}{section*.54}%
+\contentsline {section}{\numberline {2.3}2c: Interrupts}{46}{section.2.3}%
+\contentsline {paragraph}{Seen this already in some languages}{46}{section*.55}%
+\contentsline {paragraph}{The basic Idea of I/O interrupts}{46}{section*.56}%
+\contentsline {paragraph}{I/O Interrupt priorities}{48}{section*.57}%
+\contentsline {paragraph}{Interrup controller}{48}{section*.58}%
+\contentsline {subsection}{\numberline {2.3.1}Direct Memory Access (DMA)}{49}{subsection.2.3.1}%
+\contentsline {paragraph}{Without DMA}{49}{section*.59}%
+\contentsline {paragraph}{With the DMA}{49}{section*.60}%
+\contentsline {paragraph}{Direct Memory Access}{49}{section*.61}%
+\contentsline {paragraph}{Timer and Periodic DMA Operations}{50}{section*.62}%
+\contentsline {paragraph}{Bus Control and Processor Cooperation}{50}{section*.63}%
+\contentsline {paragraph}{Advantages of DMA}{50}{section*.64}%
+\contentsline {paragraph}{Example Sequence with Timer and DMA}{50}{section*.65}%
+\contentsline {section}{\numberline {2.4}Exceptions}{51}{section.2.4}%
+\contentsline {paragraph}{Levels of Priviledge = Processors modes}{52}{section*.66}%
+\contentsline {subsubsection}{Processor tasks on Exceptions}{52}{subsubsection*.67}%
+\contentsline {paragraph}{Priorities}{52}{section*.68}%
+\contentsline {paragraph}{Writing the handlers is very \textcolor {maincolour}{{\boldmath \textbf {very}}} tricky}{53}{section*.69}%
+\contentsline {paragraph}{Processor design Issue with Exceptions}{53}{section*.70}%
+\contentsline {paragraph}{A/D converter: startADC}{54}{section*.71}%
+\contentsline {paragraph}{Handler}{55}{section*.72}%
+\contentsline {paragraph}{A/D converter: insertIntoBuffer}{55}{section*.73}%
+\contentsline {paragraph}{Parti 1a: Connecting an Input Peripheral}{56}{section*.74}%
+\contentsline {paragraph}{Circuit}{57}{section*.75}%
+\contentsline {chapter}{\numberline {3}Memory Hierarchy}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Caches}{59}{section.3.1}%
+\contentsline {paragraph}{Remark}{60}{paragraph*.76}%
+\contentsline {paragraph}{Out goal today}{60}{section*.77}%
+\contentsline {paragraph}{What memory to use?}{61}{section*.78}%
+\contentsline {paragraph}{Spatial and Temporal locality}{61}{section*.79}%
+\contentsline {paragraph}{Our placment policy most be:}{61}{section*.80}%
+\contentsline {subsubsection}{Cache: The idea}{62}{subsubsection*.81}%
+\contentsline {paragraph}{Definition of a Cache}{62}{section*.82}%
+\contentsline {paragraph}{The question now is how does it works?}{62}{section*.83}%
+\contentsline {paragraph}{Fully-Associative cache}{63}{paragraph*.84}%
+\contentsline {paragraph}{The representation}{64}{section*.85}%
+\contentsline {subsubsection}{Cache and Cache controller}{64}{subsubsection*.86}%
+\contentsline {paragraph}{The cache is a hardware device}{66}{section*.87}%
+\contentsline {paragraph}{What if the cache is full}{66}{section*.88}%
+\contentsline {paragraph}{Only exploiting Temporal locality}{66}{section*.89}%
+\contentsline {paragraph}{Fully-Associative Cache}{68}{section*.90}%
+\contentsline {paragraph}{How can we make it simpler}{68}{section*.91}%
+\contentsline {paragraph}{How to generate \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Addr} and \tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{Tag}}{69}{section*.92}%
+\contentsline {paragraph}{Direct-mapped Cache}{70}{section*.93}%
+\contentsline {subsubsection}{Which one is the Best Cache}{71}{subsubsection*.94}%
+\contentsline {paragraph}{Example}{71}{section*.95}%
+\contentsline {paragraph}{Intermediate?}{71}{section*.96}%
+\contentsline {paragraph}{Set-Associative Cache}{72}{section*.97}%
+\contentsline {paragraph}{Continuum of Possibilities}{72}{section*.98}%
+\contentsline {paragraph}{Validity}{73}{section*.99}%
+\contentsline {paragraph}{Addressing by Byte}{73}{section*.100}%
+\contentsline {subsection}{\numberline {3.1.1}Write and Cache}{74}{subsection.3.1.1}%
+\contentsline {subsubsection}{Write Hit}{74}{subsubsection*.101}%
+\contentsline {paragraph}{Write policies}{74}{section*.102}%
+\contentsline {subsubsection}{Write miss}{75}{subsubsection*.103}%
+\contentsline {paragraph}{Allocation Policies}{75}{section*.104}%
+\contentsline {paragraph}{The '3Cs' of caches miss}{75}{section*.105}%
+\contentsline {subsubsection}{Summary of cache Features}{76}{subsubsection*.106}%
+\contentsline {section}{\numberline {3.2}3b: Simple Cache Examples}{76}{section.3.2}%
+\contentsline {paragraph}{Compulsory Misses of a Direct Mapped Cache}{76}{section*.107}%
+\contentsline {paragraph}{Hits in a 2-Way Set-Associative}{76}{section*.108}%
+\contentsline {paragraph}{Miss Rate in a 2-Way Set-Associative}{77}{section*.109}%
+\contentsline {paragraph}{Direct-Mapped cache}{77}{section*.110}%
+\contentsline {paragraph}{Tag of a 2-Way Set-Associative}{77}{section*.111}%
+\contentsline {section}{\numberline {3.3}3c Virtual memory}{77}{section.3.3}%
+\contentsline {paragraph}{Segmentation Fault? Bus Error?}{77}{section*.112}%
+\contentsline {paragraph}{Overview}{77}{section*.113}%
+\contentsline {paragraph}{Needs of Multiprogrammed System}{78}{section*.114}%
+\contentsline {paragraph}{Simples solution: Relocation at Load Time}{78}{section*.115}%
+\contentsline {paragraph}{Limitations}{79}{paragraph*.116}%
+\contentsline {paragraph}{$\tmspace +\thickmuskip {.2777em}$}{79}{section*.117}%
+\contentsline {paragraph}{Relocation in hardware:\\ Base and Bounds MMU}{80}{section*.118}%
+\contentsline {paragraph}{Memory, Management Unit}{80}{section*.119}%
+\contentsline {paragraph}{Virtual and Physical Memory}{81}{section*.120}%
+\contentsline {paragraph}{Why we check}{82}{section*.121}%
+\contentsline {paragraph}{Needs of multiprogrammed}{82}{section*.122}%
+\contentsline {paragraph}{Segmentation and Paging}{82}{section*.123}%
+\contentsline {paragraph}{How do we translate?}{83}{section*.124}%
+\contentsline {paragraph}{What if the page's size is a power of $2$?}{83}{section*.125}%
+\contentsline {paragraph}{Address Translation in a Paged MMU}{84}{section*.126}%
+\contentsline {paragraph}{Memory Allocation is easy now}{84}{section*.127}%
+\contentsline {paragraph}{Page Tables Can Be Big}{84}{section*.128}%
+\contentsline {paragraph}{Multilevel (Or hierachical) page tables}{84}{section*.129}%
+\contentsline {paragraph}{But, Two memory accesses every time?}{85}{section*.130}%
+\contentsline {paragraph}{A Specialized 'cache' for the translations}{85}{section*.131}%
+\contentsline {paragraph}{TLB Miss}{86}{section*.132}%
+\contentsline {paragraph}{Memory Protection}{86}{section*.133}%
+\contentsline {paragraph}{Not All Pages need to be in main memory}{87}{section*.134}%
+\contentsline {paragraph}{TLB miss - Revised}{87}{section*.135}%
+\contentsline {paragraph}{Cache vs. Virtual Memory}{87}{section*.136}%
+\contentsline {paragraph}{Page table Attributes - Revisited}{88}{section*.137}%
+\contentsline {paragraph}{Virtual Memory $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ Cache}{88}{section*.138}%
+\contentsline {paragraph}{TLB Misses, Caches misses and Page faults}{89}{section*.139}%
+\contentsline {subsubsection}{Overall Picture: The System Side}{90}{subsubsection*.140}%
+\contentsline {subsubsection}{OVerall Piccture: The Programmer Side}{90}{subsubsection*.141}%
+\contentsline {section}{\numberline {3.4}Summary}{91}{section.3.4}%
+\contentsline {paragraph}{Remark}{91}{paragraph*.142}%
+\contentsline {section}{\numberline {3.5}3d. Simples virtual Memory example}{91}{section.3.5}%
+\contentsline {paragraph}{Simple translation Scheme}{91}{section*.143}%
+\contentsline {paragraph}{Page Table Entry Size}{91}{section*.144}%
+\contentsline {paragraph}{Total Page Table Size}{91}{section*.145}%
+\contentsline {paragraph}{Total Addressable physical Memory}{92}{section*.146}%
+\contentsline {paragraph}{Address Translation}{92}{section*.147}%
+\contentsline {part}{II\hspace {1em}Final}{95}{part.2}%
+\contentsline {chapter}{\numberline {4}Instruction Level Parallelism}{97}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Performance}{97}{section.4.1}%
+\contentsline {paragraph}{What should we do now?}{97}{section*.148}%
+\contentsline {paragraph}{What and Why?}{98}{section*.149}%
+\contentsline {paragraph}{So Far about Performance}{98}{paragraph*.150}%
+\contentsline {paragraph}{What is 'Performance'}{98}{section*.151}%
+\contentsline {paragraph}{Elapsed Time, CPU Time, ..}{98}{section*.152}%
+\contentsline {paragraph}{Relative Performance}{99}{section*.153}%
+\contentsline {paragraph}{Relate Performance to Hardware Implementation}{100}{section*.154}%
+\contentsline {paragraph}{Improving Performance?}{100}{section*.155}%
+\contentsline {paragraph}{Many other Considerations Influence the Performance}{101}{section*.156}%
+\contentsline {paragraph}{Benchmarks}{101}{section*.157}%
+\contentsline {subsubsection}{Summary}{102}{subsubsection*.158}%
+\contentsline {section}{\numberline {4.2}Basic Pipelining}{103}{section.4.2}%
+\contentsline {paragraph}{Circuit Timing and Performance}{103}{section*.159}%
+\contentsline {paragraph}{Signal propagation}{103}{section*.160}%
+\contentsline {paragraph}{Example}{103}{section*.161}%
+\contentsline {paragraph}{What has changed?}{104}{section*.162}%
+\contentsline {paragraph}{So why?}{104}{section*.163}%
+\contentsline {paragraph}{$ $}{105}{section*.164}%
+\contentsline {paragraph}{Any Advantage Now?}{105}{section*.165}%
+\contentsline {paragraph}{Latency and Throughput}{105}{section*.166}%
+\contentsline {paragraph}{Practical Pipelining}{106}{section*.167}%
+\contentsline {paragraph}{Useful Representaiton of the Pipeline Activity}{106}{section*.168}%
+\contentsline {subsubsection}{Summary}{107}{subsubsection*.169}%
+\contentsline {section}{\numberline {4.3}Pipelining}{107}{section.4.3}%
+\contentsline {paragraph}{Pipeline for processor}{107}{section*.170}%
+\contentsline {paragraph}{A Simple multicycle CPU}{107}{section*.171}%
+\contentsline {paragraph}{A Simple schedule}{108}{section*.172}%
+\contentsline {paragraph}{Pipelining the processor}{108}{section*.173}%
+\contentsline {paragraph}{No Hardware}{109}{paragraph*.174}%
+\contentsline {paragraph}{Two Main Problems}{109}{paragraph*.175}%
+\contentsline {subsection}{\numberline {4.3.1}CISC vs. RISC}{109}{subsection.4.3.1}%
+\contentsline {paragraph}{FSM vs. Pipeline}{109}{section*.176}%
+\contentsline {paragraph}{Adding an instruction to a Multi-cycle processor}{110}{section*.177}%
+\contentsline {paragraph}{Adding an instruction: not so great instruction to a Multi-cycle processor}{110}{section*.178}%
+\contentsline {paragraph}{Adding Instructions to a Pipeline Processor}{110}{section*.179}%
+\contentsline {paragraph}{$ $}{110}{section*.180}%
+\contentsline {paragraph}{Reduced Instruction-Set Computer}{111}{section*.181}%
+\contentsline {paragraph}{Simple 5-Stage MIPS Pipeline}{112}{section*.182}%
+\contentsline {paragraph}{The Laundry Metaphor}{112}{section*.183}%
+\contentsline {paragraph}{Two distinct memory interfaces}{113}{section*.184}%
+\contentsline {paragraph}{What is in the Pipeline Registers}{113}{section*.185}%
+\contentsline {paragraph}{Example of Pipelined Execution}{114}{section*.186}%
+\contentsline {subsection}{\numberline {4.3.2}Instruction are not independent}{114}{subsection.4.3.2}%
+\contentsline {paragraph}{RAW, WAR and WAW Dependences}{114}{section*.187}%
+\contentsline {paragraph}{Data Hazard}{114}{section*.188}%
+\contentsline {paragraph}{Data Hazards Solved by Stallig the Pipeline}{114}{section*.189}%
+\contentsline {paragraph}{Detecting}{115}{section*.190}%
+\contentsline {paragraph}{Stalling}{115}{section*.191}%
+\contentsline {paragraph}{Another Solution}{116}{section*.192}%
+\contentsline {paragraph}{Architecture and Microarchitecture}{116}{section*.193}%
+\contentsline {paragraph}{Data Hazard Solved by Forwarding Values}{117}{section*.194}%
+\contentsline {paragraph}{$ $}{117}{section*.195}%
+\contentsline {paragraph}{ $ $}{117}{section*.196}%
+\contentsline {paragraph}{Classic MIPS pipeline}{118}{section*.197}%
+\contentsline {subsubsection}{Structural Hazards}{119}{subsubsection*.198}%
+\contentsline {paragraph}{What about miss on both side?}{119}{section*.199}%
+\contentsline {paragraph}{Control Hazard}{119}{section*.200}%
+\contentsline {paragraph}{Control hazard solved by stalling}{119}{section*.201}%
+\contentsline {paragraph}{Fetching and decoding do not do any damage}{120}{section*.202}%
+\contentsline {paragraph}{Another solution}{120}{section*.203}%
+\contentsline {paragraph}{Control Hazard Solved by Delay Slot}{120}{section*.204}%
+\contentsline {paragraph}{Use of Delay Slots}{120}{section*.205}%
+\contentsline {paragraph}{Branch Prediction}{121}{section*.206}%
+\contentsline {subsubsection}{Three Types of Hazards Hinder Pipelining}{121}{subsubsection*.207}%
+\contentsline {paragraph}{Solutions}{121}{section*.208}%
+\contentsline {section}{\numberline {4.4}Dynamic Scheduling}{122}{section.4.4}%
+\contentsline {paragraph}{Starting point}{122}{section*.209}%
+\contentsline {paragraph}{Simple Pipelining}{122}{section*.210}%
+\contentsline {paragraph}{Rigid Sequencing}{122}{section*.211}%
+\contentsline {paragraph}{Dynamic Scheduling: The Idea}{123}{paragraph*.212}%
+\contentsline {paragraph}{Break the Rigidity of the Basic Pipelining}{123}{section*.213}%
+\contentsline {paragraph}{Solution}{123}{section*.214}%
+\contentsline {paragraph}{Dynamically Scheduled Processor}{123}{section*.215}%
+\contentsline {subsubsection}{Problems to solve}{124}{subsubsection*.216}%
+\contentsline {paragraph}{Structural Hazards}{124}{section*.217}%
+\contentsline {paragraph}{RAW Data Hazards}{124}{section*.218}%
+\contentsline {paragraph}{WAR and WAW Data Hazards}{124}{section*.219}%
+\contentsline {paragraph}{Raw Data Hazards}{124}{section*.220}%
+\contentsline {paragraph}{Reservation Station}{124}{section*.221}%
+\contentsline {paragraph}{What is a Reservation Station?}{125}{section*.222}%
+\contentsline {paragraph}{WAW and WAR}{126}{section*.223}%
+\contentsline {subsection}{\numberline {4.4.1}Dynamically Scheduled Processor}{127}{subsection.4.4.1}%
+\contentsline {paragraph}{Our-of-order Commitment and Exceptions}{127}{section*.224}%
+\contentsline {paragraph}{Problems with exceptions}{127}{section*.225}%
+\contentsline {paragraph}{Reorder Buffer}{128}{section*.226}%
+\contentsline {paragraph}{Example}{128}{section*.227}%
+\contentsline {paragraph}{Reordering and Precise Exceptions}{129}{section*.228}%
+\contentsline {paragraph}{Example}{129}{section*.229}%
+\contentsline {paragraph}{Problem we need to solve?}{130}{section*.230}%
+\contentsline {paragraph}{Reservation stations}{130}{section*.231}%
+\contentsline {paragraph}{Decoding and Dependence}{130}{section*.232}%
+\contentsline {paragraph}{Dependences through memory}{131}{section*.233}%
+\contentsline {paragraph}{Load-Store Queue}{131}{section*.234}%
+\contentsline {paragraph}{Second Step: Dynamic Scheduling}{131}{section*.235}%
+\contentsline {paragraph}{Summary: ILP So Far}{132}{paragraph*.236}%
+\contentsline {section}{\numberline {4.5}Scheduling Examples}{133}{section.4.5}%
+\contentsline {paragraph}{Goal}{133}{section*.237}%
+\contentsline {subsection}{\numberline {4.5.1}Architecture 1}{133}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Architecture 2}{133}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Architecture 3}{134}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Architecture 4}{135}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Architecture 5}{136}{subsection.4.5.5}%
+\contentsline {paragraph}{'to do list' for simulating Dynamically Scheduled Processor}{137}{paragraph*.238}%
+\contentsline {paragraph}{Solution}{138}{section*.239}%
+\contentsline {section}{\numberline {4.6}Besides and Beyond Superscalars}{139}{section.4.6}%
+\contentsline {paragraph}{Content of this lecture}{139}{section*.240}%
+\contentsline {paragraph}{To this day}{139}{section*.241}%
+\contentsline {paragraph}{Superscalar Execution}{139}{section*.242}%
+\contentsline {paragraph}{Superscalar Execution}{140}{section*.243}%
+\contentsline {subsubsection}{Intel Processor and Fetch}{141}{subsubsection*.244}%
+\contentsline {subsection}{\numberline {4.6.1}Dynamic Branch Prediction}{141}{subsection.4.6.1}%
+\contentsline {paragraph}{One- vs. Two-Bit Prediction Schemes}{142}{section*.245}%
+\contentsline {paragraph}{Speculative Execution}{142}{section*.246}%
+\contentsline {subsection}{\numberline {4.6.2}Simultaneous Multithreading}{143}{subsection.4.6.2}%
+\contentsline {subsubsection}{How do we do it?}{145}{subsubsection*.247}%
+\contentsline {paragraph}{Intel SMT: Xeon Hyper-Threading Pipeline}{145}{section*.248}%
+\contentsline {subsection}{\numberline {4.6.3}Non Blocking Caches}{146}{subsection.4.6.3}%
+\contentsline {paragraph}{Nonblocking Caches}{146}{section*.249}%
+\contentsline {subsection}{\numberline {4.6.4}Very Long Instruction Word (VLIW) Processor}{147}{subsection.4.6.4}%
+\contentsline {paragraph}{What are the problems?}{148}{section*.250}%
+\contentsline {paragraph}{Challenges of VLIW}{148}{section*.251}%
+\contentsline {paragraph}{Compiler Technology}{149}{paragraph*.252}%
+\contentsline {paragraph}{Which one is better?}{152}{section*.253}%
+\contentsline {paragraph}{Enlarge the Scop for ILP: Loop Unrolling}{152}{section*.254}%
+\contentsline {paragraph}{$ $}{153}{section*.255}%
+\contentsline {paragraph}{$ $}{153}{section*.256}%
+\contentsline {paragraph}{What kind of information is missing at compile time}{153}{section*.257}%
+\contentsline {paragraph}{VLIW Compilation Techniques}{154}{section*.258}%
+\contentsline {subsection}{\numberline {4.6.5}Summary of chapter 4}{154}{subsection.4.6.5}%
+\contentsline {section}{\numberline {4.7}Intel x86 and ARM}{155}{section.4.7}%
+\contentsline {paragraph}{Interl Processors}{155}{paragraph*.259}%
+\contentsline {paragraph}{Legacy x86 Features}{156}{section*.260}%
+\contentsline {paragraph}{Registers}{156}{section*.261}%
+\contentsline {paragraph}{Memory Address}{157}{section*.262}%
+\contentsline {paragraph}{Operand Types}{158}{section*.263}%
+\contentsline {paragraph}{Addressing Mode}{159}{section*.264}%
+\contentsline {paragraph}{Number of x86 instructions over time}{159}{section*.265}%
+\contentsline {chapter}{\numberline {5}Multiprocessors}{161}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Cache Coherence}{161}{section.5.1}%
+\contentsline {paragraph}{Flynn's Taxonomy (1966)}{161}{section*.266}%
+\contentsline {paragraph}{Share-Memory Multiprocessors}{161}{section*.267}%
+\contentsline {paragraph}{Distributed-Memory Multiprocessors}{162}{section*.268}%
+\contentsline {paragraph}{Programming Paradigms}{163}{section*.269}%
+\contentsline {subsubsection}{Accessing Memory in Distributed Systems}{163}{subsubsection*.270}%
+\contentsline {paragraph}{Hardware-based approach (NUMA / Hardware DSM)}{163}{section*.271}%
+\contentsline {paragraph}{software-based approach (software DSM)}{164}{section*.272}%
+\contentsline {paragraph}{Why (Hardware) Shared Memory}{164}{section*.273}%
+\contentsline {paragraph}{Intel Nehalem (2008)}{165}{section*.274}%
+\contentsline {paragraph}{Cache Coherence Problem Step 1}{165}{section*.275}%
+\contentsline {paragraph}{Coherent Memory System}{166}{section*.276}%
+\contentsline {subsubsection}{Snoopy Cache-Coherence Protocols}{167}{subsubsection*.277}%
+\contentsline {paragraph}{Bus provides serialization point}{167}{section*.278}%
+\contentsline {paragraph}{Each cache controller \textcolor {maincolour}{{\boldmath \textbf {snoops}}} all bus transactions}{167}{section*.279}%
+\contentsline {subsubsection}{FSM of a Cache}{167}{subsubsection*.280}%
+\contentsline {paragraph}{A 3-State Write-Back Invalidation Protocol (MSI)}{169}{section*.281}%
+\contentsline {paragraph}{MSI: Processor and Bus Actions}{170}{section*.282}%
+\contentsline {paragraph}{Exampe}{171}{section*.283}%
+\contentsline {paragraph}{4-State (MESI) Invalidation Protocol}{172}{section*.284}%
+\contentsline {subsubsection}{Directory-Based Cache Coherence}{173}{subsubsection*.285}%
+\contentsline {paragraph}{Snoopy vs. Directory-Based}{173}{section*.286}%
+\contentsline {subsubsection}{Multilevel Caches}{174}{subsubsection*.287}%
+\contentsline {paragraph}{Inclusion Property between Caches at levels n-1 and n}{174}{section*.288}%
+\contentsline {paragraph}{Is Inclusion Naturally Maintained?}{174}{section*.289}%
+\contentsline {paragraph}{Intel core and Intel Nehalem}{175}{section*.290}%
+\contentsline {section}{\numberline {5.2}Examples of Cache Coherence}{175}{section.5.2}%
+\contentsline {paragraph}{MESI Protocol}{175}{section*.291}%
+\contentsline {paragraph}{MESI Protocol Shared and Exclusive States}{177}{section*.292}%
+\contentsline {paragraph}{MESI Protocol BusRd and BusShr}{177}{section*.293}%
+\contentsline {paragraph}{Part I}{177}{section*.294}%
+\contentsline {paragraph}{Part I Case 2}{179}{section*.295}%
+\contentsline {paragraph}{Case 3}{179}{section*.296}%
+\contentsline {paragraph}{Case 4}{180}{section*.297}%
+\contentsline {section}{\numberline {5.3}Memory Consistency}{180}{section.5.3}%
+\contentsline {paragraph}{Coherence}{180}{section*.298}%
+\contentsline {paragraph}{Consistency}{180}{section*.299}%
+\contentsline {paragraph}{Ideally: Strict Consistency}{181}{section*.300}%
+\contentsline {paragraph}{More Practical: Sequence Consistency}{181}{section*.301}%
+\contentsline {paragraph}{Correct Actual Memory Path}{183}{section*.302}%
+\contentsline {paragraph}{Dependences through Memory}{183}{section*.303}%
+\contentsline {paragraph}{Load-Store Qeues}{184}{section*.304}%
+\contentsline {paragraph}{More Challenges to Sequential Consistency}{184}{section*.305}%
+\contentsline {paragraph}{how to get Sequential Consistency}{184}{section*.306}%
+\contentsline {paragraph}{Relaxing Write $\rightarrow \ $Read order: Proeccors Consistency Model}{185}{section*.307}%
+\contentsline {paragraph}{Many Relaxed Consistency Models}{185}{section*.308}%
+\contentsline {paragraph}{Relax Everything: Release Consistency Model}{185}{section*.309}%
+\contentsline {paragraph}{Memory Barriers/ Fences}{186}{section*.310}%
+\contentsline {paragraph}{Atomic Instructions}{186}{section*.311}%
+\contentsline {paragraph}{Consistency is Hard}{186}{section*.312}%
+\contentsline {subsection}{\numberline {5.3.1}Summary Multiprocessors}{187}{subsection.5.3.1}%
+\contentsline {chapter}{\numberline {6}Hardware Secrurity}{189}{chapter.6}%
+\contentsline {subsection}{\numberline {6.0.1}Why Hardware Security}{189}{subsection.6.0.1}%
+\contentsline {paragraph}{Software complexity}{189}{section*.313}%
+\contentsline {paragraph}{\textcolor {maincolour}{{\boldmath \textbf {Microarchitectural side-channel}}} attacks}{189}{section*.314}%
+\contentsline {paragraph}{Physical monitoring attacks and \textcolor {maincolour}{{\boldmath \textbf {physical side-channell attacks}}}}{189}{section*.315}%
+\contentsline {paragraph}{Outline of This Lecture}{189}{section*.316}%
+\contentsline {subsubsection}{Basic Definitions}{190}{subsubsection*.317}%
+\contentsline {paragraph}{Classic Security Properties}{190}{section*.318}%
+\contentsline {subsubsection}{Attacks on Memory to Compromise Integrity}{190}{subsubsection*.319}%
+\contentsline {paragraph}{Dynamix Random-Access Memory}{190}{section*.320}%
+\contentsline {paragraph}{Apparently only a Reliabilty Issue}{190}{section*.321}%
+\contentsline {paragraph}{An opportunity for Attacks}{191}{section*.322}%
+\contentsline {paragraph}{An aside on DRAMs: Data remanence}{191}{section*.323}%
+\contentsline {subsection}{\numberline {6.0.2}Covert Channels and Side-Channel Attacks}{191}{subsection.6.0.2}%
+\contentsline {paragraph}{Covert Channels}{191}{section*.324}%
+\contentsline {paragraph}{Covert Channels vs Side Channels}{191}{section*.325}%
+\contentsline {paragraph}{Types of Covert and Side Channels}{192}{section*.326}%
+\contentsline {subsection}{\numberline {6.0.3}Attacks on Timing to Break Isolation and Confidentiality}{192}{subsection.6.0.3}%
+\contentsline {paragraph}{Timing Side-Channel Attacks}{192}{section*.327}%
+\contentsline {paragraph}{Example: String Comparison}{192}{section*.328}%
+\contentsline {paragraph}{Blinding through Constant Time}{192}{section*.329}%
+\contentsline {subsection}{\numberline {6.0.4}Attacks on Memory to Break Isolation and Confidentiality}{193}{subsection.6.0.4}%
+\contentsline {paragraph}{Cache Side-Channel Attacks}{193}{section*.330}%
+\contentsline {paragraph}{General Principle}{193}{section*.331}%
+\contentsline {paragraph}{Prime + Probe}{193}{section*.332}%
+\contentsline {paragraph}{Advantages of Prime + Probe}{193}{section*.333}%
+\contentsline {subsection}{\numberline {6.0.5}Combined Attacks to Break Isolation and Confidentiality (Meltdown)}{193}{subsection.6.0.5}%
+\contentsline {paragraph}{Meltdown}{193}{section*.334}%
+\contentsline {paragraph}{Attack Principle}{193}{section*.335}%
+\contentsline {paragraph}{Affected Processors}{193}{section*.336}%
+\contentsline {subsection}{\numberline {6.0.6}Combined Attacks to Break Isolation and Confidentiality (Spectre)}{194}{subsection.6.0.6}%
+\contentsline {paragraph}{Spectre}{194}{section*.337}%
+\contentsline {paragraph}{Attack Principle}{194}{section*.338}%

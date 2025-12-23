@@ -114,8 +114,12 @@
 \theoremstyle{definition}
 \newtheorem{remark}{Remark}
 \newenvironment{framedremark}
-{\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]\begin{remark}}
-{\end{remark}\end{mdframed}}
+{\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]
+	\begin{remark}
+	}
+{
+\end{remark}
+\end{mdframed}}
 
 
 \newtheorem{resume1}{Résumé}
@@ -143,7 +147,7 @@
 
   \newtheorem{exemple}{Exemple}
 
-\newtheorem{definition1}{Théorème}
+\newtheorem{definition1}{Theorem}
 \newenvironment{theoreme}
 {
     \begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{definition1}}
@@ -519,7 +523,7 @@ linewidth=1pt]\begin{pro}}
 }
 
 \newlength{\paragtitlewidth}
-\setlength{\paragtitlewidth}{3cm}
+\setlength{\paragtitlewidth}{1.5cm}
 \newlength{\paragtitlespace}
 \setlength{\paragtitlespace}{0.3cm}
 \newlength{\subparaglinewidth}
@@ -545,14 +549,6 @@ linewidth=1pt]\begin{pro}}
     enlarge left by=\paragtitlewidth + \paragtitlespace,
     width=\linewidth - \paragtitlewidth - \paragtitlespace,
     parbox=true,
-    overlay unbroken and first={%
-        \node[inner sep=0pt,outer sep=0pt,text width=\paragtitlewidth,
-          align=left,
-          below right]
-          at ([xshift=-\paragtitlewidth - \paragtitlespace]frame.north west)
-          {%
-             \fullbf{#1}
-          };},
     height=#2,
     height plus=100cm, % enough for a page break to happen, since then those options are ignored
 }
@@ -588,6 +584,7 @@ linewidth=1pt]\begin{pro}}
 
 \newenvironment{parag}[1]{%
     \vspace{\parskip} % We want the parskip to be here, not after (it is then cancelled).
+	\vspace{0.8cm}
     % Check that not inside a paragraph.
     \directlua{
         if inparag then
@@ -599,11 +596,7 @@ linewidth=1pt]\begin{pro}}
     \phantomsection
     \addcontentsline{toc}{paragraph}{#1}
     % Measure title, while not displaying it.
-    \sbox\paragtitlebox{
-        \begin{minipage}[c]{\paragtitlewidth}
-            \RaggedRight \fullbf{#1}
-        \end{minipage}
-    }
+        \RaggedRight \fullbf{#1}
     \setlength\paragtitleheight{2\ht\paragtitlebox}  % parag title height; why a factor 2? Very good question, I won't act as if I knew what I was doing, but it seems to work
     % Ask for correct space on the page, for the title.
     \needspace{\paragtitleheight}

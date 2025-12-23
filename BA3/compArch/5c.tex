@@ -1,0 +1,297 @@
+\section{Memory Consistency}
+Before diving into consistency, what is the difference between coherence and consistency?
+\begin{parag}{Coherence}
+    \begin{itemize}
+		\item \important{What values} should be returned by a set of reads and writes to a \important{single address} 
+		\item An issue of data integrity; if violated, I get wrong data
+    \end{itemize}
+\end{parag}
+\begin{parag}{Consistency}
+    \begin{itemize}
+		\item \important{When} written values will be returned by reads to \important{multiple addresses}
+		\item Not an issue of data integrity: data are correct from the perspective of a single processors, but observations from  different processors may show different orderings and \important{contradict the expecation of the programmer}
+    \end{itemize}
+	So if for instance we take two prgrams Where each one runs on a different thread:
+\end{parag}
+
+\hspace{0.5cm}
+
+
+\begin{minipage}{0.48\textwidth}
+\textbf{Processor or Thread \#1}
+\begin{lstlisting}[language=C]
+A = 0;
+...
+A = 1;
+
+if (B == 0) ...
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\textbf{Processor or Thread \#2}
+\begin{lstlisting}[language=C]
+B = 0;
+...
+B = 1;
+
+if (A == 0) ...
+\end{lstlisting}
+\end{minipage}
+
+\hspace{0.5cm}
+
+
+So can both tests be true? Not really right? If we were able to run those two program in parallel this would even be \important{wrong}.
+
+Note that this is not a problem of accesses to a single location (coherence) but of the interaction of \important{several accesses to more than one location}.
+
+It is also the program of \important{when} a new value must be visible.
+
+
+\begin{parag}{Ideally: Strict Consistency}
+    What we would want is a perfect world would be that everything happens in memory \important{exaclty in the order it has been issued}.
+	
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-22.png}
+	\end{center}
+
+	However in any distributed system is (virtually) \important{impossible to obtain a gloval time}, hence let's forget about it... 
+
+	The minimum that we need is to have the same clock for all the CPU. And if we take what we have seen in cs-173, this is a hard thing to do to: \textit{conduct} the clock to everyone. But this is not even the case for most of distributed system, most of them doesn't even have the same clock.
+\end{parag}
+
+	\begin{framedremark}
+	Even on this day our laptop core doesn't have the same clock
+	\end{framedremark}
+
+	Because we cannot have a perfect notion of time for everyone, let us relax:
+
+	\begin{definition}{Sequential Consistency}
+	The result of any execution is as if:
+	\begin{itemize}
+		\item the operations of each individual processor were executed the order specified by its program, and
+		\item the operations of the different processors were arbitrarily interleaved
+	\end{itemize}
+	
+	\end{definition}
+	\begin{parag}{More Practical: Sequence Consistency}
+		The idea is to let some time after the write/read for the other processors/memory to \textit{process} the new value
+	    \begin{center}
+	    \includegraphics[scale=0.2]{screenshots/2025-12-22_1.png}
+	    \end{center}
+		A more formal way of seeing it is:\\
+		\begin{center}
+		\includegraphics[scale=0.2]{screenshots/2025-12-22_2.png}
+		\end{center}
+
+		Every CPU have access to memory when they are connected with a switch, 
+		they do what there \important{load and store} in program order, everything is atomic (no other memory operation is started while the previous has not completed)\\
+		After every memory operation, the \important{switch is randomly changed}
+	\end{parag}
+	\textit{\important{load and store} in program order}???? But remember this:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-22_3.png}
+	\end{center}
+	Now we have three possibilities (this is what we have done in the previous sections):
+	\begin{enumerate}
+	    \item We keep all the memory accesses by whatever we know until now
+	    \item We keep all our addresses or all our accesses in order
+	    \item We keep someting in order
+	\end{enumerate}
+	The correct answer is the last one, keeping some of the thing in order. We had to do so to solve the memory dependency issue.
+	First we needed in the first place to reorder instruction at writeback:
+	\begin{center}
+	\includegraphics[scale=0.24]{screenshots/2025-12-22_4.png}
+	\end{center}
+	Exception was the reason why we needed to do so.
+	In fact our memory path looks more like this:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-22_5.png}
+	\end{center}
+	But there is a \important{mistake}, we have badly violated consistency even on a uniprocessor: the relative order of read and writes is now possibly wrong. If we write at \texttt{0x1000}, we read at \texttt{0x1000} then we have an issue, we have read the previous value of \texttt{0x1000} which is now deprecated.
+
+
+
+\begin{parag}{Correct Actual Memory Path}
+    What we need to check if while we are waiting to write our value, it is in the Reorder Buffer.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-22_6.png}
+	\end{center}
+	Now we do honour RAW dependencies and \important{uniprocessor consistency} is correclty implemented\\
+
+	Still, other processors do not have such a bypass...\\
+
+	Uniprocessor memory accesses our of order \textrightarrow no sequential consistency
+\end{parag}
+
+\begin{parag}{Dependences through Memory}
+    The way we detect and resolve dependences through memory (a store at some address and a subsequent load from the same address) is the same as for registers.\\
+
+
+	\textbf{For every load, check the ROB}
+	\begin{enumerate}
+		\item If there is \important{no store to the same address} in the ROB, get the value from memory (i.e., from the cache)
+		\item If there is a \important{store to the same address} in the ROB, either get the value (if ready) or the tag
+			\begin{center}
+			    but there is an additional situation now
+			\end{center}
+		\item If there is a store to an \important{unknown address} in the ROB or if the address of the load is unknown, \important{wait}
+	\end{enumerate}
+\end{parag}
+\begin{parag}{Load-Store Qeues}
+	In practice, the \important{memory part of the ROB} is implemented separately and is called a \important{Load-Store Qeue} (in turn, usually implemented as a Load and Store queues)
+   \begin{center}
+   \includegraphics[scale=0.2]{screenshots/2025-12-22_8.png}
+   \end{center} 
+\end{parag}
+\begin{parag}{More Challenges to Sequential Consistency}
+    Consider a normal system with caches and using a simple invalidate snooping protocol.
+
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2025-12-22_9.png}
+	\end{center}
+	The issue that we have is \important{not coherence} at some time we \important{will have the correct} value in both caches. The problem we have is only the fact that our instruction are overlapping each other. The problem is a \textbf{when}.
+\end{parag}
+\begin{parag}{how to get Sequential Consistency}
+    A naive way for us to solve this is \important{waiting}: wait for the acknowledgement of the invalidation and do not start a new memory operation until you have it
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-22_10.png}
+	\end{center}
+	But this is bad, maybe there is a better way of doing it
+\end{parag}
+\begin{parag}{Relaxing Write \textrightarrow Read order: Proeccors Consistency Model}
+
+	We \important{change the contract} that we have by \important{exposing write buffers} to the programmer (and thus grants the possibility to the architect to improve performance)
+
+\begin{tikzpicture}[
+    code/.style={font=\ttfamily\large, text=blue},
+    title/.style={font=\bfseries\Large},
+    explain/.style={font=\bfseries\Large, text=red},
+    arrow/.style={->, thick, red}
+]
+
+% Titles
+\node[title] (t1) at (-6,3) {Processor or\\Thread \#1};
+\node[title] (t2) at ( 6,3) {Processor or\\Thread \#2};
+
+% Left code (Thread #1)
+\node[code, anchor=west] (a0) at (-7,1.5) {A = 0;};
+\node[code, anchor=west] (adots) at (-7,0.8) {...};
+\node[code, anchor=west] (a1) at (-7,0.1) {A = 1;};
+\node[code, anchor=west] (ifb) at (-7,-0.6) {if (B == 0) ...};
+
+% Right code (Thread #2)
+\node[code, anchor=west] (b0) at (3,1.5) {B = 0;};
+\node[code, anchor=west] (bdots) at (3,0.8) {...};
+\node[code, anchor=west] (b1) at (3,0.1) {B = 1;};
+\node[code, anchor=west] (ifa) at (3,-0.6) {if (A == 0) ...};
+
+% Center explanation
+\node[explain, align=center] (exp) at (0,0.6)
+{Now we accept\\that this is\\\textbf{possible!}};
+
+% Curved arrows
+\draw[arrow] (ifb.east) to[out=0,in=-120] (a1.south);
+\draw[arrow] (ifa.west) to[out=180,in=-60] (b1.south);
+
+\end{tikzpicture}
+
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-22_11.png}
+\end{center}
+
+We \important{now admit that both tests can be true at once} (Read advances over independent Write)\\
+
+Still, we \important{enforce write order so that the values of A and B will eventually be both 1} (in some unspecified future)\\
+
+
+IA-32 and some other processor (IBM 370) implement this model
+    
+\end{parag}
+
+
+
+\begin{parag}{Many Relaxed Consistency Models}
+	The goal it to choose consistency models which are \important{efficiently implementable byt do no 'surprise too much' programmer}\\
+
+
+	Different combination on \important{what can be disordered} (W \textrightarrow R, W \textrightarrow W, R \textrightarrow W, R \textrightarrow R, ...) and other details
+\begin{itemize}
+	\item Wisconsin/Stanford processor consistency
+	\item IBM 370
+	\item Intel IA-32
+	\item Sun Total Store Order
+	\item USC/Rice weak ordering
+	\item Stanford release consistency
+	\item DEC Alpha
+	\item IBM PowerPC
+	\item Sun's Relaxed Memory Order
+	\item ...
+\end{itemize}
+Only system programmers (OS, libraries, middleware) typically see these details and act on them to implement higher level functions, uniforms across all or most systems
+\end{parag}
+\begin{parag}{Relax Everything: Release Consistency Model}
+    Still \important{honour every dependence locally} in a processor, but \important{otherwise co,pletely disregard ordering} accross normal loads and stores\\
+
+	Introduce special synchronization operations that have strict ordering
+	\begin{itemize}
+		\item Typically some instruction are used to \important{acquire access} (\important{$S_A$}) to a shared variable and enforce the orderings $S_A \to $ W and $S_A \to $ R while other instructions are used to \important{realease access} $\left(S_R\right)$ to a shared variable and enforcethe orderings W \textrightarrow $S_R$ and R \textrightarrow $S_R$
+		\item Another approach is to have memory \important{barriers} or \important{fences} (\important{S}) that act like $S_A + S_R$ and enforce all orderings W \textrightarrow S, R \textrightarrow S, S \textrightarrow W, and S \textrightarrow R (i.e., the execution of a memory barrier waits for all pending loads and stores to \important{complete and be globally visible}, and does not let any successive load or store start).
+	\end{itemize}
+	Put the \important{burden on the programmer/compiler} and be as aggressive as you can in the hardware
+	
+\end{parag}
+\begin{parag}{Memory Barriers/ Fences}
+    The \texttt{membar} guarantee that everything that is before has gone everywhere by the time it stops executing.
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-22_12.png}
+	\end{center}
+	\begin{framedremark}
+	Remember to take a long look at this to make sure I understand
+	\end{framedremark}
+\end{parag}
+\begin{parag}{Atomic Instructions}
+	Now if we take a look at the other way of solving this issue:\\
+
+	Atomic instructions is a combination of load and store \important{without interference from others}. This is a typical way to implement \important{acquire access}
+	\begin{itemize}
+		\item \important{Test-and-set}: interchanges a fixed value for a value in memory
+		\item \important{Atomic exchange} or \important{swap}: interchanges a value in a register for a value in memory
+		\item \important{Copare-and-swap}: compare a register value to a value in memory addressed by another register, and if they are equal, then swap a thirf register value with the one in memory.
+	\end{itemize}
+	The \important{compare and swap} is \important{good} because it writes only if the comparison is succesful. It is \important{bad} because it needs \important{three source} registers
+	
+\end{parag}
+
+
+
+\begin{parag}{Consistency is Hard}
+    Memory \important{Consistency is hard}, there is subtle interaction between hardware optimizations (e.g., sotre buffers, reordering) and memory models make \important{reasoning about correctness challenging}\\
+
+
+	The code is \important{sublty processor dependent}
+	\begin{itemize}
+		\item Programs can \important{behave differently} based on the processor's memory consistency model (e.g., x86 vs ARM), requiring careful design portability.
+	\end{itemize}
+	\important{Simplified for software programmers}: to shield developers, \important{consistency mechanism are encapsulated} in:
+	\begin{itemize}
+		\item system libraries (e.g., synchronization primitives, atomics)
+		\item APIs (e.g., C++ \texttt{std::atomic},pthreads, java volatile)
+	\end{itemize}
+	These APIs are simple, intuitive, and \important{uniform across platforms} while hiding processor-specific details
+\end{parag}
+
+\subsection{Summary Multiprocessors}
+\begin{itemize}
+	\item Multiprocessors have come to the consumer market and are here to stay
+	\item Peculiar multiprocessors (e.g., heterogeneous) have been for many years in high-end embedded systems 
+	\item They can usually take advantage of most of the progress in uniprocessor design and performance optimization 
+	\item Yet, they involve major challenges when it comes to preserve the multithreaded performance of uniprocessors (interconnection, coherence, consistency, etc.)
+	\item Scalability is one of the greatest architectural issues of the future
+\end{itemize}
+
+	
+	
+
+

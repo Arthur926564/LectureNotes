@@ -1,5 +1,5 @@
 \section{Besides and Beyond Superscalars}
-So far we used to way to optimize our processor: pipelined and dynamic scheduling, for this lecture we will see if we can go a completely different way of what we have done for us:
+So far we used to way two optimize our processor: pipelined and dynamic scheduling, for this lecture we will see if we can go a completely different way of what we have done before. 
 
 \begin{parag}{Content of this lecture}
     \begin{itemize}
@@ -17,10 +17,10 @@ So far we used to way to optimize our processor: pipelined and dynamic schedulin
 	\end{center}
 	We have two big \important{seperate parts} in our  circuit:\\
 	\begin{itemize}
-		\item The ordered part: between the commit unit and the registerfile, instruction Fetch and decode unit
+		\item The ordered part: between the commit unit and the register file, instruction Fetch and decode unit
 		\item The unordered part: the reservation stations and all the unit
 	\end{itemize}
-	The limits we have is for instance imagine we have 3 alu instruction that are ready, then we have to execute them sequentially which 'slow down'  our processor. The second limitation is that maybe we don't have enough instruction in our reservation station.
+	The limits we have is for instance imagine we have 3 alu instructions that are ready, then we have to execute them sequentially which 'slow down'  our processor. The second limitation is that maybe we don't have enough instruction in our reservation station.
 \end{parag}
 \begin{parag}{Superscalar Execution}
     The solution for this for instance is to add a new ALU execution unit:
@@ -32,9 +32,9 @@ So far we used to way to optimize our processor: pipelined and dynamic schedulin
 	\begin{framedremark}
 	What about depencies? What if the second instruction actually depends on the first ones, then searching in the commit unit is not sufficient anymore. We will also need to take a look at the other decode unit to check any depencies.
 	\begin{itemize}
-		\item \important{Fetch more instruction per cycle} no big dufficulty if the instruction cache can sustain the bandwith
+		\item \important{Fetch more instruction per cycle} no big difficulty if the instruction cache can sustain the bandwith
 		\item \important{Commit more instruction per cycle}: The ROB and the register file must have enough ports
-		\item Obey data and control depencies: dynamic scheduling already takes care of this
+		\item Obey data and control dependencies: dynamic scheduling already takes care of this
 	\end{itemize}
 	\end{framedremark}
 	\begin{framedremark}
@@ -55,7 +55,7 @@ So far we used to way to optimize our processor: pipelined and dynamic schedulin
 	\end{subparag}
 \end{parag}
 
-\subsubsection{Intel Processor and Petch}%
+\subsubsection{Intel Processor and Fetch}%
 In the late 70s instruction were not fixed size. This means that some instructions were one byte long, other were 50 bytes long. But why did they do that? At that time memory was a big limitation, imagine if you had 1000 bytes of storage for your program, then you need to compress you code as much as possible \textrightarrow making the most common instruction the smallest and the least common instructions the biggest. This is a very good idea... at \important{that} time. But now memory is not a big issue anymore.\\
 \begin{framedremark}
 How does it works: The way of decoding instruction is kind of like a stack: while the instruction is not done \textrightarrow we add the next byte to the instruction. (adding the next byte wasn't an issue because the memory was byte addressable at that time)
@@ -68,7 +68,7 @@ All the thing we have said before is nice if and \important{only} if we know whe
 \begin{itemize}
 	\item The \important{biggest problem} left to continue extracting instruction level parallelism are:
 		\begin{itemize}
-			\item \important{True data depencies}: instruction \important{cannot} be executed! Not much we can do about...
+			\item \important{True data dependencies}: instruction \important{cannot} be executed! Not much we can do about...
 			\item \important{Branches}: where to look for other candidate instructions?
 		\end{itemize}
 	\item \important{Static} prediction not very accurate and somehow hard to use 
@@ -78,7 +78,7 @@ All the thing we have said before is nice if and \important{only} if we know whe
 		\end{itemize}
 	\item \important{Dynamic} prediction: learn from history
 		\begin{itemize}
-			\item Count how ofter a branch was taken in the past
+			\item Count how often a branch was taken in the past
 		\end{itemize}
 \end{itemize}
 
@@ -88,6 +88,7 @@ People tried to predict the branch output, if we know that the branch is usually
 \end{center}
 So the prediction's job is given directly to the processor. To do so, it will hash the address of the branch instruction with the taken or not taken information (maybe they will be some overwritting in the table, we don't really care because this is just a prediction at the end so being wrong is not a big deal).\\
 This is kind of easy to do right? we just have to create a big table where we store each branch that we cam through. In fact people do usually something a big more complicated, we use a finite state machine:
+
 \begin{parag}{One- vs. Two-Bit Prediction Schemes}
     The simplest one is a one-bit predictor which is basically a 'do the same as last time':
 	
@@ -158,6 +159,7 @@ A two bit predictor (saturating counter): adding some 'inertia' or 'take some ti
 \end{center}
 
 So now we can use this guess to try to fetch and decode the right instructions. The question we have is: Can we go further with this, can we actually execute the instructions:
+
 \begin{parag}{Speculative Execution}
     \begin{itemize}
 		\item We have been using \important{Dynamic Branch Prediction} only to tentatively \important{Fetch} and \important{Decode} instruction \textrightarrow no effect on registers and memory, so \important{easy to squash}
@@ -168,7 +170,7 @@ So now we can use this guess to try to fetch and decode the right instructions. 
 				\item Was it wrong? \important{Squash it}
 			\end{itemize}
     \end{itemize}
-	So here after executing the instruction instead of waiting for a value as we did before, we are actually waiting for our branch result to know wether or not we are cottect. This means, the value of our instruction is unknown \important{and} that we are waiting for the branch tag to come up ((BR3 for instance))
+	So here after executing the instruction instead of waiting for a value as we did before, we are actually waiting for our branch result to know wether or not we are correct. This means, the value of our instruction is unknown \important{and} that we are waiting for the branch tag to come up ((BR3 for instance))
 	\begin{center}
 	\includegraphics[scale=0.3]{screenshots/2025-12-13_4.png}
 	\end{center}
@@ -179,4 +181,458 @@ So now we can use this guess to try to fetch and decode the right instructions. 
 	\end{center}
 	A mispredicted branch triggers a squash. As we say in french 'ni vu ni connu' (\textit{Prof. Ienne})
 \end{parag}
+
+\subsection{Simultaneous Multithreading}
+Before explaining what's multithreading, first let us see what our current processor execution looks like:
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-14.png}
+\end{center}
+So here we can see that there is a lot of unit that are not used at the current time. Each blank boxes here could be used for something that is useful for us, they are \important{free}.\\
+How can I make a profit based on that? If we remember how our computer works especially with the operating system, there is always a lot of program that are running at the same time. At the current moment we were 'seperating' in time slots, each program run for like 0.01 second and then another program run for 0.01 seconds, etc. But why don't we just run the second program instructions in the blank places here? (let us first think about the things that would work properly and the other thing that would'nt work). First \important{dependencies} there is no dependencies between the first program and the second program which is great. \textbf{But} there is some big issues about the registers. the first program use 32 register, but the second programs also use 32 registers, and those registers (the ones of the first program and the one of the second program) \important{cannot} be the same. We will need to add registers for everyone \textrightarrow two sets of register.\\
+A another \important{big issue} is the \textbf{PC}! we also need two PCs\\
+Another issue is memory, how do we access memory for both, the OS helps me go to memory in the right way, but for us now, we need two way to do so which means that the TLB need to have something. We need to have the ability to translate the two different access to memory at the same time.
+
+After adding this for two programs, why not three, four, etc.. The goal for us would be to obtain something like this (having most of the space filled):
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-14_1.png}
+\end{center}
+
+When accessing in memory, we need to have the information "this is a memory address for the pink", "this is a memory address for the blue", etc...
+
+\subsubsection{How do we do it?}
+First we'll need to add multiple PCs (as we said before) \textrightarrow Mutliples ROBs or one with a thread info. that's it?\\
+First let us remember how our instruction are implemented/used in the execution unit (from the reservation stations to the commit unit) At those place there is a \important{total abstraction} between the \important{program} and the \important{instruction}. What this means is that: in the reservation stations. The instructions that are being stored doesn't know from where they come from. They are just there chilling waiting to be executed. They have different names waiting for tag and not instructions etc... So for us this is perfect! we don't have a lot of work to do because of this abstraction. We need to have either a big register files, or multiples.
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-14_2.png}
+\end{center}
+The only guy who knows that we are multithreading is the \important{reorder buffer}, it remembers the thread of origin of each instructions. 
+
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-14_3.png}
+\end{center}
+
+\begin{parag}{Intel SMT: Xeon Hyper-Threading Pipeline}
+    Let us look a bit in the past. If we take a real example, the first processor that implemented this idea:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2025-12-15.png}
+	\end{center}
+	This is the first \important{real} pipeline that we are looking. The first thing we can notice is that there are more stage in this pipeline as our 5-stage pipelined ones. One of the reason for this is that intel at that time was 'racing' to the fastest processor.
+	\begin{framedremark}
+	Intel has the tendency to renames everything: Hyper-Threading instead of multithreading, IP instead of PC, etc.\\
+	Remember to look at the schema and try to understand each part of the pipeline
+	\end{framedremark}
+	\begin{subparag}{What do we loose to multithreading}
+	    For this processor, we can look where things are shared between threads and other part are not shared. There is only \textbf{5\%} more area of circuit added to be able to have multithreading. This is a very beautiful idea right? It costs nothing and makes us gain a lot.
+	\end{subparag}
+\end{parag}
+Now we have done everything that is currenlty in our processor, we are done. Now in your phone, laptop, etc... you have super scalar Multithreading processor.
+
+\subsection{Non Blocking Caches}
+
+Let us consider the next example:
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+lw $t2 0($t0) # t2 = mem[t0]
+lw $t3 0($t1) # t3 = mem[t1]
+addi $t3, $t3, 123
+andi $t3, $t3, 0xff
+\end{lstlisting}
+If there is a cache mis for \texttt{mem[t0]}, one need to \important{wait} for the (slow) main memory. At the moment, our cache works as a finite state machine, we ask him some element, it goes search in his cache, if it has it \textrightarrow gives it to us. If not, then it has to look for it in the main memory. But this is not a pipeline, this is a \important{finite state machine}. This means: we have to \important{wait until} it is done, then we can continue our program.\\
+
+But us, as superscalar processor, we would want to \important{continue execution} as far as dependencies permit it.\\
+But don't we have a solution when we want to have parallelism?
+\begin{center}
+    \textbf{pipeline}
+\end{center}
+
+
+
+\begin{parag}{Nonblocking Caches}
+	The cache controller could save a request, while waiting for the main memory, if the data are in the cache (\important{hit under miss})
+    \begin{itemize}
+		\item Hide the miss latency with useful work
+    \end{itemize}
+	The cache controller could save a request, while waiting for the main memory, by issuing another request to memory (\important{miss under miss})
+	\begin{itemize}
+		\item Overlap the latency of the two misses
+	\end{itemize}
+	\important{Nonblocking caches} are generally needed for dynamically scheduled superscalar processors
+\end{parag}
+\subsection{Very Long Instruction Word (VLIW) Processor}
+The question we will ask now is: Is there a whole completely different way of extracting instruction level parallelism? A fundammentaly different way of doing it:
+
+\begin{center}
+\includegraphics[scale=0.2]{screenshots/2025-12-15_1.png}
+\end{center}
+First let us take dynamically scheduled superscalar processor (kind of):
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-15_2.png}
+\end{center}
+This thing that we build is very fast. When we say fast we are talking 0.2 nanosecond. The decision that we are taking here is pretty hard, are all the argument ready, do we have the tag ready etc\ldots in only 0.2 nanosecond. But the dependency that we are making a decision of was known from the beginning. From the start of the program we \important{knew} that there will be a data dependency here. But we choosed to do it at the last minute. But the dynamic scheduler takes a lot of space in our circuit. We could have as many transistors in all execution units as in the dynamic scheduler.\\
+
+At this day the limiter is the dynamic scheduler. What don't we turn the dynamic into static:
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-15_3.png}
+\end{center}
+Let us take a decision \important{a priori} before we start executing about what we execute, at each cycle.\\
+\begin{definition}[Static Scheduling]
+What each unit does in a cycle is decided at compile time in software
+\end{definition}
+So now instead of having small instructions that use one execution unit at a time, let us use big instructions that use all the execution units at the same time.
+\begin{parag}{What are the problems?}
+    For this, we need to know a lot of information about the architecture (as a software person). Before we didn't need to know because all the issues were solved in hardware (this is why we used to resolve issues at the last minute)\\
+
+	Secondly remember that every year our transistors becomes better and cheaper, the way we used to speed up our processor was to add more unit, a second alu, a second fp unit, etc. But know as we now use \important{static scheduling} we cannot change our execution units at of nowhere. So when buying a new processor, if we run a program that use the same set of instruction as the previous processor, there won't be any difference of speed.
+\end{parag}
+But now what would look like a traditional code into a VLIW code:
+\begin{center}
+\includegraphics[scale=0.25]{screenshots/2025-12-15_4.png}
+\end{center}
+The left one means 'every things we need to do : blablabla'. The left code means 'every thing that we need to do at exaclty each cycle is bla'. This is a great idea right? We don't have an issue about the size of our program, at the current time, laptop usually 16-32 GiB of ram, a usual program takes aroung 1MiB, we are three order of magnitudes away, so this is fine, ... is it? Our program after being read in the ram is also put in the cache, in the \important{l1 cache}. But this cache \important{cares about size} it needs to, it's a very small and polluting it with \texttt{nop}'s is very bad.
+
+\begin{parag}{Challenges of VLIW}
+    \begin{itemize}
+		\item \textbf{Compiler Technoloy}: Most sever limitation until the end of the 90s (VLIW idea is aroung since the 70s)
+		\item \textbf{Code Bloating}: all the \texttt{nop} occupy memory space and thus \important{cost}
+		\item \textbf{Binary Incompatibility}
+    \end{itemize}
+\end{parag}
+\paragraph{Compiler Technology}%
+\label{par:Compiler Technology}
+First let us check what kind of information is missing at compile time?\\
+Let us take a program and scheduled it:
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+loop: ls $f0, 0($r1)
+	  add $f4, $f0, $f2
+	  sd ($srl), $f4
+
+	  subi $r1, $r1, 8
+	  bnez $r1, loop
+\end{lstlisting}
+\begin{itemize}
+	\item Schedule on a VLIW processor
+		\begin{itemize}
+			\item Slot 1: Load/Store Unit or Branch Unit
+			\item Slot 2: ALU
+			\item Slot 3: Floating-Point Unit
+		\end{itemize}
+	\item Latencies 
+		\begin{itemize}
+			\item Load/Store \textrightarrow 2 cycles
+			\item Integer \textrightarrow 2 cycles
+			\item Branch \textrightarrow 2 cycles
+			\item Floating-Point \textrightarrow 3 cycles
+		\end{itemize}
+\end{itemize}
+
+So let us build the table for it:\\
+This first instruction is kind of easy to construct, we know that there won't be any issue with it so let us just put it in there
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	Load/Store/Branch Unit & ALU & Floating-Point Unit &  \\
+	\hline
+	ld &  & & Cycle 1 \\
+	\hline
+	   &  & & Cycle 2 \\
+	   \hline
+	   & & ADD & Cycle 3 \\
+	   \hline
+	 & & & Cycle 4 \\
+	\hline
+	 & subi & & Cycle 5 \\
+	\hline
+	sd & & & Cycle 6 \\
+	\hline
+	bnez & & & Cycle 7 \\
+	\hline
+	 & & & Cycle 8 \\
+	\hline
+	 & & & Cycle 9 \\
+	\hline
+\end{tabular}
+\end{center}
+
+
+To build the scheduling table, we proceed cycle by cycle, respecting both the \textbf{structural constraints} (one instruction per functional unit per cycle) and the \textbf{data hazards}, while accounting for the \textbf{fixed instruction latencies} provided by the VLIW architecture.
+
+\subsubsection*{Step 1: Identify Functional Units and Constraints}
+The VLIW processor provides three execution slots per cycle:
+\begin{itemize}
+    \item \textbf{Slot 1}: Load/Store \textit{or} Branch Unit
+    \item \textbf{Slot 2}: Integer ALU
+    \item \textbf{Slot 3}: Floating-Point Unit
+\end{itemize}
+
+Only one instruction can be issued per slot per cycle, and instructions must respect producer-consumer dependencies.
+
+\subsubsection*{Step 2: Instruction Latencies}
+We must delay the consumer of a value until the producer has completed:
+
+\[
+\begin{array}{|c|c|}
+\hline
+\text{Instruction Type} & \text{Latency} \\
+\hline
+\text{Load/Store} & 2 \text{ cycles} \\
+\text{Integer ALU} & 2 \text{ cycles} \\
+\text{Branch} & 2 \text{ cycles} \\
+\text{Floating Point} & 3 \text{ cycles} \\
+\hline
+\end{array}
+\]
+
+\subsubsection*{Step 3: Schedule the Load Instruction}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+ls $f0, 0($r1)
+\end{lstlisting}
+\begin{itemize}
+	\item  This instruction uses the \textbf{Load/Store unit}.
+	\item  It produces \texttt{\$f0}, which is needed by the floating-point \texttt{add}.
+	\item  Since the load latency is \textbf{2 cycles}, \texttt{\$f0} becomes available at the \textbf{end of Cycle 2}.
+\end{itemize}
+
+Thus, we place the load in \textbf{Cycle 1}, Slot 1.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    Load/Store & ALU & FP & Cycle \\
+    \hline
+    ld &  & & 1 \\
+    \hline
+       &  & & 2 \\
+       \hline
+       &  & ADD & 3 \\
+       \hline
+     & & & 4 \\
+    \hline
+     & subi & & 5 \\
+    \hline
+    sd & & & 6 \\
+    \hline
+    bnez & & & 7 \\
+    \hline
+     & & & 8 \\
+    \hline
+     & & & 9 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Step 4: Handle the Floating-Point Dependency}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+add $f4, $f0, $f2
+\end{lstlisting}
+\begin{itemize}
+	\item  This instruction depends on \texttt{\$f0}.
+	\item \texttt{\$f0} is available only after \textbf{Cycle 2}.
+	\item Therefore, the earliest possible issue is \textbf{Cycle 3}.
+	\item It uses the \textbf{Floating-Point unit} and has a latency of \textbf{3 cycles}.
+\end{itemize}
+
+We place it in \textbf{Cycle 3}, Slot 3.
+
+Cycles 2 and 4 are idle in the FP unit because:
+\begin{itemize}
+    \item Cycle 2: data not ready
+    \item Cycle 4: FP instruction still executing (latency)
+\end{itemize}
+
+\subsubsection*{Step 5: Schedule the Integer Instruction}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+subi $r1, $r1, 8
+\end{lstlisting}
+\begin{itemize}
+	\item Uses the \textbf{ALU}
+	\item Independent of the floating-point operation
+	\item Can be scheduled as soon as the ALU is free
+\end{itemize}
+We place it in \textbf{Cycle 5}, Slot 2.
+
+\subsubsection*{Step 6: Schedule the Store Instruction}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+sd ($srl), $f4
+\end{lstlisting}
+\begin{itemize}
+	\item Depends on \texttt{\$f4}, produced by the FP \texttt{add}
+	\item  FP latency is \textbf{3 cycles}, starting at Cycle 3
+	\item  \texttt{\$f4} becomes available at the \textbf{end of Cycle 5}
+\end{itemize}
+
+
+
+
+Thus, the store can be issued in \textbf{Cycle 6}, Slot 1.
+
+\subsubsection*{Step 7: Schedule the Branch Instruction}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+bnez $r1, loop
+\end{lstlisting}
+\begin{itemize}
+	\item  Depends on \texttt{\$r1}, updated by \texttt{subi}
+	\item  \texttt{subi} latency is \textbf{2 cycles}, starting at Cycle 5
+	\item \texttt{\$r1} becomes available at the \textbf{end of Cycle 6}
+\end{itemize}
+We place the branch in \textbf{Cycle 7}, Slot 1.
+
+\subsubsection*{Step 8: Branch Latency and Empty Cycles}
+\begin{itemize}
+	\item The branch has a \textbf{2-cycle latency}.
+	\item  The processor cannot know the next fetch address until the branch resolves.
+	\item This results in \textbf{Cycles 8 and 9} being empty.
+\end{itemize}
+
+
+\subsection*{Key Takeaway}
+This table illustrates what is \textbf{missing at compile time}:
+\begin{itemize}
+    \item Exact branch behavior
+    \item Memory access variability
+    \item Dynamic instruction overlap opportunities
+\end{itemize}
+The question we have is: are we just unlucky with our program, is it just a horrible program and that; normally it is way better than this one?
+
+\begin{parag}{Which one is better?}
+A natural question to ask is whether this poor schedule is simply the result of bad luck, or whether static scheduling is inherently limited. To answer this, we can compare the behavior of our VLIW processor with one of a \important{dynamically scheduled processor}.
+
+
+With dynamic scheduling, the processor can make decisions at runtime using information that is not available to the compiler. First, registers can be \important{renamed dynamically}, which helps eliminate false dependencies and allows independent instructions to execute earlier. Second, and more importantl for our example, the processor can use \important{branch prediction}. If the branch predictor correctly predicts that the loop continues, the processor can speculatively fetch and execute instructions from the next iteration. In this case, the two-cycle branch latency can be effectively hidden, meaning that after the first iteration we can gain up to two cycles per loop iteration ``for free.''\\
+
+Furthermore, dynamic scheduling allows the processor to react to variations in memory access latency and execution timing. When a load completes earlier than expected, dependent instructions may be issued immediately, rather than waiting for a conservatively assumed latency as in static scheduling. This flexibility generally leads to higher utilization of functional units and fewer idle cycles.\\
+
+However, this improvement does not come without cost. Dynamically scheduled processors require more complex hardware, including reorder buffers, reservation stations, and branch predictors, which increases power consumption and design complexity. On the other hand, VLIW processors shift this complexity to the compiler, resulting in simpler hardware but potentially less efficient execution when compile-time assumptions are overly conservative.\\
+
+In summary, dynamic scheduling tends to perform better for irregular code and control-heavy loops, such as the one considered here, while static scheduling can be effective when program behavior is highly predictable and well understood at compile time.
+\end{parag}
+
+
+\begin{framedremark}
+At the computation level, there is no big difference in terms on how we executed the code between the dynamic scheduling and the static scheduling. In both cases we will have the same 'parallelism', the difference is that now, the compiler does the job of the dynamically scheduler.
+\end{framedremark}
+
+The issue for us at the moment is that in a static scheduler, we have to wait for each iteration: we cannot do the \texttt{ld \$f0, (\$r1)} before having finished the \texttt{bnez \$r1, loop} instruction. On the other hand, when we used a dynamically scheduled processors we were able to do so (using branch prediction). Is there a way for the static scheduler to do the same job (execute instruction that is in the next iterations of the loop)?\\
+
+\begin{parag}{Enlarge the Scop for ILP: Loop Unrolling}
+    Yes we can! The goal for us would be: instead of seeing it as a big loop; why not just \important{unroll} the loop:
+	
+\end{parag}
+
+\begin{center}
+\begin{minipage}{0.42\textwidth}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+Loop: ld $f0, ($r1)
+      addd $f4, $f0, $f2
+      sd ($r1), $f4
+      subi $r1, $r1, 8
+      bnez $r1, Loop
+\end{lstlisting}
+\end{minipage}
+\hfill
+$\Longrightarrow$
+\hfill
+\begin{minipage}{0.42\textwidth}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+Loop: ld $f0, ($r1) 
+      addd $f4, $f0, $f2 
+      sd ($r1), $f4 
+      ld $f6, ($r1-8) 
+      addd $f8, $f6, $f2 
+      sd ($r1-8), $f8 
+      ld $f10, ($r1-16) 
+      addd $f12, $f10, $f2 
+      sd ($r1-16), $f12 
+      ld $f14, ($r1-24) 
+      addd $f16, $f14, $f2 
+      sd ($r1-24), $f16 
+      ld $f18, ($r1-32) 
+      addd $f20, $f18, $f2 
+      sd ($r1-32), $f20 
+      subi $r1, $r1, 40 
+      bnez $r1, Loop
+\end{lstlisting}
+\end{minipage}
+\end{center}
+
+\begin{parag}{$ $}
+    But this is nice for us; now we can also do renaming of registers as we used to do. We have 5 different copy of the same code this allows us to rename our register. So here if we take the second load for instance; it depends only on \texttt{\$r1} so we can already execute it right after the first load \textrightarrow we can do the same for all loading and storing. For the add, each add depends on each load and is shifted of two cycles. So now the output would be something like this:
+
+\end{parag}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|l|l|l|}
+\hline
+\textbf{Cycle} & \textbf{Load/Store/Branch Unit} & \textbf{ALU} & \textbf{Floating-Point Unit} \\
+\hline
+1  & \texttt{ld \$f0, (\$r1)}        & \texttt{nop} & \texttt{nop} \\
+2  & \texttt{ld \$f6, (\$r1-8)     } & \texttt{nop} & \texttt{nop} \\
+3  & \texttt{ld \$f10, (\$r1-16)   } & \texttt{nop} & \texttt{addd \$f4, \$f0, \$f2} \\
+4  & \texttt{ld \$f14, (\$r1-24)   } & \texttt{nop} & \texttt{addd \$f8, \$f6, \$f2} \\
+5  & \texttt{ld \$f18, (\$r1-32)   } & \texttt{nop} & \texttt{addd \$f12, \$f10, \$f2} \\
+6  & \texttt{sd (\$r1), \$f4       } & \texttt{nop} & \texttt{addd \$f16, \$f14, \$f2} \\
+7  & \texttt{sd (\$r1-8), \$f8     } & \texttt{nop} & \texttt{addd \$f20, \$f18, \$f2} \\
+8  & \texttt{sd (\$r1-16), \$f12   } & \texttt{nop} & \texttt{nop} \\
+9  & \texttt{sd (\$r1-24), \$f16   } & \texttt{nop} & \texttt{nop} \\
+10 & \texttt{sd (\$r1-32), \$f20   } & \texttt{subi \$r1, \$r1, 40} & \texttt{nop} \\
+11 & \texttt{nop                   } & \texttt{nop} & \texttt{nop} \\
+12 & \texttt{bnez \$r1, Loop       } & \texttt{nop} & \texttt{nop} \\
+13 & \texttt{nop                   } & \texttt{nop} & \texttt{nop} \\
+\hline
+\end{tabular}
+\caption{Instruction scheduling across functional units}
+\end{table}
+
+\begin{parag}{$ $}
+	Now we have \important{26} cycles (vs. 90 cycles from before)
+\end{parag}
+\begin{parag}{What kind of information is missing at compile time}
+    For example let us consider this code:
+	\begin{lstlisting}[language={{RISC-V}Assembler}]
+sw x3, 456(x1)
+lw x2, 123(x4)
+	\end{lstlisting}
+	We want to ask wether or not there is a RAW dependence?
+	\begin{itemize}
+		\item At run time:
+			\begin{itemize}
+				\item Check if \texttt{x1 + 456 = x4 + 123}
+				\item Forwarding may even hide the memory latency...
+			\end{itemize}
+		\item At compile time:
+			\begin{itemize}
+				\item ??? (special techniques: alias analysis)
+			\end{itemize}
+	\end{itemize}
+	But is there a big issue with loading? What happens when we are loading but we have a cache miss? We will have to wait for like 100 cycles but we were trying to do parallelism? Now we have to wait 100 cycles for us to have the value we are looking for? This is horrible, how can we resolve that? Should we just assume that we will need to wait 100 cycles everytime we have a load instruction? If so then the cache becomes just useless.\\
+	Can we do better? I am optimist maybe I can just say 'my cache is good' and hope for a cache hit; after one cycle I use the value that the load gave us.\\
+
+
+	So now we are running our code as if we got a cache hit for a couple of cycle but then if the cache sent us a signal 'cache miss' \textrightarrow we stall everything. The difference about this stall and how we used to do this is that now even independent instruction \important{has to wait for us}. The issue is that we have the alu unit, load/store unit, \ldots that are all together in one instruction, so if one of them needs to wait, everybody has to wait with him.
+\end{parag}
+\begin{parag}{VLIW Compilation Techniques}
+	There many old and new techniques:
+	\begin{itemize}
+		\item Aliasing analysis
+		\item Loop unrolling, peeling, fusion, and distribution
+		\item Software pipelining, modulo scheduling
+		\item Trace scheduling, superblock scheduling
+		\item With hardware support in the processor: Predication, hyperblock, scheduling, ...
+	\end{itemize}
+	Usually advantages are \important{not for free}:
+	\begin{itemize}
+		\item Faster only on most frequent part of the code; penalty elsewhere
+		\item Difficulties to apply them in the general case
+		\item Larger code (worsens the performance of the l-cache)
+	\end{itemize}
+\end{parag}
+
+
+\subsection{Summary of chapter 4}
+So which architecture should we use between VLIW and Superscalar?\\
+In most commont, general purpose computing machine, we use dynamically scheduled, superscalar, processor with speculative execution, SMT. This means that in our smartphone, laptop, pc, etc. We use superscalar processor. On the other hand the VLIW architecture is used in some \important{embedded applications}(e.g., DSP), everything such as voice processor, filter, etc... And the reason for this is VLIW better for embedded application and/or signal processing machine, it is also way less costly as the other superscalar, we don't have to implement all those unit and dynamic scheduler which is useless for that type of work. Furthemore maybe we don't even need a cache in here in the first place.
+\begin{itemize}
+	\item Dynamically-scheduled superscalar processor are the commercial state-of-the-art in general purpose computing (laptops, data centers): current high-end implementations of \important{x86 (Intel and AMD)} as well as \important{ARM} are all superscalars
+	\item VLIW/EPIC processors represent an alternative, valuable in some situations: \important{Itanium 2} was a failed attempt by Intel to bring VLIWs in general-purpose computing; yet, practically all digital signal processors are VLIW (e.g., in all smartphone or for audio processing)
+	\item Performance is the result of a \important{subtle balance} between exploiting possibilities in compilers and managing hardware implementation difficulties
+\end{itemize}
+
 

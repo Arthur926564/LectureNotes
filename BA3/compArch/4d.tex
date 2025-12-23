@@ -21,7 +21,6 @@
 			\begin{itemize}
 				\item Must squash fetched and decoded instruction followig a branch
 			\end{itemize}
-		\end{itemize}
 	\end{itemize}
 \end{parag}
 
@@ -37,11 +36,11 @@
 \paragraph{Dynamic Scheduling: The Idea}%
 \label{par:Dynamic Scheduling: The Idea}
 Let us for instance take a look at the code:
-% \begin{lstlisting}[language={{RISC-V}Assembler}]
-% divd $f0, $f2, $f4
-% addd $f10, $f0, $f8
-% subd $f12, $f8, $f14
-% \end{lstlisting}
+\begin{lstlisting}[language={{RISC-V}Assembler}]
+divd $f0, $f2, $f4
+addd $f10, $f0, $f8
+subd $f12, $f8, $f14
+\end{lstlisting}
 Here the instruction \texttt{divd} is a long-running instruction which hurt our feeling...it makes our program \important{stalls} for the next instruction \texttt{add f10, f0, f8} which need the value \texttt{f0}. However as we can see the instruction \texttt{subd} is completely independent of the two above. As we have seen before, maybe a way of resolving the stalling is by using a 'smart' compiler which would put the \texttt{subd} instruction between those two. However here our \texttt{divd} takes a long time but how much? how many cycles? We cannot know right? Imagine having a \texttt{load} instruction we wouldn't even know!
 \begin{theoreme}
 Relax a fundamental rule: instructions can be executed \important{out of program order} (but the result must still be \important{correct}).
@@ -50,7 +49,7 @@ Relax a fundamental rule: instructions can be executed \important{out of program
 \begin{parag}{Break the Rigidity of the Basic Pipelining}
     For us we need:
 	\begin{itemize}
-		\item \important{Continue fetching and decoding} even and especially if one cannot exevcute previous instructions
+		\item \important{Continue fetching and decoding} even and especially if one cannot execute previous instructions
 		\item \important{Keep writeback waiting} if there is a structural hazard, without slowing down execution.
 	\end{itemize}
 \end{parag}
@@ -71,11 +70,12 @@ Relax a fundamental rule: instructions can be executed \important{out of program
 	
 \end{parag}
 \begin{framedremark}
-Here what we have is still a finite state machine. The reason why we don't present it as one is that the number of state that is can have is enormous. It the a combinatorial calculation between all the state F, D, E/M1, .., W.
+Here what we have is still a finite state machine. The reason why we don't present it as one is that the number of state that it can have is enormous. It's a combinatorial calculation between all the state F, D, E/M1, .., W.
 \end{framedremark}
 
 \subsubsection{Problems to solve}
 Now we have a kind of big work to do, all the previous issues that we had already solved come back again at us here:
+
 \begin{parag}{Structural Hazards}
 	\begin{itemize}
 		\item Are the required resources available?
@@ -105,11 +105,11 @@ Now we have a kind of big work to do, all the previous issues that we had alread
     \begin{center}
     \includegraphics[scale=0.2]{screenshots/2025-12-03_2.png}
     \end{center}
-	So here for instance the \texttt{ALU3} means that the value we are waiting for will be the result of the \texttt{ALU3} instruction im the reservation stations.
+	So here for instance the \texttt{ALU3} means that the value we are waiting for will be the result of the \texttt{ALU3} instruction in the reservation stations.
 	\begin{subparag}{The parking lot}
 	    We can see our Reservation stations as a \important{parking lot} instead of having car we have instructions waiting to be ready. Everytime one is ready then we launch it. This is a completely \important{unordered} 'data structure'.
 		On the bottom we have a ALU that is ready to compute something \important{every cycles}.
-		On the top then we have all the come back pipe which comes to us and tell for intsnace 'I am the result of the MUL3 computation' we then ask ourself if any of us (instructions) is waiting for the \texttt{MUL3} result.
+		On the top then we have all the come back pipe which comes to us and tell for instance 'I am the result of the MUL3 computation' we then ask ourself if any of us (instructions) is waiting for the \texttt{MUL3} result. If yes \textrightarrow we can launch the execution.
 	\end{subparag}
 \end{parag}
 \begin{center}
@@ -249,7 +249,8 @@ So here what we get at the end is:
 \begin{center}
 \includegraphics[scale=0.3]{screenshots/2025-12-03_5.png}
 \end{center}
-What we here as an issue still is how do we know where to write in the register file, we need to be careful about our ordering in our register file. This is the commit unit's job.
+We still have an issue: how do we know where to write in the register file?, we need to be careful about our ordering in our register file. This is the \important{commit unit}'s job.
+
 \begin{parag}{Our-of-order Commitment and Exceptions}
 	\begin{itemize}
 		\item Excpetion handlers should know exaclty where a problem has occured, especially for \important{nonterminating exceptions} (e.g., page fault)
@@ -260,7 +261,7 @@ What we here as an issue still is how do we know where to write in the register 
 \begin{parag}{Problems with exceptions}
     Now we have an issue again with excpetions:
 	\begin{subparag}{Precise exceptions}
-	    Reordering at commit; user view is that of a fully in order processor
+	    Reordering at commit; user view is the one of a fully in order processor
 		\begin{lstlisting}[language={{RISC-V}Assembler}]
 andi t4, t2, 0xff # good code
 andi t5, t4, 0xff # good code
@@ -271,7 +272,7 @@ andi t4, t3, 3  # bad code
 addi t0, t0, 4 # bad code
 addi t1, t1, 4 # bad code
 		\end{lstlisting}
-		So now we need to come back from where were at the exception. To do so we need to save the pc of where the exception has happened we already have it and returning to it is already implemented (the \texttt{ret} in RISC-V).
+		So now we need to come back from where were the exception. To do so we need to save the pc of where the exception has happened. We already have the instruction and returning to it is already implemented (the \texttt{mret} in RISC-V).
 		
 	\end{subparag}
 	\begin{subparag}{Imprecise exceptions}
@@ -308,7 +309,7 @@ addi t1, t1, 4 # bad code
     \begin{center}
     \includegraphics[scale=0.2]{screenshots/2025-12-10_1.png}
     \end{center}
-	So firstly we check the first lane that is at the head: \texttt{0|0x100 0004|  |\$ f3|  |0x627fba5a}. As we can see ther eis no tag or anything that we need to wait for \textrightarrow we can commit the instruction!
+	So firstly we check the first lane that is at the head: \texttt{0|0x100 0004|  |\$ f3|  |0x627fba5a}. As we can see there is no tag or anything that we need to wait for \textrightarrow we can commit the instruction!
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-12-10_3.png}
 	\end{center}
@@ -316,10 +317,10 @@ addi t1, t1, 4 # bad code
 \end{parag}
 
 \begin{parag}{Reordering and Precise Exceptions}
-	However here we still have the big issue of \important{exceptions}:\\
-	So we need some extra bits in the reorder buffer to know wehter or not there is an exception on a given instruction. Okay this is nice now we know when an instruction happens but what should we do?\\
+	We still have the big issue of \important{exceptions}:\\
+	We need some extra bits in the reorder buffer to know wehter or not there is an exception on a given instruction. Okay this is nice now we know when an instruction happens but what should we do?\\
 
-	So now we can always execute the previous instruction without having to worry about anything right? But what happens when the head is on the exception pc?
+	First, we can always execute the previous instruction without having to worry about anything right? But what happens when the head is on the exception pc?
 	\begin{itemize}
 		\item  When a synchronous exceptions happens, we do no report it but we \important{mark the entry} corresponding to the instruction which caused the exception in the ROB
 		\item When we would be ready to \important{commit} the instruction, we \important{raise the exception} instead
@@ -330,20 +331,20 @@ addi t1, t1, 4 # bad code
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-12-10_4.png}
 	\end{center}
-	So here what happened here is that we tried to store the value out of the \textbf{MEM1} unit which result in a TLB miss \textrightarrow we simply \important{record the exception}. Now we can still execute the instruction that is at the address \texttt{0x1000 0004} as nothing has happenend.
+	Here, we tried to store the value out of the \textbf{MEM1} unit which result in a TLB miss \textrightarrow we simply \important{record the exception}. Now we can still execute the instruction that is at the address \texttt{0x1000 0004} as nothing has happenend.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-12-10_5.png}
 	\end{center}
-	Now that we are on the current instruction, we \important{need to actually to notify} the world about our problem. We can now raise out tlb Miss exception. But all the thing that we had computed before is rubbish, we cannot know if those value are actually correct or just something that were computed with the wrong values, to solve this issues, we just \important{erase} everything that were in the reorder buffer.
+	Now that we are on the current instruction, we \important{need to actually notify} the world about our problem. We can now raise out tlb Miss exception. But all the thing that we had computed before is rubbish, we cannot know if those value are actually correct or just something that were computed with the wrong values, to solve this issues, we just \important{erase} everything that were in the reorder buffer.
     
 \end{parag}
 
 \begin{parag}{Problem we need to solve?}
 	The structural hazards were not an issue here, the \important{reservation stations} take care of the contention for execution units. The \important{commit unit} writes back one instruction at a time.\\
-	But what about RAW Data hazards,  but those are taken care of by the \important{reservation stations}
+	But what about RAW Data hazards, those are taken care of by the \important{reservation stations}
 \end{parag}
 \begin{parag}{Reservation stations}
-    We said as before that: as the decode unit, we get an instruction, if the input are available then we put the arguement and the op etc\ldots of the instruction in the reservation stations, else, we put the tag of the instruction... 
+    We said as before that: as the decode unit, we get an instruction, if the input are available we then put the arguement and the op etc\ldots of the instruction in the reservation stations, else, we put the tag of the instruction... 
 	\begin{center}
 	    How do we know?
 	\end{center}
@@ -352,7 +353,7 @@ addi t1, t1, 4 # bad code
 \end{parag}
 \begin{parag}{Decoding and Dependence}
     \begin{center}
-        The \important{reorder buffer (ROB)} knows of all instructions not yet committed and of their desitnation registers
+        The \important{reorder buffer (ROB)} knows of all instructions not yet committed and of their destination registers
     \end{center}
 	\begin{subparag}{Possible situations}
 	    \begin{itemize}
@@ -382,7 +383,7 @@ addi t1, t1, 4 # bad code
 	\end{itemize}
 	\begin{framedremark}
 	The memory and the register file comes down to the same thing, conceptually we have to do the same thing for both.\\
-	The slide difficulty for the implementation of the memory is: when we are looking for a certain register we only have to check ('is there an \texttt{f1} here?'). When we wont to write something, it can happen that the address is not ready yet. So when we want to read at a certain address, but there were a write before at an unknown address, we just cannot know if the value at the certain address will be overwrite or not?
+	The difficulty for the implementation of the memory is: when we are looking for a certain register, we only have to check ('is there an \texttt{f1} here?'). When we want to write something, it can happen that the address is not ready yet. So when we want to read at a certain address, but there were a write before at an unknown address, we just cannot know if the value at the certain address will be overwrite or not?
 	\end{framedremark}
 	The solution for this is to use a Load store queue:
 \end{parag}

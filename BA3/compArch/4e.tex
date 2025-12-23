@@ -37,7 +37,7 @@ Here we will have a \important{6-stage pipelined} processor without any forwardi
 \includegraphics[scale=0.2]{screenshots/2025-12-12.png}
 \end{center}
 So here we have two cycles more that every \important{non load/store instructions} has to go through. It can be even worse if we have dependency.\\ 
-The way of doing it is step be steps: first the first instruction \textrightarrow it doesn't depend on anything so we can just put without any dependency. Then we check the second instruction if it has any dependency \textrightarrow it has one: the \texttt{x1} this means that we will need to wait until the writeback for the next instruction is done. we will need to stall our processor four times. Because this is a rigid pipeline, everything in our processor is stalling so we need to fetch again and again our value (even if it is correct) until our CPU is again free. So for the second instructions, we have fetched 5 times the correct value.\\
+The way of doing it is step by steps: first, the first instruction (no shit sherlock) \textrightarrow it doesn't depend on anything so we can just put without any dependency. Then we check the second instruction if it has any dependency \textrightarrow it has one: the \texttt{x1}. This means that we will need to wait until the writeback for the next instruction is done. we will need to stall our processor four times. Because this is a rigid pipeline, everything in our processor is stalling so we need to fetch again and again our value (even if it is correct) until our CPU is again free. So for the second instructions, we have fetched 5 times the correct value.\\
 At the end here if we continue until the end of the program we get the following:
 \begin{center}
 \includegraphics[scale=0.2]{screenshots/2025-12-12_1.png}
@@ -136,7 +136,7 @@ We also need a reordering Buffer (ROB)
 \begin{framedremark}
 The explanation on how to run this is 14:00 in \textit{CS-200 -- 4e. Instruction Level Parallelism (cont'd)} from the 4th December
 \end{framedremark}
-So here we have the first two cycles which are the same as the usual pipelined processor, the. We have decoded the first instruction which is a load words with the arguments 0 and 555. So we then put the instruction into the reservation table for the memory unit at for instance \textbf{MEM2}.
+So here we have the first two cycles which are the same as the usual pipelined processor. We have decoded the first instruction which is a load words with the arguments 0 and 555. So we then put the instruction into the reservation table for the memory unit at for instance \textbf{MEM2}.
 \begin{center}
 \begin{tabular}{c|c|c|c|c|c|c|}
 	& & Op & Tag1 & Tag2 & Arg1 & Arg2 \\
@@ -152,7 +152,7 @@ So here we have the first two cycles which are the same as the usual pipelined p
 \begin{framedremark}
 The order or where we put it in the reservation table doesn't matter
 \end{framedremark}
-The decodin also need to keep track of the fact that this instruction exists \textrightarrow is also put the information in the reorder buffer. We put the instruction at the top of the ROB with the following informations:
+The decoding also need to keep track of the fact that this instruction exists \textrightarrow is also put the information in the reorder buffer. We put the instruction at the top of the ROB with the following informations:
 \begin{itemize}
 	\item PC = 1
 	\item EX = 0
@@ -161,7 +161,7 @@ The decodin also need to keep track of the fact that this instruction exists \te
 	\item The address is nothing because we don't have to write to the address
 	\item We don't know the value at the current value
 \end{itemize}
-We do now to the next cycle: we check if there is any tag in our MEM2 station, there is none (obviously because this is the first instruction) therefore we can enter into the memory unit. Has we have said before it has a latency of three which means that this instruction is gone for three cycles (there is no going back).
+We do now go the next cycle: we check if there is any tag in our MEM2 station, there is none (obviously because this is the first instruction) therefore we can enter into the memory unit. As we have said before, it has a latency of three which means that this instruction is gone for three cycles (there is no going back).
 
 Should we erase this instruction from the reservation table? I mean we don't use it now so why should we keep it?
 
@@ -171,7 +171,7 @@ But we are not done with the previous MEM2, so we would have a mismatch of MEM2.
 
 We need to add a bit of 'state' to know what is up with our tag. the bit would be 1 if we are currenlty executing the instruction else 0.
 
-At the same time the second instruction also is decoded at the second cycle. so this is an immediate instruction \textrightarrow we only need to check one register \texttt{x1}. We check the ROB if we see that there is \texttt{x1} then we know that it is not ready. As we can see there is \texttt{x1} \textrightarrow we check tat tag MEM2 and we store this tag in our reservation station of the ALU unit. we have for instance
+At the same time the second instruction also is decoded at the second cycle. so this is an immediate instruction \textrightarrow we only need to check one register \texttt{x1}. We check the ROB if we see that there is \texttt{x1} then we know that it is not ready. As we can see there is \texttt{x1} \textrightarrow we check the tag MEM2 and we store this tag in our reservation station of the ALU unit. we have for instance
 \begin{center}
 \begin{tabular}{c|c|c|c|c|c|c|}
 	& & Op & Tag1 & Tag2 & Arg1 & Arg2 \\
