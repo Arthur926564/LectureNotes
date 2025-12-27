@@ -5,7 +5,7 @@
 
 
 ## Remark
-I used Joachim Favre's style file for those notes [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master) with a bit of change here and there. All the course doesn't belong to me, the explanation and most of the images belongs to the courses.
+I used Joachim Favre's style file for those notes [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master) with a bit of change here and there. All the courses materials doesn't belong to me, the explanation and most of the images belongs to the professors/labs, etc...
 
 # Notes
 #### Bachelor semester 1 (Autumn 2024)
