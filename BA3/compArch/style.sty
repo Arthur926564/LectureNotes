@@ -50,6 +50,21 @@
 % ===== Dependencies for my style =====
 \usepackage[skins,breakable]{tcolorbox}  % for the parag and subparag environments
 \usepackage{enumitem}
+
+\newlist{defaultitemize}{itemize}{1}
+\setlist[defaultitemize]{}
+% Custom itemize for subparag
+\newlist{subparagitemize}{itemize}{1} % level 1
+\setlist[subparagitemize]{
+    label=\textbullet,       % change bullet if needed
+    left=1em,                % indentation from left
+    labelsep=0.5em,          % space between bullet and text
+    itemsep=0.25\baselineskip, % space between items
+    parsep=0pt,
+    topsep=0.25\baselineskip,
+    partopsep=0pt
+}
+
 \usepackage{ifthen}
 \usepackage{xifthen}
 \usepackage{calc}  % To do computations for lengthes
@@ -632,6 +647,16 @@ linewidth=1pt]\begin{pro}}
         % Re-set parskip size.
         \setlength{\parskip}{\unchangedparskip}
         \vspace{-\parskip}% Else, double counts the subparagraph skip (there is probably a better way, but I'm not sure what I am doing).
+		% this is just for the itemize in the subparag to be smaller
+		\setlist[itemize]{%
+            label=\textbullet,
+            left=1em,
+            labelsep=0.5em,
+            itemsep=0.25\baselineskip,
+            parsep=0pt,
+            topsep=0.25\baselineskip,
+            partopsep=0pt
+        }
 }{ 
     \end{subparagbox}
     

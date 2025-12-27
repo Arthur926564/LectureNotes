@@ -537,9 +537,9 @@ In the Shared state, the data is the same as in memory. When a \texttt{BusRdX} i
 \end{itemize}
 \end{framedremark}
 
-What is the important thing here is that now, we are able to PrWr without having to do any thing else. This is possible because of the dirst/modified state that we added. This way we \important{know} that we have in our cache is not shared with main memory and therefore might as well do what we want with it (until it is evicted).
+What is the important thing here is: Now, we are able to PrWr without having to do any thing else. This is possible because of the dirty/modified state that we added. This way we \important{know} that what we have in our cache is not shared with main memory and therefore might as well do what we want with it (until it is evicted).
 
-\begin{parag}{Exampe}
+\begin{parag}{Example}
     Now let us take for example the following table of actions:
 	\begin{center}
 	\begin{tabular}{c|c|c|c|c|c|c|}
@@ -560,7 +560,7 @@ What is the important thing here is that now, we are able to PrWr without having
 		\hline 
 	\end{tabular}
 	\end{center}
-	Let us do a few cases. For the first one we have a cache miss, this means that we go from invalid \textrightarrow shared. For the other one everybody care about a bus read (in I)
+	Let us do a few cases. For the first one we have a cache miss, this means that we go from invalid \textrightarrow shared. For the other one, everybody care about a bus read (in I)
 
 	\begin{center}
 	\begin{tabular}{c|c|c|c|c|c|c|}
@@ -668,6 +668,8 @@ What is the important thing here is that now, we are able to PrWr without having
 
 \end{parag}
 this is pretty nice, but this is not perfect. Because of that, there many other similar protocols that exists. For instance:
+
+
 \begin{parag}{4-State (MESI) Invalidation Protocol}
 	Often called the  \textbf{Illinois} protocol
 	\begin{itemize}
@@ -694,10 +696,10 @@ Imagine a system like this:
 \begin{center}
 \includegraphics[scale=0.25]{screenshots/2025-12-20.png}
 \end{center}
-Imagine now that there is a slow interconnection netwrok.
+There might be  a slow interconnection network.
 
 
-Directory-based cache coherence is a technique used to make cache coherence scalable when the number of processors increases.
+\important{Directory-based} cache coherence is a technique used to make cache coherence scalable when the number of processors increases.
 
 Instead of broadcasting coherence requests to all caches (as in snooping-based protocols), the system maintains a \textbf{directory} that keeps track of which caches have a copy of each memory block.
 
@@ -750,7 +752,7 @@ What we would need to do is to make each cache level speaks to themselve, we cou
 \begin{parag}{Inclusion Property between Caches at levels n-1 and n}
     \begin{enumerate}
 		\item \important{Same content}: Content of L(n-1) cache is always a subset of the corresponding L(n)  \\ 
-			A bus transaction an L2 cache is also always relevent for the L3 cache, hence a \important{snoop at L3 is sufficient}
+			A bus transaction on L2 cache is also always relevent for the L3 cache, hence a \important{snoop at L3 is sufficient}
 			\item  \important{Same state}: If a cache line is marked as owned/modified in L(n-1) cache, then it should also be so marked in the corresponding L(n) cache \\
 				If a bus transaction requests a cache line in owned/modified state in L3, the \important{L3 cache can determine this on its own without checking L2}
     \end{enumerate}

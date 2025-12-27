@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.12.1)  23 DEC 2025 19:03
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.12.1)  27 DEC 2025 16:15
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1382,6 +1382,9 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count376
 \enitdp@description=\count377
 )
+\enitdp@defaultitemize=\count378
+\enitdp@subparagitemize=\count379
+
 (/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 
@@ -1397,8 +1400,8 @@ or enter new name. (Default extension: sty)
 Enter file name: 
 (/usr/share/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count378
-\cp@tempcnt=\count379
+\c@cp@cntr=\count380
+\cp@tempcnt=\count381
 )
 (/usr/share/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
@@ -1444,8 +1447,8 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cftbeforefigskip=\skip180
 \cftfigindent=\skip181
 \cftfignumwidth=\skip182
-\c@lofdepth=\count380
-\c@lotdepth=\count381
+\c@lofdepth=\count382
+\c@lotdepth=\count383
 \cftbeforelottitleskip=\skip183
 \cftafterlottitleskip=\skip184
 \cftbeforetabskip=\skip185
@@ -1549,14 +1552,14 @@ nment
 
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count382
+\c@float@type=\count384
 \float@exts=\toks67
 \float@box=\box124
 \@float@everytoks=\toks68
 \@floatcapt=\box125
 )
 \@float@every@algorithm=\toks69
-\c@algorithm=\count383
+\c@algorithm=\count385
 )
 (/usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -1565,15 +1568,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count384
-\c@ALG@rem=\count385
-\c@ALG@nested=\count386
+\c@ALG@line=\count386
+\c@ALG@rem=\count387
+\c@ALG@nested=\count388
 \ALG@tlm=\skip258
 \ALG@thistlm=\skip259
-\c@ALG@Lnr=\count387
-\c@ALG@blocknr=\count388
-\c@ALG@storecount=\count389
-\c@ALG@tmpcounter=\count390
+\c@ALG@Lnr=\count389
+\c@ALG@blocknr=\count390
+\c@ALG@storecount=\count391
+\c@ALG@tmpcounter=\count392
 \ALG@tmplength=\skip260
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -1589,18 +1592,18 @@ File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
 \tkz@XF=\dimen352
 \tkz@YF=\dimen353
-\c@tkz@cnt@line=\count391
-\c@tkz@cnt@lg=\count392
-\c@tkz@cnt@cl=\count393
-\c@tkz@cnt@pred=\count394
-\c@tkz@cnt@temp=\count395
-\c@tkz@cnt@arrow=\count396
-\c@tkz@cnt@zone=\count397
-\c@tkz@cnt@lgnext=\count398
-\c@tkz@cnt@clnext=\count399
-\c@tkz@cnt@pair=\count400
-\c@tkz@cnt@impair=\count401
-\c@tkz@cnt@aw=\count402
+\c@tkz@cnt@line=\count393
+\c@tkz@cnt@lg=\count394
+\c@tkz@cnt@cl=\count395
+\c@tkz@cnt@pred=\count396
+\c@tkz@cnt@temp=\count397
+\c@tkz@cnt@arrow=\count398
+\c@tkz@cnt@zone=\count399
+\c@tkz@cnt@lgnext=\count400
+\c@tkz@cnt@clnext=\count401
+\c@tkz@cnt@pair=\count402
+\c@tkz@cnt@impair=\count403
+\c@tkz@cnt@aw=\count404
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 snakes.code.tex
@@ -1618,18 +1621,18 @@ ons.shapes.code.tex))) (/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
 \everycr=\toks70
 \minrowclearance=\skip261
-\rownum=\count403
+\rownum=\count405
 )
-\c@savoir=\count404
-\c@remark=\count405
-\c@resume1=\count406
-\c@definition2=\count407
-\c@exemple=\count408
-\c@definition1=\count409
-\c@dem=\count410
-\c@cor=\count411
-\c@lem=\count412
-\c@pro=\count413
+\c@savoir=\count406
+\c@remark=\count407
+\c@resume1=\count408
+\c@definition2=\count409
+\c@exemple=\count410
+\c@definition1=\count411
+\c@dem=\count412
+\c@cor=\count413
+\c@lem=\count414
+\c@pro=\count415
 
 
 ! LaTeX Error: Command \qed already defined.
@@ -1639,7 +1642,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.376 }
+l.391 }
        
 ? 
 \paragtitlewidth=\skip262
@@ -1652,7 +1655,7 @@ l.376 }
 \paragtitleheight=\skip268
 \subparagtitlebox=\box127
 \subparagtitleheight=\skip269
-\c@CurrentSlide=\count414
+\c@CurrentSlide=\count416
 \slideheight=\skip270
 \height=\dimen354
 \eqwidth=\skip271
@@ -1682,9 +1685,9 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 \pgf@arrows@the@rigidity=\dimen361
 )) (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
-\pgf@circ@count@a=\count415
-\pgf@circ@count@b=\count416
-\pgf@circ@count@c=\count417
+\pgf@circ@count@a=\count417
+\pgf@circ@count@b=\count418
+\pgf@circ@count@c=\count419
 \pgf@circ@res@up=\dimen362
 \pgf@circ@res@down=\dimen363
 \pgf@circ@res@zero=\dimen364
@@ -1705,7 +1708,7 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex)
 (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex)
 (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex
-\pgf@circ@res@count=\count418
+\pgf@circ@res@count=\count420
 )
 (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex)
 (/usr/share/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex)
@@ -1782,26 +1785,26 @@ LaTeX Font Info:    ... okay on input line 140.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
 LaTeX Font Info:    ... okay on input line 140.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-Overfull \hbox (673.69586pt too wide) in paragraph at lines 124--13
+Overfull \hbox (675.91586pt too wide) in paragraph at lines 124--13
 []\TU/lmr/m/n/10 tricky2.453Pro-ces-sor tasks on Ex-cep-tion-s-sec-tion*.69    
                                                                                
                                                                                
                                                                                
                                                                                
-                                                                             
+                                                                              
  []
 
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count419
+\scratchcounter=\count421
 \scratchdimen=\dimen378
 \scratchbox=\box129
-\nofMPsegments=\count420
-\nofMParguments=\count421
+\nofMPsegments=\count422
+\nofMParguments=\count423
 \everyMPshowfont=\toks71
-\MPscratchCnt=\count422
+\MPscratchCnt=\count424
 \MPscratchDim=\dimen379
-\MPnumerator=\count423
-\makeMPintoPDFobject=\count424
+\MPnumerator=\count425
+\makeMPintoPDFobject=\count426
 \everyMPtoPDFconversion=\toks72
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1876,7 +1879,7 @@ Package hyperref Info: Link coloring OFF on input line 140.
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
-\c@lstlisting=\count425
+\c@lstlisting=\count427
 
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -1946,11 +1949,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [5]
 
-[6
+[6]
+
+[7
 
 ]
-
-[7]
 
 [8]
 Chapter 1.
@@ -3996,6 +3999,9 @@ Package mdframed Info: mdframed works in twoside mode on input line 172.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 172.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 189.
 
 
 [63<./screenshots/2025-10-26_1.png>]
@@ -5617,6 +5623,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--116
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+[]\TU/lmr/m/n/10 SPEC CPU, Geek-bench, Cinebench, and Lin-Pack HPL, EEMBC
+ []
+
+
 
 [99]
 Underfull \hbox (badness 10000) in paragraph at lines 129--131
@@ -6772,7 +6783,7 @@ with de-lay slots ex-tremly
 
 Underfull \hbox (badness 10000) in paragraph at lines 640--641
 []\TU/lmr/m/n/10 Rigid pipelines which can-not have struc-tural haz-ards by con-
-
+struc-
  []
 
 ) (./4d.tex
@@ -7388,12 +7399,6 @@ can check if any in-struc-tion on the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
-[]\TU/lmr/m/n/10 If the value is al-ready com-puted $\OMS/lmsy/m/n/10 ! $\TU/lm
-r/m/n/10 Get the []\TU/lmr/bx/n/10 value[] \TU/lmr/m/n/10 from
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 364--365
 []\TU/lmr/m/n/10 If the value is not yet com-puted $\OMS/lmsy/m/n/10 ! $\TU/lmr
 /m/n/10 Get the []\TU/lmr/bx/n/10 tag[] \TU/lmr/m/n/10 from the
@@ -7463,7 +7468,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--412
 
 Underfull \hbox (badness 10000) in paragraph at lines 414--415
 \TU/lmr/m/n/10 Tak-ing 32 or 16 maybe doesn’t change the re-sult but which one
-
+ is
  []
 
 
@@ -9269,7 +9274,7 @@ P2 goes into the shared
 <screenshots/2025-12-20.png, id=2300, 1126.2075pt x 619.31375pt>
 File: screenshots/2025-12-20.png Graphic file (type png)
 <use screenshots/2025-12-20.png>
-Package luatex.def Info: screenshots/2025-12-20.png  used on input line 695.
+Package luatex.def Info: screenshots/2025-12-20.png  used on input line 697.
 (luatex.def)             Requested size: 281.5512pt x 154.82805pt.
 
 
@@ -9279,28 +9284,28 @@ Package luatex.def Info: screenshots/2025-12-20.png  used on input line 695.
 <screenshots/2025-12-20_1.png, id=2306, 748.7975pt x 476.78125pt>
 File: screenshots/2025-12-20_1.png Graphic file (type png)
 <use screenshots/2025-12-20_1.png>
-Package luatex.def Info: screenshots/2025-12-20_1.png  used on input line 748.
+Package luatex.def Info: screenshots/2025-12-20_1.png  used on input line 750.
 (luatex.def)             Requested size: 187.19891pt x 119.195pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 754--755
+Underfull \hbox (badness 10000) in paragraph at lines 756--757
 [][]\TU/lmr/bx/n/10 Same state[]\TU/lmr/m/n/10 : If a cache line is marked as ow
 ned/-mod-i-fied in L(n-1) cache, then
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 755--756
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 \TU/lmr/m/n/10 If a bus trans-ac-tion re-quests a cache line in owned/-mod-i-fie
 d state in L3, the []\TU/lmr/bx/n/10 L3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 762--763
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 \TU/lmr/m/n/10 be in both. How-ever, in the gen-eral case \TU/lmr/bx/n/10 no\TU
 /lmr/m/n/10 : for in-stance, L2 will even-tu-ally de-cide to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 \TU/lmr/m/n/10 What we need is to []\TU/lmr/bx/n/10 prop-a-gate in-val-i-da-tion
 s[] \TU/lmr/m/n/10 and []\TU/lmr/bx/n/10 evic-tions[] \TU/lmr/m/n/10 up the hi-e
 r-ar-chy to keep,
@@ -9309,22 +9314,22 @@ r-ar-chy to keep,
 <screenshots/2025-12-20_2.png, id=2307, 834.11626pt x 585.18625pt>
 File: screenshots/2025-12-20_2.png Graphic file (type png)
 <use screenshots/2025-12-20_2.png>
-Package luatex.def Info: screenshots/2025-12-20_2.png  used on input line 765.
+Package luatex.def Info: screenshots/2025-12-20_2.png  used on input line 767.
 (luatex.def)             Requested size: 208.52855pt x 146.2962pt.
 
 
 [174<./screenshots/2025-12-20_1.png>]
-Package mdframed Info: mdframed works in twoside mode on input line 769.
+Package mdframed Info: mdframed works in twoside mode on input line 771.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 769.
+(mdframed)              on input line 771.
 <screenshots/2025-12-20_3.png, id=2317, 1484.54625pt x 732.7375pt>
 File: screenshots/2025-12-20_3.png Graphic file (type png)
 <use screenshots/2025-12-20_3.png>
-Package luatex.def Info: screenshots/2025-12-20_3.png  used on input line 777.
+Package luatex.def Info: screenshots/2025-12-20_3.png  used on input line 779.
 (luatex.def)             Requested size: 371.13565pt x 183.18393pt.
 ) (./5b.tex
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 \TU/lmr/m/n/10 Let us take a look at the fi-nite state ma-chine of the fol-low-i
 ng pro-to-col (the dot-ted lines
  []
@@ -9332,145 +9337,159 @@ ng pro-to-col (the dot-ted lines
 
 
 [175<./screenshots/2025-12-20_2.png><./screenshots/2025-12-20_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+[]\TU/lmr/m/n/10 Each node (lit-tle text for each ar-row) is at the mi-dle of th
+e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+[]\TU/lmr/m/n/10 If the ar-row is on the right $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n
+/10 the node is on the right of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+[]\TU/lmr/m/n/10 The dot-ted lines rep-re-sent the bus ac-tion (the nor-mal line
+s rep-re-
+ []
+
+
 
 [176]
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
 []\TU/lmr/m/n/10 In the MESI pro-to-col, the fol-low-ing needs to be con-sid-ere
 d when a pro-ces-sor reads a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 []\TU/lmr/m/n/10 If the data is al-ready stored in an-other pro-ces-sor cache, 
 then the sta-tus of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 []\TU/lmr/m/n/10 If the data is not al-ready stored in any other cache, then the
  sta-tus of the cache
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 []\TU/lmr/m/n/10 To know if the data is al-ready in an-other cache or not, when one pro-ces-sor reads a data
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
-[]\TU/lmr/m/n/10 In the fol-low-ing di-a-grams, you are given the cur-rent state
- (la-beled as []\TU/lmr/bx/n/10 Old[]\TU/lmr/m/n/10 ) of a
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[]\TU/lmr/m/n/10 In the fol-low-ing di-a-grams, we are given the cur-rent state (la-beled as []\TU/lmr/bx/n/10 Old[]\TU/lmr/m/n/10 ) of a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 []\TU/lmr/m/n/10 For each cache, the ad-dress of the data saved in that cache li
 ne, as well as its
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 []\TU/lmr/m/n/10 When one of the pro-ces-sors (P0 to P3) ex-e-cutes an in-struc-
 tion that re-quires a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-[]\TU/lmr/m/n/10 Spec-ify the mem-ory acess that caused these changes; your an-s
-wer should be in
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+[]\TU/lmr/m/n/10 Spec-ify the mem-ory acess that caused these changes; our an-sw
+er should be in the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 \TU/lmr/m/n/10 is the type of mem-ory ac-cess and <ad-dress> is the ad-dress of the data to be
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 \TU/lmr/m/n/10 Note that there might be up to 3 pos-si-ble an-swers for each cas
 e and that []\TU/lmr/bx/n/10 you are
  []
 
 
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 134--177
- [] 
- []
-
-
 
 [177]
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 182--225
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 150--193
  [] 
  []
 
 
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 235--278
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 198--241
  [] 
  []
 
 
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 281--324
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 251--294
  [] 
  []
 
-! Misplaced \omit.
-\@cline #1-#2\@nil ->\omit 
-                           \@multicnt #1\advance \@multispan \m@ne \ifnum \@...
-l.359 \cline{2-9}
-                 
-? 
-! Extra alignment tab has been changed to \cr.
-<template> ... width\arrayrulewidth }\endtemplate 
-                                                  
-l.359 \cline{2-9}
-                 
-? 
 
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 330--373
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 300--343
  [] 
  []
 
 
 
 [178]
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 385--428
- [] 
- []
-
-
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 432--475
- [] 
- []
-
 ! Misplaced \omit.
 \@cline #1-#2\@nil ->\omit 
                            \@multicnt #1\advance \@multispan \m@ne \ifnum \@...
-l.509 \cline{2-9}
+l.378 \cline{2-9}
+                 
+? 
+! Extra alignment tab has been changed to \cr.
+<template> ... width\arrayrulewidth }\endtemplate 
+                                                  
+l.378 \cline{2-9}
                  
 ? 
 
-Overfull \hbox (38.40532pt too wide) in paragraph at lines 480--523
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 349--392
  [] 
  []
 
 
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 528--571
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 404--447
+ [] 
+ []
+
+
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 451--494
  [] 
  []
 
 
 
 [179]
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 578--621
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 499--542
  [] 
  []
 
 
-Overfull \hbox (32.28532pt too wide) in paragraph at lines 625--668
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 547--590
+ [] 
+ []
+
+
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 597--640
+ [] 
+ []
+
+
+Overfull \hbox (32.28532pt too wide) in paragraph at lines 644--687
  [] 
  []
 
 ) (./5c.tex
+
+[180]
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 [][]\TU/lmr/bx/n/10 What val-ues[] \TU/lmr/m/n/10 should be re-turned by a set 
 of reads and writes to a []\TU/lmr/bx/n/10 sin-gle
@@ -9488,18 +9507,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 rs may show dif-fer-ent
  []
 
-
-
-[180]
-<screenshots/2025-12-22.png, id=2367, 1225.57875pt x 412.54124pt>
+<screenshots/2025-12-22.png, id=2354, 1225.57875pt x 412.54124pt>
 File: screenshots/2025-12-22.png Graphic file (type png)
 <use screenshots/2025-12-22.png>
 Package luatex.def Info: screenshots/2025-12-22.png  used on input line 56.
 (luatex.def)             Requested size: 245.1114pt x 82.50677pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--60
-[]\TU/lmr/m/n/10 How-ever in any dis-tributed sys-tem is (vir-tu-ally) []\TU/lm
-r/bx/n/10 im-pos-si-ble to ob-tain a glo-val time[]\TU/lmr/m/n/10 ,
+[]\TU/lmr/m/n/10 How-ever in any dis-tributed sys-tem, this is (vir-tu-ally) []
+\TU/lmr/bx/n/10 im-pos-si-ble to ob-tain a global
  []
 
 
@@ -9523,6 +9539,11 @@ Package mdframed Info: mdframed works in twoside mode on input line 64.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 64.
+Package mdframed Info: Not enough space on this page on input line 66.
+
+
+[181<./screenshots/2025-12-22.png>]
+Package mdframed Info: Not enough space on this page on input line 66.
 Package mdframed Info: mdframed works in twoside mode on input line 70.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -9533,12 +9554,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 r pro-ces-sors/mem-ory to
  []
 
-<screenshots/2025-12-22_1.png, id=2368, 1236.62pt x 482.80376pt>
+<screenshots/2025-12-22_1.png, id=2374, 1236.62pt x 482.80376pt>
 File: screenshots/2025-12-22_1.png Graphic file (type png)
 <use screenshots/2025-12-22_1.png>
 Package luatex.def Info: screenshots/2025-12-22_1.png  used on input line 81.
 (luatex.def)             Requested size: 247.31961pt x 96.55904pt.
-<screenshots/2025-12-22_2.png, id=2369, 1043.9pt x 387.4475pt>
+<screenshots/2025-12-22_2.png, id=2375, 1043.9pt x 387.4475pt>
 File: screenshots/2025-12-22_2.png Graphic file (type png)
 <use screenshots/2025-12-22_2.png>
 Package luatex.def Info: screenshots/2025-12-22_2.png  used on input line 85.
@@ -9550,495 +9571,223 @@ h a switch, they do
  []
 
 
-
-[181<./screenshots/2025-12-22.png><./screenshots/2025-12-22_1.png>]
-<screenshots/2025-12-22_3.png, id=2378, 1348.03625pt x 673.51625pt>
-File: screenshots/2025-12-22_3.png Graphic file (type png)
-<use screenshots/2025-12-22_3.png>
-Package luatex.def Info: screenshots/2025-12-22_3.png  used on input line 94.
-(luatex.def)             Requested size: 269.60248pt x 134.70085pt.
-<screenshots/2025-12-22_4.png, id=2379, 1341.01pt x 641.39626pt>
-File: screenshots/2025-12-22_4.png Graphic file (type png)
-<use screenshots/2025-12-22_4.png>
-Package luatex.def Info: screenshots/2025-12-22_4.png  used on input line 105.
-(luatex.def)             Requested size: 321.84897pt x 153.93823pt.
-<screenshots/2025-12-22_5.png, id=2380, 1230.5975pt x 538.01pt>
-File: screenshots/2025-12-22_5.png Graphic file (type png)
-<use screenshots/2025-12-22_5.png>
-Package luatex.def Info: screenshots/2025-12-22_5.png  used on input line 110.
-(luatex.def)             Requested size: 246.11514pt x 107.60008pt.
-
-
-[182<./screenshots/2025-12-22_2.png><./screenshots/2025-12-22_3.png><./screensho
-ts/2025-12-22_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-[]\TU/lmr/m/n/10 What we need to check if while we are wait-ing to write our val
-ue, it is in the Re-order
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
+[]\TU/lmr/bx/n/10 load and store[] \TU/lmr/m/n/10 in pro-gram or-der as they nee
+d, ev-ery-thing is atomic (no other mem-ory
  []
 
-<screenshots/2025-12-22_6.png, id=2389, 1410.26875pt x 542.025pt>
+<screenshots/2025-12-22_3.png, id=2376, 1348.03625pt x 673.51625pt>
+File: screenshots/2025-12-22_3.png Graphic file (type png)
+<use screenshots/2025-12-22_3.png>
+Package luatex.def Info: screenshots/2025-12-22_3.png  used on input line 95.
+(luatex.def)             Requested size: 269.60248pt x 134.70085pt.
+
+
+[182<./screenshots/2025-12-22_1.png><./screenshots/2025-12-22_2.png><./screensho
+ts/2025-12-22_3.png>]
+<screenshots/2025-12-22_4.png, id=2385, 1341.01pt x 641.39626pt>
+File: screenshots/2025-12-22_4.png Graphic file (type png)
+<use screenshots/2025-12-22_4.png>
+Package luatex.def Info: screenshots/2025-12-22_4.png  used on input line 106.
+(luatex.def)             Requested size: 321.84897pt x 153.93823pt.
+<screenshots/2025-12-22_5.png, id=2386, 1230.5975pt x 538.01pt>
+File: screenshots/2025-12-22_5.png Graphic file (type png)
+<use screenshots/2025-12-22_5.png>
+Package luatex.def Info: screenshots/2025-12-22_5.png  used on input line 111.
+(luatex.def)             Requested size: 246.11514pt x 107.60008pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+[]\TU/lmr/m/n/10 What we need to check is: while we are wait-ing to write our va
+lue, it is in the Re-order
+ []
+
+<screenshots/2025-12-22_6.png, id=2387, 1410.26875pt x 542.025pt>
 File: screenshots/2025-12-22_6.png Graphic file (type png)
 <use screenshots/2025-12-22_6.png>
-Package luatex.def Info: screenshots/2025-12-22_6.png  used on input line 119.
+Package luatex.def Info: screenshots/2025-12-22_6.png  used on input line 120.
 (luatex.def)             Requested size: 282.04875pt x 108.40308pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 \TU/lmr/m/n/10 Now we do hon-our RAW de-pen-den-cies and []\TU/lmr/bx/n/10 unipr
 o-ces-sor con-sis-tency[] \TU/lmr/m/n/10 is cor-reclty
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+[183<./screenshots/2025-12-22_4.png><./screenshots/2025-12-22_5.png><./screensho
+ts/2025-12-22_6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 []\TU/lmr/m/n/10 If there is []\TU/lmr/bx/n/10 no store to the same ad-dress[] 
 \TU/lmr/m/n/10 in the ROB, get the value from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 []\TU/lmr/m/n/10 If there is a []\TU/lmr/bx/n/10 store to the same ad-dress[] \
 TU/lmr/m/n/10 in the ROB, ei-ther get the value (if
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 []\TU/lmr/m/n/10 If there is a store to an []\TU/lmr/bx/n/10 un-known ad-dress[
 ] \TU/lmr/m/n/10 in the ROB or if the ad-dress of the
  []
 
-<screenshots/2025-12-22_8.png, id=2390, 1119.18124pt x 486.81876pt>
+<screenshots/2025-12-22_8.png, id=2396, 1119.18124pt x 486.81876pt>
 File: screenshots/2025-12-22_8.png Graphic file (type png)
 <use screenshots/2025-12-22_8.png>
-Package luatex.def Info: screenshots/2025-12-22_8.png  used on input line 145.
+Package luatex.def Info: screenshots/2025-12-22_8.png  used on input line 146.
 (luatex.def)             Requested size: 223.83228pt x 97.36201pt.
-
-
-[183<./screenshots/2025-12-22_5.png><./screenshots/2025-12-22_6.png>]
-<screenshots/2025-12-22_9.png, id=2401, 1433.355pt x 665.48625pt>
+<screenshots/2025-12-22_9.png, id=2397, 1433.355pt x 665.48625pt>
 File: screenshots/2025-12-22_9.png Graphic file (type png)
 <use screenshots/2025-12-22_9.png>
-Package luatex.def Info: screenshots/2025-12-22_9.png  used on input line 152.
+Package luatex.def Info: screenshots/2025-12-22_9.png  used on input line 153.
 (luatex.def)             Requested size: 358.33788pt x 166.37115pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 \TU/lmr/m/n/10 The is-sue that we have is []\TU/lmr/bx/n/10 not co-her-ence[] \
 TU/lmr/m/n/10 at some time we []\TU/lmr/bx/n/10 will have the cor-rect[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 \TU/lmr/m/n/10 value in both caches. The prob-lem we have is only the fact that our in-struc-tion are
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 []\TU/lmr/m/n/10 A naive way for us to solve this is []\TU/lmr/bx/n/10 wait-ing[]\TU/lmr/m/n/10 : wait for the ac-knowl-edge-ment of the
  []
 
-<screenshots/2025-12-22_10.png, id=2402, 1648.1575pt x 676.5275pt>
+<screenshots/2025-12-22_10.png, id=2398, 1648.1575pt x 676.5275pt>
 File: screenshots/2025-12-22_10.png Graphic file (type png)
 <use screenshots/2025-12-22_10.png>
-Package luatex.def Info: screenshots/2025-12-22_10.png  used on input line 159.
+Package luatex.def Info: screenshots/2025-12-22_10.png  used on input line 160.
 
 (luatex.def)             Requested size: 329.62566pt x 135.3031pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+[184<./screenshots/2025-12-22_8.png><./screenshots/2025-12-22_9.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 []\TU/lmr/m/n/10 We []\TU/lmr/bx/n/10 change the con-tract[] \TU/lmr/m/n/10 that
  we have by []\TU/lmr/bx/n/10 ex-pos-ing write buffers[] \TU/lmr/m/n/10 to the 
 pro-gram-
  []
 
-
-! LaTeX Error: Not allowed in LR mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-
-! Package tikz Error: Giving up on this path. Did you forget a semicolon?.
-
-See the tikz package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-! Undefined control sequence.
-<recently read> \tikz@expand@last@token@ 
-                                         
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \let 
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \let 
-l.175 \node[title] (t1) at (-6,3) {Processor or\\T
-                                                  hread \#1};
-? 
-! Extra }, or forgotten \endgroup.
-l.175 ...(t1) at (-6,3) {Processor or\\Thread \#1}
-                                                  ;
-? 
-
-! LaTeX Error: Not allowed in LR mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-
-! Package tikz Error: Giving up on this path. Did you forget a semicolon?.
-
-See the tikz package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-! Undefined control sequence.
-<recently read> \tikz@expand@last@token@ 
-                                         
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \let 
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \let 
-l.176 \node[title] (t2) at ( 6,3) {Processor or\\T
-                                                  hread \#2};
-? 
-! Extra }, or forgotten \endgroup.
-l.176 ...(t2) at ( 6,3) {Processor or\\Thread \#2}
-                                                  ;
-? 
-! Undefined control sequence.
-\pgfsys@call@end ->\pgfsys@end@save 
-                                    \pgfsys@endscope 
-l.198 \end{tikzpicture}
-                       
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.198 \end{tikzpicture}
-                       
-? 
-! Undefined control sequence.
-\endpgfscope ...pgflinewidth =\pgfscope@linewidth 
-                                                  \global \let \pgf@strokeco...
-l.198 \end{tikzpicture}
-                       
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \global 
-l.198 \end{tikzpicture}
-                       
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \global 
-l.198 \end{tikzpicture}
-                       
-? 
-! Extra }, or forgotten \endgroup.
-\endpgfpicture ...globally \endgroup \hss \egroup 
-                                                  \pgf@restore@layerlist@fro...
-l.198 \end{tikzpicture}
-                       
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.198 \end{tikzpicture}
-                       
-? 
-! Extra }, or forgotten \endgroup.
-\endpgfpicture ...dpicture \endgroup \hss \egroup 
-                                                  \pgfsys@typesetpicturebox ...
-l.198 \end{tikzpicture}
-                       
-? 
-
-! LaTeX Error: \begin{tcb@savebox} on input line 163 ended by \end{tikzpicture}
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.198 \end{tikzpicture}
-                       
-? 
-! Infinite glue shrinkage found in a paragraph.
-<recently read> }
-                 
-l.198 \end{tikzpicture}
-                       
-? 
-
-Overfull \hbox (56.7972pt too wide) in paragraph at lines 198--198
- [][]  
- []
-
-<screenshots/2025-12-22_11.png, id=2403, 1266.7325pt x 394.47375pt>
+<screenshots/2025-12-22_11.png, id=2410, 1266.7325pt x 394.47375pt>
 File: screenshots/2025-12-22_11.png Graphic file (type png)
 <use screenshots/2025-12-22_11.png>
-Package luatex.def Info: screenshots/2025-12-22_11.png  used on input line 201.
+Package luatex.def Info: screenshots/2025-12-22_11.png  used on input line 169.
 
 (luatex.def)             Requested size: 253.34201pt x 78.89334pt.
 
-
-[184<./screenshots/2025-12-22_8.png><./screenshots/2025-12-22_9.png><./screensho
-ts/2025-12-22_10.png>]
-
-! LaTeX Error: \begin{parag} on input line 163 ended by \end{tcb@savebox}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.211 \end{parag}
-                 
-? 
-! Undefined control sequence.
-\tcb@set@normal@unbroken@beforeafter ...b@nobreak 
-                                                  \iftcb@ignorenobreak \else...
-l.211 \end{parag}
-                 
-? 
-! Extra \else.
-\tcb@drawcolorbox ...l@unbroken@beforeafter \else 
-                                                  \edef \tcb@before@unbroken...
-l.211 \end{parag}
-                 
-? 
-! Extra \fi.
-\tcb@drawcolorbox ...loat \tcb@float@env@end }\fi 
-                                                  \setcounter {tcbbreakpart}...
-l.211 \end{parag}
-                 
-? 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `\fps@tcbfloat ') on input line 211.
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+[]\TU/lmr/m/n/10 We []\TU/lmr/bx/n/10 now ad-mit that both tests can be true at once[] \TU/lmr/m/n/10 (Read ad-vances over in-de-pen-
+ []
 
 
-! LaTeX Error: Unknown float option `\fps@tcbfloat '.
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
+\TU/lmr/m/n/10 Still, we []\TU/lmr/bx/n/10 en-force write or-der so that the val
+-ues of A and B will even-tu-ally be
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.211 \end{parag}
-                 
-? 
-! Undefined control sequence.
-<argument> \the \dimexpr \tcb@width 
-                                    +\kvtcb@bbright \relax 
-l.211 \end{parag}
-                 
-? 
-! Undefined control sequence.
-<argument> \tcb@width 
-                      
-l.211 \end{parag}
-                 
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.211 \end{parag}
-                 
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.211 \end{parag}
-                 
-? 
-! Undefined control sequence.
-<argument> \tcb@width 
-                      -\kvtcb@right@rule 
-l.211 \end{parag}
-                 
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \tcb@footnote@cnt@i 
-l.211 \end{parag}
-                 
-? 
 
-! LaTeX Error: \begin{document} ended by \end{paragbox}.
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+[]\TU/lmr/m/n/10 The goal it to choose con-sis-tency mod-els which are []\TU/lm
+r/bx/n/10 ef-fi-ciently im-ple-mentable by do
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.211 \end{parag}
-                 
-? 
-! Extra \endgroup.
-\end  ...end#1\endcsname \@checkend {#1}\endgroup 
-                                                  \UseHook {env/#1/after}\if...
-l.211 \end{parag}
-                 
-? 
 
-! LaTeX Error: \begin{document} ended by \end{parag}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.211 \end{parag}
-                 
-? 
-! Extra \endgroup.
-\end  ...end#1\endcsname \@checkend {#1}\endgroup 
-                                                  \UseHook {env/#1/after}\if...
-l.211 \end{parag}
-                 
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--221
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
 \TU/lmr/m/n/10 Dif-fer-ent com-bi-na-tion on []\TU/lmr/bx/n/10 what can be dis-o
 r-dered[] \TU/lmr/m/n/10 (W $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 R, W $\OMS/lmsy
 /m/n/10 ! $\TU/lmr/m/n/10 W, R $\OMS/lmsy/m/n/10 ! $\TU/lmr/m/n/10 W, R
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 \TU/lmr/m/n/10 Only sys-tem pro-gram-mers (OS, li-braries, mid-dle-ware) typ-i-c
 ally see these de-tails and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+
+[185<./screenshots/2025-12-22_10.png><./screenshots/2025-12-22_11.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 []\TU/lmr/m/n/10 Typ-i-cally some in-struc-tion are used to []\TU/lmr/bx/n/10 ac
 -quire ac-cess[] \TU/lmr/m/n/10 ([]$\OML/lmm/b/it/10 S[]$[]\TU/lmr/m/n/10 ) to 
 a shared vari-able
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
-\TU/lmr/m/n/10 to []\TU/lmr/bx/n/10 realease ac-cess[] $[][]$ \TU/lmr/m/n/10 to a shared vari-able and en-forcethe or-der-ings W $\OMS/lmsy/m/n/10 ! $$\OML/lmm/m/it/10 S[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 []\TU/lmr/m/n/10 An-other ap-proach is to have mem-ory []\TU/lmr/bx/n/10 bar-ri-
 ers[] \TU/lmr/m/n/10 or []\TU/lmr/bx/n/10 fences[] \TU/lmr/m/n/10 ([]\TU/lmr/bx
 /n/10 S[]\TU/lmr/m/n/10 ) that act like
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+\TU/lmr/m/n/10 What we do here is to put the []\TU/lmr/bx/n/10 bur-den on the pr
+o-gram-mer/-com-piler[] \TU/lmr/m/n/10 and be as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 []\TU/lmr/m/n/10 The [] guar-an-tee that ev-ery-thing that is be-fore has gone 
 ev-ery-where by the time
  []
 
-<screenshots/2025-12-22_12.png, id=2411, 1316.92pt x 646.415pt>
+<screenshots/2025-12-22_12.png, id=2417, 1316.92pt x 646.415pt>
 File: screenshots/2025-12-22_12.png Graphic file (type png)
 <use screenshots/2025-12-22_12.png>
-Package luatex.def Info: screenshots/2025-12-22_12.png  used on input line 248.
+Package luatex.def Info: screenshots/2025-12-22_12.png  used on input line 216.
 
 (luatex.def)             Requested size: 263.37933pt x 129.2807pt.
-Package mdframed Info: mdframed works in twoside mode on input line 250.
+Package mdframed Info: mdframed works in twoside mode on input line 218.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 250.
+(mdframed)              on input line 218.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 252.
+ mdframed uses option nobreak mdframed on input line 220.
 
-
-[185<./screenshots/2025-12-22_11.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 257--259
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
 \TU/lmr/m/n/10 Atomic in-struc-tions is a com-bi-na-tion of load and store []\T
 U/lmr/bx/n/10 with-out in-ter-fer-ence from
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 [][]\TU/lmr/bx/n/10 Atomic ex-change[] \TU/lmr/m/n/10 or []\TU/lmr/bx/n/10 swap[]\TU/lmr/m/n/10 : in-ter-changes a value in a reg-is-ter for a value in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-[][]\TU/lmr/bx/n/10 Copare-and-swap[]\TU/lmr/m/n/10 : com-pare a reg-is-ter valu
-e to a value in mem-ory ad-dressed by
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
+[186<./screenshots/2025-12-22_12.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 []\TU/lmr/m/n/10 Mem-ory []\TU/lmr/bx/n/10 Con-sis-tency is hard[]\TU/lmr/m/n/1
 0 , there is sub-tle in-ter-ac-tion be-tween hard-ware op-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 []\TU/lmr/m/n/10 Pro-grams can []\TU/lmr/bx/n/10 be-have dif-fer-ently[] \TU/lm
 r/m/n/10 based on the pro-ces-sor’s mem-ory con-sis-tency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 \TU/lmr/m/n/10 These APIs are sim-ple, in-tu-itive, and []\TU/lmr/bx/n/10 uni-fo
 rm across plat-forms[] \TU/lmr/m/n/10 while hid-ing
  []
 
-
-
-[186<./screenshots/2025-12-22_12.png>])
+)
 
 [187]
 
-[188]
+[188
+
+]
 Chapter 6.
 (./6a.tex
 Package mdframed Info: mdframed works in twoside mode on input line 1.
@@ -10058,9 +9807,7 @@ y (Cache Side-Channel
 
 
 
-[189
-
-]
+[189]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 37.
@@ -10254,20 +10001,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: ED7071EC3169095334A9392D1167484B;16212.
+(rerunfilecheck)             Checksum: 1C51CE2B76A200C918E9F676040417E3;16212.
 )
 
 Here is how much of LuaTeX's memory you used:
- 79454 strings out of 475506
+ 79355 strings out of 475506
  1166723,3417909 words of node,token memory allocated
  1105 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
 rn, 4 glyph, 11 attribute, 156 glue_spec, 11 attribute_list, 2 shape, 2 write no
 des
-   avail lists: 1:22,2:14022,3:6848,4:20743,5:18556,6:153,7:25579,8:58,9:46074,1
+   avail lists: 1:22,2:14022,3:6848,4:20742,5:18557,6:154,7:25579,8:58,9:46074,1
 0:35,11:1761,12:3
- 98601 multiletter control sequences out of 65536+600000
- 117 fonts using 8845415 bytes
+ 98501 multiletter control sequences out of 65536+600000
+ 116 fonts using 8719327 bytes
  110i,17n,120p,1953b,1860s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf>{/usr/s
 hare/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dv
@@ -10297,10 +10044,10 @@ are/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type
 /share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
 </usr/share/texmf-dist/fonts/type1/public/lm/lmsy9.pfb>
-Output written on main.pdf (196 pages, 15299417 bytes).
+Output written on main.pdf (196 pages, 15301516 bytes).
 
-PDF statistics: 2694 PDF objects out of 2984 (max. 8388607)
- 2224 compressed objects within 23 object streams
- 1273 named destinations out of 1440 (max. 131072)
+PDF statistics: 2695 PDF objects out of 2984 (max. 8388607)
+ 2225 compressed objects within 23 object streams
+ 1274 named destinations out of 1440 (max. 131072)
  712 words of extra memory for PDF output out of 10000 (max. 100000000)
 

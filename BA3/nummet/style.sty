@@ -515,7 +515,7 @@ linewidth=1pt]\begin{pro}}
 }
 
 \newlength{\paragtitlewidth}
-\setlength{\paragtitlewidth}{3cm}
+\setlength{\paragtitlewidth}{1.5cm}
 \newlength{\paragtitlespace}
 \setlength{\paragtitlespace}{0.3cm}
 \newlength{\subparaglinewidth}
@@ -532,7 +532,7 @@ linewidth=1pt]\begin{pro}}
     blanker,
     breakable,
     boxsep=0pt,        % Space between the content and the box border
-    left=0pt,          % Space on the left side of the box
+    left=0pt,          % Space on the left side of the box.5
     right=0pt,         % Space on the right side of the box
     top=0pt,           % Space above the box
     bottom=0pt,        % Space below the box
@@ -595,16 +595,11 @@ linewidth=1pt]\begin{pro}}
     \phantomsection
     \addcontentsline{toc}{paragraph}{#1}
     % Measure title, while not displaying it.
-    \sbox\paragtitlebox{
-        \begin{minipage}[c]{\paragtitlewidth}
-            \RaggedRight \fullbf{#1}
-        \end{minipage}
-    }
+    \RaggedRight \fullbf{#1}
     \setlength\paragtitleheight{2\ht\paragtitlebox}  % parag title height; why a factor 2? Very good question, I won't act as if I knew what I was doing, but it seems to work
     % Ask for correct space on the page, for the title.
-    \needspace{\paragtitleheight}
     % Display the paragraph
-    \begin{paragbox}{#1}{\the\paragtitleheight}
+    \begin{paragbox}{}{\the\paragtitleheight}
         % Re-set parskip size.
         \setlength{\parskip}{\unchangedparskip}
         \vspace{-\parskip}% Else, double counts the paragraph skip (there is probably a better way, but I'm not sure what I am doing).

@@ -56,7 +56,7 @@ It is also the program of \important{when} a new value must be visible.
 	\includegraphics[scale=0.2]{screenshots/2025-12-22.png}
 	\end{center}
 
-	However in any distributed system is (virtually) \important{impossible to obtain a gloval time}, hence let's forget about it... 
+	However in any distributed system, this is (virtually) \important{impossible to obtain a global time}, hence let's forget about it... 
 
 	The minimum that we need is to have the same clock for all the CPU. And if we take what we have seen in cs-173, this is a hard thing to do to: \textit{conduct} the clock to everyone. But this is not even the case for most of distributed system, most of them doesn't even have the same clock.
 \end{parag}
@@ -86,10 +86,11 @@ It is also the program of \important{when} a new value must be visible.
 		\end{center}
 
 		Every CPU have access to memory when they are connected with a switch, 
-		they do what there \important{load and store} in program order, everything is atomic (no other memory operation is started while the previous has not completed)\\
+		they do \important{load and store} in program order as they need, everything is atomic (no other memory operation is started while the previous has not completed)\\
 		After every memory operation, the \important{switch is randomly changed}
 	\end{parag}
-	\textit{\important{load and store} in program order}???? But remember this:
+
+	"\textit{\important{load and store} in program order}"???? But remember this:
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-12-22_3.png}
 	\end{center}
@@ -100,7 +101,7 @@ It is also the program of \important{when} a new value must be visible.
 	    \item We keep someting in order
 	\end{enumerate}
 	The correct answer is the last one, keeping some of the thing in order. We had to do so to solve the memory dependency issue.
-	First we needed in the first place to reorder instruction at writeback:
+	First we needed to reorder instructions at writeback:
 	\begin{center}
 	\includegraphics[scale=0.24]{screenshots/2025-12-22_4.png}
 	\end{center}
@@ -114,7 +115,7 @@ It is also the program of \important{when} a new value must be visible.
 
 
 \begin{parag}{Correct Actual Memory Path}
-    What we need to check if while we are waiting to write our value, it is in the Reorder Buffer.
+    What we need to check is: while we are waiting to write our value, it is in the Reorder Buffer.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-12-22_6.png}
 	\end{center}
@@ -139,8 +140,8 @@ It is also the program of \important{when} a new value must be visible.
 		\item If there is a store to an \important{unknown address} in the ROB or if the address of the load is unknown, \important{wait}
 	\end{enumerate}
 \end{parag}
-\begin{parag}{Load-Store Qeues}
-	In practice, the \important{memory part of the ROB} is implemented separately and is called a \important{Load-Store Qeue} (in turn, usually implemented as a Load and Store queues)
+\begin{parag}{Load-Store Queue}
+	In practice, the \important{memory part of the ROB} is implemented separately and is called a \important{Load-Store Queue} (in turn, usually implemented as a Load and Store queues)
    \begin{center}
    \includegraphics[scale=0.2]{screenshots/2025-12-22_8.png}
    \end{center} 
@@ -164,39 +165,6 @@ It is also the program of \important{when} a new value must be visible.
 
 	We \important{change the contract} that we have by \important{exposing write buffers} to the programmer (and thus grants the possibility to the architect to improve performance)
 
-\begin{tikzpicture}[
-    code/.style={font=\ttfamily\large, text=blue},
-    title/.style={font=\bfseries\Large},
-    explain/.style={font=\bfseries\Large, text=red},
-    arrow/.style={->, thick, red}
-]
-
-% Titles
-\node[title] (t1) at (-6,3) {Processor or\\Thread \#1};
-\node[title] (t2) at ( 6,3) {Processor or\\Thread \#2};
-
-% Left code (Thread #1)
-\node[code, anchor=west] (a0) at (-7,1.5) {A = 0;};
-\node[code, anchor=west] (adots) at (-7,0.8) {...};
-\node[code, anchor=west] (a1) at (-7,0.1) {A = 1;};
-\node[code, anchor=west] (ifb) at (-7,-0.6) {if (B == 0) ...};
-
-% Right code (Thread #2)
-\node[code, anchor=west] (b0) at (3,1.5) {B = 0;};
-\node[code, anchor=west] (bdots) at (3,0.8) {...};
-\node[code, anchor=west] (b1) at (3,0.1) {B = 1;};
-\node[code, anchor=west] (ifa) at (3,-0.6) {if (A == 0) ...};
-
-% Center explanation
-\node[explain, align=center] (exp) at (0,0.6)
-{Now we accept\\that this is\\\textbf{possible!}};
-
-% Curved arrows
-\draw[arrow] (ifb.east) to[out=0,in=-120] (a1.south);
-\draw[arrow] (ifa.west) to[out=180,in=-60] (b1.south);
-
-\end{tikzpicture}
-
 \begin{center}
 \includegraphics[scale=0.2]{screenshots/2025-12-22_11.png}
 \end{center}
@@ -213,7 +181,7 @@ IA-32 and some other processor (IBM 370) implement this model
 
 
 \begin{parag}{Many Relaxed Consistency Models}
-	The goal it to choose consistency models which are \important{efficiently implementable byt do no 'surprise too much' programmer}\\
+	The goal it to choose consistency models which are \important{efficiently implementable by do not 'surprise too much' programmer}\\
 
 
 	Different combination on \important{what can be disordered} (W \textrightarrow R, W \textrightarrow W, R \textrightarrow W, R \textrightarrow R, ...) and other details
@@ -232,14 +200,14 @@ IA-32 and some other processor (IBM 370) implement this model
 Only system programmers (OS, libraries, middleware) typically see these details and act on them to implement higher level functions, uniforms across all or most systems
 \end{parag}
 \begin{parag}{Relax Everything: Release Consistency Model}
-    Still \important{honour every dependence locally} in a processor, but \important{otherwise co,pletely disregard ordering} accross normal loads and stores\\
+    Still \important{honour every dependence locally} in a processor, but \important{otherwise completely disregard ordering} accross normal loads and stores\\
 
 	Introduce special synchronization operations that have strict ordering
 	\begin{itemize}
-		\item Typically some instruction are used to \important{acquire access} (\important{$S_A$}) to a shared variable and enforce the orderings $S_A \to $ W and $S_A \to $ R while other instructions are used to \important{realease access} $\left(S_R\right)$ to a shared variable and enforcethe orderings W \textrightarrow $S_R$ and R \textrightarrow $S_R$
+		\item Typically some instruction are used to \important{acquire access} (\important{$S_A$}) to a shared variable and enforce the orderings $S_A \to $ W and $S_A \to $ R while other instructions are used to \important{release access} $\left(S_R\right)$ to a shared variable and enforce the orderings W \textrightarrow $S_R$ and R \textrightarrow $S_R$
 		\item Another approach is to have memory \important{barriers} or \important{fences} (\important{S}) that act like $S_A + S_R$ and enforce all orderings W \textrightarrow S, R \textrightarrow S, S \textrightarrow W, and S \textrightarrow R (i.e., the execution of a memory barrier waits for all pending loads and stores to \important{complete and be globally visible}, and does not let any successive load or store start).
 	\end{itemize}
-	Put the \important{burden on the programmer/compiler} and be as aggressive as you can in the hardware
+	What we do here is to put the \important{burden on the programmer/compiler} and be as aggressive as you can in the hardware
 	
 \end{parag}
 \begin{parag}{Memory Barriers/ Fences}
@@ -258,7 +226,7 @@ Only system programmers (OS, libraries, middleware) typically see these details 
 	\begin{itemize}
 		\item \important{Test-and-set}: interchanges a fixed value for a value in memory
 		\item \important{Atomic exchange} or \important{swap}: interchanges a value in a register for a value in memory
-		\item \important{Copare-and-swap}: compare a register value to a value in memory addressed by another register, and if they are equal, then swap a thirf register value with the one in memory.
+		\item \important{Compare-and-swap}: compare a register value to a value in memory addressed by another register, and if they are equal, then swap a third register value with the one in memory.
 	\end{itemize}
 	The \important{compare and swap} is \important{good} because it writes only if the comparison is succesful. It is \important{bad} because it needs \important{three source} registers
 	
@@ -267,7 +235,7 @@ Only system programmers (OS, libraries, middleware) typically see these details 
 
 
 \begin{parag}{Consistency is Hard}
-    Memory \important{Consistency is hard}, there is subtle interaction between hardware optimizations (e.g., sotre buffers, reordering) and memory models make \important{reasoning about correctness challenging}\\
+    Memory \important{Consistency is hard}, there is subtle interaction between hardware optimizations (e.g., store buffers, reordering) and memory models make \important{reasoning about correctness challenging}\\
 
 
 	The code is \important{sublty processor dependent}
@@ -277,7 +245,7 @@ Only system programmers (OS, libraries, middleware) typically see these details 
 	\important{Simplified for software programmers}: to shield developers, \important{consistency mechanism are encapsulated} in:
 	\begin{itemize}
 		\item system libraries (e.g., synchronization primitives, atomics)
-		\item APIs (e.g., C++ \texttt{std::atomic},pthreads, java volatile)
+		\item APIs (e.g., C++ \texttt{std::atomic}, pthreads, java volatile)
 	\end{itemize}
 	These APIs are simple, intuitive, and \important{uniform across platforms} while hiding processor-specific details
 \end{parag}

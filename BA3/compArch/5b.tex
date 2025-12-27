@@ -1,5 +1,6 @@
 \section{Examples of Cache Coherence}
 So now we will try to simulate how what we have seen in the previous section is working concretely. For this we will use the \important{MESI Protocol}
+
 \begin{parag}{MESI Protocol}
     Consider a \important{system of four processors} P0 to P3, each having its own cache C0 to C3 respectively. The \important{MESI protocol} is used to maintain coherence among the different caches.\\
 
@@ -46,13 +47,28 @@ So now we will try to simulate how what we have seen in the previous section is 
 \draw[dotted, thick, ->] (modified) edge[bend left] node[right] {BusRd / BusWr + BusShr} (shared);
 \draw[dotted, thick,->] (modified.east) edge[bend left] node[right] {BusRdX / BusWr} (invalid.east);
 
-\draw[dotted, thick,->] (exclusive) edge[bend right] node[right] {BusRd / BusShr} (shared);
+\draw[dotted, thick,->] (exclusive) edge[bend left] node[right] {BusRd / BusShr} (shared);
 \draw[dotted, thick,->] (exclusive) edge[bend right=25] node[left] {BusRdX / --} (invalid);
 
 \draw[dotted, thick,->] (shared) edge[bend left] node[right] {BusRdX / --} (invalid);
 \draw[dotted, thick,->] (invalid) edge[loop below] node[below] {BusRd / --, BusRdX / --} (invalid);
 
 \end{tikzpicture}
+\begin{parag}{$ $}
+    
+
+\begin{subparag}{Remark}
+    I tried to make it readable but:
+	\begin{itemize}
+		\item Each node (little text for each arrow) is at the midle of the arrow.
+		\item If the arrow is on the left \textrightarrow the node is on the left of the arrows
+		\item If the arrow is on the right \textrightarrow the node is on the right of the arrow
+		\item If the arrow is a loop then it will by below if the loop is below or above otherwise
+		\item The dotted lines represent the bus action (the normal lines represent the processor action).
+	\end{itemize}
+	
+\end{subparag}
+\end{parag}
 
 
 	\end{center}
@@ -97,7 +113,7 @@ So now we will try to simulate how what we have seen in the previous section is 
 	
 	
 	\begin{parag}{MESI Protocol Shared and Exclusive States}
-		In the MESI protocol, the following needs to be considered when a processor reads a data item that was previously not in tis own cache:
+		In the MESI protocol, the following needs to be considered when a processor reads a data item that was previously not in his own cache:
 		\begin{itemize}
 			\item If the data is already stored in another processor cache, then the status of the cache line holding this data is set to the \important{Shared} state
 			\item If the data is not already stored in any other cache, then the status of the cache line which will hold this data is set to the \important{Exclusive} state.
@@ -112,7 +128,7 @@ So now we will try to simulate how what we have seen in the previous section is 
 	
 	\begin{parag}{Part I}
 		\begin{itemize}
-			\item In the following diagrams, you are given the current state (labeled as \important{Old}) of a specific cache line in the four caches C0 to C3
+			\item In the following diagrams, we are given the current state (labeled as \important{Old}) of a specific cache line in the four caches C0 to C3
 			\item For each cache, the address of the data saved in that cache line, as well as its state, is specified
 			\item When one of the processors (P0 to P3) executes an instruction that requires a memory access, then a state change is triggered in one or more of the caches (C0 to C3)
 			\item This change is shown, for one cache, under the label \important{New}
@@ -120,7 +136,7 @@ So now we will try to simulate how what we have seen in the previous section is 
 		We are now required to fill the rest of the template as follows:
 		\begin{itemize}
 			\item Specify the new state/address of the remaining caches
-			\item Specify the memory acess that caused these changes; your answer should be in the form
+			\item Specify the memory acess that caused these changes; our answer should be in the form
 				\begin{center}
 				    P<n>:Load/Store<address>
 				\end{center}
@@ -206,8 +222,8 @@ New
  & S & 0x1000
  & S  & 0x1000
  &  S & 0x2000
- &  s & 0x1000
- & \\
+ &  S & 0x1000
+ & P0:Load 0x1000 \\
 \cline{2-9}
  & S & 0x1000
  &   &
@@ -276,7 +292,10 @@ New
 \hline
 \end{tabular}
 \end{center}
-So here we go from exclusive to shared. The only way of doing that is a BusRd, now we go in our finite state machine diagram and we look for all the possible way of lauching a BusRd. For us, we will chosse P1:Load 0x1000 This way we have, the only way for the C0 to go to the shared state, is to have another processor launch a BusRd, The way of doing that is for instance having the P1 to read the value at 0x1000:
+So here we go from exclusive to shared. The only way of doing that is a BusRd. If we see it without the finite state machine, remember that exclusive means "I am the only one having the data", shared means "I have the correct data and at least another ones has it". For us to confidently go into shared we need the information that another processor has the data \textrightarrow a Bus read.
+
+
+Now we go in our finite state machine diagram and we look for all the possible way of lauching a BusRd. For us, we will chosse P1:Load 0x1000. The only way for the C0 to go to the shared state, is to have another processor launch a BusRd, The way of doing that is for instance having the P1 to read the value at 0x1000:
 	\begin{center}
 \begin{tabular}{|c|cc|cc|cc|cc|c|}
 \hline
@@ -322,8 +341,8 @@ New
 \hline
 \end{tabular}
 \end{center}
-As we can go the same thing from the third processor (both are totaly the same). And as everyone will be in the shared state, someone else would also need to read from memory P2.\\
-As the C3 processor as the same state as the C1 processor, we also have the \texttt{P3:Load 0x1000}. 
+As we can do the same thing from the third processor (both are totaly the same). And as everyone will be in the shared state, someone else would also need to read from memory P2.\\
+As the C3 processor has the same state as the C1 processor, we also have the \texttt{P3:Load 0x1000}. 
 
 If we take a look at the C2 cache it is shared \important{but for the address 0x2000}. this totally equivalent as being invalid for 0x1000 right? So might as well do the same thing as the other:
 	\begin{center}
@@ -354,7 +373,7 @@ New
  & S & 0x1000
  & S  &  0x1000
  & S & 0x2000
- &  I & --
+ &  I & 0x1000
  & P1: Load 0x1000
 \cline{2-9}
  & S & 0x1000
@@ -418,7 +437,7 @@ New
  &  I & 0x1200
  & \\
 \cline{2-9}
- & S & 0x1000
+ &  & 
  &   &
  &   &
  &  I & 0x1200
@@ -457,7 +476,7 @@ New
  &  I &  0x1200
  & I &  0x1200
  & I & 0x1200
- & P0: store 0x1200 \\
+ &  P0: store 0x1200 \\
 \cline{2-9}
  & I & 0x1400
  & M  & 0x1200
@@ -504,8 +523,8 @@ New
  &  & 
  &  & 
  &  & 
- &  &
- & M \\ 0x110
+ & M & 0x1100
+ &  \\
 \cline{2-9}
  &  & 
  &   &
@@ -549,7 +568,7 @@ Old
  & \\
 \hline
 New
- & M &  1300
+ & M &  0x1300
  &  I &  0x1200
  & I &  0x1100
  & M & 0x1100

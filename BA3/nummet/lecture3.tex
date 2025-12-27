@@ -1,4 +1,35 @@
 \subsection{Cost of matrix operations}
+Now we will explore the cost of matrix operations. First let us see the how to compute it in python.\\
+If we take the matric vector multiplication we have the following code:
+\begin{lstlisting}[language={python}]
+b = np.zeros(n)
+for j in range(n):
+	for i in range(n):
+		b[i] += A[i, j] * x[j]
+\end{lstlisting}
+However this is not really efficient the best way of doing it is by using the numpy library like this:
+\begin{lstlisting}[language=python]
+b = A @ x
+\end{lstlisting}
+For the first one we have 30'282 ms, for the second one with have \important{11ms}!
+
+
+For the matrix-matrix multiplication:
+\begin{lstlisting}[language=python]
+C = np.zeros((n, n))
+for i in range(n):
+	for j in range(n):
+		for k in range(n):
+			C[i, j] += A[i, k] * B[k, j]
+\end{lstlisting}
+The 'correct way' of doing it is:
+\begin{lstlisting}[language=python]
+C = A @ B
+\end{lstlisting}
+\begin{itemize}
+	\item python \textrightarrow 341'495ms
+	\item numpy \textrightarrow 19ms
+\end{itemize}
 
 \begin{itemize}
 	\item Matrix-Vector multiplication \textrightarrow $O\left(n^2\right)$
@@ -10,6 +41,7 @@
 		\item Virginia Williams et al 2023 \textrightarrow $O\left(n^{2.3751552}\right)$
     \end{itemize}
 \end{parag}
+Now the question is what if we have triangular matrix, this way facorization becomes way faster, we only have to 'go up'.
 \begin{itemize}
 	\item Triangular system solving aka. 'substitution' 
 		\begin{itemize}
@@ -26,12 +58,61 @@ Imagine that:
 \begin{itemize}
 	\item We have a model of the \important{expected behaviour}
 	\item The model contains unknown parameter values
-	\item \textbf{Goal}: find parameterrs that best support the data
+	\item We have data/ measurements that may be supported by the model
+	\item \textbf{Goal}: find parameters that best support the data
 	\item Can we express this as a solution to a linear system?
 		\begin{itemize}
 			\item In that case, this is called \important{linear regression}
 		\end{itemize}
 \end{itemize}
+For instance, let us take an ideal ballistic motion
+\begin{align*} y = ax^2 + bx + c \end{align*}
+All we know is the point where the ball has been, we have a lot of $\left(x,, y\right)$ data points. Our unknown is $a, b, c$.
+
+The question we need to answer is, how many data points (i.e. measurements) do we need to solve this system. For us as we have three unkowns we need to solve a matrix like this:
+\begin{align*} \begin{pmatrix} x_1^2 & x_1 & 1 \\ x_2^2 & x_2 & 1 \\ x_3^2 & x_3 & 1 \end{pmatrix} \cdot \begin{pmatrix} a \\ b \\ c \end{pmatrix} = \begin{pmatrix} y_1\\ y_2 \\ y_3 \end{pmatrix}  \end{align*}
+However this can be generalize:
+\begin{parag}{Polynomial regression}
+    The question we tried to answer before is: Find a polynomial that perfectly interpolates a given set of points so that:
+	\begin{align*} y(t_i) = p_i \end{align*}
+\end{parag}
 
 
+
+\begin{figure}[h!]
+\centering
+
+\begin{subfigure}{0.25\textwidth}
+    \centering
+	\includegraphics[scale=0.2]{screenshots/2025-12-21.png}
+	What if the observation are weak
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.25\textwidth}
+    \centering
+	\includegraphics[scale=0.2]{screenshots/2025-12-21_1.png}
+		What if there are > 3 observations? \\
+		Use subset? Which ones? use all somehow?
+\end{subfigure}
+\hfill
+
+\begin{subfigure}{0.25\textwidth}
+	
+    \centering
+	\includegraphics[scale=0.2]{screenshots/2025-12-21_2.png}
+	What if there is noicse?
+	What if the model violates the assumptions?
+\end{subfigure}
+
+\end{figure}
+
+
+\begin{parag}{Another classical example of 'bad' linear system}
+	For instance something that is a very 'bad' linear system is \important{deconvolution} which is: removing blur from a signal (e.g., an image)
+    
+\end{parag}
+
+\begin{parag}{Condigtioning of linear systems}
+    
+\end{parag}
 

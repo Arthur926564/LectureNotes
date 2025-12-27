@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.11.27)  28 NOV 2025 15:42
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.12.1)  21 DEC 2025 13:49
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1692,7 +1692,8 @@ Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
 \slideheight=\skip264
 \height=\dimen364
 \eqwidth=\skip265
-) (./main.aux (./lecture1.aux) (./lecture2.aux) (./lecture4.aux))
+) (./main.aux (./lecture1.aux) (./lecture2.aux) (./lecture3.aux) (./lecture4.au
+x))
 \openout1 = main.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -1838,14 +1839,75 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 20.
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+[]\TU/lmr/m/n/10 First the course is given by Prof. Wen-zel which leads the \TU
+/lmr/m/it/10 Re-al-is-tic Graph-ics Lab\TU/lmr/m/n/10 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+\TU/lmr/m/n/10 This lab re-search is on \TU/lmr/m/it/10 physically-based ren-der
+-ing \TU/lmr/m/n/10 and \TU/lmr/m/it/10 in-verse ren-der-ing\TU/lmr/m/n/10 . The
+ top-ics
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+\TU/lmr/m/n/10 If we want to com-pute the next frame of a sim-u-la-tion (a physi
+cs sim-u-la-tion) it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
+\TU/lmr/m/n/10 As we will see in the third home-work, it can also be used for ch
+ar-ac-ter an-i-ma-tion.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+\TU/lmr/m/n/10 It is also used to com-put-ing deriva-tives of soft-ware for fun and profit (for mach-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
+\TU/lmr/m/n/10 ing learn-ing), to do so we need to com-pute the par-tial deriva-
+tive (or the hes-sian,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+[]\TU/lmr/m/n/10 So here all the tech-niques we saw above, we al-ready know them
+, we know them from
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+\TU/lmr/m/n/10 MATH-111 or MATH-101, MATH-106. The goal of this course is to fin
+d a way to
+ []
+
+
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \openout2 = lecture1.aux
  (./lecture1.tex
-Overfull \hbox (3412.81073pt too wide) detected at line 11
+Overfull \hbox (3370.13159pt too wide) detected at line 11
 []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+\TU/lmr/m/n/10 So we can-not store the $\OML/lmm/m/it/10 $ \TU/lmr/m/n/10 di-re
+ctly, we have to make []\TU/lmr/b/n/10 com-pro-mise[]\TU/lmr/m/n/10 . The so-lu-
+tion for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+[]\TU/lmr/m/n/10 As we have seen in AICC I, AICC II, PPO, FDS, Com-puter Ar-chi-
+tec-ture, there is
  []
 
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1853,8 +1915,39 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+[]\TU/lmr/m/n/10 The ba-sic idea for this is just to al-low neg-a-tive ex-po-nen
+t. In-stead of hav-ing our
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+\TU/lmr/m/n/10 rep-re-sen-ta-tion be-gin at the power 0 we make it be-gin at a 
+hard-code power for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+[]\TU/lmr/m/n/10 An-other is-sue that we have other than ir-ra-tional num-ber, 
+is ra-tio-nal num-ber. Let us
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
+\TU/lmr/m/n/10 This means that in or-der to rep-re-sent any ra-tio-nal num-ber 
+all we need is to store
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
+\TU/lmr/m/n/10 two in-te-ger. Op-er-a-tion on this rep-re-sen-ta-tion gives us 
+also the same rep-re-sen-ta-tion.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+\TU/lmr/m/n/10 How-ever this is not very good al-ter-na-tive. It is pretty costl
+y in terms of com-pu-ta-tion
  []
 
 
@@ -1862,30 +1955,144 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--56
 [2
 
 ]
-<screenshots/2025-11-28.png, id=57, 1320.935pt x 719.68875pt>
+<screenshots/2025-11-28.png, id=67, 1320.935pt x 719.68875pt>
 File: screenshots/2025-11-28.png Graphic file (type png)
 <use screenshots/2025-11-28.png>
-Package luatex.def Info: screenshots/2025-11-28.png  used on input line 71.
+Package luatex.def Info: screenshots/2025-11-28.png  used on input line 70.
 (luatex.def)             Requested size: 396.28355pt x 215.9083pt.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 111.
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+[]\TU/lmr/m/n/10 What to do when the re-sult of the cal-cu-la-tion can-not be re
+p-re-sented ex-a-clty
+ []
 
 
-[3<./screenshots/2025-11-28.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+[]\TU/lmr/m/n/10 Use Banker’s round-ing (round to nearist tie to even) by de-f
+ault, other
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+[]\TU/lmr/m/n/10 El-e-men-tary arith-metic op-er-a-tions (+, -, *, /, sqrt) are done in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+\TU/lmr/m/n/10 What this means is that the an-swer you get for each arith-metic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+\TU/lmr/m/n/10 op-er-a-tion must be the clos-est pos-si-ble float-ing point num-
+ber to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+[]\TU/lmr/m/n/10 The rea-son for this be-ing a big in-no-va-tion is that: be-for
+e this
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+\TU/lmr/m/it/10 cor-rect round-ing\TU/lmr/m/n/10 , dif-fer-ent com-put-ers gave dif-fer-ent re-sults
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+\TU/lmr/m/n/10 for the same float-ing point ap-prox-i-ma-tions which means that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+[]\TU/lmr/m/n/10 Ev-ery plat-form pro-duces the same value for (0.1 + 0.2)
  []
 
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 125.
+ mdframed uses option nobreak mdframed on input line 110.
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+\TU/lmr/m/n/10 Be-fore IEEE-754, num-ber smaller than a cer-tain size would im-m
+e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+\TU/lmr/m/n/10 di-ately []\TU/lmr/b/n/10 un-der-flow to zero[]\TU/lmr/m/n/10 . 
+To pre-vent that, IEEE-754 in-tro-duced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+\TU/lmr/m/n/10 Imag-ine if we didn’t have de-nor-mals, very small re-sults of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+\TU/lmr/m/n/10 cal-cu-la-tions sim-ply be-come 0 abru-plty. This cause loss of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\TU/lmr/m/n/10 When we add de-nor-mals, we get []\TU/lmr/b/n/10 grad-ual un-der-
+flow[]\TU/lmr/m/n/10 . You
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+\TU/lmr/m/n/10 can rep-re-sent num-ber much closer to 0, though with re-duced
+ []
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 124.
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+\TU/lmr/m/n/10 The rea-son for the \TU/lmr/m/it/10 con-tro-ver-sial \TU/lmr/m/n
+/10 and slow of de-nor-mals is that
+ []
+
+
+
+[3<./screenshots/2025-11-28.png>]
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+[]\TU/lmr/m/n/10 When deal-ing with IEEE-754 op-er-a-tions there is a cou-ple of
+ case which are dan-ger-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+[]\TU/lmr/b/n/10 Tran-scen-den-tal op-er-a-tions \TU/lmr/m/n/10 (sin, cos, atan,
+ exp, log) are much slower (50-300
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+[]\TU/lmr/b/n/10 Fused Multiply-Add \TU/lmr/m/n/10 (FMA). Com-pute a*b+c di-rect
+ly (faster, with only oe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+[]\TU/lmr/b/n/10 De-nor-mal-ized num-bers \TU/lmr/m/n/10 are of-ten very slow an
+d cause sur-prises. Can turn them
+ []
+
+
 
 [4]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 179.
+(hyperref)                than one, level fixed on input line 178.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+[]\TU/lmr/m/n/10 Round-ing er-ror ac-cu-mu-la-tion (1991: Pa-triot bat-tery fail
+ed to in-terecpt mis-sile
+ []
 
 )
 
@@ -1914,12 +2121,12 @@ ine 1.
 l.1 \lecture{2}{2025-09-18}{}{}
                                
 ? 
-<screenshots/2025-11-28_1.png, id=89, 1039.885pt x 459.7175pt>
+<screenshots/2025-11-28_1.png, id=99, 1039.885pt x 459.7175pt>
 File: screenshots/2025-11-28_1.png Graphic file (type png)
 <use screenshots/2025-11-28_1.png>
 Package luatex.def Info: screenshots/2025-11-28_1.png  used on input line 31.
 (luatex.def)             Requested size: 311.96791pt x 137.9163pt.
-<screenshots/2025-11-28_2.png, id=90, 901.3675pt x 330.23375pt>
+<screenshots/2025-11-28_2.png, id=100, 901.3675pt x 330.23375pt>
 File: screenshots/2025-11-28_2.png Graphic file (type png)
 <use screenshots/2025-11-28_2.png>
 Package luatex.def Info: screenshots/2025-11-28_2.png  used on input line 44.
@@ -1935,31 +2142,37 @@ Package luatex.def Info: screenshots/2025-11-28_2.png  used on input line 44.
 l.55 	\item $f\left(\alpha x\right) =  \alphaf
                                               \left(x\right) $ where $\alpha...
 ? 
-<screenshots/2025-11-28_3.png, id=102, 552.0625pt x 711.65875pt>
+<screenshots/2025-11-28_3.png, id=112, 552.0625pt x 711.65875pt>
 File: screenshots/2025-11-28_3.png Graphic file (type png)
 <use screenshots/2025-11-28_3.png>
 Package luatex.def Info: screenshots/2025-11-28_3.png  used on input line 66.
 (luatex.def)             Requested size: 82.8058pt x 106.7442pt.
-<screenshots/2025-11-28_5.png, id=103, 365.365pt x 123.46124pt>
+<screenshots/2025-11-28_5.png, id=113, 365.365pt x 123.46124pt>
 File: screenshots/2025-11-28_5.png Graphic file (type png)
 <use screenshots/2025-11-28_5.png>
 Package luatex.def Info: screenshots/2025-11-28_5.png  used on input line 83.
 (luatex.def)             Requested size: 200.75996pt x 67.83983pt.
-<screenshots/2025-11-28_6.png, id=104, 356.33125pt x 121.45375pt>
+<screenshots/2025-11-28_6.png, id=114, 356.33125pt x 121.45375pt>
 File: screenshots/2025-11-28_6.png Graphic file (type png)
 <use screenshots/2025-11-28_6.png>
 Package luatex.def Info: screenshots/2025-11-28_6.png  used on input line 90.
 (luatex.def)             Requested size: 200.75996pt x 68.4269pt.
-<screenshots/2025-11-28_7.png, id=105, 393.47pt x 112.42pt>
+<screenshots/2025-11-28_7.png, id=115, 393.47pt x 112.42pt>
 File: screenshots/2025-11-28_7.png Graphic file (type png)
 <use screenshots/2025-11-28_7.png>
 Package luatex.def Info: screenshots/2025-11-28_7.png  used on input line 100.
 (luatex.def)             Requested size: 200.75996pt x 57.35916pt.
-<screenshots/2025-11-28_8.png, id=106, 410.53375pt x 126.4725pt>
+<screenshots/2025-11-28_8.png, id=116, 410.53375pt x 126.4725pt>
 File: screenshots/2025-11-28_8.png Graphic file (type png)
 <use screenshots/2025-11-28_8.png>
 Package luatex.def Info: screenshots/2025-11-28_8.png  used on input line 107.
 (luatex.def)             Requested size: 200.75996pt x 61.84662pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+[]\TU/lmr/m/n/10 Solv-ing lin-ear prob-lems is one of the (few) nu-mer-i-cal pro
+b-lems that we know
+ []
+
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 125.
 
@@ -1967,13 +2180,13 @@ Package mdframed Info: mdframed inside a box
 [7<./screenshots/2025-11-28_3.png><./screenshots/2025-11-28_5.png><./screenshots
 /2025-11-28_6.png><./screenshots/2025-11-28_7.png><./screenshots/2025-11-28_8.pn
 g>]
-<screenshots/2025-11-28_9.png, id=116, 1306.8825pt x 610.28pt>
+<screenshots/2025-11-28_9.png, id=126, 1306.8825pt x 610.28pt>
 File: screenshots/2025-11-28_9.png Graphic file (type png)
 <use screenshots/2025-11-28_9.png>
 Package luatex.def Info: screenshots/2025-11-28_9.png  used on input line 135.
 (luatex.def)             Requested size: 392.06778pt x 183.0854pt.
 
-Overfull \hbox (67.70827pt too wide) in paragraph at lines 135--136
+Overfull \hbox (25.02913pt too wide) in paragraph at lines 135--136
  [] 
  []
 
@@ -1983,8 +2196,67 @@ Package mdframed Info: mdframed inside a box
 LaTeX Font Warning: Font shape `TU/lmr/b/it' in size <10> not available
 (Font)              Font shape `TU/lmr/b/sl' tried instead on input line 145.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
+[]\TU/lmr/m/it/10 (sparse ma-trix) A []\TU/lmr/b/sl/10 sparse ma-trix[] \TU/lmr
+/m/it/10 is a ma-trix for which al-most all
+ []
+
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 146.
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+\TU/lmr/m/n/10 Spar-sity arises here be-cause most things aren’t con-nected fo
+r in-stance pro-tein
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+\TU/lmr/m/n/10 In fact they are so use-ful that al-most ev-ery ma-trix al-go-rit
+hm has an anal-o-gous
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+\TU/lmr/m/n/10 sparse ver-sion (or sev-eral!) By hav-ing an en-cod-ing of them, we can avoid stor-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+[]\TU/lmr/m/n/10 En-cod-ings: \TU/lmr/m/it/10 Com-pressed Sparse Row \TU/lmr/m/
+n/10 (CSR) or \TU/lmr/m/it/10 Com-pressed Sparse Col-umn
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--160
+\TU/lmr/m/n/10 In-stead of hav-ing for in-stance a con-tin-u-ous line $\U/msb/m
+/n/10 R$ \TU/lmr/m/n/10 we dis-cretizes it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+\TU/lmr/m/n/10 As we know that com-puter can’t han-dle con-tin-u-ous func-tion
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+\TU/lmr/m/n/10 di-rectly; in-stead, they ap-prox-i-mate them on a []\TU/lmr/b/n
+/10 grid[] \TU/lmr/m/n/10 of []\TU/lmr/b/n/10 mesh[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+\TU/lmr/m/n/10 You want to find the val-ues $\OML/lmm/m/it/10 f[][]; f[][]; [] 
+; f[][]$ \TU/lmr/m/n/10 that sat-isfy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+\TU/lmr/m/n/10 By us-ing the def-i-ni-tion of the sec-ond deriva-tive we get the
+
+ []
+
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 170.
 
@@ -2010,7 +2282,7 @@ Type  H <return>  for immediate help.
 l.177 \begin{subfigure}{0.48\textwidth}
                                        
 ? 
-<screenshots/2025-11-28_10.png, id=126, 513.92pt x 466.74374pt>
+<screenshots/2025-11-28_10.png, id=136, 513.92pt x 466.74374pt>
 File: screenshots/2025-11-28_10.png Graphic file (type png)
 <use screenshots/2025-11-28_10.png>
 Package luatex.def Info: screenshots/2025-11-28_10.png  used on input line 180.
@@ -2036,13 +2308,13 @@ Type  H <return>  for immediate help.
 l.190 \begin{subfigure}{0.48\textwidth}
                                        
 ? 
-<screenshots/2025-11-28_11.png, id=127, 721.69624pt x 415.5525pt>
+<screenshots/2025-11-28_11.png, id=137, 721.69624pt x 415.5525pt>
 File: screenshots/2025-11-28_11.png Graphic file (type png)
 <use screenshots/2025-11-28_11.png>
 Package luatex.def Info: screenshots/2025-11-28_11.png  used on input line 193.
 
 (luatex.def)             Requested size: 200.75996pt x 115.593pt.
-<screenshots/2025-11-28_12.png, id=128, 1277.77374pt x 428.60126pt>
+<screenshots/2025-11-28_12.png, id=138, 1277.77374pt x 428.60126pt>
 File: screenshots/2025-11-28_12.png Graphic file (type png)
 <use screenshots/2025-11-28_12.png>
 Package luatex.def Info: screenshots/2025-11-28_12.png  used on input line 212.
@@ -2050,12 +2322,31 @@ Package luatex.def Info: screenshots/2025-11-28_12.png  used on input line 212.
 (luatex.def)             Requested size: 255.55022pt x 85.71872pt.
 
 
-[9<./screenshots/2025-11-28_10.png><./screenshots/2025-11-28_11.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 237--240
-
+[9<./screenshots/2025-11-28_10.png><./screenshots/2025-11-28_11.png><./screensho
+ts/2025-11-28_12.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+[]\TU/lmr/m/n/10 How-ever it hap-pends pretty of-ten that we need to solved the same
  []
 
-<screenshots/2025-11-28_13.png, id=146, 571.13374pt x 298.11375pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
+\TU/lmr/m/n/10 This seems re-ally in-ef-fi-cient. The ques-tion we should ask is
+: is it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
+\TU/lmr/m/n/10 pos-si-ble to com-pute some-thing only one time and then use it 
+for the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+[]\TU/lmr/m/n/10 Com-pu-ta-tion of in-verse + ma-trix mul-ti-plies re-quire slig
+htly
+ []
+
+<screenshots/2025-11-28_13.png, id=157, 571.13374pt x 298.11375pt>
 File: screenshots/2025-11-28_13.png Graphic file (type png)
 <use screenshots/2025-11-28_13.png>
 Package luatex.def Info: screenshots/2025-11-28_13.png  used on input line 244.
@@ -2063,16 +2354,71 @@ Package luatex.def Info: screenshots/2025-11-28_13.png  used on input line 244.
 (luatex.def)             Requested size: 57.11671pt x 29.81311pt.
 
 
-[10<./screenshots/2025-11-28_12.png><./screenshots/2025-11-28_13.png>]
+[10<./screenshots/2025-11-28_13.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
+\TU/lmr/m/n/10 You could think like: ’but we have now to in-verse of ma-trix 
+to com-pute, this is
+ []
+
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 328.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 332.
 
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+\TU/lmr/m/n/10 Now let’s see what hap-pen with the LU de-com-po-si-tion but wh
+en we are with a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--344
+\TU/lmr/m/n/10 unique for tri-an-gu-lar fac-tors, that menas the left hand and 
+right hand fac-tos must
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
+\TU/lmr/m/n/10 This is great! We only need to store one ma-trix in-stead of two,
+ we saved half of the
+ []
+
+
 
 [11])
 
 [12]
+\openout2 = lecture3.aux
+ (./lecture3.tex
+
+[13
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]\TU/lmr/m/n/10 The ques-tion we tried to an-swer be-fore is: Find a poly-no-mi
+al that per-fectly in-ter-po-
+ []
+
+<screenshots/2025-12-21.png, id=203, 617.30624pt x 397.485pt>
+File: screenshots/2025-12-21.png Graphic file (type png)
+<use screenshots/2025-12-21.png>
+Package luatex.def Info: screenshots/2025-12-21.png  used on input line 87.
+(luatex.def)             Requested size: 61.73424pt x 39.75082pt.
+<screenshots/2025-12-21_1.png, id=204, 654.445pt x 400.49625pt>
+File: screenshots/2025-12-21_1.png Graphic file (type png)
+<use screenshots/2025-12-21_1.png>
+Package luatex.def Info: screenshots/2025-12-21_1.png  used on input line 93.
+(luatex.def)             Requested size: 65.44833pt x 40.05196pt.
+<screenshots/2025-12-21_2.png, id=205, 616.3025pt x 406.51875pt>
+File: screenshots/2025-12-21_2.png Graphic file (type png)
+<use screenshots/2025-12-21_2.png>
+Package luatex.def Info: screenshots/2025-12-21_2.png  used on input line 102.
+(luatex.def)             Requested size: 61.63385pt x 40.65425pt.
+)
+
+[14<./screenshots/2025-12-21.png><./screenshots/2025-12-21_1.png><./screenshots/
+2025-12-21_2.png>]
 \openout2 = lecture4.aux
  (./lecture4.tex
 ! Undefined control sequence.
@@ -2088,7 +2434,7 @@ l.1 ...10-02}{Linear Systems III: Orthogonality}{}
                                                   
 ? 
 
-LaTeX Warning: Hyper reference `lecturesummary4' on page 13 undefined on input 
+LaTeX Warning: Hyper reference `lecturesummary4' on page 15 undefined on input 
 line 1.
 
 ! Undefined control sequence.
@@ -2099,11 +2445,12 @@ l.1 ...10-02}{Linear Systems III: Orthogonality}{}
 ? 
 )
 
-[13
+[15
 
 
 
-] (./main.aux (./lecture1.aux) (./lecture2.aux) (./lecture4.aux))
+] (./main.aux (./lecture1.aux) (./lecture2.aux) (./lecture3.aux)
+(./lecture4.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2112,27 +2459,23 @@ L3 programming layer <2025-01-18>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3DF2938C12D0AEB58D806D153AC6B3AE;573.
+(rerunfilecheck)             Checksum: CBFB3F0C133C5F108B2EC0C80B7C2F7E;871.
 )
 
 Here is how much of LuaTeX's memory you used:
- 54361 strings out of 475506
- 195346,2373549 words of node,token memory allocated
- 1095 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
-rn, 4 glyph, 12 attribute, 152 glue_spec, 12 attribute_list, 2 shape, 4 write no
-des
-   avail lists: 1:1,2:3101,3:1137,4:2825,5:2863,6:79,7:7655,8:748,9:7521,10:21,1
-1:411,12:1
- 75730 multiletter control sequences out of 65536+600000
+ 54449 strings out of 475506
+ 195340,2373549 words of node,token memory allocated
+ 1084 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 3 glyph, 12
+ attribute, 152 glue_spec, 12 attribute_list, 2 shape, 4 write nodes
+   avail lists: 1:4,2:2997,3:1102,4:3410,5:3496,6:98,7:7857,8:747,9:8764,10:27,1
+1:491,12:1
+ 75770 multiletter control sequences out of 65536+600000
  112 fonts using 9412015 bytes
- 110i,20n,141p,1930b,1228s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/f
-onts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmro
+ 110i,20n,141p,1930b,1236s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts
+/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmro
 mandemi10-oblique.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono8-re
 gular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf></
 usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/t
@@ -2144,20 +2487,20 @@ exmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/share/texmf-d
 ist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/
 opentype/public/lm/lmroman17-regular.otf></usr/share/texmf-dist/fonts/type1/publ
 ic/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.p
-fb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dis
-t/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/
-lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/te
-xmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/lm/lmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmib7.pfb></usr/
-share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></u
-sr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/font
-s/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb>
-Output written on main.pdf (13 pages, 616287 bytes).
+fb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/share/texmf-dist
+/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
+mmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/te
+xmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/lm/lmmib7.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></
+usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts
+/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (15 pages, 772550 bytes).
 
-PDF statistics: 296 PDF objects out of 1000 (max. 8388607)
- 220 compressed objects within 3 object streams
- 79 named destinations out of 1000 (max. 131072)
- 48 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 340 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 101 named destinations out of 1000 (max. 131072)
+ 64 words of extra memory for PDF output out of 10000 (max. 100000000)
 

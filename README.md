@@ -5,16 +5,14 @@
 
 
 ## Remark
-I used Joachim Favre's style file for those notes [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master). All the course doesn't belong to me, the explanation and most of the images belongs to the courses.
+I used Joachim Favre's style file for those notes [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master) with a bit of change here and there. All the course doesn't belong to me, the explanation and most of the images belongs to the courses.
 
 # Notes
 #### Bachelor semester 1 (Autumn 2024)
-For the first semeestrer, I used overleaf to take my notes.
+For the first semester, I used overleaf to take my notes (yeah I know). 
 - [Overleaf AICC I](https://www.overleaf.com/read/httyzkgthpwd#14e403)  | [AICC_quiz_1.pdf](https://github.com/user-attachments/files/20511443/AICC_quiz_1.pdf)
 
 - [Overleaf Algèbre linéaire](https://www.overleaf.com/read/jghqdrzjrdxz#79162c) | [Chapter__Review_Notes.pdf](https://github.com/user-attachments/files/20511445/Chapter__Review_Notes.pdf)
-
-
 
 ### Bachelor semester 2 (Spring 2025)
 #### Remark
@@ -31,11 +29,11 @@ I stoped taking notes in FDS during the semester because of the enormous quantit
 - [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf) 
 
 ### Bachelor semester 3
-for this course (which has the same number of schemas as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used a [grim](https://github.com/emersion/grim).
+for this course (which has the same number of schemas as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used a [grim](https://github.com/emersion/grim) on arch linux.
 - Computer Architecture - Prof. Paulo Ienne
 
 ### Contributing
-If by any chance someone is reading this line and find a typo or want to contribute to the notes (i.e., the beginning of the first semester course are not in the notes) don't hesitate to send me a message or create an issue here.
+If by any chance someone is reading this line and find a typo or want to contribute to the notes (i.e., the beginning of the first semester course are not in the notes, and the second part of fds is also not in the course) please send me a message or create an issue here!
 
 
 
