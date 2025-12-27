@@ -60,8 +60,7 @@ Alas, there is only one \texttt{mepc} and \texttt{mcause} register, and this is 
 The idea behind this is the same as the one when calling function and memory, we first though of having a \textbf{static} memory like here. however this won't works with recursive function for instance. What we do instead is to dynimcally allocate memory space in the stack. This is the same principle here.
 \end{framedremark}
 \end{parag}
-\begin{parag}{Writing the handlers is very \important{very} tricky}%
-\label{par:Writing the handlers is very \important{very} tricky}
+\begin{parag}{Writing the handlers is very \important{very} tricky}
 Writing exception  handler is a \important{difficult task}!
 \begin{itemize}
     \item Maybe the \important{stack cannot be used} (e.g., the exception results from a stack overflow)

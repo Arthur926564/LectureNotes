@@ -166,7 +166,7 @@
 \contentsline {section}{\numberline {3.5}3d. Simples virtual Memory example}{91}{section.3.5}%
 \contentsline {paragraph}{Simple translation Scheme}{91}{section*.143}%
 \contentsline {paragraph}{Page Table Entry Size}{91}{section*.144}%
-\contentsline {paragraph}{Total Page Table Size}{91}{section*.145}%
+\contentsline {paragraph}{Total Page Table Size}{92}{section*.145}%
 \contentsline {paragraph}{Total Addressable physical Memory}{92}{section*.146}%
 \contentsline {paragraph}{Address Translation}{92}{section*.147}%
 \contentsline {part}{II\hspace {1em}Final}{95}{part.2}%
