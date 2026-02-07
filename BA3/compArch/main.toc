@@ -3,43 +3,43 @@
 \contentsline {section}{\numberline {1.1}Instruction set architecture}{9}{section.1.1}%
 \contentsline {subsubsection}{The five classic components of a computer}{11}{subsubsection*.2}%
 \contentsline {section}{\numberline {1.2}Instruction set architecture: Branches, Function and stack}{12}{section.1.2}%
-\contentsline {subsubsection}{An if-then-else}{13}{subsubsection*.3}%
+\contentsline {subsubsection}{An if-then-else}{12}{subsubsection*.3}%
 \contentsline {subsubsection}{A Do-while loop}{13}{subsubsection*.4}%
-\contentsline {subsection}{\numberline {1.2.1}Functions}{14}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.1}Functions}{13}{subsection.1.2.1}%
 \contentsline {paragraph}{Jump and link}{14}{section*.5}%
-\contentsline {paragraph}{Acquire storage ressource the function needs}{15}{paragraph*.6}%
+\contentsline {paragraph}{Acquire storage ressource the function needs}{14}{paragraph*.6}%
 \contentsline {subsection}{\numberline {1.2.2}The stack}{15}{subsection.1.2.2}%
 \contentsline {paragraph}{Option 2}{16}{paragraph*.7}%
-\contentsline {section}{\numberline {1.3}Memory and Addressing Modes}{17}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Memory}{17}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.3}Memory and Addressing Modes}{16}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Memory}{16}{subsection.1.3.1}%
 \contentsline {paragraph}{Types of memory}{17}{paragraph*.8}%
 \contentsline {paragraph}{SRAM}{18}{paragraph*.9}%
-\contentsline {paragraph}{DRAM}{19}{paragraph*.10}%
+\contentsline {paragraph}{DRAM}{18}{paragraph*.10}%
 \contentsline {paragraph}{Static RAM typical interface}{21}{paragraph*.11}%
 \contentsline {paragraph}{Asynchronous read cycle}{21}{section*.12}%
-\contentsline {paragraph}{synchronous SRAM Read cycle}{22}{section*.13}%
+\contentsline {paragraph}{synchronous SRAM Read cycle}{21}{section*.13}%
 \contentsline {subsubsection}{Load and store instrucitons}{22}{subsubsection*.14}%
 \contentsline {paragraph}{Why RISC-V instructions are so simple?}{23}{paragraph*.15}%
 \contentsline {subsubsection}{Byte addressed memory}{24}{subsubsection*.16}%
-\contentsline {paragraph}{Loading a word (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lw}) and Instruction}{25}{paragraph*.17}%
-\contentsline {paragraph}{Loading bytes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lb})}{25}{paragraph*.18}%
+\contentsline {paragraph}{Loading a word (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lw}) and Instruction}{24}{paragraph*.17}%
+\contentsline {paragraph}{Loading bytes (\tcbox [{ on line, boxsep=1pt, left=2pt, right=2pt, top=1pt, bottom=1pt, colback=gray!20, colframe=gray!20, boxrule=0pt, arc=2pt, box align=base, fontupper=\ttfamily ,options@for=inlinecode}]{lb})}{24}{paragraph*.18}%
 \contentsline {section}{\numberline {1.4}Arrays and data structures}{25}{section.1.4}%
 \contentsline {paragraph}{Arrays in high-level languages}{25}{section*.19}%
-\contentsline {paragraph}{Adding Positive elements}{26}{section*.20}%
+\contentsline {paragraph}{Adding Positive elements}{25}{section*.20}%
 \contentsline {paragraph}{Adding positive elements (Type 1)}{26}{section*.21}%
-\contentsline {paragraph}{Adding positive element Type 2}{27}{section*.22}%
-\contentsline {paragraph}{Adding positive element Type 3}{27}{section*.23}%
+\contentsline {paragraph}{Adding positive element Type 2}{26}{section*.22}%
+\contentsline {paragraph}{Adding positive element Type 3}{26}{section*.23}%
 \contentsline {paragraph}{Adding positive elements (variation on type 3)}{27}{section*.24}%
 \contentsline {paragraph}{Linked list}{28}{section*.25}%
-\contentsline {section}{\numberline {1.5}1.e: Instruction Set architecture Arithmetic}{30}{section.1.5}%
-\contentsline {paragraph}{Notation}{30}{section*.26}%
-\contentsline {paragraph}{Numbers}{30}{section*.27}%
+\contentsline {section}{\numberline {1.5}1.e: Instruction Set architecture Arithmetic}{29}{section.1.5}%
+\contentsline {paragraph}{Notation}{29}{section*.26}%
+\contentsline {paragraph}{Numbers}{29}{section*.27}%
 \contentsline {paragraph}{Unsigned Integers}{30}{section*.28}%
-\contentsline {paragraph}{Addition is unchanged from unsigned}{31}{section*.29}%
-\contentsline {paragraph}{Overflow in hardware}{31}{section*.30}%
-\contentsline {paragraph}{Overflow in software}{31}{section*.31}%
+\contentsline {paragraph}{Addition is unchanged from unsigned}{30}{section*.29}%
+\contentsline {paragraph}{Overflow in hardware}{30}{section*.30}%
+\contentsline {paragraph}{Overflow in software}{30}{section*.31}%
 \contentsline {paragraph}{$A + \overline {A} = -1$}{31}{section*.32}%
-\contentsline {paragraph}{Two's complement Add/Subtract Units}{32}{section*.33}%
+\contentsline {paragraph}{Two's complement Add/Subtract Units}{31}{section*.33}%
 \contentsline {chapter}{\numberline {2}Processors, I/Os, and Exceptions}{33}{chapter.2}%
 \contentsline {section}{\numberline {2.1}2a. Multicycle Processor}{33}{section.2.1}%
 \contentsline {paragraph}{Single cycle processor}{33}{section*.34}%
@@ -408,7 +408,7 @@
 \contentsline {paragraph}{Meltdown}{200}{section*.349}%
 \contentsline {paragraph}{Attack Principle}{200}{section*.350}%
 \contentsline {paragraph}{Affected Processors}{200}{section*.351}%
-\contentsline {subsection}{\numberline {6.1.5}Combined Attacks to Break Isolation and Confidentiality (Spectre)}{200}{subsection.6.1.5}%
-\contentsline {paragraph}{Spectre}{200}{section*.352}%
-\contentsline {paragraph}{Attack Principle}{200}{section*.353}%
+\contentsline {subsection}{\numberline {6.1.5}Combined Attacks to Break Isolation and Confidentiality (Spectre)}{201}{subsection.6.1.5}%
+\contentsline {paragraph}{Spectre}{201}{section*.352}%
+\contentsline {paragraph}{Attack Principle}{201}{section*.353}%
 \contentsline {section}{\numberline {6.2}Conclusions}{201}{section.6.2}%

@@ -35,11 +35,11 @@ loop:
 \end{lstlisting}
 As we can see we have a much more rigid format: we really have a sequence of numbered instructions that is executed line by line. For each instructions, we have an \textit{opcode}  that defines the effect of the instruction. Each \textit{variable} has a fixed name and we only have one form of control flow. The question to ask is why did we do that?\\ The answer of thie question lays is in the architecture of the processor:
 \begin{center}
-\includegraphics[scale=0.6]{screenshots/2025-10-11_1.png}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_10.png}
 \end{center}
 how it works: the processor fetch the instruction at the address of the program counter (PC) and launch it to the control logic
 \begin{center}
-\includegraphics[scale=0.6]{screenshots/2025-10-11_2.png}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_11.png}
 \end{center}
 After that the instruction has been fetch, it is processed in the Control logic and then read/write etc... into the register file, and give the information (the opcode) to the ALU for it to know which operation to perform.
 \begin{center}
