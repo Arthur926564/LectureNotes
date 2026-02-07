@@ -3,8 +3,10 @@
 This material is not on the final 
 \end{framedremark}
 
-\paragraph{Intel Processors}%
-\label{par:Intel Processors}
+\subsection{Intel Processors}
+
+\subsubsection{Transistors Growth and Moore's Law}
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|c|c|c|p{7cm}|}
@@ -137,7 +139,7 @@ Architecture status & Inactive & Active & Inactive & Active & Inactive & Active 
 
 So here the Intel Itanium 2 9050 and Intel Itanium 9150M are the only LVIW processors here. As we can see in the Out of Order line there is \textit{none} in both of them.
 \begin{framedremark}
-As we can see there is 1.72 \important{billion} transistors for those two processors. But didn't we say that we needed less transistors for them? Yes in theory, but only if you are focusing on one type of program. This cannot work for general purpose program.
+As we can see there is 1.72 \important{billion} transistors for those two processors. But didn't we say that we needed less transistors for them? Yes in theory, but only if you are focusing on one type of program. This cannot work for general purpose processors.
 \end{framedremark}
 
 \begin{parag}{Legacy x86 Features}
@@ -168,8 +170,11 @@ As we can see there is 1.72 \important{billion} transistors for those two proces
 \end{parag}
 
 \begin{parag}{Memory Address}
-	You can also see the history of the memory. First we need a physical address that is more than 16 bits (our memory is greater that $2^{16}$) However our architecture at that time is only at 16 bits. We need another register in order for have access to the address.\\
+	You can also see the history of the memory. First we need a physical address that is more than 16 bits (our memory is greater that $2^{16}$) However our architecture at that time is only at 16 bits. We need another register in order for us to have access to the address.\\
 	This is the real mode (8086)
+	\begin{center}
+	    
+	
     \begin{tikzpicture}[
     font=\small,
     box/.style={draw=black!80, thick, rectangle, minimum width=3cm, minimum height=1cm},
@@ -201,6 +206,7 @@ As we can see there is 1.72 \important{billion} transistors for those two proces
 \draw[arrow] (-4.5,1.5) -- node[above] {16} (mul);
 
 \end{tikzpicture}
+	\end{center}
 Now if we take a look at the protected mode (80286), now we have a sort of multiprogramming.
 
 
@@ -237,67 +243,6 @@ Now if we take a look at the protected mode (80286), now we have a sort of multi
 
 Now if we go even later in the protected mode (80386, 80486, Plentium). we need now to have a bit of multiprogramming right?
 \begin{center}
-    
-
-\begin{tikzpicture}[
-    font=\small,
-    box/.style={draw=black!80, very thick, rectangle, minimum width=3.8cm, minimum height=1.2cm},
-    mem/.style={draw=black!80, very thick, rectangle, minimum width=3.2cm, minimum height=1cm},
-    op/.style={draw=black!80, very thick, circle, minimum size=8mm},
-    arrow/.style={->, thick},
-    dashedbox/.style={draw=red, dashed, thick, rounded corners, inner sep=8pt}
-]
-
-%================ TOP: segmentation =====================
-
-\node[box] (segment) at (-4,5) {segment};
-\node[box] (offset)  at ( 4,5) {offset};
-
-\node[mem] (segdesc) at (-1.5,3.6) {};
-
-\node[op] (add1) at (0,2.1) {$+$};
-
-\node[blue!80, font=\large] at (-4,1.3) {linear address};
-
-\node[dashedbox, fit=(segment)(offset)(segdesc)(add1), label={[red]below right:segmentation}] {};
-
-% Arrows segmentation
-\draw[arrow] (segment.south) -- node[right] {16} ++(0,-0.8) -| (segdesc.west);
-\draw[arrow] (segdesc.south) -- node[right] {32} (add1);
-\draw[arrow] (offset.south) -- node[right] {32} (add1);
-
-\draw[arrow] (add1) -- node[right] {32} ++(0,-0.9);
-
-%================ BOTTOM: paging =====================
-
-\node[mem] (pagedir) at (-3,-0.5) {};
-
-\node[mem] (pagetable) at (3,-0.5) {};
-
-\node[dashedbox, fit=(pagedir)(pagetable), label={[red]below left:paging}] {};
-
-% Paging arrows
-\draw[arrow] (0,1.2) |- node[above] {10} (pagedir.west);
-\draw[arrow] (pagedir.east) -- node[above] {20} (pagetable.west);
-\draw[arrow] (pagetable.south) -- node[right] {32} ++(0,-0.8);
-
-% Labels
-\node[black!80, font=\large] at (3,-2.2) {physical address};
-
-% Bit-width annotations
-\node[black] at (-1.5,2.6) {32};
-\node[black] at (4,3.6) {32};
-\node[black] at (-4.8,0.3) {10};
-\node[black] at (1.5,-0.4) {20};
-\node[black] at (4.8,-1.1) {12};
-
-\end{tikzpicture}
-
-\end{center}
-
-Ce schema est faux si j'ai la force de change un peu, voila le schema:
-
-\begin{center}
     \includegraphics[scale=0.25]{screenshots/2025-12-16_5.png}
 \end{center}
 
@@ -327,12 +272,35 @@ Ce schema est faux si j'ai la force de change un peu, voila le schema:
 	    
 	\end{tabular}
 	\end{center}
+	Immediate values can be on 8, 16, or 32 bits.
 	
     
 \end{parag}
 
+\begin{parag}{Addressing Mode I}
+   \begin{itemize}
+	   \item \important{Absolute}
+	   \item \important{Register indirect} \textrightarrow $\left[\text{reg}\right]$
+		   \begin{itemize}
+			   \item 16-bit registers : \texttt{BX}, \texttt{SI}, \texttt{DI} 
+			   \item 32-bit registers: \texttt{EAX}, \texttt{ECX}, \texttt{EDX}, \texttt{EBX}, \texttt{ESI}, \texttt{EDI}
+		   \end{itemize}
+	   \item \important{Displacement} \textrightarrow [reg + displacement]
+		   \begin{itemize}
+			   \item 16-bit registers: \texttt{BP}, \texttt{BX}, \texttt{SI}, \texttt{DI}
+			   \item 32-bit registers: \texttt{EAX}, \texttt{ECX}, \texttt{EDX}, \texttt{EBX}, \texttt{ESI}, \texttt{EDI}
+			   \item Displacement on 8, 16, or 32 bits
+		   \end{itemize}
+	   \item \important{Indexed} \textrightarrow [bas reg + reg]
+		   \begin{itemize}
+			   \item 16-bit registers: \texttt{BX} + \texttt{SI}, \texttt{BX} + \texttt{DI}, \texttt{BP} + \texttt{SI}, \texttt{BP} + \texttt{DI}
+		   \end{itemize}
+   \end{itemize}
+    
+\end{parag}
 
-\begin{parag}{Addressing Mode}
+
+\begin{parag}{Addressing Mode II}
     \begin{itemize}
 		\item \important{Indexed with displacement} \textrightarrow [base + reg + reg + displacement]
 			\begin{itemize}
@@ -352,12 +320,180 @@ Ce schema est faux si j'ai la force de change un peu, voila le schema:
     \end{itemize}
 \end{parag}
 
+\begin{parag}{Address Segment (Legacy)}
+	For every indirect addressing (e.g., [reg]) the appropriate segment would be needed to complete the address\\
+	Default:
+	\begin{itemize}
+		\item Regerences to instructions (\texttt{IP}) use \texttt{CS} (code segment register)
+		\item References to stack (\texttt{BP} or \texttt{SP}) use \texttt{SS} (stack segement register)
+		\item All other references use \texttt{DS} (data segement register)
+	\end{itemize}
+	A \important{one-byte instruction prefix} can modify the default
+\end{parag}
+\begin{parag}{A Growing ISA}
+	\begin{itemize}
+		\item \important{80386} (1985): 32-bit registers, flat memory model, paging, and virtual memory
+		\item  \important{80486} (1989): x87 floating-point coprocessor instructions integrated
+		\item  \important{MMX} (1997): SIMD instructions for multimedia (8-bit, 16-bit, 32-bit integer)
+		\item  \important{SSE} (1999): 128-bit SIMD for floating-point, integer, and memory operations
+		\item  \important{SSE2} (2001): Double-precision floating-point and integer operations
+		\item  \important{SSE3/SSSE3} (2004-2006): Minor enhancements (e.g., horizontal add/subtract)
+		\item  \important{SSE4} (2007-2008): Adds text processing (SSE4.2) and improved vector processing
+		\item  \important{AVX} (2011): 256-bit SIMD, non-destructive 3-operand form, VEX prefix
+		\item  \important{AVX2} (2013): Adds integer operations, gathers, and FMA (Fused Multiply-Add)
+		\item  \important{AVX-512} (2016): 512-bit SIMD, mask registers, expanded precision operations
+		\item  \important{x86-64} (2003, \important{AMD}): 64-bit, more registers (R8–R15), RIP-relative addressing
+	\end{itemize}
+    
+\end{parag}
+
+
+
 \begin{parag}{Number of x86 instructions over time}
 	\begin{center}
 	\includegraphics[scale=0.25]{screenshots/2025-12-16_6.png}
 	\end{center}
-    \begin{framedremark}
-    This part is not finished
-    \end{framedremark}
 \end{parag}
+\begin{parag}{Instruction Examples}
+\end{parag}
+\begin{tabular}{>{\ttfamily}l p{10cm}}
+\hline
+\textbf{Instruction} & \textbf{Description} \\
+\hline
+JE addr & if equal(CC) then IP $\leftarrow$ addr (IP-128 $\le$ addr < IP+128) \\
+JMP addr & IP $\leftarrow$ addr \\
+CALL addr,seg & SP $\leftarrow$ SP-2; Mem[SS:SP] $\leftarrow$ IP+5 \\
+ & SP $\leftarrow$ SP-2; Mem[SS:SP] $\leftarrow$ CS \\
+ & IP $\leftarrow$ addr; CS $\leftarrow$ seg \\
+MOVW BX,[DI+45] & BX $\leftarrow$ Mem[DS:DI+45] \\
+PUSH SI & SP $\leftarrow$ SP-2; Mem[SS:SP] $\leftarrow$ SI \\
+POP DI & DI $\leftarrow$ Mem[SS:SP]; SP $\leftarrow$ SP+2 \\
+ADD AX,#6765 & AX $\leftarrow$ AX + 6765 \\
+TEST DX,#42 & set CC flags with (DX and 42) \\
+MOVSB & Mem[ES:DI] $\leftarrow$ Mem[DS:SI]; DI $\leftarrow$ DI+1; SI $\leftarrow$ SI+1 \\
+\hline
+\end{tabular}
+\begin{parag}{Instruction Encoding}
+    As we have seen before, instruction doesn't have a fixed size, so how do we encode?
+	\begin{itemize}
+		\item One instruction coded on 1 to 17 bytes
+		\item Several types of modifiers/predixes
+		\item Two combinations of constants of variable length 
+			\begin{itemize}
+				\item Immediate and Displacement
+				\item 8, 16, and 32-bit
+			\end{itemize}
+		\item Opcode "lost" and only moderately orthogonal
+	\end{itemize}
+	\begin{center}
+		\includegraphics[scale=0.2]{screenshots/2026-02-07.png}
+	\end{center}	
+	For instance here are some instructions and their encodings:
+	\begin{center}
+	\includegraphics[scale=0.25]{screenshots/2026-02-07_1.png}
+	\end{center}
+\end{parag}
+\begin{parag}{Improved Encoding and Generality}
+    Here if we take the legacy \texttt{MUL} instruction encoded as \texttt{0xF7 E3}  (16 bits)
+	\begin{lstlisting}
+MOV RAX, 5  ; Load first operand into RAX (implicit source)
+MOV RBX, 10  ; Load second operand into RBX
+MUL RBX ; Multiply RAX * RBX  -> result in RDX:RAX
+	\end{lstlisting}
+	As we can see there is a lot of implicit information for each instruction:
+	\begin{itemize}
+		\item The multiplier is \important{implicit} (it's always in the \texttt{RAX} register)
+		\item Multiplicand is \important{explicit} 
+		\item The result is stored in two register: \texttt{RAX} gets the lower bits, \texttt{RDX} gets the higher bits
+	\end{itemize}
+	Now if we take the modern \texttt{MULX} instruction, it is encoded as \texttt{0xF2 0F 38 F6} (32 bits)
+	\begin{lstlisting}
+MOV RAX, 5  ; Load first operand into RAX (explicitly  RAX, required)
+MOV RBX, 10  ; Load second operand into RBX
+MUL RDX, RCX, RBX ; Multiply RBX * RAX -> RCX = low, RDX = high
+	\end{lstlisting}
+	Now the result has to be specified.
+\end{parag}
+\begin{parag}{1995:PentiumPro (P6) A Superscalar x86 CISC?}
+	How to adapt the superscalar ideas to fit such an irregular architecture?
+	\begin{itemize}
+		\item The complexity of decoding is huge
+		\item Parallel decoding of instructions is tough due to an encoding strongly variable in length 
+		\item Instructions mix memory operations with computations
+		\item Too few registers
+	\end{itemize}
+\end{parag}
+\begin{parag}{PentiumPro Microarchitecture: Out-of-order CISC Execution}
+	So how do we do it? We split our architecture in two parts: the decoder which translate from CISC instruction to RISC. then we issue all the 'risc' instruction to our classic RISC processor:
+
+\end{parag}
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_2.png}
+	\end{center}
+	\begin{parag}{PentiumPro In-Order Section}
+	    \begin{itemize}
+			\item Converts every x86 instruction into one or more internal RISC-like 118-bit instructions (micro-operations or uops); on average 1 instruction = 1.5-2 uops
+			\item Three decoders and a sequencer work in parallel to perform the conversion
+				\begin{itemize}
+					\item Two highest priority simple decoders intercept register-register operations (1 instr. \textrightarrow 1 uop)
+					\item A low priority general decoder handles all other basic operations (1 instr. \textrightarrow 1 uop)
+					\item A low priority general decoder handles all other basic operations (1 instr. \textrightarrow 4 uops)
+					\item A sequencer is used by the general decoder for very complex operations (1 instr \textrightarrow several groups of 4 uops)
+				\end{itemize}
+			\item Reorder Buffer (ROB) implements renaming and commits uops in program order to the Real Register File (RRF)
+	    \end{itemize}
+	    
+	\end{parag}
+	\begin{parag}{PentiumPro Out-of-order Section}
+	Superscalar is very similar to the general model studied in previous lessons:
+	\begin{itemize}
+		\item Up to 20 uops wait in the Reservation Stations until the operands are all available
+		\item A maximum of 5 uops can be issued per cycle: a generic calculation (int or FP), a simple integer (no shift, mul nor div), a load, a store address, and a store data
+		\item A Memory Reorder Buffer (MOB) reorders memory accesses and waits for D-cache availability
+	\end{itemize}
+	
+	\end{parag}
+	
+	\begin{framedremark}
+	For the rest of the lecture there is a lot of examples so I will show some of them but not all
+	\end{framedremark}
+
+	\begin{parag}{Pentium 4: Processors for the Multi-GHz Era}
+ Intel had introduced IA-64 (Itanium) for high-performance computing, however the Pentium line continued evolving to achieve very high clock frequencies. The Pentium 4 was designed with several features to reach multi-GHz operation:
+
+\begin{itemize}
+    \item \important{Deep pipeline:} The Pentium 4 extended the pipeline to \important{20 stages} (compared to 10 in Pentium III) to allow shorter clock cycles and higher frequencies. Each stage performs simpler operations, reducing the critical path delay.
+    \item \important{Wire delays handled explicitly:} Dedicated pipeline stages were introduced to manage wire propagation delays, which become significant at multi-GHz frequencies.
+    \item \important{Trace caches:} Stores approximately 12,000 decoded micro-operations (uops) to avoid repeatedly decoding x86 instructions in the main loop, effectively acting as an L0 cache for uops.
+    \item \important{Out-of-order execution:} Up to 126 uops can be in-flight simultaneously, allowing the processor to schedule independent instructions efficiently.
+    \item \important{Data speculation:} The processor may execute loads before stores speculatively. If a true dependence exists, the load is squashed and replayed.
+    \item \important{ALU throughput:} Simple arithmetic and logic operations can be executed in half a clock cycle. This allows two dependent instructions to be scheduled in the same cycle, improving overall throughput.
+\end{itemize}
+
+\end{parag}
+
+\begin{parag}{Simultaneous Multi-Threading: Xeon Pipeline}
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_3.png}
+	\end{center}
+    
+\end{parag}
+
+
+	
+
+
+
+
+
+\subsection{Conclusions}
+\begin{itemize}
+	\item x86 is the oldest important ISA around
+	\item It is not absolutely fixed but a family of constantly evolving ISAs with many new addons (MMX, SSE, AVX, CMOV, etc.)
+	\item Intel has managed to continue pushing the performance by adapting to its CISC nature the techniques developed to speed-up newer RISC processors
+\begin{itemize}
+	\item Similar work has been done by some competitors—notably by AMD with Athlon, for a few months the fastest x86 processor on the market
+\end{itemize}
+	\item  It has been given for agonizing many times over, it is still well alive and kicking!...
+\end{itemize}
 

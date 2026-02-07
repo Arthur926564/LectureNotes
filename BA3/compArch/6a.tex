@@ -1,7 +1,7 @@
 \begin{framedremark}
 This part of the courses is not material for the final.
 \end{framedremark}
-\subsection{Why Hardware Security}
+\section{Why Hardware Security}
 
 \begin{parag}{Software complexity}
     \begin{itemize}
@@ -35,10 +35,10 @@ This part of the courses is not material for the final.
 \end{parag}
 
 \subsubsection{Basic Definitions}
-Specification of the threats that a system is protexted against:
+Specification of the threats that a system is protected against:
 \begin{itemize}
 	\item \important{Trusted Computing Base}: what is the set of trusted hardware and software components
-	\item \important{Security properties}: what the trusted computin base is supposed to guarantee
+	\item \important{Security properties}: what the trusted computing base is supposed to guarantee
 	\item \important{Attacker assumptions}: what a potential attacker is assumed capable of 
 	\item \important{Potential vulnerabilities}: what an attacker might be able to gain
 \end{itemize}
@@ -59,7 +59,7 @@ Specification of the threats that a system is protexted against:
 
 \subsubsection{Attacks on Memory to Compromise Integrity}
 y
-\begin{parag}{Dynamix Random-Access Memory}
+\begin{parag}{Dynamic Random-Access Memory}
     \begin{itemize}
 		\item DRAMs are the densest (and thus cheapest) form of random-access semiconductor memory
 		\item DRAMs store \important{information as charge in small capacitors} part of the memory cell
@@ -67,12 +67,18 @@ y
 		\item Charge \important{leaks off} THE capacitors due to parasitic resistances \textrightarrow every DRAM cell needs a \important{periodic refresh} (e.g., every 60ms) lest it forgets information.
     \end{itemize}
 \end{parag}
+\begin{center}
+\includegraphics[scale=0.3]{screenshots/2026-02-07_4.png}
+\end{center}
 \begin{parag}{Apparently only a Reliabilty Issue}
     \begin{itemize}
 		\item To increase density (i.e., reduce cost) memory cells have becom incredibly small ( \textrightarrow \important{small storage capacitance, smaller noise margine}) and word line go extremely clode to each other (\textrightarrow \important{larger crosstalk capacitive coupling})
 		\item Frequent \important{activation of word lines} neighbouring particular cells between refreshes may \important{flip the cell states} due to various forms of capacitive coupling
 		\item \important{Disturbance errors} have been known design issue of DRAMs sinve ever, but failure in commercial DD3 chips was demonstrated in 2014
     \end{itemize}
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_5.png}
+	\end{center}
     \begin{center}
         Rowhammer
     \end{center}
@@ -92,6 +98,9 @@ codela:
 		\item Repeat as quickly as possible
 	\end{itemize}
 	
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_6.png}
+	\end{center}
 	
 \end{parag}
 
@@ -100,16 +109,16 @@ codela:
 
 
 \begin{parag}{An opportunity for Attacks}
-    Rowhammer effectively violates memory protection (“if I can read, I can also write”)
+    Rowhammer effectively \important{violates memory protection} (“if I can read, I can also write”)
 which is a key ingredient to privilege separation across processes.\\
 
 By accessing locations in neighbouring rows one could gain unrestricted memory
 access and privilege escalation
 
 \begin{itemize}
-    \item Allocate large chunks of memory, try many addresses, learn weak cells
+    \item Allocate large chunks of memory, try many addresses, \important{learn weak cells} 
 	\item Release memory to the OS
-	\item  Repeatedly map a file with RW permissions to fill memory with page table entries (PTEs)
+	\item  Repeatedly map a file with RW permissions to \important{fill memory with page table entries (PTEs)}
 	\item Use Rowhammer to flip (semirandomly) a bit in one of these PTEs; it will now point to the wrong physical page
 	\item Chances are that this physical page contains PTEs too, so now accessing that particular mapping of the file (RW) actually modifies the PTEs, not the file
 	\item  Attacker can arbitrarily change PTEs and memory protection is gone
@@ -129,6 +138,9 @@ Not that simple in practive, tons of difficulties, but people managed to make it
 			\item Read content (password, secret keys)
 		\end{itemize}
     \end{itemize}
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_7.png}
+	\end{center}
 \end{parag}
 
 
@@ -226,7 +238,7 @@ Copy code
         \item One of the oldest and most powerful microarchitectural side channels
         \item Known since the early 1990s, fully demonstrated in 2005
         \item Cache state is shared but not architecturally visible
-        \item Attackers distinguish cache hits and misses via high-resolution timing
+        \item Attackers distinguish cache hits and misses via high-resolution timing measurement (e.g., processor cycles)
     \end{itemize}
 \end{parag}
 
@@ -253,6 +265,27 @@ Copy code
         \item Better control over noise
         \item Works without shared memory
     \end{itemize}
+\end{parag}
+
+\begin{parag}{Candidate Scores}
+	Many attacks to \important{cryptographic algorithms} involve trying multiple plaintexts and/or key hypotheses and distinguishing between most likely and least likely over many attempts
+	\begin{center}
+	\includegraphics[scale=0.3]{screenshots/2026-02-07_8.png}
+	\end{center}
+    
+\end{parag}
+\begin{parag}{Asynchronous Attacker and Victim}
+    The attacker runs in a \important{virtual machine} and the victim in \important{another one}, so no synchronization possible
+	\begin{itemize}
+		\item The example is here a \important{Flush+Reload} attack, similar to Prime+Probe but uses the \texttt{clflush} instruction of x86 to evict a specific cache line and \important{depends on virtual machine page deduplication} (if two users load the same executable or libraries, only one is kept in memory)
+			\begin{itemize}
+				\item Attacker and victim use different virtual addresses in different virtual machines, but the \important{physical address is the same}
+			\end{itemize}
+		\item \important{Tracks accesses to code} to infer the internal state of the victim
+	\end{itemize}
+	\begin{center}
+	\includegraphics[scale=0.4]{screenshots/2026-02-07_9.png}
+	\end{center}
 \end{parag}
 
 
@@ -308,4 +341,13 @@ Copy code
         \item The attacker recovers the secret via a cache attack
     \end{itemize}
 \end{parag}
+
+
+\section{Conclusions}
+\begin{itemize}
+	\item There is a large \important{catalogue of powerful primitive attacks} exploiting microarchitectural state
+	\item Real attacks are a \important{composition of primitives} (A \textrightarrow B \textrightarrow C ...)
+	\item Fairly \important{difficult to fight} them comprehensively, without hardware support, and without a serious loss of performance
+\end{itemize}
+
 
