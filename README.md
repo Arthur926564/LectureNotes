@@ -30,7 +30,7 @@ I stoped taking notes in FDS during the semester because of the enormous quantit
 
 ### Bachelor semester 3
 for this course (which has the same number of schemas as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used a [grim](https://github.com/emersion/grim) on arch linux.
-- [Computer_Architecture_Prof_Paulo_Ienne.pdf](https://github.com/user-attachments/files/25152190/main.pdf) - Prof. Paulo Ienne
+- [Computer_Architecture_Prof_Paulo_Ienne.pdf](https://github.com/user-attachments/files/25180760/Computer_Architecture_Notes.pdf) - Prof. Paulo Ienne
 
 
 ### Contributing
