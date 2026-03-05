@@ -1,0 +1,278 @@
+
+\section{Review of Complex number $\mathcal{C}$}
+
+\begin{parag}{Imaginary unit}
+    As seen in previous class, we define $i$ the \important{imaginary unit} such that:
+	\begin{align*} i^2 = -1 \end{align*}
+	We also define $z \in \mathcal{C}$ as:
+	\begin{align*} z = x + iy \mathspace \mathspace x, y \in \mathbb{R} \end{align*}
+	Furthemore:
+	\begin{align*} 
+		x &= \text{Re}z \mathspace \text{real part}\\
+		y &= \text{Im}z \mathspace \text{imaginary part}
+	\end{align*}
+\end{parag}
+The field $\mathcal{C}$ can by fully mapped to $\mathcal{R}^2$, what this means is that every element in $\mathcal{C}$ can be directly 'translated' to $ \mathbb{R}^2$.
+
+\begin{parag}{Complex Conjugate}
+    \begin{definition}
+    Let us define the complex conjugate of $z$ as:
+	\begin{align*} \overline{z} = x - iy  \end{align*}
+    \end{definition}
+\end{parag}
+\begin{parag}{Absolute Value}
+    \begin{definition}
+    The absolute value (modulus) is defined as:
+	\begin{align*} | z | = \sqrt{x^2 + y^2} \end{align*}
+    \end{definition}
+	\begin{subparag}{Intuition}
+	    The reason for this definition really comes from pythagoras theorem and the norm in $\mathcal{R}^2$.
+	\end{subparag}
+	Furthemore $| z_0 - z_1| = d\left(z_0, z_1\right)$ (the distance between those two number).\\
+	We can define domain in $\mathcal{C}$ as:
+	\begin{align*} \{z \in \mathcal{C}: |z - 1| < 1\} \end{align*}
+	Which is the disk centered in $z = 1$ of radius $1$.
+\end{parag}
+
+\begin{parag}{Euler's Formular}
+    \begin{definition}
+    For $\theta \in \mathbb{R}$:
+	\begin{align*} e^{i\theta} = \cos \theta + i \sin \theta  \end{align*}
+    \end{definition}
+	So $e^{i\theta}$ lies on the unit circle arond $z = 0$ (because $|e^{i\theta}| = 1$)
+	\begin{definition}
+	The Complex conjugate of the euler formula is defined as:
+	\begin{align*} \overline{e^{i\theta}} &= \overline{\cos \theta + i\s\in\theta} \\
+		&= \cos \theta - i \sin \theta\\
+		&= \cos(-\theta) + i \sin\left(-\theta\right)\\
+		&= e^{-i\theta}
+	\end{align*}
+	\end{definition}
+	\begin{subparag}{Geometric intuition}
+	    What happens when doing the complex conjugate (if we see $\mathcal{C}$ as a plan in $ \mathbb{R}^2$) is a symmetry aroung the $x$ axis.
+	\end{subparag}
+\end{parag}
+
+
+
+
+
+\begin{parag}{Algebraic Operations}
+    Let $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$ we have the followings:
+		 \begin{align*} 
+				z_1 + z_2 &= \left(x_1 + iy_1\right) + \left(x_2 + iy_2\right)\\
+						  &= \left(x_1 + x_2\right) + i \left(y_1 + y_2\right)
+			\end{align*}
+		 \begin{align*} 
+				z_1 - z_2 = \left(x_1 - x_2\right) + i \left(y_1 - y_2\right)
+			\end{align*}
+		\begin{align*} 
+			z_1 \cdot z_2 &= (x_1 + iy_1) \cdot \left(x_2 + iy_2\right)\\
+						  &= x_1x_2 - y_1y_2 + i\left( y_1x_2 + x_1y_2\right)
+		\end{align*}
+	\begin{align*} 
+		z \cdot  \overline{z} = x^2 + y^2 = |z|^2 \in \mathbb{R}
+	\end{align*}
+		\begin{align*} 
+			\frac{z_1}{z_2} &= \frac{\overline{z_2}z_1}{\overline{z_2}z_2}\\
+							&= \frac{\overline{z_2}z_1}{|z_2|^2} \mathspace \text{ if } z_2 \neq 0
+		\end{align*}
+	
+\end{parag}
+
+
+
+\begin{parag}{Polar coordinates}
+	\begin{itemize}
+		\item If $z \in \mathbb{C}$ then $z =  |z|e^{i\theta}$ for some $\theta \in \mathbb{R}$.
+		\item This also means that $z^{k} =  |z|^{k}e^{ik\theta}$ for $k \in \mathbb{Z}$
+	\end{itemize}
+
+	Let us define now our two complex numbers in polar coordinates $z_1 = |z_1|e^{i\theta_1}, z_2 = |z_2|e^{i\theta_2}$. If we want to apply algebraic operations defined previously to our new notation we would have:
+	\begin{align*} z_1 \cdot  z_2 &= |z_1||z_2| e^{i\left(\theta_1 + \theta_2\right)} \end{align*}
+	Dividing our two numbers really comes down to multiply by the inverse which is defined as $z_2^{-1} = \frac{1}{|z_2|}e^{-i\theta_2}$
+
+	Lastly:
+	\begin{align*} z_1 = z_2 \iff |z_1| = |z_2| \land \theta_1 - \theta_2 =  2\pi \cdot  k, \mathspace k \in \mathbb{Z}  \end{align*}
+	\begin{subparag}{Geometric Intuition}
+	    Multiplication by $e^{i\theta_0}$ corresponds to a rotation by an angle $\theta_0$.
+	\end{subparag}
+\end{parag}
+	\begin{parag}{Principal argument}
+	    \begin{definition}
+			Let $z = |z|e^{i\theta} \in \mathbb{C}$, the principal argument is $] \theta' \in -\pi, \pi]$  such that:
+			\begin{align*} z = |z|e^{i\theta'} \end{align*}
+	    \end{definition}
+	\end{parag}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[scale=1.25]{figure/complex.pdf}
+		\caption{Polar representation}
+	\end{figure}
+\begin{parag}{Example}
+    Let us try to solve the following equation:
+	\begin{align*} z^5 = 2 \end{align*} 
+	To do so let us write our number $z$ into polar coordinate: $z = |z|e^{i\theta}$. If we insert our number into our equation we have:
+	\begin{align*} 
+		2 &= |z|^{5}e^{i5\theta}
+	\end{align*}
+	As $|e^{i5\theta}| = 1$ we have that 
+	\begin{align*} 2 = |z|^{5} \implies |z| = 2^{\frac{1}{5}} \end{align*}
+	And as $2$ is a real number this implies that $5\theta = 2\pi k \implies \theta =  \frac{2\pi k}{5}$ where $k \in \mathbb{Z}$ and if we want to take the principal arguements, we have as solution:
+	\begin{align*} \theta \in \{-\frac{4\pi}{5}, -\frac{2\pi}{5}, 0, \frac{2\pi}{5}, \frac{4\pi}{5}\} \end{align*}
+	More generally, a $k$-th order equation will gives us $k$ solutions.
+\end{parag}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{figure/2026-02-22.pdf}
+	\caption{Solution of $z^{5} = 2$}
+	\end{figure}
+
+
+\section{Complex Functions}
+\begin{definition}
+	We call $f$ a complex function as:
+	\begin{align*} 
+		f : \mathbb{C} \to \mathbb{C} \\
+		z \mapsto f(z) &= f(x + iy)\\
+					   &= u(x, y) + iv\left(x, y\right)
+	\end{align*}
+	In particular we have $u, v : \mathbb{R}^2 \to \mathbb{R}$
+\end{definition}
+A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$. As said before we can always map a complex number to a number in $ \mathbb{R}^2$. By 'splitting' our function into to  two sub-functions $u, v$ which map to $ \mathbb{R}$. We effectively transformed our function $f : \mathbb{C} \to \mathbb{C}$ into two sub function that goes from $ \mathbb{R}^2 \to \mathbb{R}$ which therefore point to $ \mathbb{R}^2$ (if we replaced the 1 by a unit vector, and $i$ as another unit vector).
+
+
+\begin{parag}{Examples}
+    First let us see the simplest example, the \important{unit} function: $f\left(z\right)a=  z =  x + iy$. In this case we can easily see that 
+	\begin{align*} u(x, y) = x \mathspace \mathspace v\left(x, y\right) =  y \end{align*}
+	A bit more sophisticated function could be for instance: $f\left(z\right) =  \overline{z} = x - iy$. Which gives us:
+	\begin{align*} 
+		u\left(x, y\right) =  x \mathspace \mathspace v\left(x, y\right) =  -y
+	\end{align*}
+	If we take the square we have $f\left(z\right) =  z^2 =  \left(x + iy\right)^2 = \left(x^2 - y^2\right) + i2xy$\\
+
+	In all of those expression we can easily see where our function $u$ and $v$ are. But is it always the case?
+\end{parag}
+
+
+\begin{parag}{Trigonometric Functions}
+    \begin{align*} \cos z = \frac{e^{iz} + e^{-iz}}{2} \end{align*}
+	\begin{align*} \sin z = \frac{e^{iz} - e^{-iz}}{2i} \end{align*}
+	\begin{framedremark}
+	We have already seen the same concept in Analysis III. We use a lot those definition when dealing with Fourrier series. (with odd/even series)
+	\end{framedremark}
+	\begin{align*} 
+		\cosh z =  \frac{e^{z} + e^{-z}}{2}
+	\end{align*}
+	\begin{align*} 
+		\sinh z = \frac{e^{z} - e^{-z}}{2}
+	\end{align*}
+	The rigorous definition of $e^{z}$ is by the taylor series. One should more see it as $\exp$ being \important{defined} by the taylor serie and not the other way around. there is a great video about the definition of the exponential by 3blue1brown.
+\end{parag}
+
+\subsection{Limit and Continuity}
+
+\begin{definition}
+We say $f: \mathbb{C} \to \mathbb{C}$ is \important{continuous} at a point $z_0 \in \mathbb{C}$ if $\forall \epsilon > 0 $ there exists $\delta > 0 $ such that $\forall z \in \mathbb{C}$ with $\left\|z - z_0\right\| \leq \delta$ we have:
+\begin{align*} \left\|f\left(z\right) - f\left(z_0\right)\right\| \leq \epsilon \end{align*}
+Equivalently:
+\begin{align*} \lim_{z \to z_0} f\left(z\right) =  f\left(z_0\right) \end{align*}
+\end{definition} 
+\begin{framedremark}
+This definition is directly mapped to the one seen in Analysis II. What we are really doing here in fact is the limit of our function the same way as we would have done in $ \mathbb{R}^2$. If we develop this:\\
+    Let $f\left(z\right) = f\left(x + iy\right) =  u\left(x, y\right) + iv\left(x, y\right)$ then $f$ is continuous at $z_0 = x_0 + y_0i$ if and only if $u$ and $v$ are continuous at $\left(x_0, y_0\right)$ 
+\end{framedremark}
+\begin{parag}{Operation on Continuous Function}
+    If $f, g$ are continuous function then the same is true for:
+	\begin{itemize}
+		\item $f+ g$
+		\item $f \cdot  g$
+		\item $\overline{f}$
+		\item $f \circ g$
+		\item $\vdots$
+	\end{itemize}
+	
+\end{parag}
+
+
+\subsection{Complex Derivative}
+
+\begin{definition}
+	We say $f : \mathbb{C} \to \mathbb{C}$ is \important{complex differentiable}  at a point $z_0 \in \mathbb{C}$ if:
+	\begin{align*} \lim_{z \to z_0} \frac{f\left(z\right) - f\left(z_0\right)}{z - z_0} \text{ exists} \end{align*}
+	We denote this limit by $f'\left(z_0\right)$
+\end{definition}
+\begin{definition}
+If $f$ is differentiable at every point of an open set $\omega \subseteq \mathbb{C} $, we say $f$ is \important{holomorphic} on $\omega$.
+\end{definition}
+\begin{definition}
+If $f$ is holomorphic on $\mathbb{C}$, we call f \important{entire}.
+\end{definition}
+
+
+\begin{framedremark}
+The same rules of differentiation of products (product rule, Leibniz rule), Compositions (chain rule), etc. are as in the real case.
+\end{framedremark}
+
+\paragraph{Recall on topology}%
+\label{par:Recall on topology}
+\begin{parag}{Open set}
+	\begin{definition}
+	$\omega \subseteq \mathbb{C}$ is \important{open} if for all $z_0 \in \omega$, there exists $\Gamma > 0$ such that the disk $D_\Gamma\left(z_0\right) =  \left\{z \in \mathbb{C}: \left\|z - z_0\right\| < r\right\} \subseteq \omega$
+	\end{definition}
+    \begin{subparag}{Examples}
+        \begin{itemize}
+			\item $\mathbb{C}$ is open
+			\item $\mathbb{C}^{\ast} =  \mathbb{C}\setminus \left\{0\right\}$ is open
+			\item $\left\{z \in \mathbb{C} : \text{Re}< \geq 0\right\}$ is \textcolor{red}{not} open 
+        \end{itemize}
+    \end{subparag}
+\end{parag}
+
+
+
+
+\begin{parag}{Examples of Differentiation}
+    Let $f\left(z\right) = z$ our goal is to compute the derivative of $f$ for all $z_0 \in \mathbb{C}$. By the definition:
+	\begin{align*} 
+		f'\left(z_0\right) =  \lim_{z \to z_0} \frac{z - z_0}{z - z_0} =  1
+	\end{align*}
+	In particular, $f$ is (holomorphic and) entire.
+
+	Let us try a little more sophisticated example. Let $f\left(z\right) =  \frac{1}{z}$. For all $z_0 \in \mathbb{C}^{\ast}$:
+	\begin{align*} 
+		f'\left(z_0\right) = -\frac{1}{z_0^2}
+	\end{align*}
+	So $f$ is holomorphic on $\mathbb{C}^{\ast}$ but not entire.
+\end{parag}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
