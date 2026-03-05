@@ -1,0 +1,441 @@
+\subsection{Classification Metric}
+The goal now is to understand what is our model \important{behavior}. Now necessarly if it guesses correctly but also how.
+
+\begin{parag}{Classification evaluation}
+	We can first define the \important{confusion matrix} in the binary case (e.g., spam vs non-spam email):
+	 \begin{center}
+	 \begin{tabular}{|c|c|c|}
+		\hline
+	 	& Pos & Neg  \\
+		\hline
+		\hline
+	 	Yes & TP & FP \\
+		\hline
+	 	No & FN & TN \\
+		\hline
+	 	   & P = TP + FN & N = FP + TN \\
+		\hline
+	 \end{tabular}
+	 \end{center}
+	 Where:
+	 \begin{itemize}
+	     \item TP: True positive (number of samples correctly classified as positive)
+	     \item FP: False positive (number of samples incorrectly classified as positive)
+	     \item TN: True negative (number of sample correctly classified as negative)
+	     \item FN: False negative (number of sample incorrectly classified as negative)
+	 \end{itemize}
+	 Using this confusion matrix, we can study further the result of our model.
+\end{parag}
+\begin{parag}{Example}
+    Let us use a numerical example for a dataset with 500 positive and 500 negative samples:
+
+	 \begin{center}
+	 \begin{tabular}{|c|c|c|}
+		\hline
+	 	& Pos & Neg  \\
+		\hline
+		\hline
+	 	Yes & 200 & 100 \\
+		\hline
+	 	No & 300 & 400 \\
+		\hline
+	 	   & P =  500 & N = 500 \\
+		\hline
+	 \end{tabular}
+	 \end{center}
+	 Given this matrix, what we can first compute is the \important{accuracy}:
+	 \begin{align*} 
+		 \text{Acc} = \frac{TP + TN}{P + N}
+	 \end{align*}
+	 In our example we have:
+	 \begin{align*} 
+		 \text{Acc} = \frac{200 + 400}{500 + 500} = 0.6
+	 \end{align*}
+	 But is it enough? Not really let two classifiers:
+\end{parag}
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+	 \begin{center}
+	 \begin{tabular}{|c|c|c|}
+		\hline
+	 	& Pos & Neg  \\
+		\hline
+		\hline
+	 	Yes & 200 & 100 \\
+		\hline
+	 	No & 300 & 400 \\
+		\hline
+	 	   & P =  500 & N = 500 \\
+		\hline
+	 \end{tabular}
+	 \end{center}
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+	 \begin{center}
+	 \begin{tabular}{|c|c|c|}
+		\hline
+	 	& Pos & Neg  \\
+		\hline
+		\hline
+	 	Yes & 400 & 300 \\
+		\hline
+	 	No & 100 & 200 \\
+		\hline
+	 	   & P =  500 & N = 500 \\
+		\hline
+	 \end{tabular}
+	 \end{center}
+\end{minipage}
+\end{center}
+\begin{parag}{$ $}
+    The two classifiers (matrices) above yield the same accuracy but their behavior is very different:
+	\begin{itemize}
+		\item Left: Weak positive recognition rate, but strong negative recognition rate
+		\item Right: Strong positive recognition rate, but weak negative recognition rate
+	\end{itemize}
+	Another classification metrics we can compute is called \important{Precision}: the percentage of samples classified as positives that are truly positives:
+	\begin{align*} 
+		\text{Precision} = \frac{TP}{TP + FP}
+	\end{align*}
+	In our previous example, this would give us:
+	\begin{align*} 
+		\text{Precision} = \frac{200}{200 + 100} = 0.667
+	\end{align*}
+	(ekip)\\
+	$ $\\
+	Another metric is called \important{Recall}: the percentage of positive samples that are correctly classified as positives:
+	\begin{align*} 
+		\text{Recall} = \frac{TP}{P}
+	\end{align*}
+	In our example:
+	\begin{align*} 
+		\text{Recall} = \frac{200}{200 + 300} = 0.4
+	\end{align*}
+	But still even with those metrics, we can still have different behavior and same metrics:
+	let us take the two followings:
+\end{parag}
+\begin{minipage}{0.45\textwidth}
+	 \begin{center}
+	 \begin{tabular}{|c|c|c|}
+		\hline
+	 	& Pos & Neg  \\
+		\hline
+		\hline
+	 	Yes & 200 & 100 \\
+		\hline
+	 	No & 300 & 400 \\
+		\hline
+	 	   & P =  500 & N = 500 \\
+		\hline
+	 \end{tabular}
+	 \end{center}
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+	 \begin{center}
+	 \begin{tabular}{|c|c|c|}
+		\hline
+	 	& Pos & Neg  \\
+		\hline
+		\hline
+	 	Yes & 200 & 100 \\
+		\hline
+	 	No & 300 & 0 \\
+		\hline
+	 	   & P =  500 & N = 100 \\
+		\hline
+	 \end{tabular}
+	 \end{center}
+\end{minipage}
+\end{center}
+\begin{parag}{$ $}
+    In this case, the two classifiers (matrices) above yield the same precision and recall (0.667 and 0.4) (the datasets are different). But in this case their behavior is very different. Accuracy in this case would be able to show the different behavior. The goal of this example is to show that the more metrics you have the better your intepretation of the  model you will get
+\end{parag}
+\begin{parag}{Other metrics}
+    \important{False positive rate}: percentage of negative samples that are incorrectly classified as positive:
+	\begin{align*} 
+		\text{FP rate} = \frac{FP}{N}
+	\end{align*}
+	\important{F1 score}: single number that combines precision and recall:
+	\begin{align*} 
+		F1 = 2 \cdot \frac{\text{Precision} \cdot  \text{Recall}}{\text{Precision} + \text{Recall}}
+	\end{align*}
+\end{parag}
+\begin{parag}{ROC curve}
+    Many classifiers output a score/confidence for their prediction (e.g., $\hat{y}$ is a continuous value between $0$ and $1$ in logistic regression)\\
+	$ $\\
+	The decision between positive and negative can be computed by thresholding this score:
+	\begin{align*} 
+		\text{label}_i = 1 \text{ if } \hat{y}_i \geq \tau
+	\end{align*}
+	Where $\tau$ is a given threshold.\\
+	$ $\\
+	The Receiver Operating Characteristic (ROC) curve plots the true positive rate (recall) as a function of the false positive rate, obtained by varying the score threshold
+	\begin{framedremark}
+	Remember to put graph here as an example (slide 26)
+	\end{framedremark}
+	The Area Under the ROC Curve (AUC) can act as a metric:
+	\begin{itemize}
+		\item The maximum AUC is $1$
+		\item Random predictions give an AUC of 0.5
+	\end{itemize}
+	
+\end{parag}
+
+
+\subsection{From binary to multi-class classification}
+So far, three methods we have studied can only handle two calsses: positive vs negative.\\
+$ $\\
+In general, one would typically like to disciminate between more than two categories. E.g., for image recognition. Let us now see how our three linear methods can handle this sceniario (we will start with least-square classification)
+\begin{parag}{least-square classification}
+    In essence, least-square classification treats the problem as a regression task\\
+	\begin{itemize}
+		\item The model predicts a continuous value $\hat{y} = w^{\left(0\right)} + w^{\left(1\right)}x$
+		\item There is nothing that explicitly makes this value stop at 1, so we could continue the line further
+	\end{itemize}
+	The simplest way to go from binary case to handling multiple classes would then be to use one integer value for each category. (we then round the prediction of the model to the nearest integer to obtain the predicted class value).\\
+	$ $\\
+	This, however makes no sense, there is \important{no natural} order between the different categories
+\end{parag}
+\begin{parag}{Dealing with multiple classes}
+    The most common approach to modeling a multi-class problem consists of encoding the class label as a vector with a single $1$ at the index corresponding to the category and os elsewhere
+	\begin{subparag}{Intuition}
+	    We can see it as each label is a dimension in $\mathbb{R}^{D}$. A good classifier would then output a vector (as a guess) and this vector needs to have the same direction (or at least, around) the label.
+	\end{subparag}
+	This is referred to as one-hot encoding (or 1-of-C encoding)
+\end{parag}
+\begin{parag}{Multi-ouput linear model}
+    Predicting such a one-hot encoding is then similar to making the model output multiple values, as we saw for multi-ouput regression.\\
+	$ $\\
+	We therefore again use a matrix $W \in R^{\left(D + 1\right)\times C}$ such that:
+	\begin{align*} 
+		\hat{y}_i  = W^{T}x_i = \begin{pmatrix} w_{\left(1\right)}^{T} \\ w_{\left(2\right)}^{T} \\ \vdots \\ w_{\left(C\right)}^{T} \end{pmatrix} x_i
+	\end{align*}
+	multi-class classification is then similar to a multi-output regression problem:\\
+	$ $\\
+	We can then write training as:
+	\begin{align*} 
+		\min_W \sum_{i= 1}^{N} ||W^{T}x_i - y_i||^2
+	\end{align*}
+	where each $y_i$ is now a $C$-dimensional vector with a single one at the index corresponding to the class label, and zeros everywhere else.
+
+	\begin{framedremark}
+	You can also see it has $C$ dependant binary classifier. You can seperate each $w_{\left(i\right)}^{T}$ and train them independetly and there rejoined them into $W$ and you would get the same result. (In the case of the square loss)
+	\end{framedremark}
+	The solution has the same form as in the regression case (obtained by zeroing out the gradient w.r.t. $W$), i.e.,
+	\begin{align*} 
+		W^{\ast} = \left(X^{T}X\right)^{-1}X^{T}Y =  X^{\dagger}Y
+	\end{align*}
+	Given the optimal paramters, the prediction for a new sampel is computed as:
+
+	\begin{align*} 
+		\hat{y} = \left(W^{\ast}\right)^{T}x
+	\end{align*}
+	The sample is then assigned to class $k$ is:
+	\begin{align*} 
+		\hat{y}^{\left(k\right)} > \hat{y}^{\left(j\right)}, \forall j \neq k
+	\end{align*}
+	Or in other words the final label $k$ is obtained as:
+	\begin{align*} 
+		k = \text{arg}\max_j \hat{y}^{\left(j\right)}
+	\end{align*}
+
+\end{parag}
+\subsection{Decision Boundary}
+
+\begin{parag}{$ $}
+	\begin{subparag}{Remark}
+	    This following applies to all linear classification models, not just least-square classification.
+	\end{subparag}
+\end{parag}
+\begin{parag}{Decision boundaries}
+    \begin{definition}
+    The decision boundary between two calsses $k$ and $j$ is defined as the set of points $x$ such that $\hat{y}^{\left(k\right)}\left(x\right) = \hat{y}^{\left(j\right)}\left(x\right)$
+    \end{definition}
+	This corresponds to the $\left(D - 1\right)$ dimensional hyperplane
+\end{parag}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.35\textwidth]{figure/2026-03-05.pdf}
+\caption{Decision boundary}
+\end{figure}
+The binary case is a special case of this definition.
+
+\begin{parag}{$ $}
+	A nice feature of those boundaries is that they are \important{convex}, a set $S$ is said convex if for any pair of point $x, y \in S$ and any $\lambda \in \left[0, 1\right]$ we have that 
+	\begin{align*} 
+		\lambda x +  (1 - \lambda)y \in S
+	\end{align*}
+	Which means that the segment between $x$ and $y$ is a subset of $S$.\\
+\end{parag}
+\begin{parag}{Decision Boundaries for $C > 3$ classes}
+    For 1 and 3 this is quite intuitive but what happens when we have 4 classes, if we take the following data set: (put an image here)
+	We would get this as decision boundary.
+\end{parag}
+
+
+
+
+\begin{parag}{Example of least-square classification}
+    Remember to put both the failure and the good case
+\end{parag}
+
+
+
+\begin{parag}{Multi-class least-square classification: Drawbacks}
+    As in the binary case, multi-class least-square classification suffers from the fact that the loss function does not reflect the underlying classification task.\\
+	$ $\\
+	In the binary case, we addressed this by adding a nonlinearity to the output of the linear model bia the logistic function, leading to logistic regression. Maybe there is a better way to extends this to the multi-case scenario???
+\end{parag}
+
+\subsection{Multi-class logistic regression}
+    As in the least-square classification case, we can use one-hot encodings to represent multi-class labels\\
+	$ $\\
+	Then, we again need to use a matrix $W \in \mathbb{R}^{\left(D + 1\right) \times C}$ to represent the model parameters.\\
+	$ $\\
+	In this case, the probability for a class $k$ is given by the softmax function:
+	\begin{align*} 
+		\hat{y}^{\left(k\right)}\left(x\right) = \frac{\exp\left(w_{\left(k\right)}^{T}x\right)}{\sum_{j= 1}^{C}\exp\left(w_{\left(j\right)}^{T}x\right)}
+	\end{align*}
+
+	\begin{parag}{Multi-class logistic regression}
+	    The emprical risk can then be derived from the multi-class version of the cross entropu, which yeald:
+		\begin{align*} 
+			R\left(W\right) = -\sum_{i= 1}^{N}\sum_{k= 1}^{C}\hat{y}_i^{\left(k\right)}\ln\hat{y}_i^{\left(k\right)}
+		\end{align*}
+		As in the binary case, a single $y_i^{\left(k\right)}$ is $1$ for every sample $i$, so we really have one term per training sample. And also as in the binary case, training is done by minimizing this emprical risk using gradient descent.
+	\end{parag}
+	\begin{parag}{Gradient for multi-class logistic regression}
+		By following the chain rule and using the gradient of the softmax function, we can derive the gradient of the multi-class cross-entropy as (details in Bishop Chap. 4.3.4):
+		\begin{align*} 
+			\nabla_W R\left(W\right) = \sum_{i = 1}^{N}x_i\left(\hat{y}_i - y_i\right)^{T}
+		\end{align*}
+	    We have the same intuition as in the binary case, we multiply the error by the input.
+	\end{parag}
+	\begin{parag}{Prediction}
+	    In order to predict, given a new input sample $x$, the probability/score for any class $k$ is computed via the softmax function as:
+		\begin{align*} 
+			\hat{y}_i^{\left(k\right)}\left(x\right) = \frac{\exp\left(\left(w_{\left(k\right)}^{\ast}\right)^{T}x\right)}{\sum_{j= 1}^{C}\exp\left(\left(w_{\left(j\right)}^{\ast}\right)^{T}x\right)}
+		\end{align*}
+		The final class label is then predicted as:
+		\begin{align*} 
+			k =  \text{arg}\max_j \hat{y}^{\left(j\right)}\left(x\right)
+		\end{align*}
+		Remember to put screenshot slide 53
+	\end{parag}
+
+\subsubsection{Evaluation metrics for multi-class classification}
+As in the binary case, we can compute a confusion matrix which is pretty intuitive, for instance here with 3 classes (UCI Iris dataset)
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	& Iris-setosa & Iris-versicolor & Iris-virginica \\
+	Iris-setosa & 12 & 1 & 1 \\
+	Iris-versicolor & 0 & 16 & 0 \\
+	Iris-virginica & 0 & 1 & 16
+\end{tabular}
+\end{center}
+Where the row are the Actual and the collumn are the predicted value. This means that we have only once predicted Iris-versicolor when in fact it was a Iris-setosa
+
+
+\begin{parag}{Metrics for multi-class problems}
+    We still have the \important{Accuracy} and the \important{recall}, \important{FP-rate} and \important{F1-score}
+	\begin{subparag}{Accuracy}
+	    A gloval accuracy can be obtained by summing the correct predictions for all classes (diagonal values of the confusion matrix), and dividing this by the total number of samples (sum of all entries in the confusion matrix)
+	\end{subparag}
+	\begin{subparag}{Precision, recall, FP-rate, F1-score}
+	    The simplest approach to handling these metrics is to compute them for each individual class, and then average over the classes\\
+		$ $\\
+		In this case, each individual class is in turn considered as the '\textit{positive}' calss while the others act as the '\textit{negative}' clas\\
+		$ $\\
+		This does not account for class imbalance (some classes may have many more samples than others; more about this in future lecture)\\
+		$ $\\
+		This can be handled by weighting the metric for each class by a value depending on the proportion of samples from that class
+	\end{subparag}
+\end{parag}
+
+
+So far, we have only seen how to extend binary least-square classification and binary logistic regression to the multi-class scenario. How about SVM? Unfortunately, there is no ideal solution to handle multiple classes in SVM. Instead, one typically relies on one of the two solution described next.
+\begin{parag}{First solution}
+    A solution is to use several binary classifiers. E.g., one-vs-rest: Classify each individual category vs all the other ones jointly
+	\begin{center}
+	\includegraphics[width=0.35\textwidth]{figure/2026-03-05_1.pdf}
+	\end{center}
+	This however, leaves ambiguities (e.g., sample can be classified as being from both calss 1 and class 2)
+\end{parag}
+
+\begin{parag}{Second solution}
+	We can only train it as one-vs-one: train one classifier for every pair of classes. With this technique we can output one class for each input:
+	\begin{center}
+	\includegraphics[width=0.4\textwidth]{figure/2026-03-05_2.pdf}
+	\end{center}
+	This also may result in inconsistencies (e.g., a sample can be classified as being from class 1, class 2 and class 3)
+\end{parag}
+
+\begin{parag}{Comparing linear classifiers}
+    We have now seen 3 different linear (multi-class) classifiers:
+	\begin{itemize}
+		\item least-square classification
+		\item logistic regression
+		\item SVM
+	\end{itemize}
+	In practice, one almost never uses the least-square one. It does not reflect the underlying classification task, but is useful from a pedagogical standpoint. But so which one is the best?
+\end{parag}
+\begin{parag}{Comparison on the Iris dataset}
+    UCI Iris dataset:
+	\begin{itemize}
+	    \item 150 samples
+	    \item 4 attributes (petal and sepal length and width)
+	    \item 3 iris species
+	\end{itemize}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		 & Accuracy & training time & testing time \\
+		\hline
+		\hline
+		SVM, linear & 88.0 \% & 0.006s & 0.002s \\
+		\hline
+		Logistic regression (C = 1) & 88.0 \% & 0.011s & 0.0001s \\
+		\hline
+		Logistic regression (C = 1000) & 92.00\% & 0.0010s & 0.002s \\
+		\hline
+	\end{tabular}
+	\end{center}
+	The value $C$ is a hyper-parameter encoding 'regularization' strength. We will talk about this in a future lecture; let's ignore it for now.
+\end{parag}
+\begin{parag}{Comparing on the MNIST dataset}
+    MNIST handwritten digit recognition dataset:
+	\begin{itemize}
+		\item 60'000 training samples, 10'000 test samples
+		\item 28 $\times$ 28 images
+		\item 10 digits, 0, \ldots, 9
+	\end{itemize}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		 & Accuracy & training time & testing time \\
+		\hline
+		\hline
+		SVM, linear & 94.16 \% & 168.6950s & 158.0101s \\
+		\hline
+		Logistic regression (C = 1) & 91.47 \% & 272.1309s & 0.0531s \\
+		\hline
+		Logistic regression (C = 1000) & 91.23\% & 1807.0624s & 0.0529s \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+\end{parag}
+
+
+
+
+
+	
+	
+	
+	
+
