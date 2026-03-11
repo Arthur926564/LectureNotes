@@ -62,7 +62,7 @@ The goal of the loss function is to \important{measure} how \important{wrong} ou
 % --- True labels (right label column) ---
 \node[right=42mm of p1] (t1) {\Large Cat};
 \node[below=5mm of t1] (t2) {\Large Dog};
-\node[below=11mm of t2] (tvd) {\Large$\vdots$};
+\node[below=11mm of t2] (pvd) {\Large$\vdots$};
 
 % --- Loss arrow between predicted and true labels ---
 \draw[<->, very thick]
@@ -72,10 +72,6 @@ The goal of the loss function is to \important{measure} how \important{wrong} ou
 % Ellipses near the loss arrow ends (as in the figure)
 \node at ($(pvd.east)+(2mm,0)$) {\Large :};
 \node at ($(tvd.west)+(-2mm,0)$) {\Large :};
-
-% --- Optional: far-right "plot/image" block (bottom-right) ---
-\node[right=22mm of tvd, yshift=-22mm] (plot)
-{\includegraphics[width=2.25cm]{lossplot.jpg}};
 
 \end{tikzpicture}
 \end{center}
@@ -394,8 +390,11 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 
 
 \subsection{Iterative, Gradient-based optimization}
+The principle of gradient-based optimization and more generally iterative optimization is that: we have found a way to have a vetter solution based on a previous one. This means that if we iter on this 'way' a lot of time we will have like better(better(better $\left(\cdots(\text{base})\right)$)) which will give us not necessarly the best solution but a good enough solution.
+
+
 \begin{parag}{Minimizing a function}
-    With 1D function for which the soltuon cannot be computed in closed form, one can nonetheless use the derivative
+    With 1D function for which the solution cannot be computed in closed form, one can nonetheless use the derivative of this function to minimize it.
 	\begin{itemize}
 		\item Recall that it represents the slope at a given point, and thus indicates in which direction to move to reach a lower function value
 	\end{itemize}
@@ -410,10 +409,10 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 	The $\nu$ defines the step size of each iteration. (often called the learning rate)
 \end{parag}
 \begin{parag}{Convergence criteria}
-    This is nice but we still need so potential convergence criteria to be sure that our algorithm works effectively:
+    This is nice but we still need potential convergence criteria to be sure that our algorithm works effectively:
 	\begin{itemize}
-	\item Change in function values less than threshold: $\left\|R\left(w_{k-1} - R\left(w_k\right)\right)\right\| < \delta_R$
-	\item Change in parameter value less than threshold: $\left\|w_{k-1} - w_k\right\| < \delta_w$
+	\item Change in function values less than a given threshold: $\left\|R\left(w_{k-1} - R\left(w_k\right)\right)\right\| < \delta_R$
+	\item Change in parameter value less than a given threshold: $\left\|w_{k-1} - w_k\right\| < \delta_w$
 	\item Maximum number of iterations reached, Meaning that we have no guarantee to have reached the minimum
 	\end{itemize}
 	\begin{framedremark}
@@ -426,18 +425,18 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 		\item change in objective
 		\item change in parameters
 	\end{itemize}
-	These word well \important{because} the function is convex + smooth
+	Our current criteria work well \important{because} the function is convex + smooth
 	\end{framedremark}
-	When minimizing we have to be carefule about:
+	When minimizing we have to be careful about:
 	\begin{subparag}{Influence of $\nu$}
-	    Too large steps can lead our algorithm to start jumping around the 'solution' and oscillate till infinity. We are not able to have a magic formula to have a good $\eta$, each $\eta$ is problem-dependent.
+	    Too large steps can lead our algorithm to start jumping around the 'solution' and oscillates till infinity. We are not able to have a magic formula to have a good $\eta$, each $\eta$ is problem-dependent.
 	\end{subparag}
 	\begin{subparag}{Influence of the initial $w_0$}
 		Assuming that our function is convex, the algorithm will always converges to the same point. Choosing a good $w_0$ will still converge to the same point, but \important{faster}.
 	\end{subparag}
 \end{parag}
 \begin{parag}{Minimizing a non-convex function}
-    As in convex function, we can still use the same iterative algorithm as before. However this time. The output of our algorithm depends now on $w_0$. we can now be stuck at local minimum and at saddle point.
+    As in convex function, we can still use the same iterative algorithm as before. However this time. The output of our algorithm depends now on $w_0$. We can be stuck at local minimum and/or at saddle point.
 	\begin{subparag}{Remark}
 	    Note that this is problem-dependent and the values used here are very different from those used in the convex sample before.
 	\end{subparag}
@@ -449,7 +448,7 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 \end{parag}
 \begin{parag}{Recap: Properties of gradient}
 	\begin{itemize}
-    The gradient at a point $w$ has the direction of greatest increase of the function at $w$
+		\item The gradient at a point $w$ has the direction of greatest increase of the function at $w$
     \item Its magnitude is the rate of increase in that direction
 \end{itemize}
 \end{parag}
@@ -470,7 +469,7 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 	    \item Thresholding the change in paramters, e.g. $||w_{j-1} - w_k|| < \delta_w$
 	\end{itemize}
 \end{parag}
-\begin{parag}{Minmizing a non-convex function \\ Example: Sine- and Cosine based function of 2 variables}
+\begin{parag}{Minmizing a non-convex function  Example: sin, cos based function of 2 variables}
 	Let our function be:
 	\begin{align*} 
 		R\left(w\right) = \sin\left(w^{\left(0\right)}\right) + \cos\left(w^{\left(1\right)}\right)
@@ -512,7 +511,7 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
     domain=-6:6,
 ] ({5 + 0.22*x},
    {5 + 0.08*x},
-   {sin(deg(5 + 0.22*x)) + cos(deg(5 + 0.08*x))});
+   {sin(deg(5 + 0.22*x)) + cos(deg(5 + 0.20*x))});
 
 \end{axis}
 \end{tikzpicture}
@@ -525,7 +524,7 @@ As in the 1D cases the same issues can arise:
 \end{itemize}
 
 \begin{parag}{Back to Logistic Regression}
-    With binary ground-truth label $y_i$, the corss entropy can be written as:
+    With binary ground-truth label $y_i$, the cross entropy can be written as:
 	\begin{align*} 
 		R\left(w\right) &= \sum_{i \in \text{positive samples}} \ln\left(\hat{y}_i \right) - \sum_{i \in \text{negative sample}} \ln\left(1 - \hat{y}_i \right)\\
 						&= \sum_{i \in \text{positive samples}} \ln \sigma\left(w^{T}x_i\right) - \sum_{i \in \text{negative sample}} \ln\left(1 - \sigma\left(w^{T}x_i\right)\right)\\

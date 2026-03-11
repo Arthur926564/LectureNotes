@@ -1,7 +1,9 @@
-\subsection{Classification Metric}
-The goal now is to understand what is our model \important{behavior}. Now necessarly if it guesses correctly but also how.
+\section{Classification Metric}
+The goal now is to understand what is our model \important{behavior}. If it guesses correctly, if he is wrong, what type of wrong, etc...
 
 \begin{parag}{Classification evaluation}
+	\begin{definition}
+	
 	We can first define the \important{confusion matrix} in the binary case (e.g., spam vs non-spam email):
 	 \begin{center}
 	 \begin{tabular}{|c|c|c|}
@@ -24,6 +26,7 @@ The goal now is to understand what is our model \important{behavior}. Now necess
 	     \item TN: True negative (number of sample correctly classified as negative)
 	     \item FN: False negative (number of sample incorrectly classified as negative)
 	 \end{itemize}
+	\end{definition}
 	 Using this confusion matrix, we can study further the result of our model.
 \end{parag}
 \begin{parag}{Example}
@@ -89,26 +92,35 @@ The goal now is to understand what is our model \important{behavior}. Now necess
 	 \end{center}
 \end{minipage}
 \end{center}
+
 \begin{parag}{$ $}
     The two classifiers (matrices) above yield the same accuracy but their behavior is very different:
 	\begin{itemize}
 		\item Left: Weak positive recognition rate, but strong negative recognition rate
 		\item Right: Strong positive recognition rate, but weak negative recognition rate
 	\end{itemize}
-	Another classification metrics we can compute is called \important{Precision}: the percentage of samples classified as positives that are truly positives:
+	Another classification metrics we can compute is called \important{Precision}:
+	\begin{definition}{Precision}
+		$ $\\
+	The percentage of samples classified as positives that are truly positives:
 	\begin{align*} 
 		\text{Precision} = \frac{TP}{TP + FP}
 	\end{align*}
+	\end{definition}
 	In our previous example, this would give us:
 	\begin{align*} 
 		\text{Precision} = \frac{200}{200 + 100} = 0.667
 	\end{align*}
 	(ekip)\\
 	$ $\\
-	Another metric is called \important{Recall}: the percentage of positive samples that are correctly classified as positives:
+	Another metric is called \important{Recall}:
+	\begin{definition}{Recall}
+		$ $\\
+	the percentage of positive samples that are correctly classified as positives:
 	\begin{align*} 
 		\text{Recall} = \frac{TP}{P}
 	\end{align*}
+	\end{definition}
 	In our example:
 	\begin{align*} 
 		\text{Recall} = \frac{200}{200 + 300} = 0.4
@@ -116,6 +128,7 @@ The goal now is to understand what is our model \important{behavior}. Now necess
 	But still even with those metrics, we can still have different behavior and same metrics:
 	let us take the two followings:
 \end{parag}
+\begin{center}
 \begin{minipage}{0.45\textwidth}
 	 \begin{center}
 	 \begin{tabular}{|c|c|c|}
@@ -155,14 +168,20 @@ The goal now is to understand what is our model \important{behavior}. Now necess
     In this case, the two classifiers (matrices) above yield the same precision and recall (0.667 and 0.4) (the datasets are different). But in this case their behavior is very different. Accuracy in this case would be able to show the different behavior. The goal of this example is to show that the more metrics you have the better your intepretation of the  model you will get
 \end{parag}
 \begin{parag}{Other metrics}
-    \important{False positive rate}: percentage of negative samples that are incorrectly classified as positive:
+	\begin{definition}{False positive rate}
+		$ $\\
+    Percentage of negative samples that are incorrectly classified as positive:
 	\begin{align*} 
 		\text{FP rate} = \frac{FP}{N}
 	\end{align*}
-	\important{F1 score}: single number that combines precision and recall:
+	\end{definition}
+	\begin{definition}{F1 score}
+		$ $\\
+	Single number that combines precision and recall:
 	\begin{align*} 
 		F1 = 2 \cdot \frac{\text{Precision} \cdot  \text{Recall}}{\text{Precision} + \text{Recall}}
 	\end{align*}
+	\end{definition}
 \end{parag}
 \begin{parag}{ROC curve}
     Many classifiers output a score/confidence for their prediction (e.g., $\hat{y}$ is a continuous value between $0$ and $1$ in logistic regression)\\
@@ -187,9 +206,10 @@ The goal now is to understand what is our model \important{behavior}. Now necess
 
 
 \subsection{From binary to multi-class classification}
-So far, three methods we have studied can only handle two calsses: positive vs negative.\\
+So far, three methods we have studied can only handle two classes: positive vs negative.\\
 $ $\\
-In general, one would typically like to disciminate between more than two categories. E.g., for image recognition. Let us now see how our three linear methods can handle this sceniario (we will start with least-square classification)
+In general, one would typically like to disciminate between more than two categories. E.g., for image recognition. Let us now see how our three linear methods defined earlier can handle this scenario.
+
 \begin{parag}{least-square classification}
     In essence, least-square classification treats the problem as a regression task\\
 	\begin{itemize}
@@ -198,12 +218,13 @@ In general, one would typically like to disciminate between more than two catego
 	\end{itemize}
 	The simplest way to go from binary case to handling multiple classes would then be to use one integer value for each category. (we then round the prediction of the model to the nearest integer to obtain the predicted class value).\\
 	$ $\\
-	This, however makes no sense, there is \important{no natural} order between the different categories
+	This, however makes no sense, there is \important{no natural} order between the different categories (the prof trolled us). If we were to do so, this would really just comes down to a litteral regression task. Furthermore this would implies that guessing $4$ instead of $3$ would be better than guessin $-1$ and that's complete nonsense when speaking about classification tasks.
 \end{parag}
+
 \begin{parag}{Dealing with multiple classes}
-    The most common approach to modeling a multi-class problem consists of encoding the class label as a vector with a single $1$ at the index corresponding to the category and os elsewhere
+    The most common approach to modeling a multi-class problem consists of encoding the class label as a vector with a single $1$ at the index corresponding to the category and 0's elsewhere
 	\begin{subparag}{Intuition}
-	    We can see it as each label is a dimension in $\mathbb{R}^{D}$. A good classifier would then output a vector (as a guess) and this vector needs to have the same direction (or at least, around) the label.
+	    We can see it as each label is a dimension in $\mathbb{R}^{D}$. A good classifier would then output a vector (as a guess) and this vector needs to have the same direction (or at least, near) the label.
 	\end{subparag}
 	This is referred to as one-hot encoding (or 1-of-C encoding)
 \end{parag}
@@ -223,13 +244,14 @@ In general, one would typically like to disciminate between more than two catego
 	where each $y_i$ is now a $C$-dimensional vector with a single one at the index corresponding to the class label, and zeros everywhere else.
 
 	\begin{framedremark}
-	You can also see it has $C$ dependant binary classifier. You can seperate each $w_{\left(i\right)}^{T}$ and train them independetly and there rejoined them into $W$ and you would get the same result. (In the case of the square loss)
+		$ $\\
+	You can also see it as $C$ independant binary classifier. You can seperate each $w_{\left(i\right)}^{T}$ and train them independetly and then joined them into $W$ and you would get the same result. (In the case of the square loss).
 	\end{framedremark}
 	The solution has the same form as in the regression case (obtained by zeroing out the gradient w.r.t. $W$), i.e.,
 	\begin{align*} 
 		W^{\ast} = \left(X^{T}X\right)^{-1}X^{T}Y =  X^{\dagger}Y
 	\end{align*}
-	Given the optimal paramters, the prediction for a new sampel is computed as:
+	Given the optimal paramters, the prediction for a new sample is computed as:
 
 	\begin{align*} 
 		\hat{y} = \left(W^{\ast}\right)^{T}x
@@ -245,15 +267,13 @@ In general, one would typically like to disciminate between more than two catego
 
 \end{parag}
 \subsection{Decision Boundary}
+\begin{framedremark}
+	This following section applies to all linear classification models, not just least-square classification.
+\end{framedremark}
 
-\begin{parag}{$ $}
-	\begin{subparag}{Remark}
-	    This following applies to all linear classification models, not just least-square classification.
-	\end{subparag}
-\end{parag}
 \begin{parag}{Decision boundaries}
     \begin{definition}
-    The decision boundary between two calsses $k$ and $j$ is defined as the set of points $x$ such that $\hat{y}^{\left(k\right)}\left(x\right) = \hat{y}^{\left(j\right)}\left(x\right)$
+    The decision boundary between two classes $k$ and $j$ is defined as the set of points $x$ such that $\hat{y}^{\left(k\right)}\left(x\right) = \hat{y}^{\left(j\right)}\left(x\right)$
     \end{definition}
 	This corresponds to the $\left(D - 1\right)$ dimensional hyperplane
 \end{parag}
@@ -265,7 +285,7 @@ In general, one would typically like to disciminate between more than two catego
 The binary case is a special case of this definition.
 
 \begin{parag}{$ $}
-	A nice feature of those boundaries is that they are \important{convex}, a set $S$ is said convex if for any pair of point $x, y \in S$ and any $\lambda \in \left[0, 1\right]$ we have that 
+	A nice feature of those boundaries is that they are \important{convex}. Recall that  a set $S$ is said to be \important{convex} if for any pair of point $x, y \in S$ and any $\lambda \in \left[0, 1\right]$ we have that 
 	\begin{align*} 
 		\lambda x +  (1 - \lambda)y \in S
 	\end{align*}
@@ -288,7 +308,7 @@ The binary case is a special case of this definition.
 \begin{parag}{Multi-class least-square classification: Drawbacks}
     As in the binary case, multi-class least-square classification suffers from the fact that the loss function does not reflect the underlying classification task.\\
 	$ $\\
-	In the binary case, we addressed this by adding a nonlinearity to the output of the linear model bia the logistic function, leading to logistic regression. Maybe there is a better way to extends this to the multi-case scenario???
+	In the binary case, we addressed this by adding a nonlinearity to the output of the linear model via the logistic function, leading to \important{logistic regression}. Maybe there is a better way to extends this to the multi-case scenario???
 \end{parag}
 
 \subsection{Multi-class logistic regression}
@@ -302,7 +322,7 @@ The binary case is a special case of this definition.
 	\end{align*}
 
 	\begin{parag}{Multi-class logistic regression}
-	    The emprical risk can then be derived from the multi-class version of the cross entropu, which yeald:
+	    The emprical risk can then be derived from the multi-class version of the cross entropy, which yield:
 		\begin{align*} 
 			R\left(W\right) = -\sum_{i= 1}^{N}\sum_{k= 1}^{C}\hat{y}_i^{\left(k\right)}\ln\hat{y}_i^{\left(k\right)}
 		\end{align*}
@@ -331,10 +351,15 @@ The binary case is a special case of this definition.
 As in the binary case, we can compute a confusion matrix which is pretty intuitive, for instance here with 3 classes (UCI Iris dataset)
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
+	\hline
 	& Iris-setosa & Iris-versicolor & Iris-virginica \\
+	\hline
 	Iris-setosa & 12 & 1 & 1 \\
+	\hline
 	Iris-versicolor & 0 & 16 & 0 \\
-	Iris-virginica & 0 & 1 & 16
+	\hline
+	Iris-virginica & 0 & 1 & 16 \\
+	\hline
 \end{tabular}
 \end{center}
 Where the row are the Actual and the collumn are the predicted value. This means that we have only once predicted Iris-versicolor when in fact it was a Iris-setosa
@@ -343,27 +368,28 @@ Where the row are the Actual and the collumn are the predicted value. This means
 \begin{parag}{Metrics for multi-class problems}
     We still have the \important{Accuracy} and the \important{recall}, \important{FP-rate} and \important{F1-score}
 	\begin{subparag}{Accuracy}
-	    A gloval accuracy can be obtained by summing the correct predictions for all classes (diagonal values of the confusion matrix), and dividing this by the total number of samples (sum of all entries in the confusion matrix)
+	    A global accuracy can be obtained by summing the correct predictions for all classes (diagonal values of the confusion matrix), and dividing this by the total number of samples (sum of all entries in the confusion matrix)
 	\end{subparag}
 	\begin{subparag}{Precision, recall, FP-rate, F1-score}
 	    The simplest approach to handling these metrics is to compute them for each individual class, and then average over the classes\\
 		$ $\\
-		In this case, each individual class is in turn considered as the '\textit{positive}' calss while the others act as the '\textit{negative}' clas\\
+		In this case, each individual class is in turn considered as the '\textit{positive}' class while the others act as the '\textit{negative}' clas\\
 		$ $\\
 		This does not account for class imbalance (some classes may have many more samples than others; more about this in future lecture)\\
 		$ $\\
-		This can be handled by weighting the metric for each class by a value depending on the proportion of samples from that class
+		This can be handled by weighting the metric for each class by a value depending on the proportion of samples from that class.
 	\end{subparag}
 \end{parag}
-
-
+$ $\\
+$ $\\
 So far, we have only seen how to extend binary least-square classification and binary logistic regression to the multi-class scenario. How about SVM? Unfortunately, there is no ideal solution to handle multiple classes in SVM. Instead, one typically relies on one of the two solution described next.
+
 \begin{parag}{First solution}
     A solution is to use several binary classifiers. E.g., one-vs-rest: Classify each individual category vs all the other ones jointly
 	\begin{center}
 	\includegraphics[width=0.35\textwidth]{figure/2026-03-05_1.pdf}
 	\end{center}
-	This however, leaves ambiguities (e.g., sample can be classified as being from both calss 1 and class 2)
+	This however, leaves ambiguities (e.g., sample can be classified as being from both class 1 and class 2)
 \end{parag}
 
 \begin{parag}{Second solution}
@@ -372,6 +398,9 @@ So far, we have only seen how to extend binary least-square classification and b
 	\includegraphics[width=0.4\textwidth]{figure/2026-03-05_2.pdf}
 	\end{center}
 	This also may result in inconsistencies (e.g., a sample can be classified as being from class 1, class 2 and class 3)
+	\begin{subparag}{Remark}
+	    The green part here are elements which would be classified as more than one class (i.e., in the first solution, the green part would be classified as $\mathcal{R}_1$ \important{and} $\mathcal{R}_2$.
+	\end{subparag}
 \end{parag}
 
 \begin{parag}{Comparing linear classifiers}
@@ -427,6 +456,17 @@ So far, we have only seen how to extend binary least-square classification and b
 		\hline
 	\end{tabular}
 	\end{center}
+	\begin{framedremark}
+	I think here the $C$ is not the same as the number of classes, our loss is defined using the pure cross-entropy:
+	\begin{align*} 
+		R\left(W\right) = -\sum_{i= 1}^{N}\sum_{k= 1}^{C}y_i^{\left(k\right)}\ln \hat{y}_i^{\left(k\right)}
+	\end{align*}
+	Where we added the regularization:
+	\begin{align*} 
+		R\left(W\right) = \frac{1}{2C}\left\|\left\|W\right\|\right\|^2 - \sum_{i= 1}^{N}\sum_{k= 1}^{C}y_i^{\left(k\right)}\ln \hat{y}_i^{\left(k\right)}
+	\end{align*}
+	And If I understand correctly why chatgpt said to me both $C$ here are completely different.
+	\end{framedremark}
 	
 \end{parag}
 

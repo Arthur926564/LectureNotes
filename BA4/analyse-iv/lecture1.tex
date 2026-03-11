@@ -1,10 +1,12 @@
 
-\section{Review of Complex number $\mathcal{C}$}
+\chapter{Review of Complex number $\mathbb{C}$}
+The goal of this chapter is to review what we have seen in Analysis I in order to be more conformtable when introducing new materials. As an addition I will add a bit of context on where and why complex analysis differ from multivariate analysis (this is not in the course but is always nice to have in order to better understand the course).
+
 
 \begin{parag}{Imaginary unit}
-    As seen in previous class, we define $i$ the \important{imaginary unit} such that:
+    As seen in previous classes, we define $i$ the \important{imaginary unit} such that:
 	\begin{align*} i^2 = -1 \end{align*}
-	We also define $z \in \mathcal{C}$ as:
+	We also define $z \in \mathbb{C}$ as:
 	\begin{align*} z = x + iy \mathspace \mathspace x, y \in \mathbb{R} \end{align*}
 	Furthemore:
 	\begin{align*} 
@@ -12,7 +14,7 @@
 		y &= \text{Im}z \mathspace \text{imaginary part}
 	\end{align*}
 \end{parag}
-The field $\mathcal{C}$ can by fully mapped to $\mathcal{R}^2$, what this means is that every element in $\mathcal{C}$ can be directly 'translated' to $ \mathbb{R}^2$.
+The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is that every element in $\mathbb{C}$ can be directly 'translated' to $ \mathbb{R}^2$.
 
 \begin{parag}{Complex Conjugate}
     \begin{definition}
@@ -26,11 +28,11 @@ The field $\mathcal{C}$ can by fully mapped to $\mathcal{R}^2$, what this means 
 	\begin{align*} | z | = \sqrt{x^2 + y^2} \end{align*}
     \end{definition}
 	\begin{subparag}{Intuition}
-	    The reason for this definition really comes from pythagoras theorem and the norm in $\mathcal{R}^2$.
+	    The reason for this definition really comes from pythagoras theorem and the norm in $\mathbb{R}^2$.
 	\end{subparag}
 	Furthemore $| z_0 - z_1| = d\left(z_0, z_1\right)$ (the distance between those two number).\\
-	We can define domain in $\mathcal{C}$ as:
-	\begin{align*} \{z \in \mathcal{C}: |z - 1| < 1\} \end{align*}
+	We can define domain in $\mathbb{C}$ as:
+	\begin{align*} \{z \in \mathbb{C}: |z - 1| < 1\} \end{align*}
 	Which is the disk centered in $z = 1$ of radius $1$.
 \end{parag}
 
@@ -49,7 +51,7 @@ The field $\mathcal{C}$ can by fully mapped to $\mathcal{R}^2$, what this means 
 	\end{align*}
 	\end{definition}
 	\begin{subparag}{Geometric intuition}
-	    What happens when doing the complex conjugate (if we see $\mathcal{C}$ as a plan in $ \mathbb{R}^2$) is a symmetry aroung the $x$ axis.
+	    What happens when doing the complex conjugate (if we see $\mathbb{C}$ as a plan in $ \mathbb{R}^2$) is a symmetry aroung the $x$ axis.
 	\end{subparag}
 \end{parag}
 
@@ -122,11 +124,177 @@ The field $\mathcal{C}$ can by fully mapped to $\mathcal{R}^2$, what this means 
 	\begin{align*} \theta \in \{-\frac{4\pi}{5}, -\frac{2\pi}{5}, 0, \frac{2\pi}{5}, \frac{4\pi}{5}\} \end{align*}
 	More generally, a $k$-th order equation will gives us $k$ solutions.
 \end{parag}
-	\begin{figure}[!h]
+
+\begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.5]{figure/2026-02-22.pdf}
 	\caption{Solution of $z^{5} = 2$}
-	\end{figure}
+\end{figure}
+
+\section{Construction of $\mathbb{C}$ (not in the course)}
+The goal of this section is to add a bit more context on the $\mathbb{C}$ field. First let us recall how real analysis worked. We used the field $\left(\mathbb{R}, +, \cdot \right)$ which is an \important{ordered} field, i.e. we have an ordering on our elements. Formally:
+\begin{definition}
+	$ $\\
+	\begin{itemize}
+		\item $\forall x, y \in \mathbb{R} $ precisely one of $x < y,  x > y, x = y$ holds true.
+		\item $x, y > 0 \implies x \cdot  y > 0$
+	\end{itemize}
+	This is the axiomatic definition of an ordered field.
+\end{definition}
+And as we already know, $\mathbb{C}$ is not an ordered field, $2 + i$ cannot be greater nor smaller to $12$.\\
+$ $\\
+Another reason on why $\mathbb{C}$ has come up is that the field $\left(\mathbb{R}, +, \cdot \right)$ is \important{not algebraiclly closed}. We can find polynomials with real coefficient which don't have real roots. $x^2 + 1$ has not root over $ \mathbb{R}$. This is a major problem. The question now that was asked: does $\left(\mathbb{R}^2, +, ?\right)$ (which is already an Abelian group) can be turned into a field? And what about $\left(\mathbb{R}^{n}, +\right)$ is there a way to 'create' a multiplication which would be suitable?\\
+$ $\\
+For $n = 1$ this is just the real number. For $n = 2$ the resulting field you will get is $\mathbb{C}$. For $n =  4$ the answer is the hamilton group (kind of) and the same for $n = 8$. For all other number it is just \important{impossible}!\\
+$ $\\
+And this is pretty bizzare, it worked for $1, 2, 4, 8$ and then it stopped.
+\begin{theoreme}
+	If we can create a field on $ \mathbb{R}^2$ then 
+	\begin{align*} \exists z \in\left(\mathbb{R}^{2}, +, \cdot \right) \text{ s.t. } z^2 =  -1 \end{align*}
+\end{theoreme}
+\begin{proof}
+
+    Let us choose a basis element $\left\{1, e\right\}$ of $\mathbb{R}^{2}$. This directly implies that:
+	\begin{align*} 
+		z = x \cdot 1 + y \cdot e \text{ , for some } x, y \in \mathbb{R}
+	\end{align*}
+	If we want to multiply our number by itself:
+	\begin{align*} 
+		z^2 &= x^2 \cdot 1 + 2xy \cdot e + y^2 \cdot  e^2
+	\end{align*}
+	\begin{framedremark}
+	A strange thing we did here is to add the $2xy \cdot e$. Recall that previously, when we had a vector in $\mathbb{R}^{2}, x$ that we squared, the output that we will get would be:
+	\begin{align*} 
+		\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}  \cdot \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}  = x_1^2 + x_2^2
+	\end{align*}
+	Or if we have written them using the basis vector $e_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix} , e_2 =  \begin{pmatrix} 0 \\ 1 \end{pmatrix} $ this would gives us:
+	\begin{align*} 
+		\left(x_1e_1 + x_2e_2\right) \cdot \left(x_1e_1 + x_2e_2\right)
+	\end{align*}
+	The important thing is that both equation above are \important{totally equivalent}. If we develop this we will get:
+	\begin{align*} 
+		x_1^2 e_1^2 + 2x_1x_2e_1e_2 +x_2^2e_2^2
+	\end{align*}
+	And because $e_1$ and $e_2$ are orthogonal, be definition $e_1e_2 = 0$:
+	\begin{align*} 
+		= x_1^2e_1^2 + x_2^2e_2^2 = x_1^2 + x_2^2
+	\end{align*}
+	\end{framedremark}
+	Now we want to rewrite $e^2$ using the basis that we introduced before:
+	\begin{align*} 
+		e^2 = a \cdot 1 + b \cdot e, \mathspace \mathspace a, b \in \mathbb{R}
+	\end{align*}
+	This implies that:
+	\begin{align*} 
+		z^2 =  \left(x^2 + ay^2\right) \cdot  1 + \left(2xy + by^2\right) \cdot  e
+	\end{align*}
+	Now we want to show that there exists the pair $\left(x, y\right) \in \mathbb{R}^{2}$ such that $z^2 = -1$. Then we must have the following:
+	\begin{align*} 
+		2xy + by^2 = 0 \iff \begin{cases}
+		y =  0 \\ x = -\frac{b}{2}y
+		\end{cases} \text{ or}
+	\end{align*}
+	But here $y= 0$ is not sufficient because this implies for the second relation:
+	\begin{align*} 
+		x^2 + ay^2 = -1
+ 	\end{align*}
+	that $x^2 = -1$ where $x \in \mathbb{R}$ which is impossible. We therefore look into the second case, $y \neq 0$ and $x = -\frac{b}{2}y$. In this case this implies that:
+	\begin{align*} 
+		z^2 &= \left(-\frac{b}{2}y\right)^2 + ay^2 \cdot 1 + \underbrace{\left(2\left(\frac{-b}{2}\right)y^2 + by^2\right)\cdot  e}_{= 0}\\
+		&= \left(a + \frac{b^2}{4}\right)y^2 \cdot  1
+	\end{align*}
+	The second claim is that $a + \frac{b^2}{4} < 0$
+		\begin{proof}
+		    
+		
+	    The proof will be done by contradiction. Suppose that $a + \frac{b^2}{4} \geq 0$. This implies that we can take the square root (in the sense of $ \mathbb{R}$) and therefore we have that:
+		\begin{align*} 
+			z =  \pm y\sqrt{a + \frac{b^2}{4}}
+		\end{align*}
+		Which implies that:
+		\begin{align*} 
+			\left(z - y\sqrt{a + \frac{b^2}{4}}\right)\left(z + y\sqrt{a + \frac{b^2}{4}}\right) = 0
+		\end{align*}
+		This implies that either $z = y \sqrt{a + \frac{b^2}{4}} = x \cdot 1 + y \cdot  e$ or the same with a negative sign.
+		\begin{align*} 
+			\pm y\sqrt{a + \frac{b^2}{4}}  \cdot  1=  x \cdot  1 + y \cdot  e
+		\end{align*}
+		Since $\left\{1, e\right\}$ are linearly independent, this equality is impossible unless $y = 0$ which contradicts the case we are studying ($y \neq 0$). Therefore $a + \frac{b^2}{4} < 0$
+		\end{proof}
+		Now our goal is to proof there exists a $y$ such that $\left(a + \frac{b^2}{4}\right)y^2 = -1$. We can set
+		\begin{align*} 
+			y := \frac{1}{-\sqrt{a + \frac{b^2}{4}}}, \mathspace \mathspace x = \frac{-b}{2}y
+		\end{align*}
+		This directly implies that:
+		\begin{align*} 
+			z^2 &= \left(a + \frac{b^2}{4}y^2\right)\\
+				&= \left(a + \frac{b^2}{4}\right)\left(\frac{-1}{a + \frac{b^2}{4}}\right) = -1
+		\end{align*}
+
+\end{proof}
+The claim we just prove is not trivial at all, if we want to turn $\mathbb{R}^{2}$ into a field, then there has to be an element of the field such that $d = -1$. This also implies that our application will be a new one which will be pretty counter-intuitive for us. Now let us pick our element $z \in \left(\mathbb{R}^{2}, + , \cdot \right)$ such that $z^2 = -1$, and we call it \textbf{i}.\\
+$ $\\
+Now we can define our field $\mathbb{C}$:
+\begin{definition}
+
+	Let us define the \important{complex field} $\mathbb{C}$:
+	\begin{align*} 
+		\mathbb{C} &:= \mathbb{R}[i] := \left\{a + bi, \mathspace a, b \in \mathbb{R}\right\}\\
+				   &=  \mathbb{R}[X]/(X^2+1) := \left\{a + bX \in \mathbb{R}[X]\right\}\\
+	\end{align*}
+\end{definition}
+	$\mathbb{C}$ is algebraically closed
+
+\begin{theoreme}
+	Any $P \in \mathbb{C}\left[X\right]$ non-zero (not the zero polynomial) has at leat a root in $\mathbb{C}$.
+\end{theoreme}
+\begin{proof}
+    To prove this we will do it by contradiction. Assume that $P$ is a non-constant polynomial and suppose it \important{has no root} in $\mathbb{C}$. Then this implies that:
+	\begin{align*} 
+		P\left(z\right) \neq 0 \mathspace \forall z \in \mathbb{C}
+	\end{align*}
+	Therefore, we can define:
+	\begin{align*} 
+		f\left(z\right) = \frac{1}{P\left(z\right)}
+	\end{align*}
+	Since $P\left(z\right) \neq 0$ everywhere and $P$ is holomorphic, $f$ is also holomorphic on all of $\mathbb{C}$ (entire).\\
+	$ $\\
+	The next step of our proof is to show that $f$ is bounded. Let 
+	\begin{align*} 
+		P\left(z\right) = a_nz^{n} + a_{n-1}z^{n-1} + \cdots + a_0
+	\end{align*}
+	For large $\left\| z\right\|$, the leading term dominates:
+	\begin{align*} 
+		\left\|P\left(z\right)\right\|  \approx \left\|a_n\right\|\left\|z\right\|^{n}
+	\end{align*}
+	More precisely, there exists $R$ such that if $\left\|z\right\| > R$ then:
+	\begin{align*} \left\|P\left(z\right)\right\| \geq \frac{\left\|a_n\right\|}{2}\left\|z\right\|^{n} \end{align*}
+	Thus:
+	\begin{align*} 
+		\left\|f\left(z\right)\right\| =  \frac{1}{\left\|P\left(z\right)\right\|} \leq \frac{2}{\left\|a_n\right\|\left\|z\right\|^{n}}
+	\end{align*}
+	Therefore, when $\left\|z\right\| \to \infty$ we have that
+	\begin{align*} 
+		f\left(z\right) \to 0
+	\end{align*}
+	Hence $f$ is bounded outside a large disk. And inside $\left\|z\right\| < R$, the continuous function $f$ on a compact set is also \important{bounded}. Therefore, $f$ is bounded on all of $\mathbb{C}$.\\
+	$ $\\
+	All the work is done now, all we have to do is to apply Liouville's theorem:
+	\begin{theoreme}
+		Every bounded entire function is constant
+	\end{theoreme}
+	Which therefore implies that $f$ must be constant. But we just said
+	\begin{align*} 
+		f\left(z\right) = \frac{1}{P\left(z\right)}
+	\end{align*}
+	which means that $P$ is constant which is a contradiction.\\
+	$ $\\
+	Conclusion:
+	\begin{center}
+		Every non-constant polynomial in $\mathbb{C}\left[x\right]$ has a complex root.
+	\end{center}
+\end{proof}
+
 
 
 \section{Complex Functions}
@@ -143,7 +311,7 @@ A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$
 
 
 \begin{parag}{Examples}
-    First let us see the simplest example, the \important{unit} function: $f\left(z\right)a=  z =  x + iy$. In this case we can easily see that 
+    First let us see the simplest example, the \important{unit} function: $f\left(z\right)=  z =  x + iy$. In this case we can easily see that 
 	\begin{align*} u(x, y) = x \mathspace \mathspace v\left(x, y\right) =  y \end{align*}
 	A bit more sophisticated function could be for instance: $f\left(z\right) =  \overline{z} = x - iy$. Which gives us:
 	\begin{align*} 

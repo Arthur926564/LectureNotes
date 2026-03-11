@@ -1,19 +1,26 @@
 % !TeX program = lualatex
 % Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
 
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{book}
 
 % Expanded on !p snip.rv = get_formatted_date() at !p snip.rv = get_formatted_time().
 
 \usepackage{style}
 
-\title{Analyse IV}
+\title{Analyse IV \\ Dr. Mathias Braun}
 \author{Arthur Herbette}
 \date{Thursday 19 February 2026}
 
 \begin{document}
+
 \maketitle
-\section{Introduction}
+
+\newpage
+\tableofcontents
+\newpage
+
+
+\section*{Introduction}
 \begin{parag}{Overview of the course}
     \begin{itemize}
 		\item Complex analysis, complex differentiation, complex integration, Laurent series, residue theorem
@@ -30,7 +37,8 @@
 
 
 
-\include{lecture1}
-\include{lecture2}
+\input{lecture1}
+\input{lecture2}
+\input{lecture3}
 
 \end{document}
