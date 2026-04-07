@@ -538,9 +538,9 @@ linewidth=1pt]\begin{pro}}
 }
 
 \newlength{\paragtitlewidth}
-\setlength{\paragtitlewidth}{1.5cm}
+\setlength{\paragtitlewidth}{0.5cm}
 \newlength{\paragtitlespace}
-\setlength{\paragtitlespace}{0.3cm}
+\setlength{\paragtitlespace}{0.5cm}
 \newlength{\subparaglinewidth}
 \setlength{\subparaglinewidth}{0.1mm}
 \newlength{\subparagtitlelinespace}
@@ -563,7 +563,6 @@ linewidth=1pt]\begin{pro}}
     after skip=0pt,    % Space after the box
     enlarge left by=\paragtitlewidth + \paragtitlespace,
     width=\linewidth - \paragtitlewidth - \paragtitlespace,
-    parbox=true,
     height=#2,
     height plus=100cm, % enough for a page break to happen, since then those options are ignored
 }
@@ -581,7 +580,6 @@ linewidth=1pt]\begin{pro}}
     enlarge left by=\paragtitlewidth + \paragtitlespace + \subparagtitlelinespace + \subparagtitlewidth + \subparagtitlespace,
     width=\linewidth - \paragtitlewidth - \paragtitlespace - \subparagtitlelinespace - \subparagtitlewidth - \subparagtitlespace,
     borderline west={\subparaglinewidth}{-\subparagtitlelinespace - \subparagtitlewidth - \subparagtitlespace - 0.5\subparaglinewidth}{black},
-    parbox=true,
     overlay unbroken and first={%
         \node[inner sep=0pt,outer sep=0pt,text width=\subparagtitlewidth,
           align=left,
@@ -596,6 +594,7 @@ linewidth=1pt]\begin{pro}}
 
 \newbox\paragtitlebox
 \newlength{\paragtitleheight}
+\newlength{\currentparagheight}
 
 \newenvironment{parag}[1]{%
     \vspace{\parskip} % We want the parskip to be here, not after (it is then cancelled).
@@ -611,7 +610,7 @@ linewidth=1pt]\begin{pro}}
     \phantomsection
     \addcontentsline{toc}{paragraph}{#1}
     % Measure title, while not displaying it.
-        \RaggedRight \fullbf{#1}
+        \sloppy \fullbf{#1}
     \setlength\paragtitleheight{2\ht\paragtitlebox}  % parag title height; why a factor 2? Very good question, I won't act as if I knew what I was doing, but it seems to work
     % Ask for correct space on the page, for the title.
     \needspace{\paragtitleheight}
@@ -636,7 +635,7 @@ linewidth=1pt]\begin{pro}}
     % Measure title, while not displaying it.
     \sbox\subparagtitlebox{
         \begin{minipage}[c]{\subparagtitlewidth}
-            \RaggedRight \textit{\footnotesize #1}
+            \sloppy \textit{\footnotesize #1}
         \end{minipage}
     }
     \setlength\subparagtitleheight{2\ht\subparagtitlebox}  % subparag title height; why a factor 2? Very good question, I won't act as if I knew what I was doing, but it seems to work
@@ -686,7 +685,7 @@ linewidth=1pt]\begin{pro}}
 
 \AfterEndEnvironment{subparag}{
     \directlua{
-        tex.print([[\string\begin{paragbox}{}{0pt}]])
+        tex.print([[\string\begin{paragbox}{}{ \the\paragtitleheight}]])
         --[[ For the LaTeX compiler: \string\end{paragbox} --]]
     }
     \setlength{\parskip}{\unchangedparskip}

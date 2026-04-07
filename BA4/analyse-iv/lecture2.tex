@@ -34,7 +34,7 @@ holds then $f$ is holomorphic
 \caption{Two ways of approaching}
 \end{figure}
 \begin{parag}{$ $}
-	First we will approchaing $z_0$ from the $x$-direction:
+	First we will approaching $z_0$ from the $x$-direction:
 	\begin{align*} 
 		f'(z_0) &= \lim_{x \to x_0} \frac{f\left(x + y_0 i\right) - f\left(x_0 + y_0i\right)}{x + y_0i - \left(x_0 + y_0i\right)}\\
 				&= \lim_{x \to x_0} \frac{u\left(x, y_0\right) + iv\left(x, y_o\right) - u\left(x_0, y_0\right) - iv\left(x_0, y_0\right)}{x - x_0}\\
@@ -87,7 +87,7 @@ holds then $f$ is holomorphic
 		\frac{\partial u}{\partial x} &= e^{x}\cos y \mathspace \mathspace \frac{\partial v}{\partial x} = e^{x}\sin y \\
 		\frac{\partial u}{\partial y} &= -e^{x}\sin y \mathspace \mathspace \frac{\partial v}{\partial y} = e^{x}\cos y
 	\end{align*}
-	As we can see that equation hols which implies that our function $f$ is holomorphic.\\
+	As we can see that equation holds which implies that our function $f$ is holomorphic.\\
 	$ $\\
 	Moreover, the derivative of our function is given as:
 	\begin{align*} 
@@ -115,24 +115,24 @@ All of these relations can be shown exactly as in the real case, we will do $\le
 									 &= \lim_{z \to z_0} \frac{f\left(z\right) - f\left(z_0\right)}{z - z_0}g\left(z\right) + f\left(z_0\right)\frac{g\left(z\right) - g\left(z_0\right)}{z - z_0}\\
 									 &= f'\left(z_0\right)g\left(z_0\right) + f\left(z_0\right)g'\left(z_0\right)
 \end{align*}
-With these rules and previous examples, it follows the usual formulas for differentation of polynomial, trigonometric functions, etc...
+With these rules and previous examples, it follows the usual formulas for differentiation of polynomial, trigonometric functions, etc...
 \begin{align*} 
 	\left(z^{k}\right)' &=  kz^{k-1}\\
 	\left(\cos z\right)' &= -\sin z\\
 	\left(\sin z\right)' &= \cos z
 \end{align*}
-\begin{parag}{Gemoetric interpretation of Cauchy-Riemann equations}
-    Let's fix $f : \mathbb{C} \to \mathbb{C}$ holomorphic, and view it as a function $f : \mathbb{R}^{2} \to \mathbb{R}^{2}$. Geometrically the jacobian matrix:
+\begin{parag}{Geometric interpretation of Cauchy-Riemann equations}
+    Let's fix $f : \mathbb{C} \to \mathbb{C}$ holomorphic, and view it as a function $f : \mathbb{R}^{2} \to \mathbb{R}^{2}$. Geometrically the Jacobian matrix:
 	\begin{align*} Df = \begin{pmatrix} \frac{\partial u}{\partial x}  & \frac{\partial v}{\partial x}  \\ \frac{\partial u}{\partial y}  & \frac{\partial v}{\partial y}  \end{pmatrix}  \end{align*}
-	Tells us how $f$ acs on 'infinitesimal rectangles'/ disturb volume.
+	tells us how $f$ acts on 'infinitesimal rectangles'/ disturb volume.
 
 \end{parag}
 \begin{figure}[!h]
 \centering
 \includegraphics[width=1.0\textwidth]{figure/2026-02-26_2.pdf}
-\caption{Transformation of the jacobian matrix}
+\caption{Transformation of the Jacobian matrix}
 \end{figure}
-A very specific deformation happens for holomorphic functions. In fact, the Cauchy-Riemann equations imply that the jacobian is in the form of:
+A very specific deformation happens for holomorphic functions. In fact, the Cauchy-Riemann equations imply that the Jacobian is in the form of:
 \begin{align*} 
 	Df &= \begin{pmatrix} a & -b \\ b & a \end{pmatrix} \\
 	   &= \sqrt{a^2 + b^2}\underbrace{\begin{pmatrix} \frac{a}{\sqrt{a^2 + b^2}} & -\frac{b}{\sqrt{a^2 + b^2}} \\ \frac{b}{\sqrt{a^2 + b^2}} & \frac{a}{\sqrt{a^2 + b^2}} \end{pmatrix} }_{\text{rotation matrix}}
@@ -143,7 +143,7 @@ Recall that a  rotation matrix is in the form of:
 \end{align*}
 Hence we have that $Dg =  \lambda \cdot $rotation! Therefore, infinitesimal square is mapped to a square.
 \subsection{Complex logarithm}
-First let us recall what the principal argumment is. For $z \neq 0$ we have that $-\pi < $ Arg $z \leq \pi$
+First let us recall what the principal argument is. For $z \neq 0$ we have that $-\pi < $ Arg $z \leq \pi$
 
 \begin{center}
 \includegraphics[width=0.3\textwidth]{figure/2026-02-27.pdf}
@@ -158,9 +158,9 @@ It can be computed by:
 		-\pi + \arctan \frac{y}{x} &\text{ if } x < 0, y < 0
 	\end{cases}
 \end{align*}
-Arg is (defined yet) \important{discontinuous} on the negative real axis, it jumps from $\pi$ to $-\pi$ accross the negative real axis.\\
+Arg is (defined yet) \important{discontinuous} on the negative real axis, it jumps from $\pi$ to $-\pi$ across the negative real axis.\\
 $ $\\
-Okay this is nice but why are we even talking about this here in the first case, we are trying to define the logarithm for complex number. How de we define complex logarithm? First what does it do? It is the inverse of the exponential meaning that we should have $\log e^{z} =  z$. If we expand $z$ into cartesian form, $\log\left(e^{x + iy}\right) = x + iy$.\\
+Okay this is nice but why are we even talking about this here in the first case, we are trying to define the logarithm for complex number. How de we define complex logarithm? First what does it do? It is the inverse of the exponential meaning that we should have $\log e^{z} =  z$. If we expand $z$ into Cartesian form, $\log\left(e^{x + iy}\right) = x + iy$.\\
 $ $\\
 If $\log z =  x + iy$ then we should have $z = e^{x + iy} = e^{x}e^{yi}$. By polar coordinate, we can also define $z$ as:
 
@@ -175,7 +175,7 @@ If $\log z =  x + iy$ then we should have $z = e^{x + iy} = e^{x}e^{yi}$. By pol
 	\begin{align*} 
 		lg z =  lg \left\|z\right\| + i \text{Arg} z
 	\end{align*}
-	Complex logarith, more precisely the principal branch of complex algorithm
+	Complex logarithm, more precisely the principal branch of complex algorithm
 \end{definition}
 \begin{framedremark}
 \begin{itemize}
@@ -197,7 +197,7 @@ It is easy to verify that $\log$ is holomorphic on $\mathbb{C} \setminus \left\{
 \end{align*}
 \end{parag}
 \begin{parag}{Example}
-    If $z_1 =  z_2 =  -1$ then $\log z_1 =  \log z_2 =  i\pi$. (since $e^{i\pi}= -1$). Yet we have that $\log\left(z_1z_2\right) =  0 \neq\log\left(z_1\right) + \log \left(z_2\right)$. Similary 
+    If $z_1 =  z_2 =  -1$ then $\log z_1 =  \log z_2 =  i\pi$. (since $e^{i\pi}= -1$). Yet we have that $\log\left(z_1z_2\right) =  0 \neq\log\left(z_1\right) + \log \left(z_2\right)$. Similarly 
 	\begin{align*} 
 		\log \left(z_1^2\right) \neq 2\log\left(z_1\right) 
 	\end{align*}

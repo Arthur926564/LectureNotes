@@ -1,0 +1,278 @@
+\section{Kernel methods}
+The goal of today's lecture is to introduce the notion of kernel function and the kernel trick, to do so, we need to go back to the linear model:
+\begin{align*} 
+	y = w^{\left(0\right)} + w^{\left(1\right)}x^{\left(1\right)} + \cdots + w^{\left(D\right)}x^{\left(D\right)} =  w^{T}\begin{pmatrix} 1 \\ x^{\left(1\right)} \\ x^{\left(2\right)} \\ \vdots \\ x^{\left(D\right)} \end{pmatrix} 
+\end{align*}
+From this model, we import a non linear machine algorithm by first doing a non linear function and \important{then} apply our linear model to it, for instance the polynomial feature expansion:
+	\begin{align*} 
+		\phi\left(x\right) = \begin{pmatrix} 1 \\ x^{\left(1\right)} \\ \vdots \\ x^{\left(D\right)} \\ \left(x^{\left(1\right)}\right)^2 \\ \vdots \\ \left(x^{\left(D\right)}\right)^2 \\ \vdots \\ \left(x^{\left(1\right)}\right)^{M} \\ \vdots \\ \left(x^{\left(D\right)}\right)^{M} \\ x^{\left(1\right)}x^{\left(2\right)} \\ \vdots \\ x^{\left(1\right)}x^{\left(D\right)} \\ \vdots \\ x^{\left(D - 1\right)}x^{\left(D\right)} \\ \left(x^{\left(1\right)}\right)^2x^{\left(2\right)} \\ \vdots \end{pmatrix} 
+	\end{align*}
+
+
+	In essence, polynomial feature expansion uses a mapping from $x \in \mathbb{R}^{D}$ to another representation $\phi\left(x\right) \in \mathbb{R}^{F}$, where $F \gg D$\\
+	$ $\\
+	We can the use a linear model in this new space and write:
+	\begin{align*} 
+		\hat{y}_i = w^{T}\phi\left(x_i\right)
+	\end{align*}
+	Given training data, we can the find the optimal parameters via standard linear regression
+	\begin{align*} 
+		\min_w \sum_{i= 1}^{N}\left(w^{T}\phi\left(x_i\right) - y_i\right)^2
+	\end{align*}
+	When having more dimension, we can always transformed our inputs $\left\{\phi\left(x_i\right)\right\}$ and the output $\left\{y_i\right\}$ in a matrix form and vector of the form:
+	\begin{align*} 
+		\Phi =  \begin{pmatrix} \phi\left(x_1\right)^{T} \\ \phi\left(x_2\right)^{T} \\ \vdots \\ \phi\left(x_N\right)^{T} \end{pmatrix} \in \mathbb{R}^{N \times F} \mathspace \mathspace y = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_N \end{pmatrix} 
+	\end{align*}
+	Then we have $w^{\ast} = \left(\Phi^{T}\Phi\right)^{-1} \Phi^{T}y$
+	\begin{framedremark}
+	Maybe a little remark that I want to do here about the pseudo inverse and its definition. I think it is a bit misleading to \important{define} the pseudoinverse as $\left(\Phi^{T}\Phi\right)^{-1} \Phi^{T}y$, a "\textit{more intuitive way}" would maybe be from the SVD decomposition and how does an inverse (from a non square matrix behaves). We can kind of see it as a generalisation of the inverse, which means if we have $n$ data pointer and $n$ variable then we can create the inverse without any issue $\implies$ We are \textit{overfitting} our model. But if we have too much data point then the pseudoinverse still have to represent something meaningful in terms of the solution of the equation $\implies$ it gives the minimum-norm solution. On the other case if we have a tall matrix $\implies$ it gives the least squares solution.\\
+	$ $\\
+	The conclusion is that we compute the pseudoinverse using SVD and this gives us a generalization of the inverse of a matrix.
+	\end{framedremark}
+
+	But we don't have to limit ourself to polynomials, we could add sine cosine, exponential, etc... But how do we choose which functions to use? The solution to this is \important{Kernels}
+
+\section{Kernel function}
+The solution to many machine learning algorithms ends up relying on a dot product between inputs, i.e. $x_i^{T}x_j$. $x_i^{T}x_j $ is proportional to $\cos \left(x_i, x_j\right)$ this encodes a notion of similarity between two samples\\
+$ $\\
+When doing feature expansion, we then have dot products of the form $\phi\left(x_i\right)^{T}\phi\left(x_j\right)$, which also encodes a similarity between the two samples, but different from the original one\\
+$ $\\
+Thus, instead of explicitly defining the mapping $\phi\left(\right)$, one can define a similarity function $k\left(x_i, x_j\right)$. This is called a \important{kernel} function. It corresponds to some mapping $\phi$, i.e., $k\left(x_i, x_j\right) =  \phi\left(x_i\right)^{T}\phi\left(x_j\right)$, but this $\phi$ may be unknown.
+
+
+\begin{parag}{Example}
+    One example of commonly used kernel function is the polynomial kernel 
+	\begin{align*} 
+		k\left(x_i, x_j\right) = \left(x_i^{T}x_j + c\right)^{d}
+	\end{align*}
+	It has two hyper-parameters, the bias $c$ and the degree of the polynomial $d$ (often set to $2$)\\
+	$ $\\
+	For such kernels, the corresponding mappings $\phi$ are know, for example, with a 2D input, for $c= 1$ and $d= 2$ we have
+	\begin{align*} 
+		\phi\left(x\right) = \left[\left(x^{\left(1\right)}\right)^2, \left(c^{\left(2\right)}\right)^2, \sqrt{2}x^{\left(1\right)}x^{\left(2\right)}, \sqrt{2}x^{\left(1\right)}, \sqrt{2}x^{\left(2\right)}, 1\right]
+	\end{align*}
+	Given our mapping the dot product between two samples then is:
+	\begin{align*} 
+		\phi\left(x_i\right)^{T}\phi\left(x_j\right) &= \left(x_i^{\left(1\right)}\right)^2\left(x_j^{\left(1\right)}\right)^2 + \left(x_i^{\left(2\right)}\right)^2\left(x_j^{\left(2\right)}\right)^2 + 2x_i^{\left(1\right)}x_i^{\left(2\right)}x_j^{\left(1\right)}x_j^{\left(2\right)} + 2x_i^{\left(1\right)}x_j^{\left(1\right)} + 2x_i^{\left(2\right)}x_j^{\left(2\right)} + 1\\
+		&= \left(x_i^{\left(1\right)}x_j^{\left(1\right)} + x_i^{\left(2\right)}x_j^{\left(2\right)} + 1\right)^2
+	\end{align*}
+	This corresponds to the quadratic kernel:
+	\begin{align*} 
+		k\left(x_i, x_j\right) = \left(x_i^{T}x_j + 1\right)^2
+	\end{align*}
+\end{parag}
+
+
+
+\begin{parag}{Example II}
+    Another common kernel is the Gaussian (or Radial Basis Function (RBF)) kernel
+	\begin{align*} k\left(x_I, x_j\right) =  \exp\left(- \frac{\left\|x_i - x_j\right\|^2}{2\sigma^2}\right) \end{align*}
+	It has one hyper-parameter which is the \textit{bandwidth} $\sigma$\\
+	$ $\\
+	For this kernel, there is no explicit corresponding mapping $\phi$
+	\begin{subparag}{Remark}
+	    In theory, this kernel corresponds to a mapping to an infinite dimensional space
+	\end{subparag}
+	With 2D inputs, we can visualize the effect of $\sigma$, Let one sample be fixed as $x_j =  \left[5, 3\right]^{T}$, and very $x_i$
+\end{parag}
+
+
+
+
+\begin{figure}[h]
+\centering
+
+\pgfplotsset{
+  rbf style/.style={
+    width=5cm, height=5cm,
+    view={-40}{30},
+    colormap/jet,
+    shader=interp,
+    domain=0:10, domain y=0:6,
+    samples=40, samples y=40,
+    zmin=0, zmax=1,
+    xtick={0,5,10}, ytick={0,2,4,6},
+    xlabel={$x_i^{(1)}$}, ylabel={$x_i^{(2)}$},
+    zlabel={$k(\mathbf{x}_i, \mathbf{x}_j)$},
+    xlabel style={font=\small},
+    ylabel style={font=\small},
+    zlabel style={font=\small, rotate=-90},
+    ztick={0,1},
+    axis background/.style={fill=white},
+  }
+}
+
+% sigma^2 = 0.5
+\begin{tikzpicture}
+\node at (1.5, 3.8) {$\sigma^2 = 0.5$};
+\begin{axis}[rbf style]
+  \addplot3[surf] {exp(-(((x-5)^2 + (y-3)^2)) / (2*0.5))};
+\end{axis}
+\end{tikzpicture}
+\hfill
+% sigma^2 = 1
+\begin{tikzpicture}
+\node at (1.5, 3.8) {$\sigma^2 = 1$};
+\begin{axis}[rbf style]
+  \addplot3[surf] {exp(-(((x-5)^2 + (y-3)^2)) / (2*1))};
+\end{axis}
+\end{tikzpicture}
+\hfill
+% sigma^2 = 3
+\begin{tikzpicture}
+\node at (1.5, 3.8) {$\sigma^2 = 3$};
+\begin{axis}[rbf style]
+  \addplot3[surf] {exp(-(((x-5)^2 + (y-3)^2)) / (2*3))};
+\end{axis}
+\end{tikzpicture}
+
+\end{figure}
+
+
+
+
+
+
+\begin{parag}{Kernel trick}
+    Since a kernel function corresponds to a similarity, as a dot product, one can replace any dot product between two samples in the solution of an machine learning algorithm with a kernel function. This is applicable to many algorithms, and is referred to as \important{kernelizing} an algorithm\\
+	 $ $\\
+	 Let us now look at how this works for linear regression
+\end{parag}
+\subsection{Kernelization}
+
+\begin{parag}{Notation}
+    As mentioned before, the kernel function computes a similarity between two samples. It can be written as $k\left(x_i, x_j\right)$\\
+	$ $\\
+	In what follows, with a small abuse of notation, we will also use the kernel function to encode the similarity between one sample and all training samples, represented vie the matrix $X$. This will give:
+	\begin{align*} 
+		k\left(X, x_i\right)= \begin{pmatrix} k\left(x_1, x_i\right) \\ k\left(x_2, x_i\right) \\ \vdots \\ k\left(x_N, x_i\right) \end{pmatrix} \in \mathbb{R}^{N}
+	\end{align*}
+	Furthermore, we will also use the notion of kernel matrix, in which each entry $\left(i, j\right)$ contains the kernel function evaluated between training sample $i$ and training sample $j$. This matrix is squared and can be written as 
+	\begin{align*} 
+		K = \begin{pmatrix} k\left(x_1, x_2\right) & k\left(x_1, x_2\right) & \cdots & k\left(x_1, x_N\right) \\ k\left(x_2, x_1\right) & k\left(x_2, x_2\right) & \cdots & k\left(x_2, x_N\right) \\ \vdots & \vdots & \ddots & \vdots \\ k\left(x_N, x_1\right) & k\left(x_N, x_2\right) & \cdots & k\left(x_N, x_N\right) \end{pmatrix}  \in \mathbb{R}^{N \times N}
+	\end{align*}
+\end{parag}
+
+\begin{parag}{Kernel regression}
+    As seen before, the solution to linear regression is given by:
+	\begin{align*} 
+		w^{\ast} =  \left(\Phi^{T}\Phi\right)^{-1} \Phi^{T}y
+	\end{align*}
+	At first sight, it may seem that $\Phi^{T}\Phi$ contains the dot products that we want to replace with a kernel function. However, $\Phi^{T}\Phi$ is an $F \times F$ matrix encoding dot products between the different feature dimensions, not the different samples. A kernel matrix, containing the dot products between every pair of training samples would be of size $N \times N$ and correspond to $\Phi\Phi^{T}$. Therefore we need another solution, the Representer theorem
+\end{parag}
+
+
+\begin{parag}{Representer theorem}
+	\begin{theoreme}
+	The minimizer of a regularized empirical risk function can be represented as a linear combination of the points in the high dimensional space. That is, we can write 
+		\begin{align*} 
+			w^{\ast} =  \sum_{i= 1}^{N}\alpha_i^{\ast}\phi\left(x_i\right) =  \Phi^{T}\alpha^{\ast}
+		\end{align*}
+	\end{theoreme}
+	In general if I am trying to find the minimizer, then I can represent the vector $w^{\ast}$ as a linear combination of my training samples, with some coefficients $\alpha_i^{\ast}$. Therefore $\alpha^{\ast} \in \mathbb{R}^{N}$
+\end{parag}
+
+\begin{parag}{Kernel regression}
+    So instead of searching for a minimizer of the empirical risk in terms of $w$, we search for one in terms of new variables $\left\{\alpha_i\right\}$\\
+	$ $\\
+	That is, the empirical risk
+	\begin{align*} 
+		R\left(w\right) = \sum_{i= 1}^{N}\left(w^{T}\phi\left(x_i\right) - y_i\right)^2
+	\end{align*}
+	What we will do, is to use the Representer theorem in order to rewrite our function with variables $\alpha$
+	\begin{align*} 
+		R\left(\alpha\right) \sum_{i= 1}^{N}\left(\alpha^{T}\Phi \phi\left(x_i\right)- y_i\right)^2
+	\end{align*}
+	But now we have the dot products that we needed before. This implies that we can rewrite using the kernel
+	\begin{align*} 
+		= \sum_{i= 1}^{N}\left(\alpha^Tk\left(X, x_i\right) - y_i\right)^2
+	\end{align*}
+	The gradient of the risk with regards to $\alpha$ is given by 
+	\begin{align*} 
+		\nabla R\left(\alpha\right) =  2 \sum_{i= 1}^{N}k\left(X, x_i\right)\left(k\left(X, x_i\right)^{T}\alpha - y_i\right)
+	\end{align*}
+	Following the same reasoning as for linear regression, we can write this matrix form as 
+	\begin{align*} 
+		\nabla_\alphaR\left(\alpha\right) = 2KK\alpha - 2Ky
+	\end{align*}
+	Setting the gradient to $0$ yields:
+	\begin{align*} 
+		2KK\alpha^{\ast} =  2Ky \iff K\alpha^{\ast} =  y
+	\end{align*}
+	Which gives the solution
+	\begin{align*} \alpha^\ast =  \left(K\right)^{-1}y \end{align*}
+	If we put this solution back in the definition of $w^{\ast}$, we have:
+	\begin{align*} 
+		w^{\ast} &= \Phi^{T}\alpha^\ast\\
+		&= \Phi^{T}\left(K\right)^{-1} y
+	\end{align*}
+	This solution still depends on $\Phi$, which we argued could be unknown? But do we care about computing the weights? In practice, this is not a problem, because our goal is to make predictions for new samples, we do not really care about having access to $w^{\ast}$\\
+	$ $\\
+	For a new sample $x$, the prediction is given by 
+	\begin{align*} 
+		\hat{y} &=  \left(w^{\ast}\right)^{T}\phi\left(x\right) =  y^{T}\left(K\right)^{-1} \Phi \phi\left(x\right)\\
+		&= y^{T}\left(K\right)^{-1}k\left(X, x\right)
+	\end{align*}
+	Not that the quantity $y^{T}\left(K\right)^{-1}$ only depends on the training data, and thus can be precomputed (i.., does not need to be recomputed for every test sample)
+\end{parag}
+
+
+\begin{parag}{Exercise: Kernel regression}
+    You are given the following 4 training samples ($x_i, y_i$)
+	\begin{align*} 
+		\left(\begin{pmatrix} 1 \\ 1 \end{pmatrix} , 0\right) \mathspace \left(\begin{pmatrix} 0 \\ 0 \end{pmatrix} , 2\right)  \left(\begin{pmatrix} 2 \\ 0 \end{pmatrix} , 0\right) \mathspace \left(\begin{pmatrix} 2 \\ 2 \end{pmatrix} , 2\right)
+	\end{align*}
+	The task is to compute the kernel matrix corresponding to a polynomial kernel of degree 2 with a bias 1. (If I have time I will do it here)
+\end{parag}
+
+
+\begin{parag}{Recap: Ridge regression}
+    To penalize overfitting, one can use a regularizer such as the sum of squares of the weights
+	\begin{align*} 
+		E_w\left(w\right) = w^{T}w
+	\end{align*}
+	Adding this to the linear regression empirical risk yields the ridge regression problem
+	\begin{align*} 
+		\min_w \sum_{i= 1}^{N} \left(\phi\left(x_i\right)^{T}w - y_i\right)^2 + \lambda w^{T}w
+	\end{align*}
+	What we would want here is to also translate it to a kernel. To do so we can use the Representer theorem, this way, we can rewrite it as:
+	\begin{align*} 
+		E\left(\alpha\right) &=  \sum_{i= 1}^{N}\left(\alpha^T\Phi\phi\left(x_i\right) - y_i\right)^2 + \lambda \alpha^T\Phi\Phi^{T}\alpha\\
+		&= \sum_{i= 1}^{N}\left(\alpha^Tk\left(X, x_i\right) - y_i\right)^2 + \lambda \alpha^TK\alpha
+	\end{align*}
+	Following the same reasoning as without regularizer, we can write the gradient of the risk in matrix form as 
+	\begin{align*} 
+		\nabla_{\alpha}E\left(\alpha\right) = 2K\left(K + \lambda I_N\right)\alpha - 2Ky
+	\end{align*}
+	Setting it to 0 gives us the solution:
+	\begin{align*} 
+		\alpha^\ast =  \left(K + \lambda I_N\right)^{-1} y
+	\end{align*}
+	Given $\alpha^\ast$, one can then express $W^{\ast}$ mathematically as in the case without regularization, and eventually use this formulation to make predictions for the test samples
+\end{parag}
+The kernel of the ridge regression strongly depend on the choice of kernel and of the hyper-parameter values for a given kernel. How can you identify a good kernel and good parameter values??\\
+$ $\\
+We know how to choose them, using \important{cross-validation}. 
+\begin{framedremark}
+We can do the same thing on ridge regression with multiple outputs (the exact same process), the prediction vector for a test sample is then given as 
+\begin{align*} 
+	\hat{y} &= \left(W^{\ast}\right)^{T}\phi\left(x\right) =  Y^{T}\left(K + \lambda I\right)^{-1}\Phi \phi\left(x\right)\\
+	&=  Y^{T}\left(K + \lambda I\right)^{-1}k\left(X, x\right)
+\end{align*}
+\end{framedremark}
+
+
+
+
+
+
+\begin{parag}{Kernelization}
+    The idea of kernelizing an algorithm does not apply only to linear regression 
+	\begin{itemize}
+	    \item It can also be used to obtain a nonlinear version of SVM (via the so-called dual formulation of SVM)
+	    \item In a few weeks, we will also do this for dimensionality reduction
+	    \item Not that logistic regression can also be kernelized although this is less commonly done
+	\end{itemize}
+	
+\end{parag}
+

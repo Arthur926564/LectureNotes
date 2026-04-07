@@ -162,11 +162,11 @@
 
   \newtheorem{exemple}{Exemple}
 
-\newtheorem{definition1}{Theorem}
-\newenvironment{theoreme}
+\newtheorem{theorem}{Theorem}
+\newenvironment{theoreme}[1][]%
 {
-    \begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{definition1}}
-    {\end{definition1}\end{mdframed}}
+\begin{mdframed}[backgroundcolor=blue!7, linecolor=blue!20, linewidth=1pt]\begin{theorem}[#1] $ $\\}
+    {\end{theorem}\end{mdframed}}
 
 
 

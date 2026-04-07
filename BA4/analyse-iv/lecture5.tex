@@ -1,0 +1,206 @@
+\begin{framedremark}
+    The Laurent series is unique. Hence, if we manage to compute a power series expansion for $f$ as above by any means, (e.g. from another Laurent series), we have determined the Laurent series.
+\end{framedremark}
+\begin{parag}{Example}
+	If we know that:
+	\begin{align*} 
+		\frac{1}{ 1 - z} = \sum_{n= 0}^{\infty}z^{n} \mathspace \text{ for } \left|z\right| < 1
+	\end{align*}
+	Then if we want to determine the Laurent series of $\frac{1}{1 + z^2}$ we could have:
+	\begin{align*} 
+		\frac{1}{1 + z^2} = \frac{1}{1- \left(-z^2\right)} &\underbrace{=}_{\left|1\right| < 1} \sum_{n= 0}^{\infty} \left(-z^2\right)^{n}\\
+		&= \sum_{n= 0}^{\infty} c_kz^{k}
+	\end{align*}
+	Where
+	\begin{align*} 
+		c_k = \begin{cases}
+			0 \mathspace k \text{ odd}\\
+			\left(-1\right)^{\frac{k}{2}} \mathspace k \text{ even}
+		\end{cases}
+	\end{align*}
+    
+\end{parag}
+
+\begin{parag}{Example II}
+    Let $f : \mathbb{C}\setminus \left\{0, -1\right\} \to \mathbb{C}$, $f\left(z\right) := \frac{1}{z\left(z + 1\right)}$. What we are trying to do is to develop the Laurent series of $f$ at a given point $z_0 \in \mathbb{C}$. In practice, the way to go is to look at the function, to see where it is behaving nicely or not. But here as we don't know (for an arbitrary point $z_0$) we need three cases:
+	\begin{enumerate}
+	    \item Assume $z_0 = 0$, we can observe that $f\left(z\right) = \frac{1}{z} - \frac{1}{z + 1}$. But here we just summoned a known Taylor series $\frac{1}{z - \left(-1\right)}$ Which gives us
+			\begin{align*} 
+				\frac{1}{1 - \left(-z\right)} = \sum_{n= 0}^{\infty}\left(-1\right)^{n}z^{n} \mathspace \text{ where } \left|z\right| < 1
+			\end{align*}
+			So $f\left(z\right) = \frac{1}{z} - \sum_{n= 0}^{\infty}\left(-1\right)^{n}z^{n}$ But here the $\frac{1}{z}$ is just a term of the regular part of the Laurent series, therefore this gives us:
+			\begin{align*} 
+				=  \sum_{n= -1}^{\infty}\left(-1\right)^{n + 1}z^{n}
+			\end{align*}
+			The radius of convergence for this series is give by $R= 1$, it is the distance to $z_0$ to the next distinct singular point of $f$(which is given by $z = -1$).
+			\item  Assume $z_0 = -1$. Using the same trick as in (1): $f\left(z\right) = -\frac{1}{z - \left(-1\right)} + \frac{1}{z}$. Now if we expand $\frac{1}{z}$ as Taylor series around $-1$:
+				\begin{align*} 
+					\frac{1}{z} = \sum_{n= 0}^{\infty}\left(-1\right)\left(z - \left(-1\right)\right)^{n} \mathspace \text{ where } \left|z - \left(-1\right)\right| < 1
+				\end{align*}
+				so 
+				\begin{align*} 
+					f\left(z\right) &= -\frac{1}{z - \left(-1\right)} + \sum_{n= 0}^{\infty}\left(-1\right)\left(z - \left(-1\right)\right)^{n}\\
+					&= \sum_{n= -1}^{\infty}\left(-1\right)\left(z - \left(-1\right)\right)^{n}
+				\end{align*}
+				With a Radius of converge of $1$
+				\item Assume now that $z_0 \neq 0$, $-1$. In this case, $f$ is holomorphic on an open set  containing $z_0$ so around $z_0$ $f$ can be written as a regular Taylor series. This series converges in any disk around $z_0$ which does not contain $0$ or $-1$. The radius is given by $R =  \min\left\{ \left|z_0\right|, \left|z_0 + 1\right|\right\}$ Does are the distance between our point $z_0$ and the point $0$ and $-1$.
+	\end{enumerate}
+	The principle is to use as much knowledge as we know about Taylor/Laurent series and common functions in order to compute new series.
+\end{parag}
+
+
+\begin{parag}{Regular point}
+	\begin{definition}{Regular point}
+		$ $\\
+
+		\begin{enumerate}
+			\item We say $f$ has a \important{regular point} at $z_0$ if the singular part of the Laurent series at $z_0$ vanishes
+			\item We say $f$ has a \important{pole of order $m$} at $z_0$ if the coefficients of the Laurent series of $f$ at $z_0$ satisfy $c_n = 0 \forall n < -m$, i.e.
+				\begin{align*} 
+					f\left(z\right) = \frac{c_m}{\left(z - z_0\right)^{m}} + \frac{c_{m + 1}}{\left(z - z_0\right)^{m - 1}} + \cdots,  \mathspace c_{m} \neq 0
+				\end{align*}
+			\item We say $f$ has an essential singularity at $z_0$ if its Laurent series has infinitely many coefficients $c_n \neq 0$ with $n \leq 1$
+		\end{enumerate}
+    \end{definition}
+	The intuition behind the second point if that '\textit{f blows up like $\frac{1}{\left(z - z_0\right)^{m}}$ at $z_0$}'
+	\begin{subparag}{Example}
+	    Let $f\left(z\right) = \sum_{n= 0}^{\infty}\frac{z^{n}}{n!} =  e^{z}$, here $0$ is regular.
+	\end{subparag}
+	\begin{subparag}{Remark}
+	    If $f$ is holomorphic at $z_0$, then $z_0$ is a regular point. The converse is also true: if $z_0$ is a regular point of $f$, then 
+		\begin{align*} 
+			\lim_{z \to z_0} f\left(z\right)
+		\end{align*}
+		Exists and if we extend $f$ to $z_0$ this way, $f$ is holomorphic at $z_{0}$. In short
+		\begin{center}
+		    $z_0$ is regular point of $f$ $\iff$ $\lim_{z \to z_0} f\left(z\right)$ exists
+		\end{center}
+		
+	\end{subparag}
+	\begin{subparag}{Example II}
+		$ $\\
+		\begin{itemize}
+			\item Let $f\left(z\right) = \frac{1}{z}$ has a pole of order 1 at $z_0 = 0$
+			\item $f\left(z\right) = \frac{1}{\left(z + 2\right)^2} + \frac{1}{z}$ has a pole of order $2$ at $z_0 = -2$ and a pole of order $1$ at $z_0 = 0$
+		\end{itemize}
+		The second statement comes from the fact that the function can be directly written as a Laurent series with the squared represent the second part of the Laurent series which implies an order of $2$ this part will only contribute to the Taylor series (because this function is holomorphic). $\frac{1}{z}$ will definitely belongs to the singular part.
+	\end{subparag}
+	If $f$ has a pole of order $m$ at $z_0$, then we can write $f\left(z\right)$ to be:
+	\begin{align*} 
+		f\left(z\right) = \frac{c_{ - m}}{\left(z - z_0\right)^{m}} + \frac{c_{ - m + 1}}{\left(z - z_0\right)^{m-1}} + \cdots
+	\end{align*}
+	Which means that if we take for instance $g\left(z\right) =  \left(z - z_0\right)^{m}f\left(z\right)$ has a regular point at $z_0$\\
+	$ $\\
+	In fact $f$ has a pole of order $m$ at $z_0$ if and only if $\lim_{z \to z_0} \left(z - z_0\right)^{m}f\left(z\right)$ exists and is non-zero.\\
+	$ $\\
+	Which means that we can multiply our function by a power of $z$ and the function will still exists (which is kind of obvious) so for instance $x^{2000} \cdot \frac{1}{z}$ when going to $0$ the limit will exists and will be $0$ (because the order is $1$ and not $2000$). In particular if $f$ has a pole of order $m$ at $z_0$, we can write 
+
+	\begin{align*} f\left(z\right) = \frac{g\left(z\right)}{\left(z - z_0\right)^{m}} \end{align*}
+	where $g$ is holomorphic at $z_0$ and $g\left(z_0\right)\neq 0$ (the opposite is also true)
+	\begin{framedremark}
+	The fact that we can rewrite $f$ as a product $\frac{g\left(z\right)}{z - z_0}$ for a given singularity is pretty big. Using Cauchy's Integral Formula, this implies that if $z_0 \in \gamma$ and that $g\left(z\right)$ is analytic inside and on $\gamma$, then:
+	\begin{align*} 
+		\oint_{\gamma}\frac{g\left(z\right)}{z - z_0}dz =  2\pi i \cdot  g\left(z_0\right) 
+	\end{align*}
+	This means that we can solve compute integral of another function to get the integral of our function $f$.
+	\end{framedremark}
+	\begin{subparag}{Example III}
+	    Let us for instance consider $f\left(z\right) = e^{\frac{1}{z}}$ at $z_0 = 0$. We can use the Taylor series of the exponential in order to compute the Laurent series:
+		\begin{align*} 
+			f\left(z\right) = \sum_{n= 0}^{\infty}\frac{\left(\frac{1}{z}\right)^{n}}{n!} = \sum_{n= -\infty}^{0}\frac{1}{\left(-n\right)!}z^{n}
+		\end{align*}
+		So $0$ is an essential singularity of $f$.
+	\end{subparag}
+	\begin{subparag}{Example III ii}
+	    Let $f\left(z\right) = ze^{\frac{1}{z}}$ at $z_0 = 0$. Using the same trick as above
+		\begin{align*} 
+			f\left(z\right) = z \sum_{n= -\infty}^{0}\frac{1}{\left(-n\right)!}z^{n} =  \underbrace{z + 1}_{\text{regular part}} + \underbrace{\frac{1}{2!z} + \frac{1}{3!z^2} + \cdots}_{\text{singular part}} 
+		\end{align*}
+			So $0$ is an essential singularity
+	\end{subparag}
+\end{parag}
+Now let's discuss quotients of Taylor series in this context. Suppose $p, q : D \setminus \left\{z_0\right\} \to \mathbb{C}$ holomorphic with $z_0$ being regular for both function. Regular means that we can write the Laurent series as:
+\begin{align*} 
+	p\left(z\right) = a_0 + a_1 \left(z - z_0\right) + a_2\left(z - z_0\right)^2 + \cdots
+\end{align*}
+\begin{align*} 
+	q\left(z\right) = b_0 + b_1 \left(z - z_0\right) + b_2\left(z - z_0\right)^2 + \cdots
+\end{align*}
+The goal is to study singularities of the quotients $\frac{p}{q}$ near $z_0$. In particular we are asking ourself what is the order of the pole (if there is any)? Let's discuss a few instructive examples. What we will harm here is our $q$, we will need to be careful when $q\left(z\right) = 0$, we will need to do some assumptions:
+
+\begin{enumerate}
+    \item if $b_0 \neq 0$ so $q\left(z_0\right) \neq 0$. In particular $\frac{1}{q}$ is holomorphic near $z_0$ and we have that
+		\begin{align*} \lim_{z  \to z_0} \frac{p\left(z\right)}{q\left(z\right)} = \frac{p\left(z_0\right)}{q\left(z_0\right)}= \frac{a_0}{b_0} \end{align*}
+		exists which implies that $z_0$ is a regular point for $\frac{p}{q}$
+	\item If $a_0 = b_0 = 0$ and this case both function vanish at 0... To make our life easier let us assume that $b_1 \neq 0$ then 
+		\begin{align*} \lim_{z \to z_0} \frac{p\left(z\right)}{q\left(z\right)} &= \lim_{z  \to z_0}  \frac{a_1\left(z - z_0\right) + a_2 \left(z - z_0\right)^2 + \cdots}{b_1\left(z - z_0\right) + b_2\left(z - z_0\right)^2 + \cdots} \\
+&= \lim_{z  \to z_0} \frac{a_1 + a_2\left(z - z_0\right) + \cdots}{b_1 + b_2\left(z - z_0\right) + \cdots} =  \frac{a_1}{b_1}
+		\end{align*}
+		because the limit exists, $z_0$ is a regular point for $f$. \\ $ $\\ Similarly if $a_0 = b_0 = 0$ and $a_1 = b_1 = 0$ yet $b_2 \neq 0$.
+\end{enumerate}
+\begin{parag}{Example}
+    Let our function be $f\left(z\right) = \frac{z}{\sin z}$ where $z_0 = 0$. Using power series expansion of the $\sin$ function, we can convince ourself that the limit of $z$ approaching $0$ does exists (recall analysis I):
+	\begin{align*} 
+		f\left(z\right) = \frac{z}{z - \frac{z^3}{3!} + \frac{z^{5}}{5!} + \cdots} = \frac{1}{1 - \frac{z^2}{3!} + \frac{z^{4}}{5!} - \cdots}
+	\end{align*}
+	By setting $z = 0$ we can see that the limit does exists:
+	\begin{align*} 
+		\lim_{z \to 0}  f\left(z\right) = 1
+	\end{align*}
+	Therefore, $0$ is a regular point
+\end{parag}
+
+
+
+\paragraph{Summary}%
+\label{par:Summary}
+In Summary, in order to see if the limit exists, either expand in power series and take out as many common powers of $z - z_0$ from the nominator and denominator as possible and take the limit, or use l'Hospital's rule.
+\begin{framedremark}
+This looks a lot like how we used to compute limit in analysis I and yes it is, We use the same principle here than there.\\
+\end{framedremark}
+\begin{parag}{Example}
+    Suppose that
+	\begin{align*} 
+		&p\left(z\right) = a_k\left(z - z_0\right)^{k} + a_{k + 1}\left(z - z_0\right)^{k + 1} + \cdots, \mathspace a_k \neq 0\\
+		&q\left(z\right) =  b_l\left(z - z_0\right)^{l} + b_{l + 1}\left(z - z_0\right)^{l + 1} + \cdots, \mathspace b_l \neq 0   
+	\end{align*}
+	Consider now the function $f\left(z\right) = \frac{p\left(z\right)}{q\left(z\right)}$ near $z_0$.
+	\begin{itemize}
+	    \item If $k \geq l$ then $z_0$ is a regular point for $f$. To do so we will show that the limit of our function when approaching the point converges 
+			\begin{align*} 
+				\lim_{z  \to z_0} f\left(z\right) = \lim_{z  \to z_0}  \frac{a_k\left( z - z_0\right)^{k} + a_{k + 1}\left(z - z_0\right)^{k + 1} + \cdots}{b_l \left(z - z_0\right)^{l} + b_{l  + 1}\left(z - z_0\right)^{l + 1} + \cdots} 
+			\end{align*}
+			Because $k \geq l$, we can factor out $\left(z - z_0\right)^{l}$ which gives us 
+			\begin{align*} 
+				&=  \lim_{z \to z_0} \frac{a_k\left(z - z_0\right)^{k - l} + a_{k+1}\left(z - z_0\right)^{k + 1 - l} + \cdots}{b_l + b_{l +1}\left(z - z_0\right) + \cdots}\\
+				&= \begin{cases}
+					0 \mathspace \text{ if } k > l	\\
+					\frac{a_k}{b_l} \mathspace \text{ if } k= l
+				\end{cases}
+			\end{align*}
+			\item If $k < l$ then $z_0$ is a pole of order $l-k$. Using the same trick as what we have done above, factoring out until we see holomorphic function:
+				\begin{align*} 
+					f\left(z\right) &= \frac{a_k\left(z - z_0\right)^{k} + a_{k + 1}\left(z - z_0\right)^{k+1} + \cdots}{b_l	\left(z - z_0\right)^{l} + b_{l + 1}\left(z - z_0\right)^{l + 1} + \cdots}\\
+					&= \frac{a_k + a_{k+1\left(z -z_0\right) + \cdots}}{b_{l}\left(z - z_0\right)^{l - k} + b_{l + 1}\left(z - z_0\right)^{l + 1 - k} + \cdots}\\
+					&= \underbrace{\frac{1}{\left(z - z_0\right)^{l - k}}}_{\text{blows up at } z_0}\left[\frac{a_k + a_{k+1}\left(z - z_0\right) + \cdots}{b_{l} + b_{l + 1}\left(z - z_0\right) + \cdots}\right]
+				\end{align*}
+				This right part is holomorphic at  $z_0$ Laurent series with only regular part. Therefore, we could write our function:
+
+				\begin{align*} 
+					f\left(z\right) = \frac{c_0}{\left(z - z_0\right)^{l - k}} + \frac{c_1}{\left(z - z_0\right)^{l - k + 1}} + \cdots
+				\end{align*}
+	\end{itemize}
+	\begin{subparag}{Example}
+	    Let $f\left(z\right) = \frac{\sin z}{2z^3 + z^{4}}$ has a pole of order 2 at $z_0 = 0$. \\
+		$ $\\
+		Since $\sin z = z - \frac{z^3}{3!} + \frac{z^{5}}{5!} - \cdots$ we have that 
+		\begin{align*} 
+			f\left(z\right) &= \frac{z - \frac{z^3}{z!} + \frac{z^{5}}{5!} - \cdots}{2z^3 + z^{4}} =  \frac{1 - \frac{z^2}{3!} + \frac{z^{4}}{5!} + \cdots}{2z^2 + z^3}\\
+			&=  \frac{1}{z^2}\left[\frac{1 - \frac{z^2}{3!} + \frac{z^{4}}{5!}}{2 + z}\right]
+		\end{align*}
+	\end{subparag}
+\end{parag}
+
+
+
+

@@ -1,9 +1,9 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.2.17)  9 MAR 2026 16:54
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.5)  7 APR 2026 17:32
  restricted system commands enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
@@ -41,26 +41,26 @@ Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
 Inserting `tracingstacklevels' in `input_level_string'. (/usr/share/texmf-dist/
 tex/latex/base/book.cls
-Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+File: bk10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 luaotfload | db : Font names database loaded from /home/arthur/.texlive/texmf-va
 r/luatex-cache/generic/names/luaotfload-names.luc.gz)
-\c@part=\count194
-\c@chapter=\count195
-\c@section=\count196
-\c@subsection=\count197
-\c@subsubsection=\count198
-\c@paragraph=\count199
-\c@subparagraph=\count266
-\c@figure=\count267
-\c@table=\count268
+\c@part=\count273
+\c@chapter=\count274
+\c@section=\count275
+\c@subsection=\count276
+\c@subsubsection=\count277
+\c@paragraph=\count278
+\c@subparagraph=\count279
+\c@figure=\count280
+\c@table=\count281
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen140
+\bibindent=\dimen147
 ) (./style.sty
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 6.
 
@@ -70,38 +70,36 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-01-18 L3 programming layer (loader) 
+Package: expl3 2026-01-19 L3 programming layer (loader) 
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
-File: l3backend-luatex.def 2024-05-08 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count269
-Inserting `l3color' in `luaotfload.parse_color'.
-\l__pdf_internal_box=\box52
-))
-Package: xparse 2024-08-16 L3 Experimental document command parser
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count282
+Inserting `l3color' in `luaotfload.parse_color'.))
+Package: xparse 2025-10-09 L3 Experimental document command parser
 )
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaT
+Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count270
-\l__fontspec_language_int=\count271
-\l__fontspec_strnum_int=\count272
-\l__fontspec_tmp_int=\count273
-\l__fontspec_tmpa_int=\count274
-\l__fontspec_tmpb_int=\count275
-\l__fontspec_tmpc_int=\count276
-\l__fontspec_em_int=\count277
-\l__fontspec_emdef_int=\count278
-\l__fontspec_strong_int=\count279
-\l__fontspec_strongdef_int=\count280
-\l__fontspec_tmpa_dim=\dimen141
-\l__fontspec_tmpb_dim=\dimen142
-\l__fontspec_tmpc_dim=\dimen143
+\l__fontspec_script_int=\count283
+\l__fontspec_language_int=\count284
+\l__fontspec_strnum_int=\count285
+\l__fontspec_tmp_int=\count286
+\l__fontspec_tmpa_int=\count287
+\l__fontspec_tmpb_int=\count288
+\l__fontspec_tmpc_int=\count289
+\l__fontspec_em_int=\count290
+\l__fontspec_emdef_int=\count291
+\l__fontspec_strong_int=\count292
+\l__fontspec_strongdef_int=\count293
+\l__fontspec_tmpa_dim=\dimen148
+\l__fontspec_tmpb_dim=\dimen149
+\l__fontspec_tmpc_dim=\dimen150
 
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
@@ -117,17 +115,17 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count281
-\Gm@cntv=\count282
-\c@Gm@tempcnt=\count283
-\Gm@bindingoffset=\dimen144
-\Gm@wd@mp=\dimen145
-\Gm@odd@mp=\dimen146
-\Gm@even@mp=\dimen147
-\Gm@layoutwidth=\dimen148
-\Gm@layoutheight=\dimen149
-\Gm@layouthoffset=\dimen150
-\Gm@layoutvoffset=\dimen151
+\Gm@cnth=\count294
+\Gm@cntv=\count295
+\c@Gm@tempcnt=\count296
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
 \Gm@dimlist=\toks18
 )
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -197,29 +195,29 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 (/usr/share/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2025/02/11 v3.2a Micro-typographical refinements (RS)
+Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count284
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count297
 )
 \MT@toks=\toks26
 \MT@tempbox=\box53
-\MT@count=\count285
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
-LaTeX Info: Redefining \leftprotrusion on input line 1088.
+\MT@count=\count298
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
+LaTeX Info: Redefining \leftprotrusion on input line 1085.
 \MT@prot@toks=\toks27
-LaTeX Info: Redefining \rightprotrusion on input line 1107.
+LaTeX Info: Redefining \rightprotrusion on input line 1104.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen152
+\MT@outer@kern=\dimen159
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count286
+\MT@listname@count=\count299
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype-luatex.def
-File: microtype-luatex.def 2025/02/11 v3.2a Definitions specific to luatex (RS)
+File: microtype-luatex.def 2026/03/01 v3.2d Definitions specific to luatex (RS)
 
-Lua module: microtype 2025/02/11 v3.2a microtype module.
+Lua module: microtype 2026/03/01 v3.2d microtype module.
 Module microtype Info: overwriting function `keepligature' on input line 63
 LaTeX Info: Redefining \lsstyle on input line 779.
 LaTeX Info: Redefining \lslig on input line 779.
@@ -228,7 +226,7 @@ LaTeX Info: Redefining \lslig on input line 779.
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2025/02/11 v3.2a microtype main configuration file (RS)
+File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 )
@@ -237,12 +235,12 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box54
 \beforetitleunit=\skip69
 \aftertitleunit=\skip70
-\ttl@plus=\dimen153
-\ttl@minus=\dimen154
+\ttl@plus=\dimen160
+\ttl@minus=\dimen161
 \ttl@toksa=\toks28
-\titlewidth=\dimen155
-\titlewidthlast=\dimen156
-\titlewidthfirst=\dimen157
+\titlewidth=\dimen162
+\titlewidthlast=\dimen163
+\titlewidthfirst=\dimen164
 )
 (/usr/share/texmf-dist/tex/latex/nowidow/nowidow.sty
 Package: nowidow 2011/09/20 1.0 Easily prevent widows and orphans
@@ -262,7 +260,7 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 
 (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
@@ -286,7 +284,7 @@ Package pdftexcmds Info: \pdfdraftmode found.
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
 (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
@@ -294,38 +292,38 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count287
+\c@section@level=\count300
 )
 (/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen158
-\Hy@linkcounter=\count288
-\Hy@pagecounter=\count289
+\@linkdim=\dimen165
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 )
 (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count290
+\Hy@SavedSpaceFactor=\count303
 
 (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 4040.
-Package hyperref Info: Hyper figures OFF on input line 4157.
-Package hyperref Info: Link nesting OFF on input line 4162.
-Package hyperref Info: Hyper index ON on input line 4165.
-Package hyperref Info: Plain pages OFF on input line 4172.
-Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4072.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count291
-LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen159
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count304
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen166
 
 (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -334,77 +332,66 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count292
-\Field@Width=\dimen160
-\Fld@charsize=\dimen161
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
-
-(/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)
-\Hy@abspage=\count293
-\c@Item=\count294
-\c@Hfootnote=\count295
+\Fld@menulength=\count305
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count306
+\c@Item=\count307
+\c@Hfootnote=\count308
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hluatex.def
-File: hluatex.def 2024-11-05 v7.01l Hyperref driver for luaTeX
-
-(/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
-with kernel methods
-)
-\Fld@listcount=\count296
-\c@bookmark@seq@number=\count297
+File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
 
 (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
 (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-85.
+84.
 )
 \Hy@SectionHShift=\skip71
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2024/11/05 v2.17t AMS math features
+Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip72
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
+Package: amstext 2024/11/17 v2.01 AMS text
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks30
-\ex@=\dimen162
+\ex@=\dimen169
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen163
+\pmbraise@=\dimen170
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count298
+\inf@bad=\count311
 LaTeX Info: Redefining \frac on input line 235.
-\uproot@=\count299
-\leftroot@=\count300
+\uproot@=\count312
+\leftroot@=\count313
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count301
-\DOTSCASE@=\count302
+\classnum@=\count314
+\DOTSCASE@=\count315
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -414,36 +401,36 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen164
+\big@size=\dimen171
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count303
+\macc@depth=\count316
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count304
+\c@MaxMatrixCols=\count317
 \dotsspace@=\muskip18
-\c@parentequation=\count305
-\dspbrk@lvl=\count306
+\c@parentequation=\count318
+\dspbrk@lvl=\count319
 \tag@help=\toks31
-\row@=\count307
-\column@=\count308
-\maxfields@=\count309
+\row@=\count320
+\column@=\count321
+\maxfields@=\count322
 \andhelp@=\toks32
-\eqnshift@=\dimen165
-\alignsep@=\dimen166
-\tagshift@=\dimen167
-\tagwidth@=\dimen168
-\totwidth@=\dimen169
-\lineht@=\dimen170
+\eqnshift@=\dimen172
+\alignsep@=\dimen173
+\tagshift@=\dimen174
+\tagwidth@=\dimen175
+\totwidth@=\dimen176
+\lineht@=\dimen177
 \@envbody=\toks33
 \multlinegap=\skip73
 \multlinetaggap=\skip74
 \mathdisplay@stack=\toks34
-LaTeX Info: Redefining \[ on input line 2953.
-LaTeX Info: Redefining \] on input line 2954.
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
 )
 (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -476,46 +463,46 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
 
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count310
-\calc@Bcount=\count311
-\calc@Adimen=\dimen171
-\calc@Bdimen=\dimen172
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count323
+\calc@Bcount=\count324
+\calc@Adimen=\dimen178
+\calc@Bdimen=\dimen179
 \calc@Askip=\skip75
 \calc@Bskip=\skip76
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count312
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count325
 \calc@Cskip=\skip77
 )
-\g_MT_multlinerow_int=\count313
-\l_MT_multwidth_dim=\dimen173
+\g_MT_multlinerow_int=\count326
+\l_MT_multwidth_dim=\dimen180
 \origjot=\skip78
-\l_MT_shortvdotswithinadjustabove_dim=\dimen174
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen175
-\l_MT_above_intertext_sep=\dimen176
-\l_MT_below_intertext_sep=\dimen177
-\l_MT_above_shortintertext_sep=\dimen178
-\l_MT_below_shortintertext_sep=\dimen179
+\l_MT_shortvdotswithinadjustabove_dim=\dimen181
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen182
+\l_MT_above_intertext_sep=\dimen183
+\l_MT_below_intertext_sep=\dimen184
+\l_MT_above_shortintertext_sep=\dimen185
+\l_MT_below_shortintertext_sep=\dimen186
 \xmathstrut@box=\box57
-\xmathstrut@dim=\dimen180
+\xmathstrut@dim=\dimen187
 )
-\l_EQ_equationtype_int=\count314
-\l_EQ_alignmentmode_int=\count315
-\l_EQ_totalwidth_dim=\dimen181
-\l_EQ_displaywidth_dim=\dimen182
-\l_EQ_temp_linewidth_dim=\dimen183
-\l_EQ_linewidth_dim=\dimen184
-\EmphEqdelimitershortfall=\dimen185
-\EmphEqdelimiterfactor=\count316
-\g_EQ_toptag_height_dim=\dimen186
-\g_EQ_bottomtag_depth_dim=\dimen187
-\g_EQ_toprow_height_dim=\dimen188
-\g_EQ_bottomrow_depth_dim=\dimen189
-\g_EQ_widesttag_dim=\dimen190
+\l_EQ_equationtype_int=\count327
+\l_EQ_alignmentmode_int=\count328
+\l_EQ_totalwidth_dim=\dimen188
+\l_EQ_displaywidth_dim=\dimen189
+\l_EQ_temp_linewidth_dim=\dimen190
+\l_EQ_linewidth_dim=\dimen191
+\EmphEqdelimitershortfall=\dimen192
+\EmphEqdelimiterfactor=\count329
+\g_EQ_toptag_height_dim=\dimen193
+\g_EQ_bottomtag_depth_dim=\dimen194
+\g_EQ_toprow_height_dim=\dimen195
+\g_EQ_bottomrow_depth_dim=\dimen196
+\g_EQ_widesttag_dim=\dimen197
 \EQ_mathdisplay_box=\box58
 \EQ_tag_box=\box59
-\g_EQ_temprow_int=\count317
+\g_EQ_temprow_int=\count330
 )
 (/usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
@@ -524,18 +511,18 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent 
-basics and keyval usage)
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independen
+t basics and keyval usage)
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
+Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
-
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hook
+s)
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
+Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line
@@ -545,7 +532,7 @@ Already applied: [0000/00/00] Usage of raw or classic option list on input line
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
@@ -559,18 +546,18 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: luatex.def on input line 106.
 
 (/usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
-File: luatex.def 2024/04/13 v1.2e Graphics/color driver for luatex
+File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen191
-\Gin@req@width=\dimen192
+\Gin@req@height=\dimen198
+\Gin@req@width=\dimen199
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\c@svg@param@lastpage=\count318
+\c@svg@param@lastpage=\count331
 \svg@box=\box60
-\c@svg@param@currpage=\count319
+\c@svg@param@currpage=\count332
 )
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -592,10 +579,10 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
 (/usr/share/texmf-dist/tex/latex/transparent/transparent.sty
-Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+Package: transparent 2025-06-23 v1.6 Transparency with color stacks
 
 (/usr/share/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
-Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color
  stack (HO)
 
 (/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
@@ -605,18 +592,18 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks35
-\pgfutil@tempdima=\dimen193
-\pgfutil@tempdimb=\dimen194
+\pgfutil@tempdima=\dimen256
+\pgfutil@tempdimb=\dimen257
 )
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box61
 )
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks36
@@ -626,62 +613,62 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 x
 \pgfkeys@tmptoks=\toks38
 ))
-\pgf@x=\dimen195
-\pgf@y=\dimen196
-\pgf@xa=\dimen197
-\pgf@ya=\dimen198
-\pgf@xb=\dimen199
-\pgf@yb=\dimen256
-\pgf@xc=\dimen257
-\pgf@yc=\dimen258
-\pgf@xd=\dimen259
-\pgf@yd=\dimen260
+\pgf@x=\dimen258
+\pgf@y=\dimen259
+\pgf@xa=\dimen260
+\pgf@ya=\dimen261
+\pgf@xb=\dimen262
+\pgf@yb=\dimen263
+\pgf@xc=\dimen264
+\pgf@yc=\dimen265
+\pgf@xd=\dimen266
+\pgf@yd=\dimen267
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count320
-\c@pgf@countb=\count321
-\c@pgf@countc=\count322
-\c@pgf@countd=\count323
+\c@pgf@counta=\count333
+\c@pgf@countb=\count334
+\c@pgf@countc=\count335
+\c@pgf@countd=\count336
 \t@pgf@toka=\toks39
 \t@pgf@tokb=\toks40
 \t@pgf@tokc=\toks41
-\pgf@sys@id@count=\count324
+\pgf@sys@id@count=\count337
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-luatex.def
 
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
-File: pgfsys-luatex.def 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsys-luatex.def 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count325
-\pgfsyssoftpath@bigbuffer@items=\count326
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count338
+\pgfsyssoftpath@bigbuffer@items=\count339
 )
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
 
 (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen261
-\pgfmath@count=\count327
+\pgfmath@dimen=\dimen268
+\pgfmath@count=\count340
 \pgfmath@box=\box62
 \pgfmath@toks=\toks42
 \pgfmath@stack@operand=\toks43
@@ -699,103 +686,103 @@ x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
 .code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count328
+\c@pgfmathroundto@lastzeros=\count341
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen262
-\pgf@picmaxx=\dimen263
-\pgf@picminy=\dimen264
-\pgf@picmaxy=\dimen265
-\pgf@pathminx=\dimen266
-\pgf@pathmaxx=\dimen267
-\pgf@pathminy=\dimen268
-\pgf@pathmaxy=\dimen269
-\pgf@xx=\dimen270
-\pgf@xy=\dimen271
-\pgf@yx=\dimen272
-\pgf@yy=\dimen273
-\pgf@zx=\dimen274
-\pgf@zy=\dimen275
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen269
+\pgf@picmaxx=\dimen270
+\pgf@picminy=\dimen271
+\pgf@picmaxy=\dimen272
+\pgf@pathminx=\dimen273
+\pgf@pathmaxx=\dimen274
+\pgf@pathminy=\dimen275
+\pgf@pathmaxy=\dimen276
+\pgf@xx=\dimen277
+\pgf@xy=\dimen278
+\pgf@yx=\dimen279
+\pgf@yy=\dimen280
+\pgf@zx=\dimen281
+\pgf@zy=\dimen282
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen276
-\pgf@path@lasty=\dimen277
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen283
+\pgf@path@lasty=\dimen284
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen278
-\pgf@shorten@start@additional=\dimen279
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen285
+\pgf@shorten@start@additional=\dimen286
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box63
 \pgf@hbox=\box64
 \pgf@layerbox@main=\box65
-\pgf@picture@serial@count=\count329
+\pgf@picture@serial@count=\count342
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen280
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen287
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
 ex
-File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen281
-\pgf@pt@y=\dimen282
-\pgf@pt@temp=\dimen283
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen288
+\pgf@pt@y=\dimen289
+\pgf@pt@temp=\dimen290
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
 x
-File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen284
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen291
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen285
-\pgf@sys@shading@range@num=\count330
-\pgf@shadingcount=\count331
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen292
+\pgf@sys@shading@range@num=\count343
+\pgf@shadingcount=\count344
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box66
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box67
 )
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
-Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen286
-\pgf@nodesepend=\dimen287
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen293
+\pgf@nodesepend=\dimen294
 )
 (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
-Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
@@ -803,48 +790,48 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen288
-\pgffor@skip=\dimen289
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen295
+\pgffor@skip=\dimen296
 \pgffor@stack=\toks45
 \pgffor@toks=\toks46
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
 x
-File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count332
-\pgfplotmarksize=\dimen290
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count345
+\pgfplotmarksize=\dimen297
 )
-\tikz@lastx=\dimen291
-\tikz@lasty=\dimen292
-\tikz@lastxsaved=\dimen293
-\tikz@lastysaved=\dimen294
-\tikz@lastmovetox=\dimen295
-\tikz@lastmovetoy=\dimen296
-\tikzleveldistance=\dimen297
-\tikzsiblingdistance=\dimen298
+\tikz@lastx=\dimen298
+\tikz@lasty=\dimen299
+\tikz@lastxsaved=\dimen300
+\tikz@lastysaved=\dimen301
+\tikz@lastmovetox=\dimen302
+\tikz@lastmovetoy=\dimen303
+\tikzleveldistance=\dimen304
+\tikzsiblingdistance=\dimen305
 \tikz@figbox=\box68
 \tikz@figbox@bg=\box69
 \tikz@tempbox=\box70
 \tikz@tempbox@bg=\box71
-\tikztreelevel=\count333
-\tikznumberofchildren=\count334
-\tikznumberofcurrentchild=\count335
-\tikz@fig@count=\count336
+\tikztreelevel=\count346
+\tikznumberofchildren=\count347
+\tikznumberofcurrentchild=\count348
+\tikz@fig@count=\count349
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count337
-\pgfmatrixcurrentcolumn=\count338
-\pgf@matrix@numberofcolumns=\count339
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count350
+\pgfmatrixcurrentcolumn=\count351
+\pgf@matrix@numberofcolumns=\count352
 )
-\tikz@expandcount=\count340
+\tikz@expandcount=\count353
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
-File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )))
 (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
@@ -853,26 +840,21 @@ Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \t@pgfplots@toka=\toks47
 \t@pgfplots@tokb=\toks48
 \t@pgfplots@tokc=\toks49
-\pgfplots@tmpa=\dimen299
-\c@pgfplots@coordindex=\count341
-\c@pgfplots@scanlineindex=\count342
+\pgfplots@tmpa=\dimen306
+\c@pgfplots@coordindex=\count354
+\c@pgfplots@scanlineindex=\count355
 
 (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_l
 oader.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks50
-\t@pgf@tokb=\toks51
-\t@pgf@tokc=\toks52
-
 (/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_p
 gfutil-common-lists.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/luamath/pgflibraryluamath.code
 .tex)
-Package pgfplots info on input line 290: luamath library shipped with pgf 3.1.1
-0 is up-to-date
+Package pgfplots info on input line 292: luamath library shipped with pgf 3.1.1
+1a is up-to-date
 ) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
 Package pgfplots info on input line 82: Found new luatex: initializing lua comm
 ands instead of write18 (shell-escape)
@@ -883,21 +865,21 @@ ands instead of write18 (shell-escape)
 ext.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.te
 x
-\c@pgfplotsarray@tmp=\count343
+\c@pgfplotsarray@tmp=\count356
 )
 (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.t
 ex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.t
 ex
-\c@pgfplotstable@counta=\count344
-\t@pgfplotstable@a=\toks53
+\c@pgfplotstable@counta=\count357
+\t@pgfplotstable@a=\toks50
 )
 (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.te
 x) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
 (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading
 .code.tex
-\c@pgfplotslibrarysurf@no=\count345
+\c@pgfplotslibrarysurf@no=\count358
 
 (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.
 pgfsys-luatex.def)))
@@ -916,14 +898,14 @@ pgfsys-luatex.def)))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 decorations.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen300
-\pgfdecoratedremainingdistance=\dimen301
-\pgfdecoratedinputsegmentcompleteddistance=\dimen302
-\pgfdecoratedinputsegmentremainingdistance=\dimen303
-\pgf@decorate@distancetomove=\dimen304
-\pgf@decorate@repeatstate=\count346
-\pgfdecorationsegmentamplitude=\dimen305
-\pgfdecorationsegmentlength=\dimen306
+\pgfdecoratedcompleteddistance=\dimen307
+\pgfdecoratedremainingdistance=\dimen308
+\pgfdecoratedinputsegmentcompleteddistance=\dimen309
+\pgfdecoratedinputsegmentremainingdistance=\dimen310
+\pgf@decorate@distancetomove=\dimen311
+\pgf@decorate@repeatstate=\count359
+\pgfdecorationsegmentamplitude=\dimen312
+\pgfdecorationsegmentlength=\dimen313
 )
 \tikz@lib@dec@box=\box72
 )
@@ -937,20 +919,20 @@ decorations.pathreplacing.code.tex
 ons.pathreplacing.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua
 .code.tex)
-\pgfplots@numplots=\count347
-\pgfplots@xmin@reg=\dimen307
-\pgfplots@xmax@reg=\dimen308
-\pgfplots@ymin@reg=\dimen309
-\pgfplots@ymax@reg=\dimen310
-\pgfplots@zmin@reg=\dimen311
-\pgfplots@zmax@reg=\dimen312
+\pgfplots@numplots=\count360
+\pgfplots@xmin@reg=\dimen314
+\pgfplots@xmax@reg=\dimen315
+\pgfplots@ymin@reg=\dimen316
+\pgfplots@ymax@reg=\dimen317
+\pgfplots@zmin@reg=\dimen318
+\pgfplots@zmax@reg=\dimen319
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 plotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
-File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))) (/usr/share/texmf-dist/tex/latex/quantikz/quantikz.sty
 Package: quantikz 2023/05/24 typeset quantum circuit diagrams
 
@@ -959,27 +941,28 @@ Package: quantikz 2023/05/24 typeset quantum circuit diagrams
 Package: xargs 2008/03/22 v1.1  extended macro definitions  (mpg)
 
 (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
 
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks54
-\XKV@tempa@toks=\toks55
+\XKV@toks=\toks51
+\XKV@tempa@toks=\toks52
+\XKV@tempb@toks=\toks53
 )
-\XKV@depth=\count348
+\XKV@depth=\count361
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\xargs@max=\count349
-\xargs@toksa=\toks56
-\xargs@toksb=\toks57
+\xargs@max=\count362
+\xargs@toksa=\toks54
+\xargs@toksb=\toks55
 )
 (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count350
-\xs_countb=\count351
+\xs_counta=\count363
+\xs_countb=\count364
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
@@ -989,46 +972,46 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (/usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 matrix.code.tex
-File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibrarymatrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 quotes.code.tex
-File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen313
-\pgfarrowlength=\dimen314
-\pgfarrowwidth=\dimen315
-\pgfarrowlinewidth=\dimen316
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen320
+\pgfarrowlength=\dimen321
+\pgfarrowwidth=\dimen322
+\pgfarrowlinewidth=\dimen323
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 calc.code.tex
-File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 positioning.code.tex
-File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 fit.code.tex
-File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.symbols.code.tex
-File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbol
 s.code.tex
-File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.misc.code.tex
-File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.c
 ode.tex
-File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 decorations.markings.code.tex
@@ -1038,19 +1021,19 @@ ons.markings.code.tex))
 math.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 fpu.code.tex)
-\tikz@math@for@depth=\count352
-\tikz@math@dimen=\dimen317
-\tikz@math@toks=\toks58
+\tikz@math@for@depth=\count365
+\tikz@math@dimen=\dimen324
+\tikz@math@toks=\toks56
 )
 \pgf@layerbox@background=\box73
 \pgf@layerboxsaved@background=\box74
 \pgf@layerbox@quantback=\box75
 \pgf@layerboxsaved@quantback=\box76
-\c@dummy=\count353
+\c@dummy=\count366
 \myl=\skip79
 \myh=\skip80
 \myd=\skip81
-\c@aaa=\count354
+\c@aaa=\count367
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 044.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -1104,7 +1087,7 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 10
 (/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-\c@wirenumberpermute=\count355
+\c@wirenumberpermute=\count368
 ))
 (/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
@@ -1113,22 +1096,22 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
-Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
-\col@sep=\dimen318
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen325
 \ar@mcellbox=\box77
-\extrarowheight=\dimen319
-\NC@list=\toks59
+\extrarowheight=\dimen326
+\NC@list=\toks57
 \extratabsurround=\skip82
 \backup@length=\skip83
 \ar@cellbox=\box78
 )
-\TX@col@width=\dimen320
-\TX@old@table=\dimen321
-\TX@old@col=\dimen322
-\TX@target=\dimen323
-\TX@delta=\dimen324
-\TX@cols=\count356
-\TX@ftn=\toks60
+\TX@col@width=\dimen327
+\TX@old@table=\dimen328
+\TX@old@col=\dimen329
+\TX@target=\dimen330
+\TX@delta=\dimen331
+\TX@cols=\count369
+\TX@ftn=\toks58
 )
 (/usr/share/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
@@ -1148,86 +1131,92 @@ Package pict2e Info: Driver file for pict2e: p2e-luatex.def on input line 114.
 (/usr/share/texmf-dist/tex/latex/pict2e/p2e-luatex.def
 File: p2e-luatex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks61
-\@arclen=\dimen325
-\@arcrad=\dimen326
-\pIIe@tempdima=\dimen327
-\pIIe@tempdimb=\dimen328
-\pIIe@tempdimc=\dimen329
-\pIIe@tempdimd=\dimen330
-\pIIe@tempdime=\dimen331
-\pIIe@tempdimf=\dimen332
+\pIIe@GRAPH=\toks59
+\@arclen=\dimen332
+\@arcrad=\dimen333
+\pIIe@tempdima=\dimen334
+\pIIe@tempdimb=\dimen335
+\pIIe@tempdimc=\dimen336
+\pIIe@tempdimd=\dimen337
+\pIIe@tempdime=\dimen338
+\pIIe@tempdimf=\dimen339
 )
 \diagbox@boxa=\box79
 \diagbox@boxb=\box80
 \diagbox@boxm=\box81
-\diagbox@wd=\dimen333
-\diagbox@ht=\dimen334
-\diagbox@insepl=\dimen335
-\diagbox@insepr=\dimen336
-\diagbox@outsepl=\dimen337
-\diagbox@outsepr=\dimen338
+\diagbox@wd=\dimen340
+\diagbox@ht=\dimen341
+\diagbox@insepl=\dimen342
+\diagbox@insepr=\dimen343
+\diagbox@outsepl=\dimen344
+\diagbox@outsepr=\dimen345
 )
 (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip84
-\multirow@cntb=\count357
+\multirow@cntb=\count370
 \multirow@dima=\skip85
-\bigstrutjot=\dimen339
+\bigstrutjot=\dimen346
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count358
+\lst@mode=\count371
 \lst@gtempboxa=\box82
-\lst@token=\toks62
-\lst@length=\count359
-\lst@currlwidth=\dimen340
-\lst@column=\count360
-\lst@pos=\count361
-\lst@lostspace=\dimen341
-\lst@width=\dimen342
-\lst@newlines=\count362
-\lst@lineno=\count363
-\lst@maxwidth=\dimen343
+\lst@token=\toks60
+\lst@length=\count372
+\lst@currlwidth=\dimen347
+\lst@column=\count373
+\lst@pos=\count374
+\lst@lostspace=\dimen348
+\lst@width=\dimen349
+\lst@newlines=\count375
+\lst@lineno=\count376
+\lst@maxwidth=\dimen350
 
 (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
-File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count364
-\lst@skipnumbers=\count365
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count377
+\lst@skipnumbers=\count378
 \lst@framebox=\box83
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2024/09/23 1.10c listings configuration
+File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
-Package: listings 2024/09/23 1.10c (Carsten Heinz)
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
 
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
+Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
 
 (/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks63
-\verbatim@line=\toks64
+\every@verbatim=\toks61
+\verbatim@line=\toks62
 \verbatim@in@stream=\read3
 )
 \tcb@titlebox=\box84
 \tcb@upperbox=\box85
 \tcb@lowerbox=\box86
 \tcb@phantombox=\box87
-\c@tcbbreakpart=\count366
-\c@tcblayer=\count367
-\c@tcolorbox@number=\count368
+\c@tcbbreakpart=\count379
+\c@tcblayer=\count380
+\c@tcolorbox@number=\count381
 \l__tcobox_tmpa_box=\box88
-\l__tcobox_tmpa_dim=\dimen344
+\l__tcobox_tmpa_dim=\dimen351
 \tcb@temp=\box89
 \tcb@temp=\box90
 \tcb@temp=\box91
 \tcb@temp=\box92
 
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
-Library (tcolorbox): 'tcbskins.code.tex' version '6.4.1'
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
 (/usr/share/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
 Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
 
@@ -1239,9 +1228,9 @@ File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
 \l__tikzfill_img_box=\box93
 ))
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
-Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.4.1'
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
 )) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
-Library (tcolorbox): 'tcbbreakable.code.tex' version '6.4.1'
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
 (/usr/share/texmf-dist/tex/latex/pdfcol/pdfcol.sty
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 )
@@ -1256,14 +1245,14 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip86
-\enit@outerparindent=\dimen345
-\enit@toks=\toks65
+\enit@outerparindent=\dimen352
+\enit@toks=\toks63
 \enit@inbox=\box97
-\enit@count@id=\count369
-\enitdp@description=\count370
+\enit@count@id=\count382
+\enitdp@description=\count383
 )
-\enitdp@defaultitemize=\count371
-\enitdp@subparagitemize=\count372
+\enitdp@defaultitemize=\count384
+\enitdp@subparagitemize=\count385
 
 (/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
@@ -1280,11 +1269,11 @@ or enter new name. (Default extension: sty)
 Enter file name: 
 (/usr/share/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count373
-\cp@tempcnt=\count374
+\c@cp@cntr=\count386
+\cp@tempcnt=\count387
 )
 (/usr/share/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup8
 \symboldletters=\mathgroup9
 \symboldsymbols=\mathgroup10
@@ -1327,8 +1316,8 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cftbeforefigskip=\skip113
 \cftfigindent=\skip114
 \cftfignumwidth=\skip115
-\c@lofdepth=\count375
-\c@lotdepth=\count376
+\c@lofdepth=\count388
+\c@lotdepth=\count389
 \cftbeforelottitleskip=\skip116
 \cftafterlottitleskip=\skip117
 \cftbeforetabskip=\skip118
@@ -1356,25 +1345,25 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
 \TP@textbox=\box98
-\TPHorizModule=\dimen346
-\TPVertModule=\dimen347
-\TP@margin=\dimen348
-\TP@absmargin=\dimen349
+\TPHorizModule=\dimen353
+\TPVertModule=\dimen354
+\TP@margin=\dimen355
+\TP@absmargin=\dimen356
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen350
-\TP@tbargs=\toks66
+\TPboxrulesize=\dimen357
+\TP@tbargs=\toks64
 ) (/usr/share/texmf-dist/tex/latex/needspace/needspace.sty
-Package: needspace 2010/09/12 v1.3d reserve vertical space
+Package: needspace 2025/03/13 v1.3e reserve vertical space
 )
 (/usr/share/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
 (/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty
-Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+Package: zref-abspage 2025-06-08 v2.36 Module abspage for zref (HO)
 
 (/usr/share/texmf-dist/tex/latex/zref/zref-base.sty
-Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+Package: zref-base 2025-06-08 v2.36 Module base for zref (HO)
 
 (/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
@@ -1383,11 +1372,11 @@ Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count377
+\c@abspage=\count390
 Package zref Info: New property: abspage on input line 67.
 )
 \mdf@templength=\skip135
-\c@mdf@globalstyle@cnt=\count378
+\c@mdf@globalstyle@cnt=\count391
 \mdf@skipabove@length=\skip136
 \mdf@skipbelow@length=\skip137
 \mdf@leftmargin@length=\skip138
@@ -1463,16 +1452,16 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip199
 \mdfsubtitleheight=\skip256
 \mdfsubsubtitleheight=\skip257
-\c@mdfcountframes=\count379
+\c@mdfcountframes=\count392
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count380
-\c@mdf@env@i=\count381
-\c@mdf@env@ii=\count382
-\c@mdf@zref@counter=\count383
+\mdf@envdepth=\count393
+\c@mdf@env@i=\count394
+\c@mdf@env@ii=\count395
+\c@mdf@zref@counter=\count396
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
@@ -1480,31 +1469,31 @@ Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 arrows.code.tex
-File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen351
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen358
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.code.tex
-File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geomet
 ric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.arrows.code.tex
-File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows
 .code.tex
-File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.callouts.code.tex
@@ -1512,11 +1501,11 @@ shapes.callouts.code.tex
 ts.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 shapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multip
 art.code.tex
-File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodepartlowerbox=\box104
 \pgfnodeparttwobox=\box105
 \pgfnodepartthreebox=\box106
@@ -1543,14 +1532,14 @@ nment
 
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count384
-\float@exts=\toks67
+\c@float@type=\count397
+\float@exts=\toks65
 \float@box=\box124
-\@float@everytoks=\toks68
+\@float@everytoks=\toks66
 \@floatcapt=\box125
 )
-\@float@every@algorithm=\toks69
-\c@algorithm=\count385
+\@float@every@algorithm=\toks67
+\c@algorithm=\count398
 )
 (/usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -1559,15 +1548,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count386
-\c@ALG@rem=\count387
-\c@ALG@nested=\count388
+\c@ALG@line=\count399
+\c@ALG@rem=\count400
+\c@ALG@nested=\count401
 \ALG@tlm=\skip258
 \ALG@thistlm=\skip259
-\c@ALG@Lnr=\count389
-\c@ALG@blocknr=\count390
-\c@ALG@storecount=\count391
-\c@ALG@tmpcounter=\count392
+\c@ALG@Lnr=\count402
+\c@ALG@blocknr=\count403
+\c@ALG@storecount=\count404
+\c@ALG@tmpcounter=\count405
 \ALG@tmplength=\skip260
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -1576,29 +1565,29 @@ Package: tkz-tab 2020/04/29 v2.12c variations (ctan version)
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 patterns.code.tex
-File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
-File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-\tkz@XF=\dimen352
-\tkz@YF=\dimen353
-\c@tkz@cnt@line=\count393
-\c@tkz@cnt@lg=\count394
-\c@tkz@cnt@cl=\count395
-\c@tkz@cnt@pred=\count396
-\c@tkz@cnt@temp=\count397
-\c@tkz@cnt@arrow=\count398
-\c@tkz@cnt@zone=\count399
-\c@tkz@cnt@lgnext=\count400
-\c@tkz@cnt@clnext=\count401
-\c@tkz@cnt@pair=\count402
-\c@tkz@cnt@impair=\count403
-\c@tkz@cnt@aw=\count404
+\tkz@XF=\dimen359
+\tkz@YF=\dimen360
+\c@tkz@cnt@line=\count406
+\c@tkz@cnt@lg=\count407
+\c@tkz@cnt@cl=\count408
+\c@tkz@cnt@pred=\count409
+\c@tkz@cnt@temp=\count410
+\c@tkz@cnt@arrow=\count411
+\c@tkz@cnt@zone=\count412
+\c@tkz@cnt@lgnext=\count413
+\c@tkz@cnt@clnext=\count414
+\c@tkz@cnt@pair=\count415
+\c@tkz@cnt@impair=\count416
+\c@tkz@cnt@aw=\count417
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 snakes.code.tex
-File: tikzlibrarysnakes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+File: tikzlibrarysnakes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 
 
 Package pgf Warning: Snakes have been superseded by decorations. Please use the
@@ -1609,21 +1598,21 @@ Package pgf Warning: Snakes have been superseded by decorations. Please use the
 decorations.shapes.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
 ons.shapes.code.tex))) (/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
-\everycr=\toks70
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks68
 \minrowclearance=\skip261
-\rownum=\count405
+\rownum=\count418
 )
-\c@savoir=\count406
-\c@remark=\count407
-\c@resume1=\count408
-\c@definition2=\count409
-\c@exemple=\count410
-\c@definition1=\count411
-\c@dem=\count412
-\c@cor=\count413
-\c@lem=\count414
-\c@pro=\count415
+\c@savoir=\count419
+\c@remark=\count420
+\c@resume1=\count421
+\c@definition2=\count422
+\c@exemple=\count423
+\c@definition1=\count424
+\c@dem=\count425
+\c@cor=\count426
+\c@lem=\count427
+\c@pro=\count428
 
 
 ! LaTeX Error: Command \qed already defined.
@@ -1644,12 +1633,13 @@ l.391 }
 \subparagtitlespace=\skip267
 \paragtitlebox=\box126
 \paragtitleheight=\skip268
+\currentparagheight=\skip269
 \subparagtitlebox=\box127
-\subparagtitleheight=\skip269
-\c@CurrentSlide=\count416
-\slideheight=\skip270
-\height=\dimen354
-\eqwidth=\skip271
+\subparagtitleheight=\skip270
+\c@CurrentSlide=\count429
+\slideheight=\skip271
+\height=\dimen361
+\eqwidth=\skip272
 ) (./main.aux)
 \openout1 = main.aux
 
@@ -1721,12 +1711,12 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 14.
+Package microtype Info: Patching command `\showhyphens'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
 (/usr/share/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
-File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
+File: mt-LatinModernRoman.cfg 2026/02/26 v1.2 microtype config. file: Latin Mod
 ern Roman (RS)
 )
 Package hyperref Info: Link coloring OFF on input line 14.
@@ -1736,17 +1726,17 @@ Package hyperref Info: Link coloring OFF on input line 14.
 \openout4 = main.out
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count417
-\scratchdimen=\dimen355
+\scratchcounter=\count430
+\scratchdimen=\dimen362
 \scratchbox=\box128
-\nofMPsegments=\count418
-\nofMParguments=\count419
-\everyMPshowfont=\toks71
-\MPscratchCnt=\count420
-\MPscratchDim=\dimen356
-\MPnumerator=\count421
-\makeMPintoPDFobject=\count422
-\everyMPtoPDFconversion=\toks72
+\nofMPsegments=\count431
+\nofMParguments=\count432
+\everyMPshowfont=\toks69
+\MPscratchCnt=\count433
+\MPscratchDim=\dimen363
+\MPnumerator=\count434
+\makeMPintoPDFobject=\count435
+\everyMPtoPDFconversion=\toks70
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1759,7 +1749,7 @@ e
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
-\c@lstlisting=\count423
+\c@lstlisting=\count436
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1784,8 +1774,6 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 17.
 
-
-
 [1
 
 
@@ -1802,13 +1790,7 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
 \tf@toc=\write5
 
 \openout5 = main.toc
-
-
-[2] (./lecture1.tex
-
-[3]
-
-[4
+ [2] (./lecture1.tex [3] [4
 
 ]
 Chapter 1.
@@ -1838,8 +1820,6 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 27.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 29.
-
-
 [5]
 Package mdframed Info: mdframed works in twoside mode on input line 41.
 Package mdframed Info: mdframed detected package amsthm 
@@ -1867,201 +1847,165 @@ l.51 	\end{align*}
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 52.
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 z[]\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 e[]$\T
-U/lmr/m/n/10 . If we want to ap-ply al-ge-braic op-er-a-tions de-fined pre-vi-ou
-sly to our new
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
-\TU/lmr/m/n/10 Di-vid-ing our two num-bers re-ally comes down to mul-ti-ply by 
-the in-verse which is
- []
-
-
-
-[6]
-Package mdframed Info: mdframed works in twoside mode on input line 105.
+Package mdframed Info: mdframed works in twoside mode on input line 59.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 105.
+(mdframed)              on input line 59.
+[6]
+Package mdframed Info: mdframed works in twoside mode on input line 109.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 109.
+Package mdframed Info: mdframed works in twoside mode on input line 116.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 116.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 107.
-<figure/complex.pdf, id=116, 225.84375pt x 113.42375pt>
+ mdframed uses option nobreak mdframed on input line 118.
+<figure/complex.pdf, id=158, 225.84375pt x 113.42375pt>
 File: figure/complex.pdf Graphic file (type pdf)
 <use figure/complex.pdf>
-Package luatex.def Info: figure/complex.pdf  used on input line 111.
+Package luatex.def Info: figure/complex.pdf  used on input line 122.
 (luatex.def)             Requested size: 282.30397pt x 141.77933pt.
-<figure/2026-02-22.pdf, id=117, 398.48875pt x 359.3425pt>
-File: figure/2026-02-22.pdf Graphic file (type pdf)
-<use figure/2026-02-22.pdf>
-Package luatex.def Info: figure/2026-02-22.pdf  used on input line 130.
-(luatex.def)             Requested size: 199.24388pt x 179.6708pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[7
+ [7
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.1
 '
 <./figure/complex.pdf>]
+<figure/2026-02-22.pdf, id=173, 398.48875pt x 359.3425pt>
+File: figure/2026-02-22.pdf Graphic file (type pdf)
+<use figure/2026-02-22.pdf>
+Package luatex.def Info: figure/2026-02-22.pdf  used on input line 141.
+(luatex.def)             Requested size: 199.24388pt x 179.6708pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 134.
+(Font)              <14.4> on input line 146.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 146.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 146.
 
-Package mdframed Info: mdframed works in twoside mode on input line 137.
+Package mdframed Info: mdframed works in twoside mode on input line 148.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 137.
+(mdframed)              on input line 148.
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 144--151
+Underfull \hbox (badness 10000) in paragraph at lines 148--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--151
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--151
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 151.
+Package mdframed Info: mdframed works in twoside mode on input line 161.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 151.
-Package mdframed Info: mdframed works in twoside mode on input line 165.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 165.
-
-
+(mdframed)              on input line 161.
 [8
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.2
 '
 <./figure/2026-02-22.pdf>]
-Package mdframed Info: Not enough space on this page on input line 182.
-
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 235--239
+Package mdframed Info: mdframed works in twoside mode on input line 175.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 175.
+ [9]
+Underfull \hbox (badness 10000) in paragraph at lines 245--249
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 239.
+Package mdframed Info: mdframed works in twoside mode on input line 249.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 239.
-Package mdframed Info: mdframed works in twoside mode on input line 248.
+(mdframed)              on input line 249.
+Package mdframed Info: mdframed works in twoside mode on input line 258.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 248.
+(mdframed)              on input line 258.
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--263
+Underfull \hbox (badness 10000) in paragraph at lines 269--273
 
  []
-
-
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 279--283
-
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 283.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 283.
-
 Underfull \hbox (badness 10000) in paragraph at lines 289--293
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 302.
+Package mdframed Info: mdframed works in twoside mode on input line 293.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 302.
+(mdframed)              on input line 293.
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-\TU/lmr/m/n/10 In all of those ex-pres-sion we can eas-ily see where our func-ti
-on $\OML/lmm/m/it/10 u$ \TU/lmr/m/n/10 and $\OML/lmm/m/it/10 v$ \TU/lmr/m/n/10 
-are. But is it
+Underfull \hbox (badness 10000) in paragraph at lines 299--303
+
  []
 
+[11] [12
 
-
-[11]
-Package mdframed Info: mdframed works in twoside mode on input line 329.
+]
+Chapter 2.
+Package mdframed Info: mdframed works in twoside mode on input line 312.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 329.
+(mdframed)              on input line 312.
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 339.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 339.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 331.
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
-\TU/lmr/m/n/10 The rig-or-ous def-i-ni-tion of $\OML/lmm/m/it/10 e[]$ \TU/lmr/m
-/n/10 is by the tay-lor se-ries. One should more see it as $[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--339
-\TU/lmr/m/n/10 be-ing []\TU/lmr/bx/n/10 de-fined[] \TU/lmr/m/n/10 by the tay-lor
- se-rie and not the other way around. there is a great
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 344.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 344.
-Package mdframed Info: mdframed works in twoside mode on input line 349.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 349.
-
-
-[12]
-Package mdframed Info: mdframed works in twoside mode on input line 369.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 369.
-Package mdframed Info: mdframed works in twoside mode on input line 374.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 374.
-Package mdframed Info: mdframed works in twoside mode on input line 377.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 377.
-Package mdframed Info: mdframed works in twoside mode on input line 381.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 381.
-Package mdframed Info: mdframed works in twoside mode on input line 389.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 389.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 390.
-) (./lecture2.tex
-
+ mdframed uses option nobreak mdframed on input line 341.
 [13]
+Package mdframed Info: mdframed works in twoside mode on input line 354.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 354.
+Package mdframed Info: mdframed works in twoside mode on input line 359.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 359.
+Package mdframed Info: mdframed works in twoside mode on input line 379.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 379.
+Package mdframed Info: mdframed works in twoside mode on input line 384.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 384.
+Package mdframed Info: mdframed works in twoside mode on input line 387.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 387.
+ [14]
+Package mdframed Info: mdframed works in twoside mode on input line 391.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 391.
+Package mdframed Info: mdframed works in twoside mode on input line 399.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 399.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 400.
+) (./lecture2.tex
 Package mdframed Info: mdframed works in twoside mode on input line 4.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2070,38 +2014,38 @@ Package mdframed Info: mdframed works in twoside mode on input line 15.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 15.
-<figure/2026-02-26_1.pdf, id=179, 285.065pt x 227.85126pt>
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 22.
+ [15]
+<figure/2026-02-26_1.pdf, id=230, 285.065pt x 227.85126pt>
 File: figure/2026-02-26_1.pdf Graphic file (type pdf)
 <use figure/2026-02-26_1.pdf>
 Package luatex.def Info: figure/2026-02-26_1.pdf  used on input line 33.
 (luatex.def)             Requested size: 209.12683pt x 167.154pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-\TU/lmr/m/n/10 By com-par-ing real and imag-i-nary part leads to the Cauchy-Riem
-ann equa-tions.
- []
-
-
-
-[14
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.3
+ [16
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.1
 '
 <./figure/2026-02-26_1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
-[15]
+ []
+
+[17]
 Package mdframed Info: mdframed works in twoside mode on input line 99.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 99.
-
-
-[16]
-<figure/2026-02-26_2.pdf, id=204, 405.515pt x 123.46124pt>
+<figure/2026-02-26_2.pdf, id=248, 405.515pt x 123.46124pt>
 File: figure/2026-02-26_2.pdf Graphic file (type pdf)
 <use figure/2026-02-26_2.pdf>
 Package luatex.def Info: figure/2026-02-26_2.pdf  used on input line 132.
 (luatex.def)             Requested size: 418.25368pt x 127.34355pt.
-<figure/2026-02-27.pdf, id=205, 185.69376pt x 169.63374pt>
+ [18
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.2
+'
+<./figure/2026-02-26_2.pdf>]
+<figure/2026-02-27.pdf, id=256, 185.69376pt x 169.63374pt>
 File: figure/2026-02-27.pdf Graphic file (type pdf)
 <use figure/2026-02-27.pdf>
 Package luatex.def Info: figure/2026-02-27.pdf  used on input line 149.
@@ -2116,16 +2060,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--166
 
  []
 
-
-
-[17
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.4
-'
-<./figure/2026-02-26_2.pdf><./figure/2026-02-27.pdf>]
 Package mdframed Info: mdframed works in twoside mode on input line 170.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 170.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 172.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 172.
+[19<./figure/2026-02-27.pdf>]
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last split box is empty
+(mdframed)                You have to change the settings on input line 172.
+
 Package mdframed Info: mdframed works in twoside mode on input line 174.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2135,13 +2089,16 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 180.
 ) (./lecture3.tex
-
-[18]
-<figure/2026-03-05.pdf, id=221, 197.73875pt x 147.55125pt>
+<figure/2026-03-05.pdf, id=263, 197.73875pt x 147.55125pt>
 File: figure/2026-03-05.pdf Graphic file (type pdf)
 <use figure/2026-03-05.pdf>
 Package luatex.def Info: figure/2026-03-05.pdf  used on input line 13.
 (luatex.def)             Requested size: 125.47737pt x 93.63095pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20]
 Package mdframed Info: mdframed works in twoside mode on input line 33.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2159,41 +2116,15 @@ Package mdframed Info: mdframed works in twoside mode on input line 48.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 48.
-Package mdframed Info: Not enough space on this page on input line 50.
-
-
-[19
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.5
-'
-<./figure/2026-03-05.pdf>]
-Package mdframed Info: Not enough space on this page on input line 50.
-<figure/2026-03-05_1.pdf, id=234, 257.96375pt x 214.8025pt>
+<figure/2026-03-05_1.pdf, id=275, 257.96375pt x 214.8025pt>
 File: figure/2026-03-05_1.pdf Graphic file (type pdf)
 <use figure/2026-03-05_1.pdf>
 Package luatex.def Info: figure/2026-03-05_1.pdf  used on input line 55.
-(luatex.def)             Requested size: 128.46576pt x 106.97488pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-[]\TU/lmr/m/n/10 Above we used the fun-da-men-tal the-o-rem of cal-cu-lus. For 
-more
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-\TU/lmr/m/n/10 gen-eral func-tion, one splits the in-te-grands into real and ima
-g-i-nary
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-[]\TU/lmr/m/n/10 Let $\OT1/lmr/m/n/10 ^^@$ \TU/lmr/m/n/10 be the unit cir-cle or
-i-ented counter-clockwise. We will use the same $\OML/lmm/m/it/10 $ \TU/lmr/m/
-n/10 as be-fore
- []
-
-
-
-[20<./figure/2026-03-05_1.pdf>]
+(luatex.def)             Requested size: 136.43271pt x 113.60878pt.
+[21
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.3
+'
+<./figure/2026-03-05.pdf><./figure/2026-03-05_1.pdf>] [22]
 Package mdframed Info: mdframed works in twoside mode on input line 107.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2202,61 +2133,34 @@ Package mdframed Info: mdframed works in twoside mode on input line 115.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 115.
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
-\TU/lmr/m/n/10 only one com-po-nent and ’\TU/lmr/m/it/10 no holes\TU/lmr/m/n/
-10 ’ e.g. $\U/msb/m/n/10 C\OML/lmm/m/it/10 ; [][]$\TU/lmr/m/n/10 , while $\U/
-msb/m/n/10 C[]$ \TU/lmr/m/n/10 is not
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 116.
 Package mdframed Info: mdframed works in twoside mode on input line 118.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 118.
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-[][]\TU/lmr/bx/n/10 Def-i-ni-tion 18. [][]Piece-wise reg-u-lar[] $\OT1/lmr/m/n/
-10 ^^@$ \TU/lmr/m/n/10 means $\OT1/lmr/m/n/10 ^^@$ \TU/lmr/m/n/10 might have fin
-itely many
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 119.
-<figure/2026-03-05_2.pdf, id=243, 327.2225pt x 368.37625pt>
+<figure/2026-03-05_2.pdf, id=296, 327.2225pt x 368.37625pt>
 File: figure/2026-03-05_2.pdf Graphic file (type pdf)
 <use figure/2026-03-05_2.pdf>
 Package luatex.def Info: figure/2026-03-05_2.pdf  used on input line 121.
-(luatex.def)             Requested size: 110.1127pt x 123.95906pt.
+(luatex.def)             Requested size: 116.94147pt x 131.64853pt.
 
-Overfull \hbox (5.32768pt too wide) detected at line 137
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+[]\TU/lmr/m/it/8 Why is this
+ []
+
+[23<./figure/2026-03-05_2.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 162--165
+
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 169--172
 
-[21<./figure/2026-03-05_2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-\TU/lmr/m/n/10 We are look-ing for a sim-ply con-nected do-main which con-tains the unit cir-cle []\TU/lmr/bx/n/10 and[]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-\OML/lmm/m/it/10 f$ \TU/lmr/m/n/10 is holo-mor-pic. But this is not pos-si-ble 
-be-cause $\OML/lmm/m/it/10 f$ \TU/lmr/m/n/10 is only holo-mor-pic on $\U/msb/m/
-n/10 C[]$ \TU/lmr/m/n/10 and
- []
-
-
-Underfull \hbox (badness 3724) in paragraph at lines 171--172
-\TU/lmr/m/n/10 For in-stance let us take the do-main $\OML/lmm/m/it/10 u \OT1/l
-mr/m/n/10 = [][]$ \TU/lmr/m/n/10 which is a sim-ply con-nected
- []
-
-
-
-[22]
 Package mdframed Info: mdframed works in twoside mode on input line 187.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2266,11 +2170,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--191
 
  []
 
-<figure/2026-03-05_3.pdf, id=261, 247.92625pt x 232.87pt>
+<figure/2026-03-05_3.pdf, id=305, 247.92625pt x 232.87pt>
 File: figure/2026-03-05_3.pdf Graphic file (type pdf)
 <use figure/2026-03-05_3.pdf>
 Package luatex.def Info: figure/2026-03-05_3.pdf  used on input line 198.
 (luatex.def)             Requested size: 125.47737pt x 117.85602pt.
+[24]
 Package mdframed Info: mdframed works in twoside mode on input line 214.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2280,48 +2185,398 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
+) (./lecture4.tex [25<./figure/2026-03-05_3.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 11.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 11.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 15.
 
-LaTeX Warning: Reference `mdf@pagelabel-34' on page 23 undefined on input line 
-222.
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
+
+ []
+
+[26]
+Package mdframed Info: mdframed works in twoside mode on input line 58.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 58.
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
+
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
-[23<./figure/2026-03-05_3.pdf>])
+ []
 
-[24] (./main.aux)
+[27] [28
+
+]
+Chapter 3.
+Package mdframed Info: mdframed works in twoside mode on input line 93.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 93.
+Package mdframed Info: mdframed works in twoside mode on input line 101.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 101.
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 109.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 109.
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--119
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 119--123
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 125.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 125.
+Package mdframed Info: mdframed works in twoside mode on input line 137.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 137.
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--149
+
+ []
+
+! Undefined control sequence.
+<argument> \zheta 
+                  - z_0
+l.164 			\end{align*}
+                     
+? 
+! Undefined control sequence.
+<argument> \zheta 
+                  - z_0
+l.164 			\end{align*}
+                     
+? 
+[30]
+Package mdframed Info: mdframed works in twoside mode on input line 208.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 208.
+ [31]
+<figure/2026-03-12.pdf, id=366, 323.2075pt x 412.54124pt>
+File: figure/2026-03-12.pdf Graphic file (type pdf)
+<use figure/2026-03-12.pdf>
+Package luatex.def Info: figure/2026-03-12.pdf  used on input line 220.
+(luatex.def)             Requested size: 125.47737pt x 160.16023pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 234.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 234.
+! Undefined control sequence.
+l.251 ...{\left(\zeta - z_0\right)^{n + 1}}d\zetag
+                                                   = 0$\\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+[32
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.1
+'
+<./figure/2026-03-12.pdf>]) (./lecture5.tex
+Package mdframed Info: mdframed works in twoside mode on input line 1.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1.
+ [33]
+Package mdframed Info: mdframed works in twoside mode on input line 53.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 53.
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
+
+ []
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 64.
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--97
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 100.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 100.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 106.
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 158.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 158.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 194--197
+
+ []
+
+) (./lecture6.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+[37]
+Package mdframed Info: mdframed works in twoside mode on input line 18.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 18.
+Package mdframed Info: mdframed works in twoside mode on input line 24.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 24.
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--41
+
+ []
+
+[38]
+Package mdframed Info: mdframed works in twoside mode on input line 90.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 90.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+
+ []
+
+<figure/2026-03-26.pdf, id=426, 332.24126pt x 283.0575pt>
+File: figure/2026-03-26.pdf Graphic file (type pdf)
+<use figure/2026-03-26.pdf>
+Package luatex.def Info: figure/2026-03-26.pdf  used on input line 102.
+(luatex.def)             Requested size: 167.2989pt x 142.53474pt.
+[39<./figure/2026-03-26.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
+
+ []
+
+<figure/2026-03-26_1.pdf, id=433, 394.47375pt x 192.72pt>
+File: figure/2026-03-26_1.pdf Graphic file (type pdf)
+<use figure/2026-03-26_1.pdf>
+Package luatex.def Info: figure/2026-03-26_1.pdf  used on input line 112.
+(luatex.def)             Requested size: 155.918pt x 76.17207pt.
+Runaway argument?
+ \text {Res}_{0}\left (f\right ) = \lim _{z \to 0} zf\left (z\right )\ETC.
+! Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.150 
+      
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.150 
+      
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.150 
+      
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.150 
+      
+? 
+! Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.151 		\end{align*}
+                    
+? 
+! Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.151 		\end{align*}
+                    
+? 
+! Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.151 		\end{align*}
+                    
+? 
+
+Overfull \hbox (111.1707pt too wide) detected at line 151
+[]
+ []
+
+! Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.151 		\end{align*}
+                    
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.151 		\end{align*}
+                    
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.151 		\end{align*}
+                    
+? 
+! Undefined control sequence.
+l.152 		Let $\gamma$ be a \si
+                             \mple closed counterclockwise oriented curve. T...
+? 
+! Undefined control sequence.
+l.152 		Let $\gamma$ be a \si\mple
+                                   closed counterclockwise oriented curve. T...
+? 
+! Undefined control sequence.
+l.152 ...rclockwise oriented curve. The que\astion
+                                                   is always the same: what ...
+? 
+[40<./figure/2026-03-26_1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 191--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--197
+
+ []
+
+[41]) (./lecture7.tex
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
+
+ []
+
+<figure/2026-04-04.pdf, id=457, 494.84875pt x 244.915pt>
+File: figure/2026-04-04.pdf Graphic file (type pdf)
+<use figure/2026-04-04.pdf>
+Package luatex.def Info: figure/2026-04-04.pdf  used on input line 21.
+(luatex.def)             Requested size: 250.95476pt x 124.20241pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--50
+
+ []
+
+[42] [43
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.2
+'
+<./figure/2026-04-04.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 104--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
+
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--167
+
+ []
+
+[45]) [46] (./main.aux)
  ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0E09853681609D83AAB54959BAD0B358;1915.
+(rerunfilecheck)             Checksum: 159AEB1DCB0688E15788DE54C6A2FF92;3267.
 )
 
 Here is how much of LuaTeX's memory you used:
- 52872 strings out of 475506
- 125236,2373549 words of node,token memory allocated
- 1176 words of node memory still in use:
-   10 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 4 kern, 1 penalty, 3 glyph, 1
-8 attribute, 156 glue_spec, 18 attribute_list, 2 shape, 2 write, 2 pdf_colorstac
-k nodes
-   avail lists: 1:7,2:2208,3:738,4:296,5:693,6:52,7:4714,8:75,9:2014,10:23,11:17
-8,12:2
- 74264 multiletter control sequences out of 65536+600000
+ 53085 strings out of 476076
+ 125236,1977958 words of node,token memory allocated
+ 1175 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 3 glyph, 30
+ attribute, 156 glue_spec, 30 attribute_list, 2 shape, 2 write nodes
+   avail lists: 1:12,2:2444,3:934,4:304,5:607,6:60,7:6261,8:86,9:1833,10:29,11:2
+50,12:1
+ 73782 multiletter control sequences out of 65536+600000
  142 fonts using 9943167 bytes
- 110i,25n,120p,1930b,1242s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf>{/usr/share
-/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dv
+ 110i,25n,120p,1930b,1232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/f
+onts/opentype/public/lm/lmroman7-regular.otf>{/usr/share/texmf-dist/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/s
-hare/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-
-dist/fonts/opentype/public/lm/lmroman8-italic.otf>{/usr/share/texmf-dist/fonts/e
-nc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmroma
+hare/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf>{/usr/share/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts/opentype/publi
+c/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroma
 nslant10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-r
 egular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></
 usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/tex
@@ -2332,15 +2587,16 @@ y10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
 f-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1
-/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr
-/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb>
-</usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (24 pages, 289276 bytes).
+/public/lm/lmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></
+usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts
+/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pf
+b></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/
+fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb>
+Output written on main.pdf (46 pages, 433905 bytes).
 
-PDF statistics: 386 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 112 named destinations out of 1000 (max. 131072)
- 104 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 605 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
+ 219 named destinations out of 1000 (max. 1048576)
+ 168 words of extra memory for PDF output out of 10000 (max. 100000000)
 

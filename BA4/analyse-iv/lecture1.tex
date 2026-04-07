@@ -1,6 +1,6 @@
 
 \chapter{Review of Complex number $\mathbb{C}$}
-The goal of this chapter is to review what we have seen in Analysis I in order to be more conformtable when introducing new materials. As an addition I will add a bit of context on where and why complex analysis differ from multivariate analysis (this is not in the course but is always nice to have in order to better understand the course).
+The goal of this chapter is to review what we have seen in Analysis I in order to be more comfortable when introducing new materials. As an addition I will add a bit of context on where and why complex analysis differs from multivariate analysis (this is not in the course but is always nice to have in order to better understand the materials).
 
 
 \begin{parag}{Imaginary unit}
@@ -8,13 +8,13 @@ The goal of this chapter is to review what we have seen in Analysis I in order t
 	\begin{align*} i^2 = -1 \end{align*}
 	We also define $z \in \mathbb{C}$ as:
 	\begin{align*} z = x + iy \mathspace \mathspace x, y \in \mathbb{R} \end{align*}
-	Furthemore:
+	Furthermore:
 	\begin{align*} 
 		x &= \text{Re}z \mathspace \text{real part}\\
 		y &= \text{Im}z \mathspace \text{imaginary part}
 	\end{align*}
 \end{parag}
-The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is that every element in $\mathbb{C}$ can be directly 'translated' to $ \mathbb{R}^2$.
+The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is that every element in $\mathbb{C}$ can be directly '\textit{translated}' to $ \mathbb{R}^2$ \important{and} vis versa.
 
 \begin{parag}{Complex Conjugate}
     \begin{definition}
@@ -28,22 +28,22 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	\begin{align*} | z | = \sqrt{x^2 + y^2} \end{align*}
     \end{definition}
 	\begin{subparag}{Intuition}
-	    The reason for this definition really comes from pythagoras theorem and the norm in $\mathbb{R}^2$.
+	    The reason for this definition really comes from Pythagoras theorem and the $L_2$ norm in $\mathbb{R}^2$.
 	\end{subparag}
-	Furthemore $| z_0 - z_1| = d\left(z_0, z_1\right)$ (the distance between those two number).\\
+	Furthermore $| z_0 - z_1| = d\left(z_0, z_1\right)$ (the distance between those two number).\\
 	We can define domain in $\mathbb{C}$ as:
-	\begin{align*} \{z \in \mathbb{C}: |z - 1| < 1\} \end{align*}
-	Which is the disk centered in $z = 1$ of radius $1$.
+	\begin{align*} Q = \{z \in \mathbb{C}: |z - \left(1 + i\right)| < 1\} \end{align*}
+	Which is the disk centred in $z = 1 + i$ of radius $1$.
 \end{parag}
 
-\begin{parag}{Euler's Formular}
+\begin{parag}{Euler's Formula}
     \begin{definition}
     For $\theta \in \mathbb{R}$:
 	\begin{align*} e^{i\theta} = \cos \theta + i \sin \theta  \end{align*}
     \end{definition}
-	So $e^{i\theta}$ lies on the unit circle arond $z = 0$ (because $|e^{i\theta}| = 1$)
+	So $e^{i\theta}$ lies on the unit circle around $z = 0$ (because $|e^{i\theta}| = 1$)
 	\begin{definition}
-	The Complex conjugate of the euler formula is defined as:
+	The Complex conjugate of the Euler formula is defined as
 	\begin{align*} \overline{e^{i\theta}} &= \overline{\cos \theta + i\s\in\theta} \\
 		&= \cos \theta - i \sin \theta\\
 		&= \cos(-\theta) + i \sin\left(-\theta\right)\\
@@ -51,9 +51,14 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	\end{align*}
 	\end{definition}
 	\begin{subparag}{Geometric intuition}
-	    What happens when doing the complex conjugate (if we see $\mathbb{C}$ as a plan in $ \mathbb{R}^2$) is a symmetry aroung the $x$ axis.
+	    What happens when doing the complex conjugate (if we see $\mathbb{C}$ as a plan in $ \mathbb{R}^2$) is a symmetry around the $x$ axis. \\
+		$ $\\
+		And this totally makes send when we recall on how it was defined when $z =  x + iy$, $\overline{z} = x - iy$ we map the $\text{Im}$ part to his opposite.
 	\end{subparag}
 \end{parag}
+\begin{framedremark}
+	The rigorous definition of $e^{z}$ is by the Taylor series. One should more see it as $\exp$ being \important{defined} by the Taylor serie and not the other way around. There is a great video about the definition of the exponential by 3Blue1Brown about taking the exponent of a matrix.
+\end{framedremark}
 
 
 
@@ -100,6 +105,12 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	    Multiplication by $e^{i\theta_0}$ corresponds to a rotation by an angle $\theta_0$.
 	\end{subparag}
 \end{parag}
+
+\begin{framedremark}
+Therefore as we can see any number in $\mathbb{C}$ requires only two variables, his norms and argument, which means that when wanting to express any complex number, one only need to have the angle (the rotation) and the modulus. This can be very interesting when our goal is to visualize complex functions. In order to have a good visualization, we need $4$ dimensions: two for the input, two for the output. But if all we need is the angle $\theta \in \left[-\pi, \pi\right]$ and $\left|z\right| \in \mathbb{R}_+$ then we can map using colors for the angle and the third axis for the modulus. This way we can directly see where our number collaps to $0$ or when it goes to $\pm \infty$. (there is a great youtube video about 5 ways to visualize complex functions that I recommend).
+\end{framedremark}
+
+
 	\begin{parag}{Principal argument}
 	    \begin{definition}
 			Let $z = |z|e^{i\theta} \in \mathbb{C}$, the principal argument is $] \theta' \in -\pi, \pi]$  such that:
@@ -120,7 +131,7 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	\end{align*}
 	As $|e^{i5\theta}| = 1$ we have that 
 	\begin{align*} 2 = |z|^{5} \implies |z| = 2^{\frac{1}{5}} \end{align*}
-	And as $2$ is a real number this implies that $5\theta = 2\pi k \implies \theta =  \frac{2\pi k}{5}$ where $k \in \mathbb{Z}$ and if we want to take the principal arguements, we have as solution:
+	And as $2$ is a real number this implies that $5\theta = 2\pi k \implies \theta =  \frac{2\pi k}{5}$ where $k \in \mathbb{Z}$ and if we want to take the principal arguments, we have as solution:
 	\begin{align*} \theta \in \{-\frac{4\pi}{5}, -\frac{2\pi}{5}, 0, \frac{2\pi}{5}, \frac{4\pi}{5}\} \end{align*}
 	More generally, a $k$-th order equation will gives us $k$ solutions.
 \end{parag}
@@ -131,9 +142,10 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	\caption{Solution of $z^{5} = 2$}
 \end{figure}
 
+
 \section{Construction of $\mathbb{C}$ (not in the course)}
 The goal of this section is to add a bit more context on the $\mathbb{C}$ field. First let us recall how real analysis worked. We used the field $\left(\mathbb{R}, +, \cdot \right)$ which is an \important{ordered} field, i.e. we have an ordering on our elements. Formally:
-\begin{definition}
+\begin{definition}{Ordered field}
 	$ $\\
 	\begin{itemize}
 		\item $\forall x, y \in \mathbb{R} $ precisely one of $x < y,  x > y, x = y$ holds true.
@@ -143,11 +155,9 @@ The goal of this section is to add a bit more context on the $\mathbb{C}$ field.
 \end{definition}
 And as we already know, $\mathbb{C}$ is not an ordered field, $2 + i$ cannot be greater nor smaller to $12$.\\
 $ $\\
-Another reason on why $\mathbb{C}$ has come up is that the field $\left(\mathbb{R}, +, \cdot \right)$ is \important{not algebraiclly closed}. We can find polynomials with real coefficient which don't have real roots. $x^2 + 1$ has not root over $ \mathbb{R}$. This is a major problem. The question now that was asked: does $\left(\mathbb{R}^2, +, ?\right)$ (which is already an Abelian group) can be turned into a field? And what about $\left(\mathbb{R}^{n}, +\right)$ is there a way to 'create' a multiplication which would be suitable?\\
+One of the reason on why $\mathbb{C}$ has come up is that the field $\left(\mathbb{R}, +, \cdot \right)$ is \important{not algebraically closed}. We can find polynomials with real coefficient which don't have real roots. $x^2 + 1$ has not root over $ \mathbb{R}$. This is a major issue, we need to find a field which is algebraically closed. The question now that was asked: does $\left(\mathbb{R}^2, +\right)$ (which is already an abelian group) can be turned into a field $\left( \mathbb{R}^{2}, +, ?\right)$? And what about $\left(\mathbb{R}^{n}, +\right)$ is there a way to 'create' a multiplication which would be suitable?\\
 $ $\\
-For $n = 1$ this is just the real number. For $n = 2$ the resulting field you will get is $\mathbb{C}$. For $n =  4$ the answer is the hamilton group (kind of) and the same for $n = 8$. For all other number it is just \important{impossible}!\\
-$ $\\
-And this is pretty bizzare, it worked for $1, 2, 4, 8$ and then it stopped.
+For $n = 1$ this is just the real number. For $n = 2$ the resulting field you will get is $\mathbb{C}$. For $n =  4$ the answer is the Hamilton group (kind of) and the same for $n = 8$. For all other number it is just \important{impossible}! And this is pretty bizarre, it worked for $1, 2, 4, 8$ and then it stopped.
 \begin{theoreme}
 	If we can create a field on $ \mathbb{R}^2$ then 
 	\begin{align*} \exists z \in\left(\mathbb{R}^{2}, +, \cdot \right) \text{ s.t. } z^2 =  -1 \end{align*}
@@ -175,7 +185,7 @@ And this is pretty bizzare, it worked for $1, 2, 4, 8$ and then it stopped.
 	\begin{align*} 
 		x_1^2 e_1^2 + 2x_1x_2e_1e_2 +x_2^2e_2^2
 	\end{align*}
-	And because $e_1$ and $e_2$ are orthogonal, be definition $e_1e_2 = 0$:
+	And because $e_1$ and $e_2$ are orthogonal, by definition $e_1e_2 = 0$:
 	\begin{align*} 
 		= x_1^2e_1^2 + x_2^2e_2^2 = x_1^2 + x_2^2
 	\end{align*}
@@ -232,7 +242,7 @@ And this is pretty bizzare, it worked for $1, 2, 4, 8$ and then it stopped.
 		\end{align*}
 
 \end{proof}
-The claim we just prove is not trivial at all, if we want to turn $\mathbb{R}^{2}$ into a field, then there has to be an element of the field such that $d = -1$. This also implies that our application will be a new one which will be pretty counter-intuitive for us. Now let us pick our element $z \in \left(\mathbb{R}^{2}, + , \cdot \right)$ such that $z^2 = -1$, and we call it \textbf{i}.\\
+The claim we just prove is not trivial at all, if we want to turn $\mathbb{R}^{2}$ into a field, then there has to be an element of the field such that $d = -1$. This also implies that our multiplication will be a new one which will be pretty counter-intuitive for us. Now let us pick our element $z \in \left(\mathbb{R}^{2}, + , \cdot \right)$ such that $z^2 = -1$, and let us call it \textbf{i}.\\
 $ $\\
 Now we can define our field $\mathbb{C}$:
 \begin{definition}
@@ -246,7 +256,7 @@ Now we can define our field $\mathbb{C}$:
 	$\mathbb{C}$ is algebraically closed
 
 \begin{theoreme}
-	Any $P \in \mathbb{C}\left[X\right]$ non-zero (not the zero polynomial) has at leat a root in $\mathbb{C}$.
+	Any $P \in \mathbb{C}\left[X\right]$ non-zero (not the zero polynomial) has at least a root in $\mathbb{C}$.
 \end{theoreme}
 \begin{proof}
     To prove this we will do it by contradiction. Assume that $P$ is a non-constant polynomial and suppose it \important{has no root} in $\mathbb{C}$. Then this implies that:
@@ -297,7 +307,7 @@ Now we can define our field $\mathbb{C}$:
 
 
 
-\section{Complex Functions}
+\chapter{Complex Functions}
 \begin{definition}
 	We call $f$ a complex function as:
 	\begin{align*} 
@@ -307,7 +317,7 @@ Now we can define our field $\mathbb{C}$:
 	\end{align*}
 	In particular we have $u, v : \mathbb{R}^2 \to \mathbb{R}$
 \end{definition}
-A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$. As said before we can always map a complex number to a number in $ \mathbb{R}^2$. By 'splitting' our function into to  two sub-functions $u, v$ which map to $ \mathbb{R}$. We effectively transformed our function $f : \mathbb{C} \to \mathbb{C}$ into two sub function that goes from $ \mathbb{R}^2 \to \mathbb{R}$ which therefore point to $ \mathbb{R}^2$ (if we replaced the 1 by a unit vector, and $i$ as another unit vector).
+A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$. As said before we can always map a complex number to a number in $ \mathbb{R}^2$. By 'splitting' our function into to  two sub functions $u, v$ which map to $ \mathbb{R}$. We effectively transformed our function $f : \mathbb{C} \to \mathbb{C}$ into two sub function that goes from $ \mathbb{R}^2 \to \mathbb{R}$ which therefore point to $ \mathbb{R}^2$ (if we replaced the 1 by a unit vector, and $i$ as another unit vector).
 
 
 \begin{parag}{Examples}
@@ -327,7 +337,7 @@ A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$
     \begin{align*} \cos z = \frac{e^{iz} + e^{-iz}}{2} \end{align*}
 	\begin{align*} \sin z = \frac{e^{iz} - e^{-iz}}{2i} \end{align*}
 	\begin{framedremark}
-	We have already seen the same concept in Analysis III. We use a lot those definition when dealing with Fourrier series. (with odd/even series)
+	We have already seen the same concept in Analysis III. We use a lot those definition when dealing with Fourier series. (with odd/even series)
 	\end{framedremark}
 	\begin{align*} 
 		\cosh z =  \frac{e^{z} + e^{-z}}{2}
@@ -335,10 +345,10 @@ A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$
 	\begin{align*} 
 		\sinh z = \frac{e^{z} - e^{-z}}{2}
 	\end{align*}
-	The rigorous definition of $e^{z}$ is by the taylor series. One should more see it as $\exp$ being \important{defined} by the taylor serie and not the other way around. there is a great video about the definition of the exponential by 3blue1brown.
+	The rigorous definition of $e^{z}$ is by the Taylor series. One should more see it as $\exp$ being \important{defined} by the Taylor serie and not the other way around. There is a great video about the definition of the exponential by 3Blue1Brown.
 \end{parag}
 
-\subsection{Limit and Continuity}
+\section{Limit and Continuity}
 
 \begin{definition}
 We say $f: \mathbb{C} \to \mathbb{C}$ is \important{continuous} at a point $z_0 \in \mathbb{C}$ if $\forall \epsilon > 0 $ there exists $\delta > 0 $ such that $\forall z \in \mathbb{C}$ with $\left\|z - z_0\right\| \leq \delta$ we have:
@@ -350,8 +360,8 @@ Equivalently:
 This definition is directly mapped to the one seen in Analysis II. What we are really doing here in fact is the limit of our function the same way as we would have done in $ \mathbb{R}^2$. If we develop this:\\
     Let $f\left(z\right) = f\left(x + iy\right) =  u\left(x, y\right) + iv\left(x, y\right)$ then $f$ is continuous at $z_0 = x_0 + y_0i$ if and only if $u$ and $v$ are continuous at $\left(x_0, y_0\right)$ 
 \end{framedremark}
-\begin{parag}{Operation on Continuous Function}
-    If $f, g$ are continuous function then the same is true for:
+\begin{parag}{Operation on Continuous Functions}
+    If $f, g$ are continuous functions then the same is true for:
 	\begin{itemize}
 		\item $f+ g$
 		\item $f \cdot  g$
@@ -392,7 +402,7 @@ The same rules of differentiation of products (product rule, Leibniz rule), Comp
         \begin{itemize}
 			\item $\mathbb{C}$ is open
 			\item $\mathbb{C}^{\ast} =  \mathbb{C}\setminus \left\{0\right\}$ is open
-			\item $\left\{z \in \mathbb{C} : \text{Re}< \geq 0\right\}$ is \textcolor{red}{not} open 
+			\item $\left\{z \in \mathbb{C} : \text{Re }z \geq 0\right\}$ is \textcolor{red}{not} open 
         \end{itemize}
     \end{subparag}
 \end{parag}

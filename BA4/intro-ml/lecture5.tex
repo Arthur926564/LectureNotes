@@ -499,7 +499,7 @@ Where the $\left\{w^{\left(j\right)}\right\}$ are the coefficients of the differ
 	\end{center}
 	Higher dimension give us more \important{flexibility}. There is a theorem called Cover's theorem which said that as you increase the dimension \important{non-linearly}, you increase the probability of making the data linearly seperable.\\
 	$ $\\
-	None that it is important for the mapping $\phi$ to be \important{nonlinear}. A linear mapping would not result in a nonlinear model in the original space. To show this, let us consider the following linear mapping from a 2D input $x$ to a 3D representation $\phi\left(x\right)$:
+	Note that it is important for the mapping $\phi$ to be \important{nonlinear}. A linear mapping would not result in a nonlinear model in the original space. To show this, let us consider the following linear mapping from a 2D input $x$ to a 3D representation $\phi\left(x\right)$:
 	\begin{align*} 
 		\begin{pmatrix} x^{\left(1\right)} \\ x^{\left(2\right)} \end{pmatrix}  \to \begin{pmatrix} x^{\left(1\right)} \\ x^{\left(2\right)} \\ x^{\left(1\right)} + x^{\left(2\right)} \end{pmatrix} 
 	\end{align*}
@@ -513,6 +513,9 @@ Where the $\left\{w^{\left(j\right)}\right\}$ are the coefficients of the differ
 		y = w^{\left(0\right)} + \overline{w}^{\left(1\right)}x^{\left(1\right)} + \overline{w}^{\left(2\right)}x^{\left(2\right)}
 	\end{align*}
 	Which implies that there is no nonlinear behavior.
+	\begin{subparag}{Intuition}
+		Adding dimension which are linearly depedent from other is '\textit{redundant}'. If $\phi$ was a linear function, then the job of this function could already been made by the model. The goal of adding a dimension was to do the job that the linear model couldn't do. Literaly any linear function can be done by the linear model (by definition).
+	\end{subparag}
 	
 \end{parag}
 
