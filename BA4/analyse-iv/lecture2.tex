@@ -103,10 +103,6 @@ Let $f, g: w \to \mathbb{C}$ holomorphic. Then:
 	\left(fg\right)' &= f'g + fg' \mathspace \mathspace\mathspace \mathspace \mathspace \text{Leibniz rule}\\
 	\left(\frac{f}{g}\right)' &= \frac{f'g - fg'}{g^2} \mathspace \mathspace \mathspace g \neq 0
 \end{align*}
-If the image of $g$ is inside of $w$:
-\begin{align*} 
-	\left(f \circ g\right)'\left(z\right) =  f'\left(g\left(z\right)\right) \cdot g'\left(z\right)\mathspace \mathspace\mathspace \mathspace \mathspace \text{chain rule}
-\end{align*}
 \end{theoreme}
 All of these relations can be shown exactly as in the real case, we will do $\left(fg\right)'\left(z_0\right)$. First let us use the definition of the derivative:
 \begin{align*} 
@@ -121,6 +117,36 @@ With these rules and previous examples, it follows the usual formulas for differ
 	\left(\cos z\right)' &= -\sin z\\
 	\left(\sin z\right)' &= \cos z
 \end{align*}
+
+
+
+The chain rule is also valid for the complex derivative. We give careful statement and proof
+
+
+
+\begin{theoreme}
+	Suppose that $g\left(z\right)$ is differentiable at $z_0$, and suppose that $f\left(w\right)$ is differentiable at $w_0 = g\left(z_0\right)$. Then the composition $\left(f \circ g\right)\left(z\right) = f\left(g\left(z\right)\right)$ is differentiable at $z_0$ and:
+\begin{align*} 
+	\left(f \circ g\right)'\left(z_0\right) =  f'\left(g\left(z_0\right)\right) \cdot g'\left(z_0\right)
+\end{align*}
+\end{theoreme}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{figure/2026-04-11.pdf}
+\end{figure}
+\begin{parag}{$ $}
+    \begin{subparag}{Remark}
+        A useful mnemonic device for remembering the chain rule is:
+		\begin{align*} 
+			\frac{df}{dz} = \frac{df}{dw} \frac{dw}{dz} 
+		\end{align*}
+    \end{subparag}
+\end{parag}
+
+
+
+
 \begin{parag}{Geometric interpretation of Cauchy-Riemann equations}
     Let's fix $f : \mathbb{C} \to \mathbb{C}$ holomorphic, and view it as a function $f : \mathbb{R}^{2} \to \mathbb{R}^{2}$. Geometrically the Jacobian matrix:
 	\begin{align*} Df = \begin{pmatrix} \frac{\partial u}{\partial x}  & \frac{\partial v}{\partial x}  \\ \frac{\partial u}{\partial y}  & \frac{\partial v}{\partial y}  \end{pmatrix}  \end{align*}
@@ -132,6 +158,12 @@ With these rules and previous examples, it follows the usual formulas for differ
 \includegraphics[width=1.0\textwidth]{figure/2026-02-26_2.pdf}
 \caption{Transformation of the Jacobian matrix}
 \end{figure}
+To go back on what I have talked about in the Remark~\ref{rem:visualization}, this is exactly one of the five way in order to "\textit{visualize}" how function of complex variables look like. Here is the part of the video that talks about it:
+\begin{center}
+	\href{https://www.youtube.com/watch?v=NtoIXhUgqSk&list=PLDcSwjT2BF_UDdkQ3KQjX5SRQ2DLLwv0R&index=5&t=470s}{The 5 ways to visualize complex functions | Essence of complex analysis #3, $z, w$ plane}
+\end{center}
+
+
 A very specific deformation happens for holomorphic functions. In fact, the Cauchy-Riemann equations imply that the Jacobian is in the form of:
 \begin{align*} 
 	Df &= \begin{pmatrix} a & -b \\ b & a \end{pmatrix} \\
@@ -190,12 +222,46 @@ More precisely, computing $\log z$ for $z =  x + iy$ with $x > 0$:
 It is easy to verify that $\log$ is holomorphic on $\mathbb{C} \setminus \left\{Im = 0, Re \leq 0\right\}$ and $\left(\log z\right)' = \frac{1}{z}$
 \end{framedremark}
 \begin{parag}{logarithm rules}
-    
+    As nice as it seems to be, we still have the same logarithm rules as in the real case namely
 \begin{align*}
 	\log\left(z_1z_2\right) &= \log\left(z_1\right) + \log\left(z_2\right)\\
 	\log\left(z^{\gamma}\right) &= \gamma\log \left(z\right) \mathspace \mathspace \gamma \in \mathbb{C}
 \end{align*}
+
+\begin{subparag}{Differentiation}
+	The principal logarithm function $w =  \log z$ is a continuous inverse for $z = e^{w}$  for $-\pi < \text{arg }w < \pi$. Since $e^{w}$ is holomorphic and $\left(e^{w}\right)' \neq 0$. We can conclude that $\log z$ is holomorphic. Let us compute its derivative:
+	\begin{align*} 
+		z = e^{\log z}
+	\end{align*}
+	Using that fact and using the chain rule, let us derives both side of this equality:
+	\begin{align*} 
+		1 = e^{\log z} \frac{d}{dz} \left(\log z\right) =  z \frac{d}{dz} \left(\log z\right)
+	\end{align*}
+	Thus
+	\begin{align*} 
+		\frac{d}{dz} \log z =  \frac{1}{z}
+	\end{align*}
+    
+\end{subparag}
 \end{parag}
+
+\begin{framedremark}
+The trick we just used above can be used to determine a lot of other derivative, for instance 
+\begin{align*} 
+	\frac{d}{dz} \sqrt{z} = \frac{1}{2\sqrt{z}}
+\end{align*}
+Let us define
+\begin{align*} 
+	w &= \sqrt{z}\\
+	w^2 &= z
+\end{align*}
+Since $\left(w^2\right)' = 2w$ is not zero for $w \neq 0$, the continuous inverse branch $\sqrt{z}$ is analytic. Differentiating $w^2 =  z$, we obtain:
+\begin{align*} 
+	2w \frac{dw}{dz}  = 1, \mathspace \mathspace \frac{dw}{dz} = \frac{1}{2w}
+\end{align*}
+
+
+\end{framedremark}
 \begin{parag}{Example}
     If $z_1 =  z_2 =  -1$ then $\log z_1 =  \log z_2 =  i\pi$. (since $e^{i\pi}= -1$). Yet we have that $\log\left(z_1z_2\right) =  0 \neq\log\left(z_1\right) + \log \left(z_2\right)$. Similarly 
 	\begin{align*} 
@@ -207,6 +273,7 @@ It is easy to verify that $\log$ is holomorphic on $\mathbb{C} \setminus \left\{
 			\log\left(z^{\gamma}\right) - \gamma \log \left(z\right) \in 2\pi i \mathbb{Z}
 		\end{align*}
 \end{parag}
+
 
 
 

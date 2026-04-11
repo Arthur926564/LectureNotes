@@ -19,68 +19,69 @@
 \contentsline {paragraph}{Recall on topology}{15}{paragraph*.14}%
 \contentsline {paragraph}{Open set}{15}{section*.15}%
 \contentsline {paragraph}{Examples of Differentiation}{15}{section*.16}%
-\contentsline {section}{\numberline {2.2}Cauchy-Riemann equations}{15}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Cauchy-Riemann equations}{16}{section.2.2}%
 \contentsline {paragraph}{Proof of the direct implication '$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$'}{16}{section*.17}%
 \contentsline {paragraph}{$ $}{16}{section*.18}%
 \contentsline {paragraph}{Example}{17}{section*.19}%
-\contentsline {paragraph}{Example}{17}{section*.20}%
+\contentsline {paragraph}{Example}{18}{section*.20}%
 \contentsline {subsection}{\numberline {2.2.1}Rules for differentiation}{18}{subsection.2.2.1}%
-\contentsline {paragraph}{Geometric interpretation of Cauchy-Riemann equations}{18}{section*.21}%
-\contentsline {subsection}{\numberline {2.2.2}Complex logarithm}{19}{subsection.2.2.2}%
-\contentsline {paragraph}{logarithm rules}{20}{section*.22}%
-\contentsline {paragraph}{Example}{20}{section*.23}%
-\contentsline {section}{\numberline {2.3}Complex integration}{20}{section.2.3}%
-\contentsline {paragraph}{Example}{21}{section*.24}%
-\contentsline {paragraph}{Example ii}{22}{section*.25}%
-\contentsline {paragraph}{Example iii}{22}{section*.26}%
-\contentsline {paragraph}{Example iv}{22}{section*.27}%
-\contentsline {subsection}{\numberline {2.3.1}Cauchy's Theorem}{23}{subsection.2.3.1}%
-\contentsline {paragraph}{Geometric intuition}{23}{section*.28}%
-\contentsline {paragraph}{Example}{24}{section*.29}%
-\contentsline {paragraph}{Example ii}{24}{section*.30}%
-\contentsline {paragraph}{Example iii}{24}{section*.31}%
-\contentsline {paragraph}{How to shows this?}{25}{section*.32}%
-\contentsline {subsubsection}{Cauchy integral formula}{25}{subsubsection*.33}%
-\contentsline {paragraph}{How to show this?}{25}{section*.34}%
-\contentsline {subsection}{\numberline {2.3.2}Trick to compute line integrals easily}{26}{subsection.2.3.2}%
-\contentsline {paragraph}{Extension of Cauchy's integral formula}{26}{section*.35}%
-\contentsline {paragraph}{Example}{27}{section*.36}%
-\contentsline {paragraph}{Example II}{27}{section*.37}%
-\contentsline {chapter}{\numberline {3}Laurent Series}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Taylor series}{29}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Taylor series/ Regular Laurent Series for complex functions}{30}{section.3.2}%
-\contentsline {paragraph}{Remarks}{30}{paragraph*.38}%
-\contentsline {paragraph}{Example}{31}{section*.39}%
-\contentsline {paragraph}{Example II}{31}{section*.40}%
-\contentsline {paragraph}{Example III}{31}{section*.41}%
-\contentsline {paragraph}{Caution}{31}{section*.42}%
-\contentsline {paragraph}{$ $}{31}{section*.43}%
-\contentsline {subsection}{\numberline {3.2.1}Laurent Series}{31}{subsection.3.2.1}%
-\contentsline {paragraph}{ $ $}{32}{section*.44}%
-\contentsline {paragraph}{Example}{32}{section*.45}%
-\contentsline {paragraph}{Example II}{33}{section*.46}%
-\contentsline {paragraph}{Example}{33}{section*.47}%
-\contentsline {paragraph}{Example II}{33}{section*.48}%
-\contentsline {paragraph}{Regular point}{34}{section*.49}%
-\contentsline {paragraph}{Example}{36}{section*.50}%
-\contentsline {paragraph}{Summary}{36}{paragraph*.51}%
-\contentsline {paragraph}{Example}{36}{section*.52}%
-\contentsline {paragraph}{Example}{37}{section*.53}%
-\contentsline {section}{\numberline {3.3}Residues}{38}{section.3.3}%
-\contentsline {paragraph}{Example}{38}{section*.54}%
-\contentsline {paragraph}{Example}{39}{section*.55}%
-\contentsline {subsection}{\numberline {3.3.1}Residue Theorem}{39}{subsection.3.3.1}%
-\contentsline {paragraph}{How does one show this?}{40}{section*.56}%
-\contentsline {paragraph}{Example}{40}{section*.57}%
-\contentsline {paragraph}{Example}{40}{section*.58}%
-\contentsline {paragraph}{Example}{41}{section*.59}%
-\contentsline {paragraph}{Example}{41}{section*.60}%
-\contentsline {subsection}{\numberline {3.3.2}Applications}{41}{subsection.3.3.2}%
-\contentsline {paragraph}{Example}{41}{section*.61}%
-\contentsline {paragraph}{Example}{42}{section*.62}%
-\contentsline {paragraph}{$ $}{42}{section*.63}%
-\contentsline {paragraph}{$ $}{42}{section*.64}%
-\contentsline {paragraph}{Example}{44}{section*.65}%
-\contentsline {paragraph}{Integrals of rational function of trigonometric functions}{45}{paragraph*.66}%
-\contentsline {paragraph}{$ $}{45}{section*.67}%
-\contentsline {paragraph}{Example}{46}{section*.68}%
+\contentsline {paragraph}{$ $}{19}{section*.21}%
+\contentsline {paragraph}{Geometric interpretation of Cauchy-Riemann equations}{19}{section*.22}%
+\contentsline {subsection}{\numberline {2.2.2}Complex logarithm}{20}{subsection.2.2.2}%
+\contentsline {paragraph}{logarithm rules}{21}{section*.23}%
+\contentsline {paragraph}{Example}{22}{section*.24}%
+\contentsline {section}{\numberline {2.3}Complex integration}{22}{section.2.3}%
+\contentsline {paragraph}{Example}{23}{section*.25}%
+\contentsline {paragraph}{Example ii}{23}{section*.26}%
+\contentsline {paragraph}{Example iii}{24}{section*.27}%
+\contentsline {paragraph}{Example iv}{24}{section*.28}%
+\contentsline {subsection}{\numberline {2.3.1}Cauchy's Theorem}{24}{subsection.2.3.1}%
+\contentsline {paragraph}{Geometric intuition}{24}{section*.29}%
+\contentsline {paragraph}{Example}{25}{section*.30}%
+\contentsline {paragraph}{Example ii}{25}{section*.31}%
+\contentsline {paragraph}{Example iii}{26}{section*.32}%
+\contentsline {paragraph}{How to shows this?}{26}{section*.33}%
+\contentsline {subsubsection}{Cauchy integral formula}{27}{subsubsection*.34}%
+\contentsline {paragraph}{How to show this?}{27}{section*.35}%
+\contentsline {subsection}{\numberline {2.3.2}Trick to compute line integrals easily}{27}{subsection.2.3.2}%
+\contentsline {paragraph}{Extension of Cauchy's integral formula}{27}{section*.36}%
+\contentsline {paragraph}{Example}{28}{section*.37}%
+\contentsline {paragraph}{Example II}{29}{section*.38}%
+\contentsline {chapter}{\numberline {3}Laurent Series}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Taylor series}{31}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Taylor series/ Regular Laurent Series for complex functions}{32}{section.3.2}%
+\contentsline {paragraph}{Remarks}{32}{paragraph*.39}%
+\contentsline {paragraph}{Example}{33}{section*.40}%
+\contentsline {paragraph}{Example II}{33}{section*.41}%
+\contentsline {paragraph}{Example III}{33}{section*.42}%
+\contentsline {paragraph}{Caution}{33}{section*.43}%
+\contentsline {paragraph}{$ $}{33}{section*.44}%
+\contentsline {subsection}{\numberline {3.2.1}Laurent Series}{33}{subsection.3.2.1}%
+\contentsline {paragraph}{ $ $}{34}{section*.45}%
+\contentsline {paragraph}{Example}{34}{section*.46}%
+\contentsline {paragraph}{Example II}{35}{section*.47}%
+\contentsline {paragraph}{Example}{35}{section*.48}%
+\contentsline {paragraph}{Example II}{35}{section*.49}%
+\contentsline {paragraph}{Regular point}{36}{section*.50}%
+\contentsline {paragraph}{Example}{38}{section*.51}%
+\contentsline {paragraph}{Summary}{38}{paragraph*.52}%
+\contentsline {paragraph}{Example}{38}{section*.53}%
+\contentsline {paragraph}{Example}{39}{section*.54}%
+\contentsline {section}{\numberline {3.3}Residues}{40}{section.3.3}%
+\contentsline {paragraph}{Example}{40}{section*.55}%
+\contentsline {paragraph}{Example}{41}{section*.56}%
+\contentsline {subsection}{\numberline {3.3.1}Residue Theorem}{41}{subsection.3.3.1}%
+\contentsline {paragraph}{How does one show this?}{42}{section*.57}%
+\contentsline {paragraph}{Example}{42}{section*.58}%
+\contentsline {paragraph}{Example}{42}{section*.59}%
+\contentsline {paragraph}{Example}{43}{section*.60}%
+\contentsline {paragraph}{Example}{43}{section*.61}%
+\contentsline {subsection}{\numberline {3.3.2}Applications}{43}{subsection.3.3.2}%
+\contentsline {paragraph}{Example}{43}{section*.62}%
+\contentsline {paragraph}{Example}{44}{section*.63}%
+\contentsline {paragraph}{$ $}{44}{section*.64}%
+\contentsline {paragraph}{$ $}{44}{section*.65}%
+\contentsline {paragraph}{Example}{46}{section*.66}%
+\contentsline {paragraph}{Integrals of rational function of trigonometric functions}{47}{paragraph*.67}%
+\contentsline {paragraph}{$ $}{47}{section*.68}%
+\contentsline {paragraph}{Example}{48}{section*.69}%

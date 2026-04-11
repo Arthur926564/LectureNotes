@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.5)  7 APR 2026 17:32
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.5)  11 APR 2026 16:46
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1860,97 +1860,104 @@ Package mdframed Info: mdframed works in twoside mode on input line 109.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 109.
-Package mdframed Info: mdframed works in twoside mode on input line 116.
+
+! You can't use `macro parameter character #' in horizontal mode.
+<argument> ...ons | Essence of complex analysis ##
+                                                  3
+l.113 ...nctions | Essence of complex analysis #3}
+                                                  
+? 
+Package mdframed Info: mdframed works in twoside mode on input line 121.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 116.
+(mdframed)              on input line 121.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 118.
-<figure/complex.pdf, id=158, 225.84375pt x 113.42375pt>
+ mdframed uses option nobreak mdframed on input line 123.
+<figure/complex.pdf, id=159, 225.84375pt x 113.42375pt>
 File: figure/complex.pdf Graphic file (type pdf)
 <use figure/complex.pdf>
-Package luatex.def Info: figure/complex.pdf  used on input line 122.
+Package luatex.def Info: figure/complex.pdf  used on input line 127.
 (luatex.def)             Requested size: 282.30397pt x 141.77933pt.
- [7
+[7
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.1
 '
 <./figure/complex.pdf>]
-<figure/2026-02-22.pdf, id=173, 398.48875pt x 359.3425pt>
+<figure/2026-02-22.pdf, id=175, 398.48875pt x 359.3425pt>
 File: figure/2026-02-22.pdf Graphic file (type pdf)
 <use figure/2026-02-22.pdf>
-Package luatex.def Info: figure/2026-02-22.pdf  used on input line 141.
+Package luatex.def Info: figure/2026-02-22.pdf  used on input line 146.
 (luatex.def)             Requested size: 199.24388pt x 179.6708pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 146.
+(Font)              <14.4> on input line 151.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 146.
+(hyperref)                removing `math shift' on input line 151.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 146.
+(hyperref)                removing `math shift' on input line 151.
 
-Package mdframed Info: mdframed works in twoside mode on input line 148.
+Package mdframed Info: mdframed works in twoside mode on input line 153.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 148.
+(mdframed)              on input line 153.
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--161
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--161
+Underfull \hbox (badness 10000) in paragraph at lines 161--166
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 161.
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--166
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 166.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 161.
+(mdframed)              on input line 166.
 [8
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1.2
 '
 <./figure/2026-02-22.pdf>]
-Package mdframed Info: mdframed works in twoside mode on input line 175.
+Package mdframed Info: mdframed works in twoside mode on input line 180.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 175.
+(mdframed)              on input line 180.
  [9]
-Underfull \hbox (badness 10000) in paragraph at lines 245--249
+Underfull \hbox (badness 10000) in paragraph at lines 250--254
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 249.
+Package mdframed Info: mdframed works in twoside mode on input line 254.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 249.
-Package mdframed Info: mdframed works in twoside mode on input line 258.
+(mdframed)              on input line 254.
+Package mdframed Info: mdframed works in twoside mode on input line 263.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 258.
+(mdframed)              on input line 263.
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--273
+Underfull \hbox (badness 10000) in paragraph at lines 274--278
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 289--293
+Underfull \hbox (badness 10000) in paragraph at lines 294--298
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 293.
+Package mdframed Info: mdframed works in twoside mode on input line 298.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 293.
+(mdframed)              on input line 298.
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--303
+Underfull \hbox (badness 10000) in paragraph at lines 304--308
 
  []
 
@@ -1958,54 +1965,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--303
 
 ]
 Chapter 2.
-Package mdframed Info: mdframed works in twoside mode on input line 312.
+Package mdframed Info: mdframed works in twoside mode on input line 317.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 312.
+(mdframed)              on input line 317.
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--331
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 339.
+Package mdframed Info: mdframed works in twoside mode on input line 344.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 339.
+(mdframed)              on input line 344.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 341.
+ mdframed uses option nobreak mdframed on input line 346.
 [13]
-Package mdframed Info: mdframed works in twoside mode on input line 354.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 354.
 Package mdframed Info: mdframed works in twoside mode on input line 359.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 359.
-Package mdframed Info: mdframed works in twoside mode on input line 379.
+Package mdframed Info: mdframed works in twoside mode on input line 364.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 379.
+(mdframed)              on input line 364.
 Package mdframed Info: mdframed works in twoside mode on input line 384.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 384.
-Package mdframed Info: mdframed works in twoside mode on input line 387.
+Package mdframed Info: mdframed works in twoside mode on input line 388.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 387.
- [14]
+(mdframed)              on input line 388.
 Package mdframed Info: mdframed works in twoside mode on input line 391.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 391.
-Package mdframed Info: mdframed works in twoside mode on input line 399.
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--405
+
+ []
+
+[14]
+Package mdframed Info: mdframed works in twoside mode on input line 414.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 399.
+(mdframed)              on input line 414.
+Package mdframed Info: mdframed works in twoside mode on input line 418.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 418.
+Package mdframed Info: mdframed works in twoside mode on input line 426.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 426.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 400.
-) (./lecture2.tex
+ mdframed uses option nobreak mdframed on input line 427.
+ [15]) (./lecture2.tex
 Package mdframed Info: mdframed works in twoside mode on input line 4.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2014,16 +2045,16 @@ Package mdframed Info: mdframed works in twoside mode on input line 15.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 15.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 22.
- [15]
-<figure/2026-02-26_1.pdf, id=230, 285.065pt x 227.85126pt>
+<figure/2026-02-26_1.pdf, id=235, 285.065pt x 227.85126pt>
 File: figure/2026-02-26_1.pdf Graphic file (type pdf)
 <use figure/2026-02-26_1.pdf>
 Package luatex.def Info: figure/2026-02-26_1.pdf  used on input line 33.
 (luatex.def)             Requested size: 209.12683pt x 167.154pt.
- [16
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.1
 '
 <./figure/2026-02-26_1.pdf>]
@@ -2031,74 +2062,109 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
  []
 
-[17]
 Package mdframed Info: mdframed works in twoside mode on input line 99.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 99.
-<figure/2026-02-26_2.pdf, id=248, 405.515pt x 123.46124pt>
-File: figure/2026-02-26_2.pdf Graphic file (type pdf)
-<use figure/2026-02-26_2.pdf>
-Package luatex.def Info: figure/2026-02-26_2.pdf  used on input line 132.
-(luatex.def)             Requested size: 418.25368pt x 127.34355pt.
- [18
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.2
-'
-<./figure/2026-02-26_2.pdf>]
-<figure/2026-02-27.pdf, id=256, 185.69376pt x 169.63374pt>
-File: figure/2026-02-27.pdf Graphic file (type pdf)
-<use figure/2026-02-27.pdf>
-Package luatex.def Info: figure/2026-02-27.pdf  used on input line 149.
-(luatex.def)             Requested size: 125.47737pt x 114.62724pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--166
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--166
-
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 170.
+Package mdframed Info: mdframed works in twoside mode on input line 127.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 170.
+(mdframed)              on input line 127.
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 172.
+(mdframed)                or something else on input line 132.
 
 Package mdframed Info: You first box width is to small
  mdframed fixed it
-(mdframed)              on input line 172.
-[19<./figure/2026-02-27.pdf>]
+(mdframed)              on input line 132.
+[18]
+<figure/2026-04-11.pdf, id=258, 501.875pt x 166.6225pt>
+File: figure/2026-04-11.pdf Graphic file (type pdf)
+<use figure/2026-04-11.pdf>
+Package luatex.def Info: figure/2026-04-11.pdf  used on input line 136.
+(luatex.def)             Requested size: 292.77629pt x 97.20554pt.
+<figure/2026-02-26_2.pdf, id=259, 405.515pt x 123.46124pt>
+File: figure/2026-02-26_2.pdf Graphic file (type pdf)
+<use figure/2026-02-26_2.pdf>
+Package luatex.def Info: figure/2026-02-26_2.pdf  used on input line 158.
+(luatex.def)             Requested size: 418.25368pt x 127.34355pt.
+
+! You can't use `macro parameter character #' in horizontal mode.
+<argument> ...ons | Essence of complex analysis ##
+                                                  3, $z, w$ plane
+l.163 ...nce of complex analysis #3, $z, w$ plane}
+                                                  
+? 
+[19
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.2
+'
+<./figure/2026-04-11.pdf><./figure/2026-02-26_2.pdf>]
+<figure/2026-02-27.pdf, id=271, 185.69376pt x 169.63374pt>
+File: figure/2026-02-27.pdf Graphic file (type pdf)
+<use figure/2026-02-27.pdf>
+Package luatex.def Info: figure/2026-02-27.pdf  used on input line 181.
+(luatex.def)             Requested size: 125.47737pt x 114.62724pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--198
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 202.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 202.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 204.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 204.
+[20<./figure/2026-02-27.pdf>]
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last split box is empty
-(mdframed)                You have to change the settings on input line 172.
+(mdframed)                You have to change the settings on input line 204.
 
-Package mdframed Info: mdframed works in twoside mode on input line 174.
+Package mdframed Info: mdframed works in twoside mode on input line 206.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 174.
-Package mdframed Info: mdframed works in twoside mode on input line 180.
+(mdframed)              on input line 206.
+Package mdframed Info: mdframed works in twoside mode on input line 212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 180.
-) (./lecture3.tex
-<figure/2026-03-05.pdf, id=263, 197.73875pt x 147.55125pt>
+(mdframed)              on input line 212.
+Package mdframed Info: mdframed works in twoside mode on input line 248.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 248.
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 264.
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 264.
+[21]) (./lecture3.tex
+<figure/2026-03-05.pdf, id=287, 197.73875pt x 147.55125pt>
 File: figure/2026-03-05.pdf Graphic file (type pdf)
 <use figure/2026-03-05.pdf>
 Package luatex.def Info: figure/2026-03-05.pdf  used on input line 13.
 (luatex.def)             Requested size: 125.47737pt x 93.63095pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[20]
 Package mdframed Info: mdframed works in twoside mode on input line 33.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2108,6 +2174,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--36
 
  []
 
+[22
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.3
+'
+<./figure/2026-03-05.pdf>]
+Package mdframed Info: Not enough space on this page on input line 39.
 Package mdframed Info: mdframed works in twoside mode on input line 40.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2116,15 +2187,12 @@ Package mdframed Info: mdframed works in twoside mode on input line 48.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 48.
-<figure/2026-03-05_1.pdf, id=275, 257.96375pt x 214.8025pt>
+<figure/2026-03-05_1.pdf, id=300, 257.96375pt x 214.8025pt>
 File: figure/2026-03-05_1.pdf Graphic file (type pdf)
 <use figure/2026-03-05_1.pdf>
 Package luatex.def Info: figure/2026-03-05_1.pdf  used on input line 55.
 (luatex.def)             Requested size: 136.43271pt x 113.60878pt.
-[21
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.3
-'
-<./figure/2026-03-05.pdf><./figure/2026-03-05_1.pdf>] [22]
+ [23<./figure/2026-03-05_1.pdf>]
 Package mdframed Info: mdframed works in twoside mode on input line 107.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2141,17 +2209,17 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 118.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 119.
-<figure/2026-03-05_2.pdf, id=296, 327.2225pt x 368.37625pt>
+<figure/2026-03-05_2.pdf, id=310, 327.2225pt x 368.37625pt>
 File: figure/2026-03-05_2.pdf Graphic file (type pdf)
 <use figure/2026-03-05_2.pdf>
 Package luatex.def Info: figure/2026-03-05_2.pdf  used on input line 121.
 (luatex.def)             Requested size: 116.94147pt x 131.64853pt.
-
+ [24]
 Underfull \hbox (badness 10000) in paragraph at lines 124--124
 []\TU/lmr/m/it/8 Why is this
  []
 
-[23<./figure/2026-03-05_2.pdf>]
+[25<./figure/2026-03-05_2.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
  []
@@ -2170,12 +2238,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--191
 
  []
 
-<figure/2026-03-05_3.pdf, id=305, 247.92625pt x 232.87pt>
+<figure/2026-03-05_3.pdf, id=327, 247.92625pt x 232.87pt>
 File: figure/2026-03-05_3.pdf Graphic file (type pdf)
 <use figure/2026-03-05_3.pdf>
 Package luatex.def Info: figure/2026-03-05_3.pdf  used on input line 198.
 (luatex.def)             Requested size: 125.47737pt x 117.85602pt.
-[24]
+[26<./figure/2026-03-05_3.pdf>]
 Package mdframed Info: mdframed works in twoside mode on input line 214.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2185,7 +2253,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
-) (./lecture4.tex [25<./figure/2026-03-05_3.pdf>]
+) (./lecture4.tex
 Package mdframed Info: mdframed works in twoside mode on input line 11.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2197,7 +2265,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--23
 
  []
 
-[26]
+[27]
 Package mdframed Info: mdframed works in twoside mode on input line 58.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2207,12 +2275,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
-
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
-[27] [28
+[29] [30
 
 ]
 Chapter 3.
@@ -2243,7 +2311,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--119
 
  []
 
-[29]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 119--123
 
  []
@@ -2278,13 +2346,13 @@ l.164 			\end{align*}
 l.164 			\end{align*}
                      
 ? 
-[30]
+[32]
 Package mdframed Info: mdframed works in twoside mode on input line 208.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 208.
- [31]
-<figure/2026-03-12.pdf, id=366, 323.2075pt x 412.54124pt>
+ [33]
+<figure/2026-03-12.pdf, id=386, 323.2075pt x 412.54124pt>
 File: figure/2026-03-12.pdf Graphic file (type pdf)
 <use figure/2026-03-12.pdf>
 Package luatex.def Info: figure/2026-03-12.pdf  used on input line 220.
@@ -2307,7 +2375,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
-[32
+[34
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.1
 '
 <./figure/2026-03-12.pdf>]) (./lecture5.tex
@@ -2315,7 +2383,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 1.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 1.
- [33]
+ [35]
 Package mdframed Info: mdframed works in twoside mode on input line 53.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2327,7 +2395,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 64.
-[34]
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
@@ -2348,7 +2416,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 100.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 106.
-[35]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
@@ -2362,7 +2430,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-[36]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 194--197
 
  []
@@ -2372,7 +2440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[37]
+[39]
 Package mdframed Info: mdframed works in twoside mode on input line 18.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2391,7 +2459,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--41
 
  []
 
-[38]
+[40]
 Package mdframed Info: mdframed works in twoside mode on input line 90.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2406,17 +2474,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--96
 
  []
 
-<figure/2026-03-26.pdf, id=426, 332.24126pt x 283.0575pt>
+<figure/2026-03-26.pdf, id=446, 332.24126pt x 283.0575pt>
 File: figure/2026-03-26.pdf Graphic file (type pdf)
 <use figure/2026-03-26.pdf>
 Package luatex.def Info: figure/2026-03-26.pdf  used on input line 102.
 (luatex.def)             Requested size: 167.2989pt x 142.53474pt.
-[39<./figure/2026-03-26.pdf>]
+[41<./figure/2026-03-26.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 108--111
 
  []
 
-<figure/2026-03-26_1.pdf, id=433, 394.47375pt x 192.72pt>
+<figure/2026-03-26_1.pdf, id=454, 394.47375pt x 192.72pt>
 File: figure/2026-03-26_1.pdf Graphic file (type pdf)
 <use figure/2026-03-26_1.pdf>
 Package luatex.def Info: figure/2026-03-26_1.pdf  used on input line 112.
@@ -2500,7 +2568,7 @@ l.152 		Let $\gamma$ be a \si\mple
 l.152 ...rclockwise oriented curve. The que\astion
                                                    is always the same: what ...
 ? 
-[40<./figure/2026-03-26_1.pdf>]
+[42<./figure/2026-03-26_1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 191--197
 
  []
@@ -2510,12 +2578,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--197
 
  []
 
-[41]) (./lecture7.tex
+[43]) (./lecture7.tex
 Underfull \hbox (badness 10000) in paragraph at lines 14--18
 
  []
 
-<figure/2026-04-04.pdf, id=457, 494.84875pt x 244.915pt>
+<figure/2026-04-04.pdf, id=479, 494.84875pt x 244.915pt>
 File: figure/2026-04-04.pdf Graphic file (type pdf)
 <use figure/2026-04-04.pdf>
 Package luatex.def Info: figure/2026-04-04.pdf  used on input line 21.
@@ -2528,7 +2596,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--50
 
  []
 
-[42] [43
+[44] [45
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.2
 '
 <./figure/2026-04-04.pdf>]
@@ -2541,7 +2609,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--125
 
  []
 
-[44]
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
@@ -2551,26 +2619,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--167
 
  []
 
-[45]) [46] (./main.aux)
+[47]) [48] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 159AEB1DCB0688E15788DE54C6A2FF92;3267.
+(rerunfilecheck)             Checksum: EE8755776A88AD1DAC18C11CD3C3657D;3267.
 )
 
 Here is how much of LuaTeX's memory you used:
- 53085 strings out of 476076
+ 53113 strings out of 476076
  125236,1977958 words of node,token memory allocated
- 1175 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 3 glyph, 30
- attribute, 156 glue_spec, 30 attribute_list, 2 shape, 2 write nodes
-   avail lists: 1:12,2:2444,3:934,4:304,5:607,6:60,7:6261,8:86,9:1833,10:29,11:2
-50,12:1
- 73782 multiletter control sequences out of 65536+600000
+ 1183 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 3 glyph, 32
+ attribute, 156 glue_spec, 32 attribute_list, 2 shape, 2 write nodes
+   avail lists: 1:10,2:2444,3:934,4:280,5:607,6:61,7:6261,8:86,9:1833,10:29,11:2
+94,12:1
+ 73801 multiletter control sequences out of 65536+600000
  142 fonts using 9943167 bytes
- 110i,25n,120p,1930b,1232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,25n,120p,1930b,1206s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/f
 onts/opentype/public/lm/lmroman7-regular.otf>{/usr/share/texmf-dist/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/s
@@ -2593,10 +2661,10 @@ usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts
 b></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/
 fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb>
-Output written on main.pdf (46 pages, 433905 bytes).
+Output written on main.pdf (48 pages, 456638 bytes).
 
-PDF statistics: 605 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 219 named destinations out of 1000 (max. 1048576)
+PDF statistics: 629 PDF objects out of 1000 (max. 8388607)
+ 516 compressed objects within 6 object streams
+ 225 named destinations out of 1000 (max. 1048576)
  168 words of extra memory for PDF output out of 10000 (max. 100000000)
 

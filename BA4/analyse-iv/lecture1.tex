@@ -106,8 +106,13 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	\end{subparag}
 \end{parag}
 
-\begin{framedremark}
+\begin{framedremark}\label{rem:visualization}
 Therefore as we can see any number in $\mathbb{C}$ requires only two variables, his norms and argument, which means that when wanting to express any complex number, one only need to have the angle (the rotation) and the modulus. This can be very interesting when our goal is to visualize complex functions. In order to have a good visualization, we need $4$ dimensions: two for the input, two for the output. But if all we need is the angle $\theta \in \left[-\pi, \pi\right]$ and $\left|z\right| \in \mathbb{R}_+$ then we can map using colors for the angle and the third axis for the modulus. This way we can directly see where our number collaps to $0$ or when it goes to $\pm \infty$. (there is a great youtube video about 5 ways to visualize complex functions that I recommend).
+\begin{center}
+	\href{https://www.youtube.com/watch?v=NtoIXhUgqSk&list=PLDcSwjT2BF_UDdkQ3KQjX5SRQ2DLLwv0R&index3}{
+The 5 ways to visualize complex functions | Essence of complex analysis #3}
+\end{center}
+
 \end{framedremark}
 
 
@@ -380,9 +385,31 @@ This definition is directly mapped to the one seen in Analysis II. What we are r
 	\begin{align*} \lim_{z \to z_0} \frac{f\left(z\right) - f\left(z_0\right)}{z - z_0} \text{ exists} \end{align*}
 	We denote this limit by $f'\left(z_0\right)$
 \end{definition}
-\begin{definition}
+\begin{definition}\label{def:holomorphic}
 If $f$ is differentiable at every point of an open set $\omega \subseteq \mathbb{C} $, we say $f$ is \important{holomorphic} on $\omega$.
 \end{definition}
+\begin{framedremark}
+	In many books about complex analysis we use the term analytic instead of holomorphic, both terms are equivalent for function of complex variable, but this equivalence is a deep theorem and not a definition. The definition~\ref{def:holomorphic} here is the definition of \important{holomorphic}. On the other hand, analytic on $\omega$ means that around every point $z_0 \in \omega$, $f$ can be represented by a convergent power series:
+\begin{align*} 
+	f\left(z\right) = \sum_{n= 0}^{\infty}a_n\left(z - z_0\right)^{n}
+\end{align*}
+In some neighbourhood of $z_0$. This is an \textit{a priori} much stronger condition.\\
+$ $\\
+The fact that $f$ is holomorphic $\iff$ $f$ is analytic (on $\omega$) can be proven, and we will be able to do prove it.\\
+$ $\\
+The Analytic $\implies$ holomorphic proof is pretty straightforward: as $f$ can be represented by a power series and that a power series is differentiable (within their radius of convergence) then $f$ is also differentiable the same way.\\
+$ $\\
+For the holomorphic $\implies $ Analytic proof. This is harder and we will go through it later when we will have introduced Cauchy's integral formula\\
+$ $\\
+This theorem doesn't work in $ \mathbb{R}$ a function can be infinitely differentiable (smooth) on $ \mathbb{R}$ without being analytic. For instance:
+\begin{align*} 
+	f\left(x\right) = \begin{cases}
+		e^{-\frac{1}{x^2}} \mathspace \mathspace &x \neq 0\\
+		0 &x = 0
+	\end{cases}
+\end{align*}
+This is $C^{\infty}$ everywhere, but its Taylor series at $0$ is identically $0$, so it fails to represent $f$ near $0$
+\end{framedremark}
 \begin{definition}
 If $f$ is holomorphic on $\mathbb{C}$, we call f \important{entire}.
 \end{definition}
