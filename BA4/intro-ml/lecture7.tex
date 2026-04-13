@@ -276,3 +276,22 @@ We can do the same thing on ridge regression with multiple outputs (the exact sa
 	
 \end{parag}
 
+\begin{parag}{Discussion of kernelization}
+    \begin{subparag}{Advantages}:
+		\begin{itemize}
+		    \item Can effectively handle non-linearly separable data
+		    \item Often have nice solutions (e.g., closed form, convex)
+		\end{itemize}
+    \end{subparag}
+	\begin{subparag}{Drawbacks}
+	    \begin{itemize}
+	        \item Depend on the choice of kernel and hyper-parameter
+	        \item Computational complexity depends on the number of samples 
+				\begin{itemize}
+				    \item E.g., for kernel ridge regression, one needs to invert an $N \times N$ matrix, which requires ($O\left(N^3\right)$) operations.
+				\end{itemize}
+	    \end{itemize}
+	    
+	\end{subparag}
+\end{parag}
+

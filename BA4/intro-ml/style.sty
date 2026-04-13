@@ -564,8 +564,6 @@ linewidth=1pt]\begin{pro}}
     enlarge left by=\paragtitlewidth + \paragtitlespace,
     width=\linewidth - \paragtitlewidth - \paragtitlespace,
     parbox=true,
-    height=#2,
-    height plus=100cm, % enough for a page break to happen, since then those options are ignored
 }
 
 \newtcolorbox{subparagbox}[2]{
@@ -590,8 +588,6 @@ linewidth=1pt]\begin{pro}}
           {%
             \textit{\footnotesize #1}
           };},
-    height=#2,
-    height plus=100cm, % enough for a page break to happen, since then those options are ignored
 }
 
 \newbox\paragtitlebox
