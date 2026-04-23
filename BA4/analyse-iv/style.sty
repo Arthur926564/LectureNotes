@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage[bottom=2.5cm, top=2.5cm]{geometry}
-\setlength{\columnsep}{0.5cm}
+\setlength{\columnsep}{1cm}
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{lmodern}
@@ -516,6 +516,8 @@ linewidth=1pt]\begin{pro}}
 % Other commands
 \newcommand{\multicolumnX}[2]{\multicolumn{#1}{>{\hsize=\dimexpr#1\hsize+#1\tabcolsep+\arrayrulewidth\relax}X}{#2}}
 
+
+
 % ##### 04. parag and subparag environments #####
 % This provides:
 %   \FatalPackageError: A command making a pacakage error, and then terminates the compilation immediately.
@@ -538,9 +540,9 @@ linewidth=1pt]\begin{pro}}
 }
 
 \newlength{\paragtitlewidth}
-\setlength{\paragtitlewidth}{0.5cm}
+\setlength{\paragtitlewidth}{3cm}
 \newlength{\paragtitlespace}
-\setlength{\paragtitlespace}{0.5cm}
+\setlength{\paragtitlespace}{0.3cm}
 \newlength{\subparaglinewidth}
 \setlength{\subparaglinewidth}{0.1mm}
 \newlength{\subparagtitlelinespace}
@@ -563,6 +565,15 @@ linewidth=1pt]\begin{pro}}
     after skip=0pt,    % Space after the box
     enlarge left by=\paragtitlewidth + \paragtitlespace,
     width=\linewidth - \paragtitlewidth - \paragtitlespace,
+    parbox=true,
+    overlay unbroken and first={%
+        \node[inner sep=0pt,outer sep=0pt,text width=\paragtitlewidth,
+          align=left,
+          below right]
+          at ([xshift=-\paragtitlewidth - \paragtitlespace]frame.north west)
+          {%
+             \fullbf{#1}
+          };},
     height=#2,
     height plus=100cm, % enough for a page break to happen, since then those options are ignored
 }
@@ -580,6 +591,7 @@ linewidth=1pt]\begin{pro}}
     enlarge left by=\paragtitlewidth + \paragtitlespace + \subparagtitlelinespace + \subparagtitlewidth + \subparagtitlespace,
     width=\linewidth - \paragtitlewidth - \paragtitlespace - \subparagtitlelinespace - \subparagtitlewidth - \subparagtitlespace,
     borderline west={\subparaglinewidth}{-\subparagtitlelinespace - \subparagtitlewidth - \subparagtitlespace - 0.5\subparaglinewidth}{black},
+    parbox=true,
     overlay unbroken and first={%
         \node[inner sep=0pt,outer sep=0pt,text width=\subparagtitlewidth,
           align=left,
@@ -594,11 +606,9 @@ linewidth=1pt]\begin{pro}}
 
 \newbox\paragtitlebox
 \newlength{\paragtitleheight}
-\newlength{\currentparagheight}
 
 \newenvironment{parag}[1]{%
     \vspace{\parskip} % We want the parskip to be here, not after (it is then cancelled).
-	\vspace{0.8cm}
     % Check that not inside a paragraph.
     \directlua{
         if inparag then
@@ -610,7 +620,11 @@ linewidth=1pt]\begin{pro}}
     \phantomsection
     \addcontentsline{toc}{paragraph}{#1}
     % Measure title, while not displaying it.
-        \sloppy \fullbf{#1}
+    \sbox\paragtitlebox{
+        \begin{minipage}[c]{\paragtitlewidth}
+            \RaggedRight \fullbf{#1}
+        \end{minipage}
+    }
     \setlength\paragtitleheight{2\ht\paragtitlebox}  % parag title height; why a factor 2? Very good question, I won't act as if I knew what I was doing, but it seems to work
     % Ask for correct space on the page, for the title.
     \needspace{\paragtitleheight}
@@ -635,7 +649,7 @@ linewidth=1pt]\begin{pro}}
     % Measure title, while not displaying it.
     \sbox\subparagtitlebox{
         \begin{minipage}[c]{\subparagtitlewidth}
-            \sloppy \textit{\footnotesize #1}
+            \RaggedRight \textit{\footnotesize #1}
         \end{minipage}
     }
     \setlength\subparagtitleheight{2\ht\subparagtitlebox}  % subparag title height; why a factor 2? Very good question, I won't act as if I knew what I was doing, but it seems to work
@@ -646,16 +660,6 @@ linewidth=1pt]\begin{pro}}
         % Re-set parskip size.
         \setlength{\parskip}{\unchangedparskip}
         \vspace{-\parskip}% Else, double counts the subparagraph skip (there is probably a better way, but I'm not sure what I am doing).
-		% this is just for the itemize in the subparag to be smaller
-		\setlist[itemize]{%
-            label=\textbullet,
-            left=1em,
-            labelsep=0.5em,
-            itemsep=0.25\baselineskip,
-            parsep=0pt,
-            topsep=0.25\baselineskip,
-            partopsep=0pt
-        }
 }{ 
     \end{subparagbox}
     
@@ -685,12 +689,13 @@ linewidth=1pt]\begin{pro}}
 
 \AfterEndEnvironment{subparag}{
     \directlua{
-        tex.print([[\string\begin{paragbox}{}{ \the\paragtitleheight}]])
+        tex.print([[\string\begin{paragbox}{}{0pt}]])
         --[[ For the LaTeX compiler: \string\end{paragbox} --]]
     }
     \setlength{\parskip}{\unchangedparskip}
     \directlua{insubparag = false}
 }
+
 
 % ##### 05. Lecture headers #####
 % This provides:
