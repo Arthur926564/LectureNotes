@@ -1,3 +1,4 @@
+\babel@toc {british}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {paragraph}{Evaluation}{3}{section*.1}%
 \contentsline {section}{\numberline {1.1}Machine Learning Basics}{3}{section.1.1}%
@@ -22,147 +23,184 @@
 \contentsline {paragraph}{Line fitting}{8}{section*.17}%
 \contentsline {paragraph}{1D Linear Regression training}{8}{section*.18}%
 \contentsline {paragraph}{Plane}{9}{section*.19}%
-\contentsline {paragraph}{Multi-input linear regression: Training}{10}{section*.20}%
+\contentsline {paragraph}{Multi-input linear regression: Training}{9}{section*.20}%
 \contentsline {section}{\numberline {2.2}Derivatives and Gradients}{10}{section.2.2}%
 \contentsline {paragraph}{Minimizing a function}{10}{section*.21}%
-\contentsline {paragraph}{$ $}{11}{section*.22}%
-\contentsline {paragraph}{Dealing with multivariate functions}{11}{section*.23}%
+\contentsline {paragraph}{$ $}{10}{section*.22}%
+\contentsline {paragraph}{Dealing with multivariate functions}{10}{section*.23}%
 \contentsline {paragraph}{Properties of gradient}{11}{section*.24}%
 \contentsline {paragraph}{Linear regression: Solution}{11}{section*.25}%
-\contentsline {paragraph}{Gradient Computation}{12}{section*.26}%
-\contentsline {paragraph}{Solution}{13}{section*.27}%
+\contentsline {paragraph}{Gradient Computation}{11}{section*.26}%
+\contentsline {paragraph}{Solution}{12}{section*.27}%
 \contentsline {paragraph}{Matrix form}{13}{section*.28}%
-\contentsline {paragraph}{Test time}{15}{section*.29}%
-\contentsline {paragraph}{Evaluation metrics for regression}{15}{section*.30}%
+\contentsline {paragraph}{Test time}{14}{section*.29}%
+\contentsline {paragraph}{Evaluation metrics for regression}{14}{section*.30}%
 \contentsline {paragraph}{Mean Squared Error (MSE)}{15}{section*.31}%
-\contentsline {paragraph}{Mean Absolute Error (MAE)}{16}{section*.32}%
-\contentsline {subsection}{\numberline {2.2.1}Interpreting a Linear Model}{16}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Linear model with multiple outputs}{17}{subsection.2.2.2}%
-\contentsline {paragraph}{Model}{17}{section*.33}%
-\contentsline {paragraph}{Multi-ouput linear regression: Gradient}{17}{section*.34}%
-\contentsline {subsection}{\numberline {2.2.3}Linear Classification}{18}{subsection.2.2.3}%
-\contentsline {paragraph}{Binary Classification}{18}{section*.35}%
-\contentsline {paragraph}{Example (from Andrew Ng's course)}{19}{section*.36}%
-\contentsline {section}{\numberline {2.3}Linear Model for Classification}{20}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Loss Function ad Empricial Risk}{20}{subsection.2.3.1}%
-\contentsline {paragraph}{Loss function}{20}{section*.37}%
-\contentsline {paragraph}{Loss function: Examples}{21}{section*.38}%
-\contentsline {paragraph}{Empirical risk}{21}{section*.39}%
-\contentsline {paragraph}{Minimzing the risk}{21}{section*.40}%
-\contentsline {paragraph}{From regression to classification}{22}{section*.41}%
-\contentsline {paragraph}{Adding non-linearity}{23}{section*.42}%
-\contentsline {paragraph}{Step function: Drawback}{23}{section*.43}%
-\contentsline {paragraph}{Probabilistic interpretation}{24}{section*.44}%
-\contentsline {paragraph}{Logistic regression}{24}{section*.45}%
-\contentsline {paragraph}{Logistic regression: Training}{24}{section*.46}%
-\contentsline {paragraph}{Probabilistic Derivation}{25}{section*.47}%
-\contentsline {subsection}{\numberline {2.3.2}Iterative, Gradient-based optimization}{26}{subsection.2.3.2}%
-\contentsline {paragraph}{Minimizing a function}{26}{section*.48}%
-\contentsline {paragraph}{Convergence criteria}{26}{section*.49}%
-\contentsline {paragraph}{Minimizing a non-convex function}{27}{section*.50}%
-\contentsline {paragraph}{Recap: Properties of gradient}{27}{section*.51}%
-\contentsline {paragraph}{Gradient descent on multivariate function}{27}{section*.52}%
-\contentsline {paragraph}{Minmizing a non-convex function Example: sin, cos based function of 2 variables}{27}{section*.53}%
-\contentsline {paragraph}{Back to Logistic Regression}{28}{section*.54}%
-\contentsline {paragraph}{Example}{28}{section*.55}%
-\contentsline {paragraph}{Linear models}{29}{section*.56}%
-\contentsline {paragraph}{Margin}{29}{section*.57}%
-\contentsline {paragraph}{Support Vector Machine}{29}{section*.58}%
-\contentsline {paragraph}{Loss function}{30}{section*.59}%
-\contentsline {section}{\numberline {2.4}Classification Metric}{30}{section.2.4}%
-\contentsline {paragraph}{Classification evaluation}{30}{section*.60}%
-\contentsline {paragraph}{Example}{31}{section*.61}%
-\contentsline {paragraph}{$ $}{31}{section*.62}%
-\contentsline {paragraph}{$ $}{32}{section*.63}%
-\contentsline {paragraph}{Other metrics}{32}{section*.64}%
-\contentsline {paragraph}{ROC curve}{32}{section*.65}%
-\contentsline {subsection}{\numberline {2.4.1}From binary to multi-class classification}{33}{subsection.2.4.1}%
-\contentsline {paragraph}{least-square classification}{33}{section*.66}%
-\contentsline {paragraph}{Dealing with multiple classes}{33}{section*.67}%
-\contentsline {paragraph}{Multi-ouput linear model}{33}{section*.68}%
-\contentsline {subsection}{\numberline {2.4.2}Decision Boundary}{34}{subsection.2.4.2}%
-\contentsline {paragraph}{Decision boundaries}{34}{section*.69}%
-\contentsline {paragraph}{$ $}{34}{section*.70}%
-\contentsline {paragraph}{Decision Boundaries for $C > 3$ classes}{35}{section*.71}%
-\contentsline {paragraph}{Example of least-square classification}{35}{section*.72}%
-\contentsline {paragraph}{Multi-class least-square classification: Drawbacks}{35}{section*.73}%
-\contentsline {subsection}{\numberline {2.4.3}Multi-class logistic regression}{35}{subsection.2.4.3}%
-\contentsline {paragraph}{Multi-class logistic regression}{35}{section*.74}%
-\contentsline {paragraph}{Gradient for multi-class logistic regression}{36}{section*.75}%
-\contentsline {paragraph}{Prediction}{36}{section*.76}%
-\contentsline {subsubsection}{Evaluation metrics for multi-class classification}{36}{subsubsection*.77}%
-\contentsline {paragraph}{Metrics for multi-class problems}{36}{section*.78}%
-\contentsline {paragraph}{First solution}{37}{section*.79}%
-\contentsline {paragraph}{Second solution}{37}{section*.80}%
-\contentsline {paragraph}{Comparing linear classifiers}{38}{section*.81}%
-\contentsline {paragraph}{Comparison on the Iris dataset}{38}{section*.82}%
-\contentsline {paragraph}{Comparing on the MNIST dataset}{38}{section*.83}%
-\contentsline {section}{\numberline {2.5}k-nearest Neighbor}{39}{section.2.5}%
-\contentsline {paragraph}{Intuition behind the nearest neighbor method}{39}{section*.84}%
-\contentsline {subsection}{\numberline {2.5.1}NN: Algorithm}{39}{subsection.2.5.1}%
-\contentsline {paragraph}{Example}{40}{section*.85}%
-\contentsline {paragraph}{Histograms}{40}{paragraph*.86}%
-\contentsline {paragraph}{Example}{40}{section*.87}%
-\contentsline {paragraph}{Back to NN}{41}{section*.88}%
-\contentsline {subsection}{\numberline {2.5.2}k-nearest neighbors}{41}{subsection.2.5.2}%
-\contentsline {paragraph}{classification}{41}{section*.89}%
-\contentsline {paragraph}{Regression}{41}{section*.90}%
-\contentsline {paragraph}{Two strategies}{42}{section*.91}%
-\contentsline {paragraph}{k-nearest: Example}{42}{section*.92}%
-\contentsline {paragraph}{k-nearest neighbors: Propeties}{42}{section*.93}%
-\contentsline {paragraph}{Curse of dimensionality}{43}{section*.94}%
-\contentsline {subsection}{\numberline {2.5.3}Summary}{43}{subsection.2.5.3}%
-\contentsline {paragraph}{Advantages}{43}{section*.95}%
-\contentsline {paragraph}{Drawbacks}{43}{section*.96}%
-\contentsline {section}{\numberline {2.6}Nonlinear classification}{44}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Polynomial curve fitting}{45}{subsection.2.6.1}%
-\contentsline {paragraph}{Polynomial feature expansion}{45}{section*.97}%
-\contentsline {paragraph}{Training expanded features}{46}{section*.98}%
-\contentsline {paragraph}{Mapping to a higher-dimensional space}{47}{section*.99}%
-\contentsline {paragraph}{Cover's theorem}{48}{section*.100}%
-\contentsline {section}{\numberline {2.7}Overfitting, Cross-validation and Regularization}{48}{section.2.7}%
-\contentsline {paragraph}{Model complexity}{48}{section*.101}%
-\contentsline {paragraph}{Example}{48}{section*.102}%
-\contentsline {paragraph}{k-NN: Training vs test}{48}{section*.103}%
-\contentsline {paragraph}{Overfitting vs Underfitting}{49}{section*.104}%
-\contentsline {paragraph}{Model Selection}{49}{section*.105}%
-\contentsline {paragraph}{Cross-validation: Toy example}{50}{section*.106}%
-\contentsline {paragraph}{Validation set method}{50}{section*.107}%
-\contentsline {paragraph}{Leave-one-out cross-validation (LOOCV)}{50}{section*.108}%
-\contentsline {paragraph}{Cross-validation}{52}{section*.109}%
-\contentsline {paragraph}{Overfitting with a linear model}{53}{section*.110}%
-\contentsline {paragraph}{Penalizin overfitting}{53}{section*.111}%
-\contentsline {paragraph}{Regulariyed linear regression}{54}{section*.112}%
-\contentsline {paragraph}{Multi-output ridge regression}{55}{section*.113}%
-\contentsline {paragraph}{Regularization and logistic regression}{55}{section*.114}%
-\contentsline {paragraph}{Finding the right regularization strength}{55}{section*.115}%
-\contentsline {section}{\numberline {2.8}Kernel methods}{55}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Kernel function}{57}{section.2.9}%
-\contentsline {paragraph}{Example}{57}{section*.116}%
-\contentsline {paragraph}{Example II}{57}{section*.117}%
-\contentsline {paragraph}{Kernel trick}{58}{section*.118}%
-\contentsline {subsection}{\numberline {2.9.1}Kernelization}{58}{subsection.2.9.1}%
-\contentsline {paragraph}{Notation}{58}{section*.119}%
-\contentsline {paragraph}{Kernel regression}{59}{section*.120}%
-\contentsline {paragraph}{Representer theorem}{59}{section*.121}%
-\contentsline {paragraph}{Kernel regression}{59}{section*.122}%
-\contentsline {paragraph}{Exercise: Kernel regression}{60}{section*.123}%
-\contentsline {paragraph}{Recap: Ridge regression}{60}{section*.124}%
-\contentsline {paragraph}{Kernelization}{61}{section*.125}%
-\contentsline {paragraph}{Discussion of kernelization}{61}{section*.126}%
-\contentsline {section}{\numberline {2.10}Data Representations \& Processing}{62}{section.2.10}%
-\contentsline {paragraph}{Recap: What data?}{62}{section*.127}%
-\contentsline {subsection}{\numberline {2.10.1}Data representations: Attributes}{62}{subsection.2.10.1}%
-\contentsline {paragraph}{How about images}{63}{paragraph*.128}%
-\contentsline {paragraph}{Bag of visual words}{64}{section*.129}%
-\contentsline {paragraph}{Conclusion}{64}{section*.130}%
-\contentsline {subsection}{\numberline {2.10.2}Data pre-processing}{64}{subsection.2.10.2}%
-\contentsline {paragraph}{Missing data}{64}{section*.131}%
-\contentsline {paragraph}{Noisy data}{65}{section*.132}%
-\contentsline {paragraph}{Data Normalization}{65}{section*.133}%
-\contentsline {paragraph}{From data sample to data set}{66}{section*.134}%
-\contentsline {paragraph}{Learning with imbalanced data}{66}{section*.135}%
-\contentsline {paragraph}{Sampling methods}{66}{section*.136}%
-\contentsline {paragraph}{Empirical risk}{67}{section*.137}%
-\contentsline {paragraph}{From handcrafted representations to learned ones}{68}{section*.138}%
-\contentsline {chapter}{\numberline {3}Unsupervised Linear ML}{69}{chapter.3}%
+\contentsline {paragraph}{Mean Absolute Error (MAE)}{15}{section*.32}%
+\contentsline {subsection}{\numberline {2.2.1}Interpreting a Linear Model}{15}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Linear model with multiple outputs}{16}{subsection.2.2.2}%
+\contentsline {paragraph}{Model}{16}{section*.33}%
+\contentsline {paragraph}{Multi-ouput linear regression: Gradient}{16}{section*.34}%
+\contentsline {subsection}{\numberline {2.2.3}Linear Classification}{17}{subsection.2.2.3}%
+\contentsline {paragraph}{Binary Classification}{17}{section*.35}%
+\contentsline {paragraph}{Example (from Andrew Ng's course)}{18}{section*.36}%
+\contentsline {section}{\numberline {2.3}Linear Model for Classification}{19}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Loss Function ad Empricial Risk}{19}{subsection.2.3.1}%
+\contentsline {paragraph}{Loss function}{19}{section*.37}%
+\contentsline {paragraph}{Loss function: Examples}{19}{section*.38}%
+\contentsline {paragraph}{Empirical risk}{20}{section*.39}%
+\contentsline {paragraph}{Minimzing the risk}{20}{section*.40}%
+\contentsline {paragraph}{From regression to classification}{20}{section*.41}%
+\contentsline {paragraph}{Adding non-linearity}{21}{section*.42}%
+\contentsline {paragraph}{Step function: Drawback}{21}{section*.43}%
+\contentsline {paragraph}{Probabilistic interpretation}{22}{section*.44}%
+\contentsline {paragraph}{Logistic regression}{22}{section*.45}%
+\contentsline {paragraph}{Logistic regression: Training}{22}{section*.46}%
+\contentsline {paragraph}{Probabilistic Derivation}{23}{section*.47}%
+\contentsline {subsection}{\numberline {2.3.2}Iterative, Gradient-based optimization}{24}{subsection.2.3.2}%
+\contentsline {paragraph}{Minimizing a function}{24}{section*.48}%
+\contentsline {paragraph}{Convergence criteria}{24}{section*.49}%
+\contentsline {paragraph}{Minimizing a non-convex function}{25}{section*.50}%
+\contentsline {paragraph}{Recap: Properties of gradient}{25}{section*.51}%
+\contentsline {paragraph}{Gradient descent on multivariate function}{25}{section*.52}%
+\contentsline {paragraph}{Minmizing a non-convex function Example: sin, cos based function of 2 variables}{25}{section*.53}%
+\contentsline {paragraph}{Back to Logistic Regression}{26}{section*.54}%
+\contentsline {paragraph}{Example}{26}{section*.55}%
+\contentsline {paragraph}{Linear models}{27}{section*.56}%
+\contentsline {paragraph}{Margin}{27}{section*.57}%
+\contentsline {paragraph}{Support Vector Machine}{28}{section*.58}%
+\contentsline {paragraph}{Loss function}{28}{section*.59}%
+\contentsline {section}{\numberline {2.4}Classification Metric}{28}{section.2.4}%
+\contentsline {paragraph}{Classification evaluation}{28}{section*.60}%
+\contentsline {paragraph}{Example}{28}{section*.61}%
+\contentsline {paragraph}{$ $}{29}{section*.62}%
+\contentsline {paragraph}{$ $}{30}{section*.63}%
+\contentsline {paragraph}{Other metrics}{30}{section*.64}%
+\contentsline {paragraph}{ROC curve}{30}{section*.65}%
+\contentsline {subsection}{\numberline {2.4.1}From binary to multi-class classification}{30}{subsection.2.4.1}%
+\contentsline {paragraph}{least-square classification}{30}{section*.66}%
+\contentsline {paragraph}{Dealing with multiple classes}{31}{section*.67}%
+\contentsline {paragraph}{Multi-ouput linear model}{31}{section*.68}%
+\contentsline {subsection}{\numberline {2.4.2}Decision Boundary}{32}{subsection.2.4.2}%
+\contentsline {paragraph}{Decision boundaries}{32}{section*.69}%
+\contentsline {paragraph}{$ $}{32}{section*.70}%
+\contentsline {paragraph}{Decision Boundaries for $C > 3$ classes}{32}{section*.71}%
+\contentsline {paragraph}{Example of least-square classification}{32}{section*.72}%
+\contentsline {paragraph}{Multi-class least-square classification: Drawbacks}{32}{section*.73}%
+\contentsline {subsection}{\numberline {2.4.3}Multi-class logistic regression}{33}{subsection.2.4.3}%
+\contentsline {paragraph}{Multi-class logistic regression}{33}{section*.74}%
+\contentsline {paragraph}{Gradient for multi-class logistic regression}{33}{section*.75}%
+\contentsline {paragraph}{Prediction}{33}{section*.76}%
+\contentsline {subsubsection}{Evaluation metrics for multi-class classification}{33}{subsubsection*.77}%
+\contentsline {paragraph}{Metrics for multi-class problems}{33}{section*.78}%
+\contentsline {paragraph}{First solution}{34}{section*.79}%
+\contentsline {paragraph}{Second solution}{34}{section*.80}%
+\contentsline {paragraph}{Comparing linear classifiers}{35}{section*.81}%
+\contentsline {paragraph}{Comparison on the Iris dataset}{35}{section*.82}%
+\contentsline {paragraph}{Comparing on the MNIST dataset}{35}{section*.83}%
+\contentsline {section}{\numberline {2.5}k-nearest Neighbor}{36}{section.2.5}%
+\contentsline {paragraph}{Intuition behind the nearest neighbor method}{36}{section*.84}%
+\contentsline {subsection}{\numberline {2.5.1}NN: Algorithm}{36}{subsection.2.5.1}%
+\contentsline {paragraph}{Example}{36}{section*.85}%
+\contentsline {paragraph}{Histograms}{37}{paragraph*.86}%
+\contentsline {paragraph}{Example}{37}{section*.87}%
+\contentsline {paragraph}{Back to NN}{38}{section*.88}%
+\contentsline {subsection}{\numberline {2.5.2}k-nearest neighbors}{38}{subsection.2.5.2}%
+\contentsline {paragraph}{classification}{38}{section*.89}%
+\contentsline {paragraph}{Regression}{38}{section*.90}%
+\contentsline {paragraph}{Two strategies}{38}{section*.91}%
+\contentsline {paragraph}{k-nearest: Example}{39}{section*.92}%
+\contentsline {paragraph}{k-nearest neighbors: Propeties}{39}{section*.93}%
+\contentsline {paragraph}{Curse of dimensionality}{39}{section*.94}%
+\contentsline {subsection}{\numberline {2.5.3}Summary}{40}{subsection.2.5.3}%
+\contentsline {paragraph}{Advantages}{40}{section*.95}%
+\contentsline {paragraph}{Drawbacks}{40}{section*.96}%
+\contentsline {section}{\numberline {2.6}Nonlinear classification}{40}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Polynomial curve fitting}{42}{subsection.2.6.1}%
+\contentsline {paragraph}{Polynomial feature expansion}{42}{section*.97}%
+\contentsline {paragraph}{Training expanded features}{43}{section*.98}%
+\contentsline {paragraph}{Mapping to a higher-dimensional space}{44}{section*.99}%
+\contentsline {paragraph}{Cover's theorem}{44}{section*.100}%
+\contentsline {section}{\numberline {2.7}Overfitting, Cross-validation and Regularization}{45}{section.2.7}%
+\contentsline {paragraph}{Model complexity}{45}{section*.101}%
+\contentsline {paragraph}{Example}{45}{section*.102}%
+\contentsline {paragraph}{k-NN: Training vs test}{45}{section*.103}%
+\contentsline {paragraph}{Overfitting vs Underfitting}{45}{section*.104}%
+\contentsline {paragraph}{Model Selection}{46}{section*.105}%
+\contentsline {paragraph}{Cross-validation: Toy example}{46}{section*.106}%
+\contentsline {paragraph}{Validation set method}{46}{section*.107}%
+\contentsline {paragraph}{Leave-one-out cross-validation (LOOCV)}{47}{section*.108}%
+\contentsline {paragraph}{Cross-validation}{49}{section*.109}%
+\contentsline {paragraph}{Overfitting with a linear model}{49}{section*.110}%
+\contentsline {paragraph}{Penalizin overfitting}{50}{section*.111}%
+\contentsline {paragraph}{Regulariyed linear regression}{50}{section*.112}%
+\contentsline {paragraph}{Multi-output ridge regression}{51}{section*.113}%
+\contentsline {paragraph}{Regularization and logistic regression}{51}{section*.114}%
+\contentsline {paragraph}{Finding the right regularization strength}{51}{section*.115}%
+\contentsline {section}{\numberline {2.8}Kernel methods}{51}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Kernel function}{53}{section.2.9}%
+\contentsline {paragraph}{Example}{53}{section*.116}%
+\contentsline {paragraph}{Example II}{53}{section*.117}%
+\contentsline {paragraph}{Kernel trick}{53}{section*.118}%
+\contentsline {subsection}{\numberline {2.9.1}Kernelization}{54}{subsection.2.9.1}%
+\contentsline {paragraph}{Notation}{54}{section*.119}%
+\contentsline {paragraph}{Kernel regression}{54}{section*.120}%
+\contentsline {paragraph}{Representer theorem}{55}{section*.121}%
+\contentsline {paragraph}{Kernel regression}{55}{section*.122}%
+\contentsline {paragraph}{Exercise: Kernel regression}{56}{section*.123}%
+\contentsline {paragraph}{Recap: Ridge regression}{56}{section*.124}%
+\contentsline {paragraph}{Kernelization}{56}{section*.125}%
+\contentsline {paragraph}{Discussion of kernelization}{57}{section*.126}%
+\contentsline {section}{\numberline {2.10}Data Representations \& Processing}{57}{section.2.10}%
+\contentsline {paragraph}{Recap: What data?}{57}{section*.127}%
+\contentsline {subsection}{\numberline {2.10.1}Data representations: Attributes}{58}{subsection.2.10.1}%
+\contentsline {paragraph}{How about images}{59}{paragraph*.128}%
+\contentsline {paragraph}{Bag of visual words}{59}{section*.129}%
+\contentsline {paragraph}{Conclusion}{59}{section*.130}%
+\contentsline {subsection}{\numberline {2.10.2}Data pre-processing}{60}{subsection.2.10.2}%
+\contentsline {paragraph}{Missing data}{60}{section*.131}%
+\contentsline {paragraph}{Noisy data}{60}{section*.132}%
+\contentsline {paragraph}{Data Normalization}{60}{section*.133}%
+\contentsline {paragraph}{From data sample to data set}{61}{section*.134}%
+\contentsline {paragraph}{Learning with imbalanced data}{61}{section*.135}%
+\contentsline {paragraph}{Sampling methods}{61}{section*.136}%
+\contentsline {paragraph}{Empirical risk}{62}{section*.137}%
+\contentsline {paragraph}{From handcrafted representations to learned ones}{63}{section*.138}%
+\contentsline {section}{\numberline {2.11}Deep Learning}{63}{section.2.11}%
+\contentsline {paragraph}{Motivating example: Curve fitting}{63}{section*.139}%
+\contentsline {paragraph}{Activation function: Examples}{65}{section*.140}%
+\contentsline {paragraph}{Hidden representation}{65}{section*.141}%
+\contentsline {paragraph}{Complete model}{65}{section*.142}%
+\contentsline {paragraph}{Dealing with multiple input dimensions}{66}{section*.143}%
+\contentsline {paragraph}{Dealing with multiple output dimensions}{66}{section*.144}%
+\contentsline {paragraph}{Simple artificial neural network}{66}{section*.145}%
+\contentsline {paragraph}{$ $}{66}{section*.146}%
+\contentsline {paragraph}{Multilayer Perceptron}{66}{section*.147}%
+\contentsline {paragraph}{Training an MLP}{67}{section*.148}%
+\contentsline {paragraph}{Gradient based learning}{67}{section*.149}%
+\contentsline {paragraph}{Gradient descent}{69}{section*.150}%
+\contentsline {paragraph}{Stochastic gradient descent}{69}{section*.151}%
+\contentsline {paragraph}{SGD with mini-batches}{70}{section*.152}%
+\contentsline {paragraph}{Simple network training: Regression example}{70}{section*.153}%
+\contentsline {paragraph}{SGD behaviour}{71}{section*.154}%
+\contentsline {paragraph}{Gradient descent: Limitations}{72}{section*.155}%
+\contentsline {paragraph}{SGD Extension}{72}{section*.156}%
+\contentsline {paragraph}{Gradient vanishing \& Initialization}{72}{section*.157}%
+\contentsline {paragraph}{From regression to classification}{73}{section*.158}%
+\contentsline {paragraph}{Working with images}{73}{section*.159}%
+\contentsline {section}{\numberline {2.12}Convolutional Neural Network}{74}{section.2.12}%
+\contentsline {paragraph}{CNN}{74}{section*.160}%
+\contentsline {paragraph}{Convolutional Layer}{74}{section*.161}%
+\contentsline {paragraph}{Pooling layer}{74}{section*.162}%
+\contentsline {paragraph}{Padding}{75}{section*.163}%
+\contentsline {paragraph}{Convolution Stride}{75}{section*.164}%
+\contentsline {paragraph}{Output}{75}{section*.165}%
+\contentsline {paragraph}{CNN: Learning}{75}{section*.166}%
+\contentsline {paragraph}{CNN: Interpretation}{76}{section*.167}%
+\contentsline {paragraph}{Standard architecture}{76}{section*.168}%
+\contentsline {paragraph}{Tackling different tasks}{77}{section*.169}%
+\contentsline {paragraph}{CNNs for semantic segmentation}{77}{section*.170}%
+\contentsline {paragraph}{2D convolution as matrix product}{78}{section*.171}%
+\contentsline {paragraph}{Fully convolutional networks}{78}{section*.172}%
+\contentsline {paragraph}{Deep Learning: Tricks of the trade}{78}{section*.173}%
+\contentsline {chapter}{\numberline {3}Unsupervised Linear ML}{81}{chapter.3}%

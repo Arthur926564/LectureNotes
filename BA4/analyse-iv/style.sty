@@ -1,14 +1,14 @@
 
-% ##### 01. Includes #####
-%\usepackage{luacode}
+\usepackage{luacode}
 
 % ===== Packages for general functionalities =====
+\usepackage[british]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
-\usepackage[bottom=2.5cm, top=2.5cm]{geometry}
+% \usepackage[utf8]{inputenc}  % useless for LuaLaTex
+\usepackage[bottom=2.5cm, top=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \setlength{\columnsep}{1cm}
 \usepackage{fancyhdr}
-\usepackage{amsthm}
 \usepackage{lmodern}
 \usepackage{microtype}
 % This has to be reconsidered. I had issues with it with RGL AE report.
@@ -19,6 +19,7 @@
 
 % ===== Packages for mathematical symbols =====
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{esint}
 \usepackage[nointegrals]{wasysym}
@@ -35,10 +36,16 @@
 \usepackage{tikz}
 \usepackage{quantikz} % quantum circuits
 
+\usepackage{mdframed}
 % ===== Packages for useful commands ======
+\usepackage{siunitx}
+\sisetup{parse-numbers = false}
+\sisetup{per-mode = symbol}
 \usepackage{xcolor}
-
+\usepackage[super]{nth}  % for the \nth command
 \usepackage{centernot}  % for \centernot command
+\usepackage{emoji}  % absolutely mandatory
+\setemojifont{Twemoji Mozilla}  % This must be installed, see: https://github.com/mozilla/twemoji-colr (you only need to install and execute the TTF file from the release section)
 
 % ===== Packages for useful environments =====
 \usepackage{tabularx}  % tabular environments which allow line breaking
@@ -50,24 +57,10 @@
 % ===== Dependencies for my style =====
 \usepackage[skins,breakable]{tcolorbox}  % for the parag and subparag environments
 \usepackage{enumitem}
-
-\newlist{defaultitemize}{itemize}{1}
-\setlist[defaultitemize]{}
-% Custom itemize for subparag
-\newlist{subparagitemize}{itemize}{1} % level 1
-\setlist[subparagitemize]{
-    label=\textbullet,       % change bullet if needed
-    left=1em,                % indentation from left
-    labelsep=0.5em,          % space between bullet and text
-    itemsep=0.25\baselineskip, % space between items
-    parsep=0pt,
-    topsep=0.25\baselineskip,
-    partopsep=0pt
-}
-
 \usepackage{ifthen}
 \usepackage{xifthen}
 \usepackage{calc}  % To do computations for lengthes
+\usepackage[useregional, showdow, en-GB]{datetime2}  % to handle dates
 \usepackage{texdate}  % To display today's date (could probably be merged with datetime2 at some point)
 \usepackage{changepage}  % for adjustwidth environment
 \usepackage{environ}  % To create new environments more easily
@@ -77,24 +70,25 @@
 \usepackage[relative]{textpos}  % For the textblock environment
 \usepackage{needspace}  % To allow to ask for some space before an environment.
 
-\usepackage{mdframed}   
-\usepackage{tikz}
-\usepackage{tikz-cd}
-\usepackage{graphicx}
-\usepackage{pgf,pgfplots}
-\usetikzlibrary{math,arrows,positioning,shapes,fit,calc}
 
-\usepackage{hyperref}
-\hypersetup{
-    pdftitle={Analyse II},
-    pdfpagemode=FullScreen
-}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 
-\usepackage{fancyhdr}
- \usepackage{tikz,tkz-tab} 
 
+\titleformat{\chapter}[display]
+    {\normalfont\huge\bfseries\color{maincolour}}
+    {\chaptertitlename\ \thechapter}{12pt}{\Huge}
+    [\vspace{2pt}\color{maincolour}\titlerule]
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{maincolour}}
+    {\thesection}{1em}{}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries\color{maincolour!70}}
+    {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries\color{maincolour!50}}
+    {\thesubsubsection}{1em}{}
 
 
 \pgfplotsset{compat=1.17}
@@ -176,6 +170,16 @@
 {\begin{mdframed}[linecolor=black, linewidth=0.5pt]}
 {\end{mdframed}}
 
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{%
+    \par\pushQED{\qed}%
+    \normalfont\topsep6\p@\@plus6\p@\relax
+    \trivlist\item[\hskip\labelsep\bfseries #1\@addpunct{.}]%
+    \itshape  % <-- only the proof body is italic
+}{%
+    \popQED\endtrivlist\@endpefalse
+}
+\makeatother
 
 \newtheorem{cor}{corollaire}
 \newenvironment{corollaire}
@@ -204,23 +208,8 @@ linewidth=1pt]\begin{pro}}
 
 
 
-% #########################################################################################################
-% ######################################### Joachim Favre's style #########################################
-% #########################################################################################################
-% ##### You need to compile a latex document using this style with LuaLaTeX, since it uses the        #####
-% ##### luacode package and the luaexec command.                                                      #####
-% #########################################################################################################
-% ##### You only need to download and execute the TTF file from their release section on GitHub.      #####
-% #########################################################################################################
 
-% ##### Table of contents (you can search for the items using " [number]. ") #####
-% 01. Includes
-% 02. General parameters
-% 03. Miscellaneous new commands and symbols
-% 04. parag and subparag environments
-% 05. lecture command
-% 06. slidecomment environment
-% 07. autoeq command
+
 
 % ##### 02. General parameters #####
 
@@ -344,7 +333,6 @@ linewidth=1pt]\begin{pro}}
 
 % Text modifiers
 % Source: https://latex.org/forum/viewtopic.php?t=10866
-\newcommand{\redColor}[1]{\textcolor{red}{#1}}
 \newcommand{\important}[1]{\textcolor{maincolour}{\fullbf{#1}}}
 \newcommand{\question}[1]{
   \textcolor{red}{\fullbf{#1}}
@@ -493,16 +481,9 @@ linewidth=1pt]\begin{pro}}
 %\newcommand{\braket}[2]{\left\langle #1 \middle| #2 \right\rangle}
 
 % Legacy
-\DeclareMathOperator{\sh}{sh}
-\DeclareMathOperator{\ch}{ch}
-\DeclareMathOperator{\badth}{th}
-\DeclareMathOperator{\Argsh}{argsh}
-\DeclareMathOperator{\Taylor}{Taylor}
-\DeclareMathOperator{\MacLaurin}{MacLaurin}
+\DeclareMathOperator{\cond}{cond}
+\DeclareMathOperator{\ulp}{ulp}
 
-\DeclareMathOperator{\lgn}{Lgn}
-\DeclareMathOperator{\ligne}{ligne}
-\newcommand{\matricepassage}[2]{\mathop{P}_{\mathcal{#1} \leftarrow \mathcal{#2}}}
 
 % Personal environments
 % Source: https://tex.stackexchange.com/a/5652
@@ -515,8 +496,6 @@ linewidth=1pt]\begin{pro}}
 
 % Other commands
 \newcommand{\multicolumnX}[2]{\multicolumn{#1}{>{\hsize=\dimexpr#1\hsize+#1\tabcolsep+\arrayrulewidth\relax}X}{#2}}
-
-
 
 % ##### 04. parag and subparag environments #####
 % This provides:
@@ -696,7 +675,6 @@ linewidth=1pt]\begin{pro}}
     \directlua{insubparag = false}
 }
 
-
 % ##### 05. Lecture headers #####
 % This provides:
 %   \lecture: Draws a line to show the start of a new lecture.
@@ -716,7 +694,7 @@ linewidth=1pt]\begin{pro}}
   \or
   Mercredi%
   \or
-  Jeudi%d
+  Jeudi%
   \or
   Vendredi%
   \or
@@ -728,6 +706,7 @@ linewidth=1pt]\begin{pro}}
 
 \def\hrulefill{\leavevmode\leaders\hrule height 1pt\hfill\kern\z@} % Source: https://latex.org/forum/viewtopic.php?t=8117
 
+\DTMlangsetup[en-GB]{ord=raise}
 \newcommand{\lecture}[4]{  % #1: lecture no, #2: date, #3: title, #4 summary (used in my external compilation program)
     \needspace{5em}
     \vspace{1em}
@@ -984,7 +963,7 @@ linewidth=1pt]\begin{pro}}
             %
             text = head .. tail
         %
-        end         0
+        end
         % Print everything
         tex.print("\string\\[\string\\begin{split}")
         tex.print(text)
@@ -998,4 +977,3 @@ linewidth=1pt]\begin{pro}}
     end
     }%
 }
-

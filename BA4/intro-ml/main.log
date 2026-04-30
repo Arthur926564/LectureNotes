@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.5)  13 APR 2026 18:02
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  28 APR 2026 16:54
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -59,6 +59,168 @@ r/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \belowcaptionskip=\skip50
 \bibindent=\dimen147
 ) (./style.sty
+(/usr/share/texmf-dist/tex/lualatex/luacode/luacode.sty
+Package: luacode 2012/01/23 v1.2a lua-in-tex helpers (mpg)
+
+(/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(/usr/share/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(/usr/share/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count282
+)
+\CatcodeTableOther=\catcodetable14
+\CatcodeTableExpl=\catcodetable15
+)
+\luacode@lines=\toks17
+\luacode@table@soft=\catcodetable16
+)
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
+
+(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@arabic=\language4
+\l@farsi=\language5
+\l@pinyin=\language6
+\l@belarusian=\language7
+\l@bulgarian=\language8
+\l@churchslavonic=\language9
+\l@kazakh=\language10
+\l@mongolian=\language11
+\l@mongolianlmc=\language12
+\l@russian=\language13
+\l@serbian=\language14
+\l@serbianc=\language15
+\l@ukrainian=\language16
+\l@czech=\language17
+\l@slovak=\language18
+\l@ukenglish=\language19
+\l@usenglishmax=\language20
+\l@albanian=\language21
+\l@croatian=\language22
+\l@danish=\language23
+\l@dutch=\language24
+\l@estonian=\language25
+\l@finnish=\language26
+\l@schoolfinnish=\language27
+\l@friulan=\language28
+\l@hungarian=\language29
+\l@icelandic=\language30
+\l@irish=\language31
+\l@kurmanji=\language32
+\l@classiclatin=\language33
+\l@latin=\language34
+\l@liturgicallatin=\language35
+\l@latvian=\language36
+\l@lithuanian=\language37
+\l@macedonian=\language38
+\l@bokmal=\language39
+\l@nynorsk=\language40
+\l@occitan=\language41
+\l@piedmontese=\language42
+\l@romanian=\language43
+\l@romansh=\language44
+\l@slovenian=\language45
+\l@swedish=\language46
+\l@turkish=\language47
+\l@uppersorbian=\language48
+\l@welsh=\language49
+\l@basque=\language50
+\l@french=\language51
+\l@german-x-2024-02-28=\language52
+\l@ngerman-x-2024-02-28=\language53
+\l@german=\language54
+\l@ngerman=\language55
+\l@swissgerman=\language56
+\l@ancientgreek=\language57
+\l@ibycus=\language58
+\l@greek=\language59
+\l@monogreek=\language60
+\l@italian=\language61
+\l@afrikaans=\language62
+\l@armenian=\language63
+\l@coptic=\language64
+\l@esperanto=\language65
+\l@ethiopic=\language66
+\l@georgian=\language67
+\l@hebrew=\language68
+\l@assamese=\language69
+\l@bengali=\language70
+\l@gujarati=\language71
+\l@hindi=\language72
+\l@kannada=\language73
+\l@malayalam=\language74
+\l@marathi=\language75
+\l@oriya=\language76
+\l@pali=\language77
+\l@panjabi=\language78
+\l@tamil=\language79
+\l@telugu=\language80
+\l@indonesian=\language81
+\l@interlingua=\language82
+\l@sanskrit=\language83
+\l@thai=\language84
+\l@turkmen=\language85
+\l@vietnamese=\language86
+\l@polish=\language87
+\l@portuguese=\language88
+\l@catalan=\language89
+\l@galician=\language90
+\l@spanish=\language91
+\babelcatcodetablenum=\catcodetable17
+\bbl@pattcodes=\catcodetable18
+)
+\babel@savecnt=\count283
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
+\U@D=\dimen148
+\l@unhyphenated=\language92
+
+(/usr/share/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+(/usr/share/texmf-dist/tex/generic/babel/locale/en/babel-british.tex)
+Package babel Info: Importing font and identification data for british
+(babel)             from babel-en-GB.ini. Reported on input line 4330.
+
+(/usr/share/texmf-dist/tex/generic/babel-english/british.ldf
+Language: british 2017/06/06 v3.3r English support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language19). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language19). Reported on input line 108.
+
+(/usr/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-gb.tex
+ASCII Hyphenation patterns for British English
+(/usr/share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-gb.tex)))))
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
@@ -74,7 +236,7 @@ Package: expl3 2026-01-19 L3 programming layer (loader)
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count282
+\l__color_backend_stack_int=\count284
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
@@ -83,20 +245,20 @@ Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count283
-\l__fontspec_language_int=\count284
-\l__fontspec_strnum_int=\count285
-\l__fontspec_tmp_int=\count286
-\l__fontspec_tmpa_int=\count287
-\l__fontspec_tmpb_int=\count288
-\l__fontspec_tmpc_int=\count289
-\l__fontspec_em_int=\count290
-\l__fontspec_emdef_int=\count291
-\l__fontspec_strong_int=\count292
-\l__fontspec_strongdef_int=\count293
-\l__fontspec_tmpa_dim=\dimen148
-\l__fontspec_tmpb_dim=\dimen149
-\l__fontspec_tmpc_dim=\dimen150
+\l__fontspec_script_int=\count285
+\l__fontspec_language_int=\count286
+\l__fontspec_strnum_int=\count287
+\l__fontspec_tmp_int=\count288
+\l__fontspec_tmpa_int=\count289
+\l__fontspec_tmpb_int=\count290
+\l__fontspec_tmpc_int=\count291
+\l__fontspec_em_int=\count292
+\l__fontspec_emdef_int=\count293
+\l__fontspec_strong_int=\count294
+\l__fontspec_strongdef_int=\count295
+\l__fontspec_tmpa_dim=\dimen149
+\l__fontspec_tmpb_dim=\dimen150
+\l__fontspec_tmpc_dim=\dimen151
 
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
@@ -107,26 +269,23 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks18
 )
 (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-))
-\Gm@cnth=\count294
-\Gm@cntv=\count295
-\c@Gm@tempcnt=\count296
-\Gm@bindingoffset=\dimen151
-\Gm@wd@mp=\dimen152
-\Gm@odd@mp=\dimen153
-\Gm@even@mp=\dimen154
-\Gm@layoutwidth=\dimen155
-\Gm@layoutheight=\dimen156
-\Gm@layouthoffset=\dimen157
-\Gm@layoutvoffset=\dimen158
-\Gm@dimlist=\toks18
+)
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
+\Gm@bindingoffset=\dimen152
+\Gm@wd@mp=\dimen153
+\Gm@odd@mp=\dimen154
+\Gm@even@mp=\dimen155
+\Gm@layoutwidth=\dimen156
+\Gm@layoutheight=\dimen157
+\Gm@layouthoffset=\dimen158
+\Gm@layoutvoffset=\dimen159
+\Gm@dimlist=\toks19
 )
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
@@ -145,19 +304,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthL=\skip62
 \f@nch@widthC=\skip63
 \f@nch@widthR=\skip64
-\@temptokenb=\toks19
-)
-(/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks20
-\thm@bodyfont=\toks21
-\thm@headfont=\toks22
-\thm@notefont=\toks23
-\thm@headpunct=\toks24
-\thm@preskip=\skip65
-\thm@postskip=\skip66
-\thm@headsep=\skip67
-\dth@everypar=\toks25
+\@temptokenb=\toks20
 )
 (/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
@@ -199,20 +346,20 @@ Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count297
+\etb@tempcnta=\count299
 )
-\MT@toks=\toks26
+\MT@toks=\toks21
 \MT@tempbox=\box53
-\MT@count=\count298
+\MT@count=\count300
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
 LaTeX Info: Redefining \leftprotrusion on input line 1085.
-\MT@prot@toks=\toks27
+\MT@prot@toks=\toks22
 LaTeX Info: Redefining \rightprotrusion on input line 1104.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen159
+\MT@outer@kern=\dimen160
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count299
+\MT@listname@count=\count301
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype-luatex.def
 File: microtype-luatex.def 2026/03/01 v3.2d Definitions specific to luatex (RS)
@@ -221,7 +368,7 @@ Lua module: microtype 2026/03/01 v3.2d microtype module.
 Module microtype Info: overwriting function `keepligature' on input line 63
 LaTeX Info: Redefining \lsstyle on input line 779.
 LaTeX Info: Redefining \lslig on input line 779.
-\MT@outer@space=\skip68
+\MT@outer@space=\skip65
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -233,14 +380,14 @@ LaTeX Info: Redefining \microtypesetup on input line 3065.
 (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box54
-\beforetitleunit=\skip69
-\aftertitleunit=\skip70
-\ttl@plus=\dimen160
-\ttl@minus=\dimen161
-\ttl@toksa=\toks28
-\titlewidth=\dimen162
-\titlewidthlast=\dimen163
-\titlewidthfirst=\dimen164
+\beforetitleunit=\skip66
+\aftertitleunit=\skip67
+\ttl@plus=\dimen161
+\ttl@minus=\dimen162
+\ttl@toksa=\toks23
+\titlewidth=\dimen163
+\titlewidthlast=\dimen164
+\titlewidthfirst=\dimen165
 )
 (/usr/share/texmf-dist/tex/latex/nowidow/nowidow.sty
 Package: nowidow 2011/09/20 1.0 Easily prevent widows and orphans
@@ -278,7 +425,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks29
+\pdftexcmds@toks=\toks24
 ))
 (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
@@ -292,15 +439,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count300
+\c@section@level=\count302
 )
 (/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen165
-\Hy@linkcounter=\count301
-\Hy@pagecounter=\count302
+\@linkdim=\dimen166
+\Hy@linkcounter=\count303
+\Hy@pagecounter=\count304
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
@@ -308,7 +455,7 @@ File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count303
+\Hy@SavedSpaceFactor=\count305
 
 (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
@@ -321,9 +468,9 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count304
+\c@Hy@tempcnt=\count306
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen166
+\XeTeXLinkMargin=\dimen167
 
 (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -332,9 +479,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count305
-\Field@Width=\dimen167
-\Fld@charsize=\dimen168
+\Fld@menulength=\count307
+\Field@Width=\dimen168
+\Fld@charsize=\dimen169
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -342,16 +489,16 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count306
-\c@Item=\count307
-\c@Hfootnote=\count308
+\Hy@abspage=\count308
+\c@Item=\count309
+\c@Hfootnote=\count310
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/hluatex.def
 File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
-\Fld@listcount=\count309
-\c@bookmark@seq@number=\count310
+\Fld@listcount=\count311
+\c@bookmark@seq@number=\count312
 
 (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
@@ -362,11 +509,11 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip71
+\Hy@SectionHShift=\skip68
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip72
+\@mathmargin=\skip69
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -374,24 +521,24 @@ Package: amstext 2024/11/17 v2.01 AMS text
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks30
-\ex@=\dimen169
+\@emptytoks=\toks25
+\ex@=\dimen170
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen170
+\pmbraise@=\dimen171
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count311
+\inf@bad=\count313
 LaTeX Info: Redefining \frac on input line 235.
-\uproot@=\count312
-\leftroot@=\count313
+\uproot@=\count314
+\leftroot@=\count315
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count314
-\DOTSCASE@=\count315
+\classnum@=\count316
+\DOTSCASE@=\count317
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -401,36 +548,48 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen171
+\big@size=\dimen172
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count316
+\macc@depth=\count318
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count317
+\c@MaxMatrixCols=\count319
 \dotsspace@=\muskip18
-\c@parentequation=\count318
-\dspbrk@lvl=\count319
-\tag@help=\toks31
-\row@=\count320
-\column@=\count321
-\maxfields@=\count322
-\andhelp@=\toks32
-\eqnshift@=\dimen172
-\alignsep@=\dimen173
-\tagshift@=\dimen174
-\tagwidth@=\dimen175
-\totwidth@=\dimen176
-\lineht@=\dimen177
-\@envbody=\toks33
-\multlinegap=\skip73
-\multlinetaggap=\skip74
-\mathdisplay@stack=\toks34
+\c@parentequation=\count320
+\dspbrk@lvl=\count321
+\tag@help=\toks26
+\row@=\count322
+\column@=\count323
+\maxfields@=\count324
+\andhelp@=\toks27
+\eqnshift@=\dimen173
+\alignsep@=\dimen174
+\tagshift@=\dimen175
+\tagwidth@=\dimen176
+\totwidth@=\dimen177
+\lineht@=\dimen178
+\@envbody=\toks28
+\multlinegap=\skip70
+\multlinetaggap=\skip71
+\mathdisplay@stack=\toks29
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
+)
+(/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks30
+\thm@bodyfont=\toks31
+\thm@headfont=\toks32
+\thm@notefont=\toks33
+\thm@headpunct=\toks34
+\thm@preskip=\skip72
+\thm@postskip=\skip73
+\thm@headsep=\skip74
+\dth@everypar=\toks35
 )
 (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -464,45 +623,45 @@ Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
 
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count323
-\calc@Bcount=\count324
-\calc@Adimen=\dimen178
-\calc@Bdimen=\dimen179
+\calc@Acount=\count325
+\calc@Bcount=\count326
+\calc@Adimen=\dimen179
+\calc@Bdimen=\dimen180
 \calc@Askip=\skip75
 \calc@Bskip=\skip76
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count325
+\calc@Ccount=\count327
 \calc@Cskip=\skip77
 )
-\g_MT_multlinerow_int=\count326
-\l_MT_multwidth_dim=\dimen180
+\g_MT_multlinerow_int=\count328
+\l_MT_multwidth_dim=\dimen181
 \origjot=\skip78
-\l_MT_shortvdotswithinadjustabove_dim=\dimen181
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen182
-\l_MT_above_intertext_sep=\dimen183
-\l_MT_below_intertext_sep=\dimen184
-\l_MT_above_shortintertext_sep=\dimen185
-\l_MT_below_shortintertext_sep=\dimen186
+\l_MT_shortvdotswithinadjustabove_dim=\dimen182
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen183
+\l_MT_above_intertext_sep=\dimen184
+\l_MT_below_intertext_sep=\dimen185
+\l_MT_above_shortintertext_sep=\dimen186
+\l_MT_below_shortintertext_sep=\dimen187
 \xmathstrut@box=\box57
-\xmathstrut@dim=\dimen187
+\xmathstrut@dim=\dimen188
 )
-\l_EQ_equationtype_int=\count327
-\l_EQ_alignmentmode_int=\count328
-\l_EQ_totalwidth_dim=\dimen188
-\l_EQ_displaywidth_dim=\dimen189
-\l_EQ_temp_linewidth_dim=\dimen190
-\l_EQ_linewidth_dim=\dimen191
-\EmphEqdelimitershortfall=\dimen192
-\EmphEqdelimiterfactor=\count329
-\g_EQ_toptag_height_dim=\dimen193
-\g_EQ_bottomtag_depth_dim=\dimen194
-\g_EQ_toprow_height_dim=\dimen195
-\g_EQ_bottomrow_depth_dim=\dimen196
-\g_EQ_widesttag_dim=\dimen197
+\l_EQ_equationtype_int=\count329
+\l_EQ_alignmentmode_int=\count330
+\l_EQ_totalwidth_dim=\dimen189
+\l_EQ_displaywidth_dim=\dimen190
+\l_EQ_temp_linewidth_dim=\dimen191
+\l_EQ_linewidth_dim=\dimen192
+\EmphEqdelimitershortfall=\dimen193
+\EmphEqdelimiterfactor=\count331
+\g_EQ_toptag_height_dim=\dimen194
+\g_EQ_bottomtag_depth_dim=\dimen195
+\g_EQ_toprow_height_dim=\dimen196
+\g_EQ_bottomrow_depth_dim=\dimen197
+\g_EQ_widesttag_dim=\dimen198
 \EQ_mathdisplay_box=\box58
 \EQ_tag_box=\box59
-\g_EQ_temprow_int=\count330
+\g_EQ_temprow_int=\count332
 )
 (/usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
@@ -548,16 +707,16 @@ Package graphics Info: Driver file: luatex.def on input line 106.
 (/usr/share/texmf-dist/tex/latex/graphics-def/luatex.def
 File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen198
-\Gin@req@width=\dimen199
+\Gin@req@height=\dimen199
+\Gin@req@width=\dimen256
 )
 (/usr/share/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\c@svg@param@lastpage=\count331
+\c@svg@param@lastpage=\count333
 \svg@box=\box60
-\c@svg@param@currpage=\count332
+\c@svg@param@currpage=\count334
 )
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -591,9 +750,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks35
-\pgfutil@tempdima=\dimen256
-\pgfutil@tempdimb=\dimen257
+\pgfutil@everybye=\toks36
+\pgfutil@tempdima=\dimen257
+\pgfutil@tempdimb=\dimen258
 )
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box61
@@ -606,33 +765,33 @@ Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks36
-\pgfkeys@temptoks=\toks37
+\pgfkeys@pathtoks=\toks37
+\pgfkeys@temptoks=\toks38
 
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.te
 x
-\pgfkeys@tmptoks=\toks38
+\pgfkeys@tmptoks=\toks39
 ))
-\pgf@x=\dimen258
-\pgf@y=\dimen259
-\pgf@xa=\dimen260
-\pgf@ya=\dimen261
-\pgf@xb=\dimen262
-\pgf@yb=\dimen263
-\pgf@xc=\dimen264
-\pgf@yc=\dimen265
-\pgf@xd=\dimen266
-\pgf@yd=\dimen267
+\pgf@x=\dimen259
+\pgf@y=\dimen260
+\pgf@xa=\dimen261
+\pgf@ya=\dimen262
+\pgf@xb=\dimen263
+\pgf@yb=\dimen264
+\pgf@xc=\dimen265
+\pgf@yc=\dimen266
+\pgf@xd=\dimen267
+\pgf@yd=\dimen268
 \w@pgf@writea=\write3
-\r@pgf@reada=\read2
-\c@pgf@counta=\count333
-\c@pgf@countb=\count334
-\c@pgf@countc=\count335
-\c@pgf@countd=\count336
-\t@pgf@toka=\toks39
-\t@pgf@tokb=\toks40
-\t@pgf@tokc=\toks41
-\pgf@sys@id@count=\count337
+\r@pgf@reada=\read3
+\c@pgf@counta=\count335
+\c@pgf@countb=\count336
+\c@pgf@countc=\count337
+\c@pgf@countd=\count338
+\t@pgf@toka=\toks40
+\t@pgf@tokb=\toks41
+\t@pgf@tokc=\toks42
+\pgf@sys@id@count=\count339
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
@@ -646,8 +805,8 @@ File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count338
-\pgfsyssoftpath@bigbuffer@items=\count339
+\pgfsyssoftpath@smallbuffer@items=\count340
+\pgfsyssoftpath@bigbuffer@items=\count341
 )
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -667,12 +826,12 @@ Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen268
-\pgfmath@count=\count340
+\pgfmath@dimen=\dimen269
+\pgfmath@count=\count342
 \pgfmath@box=\box62
-\pgfmath@toks=\toks42
-\pgfmath@stack@operand=\toks43
-\pgfmath@stack@operation=\toks44
+\pgfmath@toks=\toks43
+\pgfmath@stack@operand=\toks44
+\pgfmath@stack@operation=\toks45
 )
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -686,52 +845,52 @@ x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
 .code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count341
+\c@pgfmathroundto@lastzeros=\count343
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen269
-\pgf@picmaxx=\dimen270
-\pgf@picminy=\dimen271
-\pgf@picmaxy=\dimen272
-\pgf@pathminx=\dimen273
-\pgf@pathmaxx=\dimen274
-\pgf@pathminy=\dimen275
-\pgf@pathmaxy=\dimen276
-\pgf@xx=\dimen277
-\pgf@xy=\dimen278
-\pgf@yx=\dimen279
-\pgf@yy=\dimen280
-\pgf@zx=\dimen281
-\pgf@zy=\dimen282
+\pgf@picminx=\dimen270
+\pgf@picmaxx=\dimen271
+\pgf@picminy=\dimen272
+\pgf@picmaxy=\dimen273
+\pgf@pathminx=\dimen274
+\pgf@pathmaxx=\dimen275
+\pgf@pathminy=\dimen276
+\pgf@pathmaxy=\dimen277
+\pgf@xx=\dimen278
+\pgf@xy=\dimen279
+\pgf@yx=\dimen280
+\pgf@yy=\dimen281
+\pgf@zx=\dimen282
+\pgf@zy=\dimen283
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen283
-\pgf@path@lasty=\dimen284
+\pgf@path@lastx=\dimen284
+\pgf@path@lasty=\dimen285
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen285
-\pgf@shorten@start@additional=\dimen286
+\pgf@shorten@end@additional=\dimen286
+\pgf@shorten@start@additional=\dimen287
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box63
 \pgf@hbox=\box64
 \pgf@layerbox@main=\box65
-\pgf@picture@serial@count=\count342
+\pgf@picture@serial@count=\count344
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen287
+\pgflinewidth=\dimen288
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
 ex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen288
-\pgf@pt@y=\dimen289
-\pgf@pt@temp=\dimen290
+\pgf@pt@x=\dimen289
+\pgf@pt@y=\dimen290
+\pgf@pt@temp=\dimen291
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
@@ -743,13 +902,13 @@ x
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen291
+\pgfarrowsep=\dimen292
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen292
-\pgf@sys@shading@range@num=\count343
-\pgf@shadingcount=\count344
+\pgf@max=\dimen293
+\pgf@sys@shading@range@num=\count345
+\pgf@shadingcount=\count346
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -778,8 +937,8 @@ File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen293
-\pgf@nodesepend=\dimen294
+\pgf@nodesepstart=\dimen294
+\pgf@nodesepend=\dimen295
 )
 (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
@@ -791,10 +950,10 @@ Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen295
-\pgffor@skip=\dimen296
-\pgffor@stack=\toks45
-\pgffor@toks=\toks46
+\pgffor@iter=\dimen296
+\pgffor@skip=\dimen297
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
@@ -802,32 +961,32 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
 x
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count345
-\pgfplotmarksize=\dimen297
+\pgf@plot@mark@count=\count347
+\pgfplotmarksize=\dimen298
 )
-\tikz@lastx=\dimen298
-\tikz@lasty=\dimen299
-\tikz@lastxsaved=\dimen300
-\tikz@lastysaved=\dimen301
-\tikz@lastmovetox=\dimen302
-\tikz@lastmovetoy=\dimen303
-\tikzleveldistance=\dimen304
-\tikzsiblingdistance=\dimen305
+\tikz@lastx=\dimen299
+\tikz@lasty=\dimen300
+\tikz@lastxsaved=\dimen301
+\tikz@lastysaved=\dimen302
+\tikz@lastmovetox=\dimen303
+\tikz@lastmovetoy=\dimen304
+\tikzleveldistance=\dimen305
+\tikzsiblingdistance=\dimen306
 \tikz@figbox=\box68
 \tikz@figbox@bg=\box69
 \tikz@tempbox=\box70
 \tikz@tempbox@bg=\box71
-\tikztreelevel=\count346
-\tikznumberofchildren=\count347
-\tikznumberofcurrentchild=\count348
-\tikz@fig@count=\count349
+\tikztreelevel=\count348
+\tikznumberofchildren=\count349
+\tikznumberofcurrentchild=\count350
+\tikz@fig@count=\count351
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count350
-\pgfmatrixcurrentcolumn=\count351
-\pgf@matrix@numberofcolumns=\count352
+\pgfmatrixcurrentrow=\count352
+\pgfmatrixcurrentcolumn=\count353
+\pgf@matrix@numberofcolumns=\count354
 )
-\tikz@expandcount=\count353
+\tikz@expandcount=\count355
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
@@ -836,13 +995,13 @@ File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
 Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
-\pgfplots@luabackend@table=\catcodetable14
-\t@pgfplots@toka=\toks47
-\t@pgfplots@tokb=\toks48
-\t@pgfplots@tokc=\toks49
-\pgfplots@tmpa=\dimen306
-\c@pgfplots@coordindex=\count354
-\c@pgfplots@scanlineindex=\count355
+\pgfplots@luabackend@table=\catcodetable19
+\t@pgfplots@toka=\toks48
+\t@pgfplots@tokb=\toks49
+\t@pgfplots@tokc=\toks50
+\pgfplots@tmpa=\dimen307
+\c@pgfplots@coordindex=\count356
+\c@pgfplots@scanlineindex=\count357
 
 (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
@@ -865,21 +1024,21 @@ ands instead of write18 (shell-escape)
 ext.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.te
 x
-\c@pgfplotsarray@tmp=\count356
+\c@pgfplotsarray@tmp=\count358
 )
 (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.t
 ex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.t
 ex
-\c@pgfplotstable@counta=\count357
-\t@pgfplotstable@a=\toks50
+\c@pgfplotstable@counta=\count359
+\t@pgfplotstable@a=\toks51
 )
 (/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.te
 x) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
 (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading
 .code.tex
-\c@pgfplotslibrarysurf@no=\count358
+\c@pgfplotslibrarysurf@no=\count360
 
 (/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.
 pgfsys-luatex.def)))
@@ -898,14 +1057,14 @@ pgfsys-luatex.def)))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 decorations.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen307
-\pgfdecoratedremainingdistance=\dimen308
-\pgfdecoratedinputsegmentcompleteddistance=\dimen309
-\pgfdecoratedinputsegmentremainingdistance=\dimen310
-\pgf@decorate@distancetomove=\dimen311
-\pgf@decorate@repeatstate=\count359
-\pgfdecorationsegmentamplitude=\dimen312
-\pgfdecorationsegmentlength=\dimen313
+\pgfdecoratedcompleteddistance=\dimen308
+\pgfdecoratedremainingdistance=\dimen309
+\pgfdecoratedinputsegmentcompleteddistance=\dimen310
+\pgfdecoratedinputsegmentremainingdistance=\dimen311
+\pgf@decorate@distancetomove=\dimen312
+\pgf@decorate@repeatstate=\count361
+\pgfdecorationsegmentamplitude=\dimen313
+\pgfdecorationsegmentlength=\dimen314
 )
 \tikz@lib@dec@box=\box72
 )
@@ -919,13 +1078,13 @@ decorations.pathreplacing.code.tex
 ons.pathreplacing.code.tex))
 (/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua
 .code.tex)
-\pgfplots@numplots=\count360
-\pgfplots@xmin@reg=\dimen314
-\pgfplots@xmax@reg=\dimen315
-\pgfplots@ymin@reg=\dimen316
-\pgfplots@ymax@reg=\dimen317
-\pgfplots@zmin@reg=\dimen318
-\pgfplots@zmax@reg=\dimen319
+\pgfplots@numplots=\count362
+\pgfplots@xmin@reg=\dimen315
+\pgfplots@xmax@reg=\dimen316
+\pgfplots@ymin@reg=\dimen317
+\pgfplots@ymax@reg=\dimen318
+\pgfplots@zmin@reg=\dimen319
+\pgfplots@zmax@reg=\dimen320
 )
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 plotmarks.code.tex
@@ -945,24 +1104,24 @@ Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
 
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks51
-\XKV@tempa@toks=\toks52
-\XKV@tempb@toks=\toks53
+\XKV@toks=\toks52
+\XKV@tempa@toks=\toks53
+\XKV@tempb@toks=\toks54
 )
-\XKV@depth=\count361
+\XKV@depth=\count363
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\xargs@max=\count362
-\xargs@toksa=\toks54
-\xargs@toksb=\toks55
+\xargs@max=\count364
+\xargs@toksa=\toks55
+\xargs@toksb=\toks56
 )
 (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count363
-\xs_countb=\count364
+\xs_counta=\count365
+\xs_countb=\count366
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
@@ -980,10 +1139,10 @@ File: tikzlibraryquotes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen320
-\pgfarrowlength=\dimen321
-\pgfarrowwidth=\dimen322
-\pgfarrowlinewidth=\dimen323
+\pgfarrowinset=\dimen321
+\pgfarrowlength=\dimen322
+\pgfarrowwidth=\dimen323
+\pgfarrowlinewidth=\dimen324
 ))
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 calc.code.tex
@@ -1021,19 +1180,19 @@ ons.markings.code.tex))
 math.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 fpu.code.tex)
-\tikz@math@for@depth=\count365
-\tikz@math@dimen=\dimen324
-\tikz@math@toks=\toks56
+\tikz@math@for@depth=\count367
+\tikz@math@dimen=\dimen325
+\tikz@math@toks=\toks57
 )
 \pgf@layerbox@background=\box73
 \pgf@layerboxsaved@background=\box74
 \pgf@layerbox@quantback=\box75
 \pgf@layerboxsaved@quantback=\box76
-\c@dummy=\count366
+\c@dummy=\count368
 \myl=\skip79
 \myh=\skip80
 \myd=\skip81
-\c@aaa=\count367
+\c@aaa=\count369
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 044.
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -1087,31 +1246,185 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 10
 (/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-\c@wirenumberpermute=\count368
+\c@wirenumberpermute=\count370
 ))
-(/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
-Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+(/usr/share/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2025-06-08 v2.36 Module abspage for zref (HO)
+
+(/usr/share/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2025-06-08 v2.36 Module base for zref (HO)
+
+(/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count371
+Package zref Info: New property: abspage on input line 67.
+)
+(/usr/share/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+)
+\mdf@templength=\skip82
+\c@mdf@globalstyle@cnt=\count372
+\mdf@skipabove@length=\skip83
+\mdf@skipbelow@length=\skip84
+\mdf@leftmargin@length=\skip85
+\mdf@rightmargin@length=\skip86
+\mdf@innerleftmargin@length=\skip87
+\mdf@innerrightmargin@length=\skip88
+\mdf@innertopmargin@length=\skip89
+\mdf@innerbottommargin@length=\skip90
+\mdf@splittopskip@length=\skip91
+\mdf@splitbottomskip@length=\skip92
+\mdf@outermargin@length=\skip93
+\mdf@innermargin@length=\skip94
+\mdf@linewidth@length=\skip95
+\mdf@innerlinewidth@length=\skip96
+\mdf@middlelinewidth@length=\skip97
+\mdf@outerlinewidth@length=\skip98
+\mdf@roundcorner@length=\skip99
+\mdf@footenotedistance@length=\skip100
+\mdf@userdefinedwidth@length=\skip101
+\mdf@needspace@length=\skip102
+\mdf@frametitleaboveskip@length=\skip103
+\mdf@frametitlebelowskip@length=\skip104
+\mdf@frametitlerulewidth@length=\skip105
+\mdf@frametitleleftmargin@length=\skip106
+\mdf@frametitlerightmargin@length=\skip107
+\mdf@shadowsize@length=\skip108
+\mdf@extratopheight@length=\skip109
+\mdf@subtitleabovelinewidth@length=\skip110
+\mdf@subtitlebelowlinewidth@length=\skip111
+\mdf@subtitleaboveskip@length=\skip112
+\mdf@subtitlebelowskip@length=\skip113
+\mdf@subtitleinneraboveskip@length=\skip114
+\mdf@subtitleinnerbelowskip@length=\skip115
+\mdf@subsubtitleabovelinewidth@length=\skip116
+\mdf@subsubtitlebelowlinewidth@length=\skip117
+\mdf@subsubtitleaboveskip@length=\skip118
+\mdf@subsubtitlebelowskip@length=\skip119
+\mdf@subsubtitleinneraboveskip@length=\skip120
+\mdf@subsubtitleinnerbelowskip@length=\skip121
+
+(/usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box77
+\mdf@footnotebox=\box78
+\mdf@splitbox@one=\box79
+\mdf@splitbox@two=\box80
+\mdf@splitbox@save=\box81
+\mdfsplitboxwidth=\skip122
+\mdfsplitboxtotalwidth=\skip123
+\mdfsplitboxheight=\skip124
+\mdfsplitboxdepth=\skip125
+\mdfsplitboxtotalheight=\skip126
+\mdfframetitleboxwidth=\skip127
+\mdfframetitleboxtotalwidth=\skip128
+\mdfframetitleboxheight=\skip129
+\mdfframetitleboxdepth=\skip130
+\mdfframetitleboxtotalheight=\skip131
+\mdffootnoteboxwidth=\skip132
+\mdffootnoteboxtotalwidth=\skip133
+\mdffootnoteboxheight=\skip134
+\mdffootnoteboxdepth=\skip135
+\mdffootnoteboxtotalheight=\skip136
+\mdftotallinewidth=\skip137
+\mdfboundingboxwidth=\skip138
+\mdfboundingboxtotalwidth=\skip139
+\mdfboundingboxheight=\skip140
+\mdfboundingboxdepth=\skip141
+\mdfboundingboxtotalheight=\skip142
+\mdf@freevspace@length=\skip143
+\mdf@horizontalwidthofbox@length=\skip144
+\mdf@verticalmarginwhole@length=\skip145
+\mdf@horizontalspaceofbox=\skip146
+\mdfsubtitleheight=\skip147
+\mdfsubsubtitleheight=\skip148
+\c@mdfcountframes=\count373
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count374
+\c@mdf@env@i=\count375
+\c@mdf@env@ii=\count376
+\c@mdf@zref@counter=\count377
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+(/usr/share/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count378
+\l__siunitx_number_exponent_fixed_int=\count379
+\l__siunitx_number_min_decimal_int=\count380
+\l__siunitx_number_min_integer_int=\count381
+\l__siunitx_number_round_precision_int=\count382
+\l__siunitx_number_lower_threshold_int=\count383
+\l__siunitx_number_upper_threshold_int=\count384
+\l__siunitx_number_group_first_int=\count385
+\l__siunitx_number_group_size_int=\count386
+\l__siunitx_number_group_minimum_int=\count387
+\l__siunitx_angle_tmp_dim=\dimen326
+\l__siunitx_angle_marker_box=\box82
+\l__siunitx_angle_unit_box=\box83
+\l__siunitx_compound_count_int=\count388
+
+(/usr/share/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box84
+\l__siunitx_table_tmp_dim=\dimen327
+\l__siunitx_table_column_width_dim=\dimen328
+\l__siunitx_table_integer_box=\box85
+\l__siunitx_table_decimal_box=\box86
+\l__siunitx_table_uncert_box=\box87
+\l__siunitx_table_before_box=\box88
+\l__siunitx_table_after_box=\box89
+\l__siunitx_table_before_dim=\dimen329
+\l__siunitx_table_carry_dim=\dimen330
+\l__siunitx_unit_tmp_int=\count389
+\l__siunitx_unit_position_int=\count390
+\l__siunitx_unit_total_int=\count391
 
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen325
-\ar@mcellbox=\box77
-\extrarowheight=\dimen326
-\NC@list=\toks57
-\extratabsurround=\skip82
-\backup@length=\skip83
-\ar@cellbox=\box78
+\col@sep=\dimen331
+\ar@mcellbox=\box90
+\extrarowheight=\dimen332
+\NC@list=\toks58
+\extratabsurround=\skip149
+\backup@length=\skip150
+\ar@cellbox=\box91
+))
+(/usr/share/texmf-dist/tex/generic/nth/nth.sty
+Package: nth 2002/02/27
 )
-\TX@col@width=\dimen327
-\TX@old@table=\dimen328
-\TX@old@col=\dimen329
-\TX@target=\dimen330
-\TX@delta=\dimen331
-\TX@cols=\count369
-\TX@ftn=\toks58
+(/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+(/usr/share/texmf-dist/tex/latex/emoji/emoji.sty
+Package: emoji 2021/07/17 v0.2.2 Emoji support in (Lua)LaTeX
+
+(/usr/share/texmf-dist/tex/latex/emoji/emoji-table.def
+File: emoji-table.def 2021/07/17 v0.2.2 Emojisupportin(Lua)LaTeX
+))
+(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen333
+\TX@old@table=\dimen334
+\TX@old@col=\dimen335
+\TX@target=\dimen336
+\TX@delta=\dimen337
+\TX@cols=\count392
+\TX@ftn=\toks59
 )
 (/usr/share/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
@@ -1131,55 +1444,55 @@ Package pict2e Info: Driver file for pict2e: p2e-luatex.def on input line 114.
 (/usr/share/texmf-dist/tex/latex/pict2e/p2e-luatex.def
 File: p2e-luatex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks59
-\@arclen=\dimen332
-\@arcrad=\dimen333
-\pIIe@tempdima=\dimen334
-\pIIe@tempdimb=\dimen335
-\pIIe@tempdimc=\dimen336
-\pIIe@tempdimd=\dimen337
-\pIIe@tempdime=\dimen338
-\pIIe@tempdimf=\dimen339
+\pIIe@GRAPH=\toks60
+\@arclen=\dimen338
+\@arcrad=\dimen339
+\pIIe@tempdima=\dimen340
+\pIIe@tempdimb=\dimen341
+\pIIe@tempdimc=\dimen342
+\pIIe@tempdimd=\dimen343
+\pIIe@tempdime=\dimen344
+\pIIe@tempdimf=\dimen345
 )
-\diagbox@boxa=\box79
-\diagbox@boxb=\box80
-\diagbox@boxm=\box81
-\diagbox@wd=\dimen340
-\diagbox@ht=\dimen341
-\diagbox@insepl=\dimen342
-\diagbox@insepr=\dimen343
-\diagbox@outsepl=\dimen344
-\diagbox@outsepr=\dimen345
+\diagbox@boxa=\box92
+\diagbox@boxb=\box93
+\diagbox@boxm=\box94
+\diagbox@wd=\dimen346
+\diagbox@ht=\dimen347
+\diagbox@insepl=\dimen348
+\diagbox@insepr=\dimen349
+\diagbox@outsepl=\dimen350
+\diagbox@outsepr=\dimen351
 )
 (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip84
-\multirow@cntb=\count370
-\multirow@dima=\skip85
-\bigstrutjot=\dimen346
+\multirow@colwidth=\skip151
+\multirow@cntb=\count393
+\multirow@dima=\skip152
+\bigstrutjot=\dimen352
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count371
-\lst@gtempboxa=\box82
-\lst@token=\toks60
-\lst@length=\count372
-\lst@currlwidth=\dimen347
-\lst@column=\count373
-\lst@pos=\count374
-\lst@lostspace=\dimen348
-\lst@width=\dimen349
-\lst@newlines=\count375
-\lst@lineno=\count376
-\lst@maxwidth=\dimen350
+\lst@mode=\count394
+\lst@gtempboxa=\box95
+\lst@token=\toks61
+\lst@length=\count395
+\lst@currlwidth=\dimen353
+\lst@column=\count396
+\lst@pos=\count397
+\lst@lostspace=\dimen354
+\lst@width=\dimen355
+\lst@newlines=\count398
+\lst@lineno=\count399
+\lst@maxwidth=\dimen356
 
 (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count377
-\lst@skipnumbers=\count378
-\lst@framebox=\box83
+\c@lstnumber=\count400
+\lst@skipnumbers=\count401
+\lst@framebox=\box96
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
@@ -1197,23 +1510,23 @@ Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
 
 (/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks61
-\verbatim@line=\toks62
-\verbatim@in@stream=\read3
+\every@verbatim=\toks62
+\verbatim@line=\toks63
+\verbatim@in@stream=\read4
 )
-\tcb@titlebox=\box84
-\tcb@upperbox=\box85
-\tcb@lowerbox=\box86
-\tcb@phantombox=\box87
-\c@tcbbreakpart=\count379
-\c@tcblayer=\count380
-\c@tcolorbox@number=\count381
-\l__tcobox_tmpa_box=\box88
-\l__tcobox_tmpa_dim=\dimen351
-\tcb@temp=\box89
-\tcb@temp=\box90
-\tcb@temp=\box91
-\tcb@temp=\box92
+\tcb@titlebox=\box97
+\tcb@upperbox=\box98
+\tcb@lowerbox=\box99
+\tcb@phantombox=\box100
+\c@tcbbreakpart=\count402
+\c@tcblayer=\count403
+\c@tcolorbox@number=\count404
+\l__tcobox_tmpa_box=\box101
+\l__tcobox_tmpa_dim=\dimen357
+\tcb@temp=\box102
+\tcb@temp=\box103
+\tcb@temp=\box104
+\tcb@temp=\box105
 
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
@@ -1225,7 +1538,7 @@ Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 )
 (/usr/share/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box93
+\l__tikzfill_img_box=\box106
 ))
 (/usr/share/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
@@ -1235,42 +1548,101 @@ Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 )
 Package pdfcol Info: New color stack `tcb@breakable' = 2 on input line 23.
-\tcb@testbox=\box94
-\tcb@totalupperbox=\box95
-\tcb@totallowerbox=\box96
-
-(/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)))
+\tcb@testbox=\box107
+\tcb@totalupperbox=\box108
+\tcb@totallowerbox=\box109
+))
 (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\labelindent=\skip86
-\enit@outerparindent=\dimen352
-\enit@toks=\toks63
-\enit@inbox=\box97
-\enit@count@id=\count382
-\enitdp@description=\count383
+\labelindent=\skip153
+\enit@outerparindent=\dimen358
+\enit@toks=\toks64
+\enit@inbox=\box110
+\enit@count@id=\count405
+\enitdp@description=\count406
 )
-\enitdp@defaultitemize=\count384
-\enitdp@subparagitemize=\count385
-
 (/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 
 (/usr/share/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 ))
+(/usr/share/texmf-dist/tex/latex/datetime2/datetime2.sty
+Package: datetime2 2021/03/21 v1.5.7 (NLCT) date and time formats
 
-! LaTeX Error: File `texdate.sty' not found.
+(/usr/share/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+(/usr/share/texmf-dist/tex/generic/tracklang/tracklang.tex)
+Package tracklang Info: Tracking dialect `british' (language `english') on inpu
+t line 264.
+Package tracklang Info: Tracking dialect `british' (language `english') on inpu
+t line 264.
+)
+(/usr/share/texmf-dist/tex/latex/datetime2-english/datetime2-en-GB.ldf
+File: datetime2-en-GB.ldf 2019/10/21 v1.05 (NLCT)
 
-Enter file name: 
+(/usr/share/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+File: datetime2-english-base.ldf 2019/10/21 v1.05 (NLCT)
+)) (/usr/share/texmf-dist/tex/latex/datetime2/datetime2-calc.sty
+Package: datetime2-calc 2021/03/21 v1.5.7 (NLCT)
+
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
+File: pgfcalendar.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfcalendarcurrentjulian=\count407
+\pgf@cal@easter@Y=\count408
+\pgf@cal@easter@G=\count409
+\pgf@cal@easter@C=\count410
+\pgf@cal@easter@X=\count411
+\pgf@cal@easter@Z=\count412
+\pgf@cal@easter@D=\count413
+\pgf@cal@easter@E=\count414
+\pgf@cal@easter@N=\count415
+\pgf@cal@easter@M=\count416
+\pgf@cal@easter@julianday=\count417
+))
+\@dtm@julianday=\count418
+))
+(/usr/share/texmf-dist/tex/generic/texdate/texdate.sty
+Package: texdate 2018/12/08 v2.0 Print and manipulate dates in plain TeX
+
+(/usr/share/texmf-dist/tex/generic/modulus/modulus.sty
+Package: modulus 2018/05/07 v1.0 Modulus/modulo operator in plain TeX
+\remainder=\count419
+\intquotient=\count420
+)
+(/usr/share/texmf-dist/tex/latex/padcount/padcount.sty
+Package: padcount 2018/05/04 v1.0 Pad numbers with arbitrary characters
+\pad@charcount=\count421
+\pad@tmp=\count422
+\pad@tmpi=\count423
+\pad@num=\count424
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/iflang.sty
+Package: iflang 2018/01/21 v1.7 Checks for the current language (HO)
+Package iflang Info: Naming convention for patterns: babel.
+)
+\texd@loopi=\count425
+\texd@mon=\count426
+\texd@dow=\count427
+\texd@dom=\count428
+\texd@yr=\count429
+\texd@rdom=\count430
+\texd@rmon=\count431
+\texd@dow=\count432
+\texd@leap=\count433
+\texd@x=\count434
+\texd@y=\count435
+\texd@leapyear=\count436
+\texd@loopj=\count437
+\texd@looptmp=\count438
+\texd@jnum=\count439
+)
 (/usr/share/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count386
-\cp@tempcnt=\count387
+\c@cp@cntr=\count440
+\cp@tempcnt=\count441
 )
 (/usr/share/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
@@ -1287,282 +1659,73 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip87
-\cftbeforetoctitleskip=\skip88
-\cftaftertoctitleskip=\skip89
-\cftbeforepartskip=\skip90
-\cftpartnumwidth=\skip91
-\cftpartindent=\skip92
-\cftbeforechapskip=\skip93
-\cftchapindent=\skip94
-\cftchapnumwidth=\skip95
-\cftbeforesecskip=\skip96
-\cftsecindent=\skip97
-\cftsecnumwidth=\skip98
-\cftbeforesubsecskip=\skip99
-\cftsubsecindent=\skip100
-\cftsubsecnumwidth=\skip101
-\cftbeforesubsubsecskip=\skip102
-\cftsubsubsecindent=\skip103
-\cftsubsubsecnumwidth=\skip104
-\cftbeforeparaskip=\skip105
-\cftparaindent=\skip106
-\cftparanumwidth=\skip107
-\cftbeforesubparaskip=\skip108
-\cftsubparaindent=\skip109
-\cftsubparanumwidth=\skip110
-\cftbeforeloftitleskip=\skip111
-\cftafterloftitleskip=\skip112
-\cftbeforefigskip=\skip113
-\cftfigindent=\skip114
-\cftfignumwidth=\skip115
-\c@lofdepth=\count388
-\c@lotdepth=\count389
-\cftbeforelottitleskip=\skip116
-\cftafterlottitleskip=\skip117
-\cftbeforetabskip=\skip118
-\cfttabindent=\skip119
-\cfttabnumwidth=\skip120
+\cftparskip=\skip154
+\cftbeforetoctitleskip=\skip155
+\cftaftertoctitleskip=\skip156
+\cftbeforepartskip=\skip157
+\cftpartnumwidth=\skip158
+\cftpartindent=\skip159
+\cftbeforechapskip=\skip160
+\cftchapindent=\skip161
+\cftchapnumwidth=\skip162
+\cftbeforesecskip=\skip163
+\cftsecindent=\skip164
+\cftsecnumwidth=\skip165
+\cftbeforesubsecskip=\skip166
+\cftsubsecindent=\skip167
+\cftsubsecnumwidth=\skip168
+\cftbeforesubsubsecskip=\skip169
+\cftsubsubsecindent=\skip170
+\cftsubsubsecnumwidth=\skip171
+\cftbeforeparaskip=\skip172
+\cftparaindent=\skip173
+\cftparanumwidth=\skip174
+\cftbeforesubparaskip=\skip175
+\cftsubparaindent=\skip176
+\cftsubparanumwidth=\skip177
+\cftbeforeloftitleskip=\skip178
+\cftafterloftitleskip=\skip179
+\cftbeforefigskip=\skip180
+\cftfigindent=\skip181
+\cftfignumwidth=\skip182
+\c@lofdepth=\count442
+\c@lotdepth=\count443
+\cftbeforelottitleskip=\skip183
+\cftafterlottitleskip=\skip184
+\cftbeforetabskip=\skip185
+\cfttabindent=\skip186
+\cfttabnumwidth=\skip187
 )
 (/usr/share/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
-\CenteringLeftskip=\skip121
-\RaggedLeftLeftskip=\skip122
-\RaggedRightLeftskip=\skip123
-\CenteringRightskip=\skip124
-\RaggedLeftRightskip=\skip125
-\RaggedRightRightskip=\skip126
-\CenteringParfillskip=\skip127
-\RaggedLeftParfillskip=\skip128
-\RaggedRightParfillskip=\skip129
-\JustifyingParfillskip=\skip130
-\CenteringParindent=\skip131
-\RaggedLeftParindent=\skip132
-\RaggedRightParindent=\skip133
-\JustifyingParindent=\skip134
+\CenteringLeftskip=\skip188
+\RaggedLeftLeftskip=\skip189
+\RaggedRightLeftskip=\skip190
+\CenteringRightskip=\skip191
+\RaggedLeftRightskip=\skip192
+\RaggedRightRightskip=\skip193
+\CenteringParfillskip=\skip194
+\RaggedLeftParfillskip=\skip195
+\RaggedRightParfillskip=\skip196
+\JustifyingParfillskip=\skip197
+\CenteringParindent=\skip198
+\RaggedLeftParindent=\skip199
+\RaggedRightParindent=\skip256
+\JustifyingParindent=\skip257
 )
 (/usr/share/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
-\TP@textbox=\box98
-\TPHorizModule=\dimen353
-\TPVertModule=\dimen354
-\TP@margin=\dimen355
-\TP@absmargin=\dimen356
+\TP@textbox=\box111
+\TPHorizModule=\dimen359
+\TPVertModule=\dimen360
+\TP@margin=\dimen361
+\TP@absmargin=\dimen362
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen357
-\TP@tbargs=\toks64
-) (/usr/share/texmf-dist/tex/latex/needspace/needspace.sty
-Package: needspace 2025/03/13 v1.3e reserve vertical space
+\TPboxrulesize=\dimen363
+\TP@tbargs=\toks65
 )
-(/usr/share/texmf-dist/tex/latex/mdframed/mdframed.sty
-Package: mdframed 2013/07/01 1.9b: mdframed
-
-(/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty
-Package: zref-abspage 2025-06-08 v2.36 Module abspage for zref (HO)
-
-(/usr/share/texmf-dist/tex/latex/zref/zref-base.sty
-Package: zref-base 2025-06-08 v2.36 Module base for zref (HO)
-
-(/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-Package zref Info: New property list: main on input line 767.
-Package zref Info: New property: default on input line 768.
-Package zref Info: New property: page on input line 769.
-)
-\c@abspage=\count390
-Package zref Info: New property: abspage on input line 67.
-)
-\mdf@templength=\skip135
-\c@mdf@globalstyle@cnt=\count391
-\mdf@skipabove@length=\skip136
-\mdf@skipbelow@length=\skip137
-\mdf@leftmargin@length=\skip138
-\mdf@rightmargin@length=\skip139
-\mdf@innerleftmargin@length=\skip140
-\mdf@innerrightmargin@length=\skip141
-\mdf@innertopmargin@length=\skip142
-\mdf@innerbottommargin@length=\skip143
-\mdf@splittopskip@length=\skip144
-\mdf@splitbottomskip@length=\skip145
-\mdf@outermargin@length=\skip146
-\mdf@innermargin@length=\skip147
-\mdf@linewidth@length=\skip148
-\mdf@innerlinewidth@length=\skip149
-\mdf@middlelinewidth@length=\skip150
-\mdf@outerlinewidth@length=\skip151
-\mdf@roundcorner@length=\skip152
-\mdf@footenotedistance@length=\skip153
-\mdf@userdefinedwidth@length=\skip154
-\mdf@needspace@length=\skip155
-\mdf@frametitleaboveskip@length=\skip156
-\mdf@frametitlebelowskip@length=\skip157
-\mdf@frametitlerulewidth@length=\skip158
-\mdf@frametitleleftmargin@length=\skip159
-\mdf@frametitlerightmargin@length=\skip160
-\mdf@shadowsize@length=\skip161
-\mdf@extratopheight@length=\skip162
-\mdf@subtitleabovelinewidth@length=\skip163
-\mdf@subtitlebelowlinewidth@length=\skip164
-\mdf@subtitleaboveskip@length=\skip165
-\mdf@subtitlebelowskip@length=\skip166
-\mdf@subtitleinneraboveskip@length=\skip167
-\mdf@subtitleinnerbelowskip@length=\skip168
-\mdf@subsubtitleabovelinewidth@length=\skip169
-\mdf@subsubtitlebelowlinewidth@length=\skip170
-\mdf@subsubtitleaboveskip@length=\skip171
-\mdf@subsubtitlebelowskip@length=\skip172
-\mdf@subsubtitleinneraboveskip@length=\skip173
-\mdf@subsubtitleinnerbelowskip@length=\skip174
-
-(/usr/share/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
-File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
-)
-\mdf@frametitlebox=\box99
-\mdf@footnotebox=\box100
-\mdf@splitbox@one=\box101
-\mdf@splitbox@two=\box102
-\mdf@splitbox@save=\box103
-\mdfsplitboxwidth=\skip175
-\mdfsplitboxtotalwidth=\skip176
-\mdfsplitboxheight=\skip177
-\mdfsplitboxdepth=\skip178
-\mdfsplitboxtotalheight=\skip179
-\mdfframetitleboxwidth=\skip180
-\mdfframetitleboxtotalwidth=\skip181
-\mdfframetitleboxheight=\skip182
-\mdfframetitleboxdepth=\skip183
-\mdfframetitleboxtotalheight=\skip184
-\mdffootnoteboxwidth=\skip185
-\mdffootnoteboxtotalwidth=\skip186
-\mdffootnoteboxheight=\skip187
-\mdffootnoteboxdepth=\skip188
-\mdffootnoteboxtotalheight=\skip189
-\mdftotallinewidth=\skip190
-\mdfboundingboxwidth=\skip191
-\mdfboundingboxtotalwidth=\skip192
-\mdfboundingboxheight=\skip193
-\mdfboundingboxdepth=\skip194
-\mdfboundingboxtotalheight=\skip195
-\mdf@freevspace@length=\skip196
-\mdf@horizontalwidthofbox@length=\skip197
-\mdf@verticalmarginwhole@length=\skip198
-\mdf@horizontalspaceofbox=\skip199
-\mdfsubtitleheight=\skip256
-\mdfsubsubtitleheight=\skip257
-\c@mdfcountframes=\count392
-
-****** mdframed patching \endmdf@trivlist
-
-****** -- success******
-
-\mdf@envdepth=\count393
-\c@mdf@env@i=\count394
-\c@mdf@env@ii=\count395
-\c@mdf@zref@counter=\count396
-Package zref Info: New property: mdf@pagevalue on input line 895.
-)
-(/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
-Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-arrows.code.tex
-File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\arrowsize=\dimen358
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.code.tex
-File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geomet
-ric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.arrows.code.tex
-File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows
-.code.tex
-File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.callouts.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callou
-ts.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multip
-art.code.tex
-File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfnodepartlowerbox=\box104
-\pgfnodeparttwobox=\box105
-\pgfnodepartthreebox=\box106
-\pgfnodepartfourbox=\box107
-\pgfnodeparttwentybox=\box108
-\pgfnodepartnineteenbox=\box109
-\pgfnodeparteighteenbox=\box110
-\pgfnodepartseventeenbox=\box111
-\pgfnodepartsixteenbox=\box112
-\pgfnodepartfifteenbox=\box113
-\pgfnodepartfourteenbox=\box114
-\pgfnodepartthirteenbox=\box115
-\pgfnodeparttwelvebox=\box116
-\pgfnodepartelevenbox=\box117
-\pgfnodeparttenbox=\box118
-\pgfnodepartninebox=\box119
-\pgfnodeparteightbox=\box120
-\pgfnodepartsevenbox=\box121
-\pgfnodepartsixbox=\box122
-\pgfnodepartfivebox=\box123
-))) (/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
-nment
-
-(/usr/share/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count397
-\float@exts=\toks65
-\float@box=\box124
-\@float@everytoks=\toks66
-\@floatcapt=\box125
-)
-\@float@every@algorithm=\toks67
-\c@algorithm=\count398
-)
-(/usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
-Package: algpseudocode 
-
-(/usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
-Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
-
-Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count399
-\c@ALG@rem=\count400
-\c@ALG@nested=\count401
-\ALG@tlm=\skip258
-\ALG@thistlm=\skip259
-\c@ALG@Lnr=\count402
-\c@ALG@blocknr=\count403
-\c@ALG@storecount=\count404
-\c@ALG@tmpcounter=\count405
-\ALG@tmplength=\skip260
-)
-Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/share/texmf-dist/tex/latex/tkz-tab/tkz-tab.sty
-Package: tkz-tab 2020/04/29 v2.12c variations (ctan version)
-
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 patterns.code.tex
 File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -1570,21 +1733,6 @@ File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))
-\tkz@XF=\dimen359
-\tkz@YF=\dimen360
-\c@tkz@cnt@line=\count406
-\c@tkz@cnt@lg=\count407
-\c@tkz@cnt@cl=\count408
-\c@tkz@cnt@pred=\count409
-\c@tkz@cnt@temp=\count410
-\c@tkz@cnt@arrow=\count411
-\c@tkz@cnt@zone=\count412
-\c@tkz@cnt@lgnext=\count413
-\c@tkz@cnt@clnext=\count414
-\c@tkz@cnt@pair=\count415
-\c@tkz@cnt@impair=\count416
-\c@tkz@cnt@aw=\count417
-)
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 snakes.code.tex
 File: tikzlibrarysnakes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
@@ -1599,20 +1747,20 @@ decorations.shapes.code.tex
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
 ons.shapes.code.tex))) (/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
-\everycr=\toks68
-\minrowclearance=\skip261
-\rownum=\count418
+\everycr=\toks66
+\minrowclearance=\skip258
+\rownum=\count444
 )
-\c@savoir=\count419
-\c@remark=\count420
-\c@resume1=\count421
-\c@definition2=\count422
-\c@exemple=\count423
-\c@theorem=\count424
-\c@dem=\count425
-\c@cor=\count426
-\c@lem=\count427
-\c@pro=\count428
+\c@savoir=\count445
+\c@remark=\count446
+\c@resume1=\count447
+\c@definition2=\count448
+\c@exemple=\count449
+\c@definition1=\count450
+\c@dem=\count451
+\c@cor=\count452
+\c@lem=\count453
+\c@pro=\count454
 
 
 ! LaTeX Error: Command \qed already defined.
@@ -1622,23 +1770,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.391 }
+l.379 }
        
 ? 
-\paragtitlewidth=\skip262
-\paragtitlespace=\skip263
-\subparaglinewidth=\skip264
-\subparagtitlelinespace=\skip265
-\subparagtitlewidth=\skip266
-\subparagtitlespace=\skip267
-\paragtitlebox=\box126
-\paragtitleheight=\skip268
-\subparagtitlebox=\box127
-\subparagtitleheight=\skip269
-\c@CurrentSlide=\count429
-\slideheight=\skip270
-\height=\dimen361
-\eqwidth=\skip271
+\paragtitlewidth=\skip259
+\paragtitlespace=\skip260
+\subparaglinewidth=\skip261
+\subparagtitlelinespace=\skip262
+\subparagtitlewidth=\skip263
+\subparagtitlespace=\skip264
+\paragtitlebox=\box112
+\paragtitleheight=\skip265
+\subparagtitlebox=\box113
+\subparagtitleheight=\skip266
+\c@CurrentSlide=\count455
+\slideheight=\skip267
+\height=\dimen364
+\eqwidth=\skip268
 ) (./main.aux)
 \openout1 = main.aux
 
@@ -1671,14 +1819,14 @@ LaTeX Font Info:    ... okay on input line 14.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(71.70166pt, 418.25368pt, 107.55254pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=418.25368pt
+* \textwidth=455.24411pt
 * \textheight=702.78308pt
-* \oddsidemargin=-0.56833pt
-* \evensidemargin=35.28255pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
 * \topmargin=-31.2056pt
 * \headheight=12.66003pt
 * \headsep=18.06749pt
@@ -1686,7 +1834,7 @@ LaTeX Font Info:    ... okay on input line 14.
 * \footskip=25.29494pt
 * \marginparwidth=115.0pt
 * \marginparsep=7.0pt
-* \columnsep=14.22636pt
+* \columnsep=28.45274pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
@@ -1725,17 +1873,17 @@ Package hyperref Info: Link coloring OFF on input line 14.
 \openout4 = main.out
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count430
-\scratchdimen=\dimen362
-\scratchbox=\box128
-\nofMPsegments=\count431
-\nofMParguments=\count432
-\everyMPshowfont=\toks69
-\MPscratchCnt=\count433
-\MPscratchDim=\dimen363
-\MPnumerator=\count434
-\makeMPintoPDFobject=\count435
-\everyMPtoPDFconversion=\toks70
+\scratchcounter=\count456
+\scratchdimen=\dimen365
+\scratchbox=\box114
+\nofMPsegments=\count457
+\nofMParguments=\count458
+\everyMPshowfont=\toks67
+\MPscratchCnt=\count459
+\MPscratchDim=\dimen366
+\MPnumerator=\count460
+\makeMPintoPDFobject=\count461
+\everyMPtoPDFconversion=\toks68
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1748,7 +1896,28 @@ e
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.17).
 
-\c@lstlisting=\count436
+
+(/usr/share/texmf-dist/tex/latex/translations/translations-basic-dictionary-eng
+lish.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+luaotfload | cache : Lookup cache loaded from /home/arthur/.texlive/texmf-var/lu
+atex-cache/generic/names/luaotfload-lookup-cache.luc.
+
+Package fontspec Info: 
+(fontspec)             Font family 'TwemojiMozilla(0)' created for font
+(fontspec)             'Twemoji Mozilla' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},Renderer=Har
+fBuzz].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"name:Twemoji
+(fontspec)             Mozilla:mode=harf;script=DFLT;language=dflt;"
+
+\c@lstlisting=\count462
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1759,7 +1928,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 16.
-(/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
+ (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1779,11 +1948,11 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 1.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 2.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 1.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 2.
 
 )
 \tf@toc=\write5
@@ -1792,28 +1961,8 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
  [2]
 Chapter 1.
 (./lecture1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-[]\TU/lmr/m/n/10 Ma-chine lear-ing takes the same form as how a hu-man would lea
-rn, by []\TU/lmr/bx/n/10 ex-pe-ri-ence[]\TU/lmr/m/n/10 .
- []
+Underfull \hbox (badness 10000) in paragraph at lines 23--27
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-\TU/lmr/m/n/10 The goal is to give our []\TU/lmr/bx/n/10 al-go-rithm[]\TU/lmr/m
-/n/10 , []\TU/lmr/bx/n/10 data[] \TU/lmr/m/n/10 which would out-put []\TU/lmr/b
-x/n/10 in-sight[] \TU/lmr/m/n/10 about our
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
-[]\TU/lmr/m/n/10 Data can be many things, it can be pa-tient in-for-ma-tion re-l
-ated to births, movie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--27
-\TU/lmr/m/n/10 An im-por-tant thing to high-light is the dif-fer-ence be-tween 
-a []\TU/lmr/bx/n/10 data set[] \TU/lmr/m/n/10 and a []\TU/lmr/bx/n/10 data
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 27.
@@ -1828,18 +1977,6 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 31.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 32.
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-[]\TU/lmr/m/n/10 As said be-fore, the goal of ma-chine learn-ing is to out-put 
-[]\TU/lmr/bx/n/10 in-sight[] \TU/lmr/m/n/10 about our data.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--39
-\TU/lmr/m/n/10 In this course, we will mostly fo-cus on pre-cise in-sights. In 
-par-tic-u-lar, we will study
- []
-
 [3
 
 ]
@@ -1867,23 +2004,6 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 62.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 63.
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-\TU/lmr/m/n/10 vised), the learn-ing re-lies on un-su-per-vised data. The goal 
-is rather to anal-yse the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-\TU/lmr/m/n/10 What we mean by this is that in-stead of try-ing to have di-rect in-for-ma-tion about our
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-[]\TU/lmr/m/n/10 Learn-ing in this case con-sists of only one stage: Anal-yse th
-e whole data, or trans-
- []
-
 [4]
 Chapter 2.
 Package mdframed Info: mdframed works in twoside mode on input line 83.
@@ -1893,55 +2013,8 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 84.
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-\TU/lmr/m/n/10 An as-sump-tion about the data that we are given is that the an-n
-o-ta-tions (su-per-vi-sory
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-[]\TU/lmr/bx/n/10 Train-ing\TU/lmr/m/n/10 : Use data with ground-truth la-bels 
-to op-ti-mize model pa-ram-e-ters
- []
-
-
-Overfull \hbox (53.61708pt too wide) in paragraph at lines 123--124
+Overfull \hbox (59.30579pt too wide) in paragraph at lines 123--124
  [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-\TU/lmr/m/n/10 Here we []\TU/lmr/bx/n/10 don’t[] \TU/lmr/m/n/10 use our test-i
-ng data to up-date the model pa-ram-e-ters. We want to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-\TU/lmr/m/n/10 check wether or not our model []\TU/lmr/bx/n/10 gen-er-al-izes[]
- \TU/lmr/m/n/10 to the new test data which might not be
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-\TU/lmr/m/n/10 num-ber in a cor-ner of the box, the model is not able to cor-rec
-tly pre-dict. The rea-son
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-\TU/lmr/m/n/10 for this is that the data that our model trained on had num-bers only in the mid-dle
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-[]\TU/lmr/m/n/10 Us-ing the ob-ser-va-tions (in-puts) is oc-ca-sion-ally pos-si-
-ble and re-ferred
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-[]\TU/lmr/m/n/10 Fur-ther-more, we also need that our train-ing and test sam-ple
-s are drawn from the
  []
 
 [5
@@ -1959,49 +2032,23 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 153.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 155.
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
-\TU/lmr/m/n/10 For []\TU/lmr/bx/n/10 clas-si-fi-ca-tion[]\TU/lmr/m/n/10 , $\OML
-/lmm/m/it/10 y[]$ \TU/lmr/m/n/10 rep-re-sents the cat-e-gory the sam-ples be-lon
-gs to. Whereas for
- []
-
-<screenshots/2026-02-20.png, id=227, 900.36375pt x 713.66624pt>
+<screenshots/2026-02-20.png, id=237, 900.36375pt x 713.66624pt>
 File: screenshots/2026-02-20.png Graphic file (type png)
 <use screenshots/2026-02-20.png>
 Package luatex.def Info: screenshots/2026-02-20.png  used on input line 166.
 (luatex.def)             Requested size: 270.1112pt x 214.10152pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-\TU/lmr/m/n/10 As an-other ex-am-ple, we can take the digit recog-ni-tion ex-am-
-ple, $\OML/lmm/m/it/10 x[]$ \TU/lmr/m/n/10 is a grayscale
- []
-
-<screenshots/2026-02-20_1.png, id=228, 1191.45125pt x 512.91624pt>
+<screenshots/2026-02-20_1.png, id=238, 1191.45125pt x 512.91624pt>
 File: screenshots/2026-02-20_1.png Graphic file (type png)
 <use screenshots/2026-02-20_1.png>
 Package luatex.def Info: screenshots/2026-02-20_1.png  used on input line 170.
 (luatex.def)             Requested size: 357.43813pt x 153.87605pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\TU/lmr/m/n/10 What we are es-sen-tially do-ing is trans-form-ing our im-age (wh
-ich is a ma-trix in our
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\TU/lmr/m/n/10 case) to a vec-tor by map-ping each el-e-ment of this mes-sage to
- a ’row’ of the vec-tor
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
-\TU/lmr/m/n/10 In this case of digit recog-ni-tion, the out-put $\OML/lmm/m/it/
-10 y[]$ \TU/lmr/m/n/10 is a sin-gle dis-crete value in-di-cat-ing the
- []
-
-[6<./screenshots/2026-02-20.png>]
-<screenshots/2026-02-20_2.png, id=240, 215.80624pt x 326.21875pt>
+[6<./screenshots/2026-02-20.png><./screenshots/2026-02-20_1.png>]
+<screenshots/2026-02-20_2.png, id=250, 215.80624pt x 326.21875pt>
 File: screenshots/2026-02-20_2.png Graphic file (type png)
 <use screenshots/2026-02-20_2.png>
 Package luatex.def Info: screenshots/2026-02-20_2.png  used on input line 207.
@@ -2013,116 +2060,24 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 217.
 
-
-Overfull \hbox (3.25848pt too wide) in paragraph at lines 223--224
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-[]\TU/lmr/m/n/10 Given $\OML/lmm/m/it/10 N$ \TU/lmr/m/n/10 an-no-tated data sam-
-ples $[][]$ with (length, weight) mea-sure-ments, we
- []
-
-<screenshots/2026-02-20_3.png, id=241, 908.39375pt x 642.4pt>
+<screenshots/2026-02-20_3.png, id=251, 908.39375pt x 642.4pt>
 File: screenshots/2026-02-20_3.png Graphic file (type png)
 <use screenshots/2026-02-20_3.png>
 Package luatex.def Info: screenshots/2026-02-20_3.png  used on input line 229.
 (luatex.def)             Requested size: 227.09789pt x 160.59961pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-\TU/lmr/m/n/10 We can see here that there is a kind of trend go-ing on in this 
-data set, we seek to
- []
-
-<screenshots/2026-02-20_4.png, id=242, 936.49875pt x 639.38875pt>
+<screenshots/2026-02-20_4.png, id=252, 936.49875pt x 639.38875pt>
 File: screenshots/2026-02-20_4.png Graphic file (type png)
 <use screenshots/2026-02-20_4.png>
 Package luatex.def Info: screenshots/2026-02-20_4.png  used on input line 233.
 (luatex.def)             Requested size: 234.12411pt x 159.84679pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
-\TU/lmr/m/n/10 Once we have de-fined the line based on the $\OML/lmm/m/it/10 N$
- \TU/lmr/m/n/10 train-ing sam-ples, we can use it to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
-\TU/lmr/m/n/10 pre-dict the weight of any new length (again, as-sum-ing the test
- data fol-lows the same
- []
-
-[7<./screenshots/2026-02-20_1.png><./screenshots/2026-02-20_2.png><./screenshots
-/2026-02-20_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 239--241
-[]\TU/lmr/m/n/10 Now let us think a bit more about the model, what is it made of
-? To be able to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-[]\TU/lmr/m/n/10 Now that we have our model, let us acu-tally fit our model to 
-some data. Given $\OML/lmm/m/it/10 N$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-\TU/lmr/m/n/10 pairs $[][]$, the goal is to find the line that passes through th
-ese ob-ser-va-tions.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-\TU/lmr/m/n/10 here is to find the line that []\TU/lmr/bx/n/10 best fits[] \TU/
-lmr/m/n/10 this ob-ser-va-tion and if you re-mem-ber lin-ear
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
-[]\TU/lmr/m/n/10 Given $\OML/lmm/m/it/10 N$ \TU/lmr/m/n/10 train-ing pairs $[][
-]$, we aime to find $[][]$, such that the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-\TU/lmr/m/n/10 We then need to de-fine a mea-sure of close-ness, or con-versely an er-ror, be-tween $\OML/lmm/m/it/10 y[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-[]\TU/lmr/m/n/10 As seen in lin-ear al-ge-bra, a nat-u-ral mea-sure of the er-ro
-r is the Eu-clidean dis-tance
- []
-
-<screenshots/2026-02-20_5.png, id=251, 896.34875pt x 565.11125pt>
+[7<./screenshots/2026-02-20_2.png><./screenshots/2026-02-20_3.png><./screenshots
+/2026-02-20_4.png>]
+<screenshots/2026-02-20_5.png, id=261, 896.34875pt x 565.11125pt>
 File: screenshots/2026-02-20_5.png Graphic file (type png)
 <use screenshots/2026-02-20_5.png>
 Package luatex.def Info: screenshots/2026-02-20_5.png  used on input line 266.
 (luatex.def)             Requested size: 224.08664pt x 141.27747pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
-\TU/lmr/m/n/10 With this def-i-ni-tion, tran-ing can be trans-lated as a least-s
-quare prob-lem min-i-miza-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--274
-\TU/lmr/m/n/10 Where $[]$ de-pends on $\OML/lmm/m/it/10 ![]$ \TU/lmr/m/n/10 and $\OML/lmm/m/it/10 ![]$ \TU/lmr/m/n/10 A nicer way which will be use-ful when us-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--277
-\TU/lmr/m/n/10 In our case as we have $\OML/lmm/m/it/10 y$ \TU/lmr/m/n/10 be-ing
- a one di-men-sional vec-tor, we don’t have to write our
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--283
-\TU/lmr/m/n/10 As said above, in gen-eral, an in-put ob-ser-va-tion $\OML/lmm/m
-/it/10 x[]$ \TU/lmr/m/n/10 is not repres-neted by a sin-gle
- []
-
-[8<./screenshots/2026-02-20_4.png>]) (./lecture2.tex
+ [8<./screenshots/2026-02-20_5.png>]) (./lecture2.tex
 Package mdframed Info: mdframed works in twoside mode on input line 6.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2130,36 +2085,7 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
-\TU/lmr/m/n/10 All the thing we said to a one di-men-sion fit-ting is trans-late
-d into two di-men-sion:
- []
-
-
-Underfull \hbox (badness 3088) in paragraph at lines 10--13
-\TU/lmr/m/n/10 Given $\OML/lmm/m/it/10 N$ \TU/lmr/m/n/10 noisy plan $[][]$, wher
-e $\OML/lmm/m/it/10 x[] \OMS/lmsy/m/n/10 2 \U/msb/m/n/10 R[]$\TU/lmr/m/n/10 , fi
-nd the plane that best fit these
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
-\TU/lmr/m/n/10 ob-ser-va-tions. Of course as you could have guess, this can be 
-gen-er-al-ized to higher
- []
-
-[9<./screenshots/2026-02-20_5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
-[]\TU/lmr/m/n/10 Be-cause the out-put reamins to one di-men-sion, we can use the
- same least-square loss
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-[]\TU/lmr/m/n/10 Solv-ing this min-i-miza-tion prob-lem in-volves com-put-ing it
-s deriva-tives w.r.t. the
- []
-
+[9]
 Package mdframed Info: mdframed works in twoside mode on input line 38.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2168,56 +2094,13 @@ Package mdframed Info: mdframed works in twoside mode on input line 40.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 40.
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-[]\TU/lmr/m/n/10 In ma-chine learn-ing, we of-ten seek to min-i-mize a func-tion
- (i.e., the loss func-tion).
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--1
-\TU/lmr/m/n/10 For some sim-ple, con-vex func-tions, $\OML/lmm/m/it/10 w[]$ \TU
-/lmr/m/n/10 can be ob-tained al-ge-braically by solv-ing the
- []
-
-[10]
 Package mdframed Info: mdframed works in twoside mode on input line 53.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 53.
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
-[]\TU/lmr/m/n/10 For more com-pli-cated non-convex func-tions, there are typ-i-c
-ally mul-ti-ple, lo-cal
- []
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-[]\TU/lmr/m/n/10 This is nice for one di-men-sion but even our sim-ple case of 
-a model with one di-men-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-\TU/lmr/m/n/10 sion had al-ready two pa-ram-e-ters ($\OML/lmm/m/it/10 w[]; w[]$
-\TU/lmr/m/n/10 ). In prac-tice, we typ-i-cally have more
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-\TU/lmr/m/n/10 than one pa-ram-e-ter. To han-dle this, we rely on the func-tion []\TU/lmr/bx/n/10 gra-di-ent[]\TU/lmr/m/n/10 . The gra-di-ent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-[]\TU/lmr/m/n/10 Each el-e-ment of this vec-tor is the par-tial deriva-tive of 
-the func-tion w.r.t. a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-\TU/lmr/m/n/10 sin-gle vari-able, i.e. the deriva-tive of the func-tion w.r.t. 
-one vari-able while
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 71.
@@ -2226,226 +2109,51 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 71.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 77.
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-[]\TU/lmr/m/n/10 The gra-di-ent at a point $\OML/lmm/m/it/10 w$ \TU/lmr/m/n/10 
-has the di-rec-tion of great-est in-crease of the func-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--1
-\TU/lmr/m/n/10 You can see with this prop-erty why the gra-di-ent may be use-ful
- when look-ing for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--1
-\TU/lmr/m/n/10 min-ima of a func-tion. If the gra-di-ent give us the steep-est 
-slope of the func-tion at
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-[]\TU/lmr/m/n/10 This is nice, go-ing down the slope will make our loss func-tio
-n
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-\TU/lmr/m/n/10 gra-di-ent de-scent with mo-men-tum which i don’t know if we wi
-ll see
- []
-
-<screenshots/2026-02-24_1.png, id=277, 1284.8pt x 1076.02pt>
+[10]
+<screenshots/2026-02-24_1.png, id=290, 1284.8pt x 1076.02pt>
 File: screenshots/2026-02-24_1.png Graphic file (type png)
 <use screenshots/2026-02-24_1.png>
 Package luatex.def Info: screenshots/2026-02-24_1.png  used on input line 95.
 (luatex.def)             Requested size: 192.71169pt x 161.39603pt.
+
 Missing character: There is no − (U+2212) in font rm-lmr10!
 Missing character: There is no − (U+2212) in font rm-lmr10!
 Missing character: There is no − (U+2212) in font rm-lmr10!
 Missing character: There is no − (U+2212) in font rm-lmr10!
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 112--116
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-[]\TU/lmr/m/n/10 Be-fore solv-ing our equa-tion, let us first com-pute our equa-
-tion $\OMS/lmsy/m/n/10 r[]\OML/lmm/m/it/10 R[][]$\TU/lmr/m/n/10 . Re-mem-ber
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-\TU/lmr/m/n/10 first that $\OML/lmm/m/it/10 R[][]$ \TU/lmr/m/n/10 is an av-er-ag
-e over the $\OML/lmm/m/it/10 N$ \TU/lmr/m/n/10 train-ing sam-ples. This means fo
-r us that
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
-\TU/lmr/m/n/10 By us-ing the chain rule, the func-tion $[][][]$ has the form $\
-OML/lmm/m/it/10 f[][]$\TU/lmr/m/n/10 , with
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 117.
+Package mdframed Info: mdframed works in twoside mode on input line 116.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 117.
+(mdframed)              on input line 116.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 121.
-[12
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.1
-'
-<./screenshots/2026-02-24_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-[]\TU/lmr/m/n/10 Use-ful rules for ma-trix (or vec-tor) com-pu-ta-tions, can be found in
+[11<./screenshots/2026-02-24_1.png>]
+Underfull \hbox (badness 1946) in paragraph at lines 139--140
+[]\TU/lmr/m/n/10 Us-ing everything we said be-fore, the gradi-ent of the func-ti
+on $\OML/lmm/m/it/10 R[][] \OT1/lmr/m/n/10 =
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-[]\TU/lmr/m/n/10 Us-ing ev-ery-thing we said be-fore, the gra-di-ent of the func
--tion $\OML/lmm/m/it/10 R[][] \OT1/lmr/m/n/10 =
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-[]\TU/lmr/m/n/10 The $\OML/lmm/m/it/10 x[]$ \TU/lmr/m/n/10 has moved to the fron
-t but this make no dif-fer-ence as
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-[]\TU/lmr/m/n/10 As said be-fore, we pre-fer to use ma-trix when deal-ing with 
-ma-chine learn-ing in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\TU/lmr/m/n/10 gen-eral, you can also see here that we are do-ing a sum over pro
-d-uct which kind of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\TU/lmr/m/n/10 look like a ma-trix mul-ti-pli-ca-tion. Let us now group all $[]
-[]$ and all $[][]$ in a ma-trix
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--1
-\TU/lmr/m/n/10 Sounds fa-mil-iar to you? this is the def-i-ni-tion of the least-
-square so-lu-tion we have
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-[]\TU/lmr/m/n/10 A nice thing I want to put here which is not part of the course
- is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
-\TU/lmr/m/n/10 try-ing to do (from the be-gin-ning of this sec-tion), is to min-
-i-mize the
- []
-
-
-Overfull \hbox (7.93294pt too wide) detected at line 185
+[12]
+Overfull \hbox (13.62164pt too wide) detected at line 185
 []
  []
 
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 249--252
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
-\TU/lmr/m/n/10 As we want to min-i-mize, we will take its deriva-tive, which mak
-e the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
-\TU/lmr/m/n/10 As we are look-ing to min-i-mize we seek it to be equal to $\OT1
-/lmr/m/n/10 0$ \TU/lmr/m/n/10 which
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--1
-\TU/lmr/m/n/10 Where $\OML/lmm/m/it/10 X[]$ \TU/lmr/m/n/10 is known as the []Moo
-re-Penrose pseudo-inverse[] of $\OML/lmm/m/it/10 X$ \TU/lmr/m/n/10 (or di-rectly
- the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
-[]\TU/lmr/m/n/10 So if I un-der-stood cor-rectly what the wiki says, the pseudo-
-inverse
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
-\OML/lmm/m/it/10 A[]$ \TU/lmr/m/n/10 and $\OML/lmm/m/it/10 A[]$ \TU/lmr/m/n/10 
-is es-sen-tially the same. The def-i-ni-tion of the pseudo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
-\TU/lmr/m/n/10 inverse of a ma-trix $\OML/lmm/m/it/10 A$ $A[]$ \TU/lmr/m/n/10 sa
-t-isfy all of the four cri-te-rias, known as
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--210
-\TU/lmr/m/n/10 I won’t ex-plain what the two lasts means (be-cause I don’t 
-know),
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
-[]\TU/lmr/m/n/10 As men-tioned be-fore, once we have the op-ti-mal pa-ram-e-ters
- $\OML/lmm/m/it/10 w[]$\TU/lmr/m/n/10 , we can pre-dict $[]$ for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
-[]\TU/lmr/m/n/10 We can pre-dict but is our pre-dic-tion good? To be able to mea
--sure this we need two
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-\TU/lmr/m/n/10 change the pa-ram-e-ters of the model... On the other hand, we ha
-ve never seen any
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-\TU/lmr/m/n/10 eval-u-a-tion met-rics be-fore, a value that could tell us wether
- or not our model is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
-\TU/lmr/m/n/10 We have de-fined a loss func-tion be-fore, why not use it as the eval-u-a-tion met-rics?
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
-\TU/lmr/m/n/10 This func-tion is $\OT1/lmr/m/n/10 0$ \TU/lmr/m/n/10 if the model
- matches per-fectly with all data points, the greater
- []
-
 Package mdframed Info: mdframed works in twoside mode on input line 254.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 254.
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
-\TU/lmr/m/n/10 Where $[]$ is the pre-dic-tion for the test sam-ple $\OML/lmm/m/
-it/10 i$ \TU/lmr/m/n/10 and $\OML/lmm/m/it/10 y[]$ \TU/lmr/m/n/10 is the cor-re-
-spond-ing
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 257.
-[15]
 Package mdframed Info: mdframed works in twoside mode on input line 261.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2458,7 +2166,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 267.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 272.
-<screenshots/2026-02-21.png, id=324, 1921.1775pt x 602.25pt>
+<screenshots/2026-02-21.png, id=329, 1921.1775pt x 602.25pt>
 File: screenshots/2026-02-21.png Graphic file (type png)
 <use screenshots/2026-02-21.png>
 Package luatex.def Info: screenshots/2026-02-21.png  used on input line 281.
@@ -2467,121 +2175,43 @@ Package luatex.def Info: screenshots/2026-02-21.png  used on input line 281.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16
-warning  (pdf backend): ignoring duplicate destination with the name 'table.2.1'
-
-<./screenshots/2026-02-21.png>]
+[15<./screenshots/2026-02-21.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 340.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 340.
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--359
-\TU/lmr/m/n/10 Since the ouputs are multi-dimensional, we need to slightly mod-i
-fy the loss func-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--359
-\TU/lmr/m/n/10 tion, the multi-dimensional coun-ter-part of the $\OT1/lmr/m/n/1
-0 1$\TU/lmr/m/n/10 D least-square loss is the squared
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
-\TU/lmr/m/n/10 as how we did in the single-ouput lin-ear re-gres-sion. To com-pu
-te its gra-di-ent, we
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
-\TU/lmr/m/n/10 Thuse, us-ing the chain rule (and re-plac-ing $[][]$) with $[][]
-$, we
- []
-
-
-Underfull \hbox (badness 1888) in paragraph at lines 382--384
-\TU/lmr/m/n/10 For the ’train-ing’ part, we can again group in a ma-trix $\
-OML/lmm/m/it/10 X \OMS/lmsy/m/n/10 2 \U/msb/m/n/10 R[]$\TU/lmr/m/n/10 , but the
- []
-
-[17
-warning  (pdf backend): ignoring duplicate destination with the name 'table.2.2'
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
-[]\TU/lmr/m/n/10 The eas-i-est clas-si-fi-ca-tion model we can make is a bi-nary
- clas-si-fi-ca-tion one. The
- []
-
-<screenshots/2026-02-24.png, id=342, 1246.6575pt x 876.27374pt>
+ [16]
+<screenshots/2026-02-24.png, id=348, 1246.6575pt x 876.27374pt>
 File: screenshots/2026-02-24.png Graphic file (type png)
 <use screenshots/2026-02-24.png>
 Package luatex.def Info: screenshots/2026-02-24.png  used on input line 401.
 (luatex.def)             Requested size: 249.32709pt x 175.25163pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
-\TU/lmr/m/n/10 But if I have this data in a 2D space, I can also map it to a 3D space by adding
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
-\TU/lmr/m/n/10 the y la-bel into our space. The la-bel acts as the out-put di-me
-n-sion, just as in a
- []
-
-<screenshots/2026-02-24_2.png, id=343, 1050.92625pt x 710.655pt>
+<screenshots/2026-02-24_2.png, id=349, 1050.92625pt x 710.655pt>
 File: screenshots/2026-02-24_2.png Graphic file (type png)
 <use screenshots/2026-02-24_2.png>
 Package luatex.def Info: screenshots/2026-02-24_2.png  used on input line 411.
 (luatex.def)             Requested size: 315.2803pt x 213.19814pt.
+ [17<./screenshots/2026-02-24.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 421--428
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-\TU/lmr/m/n/10 This means that we can now look at this prob-lem as a re-gres-sio
-n task, one can
- []
-
-[18<./screenshots/2026-02-24.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
-[]\TU/lmr/m/n/10 But we can still cre-ate a model on this data, a lin-ear model which can pre-dict the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
-\TU/lmr/m/n/10 To fit the lin-ear model to the train-ing data, the same strat-eg
-y as for the lin-ear
+Underfull \hbox (badness 10000) in paragraph at lines 421--428
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--432
-\TU/lmr/m/n/10 Be-cause it has ex-actly the same for-mu-la-tion as be-fore, the so-lu-tion is ex-actly the
+Underfull \hbox (badness 10000) in paragraph at lines 421--428
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--436
-\TU/lmr/m/n/10 Be-cause we still need to ouput a []\TU/lmr/bx/n/10 la-bel[]\TU/
-lmr/m/n/10 , we will trans-form our con-tin-u-ous value by
+Underfull \hbox (badness 10000) in paragraph at lines 441--1
+
  []
 
-[19<./screenshots/2026-02-24_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
-\TU/lmr/m/n/10 the bound-ary be-tween our two class is of di-men-sion $\OML/lmm
-/m/it/10 D$\TU/lmr/m/n/10 . when we
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
-\TU/lmr/m/n/10 had data of di-men-sion $\OT1/lmr/m/n/10 1$ \TU/lmr/m/n/10 the de
--ci-sion bound-ary was a point (i.e. 0.5
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
-\TU/lmr/m/n/10 above). If our data are in two di-men-sions, the bound-ary will 
-be a
- []
-
-) (./lecture3.tex
+) (./lecture3.tex [18<./screenshots/2026-02-24_2.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 13.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2592,21 +2222,16 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 18.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 19.
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-\TU/lmr/m/n/10 This is a gen-eral ma-chine learn-ing conecpt, this is not used 
-only for lin-ear re-gres-sion,
- []
-
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<screenshots/2026-03-04.png, id=354, 375.4025pt x 418.56375pt>
+<screenshots/2026-03-04.png, id=360, 375.4025pt x 418.56375pt>
 File: screenshots/2026-03-04.png Graphic file (type png)
 <use screenshots/2026-03-04.png>
 Package luatex.def Info: screenshots/2026-03-04.png  used on input line 38.
 (luatex.def)             Requested size: 44.10185pt x 49.17166pt.
+
 
 ! Package pgf Error: No shape named `img2' is known.
 
@@ -2629,7 +2254,7 @@ Type  H <return>  for immediate help.
 l.39 ...ow=6mm of img2] (vdotsL) {\Large$\vdots$};
                                                   
 ? 
-<screenshots/2026-03-04_1.png, id=355, 279.0425pt x 221.82875pt>
+<screenshots/2026-03-04_1.png, id=361, 279.0425pt x 221.82875pt>
 File: screenshots/2026-03-04_1.png Graphic file (type png)
 <use screenshots/2026-03-04_1.png>
 Package luatex.def Info: screenshots/2026-03-04_1.png  used on input line 40.
@@ -2684,49 +2309,13 @@ Type  H <return>  for immediate help.
 l.74 \node at ($(tvd.west)
                           +(-2mm,0)$) {\Large :};
 ? 
-
-Overfull \hbox (10.1635pt too wide) in paragraph at lines 76--77
- [] 
- []
-
-[20]
+[19<./screenshots/2026-03-04.png><./screenshots/2026-03-04_1.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 93.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 93.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 100.
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--1
-\TU/lmr/m/n/10 When we are train-ing our model, the goal is to min-i-mize the em
--pir-i-cal risk -- find
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
-\TU/lmr/m/n/10 This is what we have done when train-ing our lin-ear re-gres-sor.
- Our least-square
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
-\TU/lmr/m/n/10 min-i-miza-tion prob-lem is one ex-am-ple of em-pir-i-cal risk mi
-n-i-miza-tion, us-ing the
- []
-
-[21<./screenshots/2026-03-04.png><./screenshots/2026-03-04_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-[]\TU/lmr/m/n/10 As said be-fore, how we cre-ated clas-si-fi-ca-tion model was 
-di-rectly based from a re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
-\TU/lmr/m/n/10 di-men-sion. For in-stance given data point x with $\OML/lmm/m/i
-t/10 x[]$ \TU/lmr/m/n/10 and $\OML/lmm/m/it/10 x[]$ \TU/lmr/m/n/10 and two calss
-es $\OT1/lmr/m/n/10 0$ \TU/lmr/m/n/10 and
- []
-
 File: screenshots/2026-02-24_2.png Graphic file (type png)
 <use screenshots/2026-02-24_2.png>
 Package luatex.def Info: screenshots/2026-02-24_2.png  used on input line 120.
@@ -2736,259 +2325,58 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 193.
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
-[][]\TU/lmr/bx/n/10 Re-mark 7. []\TU/lmr/m/n/10 I just want to em-pha-size what is go-ing on here. We first try to
- []
+Underfull \hbox (badness 10000) in paragraph at lines 198--205
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
-\TU/lmr/m/n/10 Af-ter this, the goal is to cre-ate a clas-si-fi-ca-tion model fr
-om the model we just
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--211
-\TU/lmr/m/n/10 In gen-eral, for data in $\OML/lmm/m/it/10 D$ \TU/lmr/m/n/10 di-m
-en-sions, this equa-tion de-fines a $\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 D \OMS/l
-msy/m/n/10 ^^@ \OT1/lmr/m/n/10 1)$ \TU/lmr/m/n/10 -
  []
 
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 211.
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-[]\TU/lmr/m/n/10 The out-put of the lin-ear model $\OML/lmm/m/it/10 w[]x$ \TU/l
-mr/m/n/10 is a con-tin-u-ous value. How-ever clas-si-fi-ca-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-\TU/lmr/m/n/10 model out-put a la-bel (a dis-crete value). We there-fore need to
- ’\TU/lmr/m/it/10 cast\TU/lmr/m/n/10 ’ our value be-fore
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
-[]\TU/lmr/m/n/10 How-ever the gra-di-ent of the step func-tion is not con-tin-u-
-ous, this means that us-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-[]\TU/lmr/m/n/10 The per-cep-tron al-go-rithm can nonethe-less han-dle the two-c
-lass case,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
-\TU/lmr/m/n/10 With a 1 $\OML/lmm/m/it/10 D$ \TU/lmr/m/n/10 in-put $\OML/lmm/m/
-it/10 x$\TU/lmr/m/n/10 , ap-ply-ing the lo-gis-tic func-tion to the out-put of 
-a lin-ear model
- []
-
-<screenshots/2026-02-26_2.png, id=380, 1351.0475pt x 401.5pt>
+[20]
+<screenshots/2026-02-26_2.png, id=381, 1351.0475pt x 401.5pt>
 File: screenshots/2026-02-26_2.png Graphic file (type png)
 <use screenshots/2026-02-26_2.png>
 Package luatex.def Info: screenshots/2026-02-26_2.png  used on input line 258.
 (luatex.def)             Requested size: 270.20471pt x 80.29857pt.
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
-[]\TU/lmr/m/n/10 In the bi-nary case, with $\OML/lmm/m/it/10 D$ \TU/lmr/m/n/10 
-di-men-sional in-puts, we can write the pre-dic-tion of the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--268
-\TU/lmr/m/n/10 Such a pre-dic-tion can be in-ter-preted as the prob-a-bil-ity th
-at $\OML/lmm/m/it/10 x$ \TU/lmr/m/n/10 be-longs to the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--268
-\TU/lmr/m/n/10 pos-i-tive class (or as a score for the pos-i-tive class). The pr
-ob-a-bil-ity to be-long the
- []
-
+ [21]
 Package mdframed Info: mdframed works in twoside mode on input line 271.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 271.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 276.
+ [22<./screenshots/2026-02-26_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 348--351
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
-[]\TU/lmr/m/n/10 At its heart, lo-gis-tic re-gres-sion still use a lin-ear model
-, but fol-lowed by a non-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 283--1
-[]\TU/lmr/m/n/10 Given $\OML/lmm/m/it/10 N$ \TU/lmr/m/n/10 train-ing sam-ples, 
-to learn the pa-ram-e-ters $\OML/lmm/m/it/10 w$ \TU/lmr/m/n/10 of the lo-gis-tic
- re-gres-sion model,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
-[]\TU/lmr/m/n/10 Be-cause knowl-edge of prob-a-bil-i-ties is not re-quired for 
-this
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
-\TU/lmr/m/n/10 course, the deriva-tion of the loss func-tion that fol-lows will be a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
-[]\TU/lmr/m/n/10 Specif-i-cally, the lo-gis-tic re-gres-sion loss is de-rived by
- first writ-ing the fol-low-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
-\TU/lmr/m/n/10 Be-cause, a prod-uct of terms be-tween 0 and 1 can be un-sta-ble to op-ti-mize, we take
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
-\TU/lmr/m/n/10 the log-a-rithm of this like-li-hood and take its neg-a-tive to 
-de-fine an em-pri-cial risk to
- []
-
-[24<./screenshots/2026-02-26_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
-[]\TU/lmr/m/n/10 As we have now all did prob-a-bil-ity and statis-tics, we can 
-still build it our-self.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
-\TU/lmr/m/n/10 First, for us to train our model via the max-i-mum like-li-hood 
-es-ti-ma-tor, we need to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
-\TU/lmr/m/n/10 Sec-ondly, lo-gis-tic re-gres-sion as-sumes a prob-a-bil-ity mode
-l for the la-bels. For each
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--359
-\TU/lmr/m/n/10 Then given that we can com-pute the like-li-hood es-ti-ma-tor as we used to. First
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
-\TU/lmr/m/n/10 And as we did in statis-tics, we can take the log of this func-ti
-on and com-put-ing the
- []
-
-[25
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.2
-'
-]
-Underfull \hbox (badness 10000) in paragraph at lines 397--399
-[]\TU/lmr/m/n/10 With 1D func-tion for which the so-lu-tion can-not be com-puted
- in closed form, one can
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
-[]\TU/lmr/m/n/10 Re-call that it rep-re-sents the slope at a given point, and th
-us in-di-cates in which
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 412--414
-[]\TU/lmr/m/n/10 This is nice but we still need po-ten-tial con-ver-gence cri-te
--ria to be sure that our
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-[]\TU/lmr/m/n/10 Max-i-mum num-ber of it-er-a-tions reached, Mean-ing that we ha
-ve no guar-an-tee to
- []
-
+[23]
 Package mdframed Info: mdframed works in twoside mode on input line 418.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 418.
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--425
-\TU/lmr/m/n/10 The rule men-tionned above are more prac-ti-cal cri-te-ria. In pr
-ac-tie we don’t
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 429.
+ [24]
+Underfull \hbox (badness 10000) in paragraph at lines 464--468
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 543--547
+
+ []
+
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 435--436
-[]\TU/lmr/m/n/10 As-sum-ing that our func-tion is con-vex, the al-go-rithm will al-ways
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--436
-\TU/lmr/m/n/10 con-verges to the same point. Choos-ing a good $\OML/lmm/m/it/10
- w[]$ \TU/lmr/m/n/10 will still con-verge
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--1
-\TU/lmr/m/n/10 ever this time. The out-put of our al-go-rithm de-pends now on $
-\OML/lmm/m/it/10 w[]$\TU/lmr/m/n/10 . We can be stuck at
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
-[]\TU/lmr/m/n/10 Note that this is problem-dependent and the val-ues used here 
-are
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
-[]\TU/lmr/m/n/10 The gra-di-ent at a point $\OML/lmm/m/it/10 w$ \TU/lmr/m/n/10 
-has the di-rec-tion of great-est in-crease of the func-tion
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 531--533
-\TU/lmr/m/n/10 To min-i-mize it via gra-di-ent de-scent, we need to com-pute its
- gra-di-ent. Us-ing the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
-\TU/lmr/m/n/10 Where $\OML/lmm/m/it/10 y[]$ \TU/lmr/m/n/10 is the true la-bel fo
-r sam-ple $\OML/lmm/m/it/10 i$\TU/lmr/m/n/10 , i.e. 1 for pos-i-tive sam-ple and
- 0 for neg-a-tive
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
-\TU/lmr/m/n/10 In-tu-itively, the gra-di-ent is given by the er-ror of the cur-r
-ent pre-dic-tion $[][]$,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
-[]\TU/lmr/m/n/10 If we take the pre-vi-ous ex-am-ple and com-pare the least-squa
-re clas-si-fi-ca-tion (in
- []
-
-<screenshots/2026-02-26_5.png, id=431, 881.2925pt x 642.4pt>
+<screenshots/2026-02-26_5.png, id=439, 881.2925pt x 642.4pt>
 File: screenshots/2026-02-26_5.png Graphic file (type png)
 <use screenshots/2026-02-26_5.png>
 Package luatex.def Info: screenshots/2026-02-26_5.png  used on input line 551.
 (luatex.def)             Requested size: 176.25537pt x 128.47772pt.
-<screenshots/2026-02-26_6.png, id=432, 859.21pt x 636.3775pt>
+<screenshots/2026-02-26_6.png, id=440, 859.21pt x 636.3775pt>
 File: screenshots/2026-02-26_6.png Graphic file (type png)
 <use screenshots/2026-02-26_6.png>
 Package luatex.def Info: screenshots/2026-02-26_6.png  used on input line 555.
 (luatex.def)             Requested size: 171.83896pt x 127.27324pt.
-[28]
 Package mdframed Info: mdframed works in twoside mode on input line 558.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2997,66 +2385,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--571
-[]\TU/lmr/m/n/10 To have a bet-ter in-tu-ition of the SVM we first need to in-tr
-o-duce the no-tion of
- []
-
 Package mdframed Info: mdframed works in twoside mode on input line 571.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 571.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 572.
-<figure/2026-02-26.pdf, id=441, 332.24126pt x 272.01625pt>
+<figure/2026-02-26.pdf, id=443, 332.24126pt x 272.01625pt>
 File: figure/2026-02-26.pdf Graphic file (type pdf)
 <use figure/2026-02-26.pdf>
 Package luatex.def Info: figure/2026-02-26.pdf  used on input line 577.
-(luatex.def)             Requested size: 167.2989pt x 136.97488pt.
+(luatex.def)             Requested size: 182.09486pt x 149.08641pt.
+ [27<./screenshots/2026-02-26_5.png><./screenshots/2026-02-26_6.png><./figure/20
+26-02-26.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 586--590
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--588
-\TU/lmr/m/n/10 It aims to max-i-mize the mar-gin while en-forc-ing a cor-rect cl
-as-si-fi-ca-tion for each
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--588
-\TU/lmr/m/n/10 train-ing sam-ples. This is for-mu-lated as a con-vex op-ti-miza-
-tion prob-lem that can be
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
-\TU/lmr/m/n/10 In the pres-ence of ad-di-tional sam-ples, the de-ci-sion bound-a
-ry is un-changed. The goal
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 589--590
-\TU/lmr/m/n/10 of this model is not to have a ’\TU/lmr/m/it/10 weighted mean\
-TU/lmr/m/n/10 ’ it’s more find-ing the []\TU/lmr/bx/n/10 best bound-ary[]
- []
-
-[29<./screenshots/2026-02-26_5.png><./screenshots/2026-02-26_6.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
-[]\TU/lmr/m/n/10 The term $\OMS/lmsy/m/n/10 jj [] jj[]$ \TU/lmr/m/n/10 cor-re-sp
-onds to the in-verse of the mar-gin (dis-tance be-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
-\TU/lmr/m/n/10 tween the de-ci-sion bound-ary and the near-est sam-ple); min-i-m
-iz-ing it seeks to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
-\TU/lmr/m/n/10 is re-ferred to as the []\TU/lmr/bx/n/10 hinge loss[] \TU/lmr/m/
-n/10 and en-cour-ages cor-rectly clas-si-fy-ing each
  []
 
 ) (./lecture4.tex
@@ -3066,56 +2409,25 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 6.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 29.
- [30
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.3
-'
-<./figure/2026-02-26.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-[]\TU/lmr/m/n/10 Let us use a nu-mer-i-cal ex-am-ple for a dataset with 500 pos-
-i-tive and 500 neg-a-tive
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
-[]\TU/lmr/m/n/10 The two clas-si-fiers (ma-tri-ces) above yield the same ac-cu-r
-acy but their be-hav-ior is
- []
-
+ [28]
 Package mdframed Info: mdframed works in twoside mode on input line 103.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 103.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 109.
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--117
+
+ []
+
 Package mdframed Info: mdframed works in twoside mode on input line 117.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 117.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 123.
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--130
-\TU/lmr/m/n/10 But still even with those met-rics, we can still have dif-fer-ent
- be-hav-ior and same
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-\TU/lmr/m/n/10 (0.667 and 0.4) (the datasets are dif-fer-ent). But in this case their be-hav-ior is very
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-\TU/lmr/m/n/10 dif-fer-ent. Ac-cu-racy in this case would be able to show the di
-f-fer-ent be-hav-ior. The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
-\TU/lmr/m/n/10 goal of this ex-am-ple is to show that the more met-rics you have
- the bet-ter your
- []
-
+[29]
 Package mdframed Info: mdframed works in twoside mode on input line 171.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -3129,26 +2441,13 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 184.
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
-[]\TU/lmr/m/n/10 Many clas-si-fiers out-put a score/con-fi-dence for their pre-d
-ic-tion (e.g., $[]$ is a con-tin-u-ous
+Underfull \hbox (badness 10000) in paragraph at lines 187--190
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-\TU/lmr/m/n/10 The de-ci-sion be-tween pos-i-tive and neg-a-tive can be com-pute
-d by thresh-old-ing this
- []
+Underfull \hbox (badness 10000) in paragraph at lines 192--196
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-\TU/lmr/m/n/10 The Re-ceiver Op-er-at-ing Char-ac-ter-is-tic (ROC) curve plots 
-the true pos-i-tive rate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-\TU/lmr/m/n/10 (re-call) as a func-tion of the false pos-i-tive rate, ob-tained by vary-ing the score
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 196.
@@ -3157,103 +2456,38 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 196.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 198.
-[32]
+
 Underfull \hbox (badness 10000) in paragraph at lines 209--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-[]\TU/lmr/m/n/10 There is noth-ing that ex-plic-itly makes this value stop at 1,
- so we could
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-\TU/lmr/m/n/10 The sim-plest way to go from bi-nary case to han-dling mul-ti-ple
- classes would then
+Underfull \hbox (badness 10000) in paragraph at lines 219--222
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-\TU/lmr/m/n/10 This, how-ever makes no sense, there is []\TU/lmr/bx/n/10 no nat-
-u-ral[] \TU/lmr/m/n/10 or-der be-tween the dif-fer-ent
- []
+Underfull \hbox (badness 10000) in paragraph at lines 237--241
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-\TU/lmr/m/n/10 cat-e-gories (the prof trolled us). If we were to do so, this wou
-ld re-ally just comes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-\TU/lmr/m/n/10 down to a lit-teral re-gres-sion task. Fur-ther-more this would 
-im-plies that guess-ing $\OT1/lmr/m/n/10 4$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
-\TU/lmr/m/n/10 in-stead of $\OT1/lmr/m/n/10 3$ \TU/lmr/m/n/10 would be bet-ter 
-than guessin $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 1$ \TU/lmr/m/n/10 and that
-’s com-plete non-sense when
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--1
-[]\TU/lmr/m/n/10 The most com-mon ap-proach to mod-el-ing a multi-class prob-lem
- con-sists of en-cod-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--1
-\TU/lmr/m/n/10 the class la-bel as a vec-tor with a sin-gle $\OT1/lmr/m/n/10 1$
- \TU/lmr/m/n/10 at the in-dex cor-re-spond-ing to the cat-e-gory
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-[]\TU/lmr/m/n/10 We can see it as each la-bel is a di-men-sion in $\U/msb/m/n/1
-0 R[]$\TU/lmr/m/n/10 . A good clas-si-fier
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
-\TU/lmr/m/n/10 would then out-put a vec-tor (as a guess) and this vec-tor needs to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-[]\TU/lmr/m/n/10 Pre-dict-ing such a one-hot en-cod-ing is then sim-i-lar to mak
--ing the model out-put
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--245
-\TU/lmr/m/n/10 where each $\OML/lmm/m/it/10 y[]$ \TU/lmr/m/n/10 is now a $\OML/
-lmm/m/it/10 C$\TU/lmr/m/n/10 -dimensional vec-tor with a sin-gle one at the in-d
-ex cor-re-
  []
 
 Package mdframed Info: mdframed works in twoside mode on input line 246.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 246.
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
-\TU/lmr/m/n/10 You can also see it as $\OML/lmm/m/it/10 C$ \TU/lmr/m/n/10 in-de-
-pen-dant bi-nary clas-si-fier. You can seper-ate each
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 249.
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
-\TU/lmr/m/n/10 The so-lu-tion has the same form as in the re-gres-sion case (ob-
-tained by ze-ro-ing out
- []
-
-[33]
+[31]
 Package mdframed Info: mdframed works in twoside mode on input line 270.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -3264,41 +2498,22 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 276.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 277.
-<figure/2026-03-05.pdf, id=490, 206.7725pt x 178.6675pt>
+<figure/2026-03-05.pdf, id=493, 206.7725pt x 178.6675pt>
 File: figure/2026-03-05.pdf Graphic file (type pdf)
 <use figure/2026-03-05.pdf>
 Package luatex.def Info: figure/2026-03-05.pdf  used on input line 282.
-(luatex.def)             Requested size: 146.39133pt x 126.49493pt.
+(luatex.def)             Requested size: 159.33821pt x 137.68344pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-[]\TU/lmr/m/n/10 A nice fea-ture of those bound-aries is that they are []\TU/lm
-r/bx/n/10 con-vex[]\TU/lmr/m/n/10 . Re-call that a set $\OML/lmm/m/it/10 S$ \TU
-/lmr/m/n/10 is
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
-[]\TU/lmr/m/n/10 For 1 and 3 this is quite in-tu-itive but what hap-pens when we
- have 4 classes, if
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
-\TU/lmr/m/n/10 we take the fol-low-ing data set: (put an im-age here) We would 
-get this as de-ci-sion
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
-[]\TU/lmr/m/n/10 As in the bi-nary case, multi-class least-square clas-si-fi-ca-
-tion suf-fers from the fact that
- []
-
-
+[32<./figure/2026-03-05.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 315--320
 
  []
@@ -3308,72 +2523,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--320
 
  []
 
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 374--381
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
-[]\TU/lmr/m/n/10 The em-pri-cal risk can then be de-rived from the multi-class 
-ver-sion of the cross
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
-\TU/lmr/m/n/10 As in the bi-nary case, a sin-gle $\OML/lmm/m/it/10 y[]$ \TU/lmr
-/m/n/10 is $\OT1/lmr/m/n/10 1$ \TU/lmr/m/n/10 for ev-ery sam-ple $\OML/lmm/m/it
-/10 i$\TU/lmr/m/n/10 , so we re-ally have one
+Underfull \hbox (badness 10000) in paragraph at lines 374--381
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
-\TU/lmr/m/n/10 term per train-ing sam-ple. And also as in the bi-nary case, trai
-n-ing is done by
- []
+Underfull \hbox (badness 10000) in paragraph at lines 374--381
 
-[35
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.2.4
-'
-<./figure/2026-03-05.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
-[]\TU/lmr/m/n/10 By fol-low-ing the chain rule and us-ing the gra-di-ent of the soft-max func-tion, we
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
-[]\TU/lmr/m/n/10 A global ac-cu-racy can be ob-tained by sum-ming the cor-rect 
-pre-dic-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
-\TU/lmr/m/n/10 tions for all classes (di-ag-o-nal val-ues of the con-fu-sion ma-
-trix), and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
-\TU/lmr/m/n/10 di-vid-ing this by the to-tal num-ber of sam-ples (sum of all en-
-tries in
- []
-
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
-[]\TU/lmr/m/n/10 The sim-plest ap-proach to han-dling these met-rics is to com-p
-ute
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
-\TU/lmr/m/n/10 In this case, each in-di-vid-ual class is in turn con-sid-ered as
- the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
-\TU/lmr/m/n/10 This does not ac-count for class im-bal-ance (some classes may ha
-ve
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
-\TU/lmr/m/n/10 This can be han-dled by weight-ing the met-ric for each class by a
  []
 
 
@@ -3381,148 +2543,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 383--386
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
-[]\TU/lmr/m/n/10 A so-lu-tion is to use sev-eral bi-nary clas-si-fiers. E.g., on
-e-vs-rest: Clas-sify each
- []
-
-<figure/2026-03-05_1.pdf, id=518, 215.80624pt x 205.76875pt>
+<figure/2026-03-05_1.pdf, id=516, 215.80624pt x 205.76875pt>
 File: figure/2026-03-05_1.pdf Graphic file (type pdf)
 <use figure/2026-03-05_1.pdf>
 Package luatex.def Info: figure/2026-03-05_1.pdf  used on input line 390.
-(luatex.def)             Requested size: 128.46576pt x 122.49513pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
-\TU/lmr/m/n/10 This how-ever, leaves am-bi-gu-i-ties (e.g., sam-ple can be clas-
-si-fied as be-ing from both
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
-[]\TU/lmr/m/n/10 We can only train it as one-vs-one: train one clas-si-fier for ev-ery pair of classes. With
- []
-
-<figure/2026-03-05_2.pdf, id=519, 220.825pt x 197.73875pt>
+(luatex.def)             Requested size: 126.47469pt x 120.59244pt.
+<figure/2026-03-05_2.pdf, id=517, 220.825pt x 197.73875pt>
 File: figure/2026-03-05_2.pdf Graphic file (type pdf)
 <use figure/2026-03-05_2.pdf>
 Package luatex.def Info: figure/2026-03-05_2.pdf  used on input line 398.
-(luatex.def)             Requested size: 146.81322pt x 131.47047pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--1
-\TU/lmr/m/n/10 This also may re-sult in in-con-sis-ten-cies (e.g., a sam-ple can
- be clas-si-fied as be-ing from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
-\TU/lmr/m/n/10 than one class (i.e., in the first so-lu-tion, the green part wou
-ld be
- []
-
-[37<./figure/2026-03-05_1.pdf><./figure/2026-03-05_2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-\TU/lmr/m/n/10 In prac-tice, one al-most never uses the least-square one. It doe
-s not re-flect the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
-\TU/lmr/m/n/10 un-der-ly-ing clas-si-fi-ca-tion task, but is use-ful from a ped-
-a-gog-i-cal stand-point. But so
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
-\TU/lmr/m/n/10 The value $\OML/lmm/m/it/10 C$ \TU/lmr/m/n/10 is a hyper-paramete
-r en-cod-ing ’reg-u-lar-iza-tion’ strength. We will talk
- []
-
+(luatex.def)             Requested size: 144.53777pt x 129.43384pt.
+[34<./figure/2026-03-05_1.pdf><./figure/2026-03-05_2.pdf>]
 Package mdframed Info: mdframed works in twoside mode on input line 459.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 459.
-
-Underfull \hbox (badness 10000) in paragraph at lines 467--469
-\TU/lmr/m/n/10 And If I un-der-stand cor-rectly why chat-gpt said to me both $\
-OML/lmm/m/it/10 C$ \TU/lmr/m/n/10 here are com-
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 469.
-) (./lecture5.tex [38]
-<screenshots/2026-03-10.png, id=540, 913.4125pt x 688.5725pt>
+) (./lecture5.tex
+[35]
+<screenshots/2026-03-10.png, id=538, 913.4125pt x 688.5725pt>
 File: screenshots/2026-03-10.png Graphic file (type png)
 <use screenshots/2026-03-10.png>
 Package luatex.def Info: screenshots/2026-03-10.png  used on input line 4.
 (luatex.def)             Requested size: 274.02586pt x 206.57333pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-[]\TU/lmr/m/n/10 The in-tu-ition is that sim-i-lar data sam-ples have the same 
-la-bel. For in-stance if we
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-\TU/lmr/m/n/10 take Maya glyph recog-ni-tion (Hu et al., 2017) given a test sam-
-ple, we look at the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-\TU/lmr/m/n/10 train-ing sam-ple that look a lot like the in-put sam-ple and out
--put the same ouput.
- []
-
-<screenshots/2026-03-10_1.png, id=541, 1072.005pt x 693.59125pt>
+<screenshots/2026-03-10_1.png, id=539, 1072.005pt x 693.59125pt>
 File: screenshots/2026-03-10_1.png Graphic file (type png)
 <use screenshots/2026-03-10_1.png>
 Package luatex.def Info: screenshots/2026-03-10_1.png  used on input line 20.
 (luatex.def)             Requested size: 321.60399pt x 208.07898pt.
-[39<./screenshots/2026-03-10.png><./screenshots/2026-03-10_1.png>]
-<screenshots/2026-03-10_2.png, id=550, 895.345pt x 645.41125pt>
+<screenshots/2026-03-10_2.png, id=540, 895.345pt x 645.41125pt>
 File: screenshots/2026-03-10_2.png Graphic file (type png)
 <use screenshots/2026-03-10_2.png>
 Package luatex.def Info: screenshots/2026-03-10_2.png  used on input line 27.
 (luatex.def)             Requested size: 268.60558pt x 193.62486pt.
+ [36<./screenshots/2026-03-10.png><./screenshots/2026-03-10_1.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 33.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 33.
-<screenshots/2026-03-10_3.png, id=551, 835.12pt x 631.35875pt>
+<screenshots/2026-03-10_3.png, id=550, 835.12pt x 631.35875pt>
 File: screenshots/2026-03-10_3.png Graphic file (type png)
 <use screenshots/2026-03-10_3.png>
 Package luatex.def Info: screenshots/2026-03-10_3.png  used on input line 57.
 (luatex.def)             Requested size: 250.53793pt x 189.40909pt.
- [40<./screenshots/2026-03-10_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
-\TU/lmr/m/n/10 An-other prop-er-ties of the nn al-go-rithm is that our re-sults may be sen-si-tive to
- []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-\TU/lmr/m/n/10 This is the idea be-hind the k-nearest al-go-rithm. In-stead of 
-tak-ing only the near-est,
- []
-
-[41<./screenshots/2026-03-10_3.png>]
+[37<./screenshots/2026-03-10_2.png>] [38<./screenshots/2026-03-10_3.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 120.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 120.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-[]\TU/lmr/m/n/10 What about per-for-mance, if we take the MNIST clas-si-fi-ca-ti
-on (which has 10’000
- []
-
-
-Overfull \hbox (23.65784pt too wide) in paragraph at lines 128--139
- [] 
- []
-
-
-Overfull \hbox (50.01784pt too wide) in paragraph at lines 143--158
+Overfull \hbox (13.0274pt too wide) in paragraph at lines 143--158
  [] 
  []
 
@@ -3531,46 +2603,16 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 161.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
-[]$\OML/lmm/m/it/10 k$ \TU/lmr/m/n/10 is said to be a []\TU/lmr/bx/n/10 hyper-pa
-rameter[]\TU/lmr/m/n/10 , set man-u-ally (or by val-i-da-tion, which we
+Underfull \hbox (badness 10000) in paragraph at lines 186--190
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
-\TU/lmr/m/n/10 As we have seen be-fore, k-nn can be a very good a pre-dict-ing 
-but there is al-ways a
- []
-
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
-[]\TU/lmr/m/n/10 In the real world, data rep-re-sen-ta-tions tend to be high di-
-men-sional, e.g., vec-tor-iz-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
-\TU/lmr/m/n/10 In such high di-men-sion, all points tend to be far apart and we tends to have what
- []
-
-<screenshots/2026-03-10_4.png, id=590, 1039.885pt x 431.6125pt>
+<screenshots/2026-03-10_4.png, id=577, 1039.885pt x 431.6125pt>
 File: screenshots/2026-03-10_4.png Graphic file (type png)
 <use screenshots/2026-03-10_4.png>
 Package luatex.def Info: screenshots/2026-03-10_4.png  used on input line 191.
 (luatex.def)             Requested size: 259.97061pt x 107.90285pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
-[]\TU/lmr/m/n/10 For-tu-nately, real data of-ten lies in much smaller sub-spaces
-, what we means by that
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
-\TU/lmr/m/n/10 Span-ning a smaller spaces might be enough. In a few weeks, we wi
-ll talk about how
- []
-
-[43<./screenshots/2026-03-10_4.png>]
+[39] [40<./screenshots/2026-03-10_4.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 281--284
 
  []
@@ -3605,67 +2647,14 @@ Package pgfplots Warning: the current plot has no coordinates (or all have been
  filtered away) on input line 353.
 
  [warning /pgfplots/warning/plot without coordinates]
-[44]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 435--438
 
  []
 
+[42] [43]
+Underfull \hbox (badness 10000) in paragraph at lines 500--503
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--455
-\TU/lmr/m/n/10 An im-por-tant thing to un-der-stand here is that we are just ex-
-pand-ing our in-put to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--455
-\TU/lmr/m/n/10 our usual lin-ear model, noth-ing more. In essence, poly-no-mial fea-ture ex-pan-sion uses
- []
-
-[45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 490--492
-[]\TU/lmr/m/n/10 In all the ex-am-ples con-sid-ered be-fore, the map-ping $\OML
-/lmm/m/it/10 '$ \TU/lmr/m/n/10 in-creases the di-men-sion-al-ity of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
-\TU/lmr/m/n/10 Higher di-men-sion give us more []\TU/lmr/bx/n/10 flex-i-bil-ity[]\TU/lmr/m/n/10 . There is a the-o-rem called Cover
-’s
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
-\TU/lmr/m/n/10 Note that it is im-por-tant for the map-ping $\OML/lmm/m/it/10 '$ \TU/lmr/m/n/10 to be []\TU/lmr/bx/n/10 non-lin-ear[]\TU/lmr/m/n/10 . A lin-ear map-ping
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
-\TU/lmr/m/n/10 would not re-sult in a non-lin-ear model in the orig-i-nal space.
- To show this, let us
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
-\TU/lmr/m/n/10 con-sider the fol-low-ing lin-ear map-ping from a 2D in-put $\OM
-L/lmm/m/it/10 x$ \TU/lmr/m/n/10 to a 3D rep-re-sen-ta-tion
- []
-
-[47]
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
-\TU/lmr/m/it/10 dant\TU/lmr/m/n/10 ’. If $\OML/lmm/m/it/10 '$ \TU/lmr/m/n/10 
-was a lin-ear func-tion, then the job of this func-tion could
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
-\TU/lmr/m/n/10 al-ready been made by the model. The goal of adding a di-men-sion
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
-\TU/lmr/m/n/10 was to do the job that the lin-ear model couldn’t do. Lit-er-al
-y any
  []
 
 ) (./lecture6.tex
@@ -3673,104 +2662,30 @@ Package mdframed Info: mdframed works in twoside mode on input line 2.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-\TU/lmr/m/n/10 A com-plex pattern-classification prob-lem, cast in a high-dimens
-ional space
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-\TU/lmr/m/n/10 non-lin-early, is more likely to be lin-early sep-a-ra-ble than 
-in a low-dimensional
- []
-
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--13
-[]\TU/lmr/m/n/10 As we have moved from lin-ear mod-els to non-lin-ear ones, we 
-have ob-tained in-creas-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-[]\TU/lmr/m/n/10 We can han-dle clas-si-fi-ca-tion prob-lems in which the classe
-s are non-lin-early
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
-\TU/lmr/m/n/10 The num-ber of neigh-bors $\OML/lmm/m/it/10 k$ \TU/lmr/m/n/10 in-
-flu-ences a lot of our al-go-rithm re-act for in-stance let us
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-\TU/lmr/m/n/10 we are try-ing to an-swer is, what $\OML/lmm/m/it/10 k$ \TU/lmr/
-m/n/10 is the best and first, what a low $\OML/lmm/m/it/10 k$ \TU/lmr/m/n/10 do,
- what a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-[]\TU/lmr/m/n/10 Let’s look at typ-i-cal train-ing and test curves (from T. Sr
-i-vas-tava @ An-a-lyt-icsVid-
- []
-
+ [44]
 <screenshots/2026-03-11.png, id=617, 1223.57124pt x 649.42625pt>
 File: screenshots/2026-03-11.png Graphic file (type png)
 <use screenshots/2026-03-11.png>
 Package luatex.def Info: screenshots/2026-03-11.png  used on input line 29.
 (luatex.def)             Requested size: 367.0742pt x 194.82938pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--1
-\TU/lmr/m/n/10 As we can see when hav-ing low $\OML/lmm/m/it/10 k$ \TU/lmr/m/n/
-10 we are []\TU/lmr/bx/n/10 over-fit-ting[]\TU/lmr/m/n/10 , mean-ing that copied
- our
+Overfull \hbox (5.72426pt too wide) in paragraph at lines 29--30
+ [] 
  []
 
-[48]
 Package mdframed Info: mdframed works in twoside mode on input line 36.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 36.
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-[]\TU/lmr/m/n/10 Those are gen-eral phe-nomenons. And we can of-ten links the er
--ror/fit-ting to the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-\TU/lmr/m/n/10 model com-plex-ity. By in-creas-ing the com-plex-ity we are also more prone to have
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-\TU/lmr/m/n/10 bet-ter re-sults on our train-ing data, maybe too much which we 
-will lead us to have a
- []
-
-<screenshots/2026-03-11_1.png, id=627, 782.925pt x 465.74pt>
+<screenshots/2026-03-11_1.png, id=618, 782.925pt x 465.74pt>
 File: screenshots/2026-03-11_1.png Graphic file (type png)
 <use screenshots/2026-03-11_1.png>
 Package luatex.def Info: screenshots/2026-03-11_1.png  used on input line 44.
 (luatex.def)             Requested size: 234.8793pt x 139.72307pt.
-[49<./screenshots/2026-03-11.png><./screenshots/2026-03-11_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-[]\TU/lmr/m/n/10 The fol-low-ing ma-te-rial was adapted from An-drew Moore’s 
-cross-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-[]\TU/lmr/m/n/10 Let us have a re-gres-sion prob-lem with a 1D in-put $\OML/lmm
-/m/it/10 x$ \TU/lmr/m/n/10 and a 1D out-put $\OML/lmm/m/it/10 y$\TU/lmr/m/n/10 
-. We are
- []
-
-<screenshots/2026-03-11_2.png, id=635, 731.73375pt x 582.175pt>
+[45<./screenshots/2026-03-11.png>]
+<screenshots/2026-03-11_2.png, id=628, 731.73375pt x 582.175pt>
 File: screenshots/2026-03-11_2.png Graphic file (type png)
 <use screenshots/2026-03-11_2.png>
 Package luatex.def Info: screenshots/2026-03-11_2.png  used on input line 64.
@@ -3780,31 +2695,18 @@ File: screenshots/2026-03-11_2.png Graphic file (type png)
 Package luatex.def Info: screenshots/2026-03-11_2.png  used on input line 68.
 (luatex.def)             Requested size: 146.34415pt x 116.43294pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-\TU/lmr/m/n/10 What we truly care about is how well the model is go-ing to pre-d
-ict fu-ture data
+Underfull \hbox (badness 10000) in paragraph at lines 70--73
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-\TU/lmr/m/n/10 drawn from the same dis-tri-bu-tion. To do so, why not sim-u-late
- data based on our
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-[]\TU/lmr/m/n/10 We take our train-ing data which we will split into two parts, one as the []\TU/lmr/bx/n/10 train-ing
- []
-
-<screenshots/2026-03-11_3.png, id=636, 1362.08875pt x 442.65375pt>
+<screenshots/2026-03-11_3.png, id=629, 1362.08875pt x 442.65375pt>
 File: screenshots/2026-03-11_3.png Graphic file (type png)
 <use screenshots/2026-03-11_3.png>
 Package luatex.def Info: screenshots/2026-03-11_3.png  used on input line 77.
 (luatex.def)             Requested size: 272.41292pt x 88.52917pt.
+[46<./screenshots/2026-03-11_1.png><./screenshots/2026-03-11_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-[]\TU/lmr/m/n/10 As an al-ter-na-tive method for the val-i-da-tion set method, 
-we can use []\TU/lmr/bx/n/10 LOOCV[]\TU/lmr/m/n/10 : we
  []
 
 <screenshots/2026-03-24.png, id=637, 698.61pt x 648.4225pt>
@@ -3812,27 +2714,14 @@ File: screenshots/2026-03-24.png Graphic file (type png)
 <use screenshots/2026-03-24.png>
 Package luatex.def Info: screenshots/2026-03-24.png  used on input line 97.
 (luatex.def)             Requested size: 139.71951pt x 129.68219pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-\TU/lmr/m/n/10 and we ther-fore fit 9 mod-els, one for each points, we get the 
-fol-low-ing curve (for a
- []
-
 <screenshots/2026-03-24_1.png, id=638, 1016.79875pt x 881.2925pt>
 File: screenshots/2026-03-24_1.png Graphic file (type png)
 <use screenshots/2026-03-24_1.png>
 Package luatex.def Info: screenshots/2026-03-24_1.png  used on input line 101.
 (luatex.def)             Requested size: 203.35614pt x 176.25537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
-\TU/lmr/m/n/10 For each of those model we have []\TU/lmr/bx/n/10 one[] \TU/lmr/
-m/n/10 test data which will gives us an er-ror, given
- []
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
-\TU/lmr/m/n/10 But is this the best model? Now we can check and be pretty sure 
-about our metri-ics.
  []
 
 <screenshots/2026-03-24_2.png, id=639, 1035.87pt x 874.26625pt>
@@ -3840,10 +2729,9 @@ File: screenshots/2026-03-24_2.png Graphic file (type png)
 <use screenshots/2026-03-24_2.png>
 Package luatex.def Info: screenshots/2026-03-24_2.png  used on input line 107.
 (luatex.def)             Requested size: 207.17032pt x 174.85014pt.
-[50<./screenshots/2026-03-11_2.png><./screenshots/2026-03-11_3.png>] [51<./scree
-nshots/2026-03-24.png><./screenshots/2026-03-24_1.png><./screenshots/2026-03-24_
-2.png>]
-<screenshots/2026-03-24_3.png, id=656, 654.445pt x 609.27625pt>
+[47<./screenshots/2026-03-11_3.png><./screenshots/2026-03-24.png><./screenshots/
+2026-03-24_1.png>]
+<screenshots/2026-03-24_3.png, id=649, 654.445pt x 609.27625pt>
 File: screenshots/2026-03-24_3.png Graphic file (type png)
 <use screenshots/2026-03-24_3.png>
 Package luatex.def Info: screenshots/2026-03-24_3.png  used on input line 128.
@@ -3855,143 +2743,27 @@ Package luatex.def Info: screenshots/2026-03-24_3.png  used on input line 128.
 l.147 	$N$-fold & Identival to Leave-one-out&&
                                               \\
 ? 
-
-Overfull \hbox (21.73935pt too wide) in paragraph at lines 134--150
- [] 
- []
-
+[48<./screenshots/2026-03-24_2.png><./screenshots/2026-03-24_3.png>]
 Package mdframed Info: mdframed works in twoside mode on input line 152.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 152.
+ [49]
+Underfull \hbox (badness 10000) in paragraph at lines 221--225
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-[]\TU/lmr/m/n/10 For this, one treats each value of the hyper-parameter as a sep
--a-rate
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\TU/lmr/m/n/10 How-ever, it be-comes im-prac-ti-val with too many can-di-dates, for ex-am-ple, one can-not
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\TU/lmr/m/n/10 choose which com-bi-na-tion of func-tions to use for fea-tures ex
--pan-sion among a very
- []
-
-[52<./screenshots/2026-03-24_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 175--1
-[]\TU/lmr/m/n/10 Be-cause the lin-ear model is sim-ple, over-fit-ting oc-curs fa
-irly rarely. Nev-er-the-less, if
- []
-
-
-Underfull \hbox (badness 1715) in paragraph at lines 180--182
-\TU/lmr/m/n/10 The in-put di-men-sions is $\OML/lmm/m/it/10 D \OT1/lmr/m/n/10 + 1$ \TU/lmr/m/n/10 and the pa-ram-e-ter vec-tor is $\OML/lmm/m/it/10 w \OMS/lmsy/m/n/10 2
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-\TU/lmr/m/n/10 This im-plies that we have a lin-ear sys-tems with $\OML/lmm/m/i
-t/10 N$ \TU/lmr/m/n/10 equa-tions and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
-\TU/lmr/m/n/10 Where $\OML/lmm/m/it/10 R[][]$ \TU/lmr/m/n/10 is the em-pir-i-cal
- risk and $\OML/lmm/m/it/10 E[][][]$ \TU/lmr/m/n/10 is the reg-u-lariyer. $\OML
-/lmm/m/it/10 $ \TU/lmr/m/n/10 is a hyper-
- []
-
-[53]
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
-\TU/lmr/m/n/10 As we can see the only dif-fer-ences is the new $\OT1/lmr/m/n/10
- 2\OML/lmm/m/it/10 w$\TU/lmr/m/n/10 , the other terms is the same as
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-[]\TU/lmr/m/n/10 ul-ti-mately if we group the in-puts in a ma-trix $\OT1/lmr/m/
-n/10 $ \TU/lmr/m/n/10 and the out-put in a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
-\TU/lmr/m/n/10 This also en-sures that we can ac-tu-ally find a so-lu-tion, that
- the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-[]\TU/lmr/m/n/10 For peo-ple who have done cs-328, this is the Tikhonov reg-u-la
-riy-a-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-\TU/lmr/m/n/10 tion tech-nic that we have seen. In cs-328 the goal of reg-u-lar-
-iza-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-\TU/lmr/m/n/10 was to []\TU/lmr/bx/n/10 im-prove the con-di-tion num-ber[] \TU/
-lmr/m/n/10 of a prob-lem. The ge-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-\TU/lmr/m/n/10 o-met-ric in-ter-pre-ta-tion was that the ad-di-tion of an iden-t
-iy ma-tric
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-\TU/lmr/m/n/10 causes the ma-trix to scale in-put vec-tors uni-formly in dif-fer
--ent
- []
-
-<figure/2026-03-24.pdf, id=669, 500.87125pt x 240.9pt>
+<figure/2026-03-24.pdf, id=661, 500.87125pt x 240.9pt>
 File: figure/2026-03-24.pdf Graphic file (type pdf)
 <use figure/2026-03-24.pdf>
 Package luatex.def Info: figure/2026-03-24.pdf  used on input line 238.
-(luatex.def)             Requested size: 236.72632pt x 113.85524pt.
+(luatex.def)             Requested size: 232.17534pt x 111.66812pt.
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 247--251
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
-\TU/lmr/m/n/10 And this is the same thing as what we said above, the goal here
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-[]\TU/lmr/m/n/10 Note that the reg-u-lar-izer af-fects the op-ti-mal value of th
-e pa-ram-e-ters, but not the
- []
-
-[54<./figure/2026-03-24.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
-[]\TU/lmr/m/n/10 When deal-ing with mul-ti-ple out-put dimes-nions, the pa-ram-e
--ters are ex-pressed in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-[]\TU/lmr/m/n/10 The scikit-learn im-ple-men-ta-tion of lo-gis-tic re-gres-sion has such an $\OML/lmm/m/it/10 L[]$ \TU/lmr/m/n/10 reg-u-lar-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-[]\TU/lmr/m/n/10 Note that the use of a reg-u-lar-izer leads to an-other hyper-p
-arameter for the model,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-\TU/lmr/m/n/10 what we wanted and the rea-son on why we have in-tro-duced it in the first place).
- []
-
-) (./lecture7.tex [55]
+) (./lecture7.tex [51<./figure/2026-03-24.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 12--15
 
  []
@@ -4005,7 +2777,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 
  []
 
-[56]
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 36--41
 
  []
@@ -4016,30 +2788,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--41
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
-\TU/lmr/m/n/10 It has two hyper-parameters, the bias $\OML/lmm/m/it/10 c$ \TU/l
-mr/m/n/10 and the de-gree of the poly-no-mial $\OML/lmm/m/it/10 d$ \TU/lmr/m/n/
-10 (of-ten
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-\TU/lmr/m/n/10 For such ker-nels, the cor-re-spond-ing map-pings $\OML/lmm/m/it
-/10 '$ \TU/lmr/m/n/10 are know, for ex-am-ple, with a 2D
+Underfull \hbox (badness 1661) in paragraph at lines 47--51
+\TU/lmr/m/n/10 For such ker-nels, the cor-res-pond-ing map-pings $\OML/lmm/m/it
+/10 '$ \TU/lmr/m/n/10 are know, for ex-ample,
  []
 
 
-Overfull \hbox (44.45537pt too wide) detected at line 58
+Overfull \hbox (50.14407pt too wide) detected at line 58
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-[]\TU/lmr/m/n/10 In the-ory, this ker-nel cor-re-sponds to a map-ping to an in-f
-i-nite
+Underfull \hbox (badness 10000) in paragraph at lines 69--1
+
  []
 
-[57]
 Package pgfplots info on input line 109: Using 'lua backend=false' for plot 0 (
 type 'mesh'): non-uniform color maps unsupported currently.
 Package pgfplots info on input line 117: Using 'lua backend=false' for plot 0 (
@@ -4047,155 +2815,36 @@ type 'mesh'): non-uniform color maps unsupported currently.
 Package pgfplots info on input line 125: Using 'lua backend=false' for plot 0 (
 type 'mesh'): non-uniform color maps unsupported currently.
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-[]\TU/lmr/m/n/10 Since a ker-nel func-tion cor-re-sponds to a sim-i-lar-ity, as a dot prod-uct, one can re-place
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
+
  []
 
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 144--147
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-\TU/lmr/m/n/10 any dot prod-uct be-tween two sam-ples in the so-lu-tion of an ma
--chine learn-ing al-go-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
-[]\TU/lmr/m/n/10 As men-tioned be-fore, the ker-nel func-tion com-putes a sim-i-
-lar-ity be-tween two sam-ples.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
-\TU/lmr/m/n/10 to en-code the sim-i-lar-ity be-tween one sam-ple and all train-i
-ng sam-ples, rep-re-sented
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
-\TU/lmr/m/n/10 con-tains the ker-nel func-tion eval-u-ated be-tween train-ing sa
-m-ple $\OML/lmm/m/it/10 i$ \TU/lmr/m/n/10 and train-ing sam-ple
- []
-
-[58]
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-\TU/lmr/m/n/10 At first sight, it may seem that $\OT1/lmr/m/n/10 []$ \TU/lmr/
-m/n/10 con-tains the dot prod-ucts that we want to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-\TU/lmr/m/n/10 re-place with a ker-nel func-tion. How-ever, $\OT1/lmr/m/n/10 [
-]$ \TU/lmr/m/n/10 is an $\OML/lmm/m/it/10 F \OMS/lmsy/m/n/10  \OML/lmm/m/it/1
-0 F$ \TU/lmr/m/n/10 ma-trix en-cod-ing dot
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-\TU/lmr/m/n/10 prod-ucts be-tween the dif-fer-ent fea-ture di-men-sions, not the
- dif-fer-ent sam-ples. A
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
-\TU/lmr/m/n/10 ker-nel ma-trix, con-tain-ing the dot prod-ucts be-tween ev-ery 
-pair of train-ing sam-ples
- []
-
-Package mdframed Info: mdframed works in twoside mode on input line 167.
+[54]
+Package mdframed Info: mdframed works in twoside mode on input line 166.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 167.
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\TU/lmr/m/n/10 The min-i-mizer of a reg-u-lar-ized em-pir-i-cal risk func-tion 
-can be rep-re-sented as a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\TU/lmr/m/n/10 lin-ear com-bi-na-tion of the points in the high di-men-sional sp
-ace. That is, we can
- []
-
+(mdframed)              on input line 166.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 171.
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\TU/lmr/m/n/10 In gen-eral if I am try-ing to find the min-i-mizer, then I can 
-rep-re-sent the vec-tor $\OML/lmm/m/it/10 w[]$ \TU/lmr/m/n/10 as
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
-\TU/lmr/m/n/10 a lin-ear com-bi-na-tion of my train-ing sam-ples, with some co-e
-f-fi-cients $\OML/lmm/m/it/10 []$\TU/lmr/m/n/10 . There-fore
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
-\TU/lmr/m/n/10 But now we have the dot prod-ucts that we needed be-fore. This im
--plies that we can
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
-\TU/lmr/m/n/10 Fol-low-ing the same rea-son-ing as for lin-ear re-gres-sion, we can write this ma-trix form
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
-\TU/lmr/m/n/10 This so-lu-tion still de-pends on $\OT1/lmr/m/n/10 $\TU/lmr/m/n
-/10 , which we ar-gued could be un-known? But do we
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
-\TU/lmr/m/n/10 care about com-put-ing the weights? In prac-tice, this is not a 
-prob-lem, be-cause our
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
-\TU/lmr/m/n/10 goal is to make pre-dic-tions for new sam-ples, we do not re-ally
- care about hav-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
-\TU/lmr/m/n/10 Not that the quan-tity $\OML/lmm/m/it/10 y[][][][]$ \TU/lmr/m/n/
-10 only de-pends on the train-ing data, and thus can be
- []
-
-[59]
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
-\TU/lmr/m/n/10 The task is to com-pute the ker-nel ma-trix cor-re-spond-ing to 
-a poly-no-mial ker-nel of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
-\TU/lmr/m/n/10 What we would want here is to also trans-late it to a ker-nel. To
- do so we can use the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
-\TU/lmr/m/n/10 Fol-low-ing the same rea-son-ing as with-out reg-u-lar-izer, we 
-can write the gra-di-ent of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
-\TU/lmr/m/n/10 Given $\OML/lmm/m/it/10 []$\TU/lmr/m/n/10 , one can then ex-pres
-s $\OML/lmm/m/it/10 W[]$ \TU/lmr/m/n/10 math-e-mat-i-cally as in the case with-o
-ut reg-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
-\TU/lmr/m/n/10 u-lar-iza-tion, and even-tu-ally use this for-mu-la-tion to make pre-dic-tions for the test
- []
-
-[60]
+[55]
 Underfull \hbox (badness 10000) in paragraph at lines 253--256
 
  []
@@ -4204,30 +2853,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 256.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 256.
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-[]\TU/lmr/m/n/10 It can also be used to ob-tain a non-lin-ear ver-sion of SVM (v
-ia the so-called
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-[]\TU/lmr/m/n/10 Not that lo-gis-tic re-gres-sion can also be ker-nel-ized al-th
-ough this is less com-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
-[]\TU/lmr/m/n/10 E.g., for ker-nel ridge re-gres-sion, one needs to in-vert an
- []
-
-) (./lecture8.tex [61]
-Underfull \hbox (badness 10000) in paragraph at lines 6--8
-[]\TU/lmr/m/n/10 Let us first re-mem-ber what data we are talk-ing about when ta
-lk-ing about ma-chine
- []
-
-
+[56]) (./lecture8.tex
 Underfull \hbox (badness 10000) in paragraph at lines 22--22
 
  []
@@ -4237,61 +2863,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--43
 
  []
 
-
+[57]
 Underfull \hbox (badness 10000) in paragraph at lines 72--75
 
  []
 
-[62]
+
 Underfull \hbox (badness 10000) in paragraph at lines 97--100
 
  []
 
-<screenshots/2026-04-13.png, id=741, 869.2475pt x 407.5225pt>
+[58]
+<screenshots/2026-04-13.png, id=734, 869.2475pt x 407.5225pt>
 File: screenshots/2026-04-13.png Graphic file (type png)
 <use screenshots/2026-04-13.png>
 Package luatex.def Info: screenshots/2026-04-13.png  used on input line 115.
 (luatex.def)             Requested size: 260.77626pt x 122.25769pt.
-<screenshots/2026-04-13_1.png, id=742, 585.18625pt x 279.0425pt>
+<screenshots/2026-04-13_1.png, id=735, 585.18625pt x 279.0425pt>
 File: screenshots/2026-04-13_1.png Graphic file (type png)
 <use screenshots/2026-04-13_1.png>
 Package luatex.def Info: screenshots/2026-04-13_1.png  used on input line 119.
 (luatex.def)             Requested size: 175.55722pt x 83.7134pt.
-[63<./screenshots/2026-04-13.png><./screenshots/2026-04-13_1.png>]
-<screenshots/2026-04-13_2.png, id=748, 882.29625pt x 558.085pt>
+<screenshots/2026-04-13_2.png, id=736, 882.29625pt x 558.085pt>
 File: screenshots/2026-04-13_2.png Graphic file (type png)
 <use screenshots/2026-04-13_2.png>
 Package luatex.def Info: screenshots/2026-04-13_2.png  used on input line 131.
 (luatex.def)             Requested size: 264.69092pt x 167.42679pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
-\TU/lmr/m/n/10 The re-sult-ing rep-re-sen-ta-tions can be di-rectly used as in-p
-ut to a ma-chine learn-ing
+Underfull \hbox (badness 10000) in paragraph at lines 142--146
+
  []
 
+[59<./screenshots/2026-04-13.png><./screenshots/2026-04-13_1.png><./screenshots/
+2026-04-13_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--1
-[]\TU/lmr/m/n/10 For in-stance let us as-sume that some at-tribute val-ues were not recorded (e.g. the Air
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-[]\TU/lmr/m/n/10 Fill in the miss-ing val-ues with the cor-re-spond-ing at-tribu
-te
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
-[]\TU/lmr/m/n/10 Fill in the miss-ing val-ues with the cor-re-spond-ing at-tribu
-te
- []
-
-[64<./screenshots/2026-04-13_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 192--1
-[]\TU/lmr/m/n/10 The goal of this tech-nique is to scale each in-di-vid-ual at-t
-ribute/fea-ture di-men-sion to
- []
-
+[60]
 ! Missing { inserted.
 <to be read again> 
                    ^
@@ -4316,161 +2925,730 @@ l.229 		\end{align*}
 l.229 		\end{align*}
                     
 ? 
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
-[]\TU/lmr/m/n/10 For all data pro-cess-ing tech-niques, the nor-mal-ized (or cle
-aned) fea-tures are then
- []
 
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
-\TU/lmr/m/n/10 Nev-er-the-less, even with good rep-re-sen-ta-tions, the data set
- it-self might make from
  []
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-<screenshots/2026-04-13_3.png, id=765, 824.07875pt x 319.1925pt>
+<screenshots/2026-04-13_3.png, id=754, 824.07875pt x 319.1925pt>
 File: screenshots/2026-04-13_3.png Graphic file (type png)
 <use screenshots/2026-04-13_3.png>
 Package luatex.def Info: screenshots/2026-04-13_3.png  used on input line 257.
 (luatex.def)             Requested size: 247.22552pt x 95.75848pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-[]\TU/lmr/m/n/10 In or-der to have a model that still work, there is two main ap
--proaches, one act on
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-\TU/lmr/m/n/10 the []\TU/lmr/bx/n/10 data[]\TU/lmr/m/n/10 : Sam-pling Meth-ods, the other act on the cost func-tion: Cost Sen-si-tive
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--1
-[]\TU/lmr/m/n/10 The is-sue we are fac-ing here is the lack of data, in or-der 
-to com-pen-sate we can
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
-[]\TU/lmr/m/n/10 Ran-domly re-move sam-ples from the largest class un-til you
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-\TU/lmr/m/n/10 A more clever un-der-sam-pling would be to re-move the data point
+[61<./screenshots/2026-04-13_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-\TU/lmr/m/n/10 that we ’\TU/lmr/m/it/10 don’t need\TU/lmr/m/n/10 ’ -- the re-dun-dant sam-ples. Imag-ine that we have
+Underfull \hbox (badness 1527) in paragraph at lines 279--282
+\TU/lmr/m/n/10 A more clever over-sampling would be to cre-ate new data
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
-\TU/lmr/m/n/10 change much the dis-tri-bu-tion of the data. This meth-ods is goo
-d if
- []
-
-[66<./screenshots/2026-04-13_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
-[]\TU/lmr/m/n/10 Repli-cate the data sam-ples from the small-est class un-til yo
-u
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
-\TU/lmr/m/n/10 A more clever over-sam-pling would be to cre-ate new data points
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
-\TU/lmr/m/n/10 based on neigh-bour-ing ex-ist-ing ones, mean-ing we take to sam-
-ple
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
-[]\TU/lmr/m/n/10 SMOTE: Syn-thetic mi-nor-ity over-sam-pling tech-nique (CHawla et al., JAIR
- []
-
-<screenshots/2026-04-13_4.png, id=778, 825.0825pt x 368.37625pt>
+<screenshots/2026-04-13_4.png, id=768, 825.0825pt x 368.37625pt>
 File: screenshots/2026-04-13_4.png Graphic file (type png)
 <use screenshots/2026-04-13_4.png>
 Package luatex.def Info: screenshots/2026-04-13_4.png  used on input line 291.
 (luatex.def)             Requested size: 330.02715pt x 147.34789pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
-\TU/lmr/m/n/10 In gen-eral, each loss term $\OML/lmm/m/it/10 l[][]$ \TU/lmr/m/n
-/10 has the same in-flu-ence. With im-bal-anced data,
+Underfull \hbox (badness 10000) in paragraph at lines 299--303
+
+ []
+
+[62<./screenshots/2026-04-13_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 331--334
+
+ []
+
+) (./lecture9.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
-\TU/lmr/m/n/10 this means that most of the em-pir-i-cal risk comes from the larg
-est class. A sim-ple
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
+
+ []
+
+<screenshots/2026-04-21.png, id=774, 916.42375pt x 603.25375pt>
+File: screenshots/2026-04-21.png Graphic file (type png)
+<use screenshots/2026-04-21.png>
+Package luatex.def Info: screenshots/2026-04-21.png  used on input line 16.
+(luatex.def)             Requested size: 274.92924pt x 180.97751pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--25
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
-[]\TU/lmr/m/n/10 Note that $\OML/lmm/m/it/10 []$ \TU/lmr/m/n/10 can-not be op-t
-i-mized, be-cause the op-ti-mal so-lu-tion
+Underfull \hbox (badness 10000) in paragraph at lines 27--31
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
-\TU/lmr/m/n/10 would sim-ply be to set all of them to $\OT1/lmr/m/n/10 0$\TU/lm
-r/m/n/10 . In-stead they are man-u-ally,
+Underfull \hbox (badness 1360) in paragraph at lines 27--31
+\TU/lmr/m/n/10 However, as men-tioned in a pre-vi-ous lec-ture, lin-ear fea-ture
+ ex-pan-sion is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--327
-\TU/lmr/m/n/10 In the three cases, since the weights are fixed dur-ing op-ti-miz
-a-tion, the re-spec-tive
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
+
  []
 
-[67<./screenshots/2026-04-13_4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
-[]\TU/lmr/m/n/10 The rep-re-sen-ta-tions and data pro-cess-ing strate-gies we ha
-ve dis-cussed so far were
+[63] [64<./screenshots/2026-04-21.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
+
+ []
+
+<screenshots/2026-04-21_1.png, id=785, 1301.86375pt x 495.8525pt>
+File: screenshots/2026-04-21_1.png Graphic file (type png)
+<use screenshots/2026-04-21_1.png>
+Package luatex.def Info: screenshots/2026-04-21_1.png  used on input line 82.
+(luatex.def)             Requested size: 325.46513pt x 123.96281pt.
+[65] [66<./screenshots/2026-04-21_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
-\TU/lmr/m/n/10 all man-u-ally de-signed. There is, how-ever no guar-an-tee that they are the best
+Underfull \hbox (badness 10000) in paragraph at lines 242--245
+
  []
 
-) [68]
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--255
+
+ []
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
+
+ []
+
+[68]
+<screenshots/2026-04-21_3.png, id=820, 767.86874pt x 447.6725pt>
+File: screenshots/2026-04-21_3.png Graphic file (type png)
+<use screenshots/2026-04-21_3.png>
+Package luatex.def Info: screenshots/2026-04-21_3.png  used on input line 320.
+(luatex.def)             Requested size: 230.3624pt x 134.30278pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--340
+
+ []
+
+[69<./screenshots/2026-04-21_3.png>]
+<screenshots/2026-04-22.png, id=828, 550.055pt x 533.995pt>
+File: screenshots/2026-04-22.png Graphic file (type png)
+<use screenshots/2026-04-22.png>
+Package luatex.def Info: screenshots/2026-04-22.png  used on input line 375.
+(luatex.def)             Requested size: 110.00905pt x 106.7971pt.
+<screenshots/2026-04-22_1.png, id=829, 651.43375pt x 592.2125pt>
+File: screenshots/2026-04-22_1.png Graphic file (type png)
+<use screenshots/2026-04-22_1.png>
+Package luatex.def Info: screenshots/2026-04-22_1.png  used on input line 379.
+(luatex.def)             Requested size: 130.28444pt x 118.4404pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+<screenshots/2026-04-22_2.png, id=830, 1258.7025pt x 601.24625pt>
+File: screenshots/2026-04-22_2.png Graphic file (type png)
+<use screenshots/2026-04-22_2.png>
+Package luatex.def Info: screenshots/2026-04-22_2.png  used on input line 389.
+(luatex.def)             Requested size: 314.67485pt x 150.31119pt.
+[70<./screenshots/2026-04-22.png><./screenshots/2026-04-22_1.png>]
+<screenshots/2026-04-22_3.png, id=837, 1182.4175pt x 654.445pt>
+File: screenshots/2026-04-22_3.png Graphic file (type png)
+<use screenshots/2026-04-22_3.png>
+Package luatex.def Info: screenshots/2026-04-22_3.png  used on input line 414.
+(luatex.def)             Requested size: 331.07465pt x 183.24335pt.
+<screenshots/2026-04-22_4.png, id=838, 913.4125pt x 695.59875pt>
+File: screenshots/2026-04-22_4.png Graphic file (type png)
+<use screenshots/2026-04-22_4.png>
+Package luatex.def Info: screenshots/2026-04-22_4.png  used on input line 418.
+(luatex.def)             Requested size: 219.22348pt x 166.94711pt.
+ [71<./screenshots/2026-04-22_2.png><./screenshots/2026-04-22_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 433--438
+
+ []
+
+<screenshots/2026-04-22_5.png, id=845, 624.3325pt x 381.425pt>
+File: screenshots/2026-04-22_5.png Graphic file (type png)
+<use screenshots/2026-04-22_5.png>
+Package luatex.def Info: screenshots/2026-04-22_5.png  used on input line 445.
+(luatex.def)             Requested size: 187.3012pt x 114.42838pt.
+<screenshots/2026-04-22_6.png, id=846, 1660.2025pt x 542.025pt>
+File: screenshots/2026-04-22_6.png Graphic file (type png)
+<use screenshots/2026-04-22_6.png>
+Package luatex.def Info: screenshots/2026-04-22_6.png  used on input line 453.
+(luatex.def)             Requested size: 415.0496pt x 135.5059pt.
+
+Overfull \hbox (53.69966pt too wide) in paragraph at lines 453--454
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--462
+
+ []
+
+[72<./screenshots/2026-04-22_4.png><./screenshots/2026-04-22_5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 478--482
+
+ []
+
+[73<./screenshots/2026-04-22_6.png>]) (./lecture10.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
+
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 10--13
+\TU/lmr/m/n/10 Note that each con-vo-lu-tional out-put is passed in an ac-tiv-a-
+tion func-tion.
+ []
+
+<screenshots/2026-04-28.png, id=860, 1521.685pt x 360.34625pt>
+File: screenshots/2026-04-28.png Graphic file (type png)
+<use screenshots/2026-04-28.png>
+Package luatex.def Info: screenshots/2026-04-28.png  used on input line 14.
+(luatex.def)             Requested size: 304.3316pt x 72.06796pt.
+<screenshots/2026-04-28_1.png, id=861, 1328.965pt x 634.37pt>
+File: screenshots/2026-04-28_1.png Graphic file (type png)
+<use screenshots/2026-04-28_1.png>
+Package luatex.def Info: screenshots/2026-04-28_1.png  used on input line 18.
+(luatex.def)             Requested size: 265.78828pt x 126.87175pt.
+[74<./screenshots/2026-04-28.png><./screenshots/2026-04-28_1.png>]
+<screenshots/2026-04-28_2.png, id=869, 1279.78125pt x 356.33125pt>
+File: screenshots/2026-04-28_2.png Graphic file (type png)
+<use screenshots/2026-04-28_2.png>
+Package luatex.def Info: screenshots/2026-04-28_2.png  used on input line 36.
+(luatex.def)             Requested size: 383.93733pt x 106.90019pt.
+
+Overfull \hbox (22.58739pt too wide) in paragraph at lines 36--37
+ [] 
+ []
+
+<screenshots/2026-04-28_3.png, id=870, 689.57625pt x 384.43625pt>
+File: screenshots/2026-04-28_3.png Graphic file (type png)
+<use screenshots/2026-04-28_3.png>
+Package luatex.def Info: screenshots/2026-04-28_3.png  used on input line 44.
+(luatex.def)             Requested size: 206.87447pt x 115.33176pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
+
+ []
+
+<screenshots/2026-04-28_4.png, id=871, 1285.80376pt x 320.19624pt>
+File: screenshots/2026-04-28_4.png Graphic file (type png)
+<use screenshots/2026-04-28_4.png>
+Package luatex.def Info: screenshots/2026-04-28_4.png  used on input line 71.
+(luatex.def)             Requested size: 385.74411pt x 96.0596pt.
+
+Overfull \hbox (24.39417pt too wide) in paragraph at lines 71--72
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
+
+ []
+
+[75<./screenshots/2026-04-28_2.png><./screenshots/2026-04-28_3.png><./screenshot
+s/2026-04-28_4.png>]
+<screenshots/2026-04-28_5.png, id=880, 1785.67125pt x 410.53375pt>
+File: screenshots/2026-04-28_5.png Graphic file (type png)
+<use screenshots/2026-04-28_5.png>
+Package luatex.def Info: screenshots/2026-04-28_5.png  used on input line 91.
+(luatex.def)             Requested size: 535.7055pt x 123.16107pt.
+
+Overfull \hbox (174.35556pt too wide) in paragraph at lines 91--92
+ [] 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.103 	\end{align*}
+                   
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.103 	\end{align*}
+                   
+? 
+! Missing { inserted.
+<inserted text> 
+                {
+l.103 	\end{align*}
+                   
+? 
+! Missing { inserted.
+<inserted text> 
+                {
+l.103 	\end{align*}
+                   
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.103 	\end{align*}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+
+! LaTeX Error: \begin{align*} on input line 99 ended by \end{center}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.103 	\end{align*}
+                   
+? 
+! Misplaced \cr.
+\math@cr@@@ ...wtrue \fi \global \lineht@ \z@ \cr 
+                                                  
+l.103 	\end{align*}
+                   
+? 
+! Misplaced \cr.
+\measure@ ...olumn@ \z@ \add@amps \maxfields@ \cr 
+                                                  }}\restorecounters@ \ifodd...
+l.103 	\end{align*}
+                   
+? 
+! Extra }, or forgotten $.
+\measure@ ...lumn@ \z@ \add@amps \maxfields@ \cr }
+                                                  }\restorecounters@ \ifodd ...
+l.103 	\end{align*}
+                   
+? 
+! Extra }, or forgotten $.
+\measure@ ...umn@ \z@ \add@amps \maxfields@ \cr }}
+                                                  \restorecounters@ \ifodd \...
+l.103 	\end{align*}
+                   
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   >
+l.103 	\end{align*}
+                   
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   >
+l.103 	\end{align*}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.103 	\end{align*}
+                   
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.103 	\end{align*}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.103 	\end{align*}
+                   
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.103 	\end{align*}
+                   
+? 
+! Missing { inserted.
+<inserted text> 
+                {
+l.103 	\end{align*}
+                   
+? 
+! Missing { inserted.
+<inserted text> 
+                {
+l.103 	\end{align*}
+                   
+? 
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.103 	\end{align*}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.103 	\end{align*}
+                   
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.103 	\end{align*}
+                   
+? 
+
+! LaTeX Error: \begin{tcb@savebox} on input line 88 ended by \end{center}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 	\end{align*}
+                   
+? 
+! Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.103 	\end{align*}
+                   
+? 
+! Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.103 	\end{align*}
+                   
+? 
+! Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.103 	\end{align*}
+                   
+? 
+! Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.103 	\end{align*}
+                   
+? 
+
+! LaTeX Error: \begin{tcb@savebox} on input line 88 ended by \end{align*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 	\end{align*}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.103 	\end{align*}
+                   
+? 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.103 	\end{align*}
+                   
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--118
+
+ []
+
+
+! LaTeX Error: \begin{parag} on input line 88 ended by \end{tcb@savebox}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 \end{parag}
+                 
+? 
+! Undefined control sequence.
+\tcb@set@normal@unbroken@beforeafter ...b@nobreak 
+                                                  \iftcb@ignorenobreak \else...
+l.119 \end{parag}
+                 
+? 
+! Extra \else.
+\tcb@drawcolorbox ...l@unbroken@beforeafter \else 
+                                                  \edef \tcb@before@unbroken...
+l.119 \end{parag}
+                 
+? 
+! Extra \fi.
+\tcb@drawcolorbox ...loat \tcb@float@env@end }\fi 
+                                                  \setcounter {tcbbreakpart}...
+l.119 \end{parag}
+                 
+? 
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `\fps@tcbfloat ') on input line 119.
+
+
+! LaTeX Error: Unknown float option `\fps@tcbfloat '.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 \end{parag}
+                 
+? 
+! Undefined control sequence.
+<argument> \the \dimexpr \tcb@width 
+                                    +\kvtcb@bbright \relax 
+l.119 \end{parag}
+                 
+? 
+! Undefined control sequence.
+<argument> \tcb@width 
+                      
+l.119 \end{parag}
+                 
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.119 \end{parag}
+                 
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.119 \end{parag}
+                 
+? 
+! Undefined control sequence.
+<argument> \tcb@width 
+                      -\kvtcb@right@rule 
+l.119 \end{parag}
+                 
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \tcb@footnote@cnt@i 
+l.119 \end{parag}
+                 
+? 
+
+! LaTeX Error: \begin{document} ended by \end{paragbox}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 \end{parag}
+                 
+? 
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.119 \end{parag}
+                 
+? 
+
+! LaTeX Error: \begin{document} ended by \end{parag}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119 \end{parag}
+                 
+? 
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.119 \end{parag}
+                 
+? 
+<screenshots/2026-04-28_6.png, id=881, 1619.04875pt x 472.76625pt>
+File: screenshots/2026-04-28_6.png Graphic file (type png)
+<use screenshots/2026-04-28_6.png>
+Package luatex.def Info: screenshots/2026-04-28_6.png  used on input line 127.
+(luatex.def)             Requested size: 242.84683pt x 70.91187pt.
+<screenshots/2026-04-28_7.png, id=882, 1567.8575pt x 519.9425pt>
+File: screenshots/2026-04-28_7.png Graphic file (type png)
+<use screenshots/2026-04-28_7.png>
+Package luatex.def Info: screenshots/2026-04-28_7.png  used on input line 132.
+(luatex.def)             Requested size: 235.16847pt x 77.988pt.
+<screenshots/2026-04-28_8.png, id=883, 1139.25626pt x 690.58pt>
+File: screenshots/2026-04-28_8.png Graphic file (type png)
+<use screenshots/2026-04-28_8.png>
+Package luatex.def Info: screenshots/2026-04-28_8.png  used on input line 137.
+(luatex.def)             Requested size: 170.88106pt x 103.58252pt.
+<screenshots/ResNet.png, id=884, 1127.21124pt x 488.82625pt>
+File: screenshots/ResNet.png Graphic file (type png)
+<use screenshots/ResNet.png>
+Package luatex.def Info: screenshots/ResNet.png  used on input line 143.
+(luatex.def)             Requested size: 169.07439pt x 73.32077pt.
+[76<./screenshots/2026-04-28_6.png><./screenshots/2026-04-28_7.png><./screenshot
+s/2026-04-28_8.png><./screenshots/ResNet.png>]
+<figure/2026-04-28.pdf, id=892, 459.7175pt x 574.145pt>
+File: figure/2026-04-28.pdf Graphic file (type pdf)
+<use figure/2026-04-28.pdf>
+Package luatex.def Info: figure/2026-04-28.pdf  used on input line 148.
+(luatex.def)             Requested size: 108.40608pt x 135.38841pt.
+<figure/2026-04-28_1.pdf, id=893, 567.11874pt x 118.4425pt>
+File: figure/2026-04-28_1.pdf Graphic file (type pdf)
+<use figure/2026-04-28_1.pdf>
+Package luatex.def Info: figure/2026-04-28_1.pdf  used on input line 155.
+(luatex.def)             Requested size: 361.34995pt x 75.47038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
+
+ []
+
+[77<./figure/2026-04-28.pdf><./figure/2026-04-28_1.pdf>]
+<screenshots/2026-04-28_11.png, id=904, 1397.22pt x 601.24625pt>
+File: screenshots/2026-04-28_11.png Graphic file (type png)
+<use screenshots/2026-04-28_11.png>
+Package luatex.def Info: screenshots/2026-04-28_11.png  used on input line 194.
+
+(luatex.def)             Requested size: 279.43906pt x 120.24712pt.
+<screenshots/2026-04-28_12.png, id=905, 1349.04pt x 648.4225pt>
+File: screenshots/2026-04-28_12.png Graphic file (type png)
+<use screenshots/2026-04-28_12.png>
+Package luatex.def Info: screenshots/2026-04-28_12.png  used on input line 205.
+
+(luatex.def)             Requested size: 202.34726pt x 97.25917pt.
+<screenshots/2026-04-28_13.png, id=906, 1653.17625pt x 451.6875pt>
+File: screenshots/2026-04-28_13.png Graphic file (type png)
+<use screenshots/2026-04-28_13.png>
+Package luatex.def Info: screenshots/2026-04-28_13.png  used on input line 219.
+
+(luatex.def)             Requested size: 330.6294pt x 90.33589pt.
+) [78<./screenshots/2026-04-28_11.png><./screenshots/2026-04-28_12.png><./screen
+shots/2026-04-28_13.png>] [79] [80
+
+]
 Chapter 3.
-[69
-
-] (./main.aux)
+[81] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8A03A7902CAA6766C91D5001E79E8009;5982.
+(rerunfilecheck)             Checksum: 002A279BD66A5B3D96365D0E9AE9075F;6308.
 )
 
 Here is how much of LuaTeX's memory you used:
- 56287 strings out of 476076
- 382243,3417909 words of node,token memory allocated
- 1183 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 4 sub_mlist
-, 3 glyph, 24 attribute, 156 glue_spec, 24 attribute_list, 2 shape, 2 write, 3 p
+ 66718 strings out of 476076
+ 477629,3417909 words of node,token memory allocated
+ 1271 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 6 sub_mlist
+, 3 glyph, 59 attribute, 156 glue_spec, 30 attribute_list, 2 shape, 2 write, 3 p
 df_action nodes
-   avail lists: 1:27,2:39327,3:36899,4:439,5:655,6:96,7:9861,8:116,9:1846,10:25,
-11:435,12:1
- 76790 multiletter control sequences out of 65536+600000
- 130 fonts using 9829567 bytes
- 110i,22n,120p,1930b,2876s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></usr/share/
-texmf-dist/fonts/opentype/public/lm/lmroman8-bold.otf>{/usr/share/texmf-dist/fon
-ts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.en
+   avail lists: 1:26,2:59966,3:37022,4:476,5:709,6:102,7:9598,8:116,9:1808,10:28
+,11:398
+ 87040 multiletter control sequences out of 65536+600000
+ 132 fonts using 14675983 bytes
+ 110i,22n,120p,1930b,2872s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf-dist/fonts
+/opentype/public/lm/lmmono8-regular.otf></usr/share/texmf-dist/fonts/opentype/pu
+blic/lm/lmroman8-bold.otf>{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.en
 c}</usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf>{/usr/sha
 re/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/open
 type/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public
@@ -4487,25 +3665,27 @@ texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fo
 nts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/
 public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/
 lmroman17-regular.otf></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></
-usr/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf-dist/font
-s/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10
-.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-d
-ist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm
-/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/te
-xmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/lm/lmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></us
-r/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fo
-nts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm7.pfb>
-Output written on main.pdf (69 pages, 4327362 bytes).
+usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/lm/lmbx9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10
+.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/l
+m/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/t
+exmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
+/usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/font
+s/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb
+></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fo
+nts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10
+.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-di
+st/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm7.pfb>
+Output written on main.pdf (81 pages, 7091592 bytes).
 
-PDF statistics: 986 PDF objects out of 1000 (max. 8388607)
- 782 compressed objects within 8 object streams
- 319 named destinations out of 1000 (max. 1048576)
- 332 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1132 PDF objects out of 1200 (max. 8388607)
+ 883 compressed objects within 9 object streams
+ 373 named destinations out of 1000 (max. 1048576)
+ 348 words of extra memory for PDF output out of 10000 (max. 100000000)
 

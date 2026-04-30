@@ -190,15 +190,14 @@ The fact that $c$ is an abscissa of convergence for $g$ can be shown by hand, wi
 
 
 \begin{parag}{Convolution}
-    Let $f, g : \mathbb{R}_+ \to \mathbb{C}$ functions that are piecewise continuous. We extends this function by $0$ on $\left(-\infty, 0\right)$. Then we can again defined the convolution as we did in previous section 
+    Let $f, g : \mathbb{R}_+ \to \mathbb{C}$ functions that are piecewise continuous. By extending those functions by $0$ on $\left(-\infty, 0\right)$. We can again defined the convolution as we did in previous section 
 	\begin{align*} 
-		f \ast g\left(t\right) &= \int_{-\infty}^{\infty}f\left(t-s\right)g\left(s\right)ds \\
-		&= \begin{cases}
+		f \ast g\left(t\right) &= \int_{-\infty}^{\infty}f\left(t-s\right)g\left(s\right)ds = \begin{cases}
 			\int_{0}^{t}f\left(t-s\right)g\left(s\right)ds \mathspace \mathspace t > 0\\
 			0 \mathspace \mathspace \mathspace\text{ otherwise}
 		\end{cases}
 	\end{align*}
-	We can cut out bornes on our integral because $g\left(s\right) = 0$ when $s < 0$ therefore all the interval $\left(-\infty, 0\right)$ doesn't have any effect on the result of our integral. Also, when $s > t$, the argument of $f$ becomes negative which also makes the value integrated $0$. Therefore only when $s \in \left(0, t\right)$ we have a non trivial contribution to our integral.\\
+	The reason for the case is that we can cut out bornes on our integral. Notice that $g\left(s\right) = 0$ when $s < 0$ therefore all the interval $\left(-\infty, 0\right)$ doesn't have any effect on the result of our integral (as $f\left(t- s\right)g\left(s\right) = 0$ there). Also, when $s > t$, the argument of $f$ becomes negative which also makes the value integrated $0$. Therefore only when $s \in \left(0, t\right)$ we have a non trivial contribution to our integral.\\
 	$ $\\
 	In particular $f \ast g$ can be restricted back to $ \mathbb{R}_+$ since its values on $\left(-\infty, 0\right)$ are trivial. That way we can regard $f \ast g : \mathbb{R}_+ \to \mathbb{C}$ and compute its Laplace transform.
 \begin{theoreme}
