@@ -8,7 +8,7 @@ Until now our model has been define as
 \end{align*}
 In order to model data that weren't linearly 'correlated' we introduced feature expansion and kernel method (inherently) which map data to a different representation. The goal was to use a map $\phi\left(\cdot\right)$ in order to transform the input nonlinearly which gives more flexibility.\\
 $ $\\
-The issue with all of those were that all of those data processing strategies we have discussed so far were all manually designed (the transformation corresponding to a kernel is still defined manually). There is, however no guarantee that they are the best representations for the task at hand. Ideally, one would therefore like to learn the representation jointly with the classifier.
+The issue with all of those were that all of the data processing strategies we have discussed so far were all manually designed (the transformation corresponding to a kernel is still defined manually). There is, however no guarantee that they are the best representations for the task at hand. Ideally, one would therefore like to learn the representation jointly with the classifier.
 
 \begin{parag}{Motivating example: Curve fitting}
     In the 1D input and 1D output scenario, we would like to find a mapping from $x$ to $y$ that approximates the curve below.
@@ -27,13 +27,13 @@ The issue with all of those were that all of those data processing strategies we
 	\end{align*}
 	and then apply a linear model with parameters $W_{\left(2\right)} \in \mathbb{R}^{M \times 1}$ to the resulting representation to predict $y$.\\
 	$ $\\
-	However, as mentioned in a previous lecture, linear feature expansion is useless; you can achieve the same results with just one linear model. Therefore an interesting thing here would be to add \important{nonlineariry} in the process. To achieve this, we will use a nonlinear function $f: \mathbb{R} \to \mathbb{R}$. But before that we need to define on what this function will be applied.
+	However, as mentioned in a previous lecture, linear feature expansion is useless; you can achieve the same results with just one linear model. Therefore an interesting thing here would be to add \important{nonlinearity} in the process. To achieve this, we will use a nonlinear function $f: \mathbb{R} \to \mathbb{R}$. But before that we need to define on what this function will be applied.
 	\begin{align*} 
 		a_{\left(1\right)} =  W_{\left(1\right)}^{T} \begin{pmatrix} 1 \\ x \end{pmatrix}  = \begin{pmatrix} W_{\left(1\right)}^{\left(1, 0\right)} + W_{\left(1\right)}^{\left(1, 1\right)}x \\ W_{\left(1\right)}^{\left(2, 0\right)}  + W_{\left(1\right)}^{\left(2, 1\right)}x\\ \vdots \\ W_{\left(1\right)}^{\left(M, 0\right)} + W_{\left(1\right)}^{\left(M, 1\right)}x \end{pmatrix} = \begin{pmatrix} a_{\left(1\right)}^{\left(1\right)} \\ a_{\left(1\right)}^{\left(2\right)} \\ \vdots \\ a_{\left(1\right)}^{\left(M\right)} \end{pmatrix} 
 	\end{align*}
-	But first let us step back a bit and think on what we just did and \important{why} is it different (we will come back to this later).\\
+	But first let us step back a bit and think on what we just did and \important{why} is it different (we will come back to this later) (I meant like writing in it down on your own).\\
 	$ $\\
-	Then, our parametric feature expansion process can be expressed as 
+	So we first apply a linear model to our parameter and then we apply our function to that result:
 	\begin{align*} 
 		x \to \begin{pmatrix} f\left(a_{\left(1\right)}^{\left(1\right)}\right) \\ f\left(a_{\left(1\right)}^{\left(2\right)}\right)\\ \vdots \\ f\left(a_{\left(1\right)}^{\left(M\right)}\right) \end{pmatrix} f\left(W_{\left(1\right)}^{T}\begin{pmatrix} 1 \\ x \end{pmatrix} \right)
 	\end{align*}
@@ -45,9 +45,9 @@ The issue with all of those were that all of those data processing strategies we
 
 
 \begin{parag}{Activation function: Examples}
-    There is a lot of activation function out there. The goal of those functions is always to \textit{replace} the identity function. There is three main function as such, namely:
+    There is a lot of activation function out there. The goal of those functions is always to add nonlinearity to our model. There is three main function as such, namely:
 	\begin{itemize}
-	\item Sigmoid: \begin{align*} f\left(a\right) = \frac{1}{1 + \exp\left(-=\right)} \end{align*}
+	\item Sigmoid: \begin{align*} f\left(a\right) = \frac{1}{1 + \exp\left(-a\right)} \end{align*}
 	\item Hyperbolic tangent:
 		\begin{align*} f\left(a\right) =  \tanh\left(a\right) \end{align*}
 		\item Rectified Linear Unit (ReLU)
@@ -57,6 +57,7 @@ The issue with all of those were that all of those data processing strategies we
 				\end{cases} =  \max\left(a, 0\right)
 			\end{align*}
 	\end{itemize}
+	As you can see all of those function has something in common, their slope '\textit{coincide}' with the one of the identity function. The goal of the activation function is to '\textit{replace}' the identity, therefore an important properties that they must hold is that their derivatives is $\geq 0$.
 \end{parag}
 
 
@@ -193,12 +194,16 @@ The issue with all of those were that all of those data processing strategies we
 
 
 \begin{parag}{$ $}
-    
-
-	Because we use a matrix vector product for each layer, the layers are called fully connected.
+	Because we use a matrix vector product for each layer, the layers are called \important{fully connected}.\\
+	$ $\\
+	A thing I found interesting here is how this relates to a classical linear models. If we were to also draw the diagram of a classic linear models meaning 
+	\begin{align*} 
+		\hat{y} = f\left(W_{\left(1\right)}^{T}x\right)
+	\end{align*}
+	How would that look like? This architecture output would be the same as the one above except the hidden layer would have only \important{one} hidden unit.
 \end{parag}
-
-As we can see here, even with a single hidden layer, one can already model complicated functions. The \important{Universal approximation theorem} states that a sufficiently large feed forward network with a non-linear activation can approximate any continuous function on a compact domain to arbitrary precision. But why stop at just one hidden layer?
+$ $\\
+As we can see here, even with a single hidden layer, one can already model complicated functions. The \important{Universal approximation theorem} states that a sufficiently large feed forward network with a non-linear activation can approximate any continuous function on a compact domain to arbitrary precision. So why would we care about adding more layers? The answer lies on how most real world function are defined. Most of them are not arbitrary continuous function, they are \important{compositions of simpler functions} which in the CNN section we will show that having deep networks naturally models it. But first to understand that let's us try and see what happens. 
 
 
 \begin{parag}{Multilayer Perceptron}
@@ -235,7 +240,7 @@ For regression, the loss function is typically the square loss
 \begin{align*} 
 	R\left(W\right) = \frac{1}{N} \sum_{i= 1}^{N}\left\|\hat{y}_i\left(W\right) - y_i\right\|^2
 \end{align*}
-Where the dependence of $\hat{y}_i $ on the parameters $W$ is denoted as in the previous slide.
+Where the dependence of $\hat{y}_i $ on the parameters $W$ is denoted as said before.
 
 
 \begin{parag}{Training an MLP}
@@ -255,7 +260,7 @@ Where the dependence of $\hat{y}_i $ on the parameters $W$ is denoted as in the 
 	\begin{align*} 
 		a_{\left(l\right)}^{\left(k\right)} =  \sum_{j} W_{\left(l\right)}^{\left(k, j\right)} z_{\left(l - 1\right)}^{\left(j\right)}
 	\end{align*}
-	Which denotes the dot product between the $k^{\text{th}}$ column of $W_{\left(l\right)}$ and $z_{\left(l-1\right)}$. What we aim to compute is the derivative of the loss function $l_i$ w.r.t. any parameter $W_{\left(l\right)}^{\left(k, j\right)}$. An important thing here to understand is what is $W_{\left(l\right)}^{\left(k, j\right)}$ recall that this \important{an element} of the parameter of the model at the layer $l$, the parameter at the column k and row j. Following the chain rule, we can write such a derivative as 
+	Which denotes the dot product between the $k^{\text{th}}$ column of $W_{\left(l\right)}$ and $z_{\left(l-1\right)}$. What we aim to compute is the derivative of the loss function $l_i$ w.r.t. any parameter $W_{\left(l\right)}^{\left(k, j\right)}$. An important thing here to understand is what is $W_{\left(l\right)}^{\left(k, j\right)}$ recall that this is\important{an element} of the parameter of the model at the layer $l$, the parameter at the column k and row j. Following the chain rule, we can write such a derivative as 
 	\begin{align*} 
 		\frac{\partial l_i}{\partial W_{\left(l\right)}^{\left(k, j\right)}} = \frac{\partial l_i}{\partial a_{\left(l\right)}^{\left(k\right)}}  \frac{\partial a_{\left(l\right)}^{\left(k\right)}}{\partial W_{\left(l\right)}^{\left(k, j\right)}} 
 	\end{align*}
@@ -315,12 +320,74 @@ Where the dependence of $\hat{y}_i $ on the parameters $W$ is denoted as in the 
 
 \subsection*{Little example on auto differentiation (not in the course)}
 
-Something that I want to emphasize here (that I found not clear) is what are we even doing here. So to explain a bit more I will use the lecture about autodiff from cs-328. What we were doing above was auto differentiation, there is two main modes \important{forward}, \important{backward}. The one we saw above is backward. How it works is first execute the program and store each result into a tape (this is our $z_{\left(i\right)}$ above). Then we go back and compute the differentiation using that tape:
+Something that I want to emphasize here (that I found not clear) is what are we even doing here. So to explain a bit more I will use some stuff from the lecture about autodiff from cs-328. What we were doing above was auto differentiation, there is two main modes \important{forward}, \important{backward}. The one we saw above is backward. How it works is first execute the program and store each result and the computational graph structure (the image below) into a tape (this is our $z_{\left(i\right)}$ above). Then we go back and compute the differentiation using that tape:
 \begin{center}
 \includegraphics[scale=0.3]{screenshots/2026-04-21_3.png}
 \end{center}
-Do later
-\\
+The reason on why we need that tape is the chain rule:
+\begin{align*} 
+	\frac{d f(g(x))}{dx} = \frac{df}{dg}(g(x)) \cdot \frac{dg(x)}{dx}
+\end{align*}
+In the forward pass we are computing $g\left(x\right)$ and all intermediate values in the computation graph. We stores these values in a tape. Then when doing the backward pass. We already have everything needed in order to apply the chain rule efficiently.
+Another great video I recommend in order to better understand how it works 
+\begin{center}
+	\href{https://www.youtube.com/watch?v=wG_nF1awSSY}{What is Automatic Differentiation? -- Ari Seff}
+\end{center}
+
+But let us see an example here:\\
+$ $\\
+Consider the function:
+\begin{align*}
+z &= f(x, y) = (x + y) \cdot y
+\end{align*}
+
+We decompose it into elementary operations:
+\begin{align*}
+a &= x + y \\
+b &= a \cdot y
+\end{align*}
+
+So the computation graph is:
+\[
+x, y \rightarrow a \rightarrow b
+\]
+
+\paragraph{Forward pass}
+We compute and store intermediate values:
+\begin{align*}
+a &= x + y \\
+b &= a \cdot y
+\end{align*}
+
+These values are stored in a tape.
+
+\paragraph{Backward pass}
+
+We start from the output:
+\begin{align*}
+\frac{db}{db} &= 1
+\end{align*}
+
+Now apply the chain rule backwards.
+
+Step 1: propagate through multiplication $b = a \cdot y$
+\begin{align*}
+\frac{db}{da} &= y, \quad \frac{db}{dy}\Big|_{\text{path 1}} = a
+\end{align*}
+
+Step 2: propagate through addition $a = x + y$
+\begin{align*}
+\frac{da}{dx} &= 1, \quad \frac{da}{dy} = 1
+\end{align*}
+
+Now combine contributions:
+
+\begin{align*}
+\frac{db}{dx} &= \frac{db}{da} \cdot \frac{da}{dx} = y \cdot 1 = y \\
+\frac{db}{dy} &= \underbrace{\frac{db}{dy}\Big|_{\text{direct}}}_{a} + \underbrace{\frac{db}{da} \cdot \frac{da}{dy}}_{y \cdot 1}
+= a + y
+\end{align*}
+
 
 
 \begin{parag}{Gradient descent}

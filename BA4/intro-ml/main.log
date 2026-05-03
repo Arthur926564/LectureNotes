@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  28 APR 2026 16:54
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  2 MAY 2026 15:47
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -3005,119 +3005,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--37
  []
 
 [63] [64<./screenshots/2026-04-21.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 77--81
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
 
  []
 
 <screenshots/2026-04-21_1.png, id=785, 1301.86375pt x 495.8525pt>
 File: screenshots/2026-04-21_1.png Graphic file (type png)
 <use screenshots/2026-04-21_1.png>
-Package luatex.def Info: screenshots/2026-04-21_1.png  used on input line 82.
+Package luatex.def Info: screenshots/2026-04-21_1.png  used on input line 83.
 (luatex.def)             Requested size: 325.46513pt x 123.96281pt.
-[65] [66<./screenshots/2026-04-21_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 232--235
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--245
+Underfull \hbox (badness 1097) in paragraph at lines 197--200
+\TU/lmr/m/n/10 A thing I found in-ter-est-ing here is how this relates to a clas
+-sical lin-ear
+ []
+
+[66<./screenshots/2026-04-21_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--255
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
 
  []
 
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 279--282
+Underfull \hbox (badness 10000) in paragraph at lines 256--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--287
 
  []
 
 [68]
-<screenshots/2026-04-21_3.png, id=820, 767.86874pt x 447.6725pt>
+<screenshots/2026-04-21_3.png, id=817, 767.86874pt x 447.6725pt>
 File: screenshots/2026-04-21_3.png Graphic file (type png)
 <use screenshots/2026-04-21_3.png>
-Package luatex.def Info: screenshots/2026-04-21_3.png  used on input line 320.
+Package luatex.def Info: screenshots/2026-04-21_3.png  used on input line 325.
 (luatex.def)             Requested size: 230.3624pt x 134.30278pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--334
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 336--340
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
 
  []
 
 [69<./screenshots/2026-04-21_3.png>]
-<screenshots/2026-04-22.png, id=828, 550.055pt x 533.995pt>
+Underfull \hbox (badness 10000) in paragraph at lines 397--401
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--407
+
+ []
+
+[70]
+<screenshots/2026-04-22.png, id=835, 550.055pt x 533.995pt>
 File: screenshots/2026-04-22.png Graphic file (type png)
 <use screenshots/2026-04-22.png>
-Package luatex.def Info: screenshots/2026-04-22.png  used on input line 375.
+Package luatex.def Info: screenshots/2026-04-22.png  used on input line 442.
 (luatex.def)             Requested size: 110.00905pt x 106.7971pt.
-<screenshots/2026-04-22_1.png, id=829, 651.43375pt x 592.2125pt>
+<screenshots/2026-04-22_1.png, id=836, 651.43375pt x 592.2125pt>
 File: screenshots/2026-04-22_1.png Graphic file (type png)
 <use screenshots/2026-04-22_1.png>
-Package luatex.def Info: screenshots/2026-04-22_1.png  used on input line 379.
+Package luatex.def Info: screenshots/2026-04-22_1.png  used on input line 446.
 (luatex.def)             Requested size: 130.28444pt x 118.4404pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+ [71<./screenshots/2026-04-22.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
-<screenshots/2026-04-22_2.png, id=830, 1258.7025pt x 601.24625pt>
+<screenshots/2026-04-22_2.png, id=845, 1258.7025pt x 601.24625pt>
 File: screenshots/2026-04-22_2.png Graphic file (type png)
 <use screenshots/2026-04-22_2.png>
-Package luatex.def Info: screenshots/2026-04-22_2.png  used on input line 389.
+Package luatex.def Info: screenshots/2026-04-22_2.png  used on input line 456.
 (luatex.def)             Requested size: 314.67485pt x 150.31119pt.
-[70<./screenshots/2026-04-22.png><./screenshots/2026-04-22_1.png>]
-<screenshots/2026-04-22_3.png, id=837, 1182.4175pt x 654.445pt>
+<screenshots/2026-04-22_3.png, id=846, 1182.4175pt x 654.445pt>
 File: screenshots/2026-04-22_3.png Graphic file (type png)
 <use screenshots/2026-04-22_3.png>
-Package luatex.def Info: screenshots/2026-04-22_3.png  used on input line 414.
+Package luatex.def Info: screenshots/2026-04-22_3.png  used on input line 481.
 (luatex.def)             Requested size: 331.07465pt x 183.24335pt.
-<screenshots/2026-04-22_4.png, id=838, 913.4125pt x 695.59875pt>
+<screenshots/2026-04-22_4.png, id=847, 913.4125pt x 695.59875pt>
 File: screenshots/2026-04-22_4.png Graphic file (type png)
 <use screenshots/2026-04-22_4.png>
-Package luatex.def Info: screenshots/2026-04-22_4.png  used on input line 418.
+Package luatex.def Info: screenshots/2026-04-22_4.png  used on input line 485.
 (luatex.def)             Requested size: 219.22348pt x 166.94711pt.
- [71<./screenshots/2026-04-22_2.png><./screenshots/2026-04-22_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 433--438
+[72<./screenshots/2026-04-22_1.png><./screenshots/2026-04-22_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 500--505
 
  []
 
-<screenshots/2026-04-22_5.png, id=845, 624.3325pt x 381.425pt>
+<screenshots/2026-04-22_5.png, id=853, 624.3325pt x 381.425pt>
 File: screenshots/2026-04-22_5.png Graphic file (type png)
 <use screenshots/2026-04-22_5.png>
-Package luatex.def Info: screenshots/2026-04-22_5.png  used on input line 445.
+Package luatex.def Info: screenshots/2026-04-22_5.png  used on input line 512.
 (luatex.def)             Requested size: 187.3012pt x 114.42838pt.
-<screenshots/2026-04-22_6.png, id=846, 1660.2025pt x 542.025pt>
+[73<./screenshots/2026-04-22_3.png><./screenshots/2026-04-22_4.png>]
+<screenshots/2026-04-22_6.png, id=860, 1660.2025pt x 542.025pt>
 File: screenshots/2026-04-22_6.png Graphic file (type png)
 <use screenshots/2026-04-22_6.png>
-Package luatex.def Info: screenshots/2026-04-22_6.png  used on input line 453.
+Package luatex.def Info: screenshots/2026-04-22_6.png  used on input line 520.
 (luatex.def)             Requested size: 415.0496pt x 135.5059pt.
 
-Overfull \hbox (53.69966pt too wide) in paragraph at lines 453--454
+Overfull \hbox (53.69966pt too wide) in paragraph at lines 520--521
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--462
+Underfull \hbox (badness 10000) in paragraph at lines 525--529
 
  []
 
-[72<./screenshots/2026-04-22_4.png><./screenshots/2026-04-22_5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 478--482
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--549
 
  []
 
-[73<./screenshots/2026-04-22_6.png>]) (./lecture10.tex
+[74<./screenshots/2026-04-22_5.png><./screenshots/2026-04-22_6.png>])
+(./lecture10.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
@@ -3133,18 +3145,18 @@ Underfull \hbox (badness 1688) in paragraph at lines 10--13
 tion func-tion.
  []
 
-<screenshots/2026-04-28.png, id=860, 1521.685pt x 360.34625pt>
+<screenshots/2026-04-28.png, id=867, 1521.685pt x 360.34625pt>
 File: screenshots/2026-04-28.png Graphic file (type png)
 <use screenshots/2026-04-28.png>
 Package luatex.def Info: screenshots/2026-04-28.png  used on input line 14.
 (luatex.def)             Requested size: 304.3316pt x 72.06796pt.
-<screenshots/2026-04-28_1.png, id=861, 1328.965pt x 634.37pt>
+<screenshots/2026-04-28_1.png, id=868, 1328.965pt x 634.37pt>
 File: screenshots/2026-04-28_1.png Graphic file (type png)
 <use screenshots/2026-04-28_1.png>
 Package luatex.def Info: screenshots/2026-04-28_1.png  used on input line 18.
 (luatex.def)             Requested size: 265.78828pt x 126.87175pt.
-[74<./screenshots/2026-04-28.png><./screenshots/2026-04-28_1.png>]
-<screenshots/2026-04-28_2.png, id=869, 1279.78125pt x 356.33125pt>
+[75<./screenshots/2026-04-28.png>]
+<screenshots/2026-04-28_2.png, id=876, 1279.78125pt x 356.33125pt>
 File: screenshots/2026-04-28_2.png Graphic file (type png)
 <use screenshots/2026-04-28_2.png>
 Package luatex.def Info: screenshots/2026-04-28_2.png  used on input line 36.
@@ -3154,7 +3166,7 @@ Overfull \hbox (22.58739pt too wide) in paragraph at lines 36--37
  [] 
  []
 
-<screenshots/2026-04-28_3.png, id=870, 689.57625pt x 384.43625pt>
+<screenshots/2026-04-28_3.png, id=877, 689.57625pt x 384.43625pt>
 File: screenshots/2026-04-28_3.png Graphic file (type png)
 <use screenshots/2026-04-28_3.png>
 Package luatex.def Info: screenshots/2026-04-28_3.png  used on input line 44.
@@ -3164,7 +3176,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
  []
 
-<screenshots/2026-04-28_4.png, id=871, 1285.80376pt x 320.19624pt>
+<screenshots/2026-04-28_4.png, id=878, 1285.80376pt x 320.19624pt>
 File: screenshots/2026-04-28_4.png Graphic file (type png)
 <use screenshots/2026-04-28_4.png>
 Package luatex.def Info: screenshots/2026-04-28_4.png  used on input line 71.
@@ -3174,14 +3186,13 @@ Overfull \hbox (24.39417pt too wide) in paragraph at lines 71--72
  [] 
  []
 
-
+[76<./screenshots/2026-04-28_1.png><./screenshots/2026-04-28_2.png><./screenshot
+s/2026-04-28_3.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 77--81
 
  []
 
-[75<./screenshots/2026-04-28_2.png><./screenshots/2026-04-28_3.png><./screenshot
-s/2026-04-28_4.png>]
-<screenshots/2026-04-28_5.png, id=880, 1785.67125pt x 410.53375pt>
+<screenshots/2026-04-28_5.png, id=887, 1785.67125pt x 410.53375pt>
 File: screenshots/2026-04-28_5.png Graphic file (type png)
 <use screenshots/2026-04-28_5.png>
 Package luatex.def Info: screenshots/2026-04-28_5.png  used on input line 91.
@@ -3564,68 +3575,70 @@ l.119 \end{parag}
 l.119 \end{parag}
                  
 ? 
-<screenshots/2026-04-28_6.png, id=881, 1619.04875pt x 472.76625pt>
+<screenshots/2026-04-28_6.png, id=888, 1619.04875pt x 472.76625pt>
 File: screenshots/2026-04-28_6.png Graphic file (type png)
 <use screenshots/2026-04-28_6.png>
 Package luatex.def Info: screenshots/2026-04-28_6.png  used on input line 127.
 (luatex.def)             Requested size: 242.84683pt x 70.91187pt.
-<screenshots/2026-04-28_7.png, id=882, 1567.8575pt x 519.9425pt>
+<screenshots/2026-04-28_7.png, id=889, 1567.8575pt x 519.9425pt>
 File: screenshots/2026-04-28_7.png Graphic file (type png)
 <use screenshots/2026-04-28_7.png>
 Package luatex.def Info: screenshots/2026-04-28_7.png  used on input line 132.
 (luatex.def)             Requested size: 235.16847pt x 77.988pt.
-<screenshots/2026-04-28_8.png, id=883, 1139.25626pt x 690.58pt>
+[77<./screenshots/2026-04-28_4.png><./screenshots/2026-04-28_6.png><./screenshot
+s/2026-04-28_7.png>]
+<screenshots/2026-04-28_8.png, id=897, 1139.25626pt x 690.58pt>
 File: screenshots/2026-04-28_8.png Graphic file (type png)
 <use screenshots/2026-04-28_8.png>
 Package luatex.def Info: screenshots/2026-04-28_8.png  used on input line 137.
 (luatex.def)             Requested size: 170.88106pt x 103.58252pt.
-<screenshots/ResNet.png, id=884, 1127.21124pt x 488.82625pt>
+<screenshots/ResNet.png, id=898, 1127.21124pt x 488.82625pt>
 File: screenshots/ResNet.png Graphic file (type png)
 <use screenshots/ResNet.png>
 Package luatex.def Info: screenshots/ResNet.png  used on input line 143.
 (luatex.def)             Requested size: 169.07439pt x 73.32077pt.
-[76<./screenshots/2026-04-28_6.png><./screenshots/2026-04-28_7.png><./screenshot
-s/2026-04-28_8.png><./screenshots/ResNet.png>]
-<figure/2026-04-28.pdf, id=892, 459.7175pt x 574.145pt>
+<figure/2026-04-28.pdf, id=899, 459.7175pt x 574.145pt>
 File: figure/2026-04-28.pdf Graphic file (type pdf)
 <use figure/2026-04-28.pdf>
 Package luatex.def Info: figure/2026-04-28.pdf  used on input line 148.
-(luatex.def)             Requested size: 108.40608pt x 135.38841pt.
-<figure/2026-04-28_1.pdf, id=893, 567.11874pt x 118.4425pt>
+(luatex.def)             Requested size: 126.47469pt x 157.95607pt.
+<figure/2026-04-28_1.pdf, id=900, 567.11874pt x 118.4425pt>
 File: figure/2026-04-28_1.pdf Graphic file (type pdf)
 <use figure/2026-04-28_1.pdf>
 Package luatex.def Info: figure/2026-04-28_1.pdf  used on input line 155.
-(luatex.def)             Requested size: 361.34995pt x 75.47038pt.
+(luatex.def)             Requested size: 289.08105pt x 60.37595pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
-[77<./figure/2026-04-28.pdf><./figure/2026-04-28_1.pdf>]
-<screenshots/2026-04-28_11.png, id=904, 1397.22pt x 601.24625pt>
+[78<./screenshots/2026-04-28_8.png><./screenshots/ResNet.png><./figure/2026-04-2
+8.pdf><./figure/2026-04-28_1.pdf>]
+<screenshots/2026-04-28_11.png, id=912, 1397.22pt x 601.24625pt>
 File: screenshots/2026-04-28_11.png Graphic file (type png)
 <use screenshots/2026-04-28_11.png>
 Package luatex.def Info: screenshots/2026-04-28_11.png  used on input line 194.
 
 (luatex.def)             Requested size: 279.43906pt x 120.24712pt.
-<screenshots/2026-04-28_12.png, id=905, 1349.04pt x 648.4225pt>
+<screenshots/2026-04-28_12.png, id=913, 1349.04pt x 648.4225pt>
 File: screenshots/2026-04-28_12.png Graphic file (type png)
 <use screenshots/2026-04-28_12.png>
 Package luatex.def Info: screenshots/2026-04-28_12.png  used on input line 205.
 
 (luatex.def)             Requested size: 202.34726pt x 97.25917pt.
-<screenshots/2026-04-28_13.png, id=906, 1653.17625pt x 451.6875pt>
+<screenshots/2026-04-28_13.png, id=914, 1653.17625pt x 451.6875pt>
 File: screenshots/2026-04-28_13.png Graphic file (type png)
 <use screenshots/2026-04-28_13.png>
 Package luatex.def Info: screenshots/2026-04-28_13.png  used on input line 219.
 
 (luatex.def)             Requested size: 330.6294pt x 90.33589pt.
-) [78<./screenshots/2026-04-28_11.png><./screenshots/2026-04-28_12.png><./screen
-shots/2026-04-28_13.png>] [79] [80
+ [79<./screenshots/2026-04-28_11.png><./screenshots/2026-04-28_12.png>]) [80<./s
+creenshots/2026-04-28_13.png>] [81]
+[82
 
 ]
 Chapter 3.
-[81] (./main.aux)
+[83] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -3635,15 +3648,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 66718 strings out of 476076
+ 66730 strings out of 476076
  477629,3417909 words of node,token memory allocated
- 1271 words of node memory still in use:
+ 1301 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 6 sub_mlist
-, 3 glyph, 59 attribute, 156 glue_spec, 30 attribute_list, 2 shape, 2 write, 3 p
+, 3 glyph, 69 attribute, 156 glue_spec, 35 attribute_list, 2 shape, 2 write, 3 p
 df_action nodes
-   avail lists: 1:26,2:59966,3:37022,4:476,5:709,6:102,7:9598,8:116,9:1808,10:28
+   avail lists: 1:26,2:59951,3:37022,4:476,5:709,6:102,7:9598,8:116,9:1808,10:28
 ,11:398
- 87040 multiletter control sequences out of 65536+600000
+ 87048 multiletter control sequences out of 65536+600000
  132 fonts using 14675983 bytes
  110i,22n,120p,1930b,2872s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf-dist/fonts
@@ -3682,10 +3695,10 @@ nts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10
 st/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm7.pfb>
-Output written on main.pdf (81 pages, 7091592 bytes).
+Output written on main.pdf (83 pages, 7097372 bytes).
 
-PDF statistics: 1132 PDF objects out of 1200 (max. 8388607)
- 883 compressed objects within 9 object streams
- 373 named destinations out of 1000 (max. 1048576)
+PDF statistics: 1144 PDF objects out of 1200 (max. 8388607)
+ 893 compressed objects within 9 object streams
+ 377 named destinations out of 1000 (max. 1048576)
  348 words of extra memory for PDF output out of 10000 (max. 100000000)
 
