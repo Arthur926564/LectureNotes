@@ -35,10 +35,10 @@ for this course (which has the same number of images as in fds) I added a way to
 ### Bachelor semester 4
 
 
-#### Introduction to Machine Learning -- Dr  Mathieu Salzmann
- - [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf)
+#### Introduction to Machine Learning -- Dr. Mathieu Salzmann
+ - [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf) - Dr. Mathieu Salzmann
 #### Analysis IV - Mathias Braun
-- [Analysis-IV.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/analyse-iv/main.pdf)
+- [Analysis-IV_Mathias_Braun.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/analyse-iv/main.pdf) - Dr. Mathias Braun
 
 
 ### Contributing
