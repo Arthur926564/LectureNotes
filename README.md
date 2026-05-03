@@ -32,6 +32,14 @@ I stoped taking notes in FDS during the semester because of the enormous quantit
 for this course (which has the same number of images as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used [grim](https://github.com/emersion/grim) on arch linux.
 - [Computer_Architecture_Prof_Paulo_Ienne.pdf](https://github.com/user-attachments/files/25180760/Computer_Architecture_Notes.pdf) - Prof. Paulo Ienne
 
+### Bachelor semester 4
+
+
+#### Introduction to Machine Learning -- Dr  Mathieu Salzmann
+ - [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf)
+#### Analysis IV - Mathias Braun
+- [Analysis-IV.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/analyse-iv/main.pdf)
+
 
 ### Contributing
 If by any chance someone is reading this line and find a typo or want to contribute to the notes (i.e., the beginning of the first semester course are not in the notes, and the second part of fds is also not in the course) please send me a message or create an issue here!
