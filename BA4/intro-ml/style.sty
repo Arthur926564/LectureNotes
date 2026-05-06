@@ -341,6 +341,18 @@ linewidth=1pt]\begin{pro}}
 }
 \newcommand{\later}[1]{\textcolor{orange}{\fullbf{[#1]}}}
 
+
+% Colors matching the image
+\definecolor{inputred}{RGB}{220,50,50}
+\definecolor{inputyellow}{RGB}{255,230,100}
+\definecolor{filterblue}{RGB}{50,50,180}
+\definecolor{resultfull}{RGB}{20,20,20}
+\definecolor{resultgray}{RGB}{180,180,180}
+\newcommand{\dLdX}[2]{\frac{\partial L}{\partial X_{#1#2}}}
+\newcommand{\dLdO}[2]{\frac{\partial L}{\partial O_{#1#2}}}
+
+
+
 % Symbol modifications
 \let\originalbar\bar
 \renewcommand{\bar}{\overline}

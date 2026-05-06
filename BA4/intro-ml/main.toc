@@ -196,13 +196,46 @@
 \contentsline {paragraph}{Pooling layer}{76}{section*.164}%
 \contentsline {paragraph}{Padding}{76}{section*.165}%
 \contentsline {paragraph}{Convolution Stride}{76}{section*.166}%
-\contentsline {paragraph}{Output}{76}{section*.167}%
-\contentsline {paragraph}{CNN: Learning}{77}{section*.168}%
-\contentsline {paragraph}{CNN: Interpretation}{77}{section*.169}%
-\contentsline {paragraph}{Standard architecture}{77}{section*.170}%
-\contentsline {paragraph}{Tackling different tasks}{78}{section*.171}%
-\contentsline {paragraph}{CNNs for semantic segmentation}{78}{section*.172}%
-\contentsline {paragraph}{2D convolution as matrix product}{79}{section*.173}%
-\contentsline {paragraph}{Fully convolutional networks}{79}{section*.174}%
-\contentsline {paragraph}{Deep Learning: Tricks of the trade}{79}{section*.175}%
-\contentsline {chapter}{\numberline {3}Unsupervised Linear ML}{83}{chapter.3}%
+\contentsline {paragraph}{Discussion: Convolution stride}{76}{section*.167}%
+\contentsline {paragraph}{Output}{77}{section*.168}%
+\contentsline {paragraph}{CNN: Learning}{77}{section*.169}%
+\contentsline {paragraph}{CNN: Interpretation}{77}{section*.170}%
+\contentsline {paragraph}{Standard architecture}{78}{section*.171}%
+\contentsline {paragraph}{Tackling different tasks}{79}{section*.172}%
+\contentsline {paragraph}{CNNs for semantic segmentation}{79}{section*.173}%
+\contentsline {paragraph}{2D convolution as matrix product}{80}{section*.174}%
+\contentsline {paragraph}{Fully convolutional networks}{80}{section*.175}%
+\contentsline {paragraph}{Deep Learning: Tricks of the trade}{80}{section*.176}%
+\contentsline {subsection}{\numberline {2.12.1}CNN BackPropagation}{81}{subsection.2.12.1}%
+\contentsline {paragraph}{Backpropagation in CNNs}{81}{section*.177}%
+\contentsline {paragraph}{Convolution Backprop with single Stride}{81}{section*.178}%
+\contentsline {paragraph}{Loss gradient}{81}{section*.179}%
+\contentsline {paragraph}{Takeaway}{82}{section*.180}%
+\contentsline {paragraph}{Stride $> 1$}{83}{section*.181}%
+\contentsline {paragraph}{Backward Pass}{83}{section*.182}%
+\contentsline {chapter}{\numberline {3}Unsupervised Linear ML}{85}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dimensionality Reduction}{85}{section.3.1}%
+\contentsline {paragraph}{Until now: Supervised learning}{85}{section*.183}%
+\contentsline {paragraph}{Unsupervised learning}{85}{section*.184}%
+\contentsline {paragraph}{Dimensionality Reduction}{85}{section*.185}%
+\contentsline {paragraph}{Principal Component Analysis (PCA)}{86}{section*.186}%
+\contentsline {paragraph}{PCA: Objective}{86}{section*.187}%
+\contentsline {paragraph}{Variance maximization}{86}{section*.188}%
+\contentsline {paragraph}{Dealing with more that 1D projections}{87}{section*.189}%
+\contentsline {paragraph}{Error minimization}{88}{section*.190}%
+\contentsline {paragraph}{Mapping}{88}{section*.191}%
+\contentsline {paragraph}{Dealing with nonlinear data}{88}{section*.192}%
+\contentsline {paragraph}{Kernel PCA}{89}{section*.193}%
+\contentsline {paragraph}{Non centred data}{90}{section*.194}%
+\contentsline {paragraph}{Example}{90}{section*.195}%
+\contentsline {paragraph}{Kernel PCA vs PCA}{91}{section*.196}%
+\contentsline {subsection}{\numberline {3.1.1}Autoencoder}{92}{subsection.3.1.1}%
+\contentsline {paragraph}{General form}{92}{section*.197}%
+\contentsline {paragraph}{Deep autoencoder}{92}{section*.198}%
+\contentsline {paragraph}{Training}{92}{section*.199}%
+\contentsline {paragraph}{Dimensionality expansion}{93}{section*.200}%
+\contentsline {paragraph}{Denoising autoencoders}{93}{section*.201}%
+\contentsline {paragraph}{Sparse autoencoder}{93}{section*.202}%
+\contentsline {paragraph}{Convolutional autoencoder}{93}{section*.203}%
+\contentsline {paragraph}{Autoencoder: Application}{93}{section*.204}%
+\contentsline {paragraph}{Mapping}{94}{section*.205}%

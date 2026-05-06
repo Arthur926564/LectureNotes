@@ -52,6 +52,12 @@ The goal of today lecture (and this section) is to being able to work with image
 	Having a larger stride gives us less parameters, the output layer will be smaller but at the cost of information.
 \end{parag}
 
+\begin{parag}{Discussion: Convolution stride}
+    The goal of strided convolution is to play a similar role to pooling, i.e., decrease the spatial dimensions, but with learnable parameters. However this can have some issues: as if the stride is greater than 1, we may not cover the input map completely, hence ignoring some of the input values.
+	\begin{center}
+	\includegraphics[scale=0.6]{screenshots/2026-05-05.png}
+	\end{center}
+\end{parag}
 
 \begin{parag}{Output}
     This is nice, but what should we actually output? In general, we usually want to output a vector e.g.,

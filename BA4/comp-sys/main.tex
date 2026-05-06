@@ -1,0 +1,58 @@
+% !TeX program = lualatex
+% Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
+
+\documentclass[a4paper]{book}
+
+% Expanded on !p snip.rv = get_formatted_date() at !p snip.rv = get_formatted_time().
+
+\usepackage{style}
+
+\title{Computer System}
+\author{Arthur Herbette}
+\date{Tuesday 17 February 2026}
+
+\begin{document}
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+\section{Memory Virtualisation}
+The goal of memory virtualisation is to offer a cpu to deal with more than one user on the same memory. The issue we had without and virtualisation was that. Assume I am user A and I want to steal data from user B. All I need to do is just to scan the whole memory until I find the part that belong to user B process. This is not safe. In order to solve this issue we can introduce virtualisation, the principle is to create a virtual memory for each process. Each process has its own virtual memory, which maps to a physical memory, every process therefore has its own part of the physical memory and each process doesn't know the physical memory behind.\\
+$ $\\
+A process references memory using \important{virtual} addresses, and \textbf{under the covers}, each virtual memory address is translated to a physical (real) memory address.
+\begin{parag}{How}
+    Now we can see that the idea is nice however, how do we implement it? Do we allocate a contiguous part of memory for each process? Do we have some part of memory but fixed size, some part of memory that are not of fixed size?\\
+	$ $\\
+	Let us go one by one and see the pros and cons
+\end{parag}
+
+\begin{parag}{Base and Bound}
+    In this case, the pros is that it is fairly easy to translate, all we have to do is adding the base to the virtual address. Imagine that the physical memory (the block for the process) starts at \texttt{0x80000}, then when the process makes a load instruction at address \texttt{0x10}, all we have to do it to look in the physical memory at address \texttt{0x80010}.\\
+	The issue with that is fragmentation, imagine that we have a contiguous blablabla, for each processes P1, P2, P3, ... The issue we will have is imagine now P2 get killed, there is now a \texttt{0x400} hole in the memory. Now imagine that we want to fork a process that requests \texttt{0x900} as the size of his memory. In this case we cannot put it in there and we have to look outside. We have contiguous physical memory areas that are free but are too small to store a complete memory image. This is a result of requiring that each memory image need to be stored in a contiguous physical memory area. This results in an big inefficiency, a waste of physical memory.
+\end{parag}
+
+\begin{parag}{Chunks}
+    Now there is a couple way of doing it in chunks we can either:
+	\begin{itemize}
+	    \item \textbf{Segmentation}: variable sized chunks (segments)
+	    \item \textbf{Paging}: same sized chunks (frames)
+	\end{itemize}
+	The base and bound method we have seen before here is just a crude form of the segmentation, a segmentation with only one chunk.\\
+	$ $\\
+	So as we can see here those are safe and now we don't have issues as before. Let us take the example of paging, as in this case every frames has a fixed size, this implies that we when freeing memory of a process, this doesn't hurt our physical memory as every frame here can be reused for other processes, we don't have any waste of physical memory. The issue however is that they are of fixed size, this implies that imagine this size is \texttt{0x100} but we only needed \texttt{0x10} for our process then we will have \texttt{0x90} bytes that are allocated but for nothing. The same thing goes the other way, imagine that we need \texttt{0x1000000000000000} and the frames are of size \texttt{0x100} this can creates a lot of overhead on how do we  allocate and access them.
+	\begin{subparag}{Implementation}
+	    The way we would implement this is by using a tree, I think we have already see this in the previous year c assessment but anyway. This works as a tree where each leaf is a pointer to the start of a frame. There is two variables here, the number of outgoing branch of each nodes and the depth of the tree.\\
+		$ $\\
+		The question on how do we translate from virtual to physical is as follow, let the virtual address be a 32 bits integer, we just the n MSB in order to choose the first level (so the first level of the tree) and then either redo this or if we are at the end of the tree then use the LSB left to choose inside the chunk itself.
+	\end{subparag}
+\end{parag}
+
+
+
+
+
+
+
+
+\end{document}
