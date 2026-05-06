@@ -1,3 +1,4 @@
+[main.pdf](https://github.com/user-attachments/files/27430959/main.pdf)
 # Lecture notes
 
 
@@ -33,7 +34,8 @@ I stoped taking notes in FDS during the semester because of the enormous quantit
 ### Bachelor semester 3
 for this course (which has the same number of images as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used [grim](https://github.com/emersion/grim) on arch linux.
 #### Computer Architecture -- Prof. Paulo Ienne
-- [Computer_Architecture_Prof_Paulo_Ienne.pdf](https://github.com/user-attachments/files/25180760/Computer_Architecture_Notes.pdf) - Prof. Paulo Ienne
+- [computer_architecture_prof_Paulo_Ienne.pdf](https://github.com/user-attachments/files/27430966/main.pdf) - Prof. Paulo Ienne
+
 
 ### Bachelor semester 4
 
