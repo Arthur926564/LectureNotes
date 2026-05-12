@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  5 MAY 2026 10:15
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  12 MAY 2026 10:33
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -3833,25 +3833,179 @@ File: screenshots/2026-05-05_16.png Graphic file (type png)
 Package luatex.def Info: screenshots/2026-05-05_16.png  used on input line 429.
 
 (luatex.def)             Requested size: 204.16432pt x 97.26411pt.
-) [94<./screenshots/2026-05-05_16.png>] (./main.aux)
+) (./lecture12.tex
+<screenshots/2026-05-11.png, id=1046, 1448.41125pt x 580.1675pt>
+File: screenshots/2026-05-11.png Graphic file (type png)
+<use screenshots/2026-05-11.png>
+Package luatex.def Info: screenshots/2026-05-11.png  used on input line 19.
+(luatex.def)             Requested size: 289.67712pt x 116.03143pt.
+ [94<./screenshots/2026-05-05_16.png><./screenshots/2026-05-11.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 45.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 45.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-48' on page 95 undefined on input line 
+47.
+
+<screenshots/2026-05-11_1.png, id=1059, 1096.095pt x 714.67pt>
+File: screenshots/2026-05-11_1.png Graphic file (type png)
+<use screenshots/2026-05-11_1.png>
+Package luatex.def Info: screenshots/2026-05-11_1.png  used on input line 76.
+(luatex.def)             Requested size: 219.21512pt x 142.93146pt.
+[95<./screenshots/2026-05-11_1.png>]
+<screenshots/2026-05-12.png, id=1069, 1390.19376pt x 650.43pt>
+File: screenshots/2026-05-12.png Graphic file (type png)
+<use screenshots/2026-05-12.png>
+Package luatex.def Info: screenshots/2026-05-12.png  used on input line 102.
+(luatex.def)             Requested size: 417.06134pt x 195.1305pt.
+Package mdframed Info: mdframed works in twoside mode on input line 104.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 104.
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--108
+
+ []
+
+
+LaTeX Warning: Reference `mdf@pagelabel-49' on page 96 undefined on input line 
+108.
+
+<screenshots/2026-05-12_1.png, id=1070, 1457.445pt x 687.56876pt>
+File: screenshots/2026-05-12_1.png Graphic file (type png)
+<use screenshots/2026-05-12_1.png>
+Package luatex.def Info: screenshots/2026-05-12_1.png  used on input line 120.
+(luatex.def)             Requested size: 437.23688pt x 206.27222pt.
+
+Overfull \hbox (75.88693pt too wide) in paragraph at lines 120--121
+ [] 
+ []
+
+[96<./screenshots/2026-05-12.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 128--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--165
+
+ []
+
+[97<./screenshots/2026-05-12_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 207--210
+
+ []
+
+<screenshots/2026-05-12_2.png, id=1084, 1198.4775pt x 464.73625pt>
+File: screenshots/2026-05-12_2.png Graphic file (type png)
+<use screenshots/2026-05-12_2.png>
+Package luatex.def Info: screenshots/2026-05-12_2.png  used on input line 220.
+(luatex.def)             Requested size: 239.69125pt x 92.9456pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--225
+
+ []
+
+[98]
+<screenshots/2026-05-12_3.png, id=1092, 1277.77374pt x 632.3625pt>
+File: screenshots/2026-05-12_3.png Graphic file (type png)
+<use screenshots/2026-05-12_3.png>
+Package luatex.def Info: screenshots/2026-05-12_3.png  used on input line 230.
+(luatex.def)             Requested size: 255.55022pt x 126.47026pt.
+<screenshots/2026-05-12_4.png, id=1093, 1273.75874pt x 541.02126pt>
+File: screenshots/2026-05-12_4.png Graphic file (type png)
+<use screenshots/2026-05-12_4.png>
+Package luatex.def Info: screenshots/2026-05-12_4.png  used on input line 242.
+(luatex.def)             Requested size: 254.74724pt x 108.20233pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--253
+
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 249--253
+\TU/lmr/m/n/10 Intuitively, for clus-ter-ing, we would like to find par-ti-tion that min-im-izes
+ []
+
+[99<./screenshots/2026-05-12_2.png><./screenshots/2026-05-12_3.png><./screenshot
+s/2026-05-12_4.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 256.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 256.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 261.
+
+
+LaTeX Warning: Reference `mdf@pagelabel-50' on page 100 undefined on input line
+ 261.
+
+Package mdframed Info: mdframed works in twoside mode on input line 262.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 262.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 267.
+
+LaTeX Warning: Reference `mdf@pagelabel-51' on page 100 undefined on input line
+ 267.
+
+<screenshots/2026-05-12_5.png, id=1100, 1379.1525pt x 906.38625pt>
+File: screenshots/2026-05-12_5.png Graphic file (type png)
+<use screenshots/2026-05-12_5.png>
+Package luatex.def Info: screenshots/2026-05-12_5.png  used on input line 315.
+(luatex.def)             Requested size: 413.74895pt x 271.91797pt.
+
+Overfull \hbox (52.399pt too wide) in paragraph at lines 315--316
+ [] 
+ []
+
+[100]
+<screenshots/2026-05-12_6.png, id=1111, 804.00375pt x 476.78125pt>
+File: screenshots/2026-05-12_6.png Graphic file (type png)
+<use screenshots/2026-05-12_6.png>
+Package luatex.def Info: screenshots/2026-05-12_6.png  used on input line 331.
+(luatex.def)             Requested size: 241.20299pt x 143.03548pt.
+) [101<./screenshots/2026-05-12_5.png><./screenshots/2026-05-12_6.png>]
+(./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2835CCDE0256A0709AA101F69F42ADB5;6765.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 2835CCDE0256A0709AA101F69F42ADB5;6765
+(rerunfilecheck)             After:  EEF80100A182264D09D4DB6893817461;7174.
 )
 
 Here is how much of LuaTeX's memory you used:
- 67297 strings out of 476076
+ 67461 strings out of 476076
  477629,3417909 words of node,token memory allocated
- 1312 words of node memory still in use:
+ 1301 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 6 sub_mlist
-, 1 margin_kern, 4 glyph, 69 attribute, 156 glue_spec, 35 attribute_list, 2 shap
-e, 2 write, 3 pdf_action nodes
-   avail lists: 1:27,2:59951,3:37022,4:476,5:799,6:111,7:9597,8:116,9:1946,10:28
+, 3 glyph, 69 attribute, 156 glue_spec, 35 attribute_list, 2 shape, 2 write, 3 p
+df_action nodes
+   avail lists: 1:27,2:59952,3:37022,4:479,5:816,6:111,7:9598,8:116,9:1946,10:28
 ,11:398
- 87508 multiletter control sequences out of 65536+600000
+ 87605 multiletter control sequences out of 65536+600000
  133 fonts using 14807671 bytes
  110i,22n,120p,1930b,2872s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/f
@@ -3891,10 +4045,10 @@ re/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1
 /public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (94 pages, 9260095 bytes).
+Output written on main.pdf (101 pages, 10912459 bytes).
 
-PDF statistics: 1267 PDF objects out of 1440 (max. 8388607)
- 983 compressed objects within 10 object streams
- 423 named destinations out of 1000 (max. 1048576)
+PDF statistics: 1337 PDF objects out of 1440 (max. 8388607)
+ 1036 compressed objects within 11 object streams
+ 458 named destinations out of 1000 (max. 1048576)
  372 words of extra memory for PDF output out of 10000 (max. 100000000)
 

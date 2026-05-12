@@ -239,3 +239,23 @@
 \contentsline {paragraph}{Convolutional autoencoder}{93}{section*.203}%
 \contentsline {paragraph}{Autoencoder: Application}{93}{section*.204}%
 \contentsline {paragraph}{Mapping}{94}{section*.205}%
+\contentsline {section}{\numberline {3.2}Clustering}{94}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Clustering: Another unsupervised learning task}{94}{subsection.3.2.1}%
+\contentsline {paragraph}{A simple clustering algorithm}{94}{section*.206}%
+\contentsline {paragraph}{Algorithm}{94}{section*.207}%
+\contentsline {paragraph}{More details}{95}{section*.208}%
+\contentsline {paragraph}{K-means clustering: Properties}{95}{section*.209}%
+\contentsline {paragraph}{Other Properties}{95}{section*.210}%
+\contentsline {paragraph}{Clustering and dimensionality reduction}{96}{paragraph*.211}%
+\contentsline {paragraph}{Fisher Linear Discriminant Analysis (LDA)}{96}{section*.212}%
+\contentsline {paragraph}{Clustering the sample from the same class}{97}{section*.213}%
+\contentsline {paragraph}{Separating the different classes}{97}{section*.214}%
+\contentsline {paragraph}{Fisher LDA}{98}{section*.215}%
+\contentsline {paragraph}{Dealing with $d > 1$}{98}{section*.216}%
+\contentsline {paragraph}{Compactness}{98}{section*.217}%
+\contentsline {paragraph}{Spectral clustering: Graph-based connectivity}{99}{section*.218}%
+\contentsline {paragraph}{Graph cut}{99}{section*.219}%
+\contentsline {paragraph}{Graph terminology}{100}{section*.220}%
+\contentsline {paragraph}{Normalized cut}{100}{section*.221}%
+\contentsline {paragraph}{Transformed formulation}{100}{section*.222}%
+\contentsline {paragraph}{$K$-way partition}{101}{section*.223}%
