@@ -205,7 +205,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 				\left(A A^{+}\right)^{\ast} =  A A^{+}\\
 				\left(A^{+}A\right)^{\ast} =  A^{+}A
 			\end{align*}
-			I won't explain what the two lasts means (because I don't know), but why $X^{\dagger} = \left(X^{T}\right)^{-1}X^{T}$?
+			The last two are trivially true as we only deal with real number, note still that this is the definition of Hermitian matrix ($A^{\ast} = A$ where the star mean the transpose conjugate (we take the conjugate of every elements and we then take the transpose of this new matrix, we therefore need that both $A^{\dagger}A$ and $A A^{\dagger}$ are hermitian), but why $X^{\dagger} = \left(X^{T}X\right)^{-1}X^{T}$?
 			Let us define $B$ such that:
 			\begin{align*} B =  \left(X^{T}X\right)^{-1}X^{T} \end{align*}
 			If we multiply by $X$:
@@ -214,7 +214,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 			\end{align*}
 			And by $X$ again but on the other side
 			\begin{align*} 
-				XBX = X\left(X^{T}X\right)^{-1}x^{T}X
+				XBX = X\left(X^{T}X\right)^{-1}X^{T}X
 			\end{align*}
 			Which simplify to:
 			\begin{align*} 
@@ -222,7 +222,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 			\end{align*}
 			For the second criteria, retake our $B$ and multiply by $X$:
 			\begin{align*} 
-				BX &= \left(X^{T}X\right)^{-1}X^{X}X\\
+				BX &= \left(X^{T}X\right)^{-1}X^{T}X\\
 				   &= I
 			\end{align*}
 			This directly implies that:
@@ -276,7 +276,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 	
 	
 	\subsection{Interpreting a Linear Model}
-	First an important thing to check we testing our model is comparin the error value of on the training data \important{and} for the test data. If those two are close this means that our model effectively can generalize to other data. If for instance our model as a very low error on the training data and a high error for the test data, usually this means that the model is \important{overfitting}.
+	First an important thing to check when testing our model is comparing the error value of on the training data \important{and} for the test data. If those two are close this means that our model effectively can generalize to other data. If for instance our model as a very low error on the training data and a high error for the test data, usually this means that the model is \important{overfitting}.
 	\begin{center}
 	\includegraphics[scale=0.17]{screenshots/2026-02-21.png}
 	\end{center}

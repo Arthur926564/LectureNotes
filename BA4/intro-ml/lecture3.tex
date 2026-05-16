@@ -301,7 +301,7 @@ Since $y_i$ is either $0$ or $1$, the cross-entropy can be re-written as:
 \begin{align*} 
 	R\left(w\right) = \sum_{i \in \text{positive samples}} \ln\left(\hat{y}_i \right) - \sum_{i \in \text{negative sample}} \ln\left(1 - \hat{y}_i \right)
 \end{align*}
-A very nice thing here for us is that, the \important{cross-entropy is a convex function}. But in this case, its minimization as no closed-form solution. This means that we will need to use an approximation: \important{gradient descent}!!
+A very nice thing here for us is that, the \important{cross-entropy is a convex function}. But in this case, its minimization has no closed-form solution. This means that we will need to use an approximation: \important{gradient descent}!!
 
 \begin{figure}[h!]
     \centering
@@ -390,7 +390,7 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 
 
 \subsection{Iterative, Gradient-based optimization}
-The principle of gradient-based optimization and more generally iterative optimization is that: we have found a way to have a vetter solution based on a previous one. This means that if we iter on this 'way' a lot of time we will have like better(better(better $\left(\cdots(\text{base})\right)$)) which will give us not necessarly the best solution but a good enough solution.
+The principle of gradient-based optimization and more generally iterative optimization is to use the fact that we are able to found a better solution based on a previous one. This means that if we iter on this 'way' a lot of time we will have better(better(better $\left(\cdots(\text{base})\right)$)) which will give us not necessarily the best solution but a good enough solution.
 
 
 \begin{parag}{Minimizing a function}

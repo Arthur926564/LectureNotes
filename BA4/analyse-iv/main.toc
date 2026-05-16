@@ -117,3 +117,12 @@
 \contentsline {paragraph}{First order initial value problem}{54}{section*.93}%
 \contentsline {paragraph}{Second order initial value problem}{55}{section*.94}%
 \contentsline {subsection}{\numberline {3.6.2}Inverse Laplace Transform}{59}{subsection.3.6.2}%
+\contentsline {paragraph}{How to show this formula? (Outbook)}{59}{section*.95}%
+\contentsline {paragraph}{Example}{60}{paragraph*.96}%
+\contentsline {paragraph}{Partial fraction decomposition}{60}{section*.97}%
+\contentsline {paragraph}{Inverse Laplace transform and residue theorem}{60}{section*.98}%
+\contentsline {section}{\numberline {3.7}Application to partial differential equations (PDES)}{62}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Recall of Fourier series}{62}{subsection.3.7.1}%
+\contentsline {paragraph}{Orthogonality}{62}{section*.99}%
+\contentsline {paragraph}{Coefficient of the serie}{63}{section*.100}%
+\contentsline {paragraph}{Special cases}{64}{section*.101}%
