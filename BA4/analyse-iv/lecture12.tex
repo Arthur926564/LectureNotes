@@ -1,0 +1,243 @@
+\subsection{Heat equation on a bounded interval}
+
+The goal is to show how tu use Fourier series in order to solve PDEs such as heat equation. Fourier series can be use to solve those equation when \important{bounded}. When this is not the case, \important{Fourier transform} will be used in order to solve those equations.\\
+$ $\\
+Let us first return to the $1-$dimensional heat equation. This is define as 
+\begin{align*} 
+	\begin{cases}
+		\frac{\partial u}{\partial t}  - \frac{\partial^2 u}{\partial x} = f \mathspace \mathspace \forall t > 0, x \in \left(0, L\right)\\
+		u \eval_{t= 0} =  u_0 \mathspace \mathspace \text{ initial condition}\\
+		u \eval_{x= 0} =  u \eval_{x = L} = 0 \mathspace \mathspace \text{boundary condition}
+	\end{cases} 
+\end{align*}
+
+Let us therefore have an overview over the method to solve those problems 
+\begin{itemize}
+	\item Decompose the heat equation into Fourier modes
+	\item The PDE becomes an ODE in time for the Fourier coefficients. 
+	\item Find a solution by summing the mode solutions
+\end{itemize}
+
+\begin{align*} 
+	\text{PDE} \overbrace{\longrightarrow}^{\text{Fourier}}  \text{PDE} \overbrace{\longrightarrow}^{\text{Laplace}}  \text{solution}
+\end{align*}
+
+\begin{parag}{Uniqueness}
+    
+
+\begin{theoreme}
+The initial value problem for the heat equation has a unique solution.
+\end{theoreme}
+
+
+\begin{proof}
+    If $u_1$ and $u_2$ are two solutions, then $v := u_1 - u_2$ solves
+	\begin{align*} 
+		\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 0 \\
+		v \mid_{t= 0} = 0\\
+		v \mid_{x = 0}= 0
+	\end{align*}
+	Again we look for monotone quantity to infer $v= 0$. This quantity here is the following energy 
+	\begin{align*} 
+		\int_{0}^{L}v^2\left(x, t\right)dx
+	\end{align*}
+	Which is some kind of kinetic energy. Therefore let us try to differentiate this integral w.r.t. $t$
+	\begin{align*} 
+		\frac{d}{dt} \int_{0}^{L}v^2\left(x, t\right)dx &= 2 \int_{0}^{L}v\left(x, t\right)\frac{\partial v}{\partial t} \left(x, t\right) dt \\
+		&= 2 \int_{0}^{L}v\left(x, t\right) \frac{\partial^2 v}{\partial x^2} \left(x, t\right)dx
+	\end{align*}
+	Using integration by part 
+	\begin{align*} 
+		&=  2\left[v\left(x, t\right)\frac{\partial u}{\partial x} \left(x, t\right)\right]_{0}^{L} - 2\int_{0}^{L}\frac{\partial v}{\partial x} \left(x, t\right)^2 dx\\
+		&= -2 \int_{0}^{L}\frac{\partial v}{\partial x} \left(x, t\right)^2 dx \leq 0
+	\end{align*}
+	Using the Dirichlet boundary conditions. Therefore we can infer that the kinetic energy is nonincreasing. Thus 
+	\begin{align*} 
+		0 \leq \int_{0}^{t} v^2\left(x, t\right)dx \leq \int_{0}^{L}v^2 \left(x, 0\right) dx = 0
+	\end{align*}
+	Therefore, $v\left(x, t\right) = 0$ for every $t > 0$, every $x \in \left(0, L\right)$.
+
+\end{proof}
+
+\end{parag}
+\begin{parag}{Existence}
+    Let us now take uniqueness for granted, therefore whatever point we use in order to find a solution, if we find a solution then this is the unique solution. On a bounded interval, we'll find it by decomposing the PDE into Fourier modes. The trick we will use is that we'll assume having a solution and then decompose it into Fourier modes in a way that those decomposition respect the boundary conditions.\\
+	$ $\\
+	Since we want $u \mid_{x= 0} = u \mid_{x = L}= 0$, we will extend $u\left(t, x\right)$ in $x$ into a $2L$-periodic function on $ \mathbb{R}$ which is \important{odd}. In order to make our function odd we need to construct it by taking the symmetry on the left side on the imaginary axis. Then we will do the same for $u_{0}$ and $f$.
+	\begin{subparag}{Remark}
+	    Note that if $u$ is  a $2L-$periodic and odd function which is continuous, then it necessarily respect Dirichlet boundary conditions.
+	\end{subparag}
+	Ad hoc, for the solution to the heat equation it can be shown: if $f$ is piecewise continuous and $u_0$ is as well, then for $t > 0, u\left(t, x\right)$ and $\frac{\partial u}{\partial x} \left(f, x\right)$ are continuous.
+\end{parag}
+
+
+\begin{parag}{Fourier series (respecting $2L-$periodicity and oddness)}
+    Knowing oddness, we know that our function is defined as 
+	\begin{align*} 
+		u\left(x, t\right) =  \sum_{n = 1}^{\infty}b_n\left(t\right)\sin\left(\frac{2\pi n}{2L}x\right)
+	\end{align*}
+	$b_n$ needs to be a function of $t$ as it is not fixed for it, meaning that it is defined as 
+	\begin{align*} 
+		b_n\left(t\right) = \frac{2}{L}\int_{0}^{L} u\left(x, t\right)\sin\left(\frac{\pi n}{L}x\right)dx
+	\end{align*}
+	We will do the same for $u_0$ and $f$ which gives us 
+	\begin{align*} 
+		u_0\left(x\right) &=  \sum_{n = 1}^{\infty}b_{0 n}\sin\left(\frac{\pi n}{L}x\right)\\
+		f\left(x, t\right) &=  \sum_{n = 1}^{\infty}f_n\left(t\right)\sin\left(\frac{\pi n}{L}x\right)
+	\end{align*}
+	Now let us differentiate them formally our function $u$ w.r.t. $x$:
+	\begin{align*} 
+		\frac{\partial u}{\partial x} \left(t, x\right) &=  \sum_{n = 1}^{\infty}b_n\left(t\right)\frac{\pi n}{L}\cos\left(\frac{\pi n}{L}x\right)\\
+		\frac{\partial^2 u}{\partial x^2} \left(t, x\right) &= \sum_{n = 1}^{\infty}b_n\left(t\right)\left[-\frac{\pi^2n^2}{L^2}\sin\left(\frac{\pi n}{L}x\right)\right]
+	\end{align*}
+	So now we have one part of the equation done, let us do the other one:
+	\begin{align*} 
+		\frac{\partial u}{\partial t} \left(t, x\right)= \sum_{n = 1}^{\infty}b_n'\left(t\right)\sin\left(\frac{\pi n}{L}x\right)
+	\end{align*}
+	Since we are looking to find $\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = f$, this translates into the following 
+	\begin{align*} 
+		\sum_{n = 1}^{\infty}\left[b_n'\left(t\right) + \frac{\pi^2n^2}{L^2}b_n\left(t\right)\right]\sin\left(\frac{\pi n }{L}x\right) = \sum_{n = 1}^{\infty}f_n\left(t\right)\sin\left(\frac{\pi n}{L}x\right)
+	\end{align*}
+	By comparison of coefficients we know that for every element $n$ we get the differential equation 
+	\begin{align*} 
+		b_n' - \frac{\pi^2n^2}{L^2}b_n = f_n \mathspace \mathspace \forall n \geq 1
+	\end{align*}
+	We need to solve infinitely many equations in order to solve this problem. And for the initial condition $u\left(x, 0\right) = u_0\left(x\right)$ which translates into 
+	\begin{align*} 
+		b_n\left(0\right) = b_{0n} \mathspace \mathspace \forall n \geq 1
+	\end{align*}
+	Therefore by taking the Fourier mode, we have translate our PDE into infinitely many ODEs that we know how to solve. We can solve it using Laplace transform, this give us 
+	\begin{align*} 
+		b_n\left(t\right) =  b_{0n}e^{\frac{-\pi^2 n^2}{L^2}t} + \int_{0}^{t} e^{-\frac{\pi^2n^2}{L^2}\left(t - s\right)} f_n\left(s\right) ds
+	\end{align*}
+	In particular we have found $b_n\left(t\right)$ which we can therefore reinserting this into the Fourier expansion of $u$. This yields the desired solution to the heat equation.
+\end{parag}
+
+
+\begin{framedremark}
+\begin{itemize}
+    \item if $f = 0$, then $u\left(x, t\right) =  \sum_{n = 1}^{\infty}b_{0n}e^{-\frac{\pi^2 n^2}{L^2}t}\sin\left(\frac{\pi n }{L}x\right)$
+    \item if $u_{0 }= 0$ and $f\left(x, t\right) =  \sin\left(\frac{\pi }{L}x\right)$ then we don't need to solve so many ODEs, the solution of these ODEs boils down to a case distinction, meaning that our $f_n$ is defined by the two cases 
+		\begin{align*} 
+			f_n\left(t\right) = \begin{cases}
+				1 \mathspace \text{ if } n = 1\\
+				0 \mathspace \text{ otherwise}
+			\end{cases}
+		\end{align*}
+		And so 
+		\begin{align*} 
+			b_{n}\left(t\right) =  \begin{cases}
+				\frac{L^2}{\pi^2}\left[1 - e^{-\frac{\pi^2}{L^2}t}\right] \mathspace \text{ if } n= 1\\
+				0 \mathspace \text{ otherwise}
+			\end{cases} 
+		\end{align*}
+		And in particular $u\left(x, t\right) = \frac{L^2}{\pi^2}\left[1 - e^{-\frac{\pi^2}{L^2}t}\right]\sin\left(\frac{\pi}{L}x\right)$
+		\item If we wanted \important{Neumann boundary conditions} (namely having $\frac{\partial u}{\partial x}  |_{x= 0}= 0$ and $\frac{\partial u}{\partial x} |_{x= L}= 0$) we would extend $u$ as an even $2L-$periodic function. This can be kind of intuitive as we would like the derivative to be '\textit{inverse}' (as $\sin$ and $\cos$). In this case we would have 
+			\begin{align*} 
+				u\left(x, t\right)= \frac{a_0\left(t\right)}{2} + \sum_{n = 1}^{\infty}a_n\left(t\right)\cos\left(\frac{\pi n}{L}x\right)
+			\end{align*}
+\end{itemize}
+
+\end{framedremark}
+
+
+
+\subsection{Wave equation on a bounded domain}
+The definition of wave equation is defined as below 
+\begin{definition}{Wave equation}
+	\begin{align*} 
+		\begin{cases}
+			\frac{\partial^2 u}{\partial t^2} - c^2 \frac{\partial^2 u}{\partial x^2}  = f \mathspace \text{ for } t > 0, x \in \left(0, L\right)\\
+			u|_{t= 0} = u_0\\
+			\frac{\partial u}{\partial t} \mid_{t= 0}= u\\
+			u|_{x= 0}= u|_{x= L} = 0
+		\end{cases} 
+	\end{align*}
+	Where condition are initial condition, velocity and boundary condition resp. and $c$ is the speed of propagation.
+\end{definition}
+And as always, we can proof uniqueness of solution. 
+\begin{parag}{Uniqueness}
+	As always in order to proof uniqueness, the goal is to show that some quantities are constant. In a lot of PDEs those quantities ends up being \important{energy}.
+    \begin{proof}
+		Define 
+		\begin{align*} 
+			E\left[u\right]\left(t\right) = \frac{1}{2}\int_{0}^{L}\underbrace{\left(\frac{\partial u}{\partial t} \right)^2 \left(x, t\right)}_{\text{kinetic energy}} + c^2 \underbrace{\left(\frac{\partial u}{\partial x} \right)^2\left(x, t\right)}_{\text{potential energy}}dx
+		\end{align*}
+		Then we have 
+		\begin{align*} 
+			\frac{d}{dt} E\left[u\right]\left(t\right) = \int_{0}^{L}\frac{\partial u}{\partial t} \left(x, t\right) f\left(x, t\right)dt
+		\end{align*}
+		Which the proof is left to the reader. This implies the uniqueness of solutions: if $u_1$ and $u_2$ are solutions, thus $v:= u_1 - u_2$ solves 
+		\begin{align*} 
+			\begin{cases}
+				\frac{\partial^2 v}{\partial t^2} - c^2 \frac{\partial^2 v}{\partial x^2} = 0\\
+				v|_{t= 0}= 0\\
+				\frac{\partial v}{\partial t} |_{t= 0} = 0\\
+				v|_{x= 0} = v|_{x = L}= 0
+			\end{cases} 
+		\end{align*}
+		By conservation of energy, $E\left[u\right]\left(t\right)$ is constant in $t$ (i.e. $E\left[u\right]\left(t\right)= E\left[u\right]\left(0\right)$). But $v|_{t= 0}$ and $\frac{\partial v}{\partial t} |_{t= 0}$ both vanish, therefore $E\left[u\right]\left(0\right)= 0$. In term, this means that 
+		\begin{align*} 
+			\frac{\partial v}{\partial t} = 0 \text{ and } \frac{\partial v}{\partial x} = 0
+		\end{align*}
+		Hence $v$ is constant and equal to $0$.
+    \end{proof}
+    
+\end{parag}
+
+
+\begin{parag}{Existence}
+    \begin{proof}
+        Let us extend $u\left(x, t\right), f\left(x, t\right), u_0\left(x\right), u_1\left(x\right)$ as an odd $2L-$periodic function on all of $ x \in \mathbb{R}$. Then Fourier series will only contain $\sin$ terms as follows 
+		\begin{align*} 
+			u\left(x, t\right) &= \sum_{n = 1}^{\infty}b_n \sin\left(\frac{\pi n}{L}x\right)\\
+			u_0\left(x\right)&= \sum_{n = 1}^{\infty}b_{0n}\sin\left(\frac{\pi n}{L}x\right)\\
+			u_1\left(x\right) &= \sum_{n = 1}^{\infty}b_{1n}\sin\left(\frac{\pi n}{L}x\right)\\
+			f\left(x, t\right) &= \sum_{n = 1}^{\infty}f_n\left(t\right)\sin\left(\frac{\pi n}{L}x\right)
+		\end{align*}
+		Now we again look at the wave equation and compute all relevant derivatives. 
+		\begin{align*} 
+			\frac{\partial^2 u}{\partial t^2} \left(x, t\right) = \sum_{n = 1}^{\infty}b_n''\left(t\right)\sin\left(\frac{\pi n}{L}x\right)\\
+			\frac{\partial^2 u}{\partial x^2} \left(x, t\right) =  \sum_{n}^{\infty}\sum_{n = 1}^{\infty}b_n\left(t\right)\left(-\frac{\pi^2n^2}{L^2}\right) \sin\left(\frac{\pi n}{L}x\right)
+		\end{align*}
+		Now again we insert this into the PDEs which gives us 
+		\begin{align*} 
+			\sum_{n = 1}^{\infty}\left[b_n''\left(t\right) + c^2\frac{\pi^2n^2}{L^2}b_n\left(t\right)\right]\sin\left(\frac{\pi n}{L}x\right) = \sum_{n = 1}^{\infty}f_n\left(t\right)\sin\left(\frac{\pi n}{L}x\right)
+		\end{align*}
+		By comparing the coefficients we get 
+		\begin{align*} 
+			b_n'' + c^2\frac{\pi^2 n^2}{L^2}b_n = f_n\\
+			b_n\left(0\right) = b_{0n}\\
+			b_n'\left(0\right) = b_{in}
+		\end{align*}
+		And this has to hold for every $n \geq 1$.\\
+		$ $\\
+		We can solve this ODE by using Laplace transform and get the closed form 
+		\begin{align*} 
+			b_{n}\left(t\right) = b_{0n}\cos\left(\frac{c\pi n}{L}t\right) + \frac{Lb_{1n}}{c\pi n} \sin\left(\frac{c \pi n}{L}t\right) + \int_{0}^{t}\frac{L}{c\pi n}\sin\left(\frac{c \pi n}{L}\left(t - s\right)\right)f\left(s\right)ds 
+		\end{align*}
+    \end{proof}
+\end{parag}
+
+
+\begin{framedremark}
+	The above methods apply to more general initial and boundary value problems for linear PDEs when $t > 0, x \in \left(0, L\right)$ (\important{bounded domain}).
+	\begin{enumerate}
+		\item We '\textit{need}' the coefficients of the PDE to be constant. (it works beyond that, but the resulting ODEs becomes very nasty)
+		\item One can address more general classes of boundary conditions, e.g. periodic boundary conditions
+		\item Inhomogenous boundary conditions
+		\item More generally, initial boundary problems of the form 
+			\begin{align*} 
+				\frac{\partial u}{\partial t} + P_u = 0\\
+				u|_{t= 0}= u |_{x= L}= 0
+			\end{align*}
+	\end{enumerate}
+	This requires decomposing $u\left(x, t\right)$ into a sum of eigenfunctions of the operator $P$  (Sturm-Liouville problem).
+	
+	
+\end{framedremark}
+
+
+
+
+

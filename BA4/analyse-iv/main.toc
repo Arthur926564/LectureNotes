@@ -1,128 +1,140 @@
 \babel@toc {british}{}\relax 
 \contentsline {paragraph}{Overview of the course}{3}{section*.1}%
 \contentsline {paragraph}{Main textbook}{3}{section*.2}%
-\contentsline {chapter}{\numberline {1}Review of Complex number $\mathbb {C}$}{5}{chapter.1}%
-\contentsline {paragraph}{Imaginary unit}{5}{section*.3}%
-\contentsline {paragraph}{Complex Conjugate}{5}{section*.4}%
-\contentsline {paragraph}{Absolute Value}{5}{section*.5}%
-\contentsline {paragraph}{Euler's Formula}{5}{section*.6}%
-\contentsline {paragraph}{Algebraic Operations}{6}{section*.7}%
-\contentsline {paragraph}{Polar coordinates}{6}{section*.8}%
-\contentsline {paragraph}{Principal argument}{7}{section*.9}%
-\contentsline {paragraph}{Example}{7}{section*.10}%
-\contentsline {section}{\numberline {1.1}Construction of $\mathbb {C}$ (not in the course)}{8}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Complex Functions}{13}{chapter.2}%
-\contentsline {paragraph}{Examples}{13}{section*.11}%
-\contentsline {paragraph}{Trigonometric Functions}{13}{section*.12}%
-\contentsline {section}{\numberline {2.1}Limit and Continuity}{14}{section.2.1}%
-\contentsline {paragraph}{Operation on Continuous Functions}{14}{section*.13}%
-\contentsline {subsection}{\numberline {2.1.1}Complex Derivative}{14}{subsection.2.1.1}%
-\contentsline {paragraph}{Recall on topology}{15}{paragraph*.14}%
-\contentsline {paragraph}{Open set}{15}{section*.15}%
-\contentsline {paragraph}{Examples of Differentiation}{15}{section*.16}%
-\contentsline {section}{\numberline {2.2}Cauchy-Riemann equations}{16}{section.2.2}%
-\contentsline {paragraph}{Proof of the direct implication '$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$'}{16}{section*.17}%
-\contentsline {paragraph}{$ $}{16}{section*.18}%
-\contentsline {paragraph}{Example}{17}{section*.19}%
-\contentsline {paragraph}{Example}{17}{section*.20}%
-\contentsline {subsection}{\numberline {2.2.1}Rules for differentiation}{18}{subsection.2.2.1}%
-\contentsline {paragraph}{$ $}{18}{section*.21}%
-\contentsline {paragraph}{Geometric interpretation of Cauchy-Riemann equations}{18}{section*.22}%
-\contentsline {subsection}{\numberline {2.2.2}Complex logarithm}{20}{subsection.2.2.2}%
-\contentsline {paragraph}{logarithm rules}{21}{section*.23}%
-\contentsline {paragraph}{Example}{21}{section*.24}%
-\contentsline {section}{\numberline {2.3}Complex integration}{22}{section.2.3}%
-\contentsline {paragraph}{Example}{23}{section*.25}%
-\contentsline {paragraph}{Example ii}{23}{section*.26}%
-\contentsline {paragraph}{Example iii}{23}{section*.27}%
-\contentsline {paragraph}{Example iv}{23}{section*.28}%
-\contentsline {subsection}{\numberline {2.3.1}Cauchy's Theorem}{24}{subsection.2.3.1}%
-\contentsline {paragraph}{Geometric intuition}{24}{section*.29}%
-\contentsline {paragraph}{Example}{25}{section*.30}%
-\contentsline {paragraph}{Example ii}{25}{section*.31}%
-\contentsline {paragraph}{Example iii}{25}{section*.32}%
-\contentsline {paragraph}{How to shows this?}{26}{section*.33}%
-\contentsline {subsubsection}{Cauchy integral formula}{26}{subsubsection*.34}%
-\contentsline {paragraph}{How to show this?}{26}{section*.35}%
-\contentsline {subsection}{\numberline {2.3.2}Trick to compute line integrals easily}{27}{subsection.2.3.2}%
-\contentsline {paragraph}{Extension of Cauchy's integral formula}{27}{section*.36}%
-\contentsline {paragraph}{Example}{28}{section*.37}%
-\contentsline {paragraph}{Example II}{28}{section*.38}%
-\contentsline {chapter}{\numberline {3}Laurent Series}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Taylor series}{29}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Taylor series/ Regular Laurent Series for complex functions}{30}{section.3.2}%
-\contentsline {paragraph}{Remarks}{30}{paragraph*.39}%
-\contentsline {paragraph}{Example}{30}{section*.40}%
-\contentsline {paragraph}{Example II}{31}{section*.41}%
-\contentsline {paragraph}{Example III}{31}{section*.42}%
-\contentsline {paragraph}{Caution}{31}{section*.43}%
-\contentsline {paragraph}{$ $}{31}{section*.44}%
-\contentsline {subsection}{\numberline {3.2.1}Laurent Series}{31}{subsection.3.2.1}%
-\contentsline {paragraph}{ $ $}{31}{section*.45}%
-\contentsline {paragraph}{Example}{32}{section*.46}%
-\contentsline {paragraph}{Example II}{32}{section*.47}%
-\contentsline {paragraph}{Example}{33}{section*.48}%
-\contentsline {paragraph}{Example II}{33}{section*.49}%
-\contentsline {paragraph}{Regular point}{34}{section*.50}%
-\contentsline {paragraph}{Example}{35}{section*.51}%
-\contentsline {paragraph}{Summary}{36}{paragraph*.52}%
-\contentsline {paragraph}{Example}{36}{section*.53}%
-\contentsline {paragraph}{Example}{37}{section*.54}%
-\contentsline {section}{\numberline {3.3}Residues}{37}{section.3.3}%
-\contentsline {paragraph}{Example}{37}{section*.55}%
-\contentsline {paragraph}{Example}{38}{section*.56}%
-\contentsline {subsection}{\numberline {3.3.1}Residue Theorem}{38}{subsection.3.3.1}%
-\contentsline {paragraph}{How does one show this?}{39}{section*.57}%
-\contentsline {paragraph}{Example}{39}{section*.58}%
-\contentsline {paragraph}{Example}{40}{section*.59}%
-\contentsline {paragraph}{Example}{40}{section*.60}%
-\contentsline {paragraph}{Example}{40}{section*.61}%
-\contentsline {subsection}{\numberline {3.3.2}Applications}{40}{subsection.3.3.2}%
-\contentsline {paragraph}{Example}{40}{section*.62}%
-\contentsline {paragraph}{Example}{41}{section*.63}%
-\contentsline {paragraph}{$ $}{41}{section*.64}%
-\contentsline {paragraph}{$ $}{41}{section*.65}%
-\contentsline {paragraph}{Example}{43}{section*.66}%
-\contentsline {paragraph}{Integrals of rational function of trigonometric functions}{44}{paragraph*.67}%
-\contentsline {paragraph}{$ $}{44}{section*.68}%
-\contentsline {paragraph}{Example}{44}{section*.69}%
-\contentsline {section}{\numberline {3.4}Review of Fourier Analysis}{45}{section.3.4}%
-\contentsline {paragraph}{Fourier transform}{45}{section*.70}%
-\contentsline {paragraph}{Inverse Fourier transform}{45}{section*.71}%
-\contentsline {paragraph}{Signal of "Physical domain"}{45}{section*.72}%
-\contentsline {paragraph}{Properties of Fourier transform}{45}{section*.73}%
-\contentsline {paragraph}{Derivatives}{46}{section*.74}%
-\contentsline {paragraph}{Convolution}{47}{section*.75}%
-\contentsline {paragraph}{Example}{47}{section*.76}%
-\contentsline {paragraph}{Fourier transform as convolution}{47}{section*.77}%
-\contentsline {paragraph}{Gaussian function}{47}{section*.78}%
-\contentsline {paragraph}{Plancherel's Theorem}{48}{section*.79}%
-\contentsline {paragraph}{Example}{48}{section*.80}%
-\contentsline {paragraph}{ $ $}{48}{section*.81}%
-\contentsline {section}{\numberline {3.5}Laplace Analysis}{49}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Convergence criteria}{49}{subsection.3.5.1}%
-\contentsline {paragraph}{Derivative}{49}{section*.82}%
-\contentsline {paragraph}{Example}{50}{section*.83}%
-\contentsline {paragraph}{Example}{50}{section*.84}%
-\contentsline {subsubsection}{Properties of the Laplace transform}{51}{subsubsection*.85}%
-\contentsline {paragraph}{Linearity}{51}{section*.86}%
-\contentsline {paragraph}{Nomenclature}{51}{section*.87}%
-\contentsline {paragraph}{Example}{52}{section*.88}%
-\contentsline {paragraph}{$ $}{52}{section*.89}%
-\contentsline {paragraph}{Example}{53}{section*.90}%
-\contentsline {paragraph}{Example}{53}{section*.91}%
-\contentsline {paragraph}{Convolution}{54}{section*.92}%
-\contentsline {section}{\numberline {3.6}Applications of Laplace analysis to the Cauchy problem (initial value problem)}{54}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Ordinary Differential Equations (ODE) with constant coefficients}{54}{subsection.3.6.1}%
-\contentsline {paragraph}{First order initial value problem}{54}{section*.93}%
-\contentsline {paragraph}{Second order initial value problem}{55}{section*.94}%
-\contentsline {subsection}{\numberline {3.6.2}Inverse Laplace Transform}{59}{subsection.3.6.2}%
-\contentsline {paragraph}{How to show this formula? (Outbook)}{59}{section*.95}%
-\contentsline {paragraph}{Example}{60}{paragraph*.96}%
-\contentsline {paragraph}{Partial fraction decomposition}{60}{section*.97}%
-\contentsline {paragraph}{Inverse Laplace transform and residue theorem}{60}{section*.98}%
-\contentsline {section}{\numberline {3.7}Application to partial differential equations (PDES)}{62}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Recall of Fourier series}{62}{subsection.3.7.1}%
-\contentsline {paragraph}{Orthogonality}{62}{section*.99}%
-\contentsline {paragraph}{Coefficient of the serie}{63}{section*.100}%
-\contentsline {paragraph}{Special cases}{64}{section*.101}%
+\contentsline {part}{I\hspace {1em}Complex Numbers}{5}{part.1}%
+\contentsline {chapter}{\numberline {1}Review of Complex number $\mathbb {C}$}{7}{chapter.1}%
+\contentsline {paragraph}{Imaginary unit}{7}{section*.3}%
+\contentsline {paragraph}{Complex Conjugate}{7}{section*.4}%
+\contentsline {paragraph}{Absolute Value}{7}{section*.5}%
+\contentsline {paragraph}{Euler's Formula}{7}{section*.6}%
+\contentsline {paragraph}{Algebraic Operations}{8}{section*.7}%
+\contentsline {paragraph}{Polar coordinates}{8}{section*.8}%
+\contentsline {paragraph}{Principal argument}{9}{section*.9}%
+\contentsline {paragraph}{Example}{9}{section*.10}%
+\contentsline {section}{\numberline {1.1}Construction of $\mathbb {C}$ (not in the course)}{10}{section.1.1}%
+\contentsline {part}{II\hspace {1em}Holomorphic Functions}{15}{part.2}%
+\contentsline {chapter}{\numberline {2}Complex Functions}{17}{chapter.2}%
+\contentsline {paragraph}{Examples}{17}{section*.11}%
+\contentsline {paragraph}{Trigonometric Functions}{17}{section*.12}%
+\contentsline {section}{\numberline {2.1}Limit and Continuity}{18}{section.2.1}%
+\contentsline {paragraph}{Operation on Continuous Functions}{18}{section*.13}%
+\contentsline {subsection}{\numberline {2.1.1}Complex Derivative}{18}{subsection.2.1.1}%
+\contentsline {paragraph}{Recall on topology}{19}{paragraph*.14}%
+\contentsline {paragraph}{Open set}{19}{section*.15}%
+\contentsline {paragraph}{Examples of Differentiation}{19}{section*.16}%
+\contentsline {section}{\numberline {2.2}Cauchy-Riemann equations}{20}{section.2.2}%
+\contentsline {paragraph}{Proof of the direct implication '$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$'}{20}{section*.17}%
+\contentsline {paragraph}{$ $}{20}{section*.18}%
+\contentsline {paragraph}{Example}{21}{section*.19}%
+\contentsline {paragraph}{Example}{21}{section*.20}%
+\contentsline {section}{\numberline {2.3}Rules for differentiation}{22}{section.2.3}%
+\contentsline {paragraph}{$ $}{22}{section*.21}%
+\contentsline {paragraph}{Geometric interpretation of Cauchy-Riemann equations}{22}{section*.22}%
+\contentsline {section}{\numberline {2.4}Complex logarithm}{24}{section.2.4}%
+\contentsline {paragraph}{logarithm rules}{25}{section*.23}%
+\contentsline {paragraph}{Example}{25}{section*.24}%
+\contentsline {chapter}{\numberline {3}Complex integration}{27}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Line integrals}{27}{section.3.1}%
+\contentsline {paragraph}{Example}{28}{section*.25}%
+\contentsline {paragraph}{Example ii}{28}{section*.26}%
+\contentsline {paragraph}{Example iii}{29}{section*.27}%
+\contentsline {paragraph}{Example iv}{29}{section*.28}%
+\contentsline {subsection}{\numberline {3.1.1}Cauchy's Theorem}{29}{subsection.3.1.1}%
+\contentsline {paragraph}{Geometric intuition}{29}{section*.29}%
+\contentsline {paragraph}{Example}{30}{section*.30}%
+\contentsline {paragraph}{Example ii}{30}{section*.31}%
+\contentsline {paragraph}{Example iii}{30}{section*.32}%
+\contentsline {paragraph}{How to shows this?}{31}{section*.33}%
+\contentsline {subsubsection}{Cauchy integral formula}{31}{subsubsection*.34}%
+\contentsline {paragraph}{How to show this?}{31}{section*.35}%
+\contentsline {subsection}{\numberline {3.1.2}Trick to compute line integrals easily}{32}{subsection.3.1.2}%
+\contentsline {paragraph}{Extension of Cauchy's integral formula}{32}{section*.36}%
+\contentsline {paragraph}{Example}{33}{section*.37}%
+\contentsline {paragraph}{Example II}{33}{section*.38}%
+\contentsline {chapter}{\numberline {4}Laurent Series}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Taylor series}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Taylor series/ Regular Laurent Series for complex functions}{36}{section.4.2}%
+\contentsline {paragraph}{Remarks}{36}{paragraph*.39}%
+\contentsline {paragraph}{Example}{36}{section*.40}%
+\contentsline {paragraph}{Example II}{37}{section*.41}%
+\contentsline {paragraph}{Example III}{37}{section*.42}%
+\contentsline {paragraph}{Caution}{37}{section*.43}%
+\contentsline {paragraph}{$ $}{37}{section*.44}%
+\contentsline {section}{\numberline {4.3}Laurent Series}{37}{section.4.3}%
+\contentsline {paragraph}{ $ $}{37}{section*.45}%
+\contentsline {paragraph}{Example}{38}{section*.46}%
+\contentsline {paragraph}{Example II}{38}{section*.47}%
+\contentsline {paragraph}{Example}{39}{section*.48}%
+\contentsline {paragraph}{Example II}{39}{section*.49}%
+\contentsline {subsection}{\numberline {4.3.1}Regular point}{40}{subsection.4.3.1}%
+\contentsline {paragraph}{Regular point}{40}{section*.50}%
+\contentsline {paragraph}{Example}{42}{section*.51}%
+\contentsline {paragraph}{Summary}{42}{paragraph*.52}%
+\contentsline {paragraph}{Example}{42}{section*.53}%
+\contentsline {paragraph}{Example}{43}{section*.54}%
+\contentsline {section}{\numberline {4.4}Residues Theorem}{43}{section.4.4}%
+\contentsline {paragraph}{Example}{43}{section*.55}%
+\contentsline {paragraph}{Example}{44}{section*.56}%
+\contentsline {subsection}{\numberline {4.4.1}Residue Theorem}{45}{subsection.4.4.1}%
+\contentsline {paragraph}{How does one show this?}{45}{section*.57}%
+\contentsline {paragraph}{Example}{46}{section*.58}%
+\contentsline {paragraph}{Example}{46}{section*.59}%
+\contentsline {paragraph}{Example}{46}{section*.60}%
+\contentsline {paragraph}{Example}{46}{section*.61}%
+\contentsline {subsection}{\numberline {4.4.2}Applications}{47}{subsection.4.4.2}%
+\contentsline {paragraph}{Example}{47}{section*.62}%
+\contentsline {paragraph}{Example}{47}{section*.63}%
+\contentsline {paragraph}{$ $}{47}{section*.64}%
+\contentsline {paragraph}{$ $}{48}{section*.65}%
+\contentsline {paragraph}{Example}{49}{section*.66}%
+\contentsline {paragraph}{Integrals of rational function of trigonometric functions}{50}{paragraph*.67}%
+\contentsline {paragraph}{$ $}{50}{section*.68}%
+\contentsline {paragraph}{Example}{51}{section*.69}%
+\contentsline {part}{III\hspace {1em}Integral Transforms}{53}{part.3}%
+\contentsline {chapter}{\numberline {5}Review of Fourier Analysis}{55}{chapter.5}%
+\contentsline {paragraph}{Fourier transform}{55}{section*.70}%
+\contentsline {paragraph}{Inverse Fourier transform}{55}{section*.71}%
+\contentsline {paragraph}{Signal of "Physical domain"}{55}{section*.72}%
+\contentsline {paragraph}{Properties of Fourier transform}{55}{section*.73}%
+\contentsline {paragraph}{Derivatives}{56}{section*.74}%
+\contentsline {paragraph}{Convolution}{57}{section*.75}%
+\contentsline {paragraph}{Example}{57}{section*.76}%
+\contentsline {paragraph}{Fourier transform as convolution}{57}{section*.77}%
+\contentsline {paragraph}{Gaussian function}{57}{section*.78}%
+\contentsline {paragraph}{Plancherel's Theorem}{58}{section*.79}%
+\contentsline {paragraph}{Example}{58}{section*.80}%
+\contentsline {paragraph}{ $ $}{58}{section*.81}%
+\contentsline {chapter}{\numberline {6}Laplace Transform}{61}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Convergence}{61}{section.6.1}%
+\contentsline {paragraph}{Derivative}{62}{section*.82}%
+\contentsline {paragraph}{Example}{62}{section*.83}%
+\contentsline {paragraph}{Example}{62}{section*.84}%
+\contentsline {section}{\numberline {6.2}Properties of the Laplace transform}{63}{section.6.2}%
+\contentsline {paragraph}{Linearity}{63}{section*.85}%
+\contentsline {paragraph}{Nomenclature}{63}{section*.86}%
+\contentsline {paragraph}{Example}{64}{section*.87}%
+\contentsline {paragraph}{$ $}{64}{section*.88}%
+\contentsline {paragraph}{Example}{65}{section*.89}%
+\contentsline {paragraph}{Example}{65}{section*.90}%
+\contentsline {paragraph}{Convolution}{66}{section*.91}%
+\contentsline {section}{\numberline {6.3}Applications of Laplace analysis to the Cauchy problem (initial value problem)}{66}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Ordinary Differential Equations (ODE) with constant coefficients}{66}{subsection.6.3.1}%
+\contentsline {paragraph}{First order initial value problem}{66}{section*.92}%
+\contentsline {paragraph}{Second order initial value problem}{68}{section*.93}%
+\contentsline {subsection}{\numberline {6.3.2}Inverse Laplace Transform}{71}{subsection.6.3.2}%
+\contentsline {paragraph}{How to show this formula? (Outbook)}{71}{section*.94}%
+\contentsline {paragraph}{Example}{72}{paragraph*.95}%
+\contentsline {paragraph}{Partial fraction decomposition}{72}{section*.96}%
+\contentsline {paragraph}{Inverse Laplace transform and residue theorem}{72}{section*.97}%
+\contentsline {chapter}{\numberline {7}Application to partial differential equations (PDES)}{75}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Recall of Fourier series}{75}{subsection.7.0.1}%
+\contentsline {paragraph}{Orthogonality}{75}{section*.98}%
+\contentsline {paragraph}{Coefficient of the serie}{76}{section*.99}%
+\contentsline {paragraph}{Special cases}{77}{section*.100}%
+\contentsline {subsection}{\numberline {7.0.2}Heat equation on a bounded interval}{78}{subsection.7.0.2}%
+\contentsline {paragraph}{Uniqueness}{78}{section*.101}%
+\contentsline {paragraph}{Existence}{79}{section*.102}%
+\contentsline {paragraph}{Fourier series (respecting $2L-$periodicity and oddness)}{79}{section*.103}%
+\contentsline {subsection}{\numberline {7.0.3}Wave equation on a bounded domain}{81}{subsection.7.0.3}%
+\contentsline {paragraph}{Uniqueness}{81}{section*.104}%
+\contentsline {paragraph}{Existence}{81}{section*.105}%

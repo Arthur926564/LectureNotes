@@ -85,11 +85,13 @@
 	\end{align*}
 \end{parag}
 
-
 \chapter{Laurent Series}
+
 Before jumping to Laurent series, first let's recall what Taylor series are and why are we interested in them.
+
 \section{Taylor series}
-The goal of Taylor series is to approximate any function using polynomial. The reason for this is that a polynomial is very nice to manipulate (derivative/primitive are very easy to compute) the function is continuous etc...
+$ $\\
+The goal of Taylor series is to approximate any function using polynomial. The reason for this is that a polynomial is very nice to manipulate (derivative/primitive are very easy to compute) they are continuous, smooth, etc...
 \begin{definition}{Taylor Series}
 Let $f : \mathbb{R} \to \mathbb{R}$ sufficiently regular function. For any $x_0 \in \mathbb{R}$ the \important{Taylor polynomial} of degree $N$ is 
 \begin{align*} 
@@ -133,7 +135,7 @@ This series on the right hand side converges for $\left\| x\right\| < 1$.
 \end{framedremark}
 
 \section{Taylor series/ Regular Laurent Series for complex functions}
-Taylor series or more specifically regular Laurent series (which we will see later in this course). 
+Taylor series or more specifically regular Laurent series (which we will see later in this course) can approximate arbitrary precisely a function given a certain disk. 
 \begin{theoreme}
 Let $D \subseteq \mathbb{C}$ be open and $z_0 \in D$. Let $R > 0$ be such that the disk 
 \begin{align*} B_R\left(z_0\right) := \left\{z \in \mathbb{C}: \left\|z - z_0\right\| < R\right\} \end{align*}
@@ -144,9 +146,9 @@ If $f : D \to \mathbb{C}$ is holomorphic then
 	f\left(z\right) =  \sum_{n= 0}^{\infty}\frac{f^{\left(n\right)\left(z_0\right)}}{n!}\left(z - z_0\right)^{n}
 \end{align*}
 For all $z \in B_r\left(z_0\right)$\\
-$ $\\
-What this means is that if I gave you a point and a ball around that point. Then, at each point around this ball the function at this point is equal to his Taylor series.
 \end{theoreme}
+What this means is that if I gave you a point and a ball around that point. Then, at each point around this ball the function at this point is equal to his Taylor series.\\
+$ $\\
 The largest possible $R$ is called the \important{radius of convergence}
 
 \paragraph{Remarks}%
@@ -200,12 +202,10 @@ The largest possible $R$ is called the \important{radius of convergence}
     In particular, in order to compute the Taylor series representation at a given point, we don't have to do the 'straightforward' computation, we can use trick by using other Taylor series that we already know. This is something that we have already done in real analysis (for instance when doing limit of function of the type $e^{\sin\left(x\right)}$)
 \end{parag}
 
+\section{Laurent Series}
+The intuition behind Laurent series is that we can change our series in a way so that we can represent function even when the Taylor series is not defined. To do so we will allows our series to have \important{negative} exponent.
 
-
-\subsection{Laurent Series}
-The intuition behind this is, can we change in a way our series so that we can represent function even when the Taylor series is not defined. To do so we will allows our series to have \important{negative} exponent.
-
-\begin{theoreme}
+\begin{definition}
 Let $D \subseteq \mathbb{C}$ be open and $z_0 \in D$. Assume $f : D\setminus \left\{z_0\right\} \to \mathbb{C}$ is holomorphic. Let $R > 0$ such that $B_R\left(z_0\right) \subseteq D$ Then for all $z \in B_R\left(z_0\right)\setminus \left\{z_0\right\}$ 
 \begin{align*} 
 	f\left(z\right) =  \sum_{n = -\infty}^{\infty} c_n\left(z - z_0\right)^{n}
@@ -214,7 +214,7 @@ Where for every simple closed, counter-clockwise oriented curve $\gamma$ such th
 \begin{align*} 
 	c_n =  \frac{1}{2\pi i} \int_{\gamma} \frac{f\left(\zeta\right)}{\left(\zeta - z_0\right)^{n + 1}}d \zeta
 \end{align*}
-\end{theoreme}
+\end{definition}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.3\textwidth]{figure/2026-03-12.pdf}
