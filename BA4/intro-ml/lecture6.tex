@@ -164,7 +164,7 @@ But ultimately there is not a best validation method. In practice one usually do
 				\item For this, one treats each value of the hyper-parameter as a separate model
 			\end{itemize}
 	\end{itemize}
-	However, it becomes impractival with too many candidates, for example, one cannot choose which combination of functions to use for features expansion among a very large set.
+	However, it becomes impractical with too many candidates, for example, one cannot choose which combination of functions to use for features expansion among a very large set.
 \end{parag}
 
 
@@ -194,23 +194,23 @@ Now we have one tool in order to have a model that can generalize well. Let us n
 		\begin{align*} 
 			Xw = y
 		\end{align*}
-		This implies that we have a linear systems with $N$ equations and $D + 1$ unknows, this is solvable when $N \leq D + 1$
+		This implies that we have a linear systems with $N$ equations and $D + 1$ unknowns, this is solvable when $N \leq D + 1$
 	\end{subparag}
 \end{parag}
 
-\begin{parag}{Penalizin overfitting}
-    THe standard way to penalize the complexity of a model is to add a regularizer to the empirical risk. This leads to a new training objective function of the form:
+\begin{parag}{Penalizing overfitting}
+    The standard way to penalize the complexity of a model is to add a regularizer to the empirical risk. This leads to a new training objective function of the form:
 	\begin{align*} 
 		E\left(w\right) = R\left(w\right) + \lambda E_w\left(w\right)
 	\end{align*}
-	Where $R\left(w\right)$ is the empirical risk and $E_w\left(w\right)$ is the regulariyer. $\lambda$ is a hyper-parameter that defines the influence of the regularizer $\left(\lambda > 0\right)$
+	Where $R\left(w\right)$ is the empirical risk and $E_w\left(w\right)$ is the regularizer. $\lambda$ is a hyper-parameter that defines the influence of the regularizer $\left(\lambda > 0\right)$
 \end{parag}
-\begin{parag}{Regulariyed linear regression}
-    One of the most common regularizers is the sum of squares of the weights (there is a probabilistic motivation behind it)
+\begin{parag}{Regularised linear regression}
+    One of the most common regularizer is the sum of squares of the weights (there is a probabilistic motivation behind it)
 	\begin{align*} 
 		E_w\left(w\right) = w^{T}w
 	\end{align*}
-	This lets us write regulariyed linear regression as
+	This lets us write regularized linear regression as
 	\begin{align*} 
 		\min_w \sum_{i= 1}^{N}\left(\phi\left(x_i\right)^{T}w - y_i\right)^2 + \lambda w^{T}w
 	\end{align*}
@@ -233,7 +233,7 @@ Now we have one tool in order to have a model that can generalize well. Let us n
 		This also ensures that we can actually find a solution, that the matrix (the thing inside the parenthesis) can be inverted.
 	\end{subparag}
 	\begin{subparag}{Remark}
-	    For people who have done cs-328, this is the Tikhonov regulariyation technic that we have seen. In cs-328 the goal of regularization was to \important{improve the condition number} of a problem. The geometric interpretation was that the addition of an identiy matric causes the matrix to scale input vectors uniformly in different directions
+	    For people who have done cs-328, this is the Tikhonov regularization technique that we have seen. In cs-328 the goal of regularization was to \important{improve the condition number} of a problem. The geometric interpretation was that the addition of an identity matrix causes the matrix to scale input vectors uniformly in different directions
 		\begin{center}
 		\includegraphics[width=0.8\textwidth]{figure/2026-03-24.pdf}
 		\end{center}
@@ -243,7 +243,7 @@ Now we have one tool in order to have a model that can generalize well. Let us n
 
 \end{parag}
 \begin{parag}{Multi-output ridge regression}
-    When dealing with multiple output dimesnions, the parameters are expressed in matrix form. We can write multi-output ridge regression as:
+    When dealing with multiple output dimensions, the parameters are expressed in matrix form. We can write multi-output ridge regression as:
 	\begin{align*} \min_W \sum_{i= 1}^{N}\left\|W^{T}\phi\left(x_i\right)-y_i\right\|^2 + \lambda \left\|W\right\|_F^2 \end{align*}
 	Where $\left\|W\right\|_F^2$ is the square Frobenius norm, equivalent to the sum of the square of all values in the matrix $W$.\\
 	$ $\\

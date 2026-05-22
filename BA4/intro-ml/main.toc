@@ -132,8 +132,8 @@
 \contentsline {paragraph}{Leave-one-out cross-validation (LOOCV)}{47}{section*.108}%
 \contentsline {paragraph}{Cross-validation}{49}{section*.109}%
 \contentsline {paragraph}{Overfitting with a linear model}{49}{section*.110}%
-\contentsline {paragraph}{Penalizin overfitting}{50}{section*.111}%
-\contentsline {paragraph}{Regulariyed linear regression}{50}{section*.112}%
+\contentsline {paragraph}{Penalizing overfitting}{50}{section*.111}%
+\contentsline {paragraph}{Regularised linear regression}{50}{section*.112}%
 \contentsline {paragraph}{Multi-output ridge regression}{51}{section*.113}%
 \contentsline {paragraph}{Regularization and logistic regression}{51}{section*.114}%
 \contentsline {paragraph}{Finding the right regularization strength}{51}{section*.115}%
@@ -259,3 +259,32 @@
 \contentsline {paragraph}{Normalized cut}{100}{section*.221}%
 \contentsline {paragraph}{Transformed formulation}{100}{section*.222}%
 \contentsline {paragraph}{$K$-way partition}{101}{section*.223}%
+\contentsline {section}{\numberline {3.3}Natural Language Processing (NLP)}{102}{section.3.3}%
+\contentsline {paragraph}{Heterogeneous data}{102}{section*.224}%
+\contentsline {paragraph}{Bag of words}{102}{section*.225}%
+\contentsline {paragraph}{Word representation}{102}{section*.226}%
+\contentsline {paragraph}{Word embeddings}{102}{section*.227}%
+\contentsline {paragraph}{Training}{103}{section*.228}%
+\contentsline {paragraph}{Individual words}{103}{section*.229}%
+\contentsline {paragraph}{Recurrent neural networks}{103}{section*.230}%
+\contentsline {paragraph}{RNN for classification}{104}{section*.231}%
+\contentsline {paragraph}{Different types of RNNs}{104}{section*.232}%
+\contentsline {paragraph}{Training an encoder-decoder model}{104}{section*.233}%
+\contentsline {paragraph}{Limitation}{105}{section*.234}%
+\contentsline {paragraph}{Incorporating attention}{105}{section*.235}%
+\contentsline {paragraph}{Attention function}{106}{section*.236}%
+\contentsline {paragraph}{Interpretability?}{107}{section*.237}%
+\contentsline {paragraph}{Problem: Encoder is recurrent}{107}{section*.238}%
+\contentsline {subsection}{\numberline {3.3.1}Transformer}{107}{subsection.3.3.1}%
+\contentsline {paragraph}{Transformers vs RNNs}{107}{section*.239}%
+\contentsline {paragraph}{Self-attention}{108}{section*.240}%
+\contentsline {paragraph}{Example}{108}{section*.241}%
+\contentsline {paragraph}{Transformer block}{109}{section*.242}%
+\contentsline {paragraph}{Full transformer}{110}{section*.243}%
+\contentsline {paragraph}{Masked multi-head self attention}{110}{section*.244}%
+\contentsline {paragraph}{Cross attention}{111}{section*.245}%
+\contentsline {paragraph}{Position Embeddings}{112}{section*.246}%
+\contentsline {paragraph}{GPT: Generative Pretrained Transformer}{112}{paragraph*.247}%
+\contentsline {paragraph}{Training}{112}{section*.248}%
+\contentsline {paragraph}{Fine tuning}{112}{section*.249}%
+\contentsline {paragraph}{Transformers for images}{113}{paragraph*.250}%
