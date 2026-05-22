@@ -336,6 +336,21 @@ $ $\\
 
 
 
+\begin{parag}{Issues with interruptible locks}
+    Disabling/enabling interrupt is a priviledged operation, meaning only the OS can perform it. Aslo we don't have multiple locks and it works only for uniprocessor (no support for locking across cores in a multicore system).\\
+	$ $\\
+	There also a big attack here by havcing a greedy program which can monopolize the lock by holding for arbitrary length $\to$ this starve other threads (also called \important{starvation}).\\
+	$ $\\
+	Hardware interrupts can get lost $\implies$ hardware only stores the interryupt $X$ has happended
+\end{parag}
+
+
+\begin{parag}{Faulty spin lock}
+	The idea to resolve the issue of having only one lock is to use a \important{spin lock}. Let us have a shared variable to synchronize access to the critical section. We will use simple loads and stores for updating the shared lock variable
+	
+	
+\end{parag}
+
 
 
 
