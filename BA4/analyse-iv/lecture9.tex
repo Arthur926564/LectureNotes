@@ -54,7 +54,7 @@ Let us outline the proof of this theorem.
 
 Recall the definition of the Laplace transform:
 \begin{align*} 
-	\mathcal{L}\left[f'\right]\left(z\right) \int_{0}^{\infty} f'\left(t\right)e^{-tz}dt
+	\mathcal{L}\left[f'\right]\left(z\right) = \int_{0}^{\infty} f'\left(t\right)e^{-tz}dt
 \end{align*}
 A derivative times an exponential? This looks a lot like an integration by part... However we have to be careful to treat the '\textit{boundary term}'at $\pm \infty$ appropriately. Since $\gamma_0$ is an abscissa of convergence for $f'$ and $\text{Re }z > \gamma_0$, the integral $\int_0^{\infty}f'\left(t\right)e^{-tz}dt$ converges absolutely.\\
 $ $\\
@@ -77,7 +77,7 @@ Thus there must exists a sequence $T_n \to \infty$ as $n \to \infty$ s.t.
 	\left|f\left(T_n\right)\right|\left|e^{-zT_n}\right| \to 0 \text{ as } n \to \infty
 \end{align*}
 The argument for that is that otherwise $\left|f\left(t\right)\right|\left|e^{-zt}\right|$ would stay away from $0$ as $t \to \infty$ but such function cannot have finite integral over the positive line.\\
-When $T_n$ is chosen that way, tu computation above gives us 
+When $T_n$ is chosen that way, the computation above gives us 
 \begin{align*} 
 	\mathcal{L}\left[f'\right]\left(z\right)= -f\left(0\right) + z \mathcal{L}\left[f\right]\left(z\right)
 \end{align*}
@@ -86,7 +86,7 @@ When $T_n$ is chosen that way, tu computation above gives us
 As a consequence of iterating this formula: if $f : \mathbb{R}_+ \to \mathbb{C}$ is of class $C^{k}$ for $k \in \mathbb{N}$ and $\gamma_0 \in \mathbb{R}$ is an abscissa of convergence for all derivatives of $f$ namely $f, f', f'', \ldots, f^{\left(k\right)}$ then for $\text{Re }z > \gamma_0$, 
 \begin{align*} 
 	\mathcal{L}\left[f'\right]\left(z\right) &=  z \mathcal{L}\left[f\right]\left(z\right) - f\left(0\right)\\
-	\mathcal{L}\left[f'''\right]\left(z\right) &=  z \mathcal{L}\left[f'\right]\left(z\right) - f'\left(0\right)\\
+	\mathcal{L}\left[f''\right]\left(z\right) &=  z \mathcal{L}\left[f'\right]\left(z\right) - f'\left(0\right)\\
 	&= z \left[z \mathcal{L}\left[f\right] - f\left(0\right)\right] - f'\left(0\right)
 \end{align*}
 By iterating this formula for $k$, this gives us 
@@ -154,8 +154,8 @@ Let $a > 0$ and $b \in \mathbb{R}$. Let $f : \mathbb{R}_+ \to \mathbb{C}$ piecew
 	\end{align*}
 	So here in order to have the same transformation as the one for $f$ we have to get rid of the $a$ in the argument, we can do so using substitution. Let $s = at$ and $ds =  adt$. As we know that $a > 0$ we can rewrite our integral as
 	\begin{align*} 
-		&=  \int_0^{\infty}f\left(s\right) e^{-z + b}\frac{S}{a}\frac{ds}{a}\\
-		&= \frac{1}{a}\int_0^{\infty}f\left(s\right)e^{-\frac{zt + b}{a}s}ds = \frac{1}{a}\mathcal{L}\left[f\right]\left(\frac{z + b}{a}\right)
+		&=  \int_0^{\infty}f\left(s\right) e^{\left(-z + b\right)\frac{s}{a}}\frac{ds}{a}\\
+		&= \frac{1}{a}\int_0^{\infty}f\left(s\right)e^{-\frac{z + b}{a}s}ds = \frac{1}{a}\mathcal{L}\left[f\right]\left(\frac{z + b}{a}\right)
 	\end{align*}
 \end{proof}
 
@@ -181,7 +181,7 @@ The fact that $c$ is an abscissa of convergence for $g$ can be shown by hand, wi
 	\begin{align*} 
 		\mathcal{L}\left[f\right]\left(z\right) &= \frac{1}{b-a} \left[\frac{1}{z-b} - \frac{1}{z-a}\right]\\
 												&=	\frac{1}{b-a}\left[\mathcal{L}\left[e^{bt}\right]\left(z\right) - \mathcal{L}\left[e^{at}\right]\left(z\right)\right]\\
-												&= \mathcal{L}\left[\frac{e^{bt} - e^{at}}{b-1}\right]\left(z\right)
+												&= \mathcal{L}\left[\frac{e^{bt} - e^{at}}{b-a}\right]\left(z\right)
 	\end{align*}
 	This is defined when the two Laplace transforms in the middle are both defined, when $\text{Re }z > \max \left\{a, b\right\}$.
 \end{parag}

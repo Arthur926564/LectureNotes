@@ -55,7 +55,7 @@
 	\begin{align*} 
 		f\left(t\right) = \frac{1}{2\pi} \int_{-\infty}^{\infty}F\left(\gamma + is\right)e^{\left(\gamma + is\right)t}ds
 	\end{align*}
-	Let $h\left(z\right) = F\left(z\right)e^{zt}$. The poles of our function $h$ are $z= =1$ and $z= -2$. For simplicity, let us choose $\gamma = 0$. Now we have to check some properties before we can actually compute this integral, we have that 
+	Let $h\left(z\right) = F\left(z\right)e^{zt}$. The poles of our function $h$ are $z= -1$ and $z= -2$. For simplicity, let us choose $\gamma = 0$. Now we have to check some properties before we can actually compute this integral, we have that 
 	\begin{enumerate}
 	    \item $F$ is holomorphic on $\left\{\text{Re }z > -1\right\}$
 	    \item $\int_{-\infty}^{\infty}\left|F\left(\gamma + is\right)\right|ds < \infty$
@@ -93,7 +93,7 @@
 	For the second pole, $z = -2$ this pole is of order $2$ which therefore implies that we need to take the derivative as 
 	\begin{align*} 
 		\text{Res}_{-2}\left(h\right) &= \lim_{z \to -2} \frac{d}{dz} \left(z + 2\right)^2 h\left(z\right)\\
-		&= \lim_{z \to -2}  \frac{d}{dz} \left(\frac{e^{zt}}{z + 1}\right) = -e^{-zt}\left(t + 1\right)
+		&= \lim_{z \to -2}  \frac{d}{dz} \left(\frac{e^{zt}}{z + 1}\right) = -e^{-2t}\left(t + 1\right)
 	\end{align*}
 	Hence giving us the result 
 	\begin{align*} 
@@ -120,7 +120,7 @@
 	\end{align*}
 	Therefore, we have found our inverse given as 
 	\begin{align*} 
-		\frac{1}{2\pi i} \cdot  2\pi i\left[e^{t} - e^{-2t} - te^{-2t}\right]
+		\frac{1}{2\pi i} \cdot  2\pi i\left[e^{-t} - e^{-2t} - te^{-2t}\right]
 	\end{align*}
 
 \end{parag}
@@ -144,7 +144,7 @@ For $t > 0$ and $x \in \left(0, L\right)$. We stipulate (or give the initial con
 \end{align*}
 It describes the evolution of temperature $u$ of a one dimensional rod of length $L$ with a heat source $f$ and fixed temperature at endpoints $0, L$.\\
 $ $\\
-Let us before starting summarize the general procedure that we will follow. There is three different '\textit{tools}' that we can use:
+Let us summarize before starting the general procedure that we will follow. There is three different '\textit{tools}' that we can use:
 \begin{itemize}
     \item \important{Fourier series} if the space or time domain is bounded
     \item \important{Fourier transform} if the space or time domain is on $ \mathbb{R}$
@@ -256,7 +256,7 @@ What we want to decompose is a function $f: \left[0, L\right] \to \mathbb{R}$ in
 		Where 
 		\begin{align*} 
 			a_n &= \frac{2}{L}\int_0^{L}f\left(x\right)\cos\left(\frac{2\pi n}{L}x\right)dx\\
-				&= \frac{2}{L}\int_{-\frac{L}{2}}^{\frac{L}{2}}f\left(x\right)\cos\left(\frac{\pi n}{L}x\right)dx \mathspace \text{ by } L-\text{periodicity}\\
+				&= \frac{2}{L}\int_{-\frac{L}{2}}^{\frac{L}{2}}f\left(x\right)\cos\left(\frac{ 2\pi n}{L}x\right)dx \mathspace \text{ by } L-\text{periodicity}\\
 				&= \frac{4}{L}\int_{0}^{\frac{L}{2}}f\left(x\right)\cos\left(\frac{2\pi n}{L}x\right)dx
 		\end{align*}
 	\end{subparag}

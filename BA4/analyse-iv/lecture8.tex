@@ -9,7 +9,7 @@ We will first do a first review of Fourier transform in order to have a better i
 		\hat{f}\left(a\right) := \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-iax}f\left(x\right)dx
 	\end{align*}
 	\end{definition}
-	The \textit{well-defined} here is a bit sloppy but it is wanted, the transform is defined when we are able to compute the integral wrote above. But if we want to be a bit more formal we will say the well-defined means where $f$ is piecewise continuous and $\int_{-\infty}^{\infty}\left|f\right|dz < \infty$ (meaning, $f \in L^{1}\left( \mathbb{R}; \mathbb{C}\right)$)
+	The \textit{well-defined} here is a bit sloppy but it is wanted, the transform is defined when we are able to compute the integral written above. But if we want to be a bit more formal we will say the well-defined means where $f$ is piecewise continuous and $\int_{-\infty}^{\infty}\left|f\right|dz < \infty$ (meaning, $f \in L^{1}\left( \mathbb{R}; \mathbb{C}\right)$)
 	\begin{subparag}{Remark}
 	    We also note the transform as $\mathcal{F}\left[f\right]$ instead of $\hat{f}$.
 	\end{subparag}
@@ -17,7 +17,7 @@ We will first do a first review of Fourier transform in order to have a better i
 
 \begin{parag}{Inverse Fourier transform}
 	\begin{definition}{Inverse Fourier transform}
-    	let $f : \mathbb{R} \to \mathbb{C}$ of a function $f : \mathbb{R} \to \mathbb{C}$, whenever $f$ is well-defined is defined as:
+		The inverse Fourier transform of a function $\hat{f}: \mathbb{R} \to\mathbb{C}$ is the function $\chec{f}: \mathbb{R} \to \mathbb{C}$ defined as (whenever $\hat{f}$ is defined)
 		\begin{align*} 
 			\check{f}\left(x\right) := \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{iax}f\left(a\right)da
 		\end{align*}
@@ -47,22 +47,22 @@ In general $\hat{f}$ is complex-valued even if $f$ is real-valued. However, if $
 	    \item Linearity: $\mathcal{F}\left[\lambda f + \mu g\right] =  \lambda \mathcal{F}\left[f\right] + \mu \mathcal{F}\left[g\right] \mathspace \lambda, \mu \in \mathbb{R}$ 
 	    \item Time shift: Let $g\left(x\right) = f\left(x - x_0\right)$ then 
 			\begin{align*} 
-				\hat{g}\left(a\right) &=  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-iax}f\left(x\right)dx \\
+				\hat{g}\left(a\right) &=  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-iax}f\left(x - x_0\right)dx \\
 				&= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iax}f\left(x - x_0\right)dx \\
 				&\underbrace{=}_{y = x - x_0} \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-ia\left(y + x_0\right)}f\left(y\right)dy\\
-				&= \frac{e^{-ax_0}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iay}f\left(y\right)dy\\
+				&= \frac{e^{-iax_0}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iay}f\left(y\right)dy\\
 				&= e^{-iax_0} \hat{f}\left(a\right)
 			\end{align*}
 		\item Frequency shift: let $g\left(x\right) =  e^{ia_0x}f\left(x\right)$ for $a_0 \in \mathbb{R}$ 
 			\begin{align*} 
 				\hat{g}\left(a\right) &=  \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty}e^{-iax}g\left(x\right)dx\\
 				&= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-iax}e^{ia_0x}f\left(x\right)dx \\
-				&=  \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\left(a - a_0\right)x}f\left(x\right)dx =  \hat{f}\left(a - a_0\right)
+				&=  \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-i\left(a - a_0\right)x}f\left(x\right)dx =  \hat{f}\left(a - a_0\right)
 			\end{align*}
 			This can be seen as an '\textit{inverse}' of the second property
 		\item Rescaling / Dilation. Let $g\left(x\right) = f\left(\lambda x\right)$ where $\lambda \in \mathbb{R}\setminus \left\{0\right\}$
 			\begin{align*} 
-				\hat{g}\left(a\right) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty}e^{-ax}f\left(\lambda x\right)dx
+				\hat{g}\left(a\right) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty}e^{-iax}f\left(\lambda x\right)dx
 			\end{align*}
 			To recover $\hat{f}$ we want to substitute $y =  \lambda x$. However we have to be careful about this substitution -- we have two cases, $\lambda$ positive or negative. When $\lambda$ is negative, it flips the orientation of the real line
 			\begin{itemize}
@@ -84,7 +84,8 @@ In general $\hat{f}$ is complex-valued even if $f$ is real-valued. However, if $
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.7\textwidth]{figure/2026-04-16.pdf}
-\caption{It misses two diagrams}
+\includegraphics[width=0.7\textwidth]{figure/2026-05-24.pdf}
+\caption{Figures on the difference between $f\left(x\right)$ and $f\left(\lambda x\right)$ and the Fourier transform of each function resp.}
 \end{figure}
 
 
@@ -111,8 +112,8 @@ In general $\hat{f}$ is complex-valued even if $f$ is real-valued. However, if $
 	\begin{itemize}
 		\item Symmetry: $f \ast g =  g\ast f$ 
 	    \item Associativity: $f \ast \left(g \ast h\right) =  \left(f \ast g\right) \ast h$
-	    \item Distributivity $f \ast \left(g \ast h\right) =  f \ast g + f \ast h$
-	    \item $\left(f \ast g\right)' =  f' \ast g = f \ast g'$ whenever $f$ or/and are differentiable
+	    \item Distributivity $f \ast \left(g + h\right) =  f \ast g + f \ast h$
+	    \item $\left(f \ast g\right)' =  f' \ast g = f \ast g'$ whenever $f$ or/and $g$ are differentiable
 	\end{itemize}
 	The last item here is very important, it implies that $f \ast g$ is at least as smooth as the smoothest function among $f$ and $g$. Interpreted as a \textit{local average} of $f$ with weight $g$.\\
 \end{parag}
@@ -140,14 +141,14 @@ In general $\hat{f}$ is complex-valued even if $f$ is real-valued. However, if $
 	\begin{align*} 
 		\mathcal{F} \left[f \ast g\right] = \sqrt{2\pi} \mathcal{F}\left[f\right] \mathcal{F}\left[g\right]
 	\end{align*}
-	So the Fourier transform turns convolutions into products (and vis versa). In applications, one can often express $\mathcal{F}\left[f\right]$ as a product of huwu Fourier transform, which allows us to recover $f$ by convolution.
+	So the Fourier transform turns convolutions into products (and vis versa). In applications, one can often express $\mathcal{F}\left[f\right]$ as a product of Fourier transforms, which allows us to recover $f$ by convolution.
 \end{parag}
 \begin{parag}{Gaussian function}
     Now let us see the last property. If $f\left(x\right) = e^{\frac{-x^2}{2}}$ then the Fourier transform is:
 	\begin{align*} 
 		\hat{f}\left(a\right) =  e^{-\frac{a^2}{2}}
 	\end{align*}
-	Will be shown in the exercices, but for the sake of completeness
+	Will be shown in the exercises, but for the sake of completeness
 \end{parag}
 
 \begin{parag}{Plancherel's Theorem}
@@ -192,11 +193,12 @@ Okay this is nice but Fourier transform is about real function (as we have done 
 	\end{align*}
 	The reason of $-\left|a\right|$ is to suggest that the exponent is negative.\\
 	$ $\\
-	So for $a \leq 0$, we have that the transform is given as
+	So for $a \leq 0$ and without forgetting the constant factor $\frac{1}{\sqrt{2\pi}}$, we have that the transform is given as
 	\begin{align*} 
 		\mathcal{F}\left[\frac{1}{1 + x^2}\right] \left(a\right) = \sqrt{\frac{\pi}{2}}e^{-\left|a\right|}
 	\end{align*}
 	Using similar calculation for $a > 0$ by considering the semi-circle in the lower half plane we will get the same result.
+
 	\begin{subparag}{Remark}
 	    The principle is that in order to close the circle we choose the half circle depending on whether or not $a > 0$.
 	\end{subparag}
@@ -226,10 +228,10 @@ Assume that there is a $\gamma_0 \in \mathbb{R}$ s.t.
 \end{align*}
 What we are claiming is that this condition is sufficient in order to the Laplace transform to be defined. Naively this means that $\left|f\left(t\right)\right| < e^{\gamma_0 t}$ as $t \to \infty$\\
 $ $\\
-Using the Cauchy-Schwartz inequality:
+Using the triangle inequality:
 \begin{align*} 
 	\left|\mathcal{L}[f]\left(z\right)\right| &\leq \int_{0}^{\infty} \left|f\left(t\right)\right|\left|e^{-zt}\right|dt\\
-	&= \int_{o}^{\infty}\left|f\left(t\right)\right|\left|e^{- \text{Re }z t}\right|\underbrace{\left|e^{- \text{Im }z t i}\right|}_{= 1}dt\\
+	&= \int_{0}^{\infty}\left|f\left(t\right)\right|\left|e^{- \text{Re }z t}\right|\underbrace{\left|e^{- \text{Im }z t i}\right|}_{= 1}dt\\
 	&= \int_{0}^{\infty}\left|f\left(t\right)\right|e^{-\text{Re }z t}dt\\
 	&\leq \int_{0}^{\infty} \left|f\left(t\right)\right|e^{-\gamma_0 t}dt < \infty
 \end{align*}
@@ -240,21 +242,35 @@ This mean that if such a $\gamma_0$ exists, $\mathcal{L}\left[f\right]\left(z\ri
 \end{definition}
 
 
+\begin{framedremark}
+Remark for me about the triangle inequality, the triangle inequality is given as 
+\begin{align*} 
+	\left|a + b\right| \leq \left|a\right| + \left|b\right|
+\end{align*}
+By extending it to finite sum:
+\begin{align*} 
+	\left|\sum_{k= 1}^{n}a_k\right| \leq \sum_{k= 1}^{n}\left|a_k\right|
+\end{align*}
+As an integral is essentially a limit of sums, the same idea carries over:
+\begin{align*} 
+	\left|\int_{a}^{b}g\left(t\right)dt\right| \leq \int_{a}^{b}\left|g\left(t\right)\right|dt
+\end{align*}
+Taking the modulus inside can only make things larger or equal, never smaller.
+\end{framedremark}
 
 
 
 
 
-\begin{parag}{Derivative}
+
+\begin{parag}{Example}
     If $f\left(t\right) =  0$ for $t \geq M$ and $f$ is piecewise continuous then the Laplace transform can be computed as:
 	\begin{align*} 
 		\int_{0}^{\infty}\left|f\left(t\right)\right|e^{-\gamma_0 t}dt =  \int_{0}^{M}\left|f\left(t\right)\right|e^{-\gamma_0 t}dt < \infty \mathspace \mathspace \forall \gamma_0 \in \mathbb{R}
 	\end{align*}
 	In this case, $\mathcal{L}\left[f\right]\left(z\right)$ is defined for all $z \in \mathbb{C}$\\
 	$ $\\
-	Let us have another example. Let $\gamma_0$ be an abscissa of convergence. Then $\mathcal{L}\left[f\right]$ is holomorphic.
-
-On $\left\{\text{Re } > \gamma_0\right\}$. Set $F\left(z\right) =  \mathcal{L}\left[f\right]\left(z\right)$. Then:
+	Let us have another example. Let $\gamma_0$ be an abscissa of convergence. Then $\mathcal{L}\left[f\right]$ is holomorphic on $\left\{\text{Re } > \gamma_0\right\}$. Set $F\left(z\right) =  \mathcal{L}\left[f\right]\left(z\right)$. Then:
 \begin{align*} 
 	\frac{d}{dz} F\left(z\right) &= \frac{d }{dz} \int_{0}^{\infty}f\left(t\right)e^{-zt}dt\\
 	&= \int_{0}^{\infty}f\left(t\right)\left(-t\right)e^{-zt} =  -\mathcal{L}\left[tf\left(t\right)\right]\left(z\right)
@@ -270,7 +286,7 @@ On $\left\{\text{Re } > \gamma_0\right\}$. Set $F\left(z\right) =  \mathcal{L}\l
 
 
 
-\begin{parag}{Example}
+\begin{parag}{Example II}
     Let $f\left(z\right) = 1$. Then for every $\gamma_0 > 0$
 	\begin{align*} 
 		\int_{0}^{\infty}\left|f\left(t\right)\right|e^{-\gamma_0 t}dt =  \int_{0}^{\infty}e^{-\gamma_0 t}dt = \frac{1}{\gamma_0} < \infty

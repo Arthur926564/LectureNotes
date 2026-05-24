@@ -5,7 +5,7 @@ $ $\\
 Let us first return to the $1-$dimensional heat equation. This is define as 
 \begin{align*} 
 	\begin{cases}
-		\frac{\partial u}{\partial t}  - \frac{\partial^2 u}{\partial x} = f \mathspace \mathspace \forall t > 0, x \in \left(0, L\right)\\
+		\frac{\partial u}{\partial t}  - \frac{\partial^2 u}{\partial x^2} = f \mathspace \mathspace \forall t > 0, x \in \left(0, L\right)\\
 		u \eval_{t= 0} =  u_0 \mathspace \mathspace \text{ initial condition}\\
 		u \eval_{x= 0} =  u \eval_{x = L} = 0 \mathspace \mathspace \text{boundary condition}
 	\end{cases} 
@@ -19,7 +19,7 @@ Let us therefore have an overview over the method to solve those problems
 \end{itemize}
 
 \begin{align*} 
-	\text{PDE} \overbrace{\longrightarrow}^{\text{Fourier}}  \text{PDE} \overbrace{\longrightarrow}^{\text{Laplace}}  \text{solution}
+	\text{PDE} \overbrace{\longrightarrow}^{\text{Fourier}}  \text{ODE} \overbrace{\longrightarrow}^{\text{Laplace}}  \text{solution}
 \end{align*}
 
 \begin{parag}{Uniqueness}
@@ -43,17 +43,17 @@ The initial value problem for the heat equation has a unique solution.
 	\end{align*}
 	Which is some kind of kinetic energy. Therefore let us try to differentiate this integral w.r.t. $t$
 	\begin{align*} 
-		\frac{d}{dt} \int_{0}^{L}v^2\left(x, t\right)dx &= 2 \int_{0}^{L}v\left(x, t\right)\frac{\partial v}{\partial t} \left(x, t\right) dt \\
+		\frac{d}{dt} \int_{0}^{L}v^2\left(x, t\right)dx &= 2 \int_{0}^{L}v\left(x, t\right)\frac{\partial v}{\partial t} \left(x, t\right) dx \\
 		&= 2 \int_{0}^{L}v\left(x, t\right) \frac{\partial^2 v}{\partial x^2} \left(x, t\right)dx
 	\end{align*}
 	Using integration by part 
 	\begin{align*} 
-		&=  2\left[v\left(x, t\right)\frac{\partial u}{\partial x} \left(x, t\right)\right]_{0}^{L} - 2\int_{0}^{L}\frac{\partial v}{\partial x} \left(x, t\right)^2 dx\\
+		&=  2\left[v\left(x, t\right)\frac{\partial v}{\partial x} \left(x, t\right)\right]_{0}^{L} - 2\int_{0}^{L}\frac{\partial v}{\partial x} \left(x, t\right)^2 dx\\
 		&= -2 \int_{0}^{L}\frac{\partial v}{\partial x} \left(x, t\right)^2 dx \leq 0
 	\end{align*}
 	Using the Dirichlet boundary conditions. Therefore we can infer that the kinetic energy is nonincreasing. Thus 
 	\begin{align*} 
-		0 \leq \int_{0}^{t} v^2\left(x, t\right)dx \leq \int_{0}^{L}v^2 \left(x, 0\right) dx = 0
+		0 \leq \int_{0}^{L} v^2\left(x, t\right)dx \leq \int_{0}^{L}v^2 \left(x, 0\right) dx = 0
 	\end{align*}
 	Therefore, $v\left(x, t\right) = 0$ for every $t > 0$, every $x \in \left(0, L\right)$.
 
@@ -149,7 +149,7 @@ The definition of wave equation is defined as below
 		\begin{cases}
 			\frac{\partial^2 u}{\partial t^2} - c^2 \frac{\partial^2 u}{\partial x^2}  = f \mathspace \text{ for } t > 0, x \in \left(0, L\right)\\
 			u|_{t= 0} = u_0\\
-			\frac{\partial u}{\partial t} \mid_{t= 0}= u\\
+			\frac{\partial u}{\partial t} \mid_{t= 0}= u_1\\
 			u|_{x= 0}= u|_{x= L} = 0
 		\end{cases} 
 	\end{align*}
@@ -198,7 +198,7 @@ And as always, we can proof uniqueness of solution.
 		Now we again look at the wave equation and compute all relevant derivatives. 
 		\begin{align*} 
 			\frac{\partial^2 u}{\partial t^2} \left(x, t\right) = \sum_{n = 1}^{\infty}b_n''\left(t\right)\sin\left(\frac{\pi n}{L}x\right)\\
-			\frac{\partial^2 u}{\partial x^2} \left(x, t\right) =  \sum_{n}^{\infty}\sum_{n = 1}^{\infty}b_n\left(t\right)\left(-\frac{\pi^2n^2}{L^2}\right) \sin\left(\frac{\pi n}{L}x\right)
+			\frac{\partial^2 u}{\partial x^2} \left(x, t\right) =  \sum_{n = 1}^{\infty}b_n\left(t\right)\left(-\frac{\pi^2n^2}{L^2}\right) \sin\left(\frac{\pi n}{L}x\right)
 		\end{align*}
 		Now again we insert this into the PDEs which gives us 
 		\begin{align*} 

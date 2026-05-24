@@ -18,19 +18,19 @@
 \contentsline {paragraph}{Trigonometric Functions}{17}{section*.12}%
 \contentsline {section}{\numberline {2.1}Limit and Continuity}{18}{section.2.1}%
 \contentsline {paragraph}{Operation on Continuous Functions}{18}{section*.13}%
-\contentsline {subsection}{\numberline {2.1.1}Complex Derivative}{18}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Complex Derivative}{18}{section.2.2}%
 \contentsline {paragraph}{Recall on topology}{19}{paragraph*.14}%
 \contentsline {paragraph}{Open set}{19}{section*.15}%
 \contentsline {paragraph}{Examples of Differentiation}{19}{section*.16}%
-\contentsline {section}{\numberline {2.2}Cauchy-Riemann equations}{20}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Cauchy-Riemann equations}{20}{section.2.3}%
 \contentsline {paragraph}{Proof of the direct implication '$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$'}{20}{section*.17}%
 \contentsline {paragraph}{$ $}{20}{section*.18}%
 \contentsline {paragraph}{Example}{21}{section*.19}%
 \contentsline {paragraph}{Example}{21}{section*.20}%
-\contentsline {section}{\numberline {2.3}Rules for differentiation}{22}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Rules for differentiation}{22}{section.2.4}%
 \contentsline {paragraph}{$ $}{22}{section*.21}%
 \contentsline {paragraph}{Geometric interpretation of Cauchy-Riemann equations}{22}{section*.22}%
-\contentsline {section}{\numberline {2.4}Complex logarithm}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Complex logarithm}{24}{section.2.5}%
 \contentsline {paragraph}{logarithm rules}{25}{section*.23}%
 \contentsline {paragraph}{Example}{25}{section*.24}%
 \contentsline {chapter}{\numberline {3}Complex integration}{27}{chapter.3}%
@@ -100,26 +100,26 @@
 \contentsline {paragraph}{Convolution}{57}{section*.75}%
 \contentsline {paragraph}{Example}{57}{section*.76}%
 \contentsline {paragraph}{Fourier transform as convolution}{57}{section*.77}%
-\contentsline {paragraph}{Gaussian function}{57}{section*.78}%
+\contentsline {paragraph}{Gaussian function}{58}{section*.78}%
 \contentsline {paragraph}{Plancherel's Theorem}{58}{section*.79}%
 \contentsline {paragraph}{Example}{58}{section*.80}%
 \contentsline {paragraph}{ $ $}{58}{section*.81}%
 \contentsline {chapter}{\numberline {6}Laplace Transform}{61}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Convergence}{61}{section.6.1}%
-\contentsline {paragraph}{Derivative}{62}{section*.82}%
-\contentsline {paragraph}{Example}{62}{section*.83}%
-\contentsline {paragraph}{Example}{62}{section*.84}%
+\contentsline {paragraph}{Example}{62}{section*.82}%
+\contentsline {paragraph}{Example II}{62}{section*.83}%
+\contentsline {paragraph}{Example}{63}{section*.84}%
 \contentsline {section}{\numberline {6.2}Properties of the Laplace transform}{63}{section.6.2}%
 \contentsline {paragraph}{Linearity}{63}{section*.85}%
 \contentsline {paragraph}{Nomenclature}{63}{section*.86}%
 \contentsline {paragraph}{Example}{64}{section*.87}%
 \contentsline {paragraph}{$ $}{64}{section*.88}%
 \contentsline {paragraph}{Example}{65}{section*.89}%
-\contentsline {paragraph}{Example}{65}{section*.90}%
+\contentsline {paragraph}{Example}{66}{section*.90}%
 \contentsline {paragraph}{Convolution}{66}{section*.91}%
-\contentsline {section}{\numberline {6.3}Applications of Laplace analysis to the Cauchy problem (initial value problem)}{66}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Ordinary Differential Equations (ODE) with constant coefficients}{66}{subsection.6.3.1}%
-\contentsline {paragraph}{First order initial value problem}{66}{section*.92}%
+\contentsline {section}{\numberline {6.3}Applications of Laplace analysis to the Cauchy problem (initial value problem)}{67}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Ordinary Differential Equations (ODE) with constant coefficients}{67}{subsection.6.3.1}%
+\contentsline {paragraph}{First order initial value problem}{67}{section*.92}%
 \contentsline {paragraph}{Second order initial value problem}{68}{section*.93}%
 \contentsline {subsection}{\numberline {6.3.2}Inverse Laplace Transform}{71}{subsection.6.3.2}%
 \contentsline {paragraph}{How to show this formula? (Outbook)}{71}{section*.94}%
