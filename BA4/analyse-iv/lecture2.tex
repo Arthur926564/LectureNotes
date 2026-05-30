@@ -1,5 +1,5 @@
 \section{Cauchy-Riemann equations}
-The goal of those equations is to check if a function $f$ is differentiable or/and is holomorphic. When we have quite 'easy' function (as seen before) showing that the function is holomorphic by taking the limit is possible. However when function become tedious we will use Cauchy-Riemann questions:
+The goal of those equations is to check if a function $f$ is differentiable or/and is holomorphic. When we have quite 'easy' functions (as seen before) showing that the function is holomorphic by taking the limit is possible. However when function become tedious we will use Cauchy-Riemann questions:
 \begin{definition}
 Let $w \subseteq \mathbb{C}$ open, $f : w \to \mathbb{C}$ let:
 \begin{align*} 
@@ -7,21 +7,21 @@ Let $w \subseteq \mathbb{C}$ open, $f : w \to \mathbb{C}$ let:
 \end{align*}
 Be holomorphic. Then, $u, v \in C^{1}\left(w\right)$ (the space of differentiable function $w \subseteq \mathbb{R}^{2} \to \mathbb{R}$) with continuous derivative) and:
 \begin{align*} 
-	\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}  \\
-	\frac{\partial u}{\partial y}  = -\frac{\partial v}{\partial x} 
+	\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}  \\
+	\frac{\partial u}{\partial y}  &= -\frac{\partial v}{\partial x} 
 \end{align*}
 Those equation are called Cauchy-Riemann equations.
 \end{definition}
 \begin{theoreme}
 If the relation:
 \begin{align*} 
-	\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}  \\
-	\frac{\partial u}{\partial y}  = -\frac{\partial v}{\partial x} 
+	\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}  \\
+	\frac{\partial u}{\partial y}  &= -\frac{\partial v}{\partial x} 
 \end{align*}
 holds then $f$ is holomorphic
 \end{theoreme}
 
-\begin{parag}{Proof of the direct implication '$\implies$'}
+\begin{parag}{Proof of the indirect implication '$\impliedby$'}
 	Suppose that $f$ is holomorphic on $w$, therefore, $\forall z_0 \in w$ we have:
 	\begin{align*} 
 		f'\left(z_0\right) =  \lim_{z \to z_0} \frac{f\left(z\right) - f\left(z_0\right)}{z - z_0} \mathspace \text{ exists}
@@ -46,7 +46,7 @@ holds then $f$ is holomorphic
 						   &= \lim_{y \to y_0} \frac{u\left(x_0, y\right) + iv\left(x_0, y\right) - u\left(x_0, y_0\right) - iv\left(x_0, y_0\right)}{i\left(y - y_0\right)}\\
 						   &= \overbrace{\frac{1}{i}}^{= -i} \underbrace{\lim_{y \to y_0} \frac{u\left(x_0, y\right) - u\left(x_0, y_0\right)}{y - y_0}}_{= \frac{\partial u}{\partial y} \left(x_0, y_0\right)} + \frac{i}{i}\underbrace{\lim_{y \to y_0} \frac{v\left(x_0, y\right) - v\left(x_0, y_0\right)}{y - y_0}}_{= \frac{\partial v}{\partial y} \left(x_0, y_0\right)}
 	\end{align*}
-	By comparing real and imaginary part leads to the Cauchy-Riemann equations. Moreover form this proof, we get explicit expression for $f'\left(z_0\right)$:
+	Comparing real and imaginary part leads to the Cauchy-Riemann equations. Moreover, from this proof, we get an explicit expression for $f'\left(z_0\right)$:
 	\begin{align*} 
 		f' = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial x} i =  \frac{\partial v}{\partial y}  - \frac{\partial u}{\partial y} i
 	\end{align*}
@@ -67,7 +67,7 @@ holds then $f$ is holomorphic
 	\begin{align*} 
 		\frac{\partial u}{\partial y} = -\frac{2xy}{\left(x^2 + y^2\right)^2} \mathspace \mathspace \frac{\partial v}{\partial y} = \frac{-\left(x^2 + y^2\right) + 2y^2}{\left(x^2 + y^2\right)^2}
 	\end{align*}
-	We therefore the Cauchy-Riemann equations satisfied and:
+	We therefore have Cauchy-Riemann equations satisfied and:
 	\begin{align*} 
 		f' &= \frac{\partial u}{\partial x}  + \frac{\partial v}{\partial x} i \\
 			&= \frac{y^2 - x^2}{\left(x^2 + y^2\right)^2} + \frac{2xy}{\left(x^2 + y^2\right)^2}i

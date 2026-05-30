@@ -5,7 +5,7 @@ The goal of this chapter is to review what we have seen in Analysis I in order t
 
 
 \begin{parag}{Imaginary unit}
-    As seen in previous classes, we define $i$ the \important{imaginary unit} such that:
+    As seen in previous classes, we define $i$ the \important{imaginary unit} such as 
 	\begin{align*} i^2 = -1 \end{align*}
 	We also define $z \in \mathbb{C}$ as:
 	\begin{align*} z = x + iy \mathspace \mathspace x, y \in \mathbb{R} \end{align*}
@@ -15,7 +15,11 @@ The goal of this chapter is to review what we have seen in Analysis I in order t
 		y &= \text{Im}z \mathspace \text{imaginary part}
 	\end{align*}
 \end{parag}
-The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is that every element in $\mathbb{C}$ can be directly '\textit{translated}' to $ \mathbb{R}^2$ \important{and} vis versa.
+The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is that every element in $\mathbb{C}$ can be directly '\textit{translated}' to $ \mathbb{R}^2$ \important{and} vis versa. This can be fairly easy to see as in order to represent a point $z \in \mathbb{C}$ one only need two element $x, y \in \mathbb{R}$, we can create the mapping $\phi : \mathbb{R}^{2} \to \mathbb{C}$ defined as 
+\begin{align*} 
+	\phi\left(x, y\right) = x + iy
+\end{align*}
+This mapping is bijective.
 
 \begin{parag}{Complex Conjugate}
     \begin{definition}
@@ -32,9 +36,9 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	    The reason for this definition really comes from Pythagoras theorem and the $L_2$ norm in $\mathbb{R}^2$.
 	\end{subparag}
 	Furthermore $| z_0 - z_1| = d\left(z_0, z_1\right)$ (the distance between those two number).\\
-	We can define domain in $\mathbb{C}$ as:
+	We can define domain in $\mathbb{C}$ such as:
 	\begin{align*} Q = \{z \in \mathbb{C}: |z - \left(1 + i\right)| < 1\} \end{align*}
-	Which is the disk centred in $z = 1 + i$ of radius $1$.
+	which is the disk centred in $z = 1 + i$ of radius $1$.
 \end{parag}
 
 \begin{parag}{Euler's Formula}
@@ -53,13 +57,9 @@ The field $\mathbb{C}$ can by fully mapped to $\mathbb{R}^2$, what this means is
 	\end{definition}
 	\begin{subparag}{Geometric intuition}
 	    What happens when doing the complex conjugate (if we see $\mathbb{C}$ as a plan in $ \mathbb{R}^2$) is a symmetry around the $x$ axis. \\
-		$ $\\
-		And this totally makes send when we recall on how it was defined when $z =  x + iy$, $\overline{z} = x - iy$ we map the $\text{Im}$ part to his opposite.
+		This totally makes sense when we recall on how it was defined, when $z =  x + iy$, $\overline{z} = x - iy$; we map the $\text{Im}$ part to his opposite.
 	\end{subparag}
 \end{parag}
-\begin{framedremark}
-	The rigorous definition of $e^{z}$ is by the Taylor series. One should more see it as $\exp$ being \important{defined} by the Taylor serie and not the other way around. There is a great video about the definition of the exponential by 3Blue1Brown about taking the exponent of a matrix.
-\end{framedremark}
 
 
 
@@ -142,19 +142,21 @@ The 5 ways to visualize complex functions | Essence of complex analysis #3}
 	More generally, a $k$-th order equation will gives us $k$ solutions.
 \end{parag}
 
-\begin{figure}[!h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{figure/2026-02-22.pdf}
 	\caption{Solution of $z^{5} = 2$}
 \end{figure}
+\newpage
 
 
-\section{Construction of $\mathbb{C}$ (not in the course)}
+\section{Construction of $\mathbb{C}$ (not in the course)}\label{sec:cons}
 The goal of this section is to add a bit more context on the $\mathbb{C}$ field. First let us recall how real analysis worked. We used the field $\left(\mathbb{R}, +, \cdot \right)$ which is an \important{ordered} field, i.e. we have an ordering on our elements. Formally:
 \begin{definition}{Ordered field}
 	$ $\\
+	Given $\mathcal{F}$ a field, one said $\mathcal{F}$ is an \important{ordered field} if
 	\begin{itemize}
-		\item $\forall x, y \in \mathbb{R} $ precisely one of $x < y,  x > y, x = y$ holds true.
+		\item $\forall x, y \in \mathcal{F} $ precisely one of $x < y,  x > y, x = y$ holds true.
 		\item $x, y > 0 \implies x \cdot  y > 0$
 	\end{itemize}
 	This is the axiomatic definition of an ordered field.
@@ -353,7 +355,9 @@ A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$
 	\begin{align*} 
 		\sinh z = \frac{e^{z} - e^{-z}}{2}
 	\end{align*}
-	The rigorous definition of $e^{z}$ is by the Taylor series. One should more see it as $\exp$ being \important{defined} by the Taylor serie and not the other way around. There is a great video about the definition of the exponential by 3Blue1Brown.
+\begin{framedremark}
+	The rigorous definition of $e^{z}$ is by the Taylor series. One should more see it as $\exp$ being \important{defined} by the Taylor serie and not the other way around. There is a great video about the definition of the exponential by 3Blue1Brown about taking the exponent of a matrix.
+\end{framedremark}
 \end{parag}
 
 \section{Limit and Continuity}

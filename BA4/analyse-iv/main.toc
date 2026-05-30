@@ -1,6 +1,6 @@
 \babel@toc {british}{}\relax 
-\contentsline {paragraph}{Overview of the course}{3}{section*.1}%
-\contentsline {paragraph}{Main textbook}{3}{section*.2}%
+\contentsline {paragraph}{Overview of the course}{4}{section*.1}%
+\contentsline {paragraph}{Main textbook}{4}{section*.2}%
 \contentsline {part}{I\hspace {1em}Complex Numbers}{5}{part.1}%
 \contentsline {chapter}{\numberline {1}Review of Complex number $\mathbb {C}$}{7}{chapter.1}%
 \contentsline {paragraph}{Imaginary unit}{7}{section*.3}%
@@ -23,7 +23,7 @@
 \contentsline {paragraph}{Open set}{19}{section*.15}%
 \contentsline {paragraph}{Examples of Differentiation}{19}{section*.16}%
 \contentsline {section}{\numberline {2.3}Cauchy-Riemann equations}{20}{section.2.3}%
-\contentsline {paragraph}{Proof of the direct implication '$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Relbar \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$'}{20}{section*.17}%
+\contentsline {paragraph}{Proof of the indirect implication '$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Relbar \tmspace +\thickmuskip {.2777em}$'}{20}{section*.17}%
 \contentsline {paragraph}{$ $}{20}{section*.18}%
 \contentsline {paragraph}{Example}{21}{section*.19}%
 \contentsline {paragraph}{Example}{21}{section*.20}%
@@ -138,3 +138,10 @@
 \contentsline {subsection}{\numberline {7.0.3}Wave equation on a bounded domain}{81}{subsection.7.0.3}%
 \contentsline {paragraph}{Uniqueness}{81}{section*.104}%
 \contentsline {paragraph}{Existence}{81}{section*.105}%
+\contentsline {subsection}{\numberline {7.0.4}Heat equation on an unbounded domain}{82}{subsection.7.0.4}%
+\contentsline {paragraph}{Heat equation}{82}{section*.106}%
+\contentsline {subsection}{\numberline {7.0.5}Wave equation on an unbounded interval}{84}{subsection.7.0.5}%
+\contentsline {subsection}{\numberline {7.0.6}Shrödinger equation on an unbounded interval}{85}{subsection.7.0.6}%
+\contentsline {paragraph}{properties}{85}{section*.107}%
+\contentsline {paragraph}{Facts}{85}{section*.108}%
+\contentsline {paragraph}{Example}{85}{section*.109}%
