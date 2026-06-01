@@ -1,4 +1,4 @@
-[main.pdf](https://github.com/user-attachments/files/27430959/main.pdf)
+
 # Lecture notes
 
 
@@ -34,7 +34,7 @@ I stoped taking notes in FDS during the semester because of the enormous quantit
 ### Bachelor semester 3
 for this course (which has the same number of images as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used [grim](https://github.com/emersion/grim) on arch linux.
 #### Computer Architecture -- Prof. Paulo Ienne
-- [computer_architecture_prof_Paulo_Ienne.pdf](https://github.com/user-attachments/files/27430966/main.pdf) - Prof. Paulo Ienne
+- [Computer-Architecture-PauloIenne.pdf](https://github.com/user-attachments/files/28475834/Computer-Architecture-ArthurHerbette.pdf) - Prof. Paulo Ienne
 
 
 ### Bachelor semester 4
@@ -43,7 +43,7 @@ for this course (which has the same number of images as in fds) I added a way to
 #### Introduction to Machine Learning -- Dr. Mathieu Salzmann
  - [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf) - Dr. Mathieu Salzmann
 #### Analysis IV - Mathias Braun
-- [Analysis-IV_Mathias_Braun.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/analyse-iv/main.pdf) - Dr. Mathias Braun
+- [Analyse-IV-MathiasBraun.pdf](https://github.com/user-attachments/files/28475810/Analyse-IV-ArthurHerbette.pdf) - Dr. Mathias Braun
 
 
 ### Contributing
