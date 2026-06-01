@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  30 MAY 2026 19:26
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Arch Linux)  (format=lualatex 2026.4.24)  1 JUN 2026 19:56
  restricted system commands enabled.
  file:line:error style messages enabled.
 **main.tex
@@ -1595,7 +1595,17 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 48.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
+Underfull \hbox (badness 10000) in paragraph at lines 47--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--54
 
  []
 
@@ -1859,21 +1869,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--412
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--421
+
+ []
+
 [18]
-Package mdframed Info: mdframed works in twoside mode on input line 421.
+Package mdframed Info: mdframed works in twoside mode on input line 423.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 421.
-Package mdframed Info: mdframed works in twoside mode on input line 425.
+(mdframed)              on input line 423.
+Package mdframed Info: mdframed works in twoside mode on input line 427.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 425.
-Package mdframed Info: mdframed works in twoside mode on input line 433.
+(mdframed)              on input line 427.
+Package mdframed Info: mdframed works in twoside mode on input line 435.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 433.
+(mdframed)              on input line 435.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 434.
+ mdframed uses option nobreak mdframed on input line 436.
 ) (./lecture2.tex [19]
 Package mdframed Info: mdframed works in twoside mode on input line 4.
 Package mdframed Info: mdframed detected package amsthm 
@@ -2050,16 +2065,22 @@ File: figure/2026-03-05_3.pdf Graphic file (type pdf)
 <use figure/2026-03-05_3.pdf>
 Package luatex.def Info: figure/2026-03-05_3.pdf  used on input line 200.
 (luatex.def)             Requested size: 136.57462pt x 128.28142pt.
-Package mdframed Info: mdframed works in twoside mode on input line 216.
+<figure/2026-06-01.pdf, id=451, 385.44pt x 208.78pt>
+File: figure/2026-06-01.pdf Graphic file (type pdf)
+<use figure/2026-06-01.pdf>
+Package luatex.def Info: figure/2026-06-01.pdf  used on input line 207.
+(luatex.def)             Requested size: 252.94385pt x 137.01152pt.
+[31<./figure/2026-03-05_3.pdf><./figure/2026-06-01.pdf>]
+Package mdframed Info: mdframed works in twoside mode on input line 227.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 216.
+(mdframed)              on input line 227.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--220
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
 
  []
 
-[31<./figure/2026-03-05_3.pdf>]) (./lecture4.tex
+) (./lecture4.tex
 Package mdframed Info: mdframed works in twoside mode on input line 11.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2081,15 +2102,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--66
 
  []
 
-
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
-[33] [34
-
-]
+[34]
 Chapter 4.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 92.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 92.
+
 Package mdframed Info: mdframed works in twoside mode on input line 95.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2117,7 +2144,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--121
 
  []
 
-[35]
+[35
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 121--125
 
  []
@@ -2145,34 +2174,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--153
 
  []
 
-./lecture4.tex:166: Undefined control sequence.
-<argument> \zheta 
-                  - z_0
-l.166 			\end{align*}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./lecture4.tex:166: Undefined control sequence.
-<argument> \zheta 
-                  - z_0
-l.166 			\end{align*}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 [36]
 Package mdframed Info: mdframed works in twoside mode on input line 209.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 209.
-<figure/2026-03-12.pdf, id=495, 323.2075pt x 412.54124pt>
+<figure/2026-03-12.pdf, id=496, 323.2075pt x 412.54124pt>
 File: figure/2026-03-12.pdf Graphic file (type pdf)
 <use figure/2026-03-12.pdf>
 Package luatex.def Info: figure/2026-03-12.pdf  used on input line 220.
@@ -2191,16 +2198,6 @@ Package mdframed Info: mdframed works in twoside mode on input line 234.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 234.
-
-./lecture4.tex:251: Undefined control sequence.
-l.251 ...{\left(\zeta - z_0\right)^{n + 1}}d\zetag
-                                                   = 0$\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
@@ -2304,7 +2301,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--96
 
  []
 
-<figure/2026-03-26.pdf, id=566, 332.24126pt x 283.0575pt>
+<figure/2026-03-26.pdf, id=567, 332.24126pt x 283.0575pt>
 File: figure/2026-03-26.pdf Graphic file (type pdf)
 <use figure/2026-03-26.pdf>
 Package luatex.def Info: figure/2026-03-26.pdf  used on input line 102.
@@ -2314,7 +2311,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--111
 
  []
 
-<figure/2026-03-26_1.pdf, id=567, 394.47375pt x 192.72pt>
+<figure/2026-03-26_1.pdf, id=568, 394.47375pt x 192.72pt>
 File: figure/2026-03-26_1.pdf Graphic file (type pdf)
 <use figure/2026-03-26_1.pdf>
 Package luatex.def Info: figure/2026-03-26_1.pdf  used on input line 112.
@@ -2420,37 +2417,6 @@ l.151 		\end{align*}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-./lecture6.tex:152: Undefined control sequence.
-<argument> \mple 
-                 
-l.152 		Let $\gamma$ be a \si\mple
-                                   closed counterclockwise oriented curve. T...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./lecture6.tex:152: Undefined control sequence.
-<argument> \mple 
-                 
-l.152 		Let $\gamma$ be a \si\mple
-                                   closed counterclockwise oriented curve. T...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./lecture6.tex:152: Undefined control sequence.
-l.152 ...rclockwise oriented curve. The que\astion
-                                                   is always the same: what ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 [46]
 Underfull \hbox (badness 10000) in paragraph at lines 191--197
 
@@ -2466,7 +2432,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--18
 
  []
 
-<figure/2026-04-04.pdf, id=601, 494.84875pt x 244.915pt>
+<figure/2026-04-04.pdf, id=602, 494.84875pt x 244.915pt>
 File: figure/2026-04-04.pdf Graphic file (type pdf)
 <use figure/2026-04-04.pdf>
 Package luatex.def Info: figure/2026-04-04.pdf  used on input line 21.
@@ -2535,12 +2501,12 @@ Package mdframed Info: mdframed detected package amsthm
 [55
 
 ]
-<figure/2026-04-16.pdf, id=649, 490.83376pt x 146.5475pt>
+<figure/2026-04-16.pdf, id=650, 490.83376pt x 146.5475pt>
 File: figure/2026-04-16.pdf Graphic file (type pdf)
 <use figure/2026-04-16.pdf>
 Package luatex.def Info: figure/2026-04-16.pdf  used on input line 86.
 (luatex.def)             Requested size: 318.66948pt x 95.14738pt.
-<figure/2026-05-24.pdf, id=650, 468.75125pt x 103.38625pt>
+<figure/2026-05-24.pdf, id=651, 468.75125pt x 103.38625pt>
 File: figure/2026-05-24.pdf Graphic file (type pdf)
 <use figure/2026-05-24.pdf>
 Package luatex.def Info: figure/2026-05-24.pdf  used on input line 87.
@@ -2642,7 +2608,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--62
 
  []
 
-<figure/2026-04-23.pdf, id=712, 215.80624pt x 163.61125pt>
+<figure/2026-04-23.pdf, id=713, 215.80624pt x 163.61125pt>
 File: figure/2026-04-23.pdf Graphic file (type pdf)
 <use figure/2026-04-23.pdf>
 Package luatex.def Info: figure/2026-04-23.pdf  used on input line 105.
@@ -2746,7 +2712,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 234.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 234.
-<figure/2026-04-30.pdf, id=759, 297.11pt x 194.7275pt>
+<figure/2026-04-30.pdf, id=760, 297.11pt x 194.7275pt>
 File: figure/2026-04-30.pdf Graphic file (type pdf)
 <use figure/2026-04-30.pdf>
 Package luatex.def Info: figure/2026-04-30.pdf  used on input line 247.
@@ -2770,7 +2736,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--70
 
  []
 
-<figure/2026-05-08.pdf, id=767, 206.7725pt x 211.79124pt>
+<figure/2026-05-08.pdf, id=768, 206.7725pt x 211.79124pt>
 File: figure/2026-05-08.pdf Graphic file (type pdf)
 <use figure/2026-05-08.pdf>
 Package luatex.def Info: figure/2026-05-08.pdf  used on input line 79.
@@ -2827,7 +2793,7 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 212.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 223.
-<figure/2026-05-07_1.pdf, id=797, 256.96pt x 190.7125pt>
+<figure/2026-05-07_1.pdf, id=798, 256.96pt x 190.7125pt>
 File: figure/2026-05-07_1.pdf Graphic file (type pdf)
 <use figure/2026-05-07_1.pdf>
 Package luatex.def Info: figure/2026-05-07_1.pdf  used on input line 226.
@@ -2902,12 +2868,12 @@ Overfull \hbox (11.35095pt too wide) detected at line 160
 []
  []
 
-<figure/2026-05-29.pdf, id=857, 233.87375pt x 192.72pt>
+<figure/2026-05-29.pdf, id=858, 233.87375pt x 192.72pt>
 File: figure/2026-05-29.pdf Graphic file (type pdf)
 <use figure/2026-05-29.pdf>
 Package luatex.def Info: figure/2026-05-29.pdf  used on input line 189.
 (luatex.def)             Requested size: 144.53777pt x 119.10875pt.
-<figure/2026-05-29_1.pdf, id=858, 264.99pt x 173.64874pt>
+<figure/2026-05-29_1.pdf, id=859, 264.99pt x 173.64874pt>
 File: figure/2026-05-29_1.pdf Graphic file (type pdf)
 <use figure/2026-05-29_1.pdf>
 Package luatex.def Info: figure/2026-05-29_1.pdf  used on input line 199.
@@ -2918,22 +2884,22 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6D9508902A7F3EC62FEDF1F084CE94AB;7639.
+(rerunfilecheck)             Checksum: AD7F1032996D8A0FAB51E7BE551A2763;7678.
 )
 
 Here is how much of LuaTeX's memory you used:
- 63471 strings out of 476076
+ 63485 strings out of 476076
  125192,2373549 words of node,token memory allocated
  1532 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 5 kern, 1 penalty, 1 margin_kern, 4 glyph, 155 attribute, 156 glue_spec, 78 attribute_list, 2 shape, 2 write nodes
-   avail lists: 1:14,2:5035,3:1258,4:384,5:837,6:117,7:7352,8:112,9:2816,10:28,11:312,12:1
- 83912 multiletter control sequences out of 65536+600000
+   avail lists: 1:12,2:5035,3:1258,4:388,5:837,6:117,7:7734,8:112,9:2816,10:28,11:332,12:1
+ 83923 multiletter control sequences out of 65536+600000
  148 fonts using 15310799 bytes
  110i,25n,120p,1930b,1434s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman7-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf>{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman8-italic.otf>{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/type1/public/esint-type1/esint10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (86 pages, 707127 bytes).
+Output written on main.pdf (86 pages, 715226 bytes).
 
-PDF statistics: 1016 PDF objects out of 1200 (max. 8388607)
+PDF statistics: 1017 PDF objects out of 1200 (max. 8388607)
  843 compressed objects within 9 object streams
  373 named destinations out of 1000 (max. 1048576)
  320 words of extra memory for PDF output out of 10000 (max. 100000000)

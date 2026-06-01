@@ -327,7 +327,7 @@ Now we can define our field $\mathbb{C}$:
 	\end{align*}
 	In particular we have $u, v : \mathbb{R}^2 \to \mathbb{R}$
 \end{definition}
-A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$. As said before we can always map a complex number to a number in $ \mathbb{R}^2$. By 'splitting' our function into to  two sub functions $u, v$ which map to $ \mathbb{R}$. We effectively transformed our function $f : \mathbb{C} \to \mathbb{C}$ into two sub function that goes from $ \mathbb{R}^2 \to \mathbb{R}$ which therefore point to $ \mathbb{R}^2$ (if we replaced the 1 by a unit vector, and $i$ as another unit vector).
+A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$. As said before we can always map a complex number to a number in $ \mathbb{R}^2$. By 'splitting' our function into to  two sub functions $u, v$ which map to $ \mathbb{R}$. We effectively transformed our function $f : \mathbb{C} \to \mathbb{C}$ into two sub functions that goes from $ \mathbb{R}^2 \to \mathbb{R}$ which therefore point to $ \mathbb{R}^2$ (if we replaced the 1 by a unit vector, and $i$ as another unit vector).
 
 
 \begin{parag}{Examples}
@@ -347,7 +347,7 @@ A nice thing to see here is the relation between $\mathbb{R}^2$ and $\mathbb{C}$
     \begin{align*} \cos z = \frac{e^{iz} + e^{-iz}}{2} \end{align*}
 	\begin{align*} \sin z = \frac{e^{iz} - e^{-iz}}{2i} \end{align*}
 	\begin{framedremark}
-	We have already seen the same concept in Analysis III. We use a lot those definition when dealing with Fourier series. (with odd/even series)
+	We have already seen the same concept in Analysis III. We used a lot those definitions when dealing with Fourier series.
 	\end{framedremark}
 	\begin{align*} 
 		\cosh z =  \frac{e^{z} + e^{-z}}{2}
@@ -415,7 +415,9 @@ This theorem doesn't work in $ \mathbb{R}$ a function can be infinitely differen
 		0 &x = 0
 	\end{cases}
 \end{align*}
-This is $C^{\infty}$ everywhere, but its Taylor series at $0$ is identically $0$, so it fails to represent $f$ near $0$
+This is $C^{\infty}$ everywhere, but its Taylor series at $0$ is identically $0$, so it fails to represent $f$ near $0$\\
+$ $\\
+P.S: this comes from me reading a book and not understanding what analytic means and asking an AI what it is and what is the difference between analytic and holomorphic.
 \end{framedremark}
 \begin{definition}
 If $f$ is holomorphic on $\mathbb{C}$, we call f \important{entire}.
@@ -430,7 +432,7 @@ The same rules of differentiation of products (product rule, Leibniz rule), Comp
 \label{par:Recall on topology}
 \begin{parag}{Open set}
 	\begin{definition}
-	$\omega \subseteq \mathbb{C}$ is \important{open} if for all $z_0 \in \omega$, there exists $\Gamma > 0$ such that the disk $D_\Gamma\left(z_0\right) =  \left\{z \in \mathbb{C}: \left\|z - z_0\right\| < r\right\} \subseteq \omega$
+	$\omega \subseteq \mathbb{C}$ is \important{open} if for all $z_0 \in \omega$, there exists $R > 0$ such that the disk $D_R\left(z_0\right) =  \left\{z \in \mathbb{C}: \left\|z - z_0\right\| < R\right\} \subseteq \omega$
 	\end{definition}
     \begin{subparag}{Examples}
         \begin{itemize}

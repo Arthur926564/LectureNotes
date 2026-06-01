@@ -33,7 +33,7 @@
 	\end{align*}
 	Now we can defined the whole path:
 	\begin{align*} 
-		\Gamma_r := L_R \bigcup C_r
+		\Gamma_r := L_R \cup C_r
 	\end{align*}
 	and the integral over this path:
 	\begin{align*} 
@@ -134,7 +134,7 @@
 \end{parag}
 
 
-\paragraph{Integrals of rational function of trigonometric functions}%
+\paragraph{Integrals of rational functions of trigonometric functions}%
 	\label{par:Integrals of rational function of trigonometric functions}$ $\\
 
 	
@@ -150,8 +150,8 @@
 	\end{align*}
 	We have:
 	\begin{align*} 
-		\int_0^{2\pi}\frac{P\left(\cos t, \sin t\right)}{Q\left(\cos t, \sin t\right)}dt &= \int_0^{2\pi}\frac{P\left(\frac{e^{it} + e^{-it}}{2}, \frac{e^{it} - e^{-it}}{2j}\right)}{Q\left(\frac{e^{it} + e^{-it}}{2}, \frac{e^{it} - e^{-it}}{2i}\right)}dt\\
-		&= \int_0^{2\pi} \frac{Q\left(\cdots\right)}{Q\left(\cdots\right)}\frac{1}{ie^{it}}ie^{it}dt
+		\int_0^{2\pi}\frac{P\left(\cos t, \sin t\right)}{Q\left(\cos t, \sin t\right)}dt &= \int_0^{2\pi}\frac{P\left(\frac{e^{it} + e^{-it}}{2}, \frac{e^{it} - e^{-it}}{2i}\right)}{Q\left(\frac{e^{it} + e^{-it}}{2}, \frac{e^{it} - e^{-it}}{2i}\right)}dt\\
+		&= \int_0^{2\pi} \frac{P\left(\cdots\right)}{Q\left(\cdots\right)}\frac{1}{ie^{it}}ie^{it}dt
 	\end{align*}
 	Now we can set 
 	\begin{align*} 
@@ -163,7 +163,7 @@
 	\end{align*}
 	Where $\gamma : \left[0, 2\pi\right] \to \mathbb{C} \mathspace \gamma\left(t\right) =  e^{it}$ \\
 	$ $\\
-	Since $P, Q$ are polynomials,$f$ is holomorphic on $C \setminus \left\{z_1, \ldots, z_k\right\}$ where $z_1, \ldots, z_k$ are the point where the denominator vanishes
+	Since $P, Q$ are polynomials, $f$ is holomorphic on $\mathbb{C} \setminus \left\{z_1, \ldots, z_k\right\}$ where $z_1, \ldots, z_k$ are the point where the denominator vanishes
 	\begin{parag}{$ $}
 	    
 	
@@ -183,7 +183,7 @@
 
 
 \begin{parag}{Example}
-    Let us now try to compute $\int_0^{2\pi} \frac{1}{2 \cos \theta}d \theta$. This falls into the previous example with $P\left(x, y\right) =  1$, $Q\left(x, y\right) =  2 + x$. Computing the function $f$ from the previous example explicitly yields
+    Let us now try to compute $\int_0^{2\pi} \frac{1}{2  + \cos \theta}d \theta$. This falls into the previous example with $P\left(x, y\right) =  1$, $Q\left(x, y\right) =  2 + x$. Computing the function $f$ from the previous example explicitly yields
 	\begin{align*} 
 		f\left(z\right) = \frac{2}{i}\frac{1}{z^2 + 4z + 1}
 	\end{align*}

@@ -16,7 +16,7 @@
 	\begin{subparag}{Remark}
 	    And we can see that if $n = 0$ then this fall under the usual formula.
 	\end{subparag}
-	This gives us another way to compute a maybe 'complicated' using something that 'may' be easier.\\
+	This gives us another way to compute a maybe 'complicated' integral using something that 'may' be easier.\\
 	$ $\\
 	This essentially follows by differentiating the Cauchy's integral formula
 	\begin{proof}
@@ -89,11 +89,11 @@
 
 Before jumping to Laurent series, first let's recall what Taylor series are and why are we interested in them.
 
-\section{Taylor series}
+\section{Taylor series in $ \mathbb{R}$}
 $ $\\
-The goal of Taylor series is to approximate any function using polynomial. The reason for this is that a polynomial is very nice to manipulate (derivative/primitive are very easy to compute) they are continuous, smooth, etc...
+The goal of Taylor series is to approximate any function using polynomial. The reason for why polynomials is that they are very nice to manipulate (derivative/primitive are very easy to compute) they are continuous, smooth, etc...
 \begin{definition}{Taylor Series}
-Let $f : \mathbb{R} \to \mathbb{R}$ sufficiently regular function. For any $x_0 \in \mathbb{R}$ the \important{Taylor polynomial} of degree $N$ is 
+Let $f : \mathbb{R} \to \mathbb{R}$ be a sufficiently regular function. For any $x_0 \in \mathbb{R}$ the \important{Taylor polynomial} of degree $N$ is 
 \begin{align*} 
 	T_{x_0}^{N}f\left(x\right) =  f\left(x_0\right) + f'\left(x_0\right)\left(x -  x_0\right) + \cdots + \frac{f^{\left(n\right)\left(x_0\right)}}{N!}\left(x - x_0\right)^{N}
 \end{align*}
@@ -147,7 +147,7 @@ If $f : D \to \mathbb{C}$ is holomorphic then
 \end{align*}
 For all $z \in B_r\left(z_0\right)$\\
 \end{theoreme}
-What this means is that if I gave you a point and a ball around that point. Then, at each point around this ball the function at this point is equal to his Taylor series.\\
+What this means is that if I gave you a point and a ball around that point. Then, at each point in this ball, the function at this point is equal to its Taylor series.\\
 $ $\\
 The largest possible $R$ is called the \important{radius of convergence}
 
@@ -162,7 +162,7 @@ The largest possible $R$ is called the \important{radius of convergence}
 			\begin{align*} f\left(z\right) =  \sum_{n= 0}^{\infty}\frac{f^{\left(n\right)}}{n!}\left(z - z_0\right)^{n} = \sum_{n= 0}^{\infty}c_n\left(z - z_0\right)^{n} \end{align*}
 			Where 
 			\begin{align*} 
-				c_n =  \frac{f^{\left(n\right)\left(z_0\right)}}{n!} =  \frac{1}{2\pi i}\int_{\gamma}\frac{f\left(\zeta\right)}{\zheta - z_0}d\zeta
+				c_n =  \frac{f^{\left(n\right)\left(z_0\right)}}{n!} =  \frac{1}{2\pi i}\int_{\gamma}\frac{f\left(\zeta\right)}{\left(\zeta - z_0\right)^{n+1}}d\zeta
 			\end{align*}
 			For every simple, closed curve $\gamma$ around $z_0$ with int $\gamma \subseteq D$ and counter-clockwise
     \end{enumerate}
@@ -180,7 +180,7 @@ The largest possible $R$ is called the \important{radius of convergence}
 		Since $f^{n}\left(0\right) =  n!$
 	\end{parag}
 	\begin{parag}{Example III}
-	    Let $f\left(z\right) = \frac{1}{1 + z^2}$ holomorphic on $D = \mathbb{C}\setminus \left\{-i, i\right\}$. Let $z_0 = 0$ which again give us as the largest $R$, $1$. Using $B_1\left(0\right)$, we could simply use 
+	    Let $f\left(z\right) = \frac{1}{1 + z^2}$ holomorphic on $D = \mathbb{C}\setminus \left\{-i, i\right\}$. Let $z_0 = 0$ which again give us as the largest $R = 1$. Using $B_1\left(0\right)$, we could simply use 
 		\begin{align*} 
 			\frac{1}{1 - w} = \sum_{n= 0}^{\infty}w^{n}
 		\end{align*}
@@ -246,9 +246,9 @@ In other words, the Taylor series is a Laurent series without singular part.
 	\end{align*}
 	The singular part of the Laurent series has to vanish since for all $n \leq -1$ we have 
 	\begin{align*} 
-		\frac{f\left(\zeta\right)}{\left(\zeta - z_0\right)^{n ! 1}} \text{ is holomorphic near } z_0
+		\frac{f\left(\zeta\right)}{\left(\zeta - z_0\right)^{n + 1}} \text{ is holomorphic near } z_0
 	\end{align*}
-	By Cauchy's integral formula $\int_{\gamma}\frac{f\left(\zeta\right)}{\left(\zeta - z_0\right)^{n + 1}}d\zetag = 0$\\
+	By Cauchy's integral formula $\int_{\gamma}\frac{f\left(\zeta\right)}{\left(\zeta - z_0\right)^{n + 1}}d\zeta = 0$\\
 
 \end{parag}
 \begin{parag}{Example II}

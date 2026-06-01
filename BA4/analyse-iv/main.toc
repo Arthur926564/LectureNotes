@@ -45,14 +45,14 @@
 \contentsline {paragraph}{Example ii}{30}{section*.31}%
 \contentsline {paragraph}{Example iii}{30}{section*.32}%
 \contentsline {paragraph}{How to shows this?}{31}{section*.33}%
-\contentsline {subsubsection}{Cauchy integral formula}{31}{subsubsection*.34}%
-\contentsline {paragraph}{How to show this?}{31}{section*.35}%
+\contentsline {subsubsection}{Cauchy integral formula}{32}{subsubsection*.34}%
+\contentsline {paragraph}{How to show this?}{32}{section*.35}%
 \contentsline {subsection}{\numberline {3.1.2}Trick to compute line integrals easily}{32}{subsection.3.1.2}%
 \contentsline {paragraph}{Extension of Cauchy's integral formula}{32}{section*.36}%
 \contentsline {paragraph}{Example}{33}{section*.37}%
-\contentsline {paragraph}{Example II}{33}{section*.38}%
+\contentsline {paragraph}{Example II}{34}{section*.38}%
 \contentsline {chapter}{\numberline {4}Laurent Series}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Taylor series}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.1}Taylor series in $ \mathbb {R}$}{35}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Taylor series/ Regular Laurent Series for complex functions}{36}{section.4.2}%
 \contentsline {paragraph}{Remarks}{36}{paragraph*.39}%
 \contentsline {paragraph}{Example}{36}{section*.40}%
@@ -87,7 +87,7 @@
 \contentsline {paragraph}{$ $}{47}{section*.64}%
 \contentsline {paragraph}{$ $}{48}{section*.65}%
 \contentsline {paragraph}{Example}{49}{section*.66}%
-\contentsline {paragraph}{Integrals of rational function of trigonometric functions}{50}{paragraph*.67}%
+\contentsline {paragraph}{Integrals of rational functions of trigonometric functions}{50}{paragraph*.67}%
 \contentsline {paragraph}{$ $}{50}{section*.68}%
 \contentsline {paragraph}{Example}{51}{section*.69}%
 \contentsline {part}{III\hspace {1em}Integral Transforms}{53}{part.3}%

@@ -33,7 +33,7 @@
 				=  \sum_{n= -1}^{\infty}\left(-1\right)^{n + 1}z^{n}
 			\end{align*}
 			The radius of convergence for this series is give by $R= 1$, it is the distance to $z_0$ to the next distinct singular point of $f$(which is given by $z = -1$).
-			\item  Assume $z_0 = -1$. Using the same trick as in (1): $f\left(z\right) = -\frac{1}{z - \left(-1\right)} + \frac{1}{z}$. Now if we expand $\frac{1}{z}$ as Taylor series around $-1$:
+			\item  Assume $z_0 = -1$. Using the same trick as in the first point: $f\left(z\right) = -\frac{1}{z - \left(-1\right)} + \frac{1}{z}$. Now if we expand $\frac{1}{z}$ as Taylor series around $-1$:
 				\begin{align*} 
 					\frac{1}{z} = \sum_{n= 0}^{\infty}\left(-1\right)\left(z - \left(-1\right)\right)^{n} \mathspace \text{ where } \left|z - \left(-1\right)\right| < 1
 				\end{align*}
@@ -65,7 +65,7 @@
 			\item We say $f$ has an essential singularity at $z_0$ if its Laurent series has infinitely many coefficients $c_n \neq 0$ with $n \leq 1$
 		\end{enumerate}
     \end{definition}
-	The intuition behind the second point if that '\textit{f blows up like $\frac{1}{\left(z - z_0\right)^{m}}$ at $z_0$}'
+	The intuition behind the second point is that '\textit{if f blows up like $\frac{1}{\left(z - z_0\right)^{m}}$ at $z_0$ then it has a pole of order $m$}' 
 	\begin{subparag}{Example}
 	    Let $f\left(z\right) = \sum_{n= 0}^{\infty}\frac{z^{n}}{n!} =  e^{z}$, here $0$ is regular.
 	\end{subparag}

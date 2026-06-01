@@ -202,7 +202,11 @@ If $f$ is holomorphic on our two curves, then:
 This allows us to compute complicated line integral by an easy line integral. 
 
 \begin{parag}{How to shows this?}
-    Since $f$ is holomorphic on int $\sigma$ and  int$\sigma_2$, by Cauchy's theorem:
+	First let us do a diagram on what we are trying to do:
+	\begin{center}
+	\includegraphics[width=0.7\textwidth]{figure/2026-06-01.pdf}
+	\end{center}
+    Since $f$ is holomorphic on int $\sigma_1$ and  int $\sigma_0$, by Cauchy's theorem:
 	\begin{align*} 
 		\int_{\sigma_1}f\left(z\right)dz = 0 = \int_{\sigma_0} f\left(z\right)dz
 	\end{align*}
@@ -211,6 +215,13 @@ This allows us to compute complicated line integral by an easy line integral.
 		0 &= \int_{\sigma_0}f\left(z\right)dz + \int_{\sigma_1}f\left(z\right)dz\\
 		&= \int_{\gamma_0}f\left(z\right)dz - \int_{\gamma_1}f\left(z\right)dz  + 0
 	\end{align*}
+	Notice the $+ 0$ here represents the part between the two $\sigma$.
+	\begin{subparag}{Remark}
+	    The minus sign here appeared as we are taking the inside in opposite orientation
+	\end{subparag}
+	\begin{subparag}{Intuition}
+	    Here we are saying that every two curves where one is inside another can be represented by two closed curves where the union of their interior (int $\sigma_1 \cup \text{int }\sigma_0$) is int $\Gamma_1 \setminus $ int $\Gamma_0$. As our function is holomorphic inside our two curves that we have defined, the integral is $0$. And as the sum of our two curves (as integral) corresponds to the integral of the curve of $\partial \text{int }\Gamma_1 \setminus \text{int }\Gamma_0$, we have our equality as $\partial \text{int }\Gamma_1 \setminus \text{int }\Gamma_0 = \gamma_0 \cup \gamma_1$ (and by taking care of orientation).
+	\end{subparag}
 \end{parag}
 \subsubsection{Cauchy integral formula}
 \begin{theoreme}
@@ -238,6 +249,9 @@ For every closed, simple curve $\gamma$ inside $D$ whose interior contains $z_0$
 		&= i \int_0^{2\pi} f\left(z_0 + re^{it}\right) dt \to i2\pi f\left(z_0\right) \text{ as }  r \to 0
 	\end{align*}
 	using that $f$ is continuous at $z_0$.
+	\begin{subparag}{Intuition}
+		The idea is the same as in the proof above, we are essentially creating a small round between our new '\textit{problem}' and make it arbitrarily small.
+	\end{subparag}
 \end{parag}
 
 

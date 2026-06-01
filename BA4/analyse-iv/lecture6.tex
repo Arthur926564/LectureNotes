@@ -149,15 +149,15 @@ Then we can see that we already have the Laurent series of $\frac{1}{z}$ at the 
 			\text{Res}_{-1}\left(f\right) =  \lim_{z \to -1} \left(z + 1\right)f\left(z\right) =  \lim_{z \to -1} \frac{1}{z} = -1
 
 		\end{align*}
-		Let $\gamma$ be a \si\mple closed counterclockwise oriented curve. The que\astion is always the same: what is $\int_{\gamma}fdz$?
+		Let $\gamma$ be a simple closed counterclockwise oriented curve. The question is always the same: what is $\int_{\gamma}fdz$?
 		\begin{enumerate}
 		    \item 0, $-1 \notin $ int $\gamma \cup \gamma$ then $\int_{\gamma}fdz = 0$
 		    \item $0 \in \text{ int}\gamma$ but $-1 \notin $ int $\gamma \cup \gamma$ then 
 				\begin{align*} 
 					\int_{\gamma}fdz =  2\pi i \text{Res}_0\left(f\right) = 2\pi i 
 				\end{align*}
-				\item $0 \notin $int $\gamma \cup \gamma$ but $-1 \in $ int $\gamma$ then 
-					\begin{align*} 
+				\item $0 \notin $ int $\gamma \cup \gamma$ but $-1 \in $ int $\gamma$ then 
+					\begin{align*}of  
 						\int_{\gamma}fdz =  2\pi i \text{Res}_{-1}\left(f\right) = -2\pi i
 					\end{align*}
 					\item If $0, -1 \in $ int $\gamma$ then by the residue theorem 
@@ -166,7 +166,7 @@ Then we can see that we already have the Laurent series of $\frac{1}{z}$ at the 
 						\end{align*}
 					\item $0 \in \gamma$ or $-1 \in \gamma$ then the integral is not well defined
 		\end{enumerate}
-		What is important is that when we are asked to compute simple line integral, it is important the divide cases based the singularities inside of $\gamma$
+		What is important is that when we are asked to compute simple line integral, it is important the divide cases based of the singularities inside of $\gamma$
 	\end{parag}
 
 	\begin{parag}{Example}
@@ -203,12 +203,12 @@ The residue theorem can be used to compute integrals over simple closed curve, s
 
 	So:
 	\begin{align*} 
-		\int_{\gamma} ddz =  \pi &=  \int_{L_R}fdz + \int_{C_R}fdz\\
+		\int_{\gamma} fdz =  \pi &=  \int_{L_R}fdz + \int_{C_R}fdz\\
 		&= \int_{-R}^{R} \frac{1}{1 + t^2}dt \underbrace{\to}_{R \to \infty} \int_{-\infty}^{\infty}\frac{1}{1 + t^2}dt
 	\end{align*}
 	On the other hand, 
 	\begin{align*} 
-		\int_{C_R}fdz =  \int_0^{\pi} \frac{1}{1 + R^2e^{2it}}Rie^{it}dt \approx \frac{\pi}{R} \underbrace{\to}_{R \to \infty}
+		\int_{C_R}fdz =  \int_0^{\pi} \frac{1}{1 + R^2e^{2it}}Rie^{it}dt \approx \frac{\pi}{R} \underbrace{\to}_{R \to \infty} 0
 	\end{align*}
 	This method works for any integrand that decays faster than $\frac{1}{R}$ as $R \to \infty$
 \end{parag}
