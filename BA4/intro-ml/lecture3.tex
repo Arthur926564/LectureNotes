@@ -9,18 +9,17 @@ Ultimately, whatever the input dimension, we can write:
 	y = w^{T}x
 \end{align*}
 with $x \in \mathbb{R}^{D + 1}$, where the extra dimension contains a $1$ to account for $w^{\left(0\right)}$.
-\subsection{Loss Function ad Empricial Risk}
-\begin{framedremark}
-Those are general machine learning concept
-\end{framedremark}
+\subsection{Loss Function ad Empirical Risk}
+Let us have an interlude in our classification goal in order to get more tools to tackle this problem. Note that those tools here (loss functions and empirical risks) are general machine learning concepts used elsewhere.
+
 \begin{parag}{Loss function}
     \begin{definition}
     The loss function $l\left(\hat{y}_i, y_i\right)$ computes an error value between the prediction and the true value
     \end{definition}
-	This is a general machine learning conecpt, this is not used only for linear regression, we will see different loss functions in the upcoming lectures.
+	This is a general machine learning concept, this is not used only for linear regression, we will see different loss functions in the upcoming lectures.
 \end{parag}
 $ $\\
-The goal of the loss function is to \important{measure} how \important{wrong} our prediction is. Meaning that if we were to train a model in order to guess wether it is a dog, cat, ship, plane, etc.. The loss function will tell us how wrong are we. (notice that even with classification model we will need to have a loss function (even is it will measure a 'yes' or 'no' type question)).
+The goal of the loss function is to \important{measure} how \important{wrong} our prediction is. Meaning that if we were to train a model in order to guess whether it is a dog, cat, ship, plane, etc.. The loss function will tell us how wrong are we. (notice that even with classification model we will need to have a loss function (even is it will measure a 'yes' or 'no' type question)).
 
 \begin{center}
     

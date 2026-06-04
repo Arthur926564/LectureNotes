@@ -42,7 +42,7 @@
 \end{parag}
 \subsubsection{Regression vs Classification}%
 
-	\important{Regression} predicts \important{continuous value(s)}\footnote{As said right after, it is not continuous in the sens of a function $f$ in $ \mathbb{R}$. But value have an ordering which allows us to have an ordered set of those elements. It's just how I kind of see it} for a given sample.\\
+	\important{Regression} predicts \important{continuous value(s)}\footnote{As said right after, it is not continuous in the sense of a function $f$ in $ \mathbb{R}$. But value can be \important{compared}, meaning given a vector $x$, we can see how '\textit{near}' another vector $y$ is to $x$} for a given sample.\\
 	This means that our 'guesses' typically follow an \important{order}. We can then measure "how accurate" our prediction is: predicting 3002g instead of 2977 is better than predicting 2500g.
 	On the other hand, \important{classification} use 'classes' as prediction, categories do not follow an order: predicting 'tree' instead of 'cat' is just as wrong as predicting 'car'.
 
@@ -254,7 +254,7 @@ Let's us start with a simple supervised learning model, the goal is to start wit
 \begin{parag}{1D Linear Regression training}
 	In essence, fitting a line consists of finding the best line parameters $\omega^{\left(0\right)\ast}$ and $\omega^{\left(1\right)\ast}$ for some given data. This corresponds to the training stage:
 	\begin{itemize}
-		\item Given $N$ training pairs $\left\{\left(x_i, y_i\right)\right\}$, we aime to find $\left(\omega^{\left(0\right)}, \omega^{\left(1\right)}\right)$, such that the predictions of the model 
+		\item Given $N$ training pairs $\left\{\left(x_i, y_i\right)\right\}$, we aim to find $\left(\omega^{\left(0\right)}, \omega^{\left(1\right)}\right)$, such that the predictions of the model 
 			\begin{align*} \hat{y}_i = \omega^{\left(0\right)} + \omega^{\left(1\right)}x_i \end{align*}
 			are close to the true values $y_i$
 	\end{itemize}

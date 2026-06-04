@@ -3,12 +3,9 @@
 \begin{parag}{Plane}
     For one dimension we had a line, for two dimension we then have... a \important{plane}!!
 
-	\begin{framedremark}
-	Remember to put the screen of the plane here
-	\end{framedremark}
 	We can define our plane as:
 	\begin{align*} y = w^{\left(0\right)} + w^{\left(1\right)}x^{\left(1\right)} + w^{\left(2\right)}x^{\left(2\right)} = w^{T}\begin{pmatrix} 1 \\ x^{\left(1\right)} \\ x^{\left(2\right)} \end{pmatrix}  \end{align*}
-	All the thing we said to a one dimension fitting is translated into two dimension: Given $N$ noisy plan $\left\{\left(x_i, y_i\right)\right\}$, where $x_i \in \mathbb{R}^2$, find the plane that best fit these observations. Of course as you could have guess, this can be generalized to higher dimensions.
+	All the thing we said to a one dimension fitting is translated into two dimension: Given $N$ noisy points $\left\{\left(x_i, y_i\right)\right\}$, where $x_i \in \mathbb{R}^2$, find the plane that best fit these observations. Of course as you could have guess, this can be generalized to higher dimensions.
 	\begin{itemize}
 		\item In dimension $D$, we can write
 			\begin{align*} 
@@ -25,12 +22,12 @@
 
 
 \begin{parag}{Multi-input linear regression: Training}
-    Because the output reamins to one dimension, we can use the same least-square loss function as before, and write training as:
+    Because the output remains to one dimension, we can use the same least-square loss function as before, and write training as:
 	\begin{align*} \min_w \frac{1}{N}\sum_{i=  1}^{N}d^2\left(\hat{y}_i, y_i\right) \iff \min_w \frac{1}{N}\sum_{i = 1}^{N}\left(x_i^{T}w - y_i\right)^2 \end{align*}
 	\begin{subparag}{Note}
 	    This has the same form as in the one dimension input case
 	\end{subparag}
-	Solving this minimization problem involves computing its derivatives w.r.t. the model parameters ($w$) (by using the gradient descent).
+	Solving this minimization problem involves computing its derivatives w.r.t. the model parameters ($w$) (by using gradient descent).
 \end{parag}
 
 \section{Derivatives and Gradients}
@@ -40,10 +37,10 @@ The derivative of a function $R\left(w\right)$ of a single variable $w$ is the r
 \begin{framedremark}
 Be careful at this definition, if you have done cs-328 you'll know that derivative as in machine learning and many other topics, use auto-differentiation which is really "different" as how analysis defined derivative. (the 2023 exam asked to derive the load instruction...)
 \end{framedremark}
-The derivative can also be measured for an infinitesimal change in $w$, startingfrom a point $\overline{w}$, we can write it as:
+The derivative can also be measured for an infinitesimal change in $w$, starting from a point $\overline{w}$, we can write it as:
 \begin{align*} R'\left(\overline{w}\right) = \frac{dR}{dw} =  \lim_{\Delta w  \to 0} \frac{R\left(\overline{w} + \Delta w\right) - R\left(\overline{w}\right)}{\Delta w} \end{align*}
 \begin{parag}{Minimizing a function}
-    In machine learning, we often seek to minimize a function (i.e., the loss function). To minimize such a function, we seek a point where the derivative vanishes, i.e., we search for $w^{\ast}$ such that 
+    In machine learning, we often seek to minimize a function (e.g., the loss function). To minimize such a function, we seek a point where the derivative vanishes, i.e., we search for $w^{\ast}$ such that 
 	\begin{align*} \frac{d R\left(w^{\ast}\right)}{dw} = 0 \end{align*}
 	For some simple, convex functions, $w^{\ast}$ can be obtained algebraically by solving the corresponding equation
 	\begin{subparag}{Remark}
@@ -85,9 +82,9 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 	    \begin{itemize}
 			\item The gradient at a point $w$ has the direction of greatest increase of the function $w$ or in other word points to the \important{steepest} 'slope' of the function at the point $v$
 	    \end{itemize}
-		You can see with this property why the gradient may be useful when looking for minima of a function. If the gradient give us the steepest slope of the function at a given point, when going down this slope, this means that we are going \important{down} the fastest way possible.
+		You can see with this property why the gradient may be useful when looking for minima of a function. If the gradient gives us the steepest slope of the function at a given point, when going down this slope, this means that we are going \important{down} the fastest way possible.
 	    \begin{subparag}{Little remark for the future}
-	        This is nice, going down the slope will make our loss function decrease. But what if it converges onlty to a local minima and not a global one? Doing a gradient descent at a local minima won't work or at least a 'vanilla' gradient descent. A solution to this would be gradient descent with momentum which i don't know if we will see later.
+	        This is nice, going down the slope will make our loss function decrease. But what if it converges only to a local minima and not a global one? Doing a gradient descent at a local minima won't work or at least a 'vanilla' gradient descent. A solution to this would be gradient descent with momentum.
 	    \end{subparag}
 	\end{parag}
 		\begin{figure}[h!]
@@ -98,7 +95,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 	\begin{parag}{Linear regression: Solution}
 	    If we retake the least-square loss function we defined previously
 		\begin{align*} 
-			R\left(w\right) = \frac{1}{N} \sum_{i= 1}^{N}\left(w_i^Tw - y_i\right)^2
+			R\left(w\right) = \frac{1}{N} \sum_{i= 1}^{N}\left(x_i^Tw - y_i\right)^2
 		\end{align*}
 		This is a convex function of $w$, what this means is that the gradient is $0$ only at the global minima. We therefore search a parameter $w^{\ast}$ such that
 		\begin{align*} \nabla_w R\left(w^{\ast}\right) = 0\end{align*}
@@ -106,11 +103,11 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 
 	
 	\begin{parag}{Gradient Computation}
-		Before solving our equation, let us first compute our equation $\nabla_w R\left(w\right)$. Remember first that $R\left(w\right)$ is an average over the $N$ training samples. This means for us that we have $N$ times the same equation for each $i$, which makes the gradient failry easy to compute, we only have to compute:
+		Before solving our equation, let us first compute our equation $\nabla_w R\left(w\right)$. Remember first that $R\left(w\right)$ is an average over the $N$ training samples. This means for us that we have $N$ times the same equation for each $i$, which makes the gradient fairly easy to compute, we only have to compute:
 		\begin{align*} 
 			\nabla_w \left(x_i^Tw - y_i\right)^2
 		\end{align*}
-		By using the chain rule, the function $\left(x_i^Tw - y_i\right)^2$ has the form $f\left(g\left(w\right)\right)$, with $f\left(g\right) =  g^2$. We can compute its gradient as $\frac{df\left(g\right)}{dg} \nabla_wg\left(w\right)$.\\
+		By using the chain rule, the function $\left(x_i^Tw - y_i\right)^2$ has the form $f\left(g\left(w\right)\right)$, with $f\left(g\right) =  g^2$. We can compute its gradient as $\frac{df\left(g\right)}{dg} \nabla_w g\left(w\right)$.\\
 		$ $\\
 		The last trick that we need is the following:
 		\begin{theoreme}
@@ -166,7 +163,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 	\begin{parag}{Matrix form}
 	    As said before, we prefer to use matrix when dealing with machine learning in general, you can also see here that we are doing a sum over product which kind of look like a matrix multiplication. Let us now group all $\left\{x_i\right\}$ and all $\left\{y_i\right\}$ in a matrix and a vector:
 		\begin{align*} 
-			x = \begin{pmatrix} x_1^{T} \\ x_2^{T} \\ \vdots \\ x_N^{T} \end{pmatrix} = \begin{pmatrix} 1 & x_1^{\left(1\right)} & x_1^{\left(2\right)} & \cdots & x_1^{\left(D\right)} \\  1& x_2^{\left(1\right)} &x_2^{\left(2\right)}  & \cdots  &  x_2^{\left(D\right)}\\ \vdots  & \vdots  &  \vdots & \ddots  & \vdots  \\ 1 & x_N^{\left(1\right)} &  x_N^{\left(2\right)}& \cdots & x_N^{\left(D\right)}  \end{pmatrix} \in \mathbb{R}^{N \times \left(D + 1\right)}
+			X = \begin{pmatrix} x_1^{T} \\ x_2^{T} \\ \vdots \\ x_N^{T} \end{pmatrix} = \begin{pmatrix} 1 & x_1^{\left(1\right)} & x_1^{\left(2\right)} & \cdots & x_1^{\left(D\right)} \\  1& x_2^{\left(1\right)} &x_2^{\left(2\right)}  & \cdots  &  x_2^{\left(D\right)}\\ \vdots  & \vdots  &  \vdots & \ddots  & \vdots  \\ 1 & x_N^{\left(1\right)} &  x_N^{\left(2\right)}& \cdots & x_N^{\left(D\right)}  \end{pmatrix} \in \mathbb{R}^{N \times \left(D + 1\right)}
 		\end{align*}
 		\begin{align*} 
 			y =  \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_N \end{pmatrix} \in \mathbb{R}^{N}
@@ -198,7 +195,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 		\end{align*}
 		Where $X^{\dagger}$ is known as the \href{https://en.wikipedia.org/wiki/Moore\%E2\%80\%93Penrose_inverse}{Moore-Penrose pseudo-inverse} of $X$ (or directly the pseudo-inverse)
 		\begin{subparag}{kind of proof II?}
-		    So if I understood correctly what the wiki says, the pseudo-inverse $A^{\dagger}$ and $A^{+}$ is essentially the same. The definition of the pseudo-inverse of a matrix $A$ $A^{+}$ satisfy all of the four criterias, known as the Moore-Penrose condition:
+		    So if I understood correctly what the wiki says, the pseudo-inverse $A^{\dagger}$ and $A^{+}$ is essentially the same. The definition of the pseudo-inverse of a matrix $A$ $A^{+}$ satisfies all of the four criterias, known as the Moore-Penrose condition:
 			\begin{align*} 
 				A A^{+}A = A\\
 				A^{+}A A^{+} = A^{+}\\
@@ -349,19 +346,19 @@ Warning: the magnitude of a coefficient will depend on the magnitude of the corr
 	
 \subsection{Linear model with multiple outputs}
 
-Until now we have assumed that the ouput was a single value, i.e., $y_i \in \mathbb{R}$. But in practice, one may want to output multiple values for a given input, i.e., $y_i \in \mathbb{R}^{C}$ with $C > 1$
+Until now we have assumed that the output was a single value, i.e., $y_i \in \mathbb{R}$. But in practice, one may want to output multiple values for a given input, i.e., $y_i \in \mathbb{R}^{C}$ with $C > 1$
 \begin{parag}{Model}
-    To ouput multiple values, the linear model connot just relyu on a vector $w$, because the product $w^{T}x_i$ yields a single value. So let us a matrix $W \in \mathbb{R}^{\left(D + 1\right) \times C}$ such that:
+    To output multiple values, the linear model cannot just rely on a vector $w$, because the product $w^{T}x_i$ yields a single value. So let us a matrix $W \in \mathbb{R}^{\left(D + 1\right) \times C}$ such that:
 	\begin{align*} 
 		\hat{y}_i = W^{T}x_t = \begin{pmatrix} w_{\left(1\right)}^{T} \\ w_{\left(2\right)}^{T} \\ \vdots \\ w_{\left(C\right)}^{T}  \end{pmatrix} 
 	\end{align*}
-	Since the ouputs are multi-dimensional, we need to slightly modify the loss function, the multi-dimensional counterpart of the $1$D least-square loss is the squared Euclidean distance. Therefore, we can write multi-ouput linear regression as:
+	Since the outputs are multi-dimensional, we need to slightly modify the loss function, the multi-dimensional counterpart of the $1$D least-square loss is the squared Euclidean distance. Therefore, we can write multi-output linear regression as:
 	\begin{align*} 
 		\min_W \sum_{i= 1}^{N}||W^{T}x_i - y_i||^2
 	\end{align*}
 \end{parag}
-\begin{parag}{Multi-ouput linear regression: Gradient}
-    We have our loss function but computing its gradient seems a bit more sophisticated as how we did in the single-ouput linear regression. To compute its gradient, we make use of the following two properties:
+\begin{parag}{Multi-output linear regression: Gradient}
+    We have our loss function but computing its gradient seems a bit more sophisticated as how we did in the single output linear regression. To compute its gradient, we make use of the following two properties:
 	\begin{itemize}
 		\item Norm and derivative:
 			\begin{align*} ||a||^2 =  a^{T}a \end{align*}
@@ -372,7 +369,7 @@ Until now we have assumed that the ouput was a single value, i.e., $y_i \in \mat
 				\nabla_B\left(a^{T}B\right) = a
 			\end{align*}
 	\end{itemize}
-	Thuse, using the chain rule (and replacing $\left(W^{T}x_i - y_i\right)$) with $\left(X_i^{T}W - y_i^{T}\right)$, we obtain the gradient:
+	Thus, using the chain rule (and replacing $\left(W^{T}x_i - y_i\right)$) with $\left(X_i^{T}W - y_i^{T}\right)$, we obtain the gradient:
 	\begin{align*} 
 		\nabla_W R = 2 \sum_{i= 1}^{N}x_i\left(x_i^{T}W - y_i^{T}\right)
 	\end{align*}
@@ -392,7 +389,7 @@ Until now we have assumed that the ouput was a single value, i.e., $y_i \in \mat
 
 
 \subsection{Linear Classification}
-The goal for now will the same as before however this time instead of having to output a continuous vector, the output will be a class (which is represented by an integer).
+The goal for now will be the same as before, however this time instead of having to output a continuous vector, the output will be a class (which is represented by an integer).
 
 \begin{parag}{Binary Classification}
     The easiest classification model we can make is a binary classification one. The output of our model is either 0 or 1.\\
@@ -414,13 +411,15 @@ The goal for now will the same as before however this time instead of having to 
 \end{parag}
 \begin{parag}{Example (from Andrew Ng's course)}
     The goal is to classify a tumor as benign vs malignant, here's the data:
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2026-06-04.png}
+	\end{center}
 
 	But we can still create a model on this data, a linear model which can predict the label as:
 	\begin{align*} 
 		\hat{y} = w^{\left(0\right)} + w^{\left(1\right)}x
 	\end{align*}
-	If $\hat{y}$ is small there is a high probability of being and vis versa.\\
-	$ $\\
+	If $\hat{y}$ is small there is a high probability of being not malignant and vis versa.\\
 	$ $\\
 	To fit the linear model to the training data, the same strategy as for the linear regression can be used:\\
 	$ $\\
@@ -440,8 +439,12 @@ The goal for now will the same as before however this time instead of having to 
 		\end{cases}
 	\end{align*}
 	Where $\hat{y}_t =  x_t^Tw^{\ast}$. \\
+	This gives us for instance as a decision boundary 
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2026-06-04_1.png}
+	\end{center}
 	\begin{subparag}{Remark}
-		A general rule when using least-square binary classification is that: the boundary between our two class is of dimension $D$. when we had data of dimension $1$ the decision boundary was a point (i.e. 0.5 above). If our data are in two dimensions, the boundary will be a line.
+		A general rule when using least-square binary classification is that: the boundary between our two classes is of dimension $D$. When we had data of dimension $1$ the decision boundary was a point (i.e. 0.5 above). If our data are in two dimensions, the boundary will be a line.
 	\end{subparag}
 
 \end{parag}
