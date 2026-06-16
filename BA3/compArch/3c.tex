@@ -176,14 +176,14 @@ But now at the moment we could steal this data (with our current CPU), for us if
 	\begin{itemize}
 		\item All programs must be written without knowledge of where they will be in memory
 			\begin{itemize}
-				\item Space allocation may need \important{garbge collection}, \important{moving programs} and \important{data}, etc.
+				\item Space allocation may need \important{garbage collection}, \important{moving programs} and \important{data}, etc.
 			\end{itemize}
 		\item Programs can access only their own data
 			\begin{itemize}
 				\item Protection is a bit crude: \important{one chunk of memory}
 			\end{itemize}
 	\end{itemize}
-	\begin{subparag}{Was is still not good}
+	\begin{subparag}{Why is this even more a problem?}
 	    If several programs run at the same time, memory shortage will be even more a problem
 	\end{subparag}
 	
@@ -193,8 +193,8 @@ But now at the moment we could steal this data (with our current CPU), for us if
 	\begin{subparag}{Segmentation}
 		An \important{Segmentation} (an extension of \important{Base \& Bounds}) splits the physical memory exactly as needed by each program
 		\begin{itemize}
-			\item Artbitrary start of a block
-			\item Artbitrary length
+			\item Arbitrary start of a block
+			\item Arbitrary length
 			\item Multiple block per application
 		\end{itemize}
 	\end{subparag}
@@ -241,7 +241,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
 \begin{parag}{Page Tables Can Be Big}
     Page table could be very large, for instance 64GiB of memory of memory in 4KiB pages requires $2^{24}$ entries or approximately \important{64 MiB}.\\
 	For a program that uses only a few MB, \important{most entries are empty}.\\
-	There is a big sparness for the table, those table are gigantic but we most of what we'll use is only a thousand.\\
+	There is a big spareness for the table, those table are gigantic but we most of what we'll use is only a thousand.\\
 	As computer scientist we can encode those to optimize. Several possible solutions exist:
 	\begin{itemize}
 		\item Hashed Tables
@@ -249,12 +249,12 @@ But now at the moment we could steal this data (with our current CPU), for us if
 		\item \important{Multilevel Page Tables}
 	\end{itemize}
 \end{parag}
-\begin{parag}{Multilevel (Or hierachical) page tables}
-	What we want is a multilevel page stable. Instead of taking the 21 msb bits and put them in a table, we instead take the 10 msb bits as the index of the first table. This first \important{contains only index} of the second tables. We have one thousand tables that points to one thousand tables, this means that we have 1 million tables at the end of the day. 
+\begin{parag}{Multilevel (Or hierarchical) page tables}
+	What we want is a multilevel page stable. Instead of taking the 21 MSB bits and put them in a table, we instead take the 10 MSB bits as the index of the first table. This first \important{contains only index} of the second tables. We have one thousand tables that points to one thousand tables, this means that we have 1 million tables at the end of the day. 
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-07_2.png}
 	\end{center}
-	This is kind of weird at first, we are adding a new table, how can we gain time or space by addings something in memory?\\
+	This is kind of weird at first, we are adding a new table, how can we gain time or space by adding something in memory?\\
 	But now we don't have to allocate all this space directly in the first place, what we can is only allocate in page tables in memory when it is needed (when the OS decide to allocate). 
 	\begin{framedremark}
 	So here we gain a \important{lot} of space. The reason why we can do this is that the table is a \important{sparse table} and we can exploit this in order to use less memory.
@@ -262,7 +262,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
     
 \end{parag}
 \begin{parag}{But, Two memory accesses every time?}
-	So we need to have two memory acceses for each access in memory, this is \important{slow}.
+	So we need to have two memory accesses for each access in memory, this is \important{slow}.
     \begin{center}
     \includegraphics[scale=0.25]{screenshots/2025-11-07_3.png}
     \end{center}
@@ -273,7 +273,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
 	\begin{center}
 	\includegraphics[scale=0.25]{screenshots/2025-11-07_4.png}
 	\end{center}
-	What we want is to do a comparaison in parallel.\\
+	What we want is to do a comparison in parallel.\\
 	Remark, this is \texttt{CAM} as we have seen before.\\
 	The question now is what should the 'cache' do when we miss? This is an engineering question, we will assume that we usually don't miss. When we say rare here, it means every thousand, millions instruction we would miss.\\
 
@@ -296,10 +296,10 @@ But now at the moment we could steal this data (with our current CPU), for us if
 \end{parag}
 
 \begin{parag}{Memory Protection}
-	Typically \important{Page table} entries have several arritbutes (OS specific):
+	Typically \important{Page table} entries have several attributes (OS specific):
 	\begin{itemize}[label=--]
 		\item Valid (to indicate presence in main memory)
-		\item Allocated (to indicae existence)
+		\item Allocated (to indicate existence)
 		\item Dirty (to indicate a copy-back is needed)
 		\item Used (to help determine which page to replace)
 		\item \important{Readable}
@@ -316,17 +316,17 @@ But now at the moment we could steal this data (with our current CPU), for us if
 	\begin{center}
 	\includegraphics[scale=0.23]{screenshots/2025-11-07_5.png}
 	\end{center}
-	So now space is not an issue anymore, the only issue now is performance. We now have practily infinite memory. 
+	So now space is not an issue anymore, the only issue now is performance. We now have practically infinite memory. 
 \end{parag}
 \begin{parag}{TLB miss - Revised}
-    But here we have to rechange our TLB miss because the address can now be also on the disk. this misses that:\\
-	When the OS \important{Reaches the page table} after a TLB miss, now there is a new possiblity: the \important{addressed page is on disk}
+    But here we have to re-change our TLB miss because the address can now be also on the disk. this misses that:\\
+	When the OS \important{Reaches the page table} after a TLB miss, now there is a new possibility: the \important{addressed page is on disk}
 	\begin{itemize}
 		\item Copy another \important{page from memory to disk} to make space (Swap, Evict)
 		\item \important{Bring back into memory} the addressed page (Swap)
 		\item \important{update} the page table
 		\item \important{update} the TLB
-		\item Continus as usual
+		\item Continuous as usual
 	\end{itemize}
 	However where are these page on disk? It depends on the OS 
 	\begin{itemize}
@@ -359,7 +359,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
 	\begin{subparag}{Virtual Memory}
 		\begin{itemize}
 			\item Main memory holds the most frequently use pages
-			\item 	If main memory is fulle \textrightarrow evict/swap (LRU, etc.)
+			\item 	If main memory is full \textrightarrow evict/swap (LRU, etc.)
 			\item Page fault \textrightarrow \important{penalty 100,1000x - 10,000,000x}
 			\item A page is typically 4,096 bytes
 		\end{itemize}
@@ -374,7 +374,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
 
 
 \begin{parag}{Page table Attributes - Revisited}
-	Typically \important{page table} entries have several attributes (OS specifig):
+	Typically \important{page table} entries have several attributes (OS specific):
 	\begin{itemize}[label=--]
 		\item \important{Valid} (to indicate in main memory)
 		\item \important{Allocated} (to indicate existence)
@@ -391,7 +391,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2025-11-07_7.png}
 	\end{center}
-	The reason why the most common one is the second is implementation. the MMU translate virtual address into physical address which is then process by the cache. Therefore the cache is the same for every programs while on the other hand if we go the other way around. The cache \important{is} different for each program. This implies a lot of issue, should we all clear the cache when we are switching program, this looks pretty costly how does the cache know wether or not it is changing of program etc.
+	The reason why the most common one is the second is implementation. The MMU translate virtual address into physical address which is then process by the cache. Therefore the cache is the same for every programs while on the other hand if we go the other way around. The cache \important{is} different for each program. This implies a lot of issue, should we all clear the cache when we are switching program, this looks pretty costly how does the cache know whether or not it is changing of program etc.
 \end{parag}
 
 \begin{parag}{TLB Misses, Caches misses and Page faults}
@@ -410,7 +410,7 @@ But now at the moment we could steal this data (with our current CPU), for us if
 \section{Summary}
 \begin{itemize}
 	\item \important{Virtual memory} offers the illusion of a perfectly uniform and identical memory to each individual program
-	\item Additionally, \important{virtual memory} is a form of caching between main memory and seconday storage
+	\item Additionally, \important{virtual memory} is a form of caching between main memory and secondary storage
 	\item A \important{Memory Management Unit} implements mechanisms to translate virtual addresses into physical ones
 	\item \important{Translation Lookaside Buffers} are special the 'caches' (software managed!) used to perform the translation efficiently in the MMUs
 	\item As with caches, all this is \important{transparent to users}: programs read and write memory oblivious of all this - and exceptions are used to correct problems

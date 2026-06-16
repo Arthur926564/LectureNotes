@@ -149,7 +149,7 @@
 \contentsline {paragraph}{Address Translation in a Paged MMU}{77}{section*.126}%
 \contentsline {paragraph}{Memory Allocation is easy now}{77}{section*.127}%
 \contentsline {paragraph}{Page Tables Can Be Big}{78}{section*.128}%
-\contentsline {paragraph}{Multilevel (Or hierachical) page tables}{78}{section*.129}%
+\contentsline {paragraph}{Multilevel (Or hierarchical) page tables}{78}{section*.129}%
 \contentsline {paragraph}{But, Two memory accesses every time?}{78}{section*.130}%
 \contentsline {paragraph}{A Specialized 'cache' for the translations}{79}{section*.131}%
 \contentsline {paragraph}{TLB Miss}{79}{section*.132}%
