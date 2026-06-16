@@ -1,5 +1,5 @@
-\part{Integral Transforms}
-\chapter{Review of Fourier Analysis}
+\chapter{Integral Transforms}
+\section{Review of Fourier Analysis}
 We will first do a first review of Fourier transform in order to have a better introduction to Laplace transform.
 \begin{parag}{Fourier transform}
 	\begin{definition}
@@ -108,12 +108,12 @@ In general $\hat{f}$ is complex-valued even if $f$ is real-valued. However, if $
 		f \ast g \left(x\right) =  \int_{-\infty}^{\infty} f\left(y\right) g\left(x - y\right)dy
 	\end{align*}
     \end{definition}
-	Convolution is sometime useful in order to '\textit{smooth out a function}', the German equivalent has maybe a better illustration about smoothing by blablla. But first we shall see some properties of the convolution:
+	Convolution is sometime useful in order to '\textit{smooth out a function}'. But first we shall see some properties of the convolution:
 	\begin{itemize}
 		\item Symmetry: $f \ast g =  g\ast f$ 
 	    \item Associativity: $f \ast \left(g \ast h\right) =  \left(f \ast g\right) \ast h$
 	    \item Distributivity $f \ast \left(g + h\right) =  f \ast g + f \ast h$
-	    \item $\left(f \ast g\right)' =  f' \ast g = f \ast g'$ whenever $f$ or/and $g$ are differentiable
+	    \item $\left(f \ast g\right)' =  f' \ast g + f \ast g'$ whenever $f$ or/and $g$ are differentiable
 	\end{itemize}
 	The last item here is very important, it implies that $f \ast g$ is at least as smooth as the smoothest function among $f$ and $g$. Interpreted as a \textit{local average} of $f$ with weight $g$.\\
 \end{parag}
@@ -148,7 +148,7 @@ In general $\hat{f}$ is complex-valued even if $f$ is real-valued. However, if $
 	\begin{align*} 
 		\hat{f}\left(a\right) =  e^{-\frac{a^2}{2}}
 	\end{align*}
-	Will be shown in the exercises, but for the sake of completeness
+	Will be shown in the exercises.
 \end{parag}
 
 \begin{parag}{Plancherel's Theorem}
@@ -207,7 +207,7 @@ Okay this is nice but Fourier transform is about real function (as we have done 
 
 
 \chapter{Laplace Transform}
-The Fourier transform is made in order to computed for signals on $ \mathbb{R}$. On the other hand the Laplace transform is made in order to compute signals defined on $ \mathbb{R}_{+}$. Both transform differential equation into algebraic equation. The reason on why Laplace transform even is a thing (because we could think that every function defined for Laplace transform can be translated on $ \mathbb{R}$ (e.g., setting $f\left(x\right) = 0 \forall x < 0$))? The reason for this is \important{convergence}.
+The Fourier transform is made in order to computed signals on $ \mathbb{R}$. On the other hand the Laplace transform is made in order to compute signals defined on $ \mathbb{R}_{+}$. Both transform differential equation into algebraic equation. The reason on why Laplace transform even is a thing (because we could think that every function defined for Laplace transform can be translated on $ \mathbb{R}$ (e.g., setting $f\left(x\right) = 0 \forall x < 0$))? The reason for this is \important{convergence}.
 
 \begin{definition}
  	Let $f: \mathbb{R}_+ \to \mathbb{C}$. When well-defined, the \important{Laplace transform} of $f$ at $z \in \mathbb{C}$ is given as:

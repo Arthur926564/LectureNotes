@@ -4,7 +4,7 @@
 	$ $\\
 	Indeed, we can realise this by using the Taylor expansion for this sin function which will gives us a Laurent series:
 	\begin{align*} 
-		\sin\frac{1}{z} = \sum_{n= 0}^{\infty}\frac{\left(-1\right)^{k}}{\left(2n + 1\right)!}\left(\frac{1}{z}\right)^{n+1}
+		\sin\frac{1}{z} = \sum_{n= 0}^{\infty}\frac{\left(-1\right)^{k}}{\left(2n + 1\right)!}\left(\frac{1}{z}\right)^{2n+1}
 	\end{align*}
 	And hence, by multiplying this sum by $z$:
 	\begin{align*} 
@@ -60,7 +60,7 @@ Then we can see that we already have the Laurent series of $\frac{1}{z}$ at the 
 	\end{align*}
 	Then we can extract the residue by the formula 
 	\begin{align*} 
-		c_{-1} &= \frac{1}{\left(m - 1\right)!} \frac{d^{m-1}}{dz^{m-1}} \eval_{z_0}\left(z\right)\\
+		c_{-1} &= \frac{1}{\left(m - 1\right)!} \frac{d^{m-1}}{dz^{m-1}} [\left(z - z_0\right)^{m}f(z)]\eval_{z_0}\left(z\right)\\
 		&= \lim_{z  \to z_0}  \frac{1}{\left(m - 1\right)!}\frac{d^{m-1}}{dz^{m-1}}\left(\left(z - z_0\right)^{m}f\left(z\right)\right)
 	\end{align*}
 	This formula is useful if we already know that $f$ has a pole of order $m$ at $z_0$. In particular if $m = 1$ then this becomes
@@ -210,7 +210,10 @@ The residue theorem can be used to compute integrals over simple closed curve, s
 	\begin{align*} 
 		\int_{C_R}fdz =  \int_0^{\pi} \frac{1}{1 + R^2e^{2it}}Rie^{it}dt \approx \frac{\pi}{R} \underbrace{\to}_{R \to \infty} 0
 	\end{align*}
-	This method works for any integrand that decays faster than $\frac{1}{R}$ as $R \to \infty$
+	This method works for any integrand that decays faster than $\frac{1}{R}$ as $R \to \infty$. Then by the residue theorem, we found that our integral is given as 
+	\begin{align*} 
+		\int_{-\infty}^{\infty}\frac{1}{1 + x^2}dx = 2 \pi i \left[\frac{1}{2i}\right] = \pi
+	\end{align*}
 \end{parag}
 
 \begin{parag}{Example}

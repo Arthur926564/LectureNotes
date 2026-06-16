@@ -95,7 +95,7 @@ The goal of Taylor series is to approximate any function using polynomial. The r
 \begin{definition}{Taylor Series}
 Let $f : \mathbb{R} \to \mathbb{R}$ be a sufficiently regular function. For any $x_0 \in \mathbb{R}$ the \important{Taylor polynomial} of degree $N$ is 
 \begin{align*} 
-	T_{x_0}^{N}f\left(x\right) =  f\left(x_0\right) + f'\left(x_0\right)\left(x -  x_0\right) + \cdots + \frac{f^{\left(n\right)\left(x_0\right)}}{N!}\left(x - x_0\right)^{N}
+	T_{x_0}^{N}f\left(x\right) =  f\left(x_0\right) + f'\left(x_0\right)\left(x -  x_0\right) + \cdots + \frac{f^{\left(n\right)}\left(x_0\right)}{N!}\left(x - x_0\right)^{N}
 \end{align*}
 \end{definition}
 
@@ -110,7 +110,7 @@ $ $\\
 \begin{definition}
 If $f$ has derivatives of all orders, then we may consider the \important{Taylor series}
 \begin{align*} 
-	\sum_{n = 0}^{\infty}\frac{f^{\left(n\right)\left(x_0\right)}}{n!} \left(x - x_0\right)^{n}
+	\sum_{n = 0}^{\infty}\frac{f^{\left(n\right)}\left(x_0\right)}{n!} \left(x - x_0\right)^{n}
 \end{align*}
 \end{definition}
 An important question which comes up using series is: Does this series actually converge? If we take for instance $f\left(x\right) =  e^{x}, x_0 = 0$. The Taylor series around $x_0$ is given as 

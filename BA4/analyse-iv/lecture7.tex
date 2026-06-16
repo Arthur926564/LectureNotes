@@ -4,7 +4,7 @@
 		\int_{-\infty}^{\infty} R\left(x\right)\cos\left(ax\right)dx, \mathspace \int_{-\infty}^{\infty}R\left(x\right)\sin\left(ax\right)dx
 	\end{align*}
 	By Euler's formula $e^{iax} =  \cos\left(ax\right) + i\sin\left(ax\right)$, we can compute both by computing
-	\begin{align*} \int_{-\infty}^{\infty}R\left(x\right)e^{iax} \end{align*}
+	\begin{align*} \int_{-\infty}^{\infty}R\left(x\right)e^{iax}dx \end{align*}
 	\begin{subparag}{Remark}
 	And then we can read off the real and imaginary part of the result. Such integrals appear often in applications (e.g. Fourier transform, resonances in harmonic systems with friction, etc.).
 	\end{subparag}
@@ -171,7 +171,7 @@
 	    A function which is holomorphic except for isolated points is called \important{meromorphic}
 	\end{subparag}
 	\end{parag}
-	If $z_1, \ldots, z_l$ are the points of $z_1, \ldots, z_k$ lying in the \important{interior of the unit circle}, the reside theorem implies:
+	If $z_1, \ldots, z_l$ are the points of $z_1, \ldots, z_k$ lying in the \important{interior of the unit circle}, the residue theorem implies:
 	\begin{align*} 
 	\boxed{
 		\int_{0}^{2\pi}\frac{P\left(\cos t, \sin t\right)}{Q\left(\cos t, \sin t\right)} dt = 2\pi i \left[\text{Res}_{z_1}\left(f\right) + \cdots + \text{Res}_{z_l}\left(f\right)\right]}
