@@ -21,9 +21,11 @@ The goal of this section is the study of deep neural networks model with a focus
     Here what we will do is to represent each word as a high-dimensional, real-valued vector (When we say high-dimensional, it is still pretty low in comparison to the $V$ dimension sparse representation but still $O\left(10^2-10^3\right)$). In that case, similarity of vectors represents similarity of meaning for particular words.\\
 	$ $\\
 	Ultimately the goal would be to have a space as this one below
+\end{parag}
 	\begin{center}
-	\includegraphics[scale=0.3]{screenshots/2026-05-19_1.png}
+	\includegraphics[scale=0.2]{screenshots/2026-05-19_1.png}
 	\end{center}
+\begin{parag}{$ $}
 	But the question that this brings up is how do we train semantics-encoding embeddings of words?
 \end{parag}
 
@@ -37,9 +39,9 @@ The goal of this section is the study of deep neural networks model with a focus
 \end{parag}
 
 \begin{parag}{Individual words}
-    Here what we have done so far is to find a representation for each word, however this is not the best thing to do as not all words are indicative of the category, some words are even misleading. Therefore, instead of modeling words, the standard approach consists of modeling a complete sentence or a document as a sequence. 
+    Here what we have done so far is to find a representation for each word, however this is not the best thing to do as not all words are indicative of the category, some words are even misleading. Therefore, instead of modelling words, the standard approach consists of modeling a complete sentence or a document as a sequence. 
 	\begin{subparag}{Remark}
-	    Note that each individual word is still modeled as a vector as discussed previously.
+	    Note that each individual word is still modelled as a vector as discussed previously.
 	\end{subparag}
 \end{parag}
 
@@ -53,7 +55,7 @@ The goal of this section is the study of deep neural networks model with a focus
 	\includegraphics[scale=0.2]{screenshots/2026-05-19_3.png}
 	\end{center}
 	This allows learning from entire sequence history, regardless of length. Therefore what this is essentially doing is:
-	     We have a hidden state $h_t$ which gets updated as each new word is processed. The update rule is typically (given by claude)
+	     We have a hidden state $h_t$ which gets updated as each new word is processed. The update rule is typically
 			\begin{align*} 
 				h_t = f\left(W_h \cdot h_{t-1} + W_x \cdot x_t + b\right)
 			\end{align*}
@@ -81,7 +83,7 @@ The goal of this section is the study of deep neural networks model with a focus
 \end{parag}
 
 \begin{parag}{Different types of RNNs}
-    As we have seen before (I guess claude was right), the standard RNN definition is as follow 
+    As we have seen before , the standard RNN definition is as follow 
 	\begin{align*} 
 		h_t = \sigma\left(W_{hx}x_t + W_{hh}h_{t-1} + b_h\right)\\
 		z_t = \sigma\left(W_{zh}h_t + b_z\right)
@@ -126,11 +128,11 @@ The goal of this section is the study of deep neural networks model with a focus
 	    \item Input gate $i_t$: how much of the new input to write into memory
 	    \item Output fate $o_t$: how much of the cell state to expose as $h_t$
 	\end{itemize}
-	Each gate here is a sigmoid, acting like a soft on/off switch. This lets the netwrosk selectively remember or forget over long sequences, which helps but doesn't fully solve the compression problem.
+	Each gate here is a sigmoid, acting like a soft on/off switch. This lets the networks selectively remember or forget over long sequences, which helps but doesn't fully solve the compression problem.
 \end{parag}
 
 \begin{parag}{Incorporating attention}
-	As seen before at each encoder time step, there is an output of the RNN. The idea here is to use the output of the decoder LSTM to compute an \important{attention} (i.e., mixture) over all the $_{t}^{e}$ outputs of the encoder LSTM. 
+	As seen before at each encoder time step, there is an output of the RNN. The idea here is to use the output of the decoder LSTM to compute an \important{attention} (i.e., mixture) over all the $h_{t}^{e}$ outputs of the encoder LSTM. 
 	\begin{subparag}{Intuition}
 	    Instead of forcing everything into a single final vector $h_T$, \important{attention} keeps \important{all} the hidden state $h_1, \ldots, h_T$ and at each step computes a weighted mixture 
 		\begin{align*} 

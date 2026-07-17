@@ -263,13 +263,13 @@ boundary is a straight line.
 	\begin{align*} 
 		\hat{y} =  \sigma\left(w^{T}x\right) = \frac{1}{1 + \exp\left(-w^{T}x\right)}
 	\end{align*}
-	Such a prediction can be interpreted as the probability that $x$ belongs to the positive class (or as a score for the positive class). The probability to belong the negative class is then computedd as $1 - \hat{y}$.
+	Such a prediction can be interpreted as the probability that $x$ belongs to the positive class (or as a score for the positive class). The probability to belong the negative class is then computed as $1 - \hat{y}$.
 \end{parag}
 \begin{parag}{Logistic regression}
     \begin{definition}
     The model whose prediction is defined as 
 	\begin{align*} 
-		\hat{y} = \sigma\left(w^{T}x\right) x = \frac{1}{1 + \exp\left(-w^{T}x\right)}
+		\hat{y} = \sigma\left(w^{T}x\right) = \frac{1}{1 + \exp\left(-w^{T}x\right)}
 	\end{align*}
 	Is call a \important{logistic regression}
     \end{definition}
@@ -279,26 +279,26 @@ boundary is a straight line.
 	At its heart, logistic regression still use a linear model, but followed by a non-linearity to better encore the underlying binary classification problem.
 \end{parag}
 \begin{parag}{Logistic regression: Training}
-    Given $N$ training samples, to learn the parameters $w$ of the logistic regression model, we need to define a loss function. Instead of using the $L_2$ loss as in the least-square case, this is achieved by making use of the probabilistic interpreation.
+    Given $N$ training samples, to learn the parameters $w$ of the logistic regression model, we need to define a loss function. Instead of using the $L_2$ loss as in the least-square case, this is achieved by making use of the probabilistic interpretation.
 	\begin{subparag}{Remark}
 	    \begin{itemize}
 			\item Because knowledge of probabilities is not required for this course, the derivation of the loss function that follows will be a bit hand-wavy
-			\item Nevertheless, this loss remains intuitive: The loss is such that it aimes to find the parameters that maximize the probability of the correct class for each training sample
+			\item Nevertheless, this loss remains intuitive: The loss is such that it aims to find the parameters that maximize the probability of the correct class for each training sample
 	    \end{itemize}
 	\end{subparag}
 	Specifically, the logistic regression loss is derived by first writing the following likelihood estimator:
 	\begin{align*} 
 	p\left(y | w\right) = \prod_{i = 1}^{N} \hat{y}_i^{y_i} \cdot \left(1 - \hat{y}_i \right)^{1 - y_i}
 	\end{align*}
-	Because, a product of terms between 0 and 1 can be unstable to optimize, we take the logarithm of this likelihood and take its negative to define an empricial risk to minimize, written as 
+	Because, a product of terms between 0 and 1 can be unstable to optimize, we take the logarithm of this likelihood and take its negative to define an empirical risk to minimize, written as 
 	\begin{align*} 
 		R\left(w\right) =  -\sum_{i = 1}^{N}\left(y_i \ln\left(\hat{y}_i \right) + \left(1 - y_i\right)\ln\left(1 - \hat{y}_i \right)\right)
 	\end{align*}
-	This loss function is known as the cross-entropy (AICC II mentionned?)
+	This loss function is known as the cross-entropy (AICC II mentioned?)
 \end{parag}
 Since $y_i$ is either $0$ or $1$, the cross-entropy can be re-written as:
 \begin{align*} 
-	R\left(w\right) = \sum_{i \in \text{positive samples}} \ln\left(\hat{y}_i \right) - \sum_{i \in \text{negative sample}} \ln\left(1 - \hat{y}_i \right)
+	R\left(w\right) = -\sum_{i \in \text{positive samples}} \ln\left(\hat{y}_i \right) - \sum_{i \in \text{negative sample}} \ln\left(1 - \hat{y}_i \right)
 \end{align*}
 A very nice thing here for us is that, the \important{cross-entropy is a convex function}. But in this case, its minimization has no closed-form solution. This means that we will need to use an approximation: \important{gradient descent}!!
 
@@ -329,8 +329,6 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
     domain=-70:-10,
 ]
 
-% A convex "risk-like" curve shaped like the course screenshot
-% minimum near -25, steep rise near -10
 \addplot[very thick] {11 + 0.003*(x+25)^2 + 0.75*exp(0.25*(x+20))};
 
 \end{axis}
@@ -350,9 +348,9 @@ A very nice thing here for us is that, the \important{cross-entropy is a convex 
 	\begin{align*} 
 		P\left(Y = 1 | x, \theta\right) =  \sigma\left(\theta^{T}x\right)
 	\end{align*}
-	What this says to us: given $x$, the label $y$ folows a \important{bernoulli distribution}:
+	What this says to us: given $x$, the label $y$ follows a \important{bernoulli distribution}:
 	\begin{align*} 
-		Y | x \sim \text{bernoulli}\left(\sigma\left(\theta^{T}x\right)\right)
+		Y | x \sim \text{Bernoulli}\left(\sigma\left(\theta^{T}x\right)\right)
 	\end{align*}
 	Then given that we can compute the likelihood estimator as we used to. First defined it:
 	\begin{align*} 
@@ -415,11 +413,11 @@ The principle of gradient-based optimization and more generally iterative optimi
 	\item Maximum number of iterations reached, Meaning that we have no guarantee to have reached the minimum
 	\end{itemize}
 	\begin{framedremark}
-	In theory, one would need the function to has lipschitz continuous gradient  in order to have stable steps. What this means is we will assume:
+	In theory, one would need the function to has Lipschitz continuous gradient  in order to have stable steps. What this means is we will assume:
 	\begin{align*} 
 		|| \nabla R\left(x\right) - \nabla R\left(y\right)|| \leq L||x - y||
 	\end{align*}
-	The rule mentionned above are more practical criteria. In practie we don't want to compute exact optimality, we so care more about:
+	The rule mentioned above are more practical criteria. In practice we don't want to compute exact optimality, we so care more about:
 	\begin{itemize}
 		\item change in objective
 		\item change in parameters
@@ -465,10 +463,10 @@ The principle of gradient-based optimization and more generally iterative optimi
 	Convergence can again be measured by:
 	\begin{itemize}
 	    \item Thresholding the change in function value
-	    \item Thresholding the change in paramters, e.g. $||w_{j-1} - w_k|| < \delta_w$
+	    \item Thresholding the change in parameters, e.g. $||w_{j-1} - w_k|| < \delta_w$
 	\end{itemize}
 \end{parag}
-\begin{parag}{Minmizing a non-convex function  Example: sin, cos based function of 2 variables}
+\begin{parag}{Minimizing a non-convex function  Example: sin, cos based function of 2 variables}
 	Let our function be:
 	\begin{align*} 
 		R\left(w\right) = \sin\left(w^{\left(0\right)}\right) + \cos\left(w^{\left(1\right)}\right)
@@ -518,7 +516,7 @@ The principle of gradient-based optimization and more generally iterative optimi
 \end{center}
 As in the 1D cases the same issues can arise:
 \begin{itemize}
-	\item Different learning reate can yield different results
+	\item Different learning rate can yield different results
 	\item Different Initializations can yield different results
 \end{itemize}
 

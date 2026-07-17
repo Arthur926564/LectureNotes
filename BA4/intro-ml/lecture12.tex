@@ -40,7 +40,7 @@ This operation is called \important{clustering}.
 	\end{enumerate}
 \end{parag}
 \begin{parag}{More details}
-    In the second step, as the algorithm iteratively updates the cluster assignment for each point and the clusters centers, we need to eventually stop iterating. This could be done using an hyper-parameter, we give as input to our algorithm a fixed number of iterations. However this is not ideal as it can lead to either a too big number of iterations or too small which would lead to bad results. As way to know whether or not we are far from the '\textit{local optimal solution}' is to check the difference between the previous center location and the current. We could set a $\delta$ such that while the distance between the $k$ and the $k-1$ iterations is $> \delta$ we continue. However to do so we need to be sure that the algorithm is guaranteed to converge to a stable solution, here it is the case.
+    In the second step, as the algorithm iteratively updates the cluster assignment for each point and the clusters centers, we need to eventually stop iterating. This could be done using an hyper-parameter, we give as input to our algorithm a fixed number of iterations. However this is not ideal as it can lead to either a too big number of iterations or too small which would lead to bad results. A way to know whether or not we are far from the '\textit{local optimal solution}' is to check the difference between the previous center location and the current. We could set a $\delta$ such that while the distance between the $k$ and the $k-1$ iterations is $> \delta$ we continue. However to do so we need to be sure that the algorithm is guaranteed to converge to a stable solution, here it is the case.
 \end{parag}
 \begin{framedremark}
 An important thing to know is that the algorithm will always converges, but it doesn't always converge to the best (desired) solution (this is why I put the optimal solution inside '' before).
@@ -66,6 +66,8 @@ An important thing to know is that the algorithm will always converges, but it d
 	\begin{subparag}{Remark}
 	    And as this is unsupervised learning, cross-validation is not an option
 	\end{subparag}
+\end{parag}
+\begin{parag}{Elbow method}
 	But here we can use the same technique as above (in order to determine $K$), 
 	\begin{itemize}
 	    \item Run the algorithm with different values of $K$
@@ -90,7 +92,7 @@ An important thing to know is that the algorithm will always converges, but it d
 	    \item Different data dimensions can have completely different magnitudes
 	    \item They can encode completely different types of information
 	\end{itemize}
-	What this implies is that large values will dominate other part of the data point. A solution to this '\textit{problem}' (this isn't really a problem in essence, it is maybe a property that we don't want to have) can be solved using normalization and/or different distance function.
+	What this implies is that large values will dominate other part of the data point. A solution to this '\textit{problem}' (this isn't really a problem in essence, it is maybe a property that we do want to have) can be solved using normalization and/or different distance function.
 \end{parag}
 
 
@@ -194,7 +196,7 @@ What could have been done is to use the actual information that we are missing w
 	\end{align*}
 	Zeroing out the gradient of $\mathcal{L}$ w.r.t. $w_{\left(1\right)}$ yields 
 	\begin{align*} 
-		S_B w_{\left(1\right)} =  \lambda_1 S_W W_{\left(1\right)}
+		S_B w_{\left(1\right)} =  \lambda_1 S_W w_{\left(1\right)}
 	\end{align*}
 	this implies that $w_{\left(1\right)}$ must be the solution to a generalized eigenvector problem.
 	\begin{subparag}{Remark}
@@ -289,7 +291,7 @@ What could have been done is to use the actual information that we are missing w
 	Where 
 	\begin{itemize}
 	    \item $W \in \mathbb{R}^{N \times N}$ is the similarity matrix between all pairs of points
-	    \item $D in \mathbb{R}^{N \times N}$ is the diagonal matrix degree matrix, with $D_{ii} = d_i$
+	    \item $D \in \mathbb{R}^{N \times N}$ is the diagonal matrix degree matrix, with $D_{ii} = d_i$
 	    \item $y$ indicates to which partition each point belongs
 	\end{itemize}
 	However even with that, this remains an NP hard problem. But we are not done! We can again relax this problem as 

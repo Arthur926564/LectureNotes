@@ -13,278 +13,281 @@
 \contentsline {chapter}{\numberline {2}Supervised Machine Learning}{5}{chapter.2}%
 \contentsline {paragraph}{Supervised Data}{5}{section*.9}%
 \contentsline {paragraph}{Learning Stages}{5}{section*.10}%
-\contentsline {paragraph}{Training set vs Test set}{5}{section*.11}%
-\contentsline {section}{\numberline {2.1}Linear Model}{6}{section.2.1}%
-\contentsline {paragraph}{Notation}{6}{section*.12}%
-\contentsline {paragraph}{Example}{6}{section*.13}%
-\contentsline {paragraph}{Our first machine learning model}{7}{section*.14}%
-\contentsline {paragraph}{ $ $}{7}{section*.15}%
-\contentsline {paragraph}{A simple parametric model: The line}{8}{section*.16}%
-\contentsline {paragraph}{Line fitting}{8}{section*.17}%
-\contentsline {paragraph}{1D Linear Regression training}{8}{section*.18}%
-\contentsline {paragraph}{Plane}{9}{section*.19}%
-\contentsline {paragraph}{Multi-input linear regression: Training}{9}{section*.20}%
-\contentsline {section}{\numberline {2.2}Derivatives and Gradients}{10}{section.2.2}%
-\contentsline {paragraph}{Minimizing a function}{10}{section*.21}%
-\contentsline {paragraph}{$ $}{10}{section*.22}%
-\contentsline {paragraph}{Dealing with multivariate functions}{10}{section*.23}%
-\contentsline {paragraph}{Properties of gradient}{10}{section*.24}%
-\contentsline {paragraph}{Linear regression: Solution}{11}{section*.25}%
-\contentsline {paragraph}{Gradient Computation}{11}{section*.26}%
-\contentsline {paragraph}{Solution}{12}{section*.27}%
-\contentsline {paragraph}{Matrix form}{12}{section*.28}%
-\contentsline {paragraph}{Test time}{14}{section*.29}%
-\contentsline {paragraph}{Evaluation metrics for regression}{14}{section*.30}%
-\contentsline {paragraph}{Mean Squared Error (MSE)}{14}{section*.31}%
-\contentsline {paragraph}{Mean Absolute Error (MAE)}{15}{section*.32}%
+\contentsline {paragraph}{ $ $}{5}{section*.11}%
+\contentsline {paragraph}{Training set vs Test set}{5}{section*.12}%
+\contentsline {section}{\numberline {2.1}Linear Model}{5}{section.2.1}%
+\contentsline {paragraph}{Notation}{5}{section*.13}%
+\contentsline {paragraph}{Example}{6}{section*.14}%
+\contentsline {paragraph}{Our first machine learning model}{6}{section*.15}%
+\contentsline {paragraph}{ $ $}{7}{section*.16}%
+\contentsline {paragraph}{A simple parametric model: The line}{7}{section*.17}%
+\contentsline {paragraph}{Line fitting}{8}{section*.18}%
+\contentsline {paragraph}{1D Linear Regression training}{8}{section*.19}%
+\contentsline {paragraph}{Plane}{9}{section*.20}%
+\contentsline {paragraph}{Multi-input linear regression: Training}{9}{section*.21}%
+\contentsline {section}{\numberline {2.2}Derivatives and Gradients}{9}{section.2.2}%
+\contentsline {paragraph}{Minimizing a function}{10}{section*.22}%
+\contentsline {paragraph}{$ $}{10}{section*.23}%
+\contentsline {paragraph}{Dealing with multivariate functions}{10}{section*.24}%
+\contentsline {paragraph}{Properties of gradient}{10}{section*.25}%
+\contentsline {paragraph}{Linear regression: Solution}{11}{section*.26}%
+\contentsline {paragraph}{Gradient Computation}{11}{section*.27}%
+\contentsline {paragraph}{Solution}{12}{section*.28}%
+\contentsline {paragraph}{Matrix form}{12}{section*.29}%
+\contentsline {paragraph}{Test time}{14}{section*.30}%
+\contentsline {paragraph}{Evaluation metrics for regression}{14}{section*.31}%
+\contentsline {paragraph}{Mean Squared Error (MSE)}{14}{section*.32}%
+\contentsline {paragraph}{Mean Absolute Error (MAE)}{15}{section*.33}%
 \contentsline {subsection}{\numberline {2.2.1}Interpreting a Linear Model}{15}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Linear model with multiple outputs}{16}{subsection.2.2.2}%
-\contentsline {paragraph}{Model}{16}{section*.33}%
-\contentsline {paragraph}{Multi-output linear regression: Gradient}{16}{section*.34}%
+\contentsline {paragraph}{Model}{16}{section*.34}%
+\contentsline {paragraph}{Multi-output linear regression: Gradient}{16}{section*.35}%
 \contentsline {subsection}{\numberline {2.2.3}Linear Classification}{17}{subsection.2.2.3}%
-\contentsline {paragraph}{Binary Classification}{17}{section*.35}%
-\contentsline {paragraph}{Example (from Andrew Ng's course)}{18}{section*.36}%
+\contentsline {paragraph}{Binary Classification}{17}{section*.36}%
+\contentsline {paragraph}{Example (from Andrew Ng's course)}{18}{section*.37}%
 \contentsline {section}{\numberline {2.3}Linear Model for Classification}{19}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Loss Function ad Empirical Risk}{19}{subsection.2.3.1}%
-\contentsline {paragraph}{Loss function}{19}{section*.37}%
-\contentsline {paragraph}{Loss function: Examples}{20}{section*.38}%
-\contentsline {paragraph}{Empirical risk}{20}{section*.39}%
-\contentsline {paragraph}{Minimzing the risk}{20}{section*.40}%
-\contentsline {paragraph}{From regression to classification}{20}{section*.41}%
-\contentsline {paragraph}{Adding non-linearity}{21}{section*.42}%
-\contentsline {paragraph}{Step function: Drawback}{22}{section*.43}%
-\contentsline {paragraph}{Probabilistic interpretation}{22}{section*.44}%
-\contentsline {paragraph}{Logistic regression}{22}{section*.45}%
-\contentsline {paragraph}{Logistic regression: Training}{23}{section*.46}%
-\contentsline {paragraph}{Probabilistic Derivation}{23}{section*.47}%
+\contentsline {paragraph}{Loss function}{19}{section*.38}%
+\contentsline {paragraph}{Loss function: Examples}{20}{section*.39}%
+\contentsline {paragraph}{Empirical risk}{20}{section*.40}%
+\contentsline {paragraph}{Minimzing the risk}{20}{section*.41}%
+\contentsline {paragraph}{From regression to classification}{20}{section*.42}%
+\contentsline {paragraph}{Adding non-linearity}{21}{section*.43}%
+\contentsline {paragraph}{Step function: Drawback}{22}{section*.44}%
+\contentsline {paragraph}{Probabilistic interpretation}{22}{section*.45}%
+\contentsline {paragraph}{Logistic regression}{22}{section*.46}%
+\contentsline {paragraph}{Logistic regression: Training}{23}{section*.47}%
+\contentsline {paragraph}{Probabilistic Derivation}{23}{section*.48}%
 \contentsline {subsection}{\numberline {2.3.2}Iterative, Gradient-based optimization}{24}{subsection.2.3.2}%
-\contentsline {paragraph}{Minimizing a function}{24}{section*.48}%
-\contentsline {paragraph}{Convergence criteria}{24}{section*.49}%
-\contentsline {paragraph}{Minimizing a non-convex function}{25}{section*.50}%
-\contentsline {paragraph}{Recap: Properties of gradient}{25}{section*.51}%
-\contentsline {paragraph}{Gradient descent on multivariate function}{25}{section*.52}%
-\contentsline {paragraph}{Minmizing a non-convex function Example: sin, cos based function of 2 variables}{25}{section*.53}%
-\contentsline {paragraph}{Back to Logistic Regression}{26}{section*.54}%
-\contentsline {paragraph}{Example}{26}{section*.55}%
-\contentsline {paragraph}{Linear models}{27}{section*.56}%
-\contentsline {paragraph}{Margin}{27}{section*.57}%
-\contentsline {paragraph}{Support Vector Machine}{28}{section*.58}%
-\contentsline {paragraph}{Loss function}{28}{section*.59}%
+\contentsline {paragraph}{Minimizing a function}{24}{section*.49}%
+\contentsline {paragraph}{Convergence criteria}{24}{section*.50}%
+\contentsline {paragraph}{Minimizing a non-convex function}{25}{section*.51}%
+\contentsline {paragraph}{Recap: Properties of gradient}{25}{section*.52}%
+\contentsline {paragraph}{Gradient descent on multivariate function}{25}{section*.53}%
+\contentsline {paragraph}{Minimizing a non-convex function Example: sin, cos based function of 2 variables}{25}{section*.54}%
+\contentsline {paragraph}{Back to Logistic Regression}{26}{section*.55}%
+\contentsline {paragraph}{Example}{26}{section*.56}%
+\contentsline {paragraph}{Linear models}{27}{section*.57}%
+\contentsline {paragraph}{Margin}{27}{section*.58}%
+\contentsline {paragraph}{Support Vector Machine}{28}{section*.59}%
+\contentsline {paragraph}{Loss function}{28}{section*.60}%
 \contentsline {section}{\numberline {2.4}Classification Metric}{28}{section.2.4}%
-\contentsline {paragraph}{Classification evaluation}{28}{section*.60}%
-\contentsline {paragraph}{Example}{28}{section*.61}%
-\contentsline {paragraph}{$ $}{29}{section*.62}%
-\contentsline {paragraph}{$ $}{30}{section*.63}%
-\contentsline {paragraph}{Other metrics}{30}{section*.64}%
-\contentsline {paragraph}{ROC curve}{30}{section*.65}%
-\contentsline {subsection}{\numberline {2.4.1}From binary to multi-class classification}{30}{subsection.2.4.1}%
-\contentsline {paragraph}{least-square classification}{30}{section*.66}%
-\contentsline {paragraph}{Dealing with multiple classes}{31}{section*.67}%
-\contentsline {paragraph}{Multi-ouput linear model}{31}{section*.68}%
+\contentsline {paragraph}{Classification evaluation}{28}{section*.61}%
+\contentsline {paragraph}{Example}{28}{section*.62}%
+\contentsline {paragraph}{$ $}{29}{section*.63}%
+\contentsline {paragraph}{$ $}{30}{section*.64}%
+\contentsline {paragraph}{Other metrics}{30}{section*.65}%
+\contentsline {paragraph}{ROC curve}{30}{section*.66}%
+\contentsline {subsection}{\numberline {2.4.1}From binary to multi-class classification}{31}{subsection.2.4.1}%
+\contentsline {paragraph}{least-square classification}{31}{section*.67}%
+\contentsline {paragraph}{Dealing with multiple classes}{31}{section*.68}%
+\contentsline {paragraph}{Multi-ouput linear model}{31}{section*.69}%
 \contentsline {subsection}{\numberline {2.4.2}Decision Boundary}{32}{subsection.2.4.2}%
-\contentsline {paragraph}{Decision boundaries}{32}{section*.69}%
-\contentsline {paragraph}{$ $}{32}{section*.70}%
-\contentsline {paragraph}{Decision Boundaries for $C > 3$ classes}{32}{section*.71}%
-\contentsline {paragraph}{Example of least-square classification}{32}{section*.72}%
-\contentsline {paragraph}{Multi-class least-square classification: Drawbacks}{32}{section*.73}%
+\contentsline {paragraph}{Decision boundaries}{32}{section*.70}%
+\contentsline {paragraph}{$ $}{32}{section*.71}%
+\contentsline {paragraph}{Decision Boundaries for $C > 3$ classes}{33}{section*.72}%
+\contentsline {paragraph}{Example of least-square classification}{33}{section*.73}%
+\contentsline {paragraph}{Multi-class least-square classification: Drawbacks}{33}{section*.74}%
 \contentsline {subsection}{\numberline {2.4.3}Multi-class logistic regression}{33}{subsection.2.4.3}%
-\contentsline {paragraph}{Multi-class logistic regression}{33}{section*.74}%
-\contentsline {paragraph}{Gradient for multi-class logistic regression}{33}{section*.75}%
-\contentsline {paragraph}{Prediction}{33}{section*.76}%
-\contentsline {subsubsection}{Evaluation metrics for multi-class classification}{33}{subsubsection*.77}%
-\contentsline {paragraph}{Metrics for multi-class problems}{33}{section*.78}%
-\contentsline {paragraph}{First solution}{34}{section*.79}%
-\contentsline {paragraph}{Second solution}{34}{section*.80}%
-\contentsline {paragraph}{Comparing linear classifiers}{35}{section*.81}%
-\contentsline {paragraph}{Comparison on the Iris dataset}{35}{section*.82}%
-\contentsline {paragraph}{Comparing on the MNIST dataset}{35}{section*.83}%
+\contentsline {paragraph}{Multi-class logistic regression}{33}{section*.75}%
+\contentsline {paragraph}{Gradient for multi-class logistic regression}{33}{section*.76}%
+\contentsline {paragraph}{Prediction}{33}{section*.77}%
+\contentsline {subsubsection}{Evaluation metrics for multi-class classification}{34}{subsubsection*.78}%
+\contentsline {paragraph}{Metrics for multi-class problems}{34}{section*.79}%
+\contentsline {paragraph}{First solution}{34}{section*.80}%
+\contentsline {paragraph}{Second solution}{34}{section*.81}%
+\contentsline {paragraph}{Comparing linear classifiers}{35}{section*.82}%
+\contentsline {paragraph}{Comparison on the Iris dataset}{35}{section*.83}%
+\contentsline {paragraph}{Comparing on the MNIST dataset}{35}{section*.84}%
 \contentsline {section}{\numberline {2.5}k-nearest Neighbor}{36}{section.2.5}%
-\contentsline {paragraph}{Intuition behind the nearest neighbor method}{36}{section*.84}%
-\contentsline {subsection}{\numberline {2.5.1}NN: Algorithm}{36}{subsection.2.5.1}%
-\contentsline {paragraph}{Example}{36}{section*.85}%
-\contentsline {paragraph}{Histograms}{37}{paragraph*.86}%
-\contentsline {paragraph}{Example}{37}{section*.87}%
-\contentsline {paragraph}{Back to NN}{38}{section*.88}%
-\contentsline {subsection}{\numberline {2.5.2}k-nearest neighbors}{38}{subsection.2.5.2}%
-\contentsline {paragraph}{classification}{38}{section*.89}%
-\contentsline {paragraph}{Regression}{38}{section*.90}%
-\contentsline {paragraph}{Two strategies}{38}{section*.91}%
-\contentsline {paragraph}{k-nearest: Example}{39}{section*.92}%
-\contentsline {paragraph}{k-nearest neighbors: Propeties}{39}{section*.93}%
-\contentsline {paragraph}{Curse of dimensionality}{39}{section*.94}%
-\contentsline {subsection}{\numberline {2.5.3}Summary}{40}{subsection.2.5.3}%
-\contentsline {paragraph}{Advantages}{40}{section*.95}%
-\contentsline {paragraph}{Drawbacks}{40}{section*.96}%
-\contentsline {section}{\numberline {2.6}Nonlinear classification}{40}{section.2.6}%
+\contentsline {paragraph}{Intuition behind the nearest neighbor method}{36}{section*.85}%
+\contentsline {subsection}{\numberline {2.5.1}NN: Algorithm}{37}{subsection.2.5.1}%
+\contentsline {paragraph}{Example}{37}{section*.86}%
+\contentsline {paragraph}{Histograms}{38}{paragraph*.87}%
+\contentsline {paragraph}{Example}{38}{section*.88}%
+\contentsline {paragraph}{Back to NN}{38}{section*.89}%
+\contentsline {subsection}{\numberline {2.5.2}k-nearest neighbors}{39}{subsection.2.5.2}%
+\contentsline {paragraph}{classification}{39}{section*.90}%
+\contentsline {paragraph}{Regression}{39}{section*.91}%
+\contentsline {paragraph}{Two strategies}{39}{section*.92}%
+\contentsline {paragraph}{k-nearest: Example}{39}{section*.93}%
+\contentsline {paragraph}{k-nearest neighbors: Propeties}{40}{section*.94}%
+\contentsline {paragraph}{Curse of dimensionality}{40}{section*.95}%
+\contentsline {subsection}{\numberline {2.5.3}Summary}{41}{subsection.2.5.3}%
+\contentsline {paragraph}{Advantages}{41}{section*.96}%
+\contentsline {paragraph}{Drawbacks}{41}{section*.97}%
+\contentsline {section}{\numberline {2.6}Nonlinear classification}{41}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Polynomial curve fitting}{42}{subsection.2.6.1}%
-\contentsline {paragraph}{Polynomial feature expansion}{42}{section*.97}%
-\contentsline {paragraph}{Training expanded features}{43}{section*.98}%
-\contentsline {paragraph}{Mapping to a higher-dimensional space}{44}{section*.99}%
-\contentsline {paragraph}{Cover's theorem}{44}{section*.100}%
+\contentsline {paragraph}{Polynomial feature expansion}{42}{section*.98}%
+\contentsline {paragraph}{Training expanded features}{43}{section*.99}%
+\contentsline {paragraph}{Mapping to a higher-dimensional space}{44}{section*.100}%
+\contentsline {paragraph}{Cover's theorem}{45}{section*.101}%
 \contentsline {section}{\numberline {2.7}Overfitting, Cross-validation and Regularization}{45}{section.2.7}%
-\contentsline {paragraph}{Model complexity}{45}{section*.101}%
-\contentsline {paragraph}{Example}{45}{section*.102}%
-\contentsline {paragraph}{k-NN: Training vs test}{45}{section*.103}%
-\contentsline {paragraph}{Overfitting vs Underfitting}{45}{section*.104}%
-\contentsline {paragraph}{Model Selection}{46}{section*.105}%
-\contentsline {paragraph}{Cross-validation: Toy example}{46}{section*.106}%
-\contentsline {paragraph}{Validation set method}{46}{section*.107}%
-\contentsline {paragraph}{Leave-one-out cross-validation (LOOCV)}{47}{section*.108}%
-\contentsline {paragraph}{Cross-validation}{49}{section*.109}%
-\contentsline {paragraph}{Overfitting with a linear model}{49}{section*.110}%
-\contentsline {paragraph}{Penalizing overfitting}{50}{section*.111}%
-\contentsline {paragraph}{Regularised linear regression}{50}{section*.112}%
-\contentsline {paragraph}{Multi-output ridge regression}{51}{section*.113}%
-\contentsline {paragraph}{Regularization and logistic regression}{51}{section*.114}%
-\contentsline {paragraph}{Finding the right regularization strength}{51}{section*.115}%
-\contentsline {section}{\numberline {2.8}Kernel methods}{51}{section.2.8}%
+\contentsline {paragraph}{Model complexity}{45}{section*.102}%
+\contentsline {paragraph}{Example}{45}{section*.103}%
+\contentsline {paragraph}{k-NN: Training vs test}{45}{section*.104}%
+\contentsline {paragraph}{Overfitting vs Underfitting}{46}{section*.105}%
+\contentsline {paragraph}{Model Selection}{46}{section*.106}%
+\contentsline {paragraph}{Cross-validation: Toy example}{46}{section*.107}%
+\contentsline {paragraph}{Validation set method}{47}{section*.108}%
+\contentsline {paragraph}{Leave-one-out cross-validation (LOOCV)}{47}{section*.109}%
+\contentsline {paragraph}{Cross-validation}{49}{section*.110}%
+\contentsline {paragraph}{Overfitting with a linear model}{49}{section*.111}%
+\contentsline {paragraph}{Penalizing overfitting}{50}{section*.112}%
+\contentsline {paragraph}{Regularised linear regression}{50}{section*.113}%
+\contentsline {paragraph}{Multi-output ridge regression}{51}{section*.114}%
+\contentsline {paragraph}{Regularization and logistic regression}{51}{section*.115}%
+\contentsline {paragraph}{Finding the right regularization strength}{51}{section*.116}%
+\contentsline {section}{\numberline {2.8}Kernel methods}{52}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Kernel function}{53}{section.2.9}%
-\contentsline {paragraph}{Example}{53}{section*.116}%
-\contentsline {paragraph}{Example II}{53}{section*.117}%
-\contentsline {paragraph}{Kernel trick}{53}{section*.118}%
+\contentsline {paragraph}{Example}{53}{section*.117}%
+\contentsline {paragraph}{Example II}{53}{section*.118}%
+\contentsline {paragraph}{Kernel trick}{54}{section*.119}%
 \contentsline {subsection}{\numberline {2.9.1}Kernelization}{54}{subsection.2.9.1}%
-\contentsline {paragraph}{Notation}{54}{section*.119}%
-\contentsline {paragraph}{Kernel regression}{54}{section*.120}%
-\contentsline {paragraph}{Representer theorem}{55}{section*.121}%
-\contentsline {paragraph}{Kernel regression}{55}{section*.122}%
-\contentsline {paragraph}{Exercise: Kernel regression}{56}{section*.123}%
-\contentsline {paragraph}{Recap: Ridge regression}{56}{section*.124}%
-\contentsline {paragraph}{Kernelization}{56}{section*.125}%
-\contentsline {paragraph}{Discussion of kernelization}{57}{section*.126}%
+\contentsline {paragraph}{Notation}{54}{section*.120}%
+\contentsline {paragraph}{Kernel regression}{55}{section*.121}%
+\contentsline {paragraph}{Representer theorem}{55}{section*.122}%
+\contentsline {paragraph}{Kernel regression}{55}{section*.123}%
+\contentsline {paragraph}{Exercise: Kernel regression}{56}{section*.124}%
+\contentsline {paragraph}{Recap: Ridge regression}{56}{section*.125}%
+\contentsline {paragraph}{Kernelization}{57}{section*.126}%
+\contentsline {paragraph}{Discussion of kernelization}{57}{section*.127}%
 \contentsline {section}{\numberline {2.10}Data Representations \& Processing}{57}{section.2.10}%
-\contentsline {paragraph}{Recap: What data?}{57}{section*.127}%
+\contentsline {paragraph}{Recap: What data?}{57}{section*.128}%
 \contentsline {subsection}{\numberline {2.10.1}Data representations: Attributes}{58}{subsection.2.10.1}%
-\contentsline {paragraph}{How about images}{59}{paragraph*.128}%
-\contentsline {paragraph}{Bag of visual words}{59}{section*.129}%
-\contentsline {paragraph}{Conclusion}{59}{section*.130}%
+\contentsline {paragraph}{How about images}{59}{paragraph*.129}%
+\contentsline {paragraph}{Bag of visual words}{59}{section*.130}%
+\contentsline {paragraph}{Conclusion}{60}{section*.131}%
 \contentsline {subsection}{\numberline {2.10.2}Data pre-processing}{60}{subsection.2.10.2}%
-\contentsline {paragraph}{Missing data}{60}{section*.131}%
-\contentsline {paragraph}{Noisy data}{60}{section*.132}%
-\contentsline {paragraph}{Data Normalization}{60}{section*.133}%
-\contentsline {paragraph}{From data sample to data set}{61}{section*.134}%
-\contentsline {paragraph}{Learning with imbalanced data}{61}{section*.135}%
-\contentsline {paragraph}{Sampling methods}{61}{section*.136}%
-\contentsline {paragraph}{Empirical risk}{62}{section*.137}%
-\contentsline {paragraph}{From handcrafted representations to learned ones}{63}{section*.138}%
+\contentsline {paragraph}{Missing data}{60}{section*.132}%
+\contentsline {paragraph}{Noisy data}{60}{section*.133}%
+\contentsline {paragraph}{Data Normalization}{60}{section*.134}%
+\contentsline {paragraph}{From data sample to data set}{61}{section*.135}%
+\contentsline {paragraph}{Learning with imbalanced data}{61}{section*.136}%
+\contentsline {paragraph}{Sampling methods}{61}{section*.137}%
+\contentsline {paragraph}{Empirical risk}{62}{section*.138}%
+\contentsline {paragraph}{From handcrafted representations to learned ones}{63}{section*.139}%
 \contentsline {section}{\numberline {2.11}Deep Learning}{63}{section.2.11}%
-\contentsline {paragraph}{Motivating example: Curve fitting}{63}{section*.139}%
-\contentsline {paragraph}{Activation function: Examples}{65}{section*.140}%
-\contentsline {paragraph}{Hidden representation}{65}{section*.141}%
-\contentsline {paragraph}{Complete model}{65}{section*.142}%
-\contentsline {paragraph}{Dealing with multiple input dimensions}{66}{section*.143}%
-\contentsline {paragraph}{Dealing with multiple output dimensions}{66}{section*.144}%
-\contentsline {paragraph}{Simple artificial neural network}{66}{section*.145}%
-\contentsline {paragraph}{$ $}{66}{section*.146}%
-\contentsline {paragraph}{Multilayer Perceptron}{67}{section*.147}%
-\contentsline {paragraph}{Training an MLP}{67}{section*.148}%
-\contentsline {paragraph}{Gradient based learning}{68}{section*.149}%
-\contentsline {paragraph}{Forward pass}{70}{paragraph*.150}%
-\contentsline {paragraph}{Backward pass}{70}{paragraph*.151}%
-\contentsline {paragraph}{Gradient descent}{70}{section*.152}%
-\contentsline {paragraph}{Stochastic gradient descent}{71}{section*.153}%
-\contentsline {paragraph}{SGD with mini-batches}{71}{section*.154}%
-\contentsline {paragraph}{Simple network training: Regression example}{71}{section*.155}%
-\contentsline {paragraph}{SGD behaviour}{72}{section*.156}%
-\contentsline {paragraph}{Gradient descent: Limitations}{73}{section*.157}%
-\contentsline {paragraph}{SGD Extension}{73}{section*.158}%
-\contentsline {paragraph}{Gradient vanishing \& Initialization}{74}{section*.159}%
-\contentsline {paragraph}{From regression to classification}{74}{section*.160}%
-\contentsline {paragraph}{Working with images}{75}{section*.161}%
+\contentsline {paragraph}{Motivating example: Curve fitting}{63}{section*.140}%
+\contentsline {paragraph}{Activation function: Examples}{65}{section*.141}%
+\contentsline {paragraph}{Hidden representation}{65}{section*.142}%
+\contentsline {paragraph}{Complete model}{65}{section*.143}%
+\contentsline {paragraph}{Dealing with multiple input dimensions}{66}{section*.144}%
+\contentsline {paragraph}{Dealing with multiple output dimensions}{66}{section*.145}%
+\contentsline {paragraph}{Simple artificial neural network}{66}{section*.146}%
+\contentsline {paragraph}{$ $}{66}{section*.147}%
+\contentsline {paragraph}{Multilayer Perceptron}{67}{section*.148}%
+\contentsline {paragraph}{Training an MLP}{67}{section*.149}%
+\contentsline {paragraph}{Gradient based learning}{68}{section*.150}%
+\contentsline {paragraph}{Forward pass}{70}{paragraph*.151}%
+\contentsline {paragraph}{Backward pass}{70}{paragraph*.152}%
+\contentsline {paragraph}{Gradient descent}{70}{section*.153}%
+\contentsline {paragraph}{Stochastic gradient descent}{71}{section*.154}%
+\contentsline {paragraph}{SGD with mini-batches}{71}{section*.155}%
+\contentsline {paragraph}{Simple network training: Regression example}{71}{section*.156}%
+\contentsline {paragraph}{SGD behaviour}{72}{section*.157}%
+\contentsline {paragraph}{Gradient descent: Limitations}{73}{section*.158}%
+\contentsline {paragraph}{SGD Extension}{73}{section*.159}%
+\contentsline {paragraph}{Gradient vanishing \& Initialization}{74}{section*.160}%
+\contentsline {paragraph}{From regression to classification}{74}{section*.161}%
+\contentsline {paragraph}{Working with images}{75}{section*.162}%
 \contentsline {section}{\numberline {2.12}Convolutional Neural Network}{75}{section.2.12}%
-\contentsline {paragraph}{CNN}{75}{section*.162}%
-\contentsline {paragraph}{Convolutional Layer}{75}{section*.163}%
-\contentsline {paragraph}{Pooling layer}{76}{section*.164}%
-\contentsline {paragraph}{Padding}{76}{section*.165}%
-\contentsline {paragraph}{Convolution Stride}{76}{section*.166}%
-\contentsline {paragraph}{Discussion: Convolution stride}{76}{section*.167}%
-\contentsline {paragraph}{Output}{77}{section*.168}%
-\contentsline {paragraph}{CNN: Learning}{77}{section*.169}%
-\contentsline {paragraph}{CNN: Interpretation}{77}{section*.170}%
-\contentsline {paragraph}{Standard architecture}{78}{section*.171}%
-\contentsline {paragraph}{Tackling different tasks}{79}{section*.172}%
-\contentsline {paragraph}{CNNs for semantic segmentation}{79}{section*.173}%
-\contentsline {paragraph}{2D convolution as matrix product}{80}{section*.174}%
-\contentsline {paragraph}{Fully convolutional networks}{80}{section*.175}%
-\contentsline {paragraph}{Deep Learning: Tricks of the trade}{80}{section*.176}%
+\contentsline {paragraph}{CNN}{75}{section*.163}%
+\contentsline {paragraph}{Convolutional Layer}{75}{section*.164}%
+\contentsline {paragraph}{Pooling layer}{76}{section*.165}%
+\contentsline {paragraph}{Padding}{76}{section*.166}%
+\contentsline {paragraph}{Convolution Stride}{76}{section*.167}%
+\contentsline {paragraph}{Discussion: Convolution stride}{76}{section*.168}%
+\contentsline {paragraph}{Output}{77}{section*.169}%
+\contentsline {paragraph}{CNN: Learning}{77}{section*.170}%
+\contentsline {paragraph}{CNN: Interpretation}{77}{section*.171}%
+\contentsline {paragraph}{Standard architecture}{78}{section*.172}%
+\contentsline {paragraph}{Tackling different tasks}{79}{section*.173}%
+\contentsline {paragraph}{CNNs for semantic segmentation}{79}{section*.174}%
+\contentsline {paragraph}{2D convolution as matrix product}{80}{section*.175}%
+\contentsline {paragraph}{Fully convolutional networks}{80}{section*.176}%
+\contentsline {paragraph}{Deep Learning: Tricks of the trade}{80}{section*.177}%
 \contentsline {subsection}{\numberline {2.12.1}CNN BackPropagation}{81}{subsection.2.12.1}%
-\contentsline {paragraph}{Backpropagation in CNNs}{81}{section*.177}%
-\contentsline {paragraph}{Convolution Backprop with single Stride}{81}{section*.178}%
-\contentsline {paragraph}{Loss gradient}{81}{section*.179}%
-\contentsline {paragraph}{Takeaway}{82}{section*.180}%
-\contentsline {paragraph}{Stride $> 1$}{83}{section*.181}%
-\contentsline {paragraph}{Backward Pass}{83}{section*.182}%
+\contentsline {paragraph}{Backpropagation in CNNs}{81}{section*.178}%
+\contentsline {paragraph}{Convolution Backprop with single Stride}{81}{section*.179}%
+\contentsline {paragraph}{Loss gradient}{81}{section*.180}%
+\contentsline {paragraph}{Takeaway}{82}{section*.181}%
+\contentsline {paragraph}{Stride $> 1$}{83}{section*.182}%
+\contentsline {paragraph}{Backward Pass}{83}{section*.183}%
 \contentsline {chapter}{\numberline {3}Unsupervised Linear ML}{85}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Dimensionality Reduction}{85}{section.3.1}%
-\contentsline {paragraph}{Until now: Supervised learning}{85}{section*.183}%
-\contentsline {paragraph}{Unsupervised learning}{85}{section*.184}%
-\contentsline {paragraph}{Dimensionality Reduction}{85}{section*.185}%
-\contentsline {paragraph}{Principal Component Analysis (PCA)}{86}{section*.186}%
-\contentsline {paragraph}{PCA: Objective}{86}{section*.187}%
-\contentsline {paragraph}{Variance maximization}{86}{section*.188}%
-\contentsline {paragraph}{Dealing with more that 1D projections}{87}{section*.189}%
-\contentsline {paragraph}{Error minimization}{88}{section*.190}%
-\contentsline {paragraph}{Mapping}{88}{section*.191}%
-\contentsline {paragraph}{Dealing with nonlinear data}{88}{section*.192}%
-\contentsline {paragraph}{Kernel PCA}{89}{section*.193}%
-\contentsline {paragraph}{Non centred data}{90}{section*.194}%
-\contentsline {paragraph}{Example}{90}{section*.195}%
-\contentsline {paragraph}{Kernel PCA vs PCA}{91}{section*.196}%
+\contentsline {paragraph}{Until now: Supervised learning}{85}{section*.184}%
+\contentsline {paragraph}{Unsupervised learning}{85}{section*.185}%
+\contentsline {paragraph}{Dimensionality Reduction}{85}{section*.186}%
+\contentsline {paragraph}{Principal Component Analysis (PCA)}{86}{section*.187}%
+\contentsline {paragraph}{PCA: Objective}{86}{section*.188}%
+\contentsline {paragraph}{Variance maximization}{86}{section*.189}%
+\contentsline {paragraph}{Dealing with more that 1D projections}{87}{section*.190}%
+\contentsline {paragraph}{Error minimization}{88}{section*.191}%
+\contentsline {paragraph}{Mapping}{88}{section*.192}%
+\contentsline {paragraph}{Dealing with nonlinear data}{88}{section*.193}%
+\contentsline {paragraph}{Kernel PCA}{89}{section*.194}%
+\contentsline {paragraph}{Non centred data}{90}{section*.195}%
+\contentsline {paragraph}{Example}{90}{section*.196}%
+\contentsline {paragraph}{Kernel PCA vs PCA}{91}{section*.197}%
 \contentsline {subsection}{\numberline {3.1.1}Autoencoder}{92}{subsection.3.1.1}%
-\contentsline {paragraph}{General form}{92}{section*.197}%
-\contentsline {paragraph}{Deep autoencoder}{92}{section*.198}%
-\contentsline {paragraph}{Training}{92}{section*.199}%
-\contentsline {paragraph}{Dimensionality expansion}{93}{section*.200}%
-\contentsline {paragraph}{Denoising autoencoders}{93}{section*.201}%
-\contentsline {paragraph}{Sparse autoencoder}{93}{section*.202}%
-\contentsline {paragraph}{Convolutional autoencoder}{93}{section*.203}%
-\contentsline {paragraph}{Autoencoder: Application}{93}{section*.204}%
-\contentsline {paragraph}{Mapping}{94}{section*.205}%
+\contentsline {paragraph}{General form}{92}{section*.198}%
+\contentsline {paragraph}{Deep autoencoder}{92}{section*.199}%
+\contentsline {paragraph}{Training}{93}{section*.200}%
+\contentsline {paragraph}{Dimensionality expansion}{93}{section*.201}%
+\contentsline {paragraph}{Denoising autoencoders}{93}{section*.202}%
+\contentsline {paragraph}{Sparse autoencoder}{93}{section*.203}%
+\contentsline {paragraph}{Convolutional autoencoder}{94}{section*.204}%
+\contentsline {paragraph}{Autoencoder: Application}{94}{section*.205}%
+\contentsline {paragraph}{Mapping}{94}{section*.206}%
 \contentsline {section}{\numberline {3.2}Clustering}{94}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Clustering: Another unsupervised learning task}{94}{subsection.3.2.1}%
-\contentsline {paragraph}{A simple clustering algorithm}{94}{section*.206}%
-\contentsline {paragraph}{Algorithm}{94}{section*.207}%
-\contentsline {paragraph}{More details}{95}{section*.208}%
-\contentsline {paragraph}{K-means clustering: Properties}{95}{section*.209}%
-\contentsline {paragraph}{Other Properties}{95}{section*.210}%
-\contentsline {paragraph}{Clustering and dimensionality reduction}{96}{paragraph*.211}%
-\contentsline {paragraph}{Fisher Linear Discriminant Analysis (LDA)}{96}{section*.212}%
-\contentsline {paragraph}{Clustering the sample from the same class}{97}{section*.213}%
-\contentsline {paragraph}{Separating the different classes}{97}{section*.214}%
-\contentsline {paragraph}{Fisher LDA}{98}{section*.215}%
-\contentsline {paragraph}{Dealing with $d > 1$}{98}{section*.216}%
-\contentsline {paragraph}{Compactness}{98}{section*.217}%
-\contentsline {paragraph}{Spectral clustering: Graph-based connectivity}{99}{section*.218}%
-\contentsline {paragraph}{Graph cut}{99}{section*.219}%
-\contentsline {paragraph}{Graph terminology}{100}{section*.220}%
-\contentsline {paragraph}{Normalized cut}{100}{section*.221}%
-\contentsline {paragraph}{Transformed formulation}{100}{section*.222}%
-\contentsline {paragraph}{$K$-way partition}{101}{section*.223}%
+\contentsline {paragraph}{A simple clustering algorithm}{94}{section*.207}%
+\contentsline {paragraph}{Algorithm}{95}{section*.208}%
+\contentsline {paragraph}{More details}{95}{section*.209}%
+\contentsline {paragraph}{K-means clustering: Properties}{95}{section*.210}%
+\contentsline {paragraph}{Elbow method}{95}{section*.211}%
+\contentsline {paragraph}{Other Properties}{96}{section*.212}%
+\contentsline {paragraph}{Clustering and dimensionality reduction}{96}{paragraph*.213}%
+\contentsline {paragraph}{Fisher Linear Discriminant Analysis (LDA)}{97}{section*.214}%
+\contentsline {paragraph}{Clustering the sample from the same class}{97}{section*.215}%
+\contentsline {paragraph}{Separating the different classes}{98}{section*.216}%
+\contentsline {paragraph}{Fisher LDA}{98}{section*.217}%
+\contentsline {paragraph}{Dealing with $d > 1$}{99}{section*.218}%
+\contentsline {paragraph}{Compactness}{99}{section*.219}%
+\contentsline {paragraph}{Spectral clustering: Graph-based connectivity}{99}{section*.220}%
+\contentsline {paragraph}{Graph cut}{99}{section*.221}%
+\contentsline {paragraph}{Graph terminology}{100}{section*.222}%
+\contentsline {paragraph}{Normalized cut}{100}{section*.223}%
+\contentsline {paragraph}{Transformed formulation}{100}{section*.224}%
+\contentsline {paragraph}{$K$-way partition}{101}{section*.225}%
 \contentsline {section}{\numberline {3.3}Natural Language Processing (NLP)}{102}{section.3.3}%
-\contentsline {paragraph}{Heterogeneous data}{102}{section*.224}%
-\contentsline {paragraph}{Bag of words}{102}{section*.225}%
-\contentsline {paragraph}{Word representation}{102}{section*.226}%
-\contentsline {paragraph}{Word embeddings}{102}{section*.227}%
-\contentsline {paragraph}{Training}{103}{section*.228}%
-\contentsline {paragraph}{Individual words}{103}{section*.229}%
-\contentsline {paragraph}{Recurrent neural networks}{103}{section*.230}%
-\contentsline {paragraph}{RNN for classification}{104}{section*.231}%
-\contentsline {paragraph}{Different types of RNNs}{104}{section*.232}%
-\contentsline {paragraph}{Training an encoder-decoder model}{104}{section*.233}%
-\contentsline {paragraph}{Limitation}{105}{section*.234}%
-\contentsline {paragraph}{Incorporating attention}{105}{section*.235}%
-\contentsline {paragraph}{Attention function}{106}{section*.236}%
-\contentsline {paragraph}{Interpretability?}{107}{section*.237}%
-\contentsline {paragraph}{Problem: Encoder is recurrent}{107}{section*.238}%
+\contentsline {paragraph}{Heterogeneous data}{102}{section*.226}%
+\contentsline {paragraph}{Bag of words}{102}{section*.227}%
+\contentsline {paragraph}{Word representation}{102}{section*.228}%
+\contentsline {paragraph}{Word embeddings}{102}{section*.229}%
+\contentsline {paragraph}{$ $}{103}{section*.230}%
+\contentsline {paragraph}{Training}{103}{section*.231}%
+\contentsline {paragraph}{Individual words}{103}{section*.232}%
+\contentsline {paragraph}{Recurrent neural networks}{103}{section*.233}%
+\contentsline {paragraph}{RNN for classification}{104}{section*.234}%
+\contentsline {paragraph}{Different types of RNNs}{104}{section*.235}%
+\contentsline {paragraph}{Training an encoder-decoder model}{104}{section*.236}%
+\contentsline {paragraph}{Limitation}{105}{section*.237}%
+\contentsline {paragraph}{Incorporating attention}{105}{section*.238}%
+\contentsline {paragraph}{Attention function}{105}{section*.239}%
+\contentsline {paragraph}{Interpretability?}{106}{section*.240}%
+\contentsline {paragraph}{Problem: Encoder is recurrent}{107}{section*.241}%
 \contentsline {subsection}{\numberline {3.3.1}Transformer}{107}{subsection.3.3.1}%
-\contentsline {paragraph}{Transformers vs RNNs}{107}{section*.239}%
-\contentsline {paragraph}{Self-attention}{108}{section*.240}%
-\contentsline {paragraph}{Example}{108}{section*.241}%
-\contentsline {paragraph}{Transformer block}{109}{section*.242}%
-\contentsline {paragraph}{Full transformer}{110}{section*.243}%
-\contentsline {paragraph}{Masked multi-head self attention}{110}{section*.244}%
-\contentsline {paragraph}{Cross attention}{111}{section*.245}%
-\contentsline {paragraph}{Position Embeddings}{112}{section*.246}%
-\contentsline {paragraph}{GPT: Generative Pretrained Transformer}{112}{paragraph*.247}%
-\contentsline {paragraph}{Training}{112}{section*.248}%
-\contentsline {paragraph}{Fine tuning}{112}{section*.249}%
-\contentsline {paragraph}{Transformers for images}{113}{paragraph*.250}%
+\contentsline {paragraph}{Transformers vs RNNs}{107}{section*.242}%
+\contentsline {paragraph}{Self-attention}{107}{section*.243}%
+\contentsline {paragraph}{Example}{108}{section*.244}%
+\contentsline {paragraph}{Transformer block}{109}{section*.245}%
+\contentsline {paragraph}{Full transformer}{110}{section*.246}%
+\contentsline {paragraph}{Masked multi-head self attention}{110}{section*.247}%
+\contentsline {paragraph}{Cross attention}{111}{section*.248}%
+\contentsline {paragraph}{Position Embeddings}{112}{section*.249}%
+\contentsline {paragraph}{GPT: Generative Pretrained Transformer}{112}{paragraph*.250}%
+\contentsline {paragraph}{Training}{112}{section*.251}%
+\contentsline {paragraph}{Fine tuning}{112}{section*.252}%
+\contentsline {paragraph}{Transformers for images}{113}{paragraph*.253}%

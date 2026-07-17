@@ -10,7 +10,7 @@ The goal of this section is to understand the notions of model complexity and ov
 \begin{parag}{Model complexity}
     As we have moved from linear models to nonlinear ones, we have obtained increasing flexibility:
 	\begin{itemize}
-	    \item We do not longer assume that the ouput linearly depends on the input
+	    \item We do not longer assume that the output linearly depends on the input
 	    \item We can handle classification problems in which the classes are nonlinearly separable
 	\end{itemize}
 	This flexibility, however, may sometimes make the model too complex for the task at hand. 
@@ -30,7 +30,7 @@ The goal of this section is to understand the notions of model complexity and ov
 	\end{center}
 	As we can see when having low $k$ we are \important{overfitting}, meaning that copied our training data, but on on test data, the error will be high. And after passing $10$ what we observed is that our model is actually performing worse than before even though we are incrementing $k$; our model is \important{underfitting}. In this case the error is large on both the training data and the test data. This is called \important{underfitting}.
 	\begin{subparag}{Remark}
-	    Tis behavior is \important{not} specific to k-NN. It can happen in most machine learning algorithm.
+	    This behaviour is \important{not} specific to k-NN. It can happen in most machine learning algorithm.
 	\end{subparag}
 \end{parag}
 \begin{framedremark}
@@ -96,13 +96,13 @@ I find the example quite misleading. Here we see a low $k$ as the overfitting ca
     \begin{center}
     \includegraphics[scale=0.2]{screenshots/2026-03-24.png}
     \end{center}
-	When you have done all points, report the average error. So if we take our 9 samples and we therfore fit 9 models, one for each points, we get the following curve (for a linear model) 
+	When you have done all points, report the average error. So if we take our 9 samples and we therefore fit 9 models, one for each points, we get the following curve (for a linear model) 
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2026-03-24_1.png}
 	\end{center}
 	For each of those model we have \important{one} test data which will gives us an error, given the average error for all models, we have $2.12$. \\
 	$ $\\
-	But is this the best model? Now we can check and be pretty sure about our metriics. For instance, let us use a squared model:
+	But is this the best model? Now we can check and be pretty sure about our metrics. For instance, let us use a squared model:
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2026-03-24_2.png}
 	\end{center}
@@ -123,7 +123,7 @@ I find the example quite misleading. Here we see a low $k$ as the overfitting ca
 \end{tabular}
 \end{center}
 
-Both are a bit extreme, let us now look for something that is lying in the middle, \important{$k$-fold cross-validation}. First recall what were the issue about our two previous methods. The first one was that everything was fixed, the size of the test, the data that we used for training \important{and} for testing. The result of this is that the prediction of the future performance is unreliable (we could just be lucky with our test data). The issue with the second methods was that it was too expensive to compute because we needed to  compute a new model \important{for each point}. But why each point, why don't we just randomly split the data set into $k$ partitions (e.g., $k = 3$, shown with the different colors)
+Both are a bit extreme, let us now look for something that is lying in the middle, \important{$k$-fold cross-validation}. First recall what were the issue about our two previous methods. The first one was that everything was fixed, the size of the test, the data that we used for training \important{and} for testing. The result of this is that the prediction of the future performance is unreliable (we could just be lucky with our test data). The issue with the second methods was that it was too expensive to compute because we needed to  compute a new model \important{for each point}. But why each point, why don't we just randomly split the data set into $k$ partitions (e.g., $k = 3$, shown with the different colours)
 \begin{center}
 \includegraphics[scale=0.3]{screenshots/2026-03-24_3.png}
 \end{center}
@@ -172,9 +172,9 @@ Now we have one tool in order to have a model that can generalize well. Let us n
 
 
 \begin{parag}{Overfitting with a linear model}
-    Because the linear model is simple, overfitting occurs fairly rarely. Nevertheless, if there are fewer training samples than input dimensions ($N \leq D  + 1$), then one can alwazs fit a hyperplan that passes exactly through the training samples.
+    Because the linear model is simple, overfitting occurs fairly rarely. Nevertheless, if there are fewer training samples than input dimensions ($N \leq D  + 1$), then one can always fit a hyperplan that passes exactly through the training samples.
 	\begin{subparag}{Proof}
-	    This can easily been check $N$ points in $D + 1$ dimensions. Our linear model will be given as $w^{T}x + b$. Let us simplify notation by absorbing the bias into the vector $\widetilde{x} = \left(x_1, \ldots, x_D, 1\right)$ then $\widetilde{w} \in \mathbb{R}^{D + 1}$ and our model $f$ is given as:
+	    This can easily been check given $N$ points in $D + 1$ dimensions. Our linear model will be given as $w^{T}x + b$. Let us simplify notation by absorbing the bias into the vector $\widetilde{x} = \left(x_1, \ldots, x_D, 1\right)$ then $\widetilde{w} \in \mathbb{R}^{D + 1}$ and our model $f$ is given as:
 		\begin{align*} 
 			f\left(x\right) = \widetilde{w}^{T}\widetilde{x}
 		\end{align*}
@@ -182,7 +182,7 @@ Now we have one tool in order to have a model that can generalize well. Let us n
 		\begin{align*} 
 			\left(x^{\left(1\right)}, y^{\left(1\right)}\right), \ldots, \left(x^{\left(N\right)}, y^{\left(N\right)}\right)
 		\end{align*}
-		After the augmentation with have that each $\widetilde{x}^{\left(i\right)} \in \mathbb{R}^{D + 1}$ Then what we atre saying is that we want our model to fit perfectly i.e.:
+		After the augmentation with have that each $\widetilde{x}^{\left(i\right)} \in \mathbb{R}^{D + 1}$ Then what we are saying is that we want our model to fit perfectly i.e.:
 		\begin{align*} 
 			w^{\left(T\right)}\widetilde{x}^{\left(i\right)} = y^{\left(i\right)}, \mathspace \forall i = 1, \ldots, N
 		\end{align*}
@@ -203,69 +203,69 @@ Now we have one tool in order to have a model that can generalize well. Let us n
 	\begin{align*} 
 		E\left(w\right) = R\left(w\right) + \lambda E_w\left(w\right)
 	\end{align*}
-	Where $R\left(w\right)$ is the empirical risk and $E_w\left(w\right)$ is the regularizer. $\lambda$ is a hyper-parameter that defines the influence of the regularizer $\left(\lambda > 0\right)$
-\end{parag}
-\begin{parag}{Regularised linear regression}
-    One of the most common regularizer is the sum of squares of the weights (there is a probabilistic motivation behind it)
-	\begin{align*} 
-		E_w\left(w\right) = w^{T}w
-	\end{align*}
-	This lets us write regularized linear regression as
-	\begin{align*} 
-		\min_w \sum_{i= 1}^{N}\left(\phi\left(x_i\right)^{T}w - y_i\right)^2 + \lambda w^{T}w
-	\end{align*}
-	This remains a convex function (for $\lambda \geq 0$) and so we can still find the solution by zeroing out the gradient. But if you insists to compute the gradient\ldots
-	\begin{align*} 
-		\nabla E &= \nabla R  + \nabla E_w\\
-				 &= 2 \sum_{i = 1}^{N}\phi\left(x_i\right)\left(\phi\left(x_i\right)^{T}w - y_i\right) + 2\lambda w
-	\end{align*}
-	As we can see the only differences is the new $2\lambda w$, the other terms is the same as what we saw in earlier lectures.\\
-	$ $\\
-	Setting the gradient to zero yields
-	\begin{align*} 
-		\left(\sum_{i= 1}^{N}\phi\left(x_i\right)\phi\left(x_i\right)^{T} + \lambda I_F\right)w^{\ast} =  \sum_{i= 1}^{N}\phi\left(x_i\right)y_i
-	\end{align*}
-	\begin{subparag}{Solution}
-	    ultimately if we group the inputs in a matrix $\Phi$ and the output in a vector $y$, as before, this gives us the final solution:
+		Where $R\left(w\right)$ is the empirical risk and $E_w\left(w\right)$ is the regularizer. $\lambda$ is a hyper-parameter that defines the influence of the regularizer $\left(\lambda > 0\right)$
+	\end{parag}
+	\begin{parag}{Regularised linear regression}
+		One of the most common regularizer is the sum of squares of the weights (there is a probabilistic motivation behind it)
 		\begin{align*} 
-			w^{\ast} = \left(\Phi^{T}\Phi + \lambda I_F\right)^{-1} \Phi^{T}y
+			E_w\left(w\right) = w^{T}w
 		\end{align*}
-		This also ensures that we can actually find a solution, that the matrix (the thing inside the parenthesis) can be inverted.
-	\end{subparag}
-	\begin{subparag}{Remark}
-	    For people who have done cs-328, this is the Tikhonov regularization technique that we have seen. In cs-328 the goal of regularization was to \important{improve the condition number} of a problem. The geometric interpretation was that the addition of an identity matrix causes the matrix to scale input vectors uniformly in different directions
-		\begin{center}
-		\includegraphics[width=0.8\textwidth]{figure/2026-03-24.pdf}
-		\end{center}
-		And this is the same thing as what we said above, the goal here is to improve the condition number $\implies$ having a matrix that is numericaly stable, that can be inverted
-	\end{subparag}
-	Note that the regularizer affects the optimal value of the parameters, but not the mathematical form of the prediction which remains the same.
+		This lets us write regularized linear regression as
+		\begin{align*} 
+			\min_w \sum_{i= 1}^{N}\left(\phi\left(x_i\right)^{T}w - y_i\right)^2 + \lambda w^{T}w
+		\end{align*}
+		This remains a convex function (for $\lambda \geq 0$) and so we can still find the solution by zeroing out the gradient. But if you insists to compute the gradient\ldots
+		\begin{align*} 
+			\nabla E &= \nabla R  + \nabla E_w\\
+					 &= 2 \sum_{i = 1}^{N}\phi\left(x_i\right)\left(\phi\left(x_i\right)^{T}w - y_i\right) + 2\lambda w
+		\end{align*}
+		As we can see the only differences is the new $2\lambda w$, the other terms is the same as what we saw in earlier lectures.\\
+		$ $\\
+		Setting the gradient to zero yields
+		\begin{align*} 
+			\left(\sum_{i= 1}^{N}\phi\left(x_i\right)\phi\left(x_i\right)^{T} + \lambda I_F\right)w^{\ast} =  \sum_{i= 1}^{N}\phi\left(x_i\right)y_i
+		\end{align*}
+		\begin{subparag}{Solution}
+			ultimately if we group the inputs in a matrix $\Phi$ and the output in a vector $y$, as before, this gives us the final solution:
+			\begin{align*} 
+				w^{\ast} = \left(\Phi^{T}\Phi + \lambda I_F\right)^{-1} \Phi^{T}y
+			\end{align*}
+			This also ensures that we can actually find a solution, that the matrix (the thing inside the parenthesis) can be inverted.
+		\end{subparag}
+		\begin{subparag}{Remark}
+			For people who have done cs-328, this is the Tikhonov regularization technique that we have seen. In cs-328 the goal of regularization was to \important{improve the condition number} of a problem. The geometric interpretation was that the addition of an identity matrix causes the matrix to scale input vectors uniformly in different directions
+			\begin{center}
+			\includegraphics[width=0.8\textwidth]{figure/2026-03-24.pdf}
+			\end{center}
+			And this is the same thing as what we said above, the goal here is to improve the condition number $\implies$ having a matrix that is numerically stable, that can be inverted
+		\end{subparag}
+		Note that the regularizer affects the optimal value of the parameters, but not the mathematical form of the prediction which remains the same.
 
-\end{parag}
-\begin{parag}{Multi-output ridge regression}
-    When dealing with multiple output dimensions, the parameters are expressed in matrix form. We can write multi-output ridge regression as:
-	\begin{align*} \min_W \sum_{i= 1}^{N}\left\|W^{T}\phi\left(x_i\right)-y_i\right\|^2 + \lambda \left\|W\right\|_F^2 \end{align*}
-	Where $\left\|W\right\|_F^2$ is the square Frobenius norm, equivalent to the sum of the square of all values in the matrix $W$.\\
-	$ $\\
-	By zeroing out the gradient, we obtain the solution:
-	\begin{align*} 
-		W^{\ast} = \left(\Phi^{T}\Phi + \lambda I_F\right)^{-1} \Phi^{T}Y
-	\end{align*}
-\end{parag}
+	\end{parag}
+	\begin{parag}{Multi-output ridge regression}
+		When dealing with multiple output dimensions, the parameters are expressed in matrix form. We can write multi-output ridge regression as:
+		\begin{align*} \min_W \sum_{i= 1}^{N}\left\|W^{T}\phi\left(x_i\right)-y_i\right\|^2 + \lambda \left\|W\right\|_F^2 \end{align*}
+		Where $\left\|W\right\|_F^2$ is the square Frobenius norm, equivalent to the sum of the square of all values in the matrix $W$.\\
+		$ $\\
+		By zeroing out the gradient, we obtain the solution:
+		\begin{align*} 
+			W^{\ast} = \left(\Phi^{T}\Phi + \lambda I_F\right)^{-1} \Phi^{T}Y
+		\end{align*}
+	\end{parag}
 
 
 
-\begin{parag}{Regularization and logistic regression}
-    Regularization may also be added to the cross-entropy loss used to train the logistic regression model.
-	\begin{itemize}
-	    \item With a convex regularizer, such as the sum of squares, the overall regularized risk remains convex
-	    \item The scikit-learn implementation of logistic regression has such an $L^2$ regularizer by default
-	\end{itemize}
-	
-\end{parag}
+	\begin{parag}{Regularization and logistic regression}
+		Regularization may also be added to the cross-entropy loss used to train the logistic regression model.
+		\begin{itemize}
+			\item With a convex regularizer, such as the sum of squares, the overall regularized risk remains convex
+			\item The scikit-learn implementation of logistic regression has such an $L^2$ regularizer by default
+		\end{itemize}
+		
+	\end{parag}
 
-\begin{parag}{Finding the right regularization strength}
-    Note that the use of a regularizer leads to another hyper-parameter for the model, $\lambda$. And this parameter cannot be optimize, (the solution for it is $\lambda = 0$ which is not what we wanted and the reason on why we have introduced it in the first place). But if we cannot optimize it, how should we set its value? IDK
+	\begin{parag}{Finding the right regularization strength
+		Note that the use of a regularizer leads to another hyper-parameter for the model, $\lambda$. And this parameter cannot be optimize, (the solution for it is $\lambda = 0$ which is not what we wanted and the reason on why we have introduced it in the first place). But if we cannot optimize it, how should we set its value?
 \end{parag}
 
 

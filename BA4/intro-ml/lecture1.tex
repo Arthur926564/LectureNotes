@@ -64,7 +64,7 @@
 \end{parag}
 
 \begin{parag}{What classes of algorithm?}
-    For each learning there will be different classes of algorithms, in this case (unsupervised), the learning relies on unsupervised data. The goal is rather to analyse the observed data set.\\
+    For each learning there will be different classes of algorithms, in this case (unsupervised), the learning relies on unsupervised data. The goal is rather to analyse the observed data set than to predict an output.\\
 	What we mean by this is that instead of trying to have direct information about our data (guess the animal on an image), we will more care about how does the data is divided etc... (splitting creating a graph of music genres)
 
 	\begin{center}
@@ -72,7 +72,7 @@
 	\end{center}
 \end{parag}
 \begin{parag}{Learning Stage}
-    Learning in this case consists of only one stage: Analyse the whole data, or transform it for further analysis. As said before the goal is not to make 'guesses'. Butto gives more  information about our data in order to have better insight.
+    Learning in this case consists of only one stage: Analyse the whole data, or transform it for further analysis. As said before the goal is not to make 'guesses'. But to gives more  information about our data in order to have better insight.
 \end{parag}
 
 
@@ -93,6 +93,7 @@
 		\item \textbf{Testing}: Predict the ouput for a new data sample
 	\end{enumerate}
 	
+\end{parag}
 \begin{center}
 \begin{tikzpicture}[
     node distance=2.1cm,
@@ -122,6 +123,8 @@
 
 \end{tikzpicture}
 \end{center}
+\begin{parag}{ $ $}
+
 Here we \important{don't} use our testing data to update the model parameters. We want to check wether or not our model \important{generalizes} to the new test data which might not be the case. If we go back to the example digit guessing demo; when we try to draw a number in a corner of the box, the model is not able to correctly predict. The reason for this is that the data that our model trained on had numbers only in the middle of the box \textrightarrow not trained to other cases.
 	
     

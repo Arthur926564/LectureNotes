@@ -192,23 +192,39 @@ The goal now is to understand what is our model \important{behavior}. If it gues
 	\end{align*}
 	Where $\tau$ is a given threshold.\\
 	$ $\\
-	The Receiver Operating Characteristic (ROC) curve plots the true positive rate (recall) as a function of the false positive rate, obtained by varying the score threshold
-	\begin{framedremark}
-	Remember to put graph here as an example (slide 26)
-	\end{framedremark}
+	The Receiver Operating Characteristic (ROC) curve plots the true positive rate (recall) as a function of the false positive rate, obtained by varying the score threshold.
+	\begin{center}
+	\includegraphics[scale=0.1]{screenshots/2026-06-17.png}
+	\end{center}
 	The Area Under the ROC Curve (AUC) can act as a metric:
 	\begin{itemize}
 		\item The maximum AUC is $1$
 		\item Random predictions give an AUC of 0.5
 	\end{itemize}
-	
+	A little example here would be to set our threshold $\tau = 0$, everything gets called positive, in this case, let us compute the recall (true positive rate) and the false positive rate 
+	\begin{align*} 
+		\text{recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+	\end{align*}
+	FN $= 0$ as false negative are instance that are actually positive but predicted negative. But as we put everything to positive, we cannot have any hence we get 
+	\begin{align*} 
+		\frac{\text{TP}}{\text{TP}} = 1
+	\end{align*}
+	For the false positive rate define as 
+	\begin{align*} 
+		\text{FPR} = \frac{\text{FP}}{\text{FP} + \text{TN}}
+	\end{align*}
+	As we don't ever make false prediction, the true negative number is 0, hence 
+	\begin{align*} 
+		\frac{\text{FP}}{\text{FP}} = 1
+	\end{align*}
+
 \end{parag}
 
 
 \subsection{From binary to multi-class classification}
 So far, three methods we have studied can only handle two classes: positive vs negative.\\
 $ $\\
-In general, one would typically like to disciminate between more than two categories. E.g., for image recognition. Let us now see how our three linear methods defined earlier can handle this scenario.
+In general, one would typically like to discriminate between more than two categories. E.g., for image recognition. Let us now see how our three linear methods defined earlier can handle this scenario.
 
 \begin{parag}{least-square classification}
     In essence, least-square classification treats the problem as a regression task\\
@@ -218,11 +234,11 @@ In general, one would typically like to disciminate between more than two catego
 	\end{itemize}
 	The simplest way to go from binary case to handling multiple classes would then be to use one integer value for each category. (we then round the prediction of the model to the nearest integer to obtain the predicted class value).\\
 	$ $\\
-	This, however makes no sense, there is \important{no natural} order between the different categories (the prof trolled us). If we were to do so, this would really just comes down to a litteral regression task. Furthermore this would implies that guessing $4$ instead of $3$ would be better than guessin $-1$ and that's complete nonsense when speaking about classification tasks.
+	This, however makes no sense, there is \important{no natural} order between the different categories (the prof trolled us). If we were to do so, this would really just comes down to a literal regression task. Furthermore this would implies that guessing $4$ instead of $3$ would be better than guessing $-1$ and that's complete nonsense when speaking about classification tasks.
 \end{parag}
 
 \begin{parag}{Dealing with multiple classes}
-    The most common approach to modeling a multi-class problem consists of encoding the class label as a vector with a single $1$ at the index corresponding to the category and 0's elsewhere
+    The most common approach to modelling a multi-class problem consists of encoding the class label as a vector with a single $1$ at the index corresponding to the category and 0's elsewhere
 	\begin{subparag}{Intuition}
 	    We can see it as each label is a dimension in $\mathbb{R}^{D}$. A good classifier would then output a vector (as a guess) and this vector needs to have the same direction (or at least, near) the label.
 	\end{subparag}

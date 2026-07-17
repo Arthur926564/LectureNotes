@@ -30,13 +30,13 @@ The goal of this section is to introduce our first unsupervised learning task: \
 	\end{align*}
 	Dealing with such large data is cumbersome, is there a way for us to compress it while keeping the relevant information?\\
 	$ $\\
-	Another example would be by images created by translating an rotating the same digit $3$
+	Another example would be by images created by translating and rotating the same digit $3$
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2026-05-05_2.png}
 	\end{center}
 	This data lies in a high dimensional space ($32 \times 32$). However there is only $3$ degrees of freedom here (2 translations and 1 rotation). Inherently this data lies in a $3$ dimensional space. In practice, the data often lies in a much lower dimensional space, referred to as manifold.
 	\begin{definition}{Dimensionality Reduction}
-	Dimensionality reduction is the task of 
+	 is the task of 
 	\begin{itemize}
 	    \item Discovering the data manifold
 	    \item Getting a low-dimensional representation of the data
@@ -270,7 +270,7 @@ In practice, one typically truncates the eigenvalues so as to discard some that 
 \begin{parag}{Non centred data}
     So far, we have assumed that the data was centred in feature space. There is however no reason for this to be satisfied 
 	\begin{itemize}
-	    \item Even is the original data is centred, the data after the mapping to feature space might not be
+	    \item Even if the original data is centred, the data after the mapping to feature space might not be
 	\end{itemize}
 	To handle more realistic scenario, where it isn't, let us define 
 	\begin{align*} 
@@ -297,6 +297,9 @@ In practice, one typically truncates the eigenvalues so as to discard some that 
 	\includegraphics[scale=0.3]{screenshots/2026-05-05_6.png}
 	\end{center}
 	Using a RBF kernel now 
+	\begin{center}
+	\includegraphics[scale=0.2]{screenshots/2026-06-19.png}
+	\end{center}
 	\begin{center}
 	\includegraphics[scale=0.3]{screenshots/2026-05-05_7png}
 	\end{center}
@@ -380,7 +383,7 @@ with $f$ being a nonlinear, element wise activation function.
 
 
 \begin{parag}{Dimensionality expansion}
-    Because the mapping is nonlinear, there is no reason to restrict (again...) the laten representation to be low dimensional. One can then perform dimensionality expansion 
+    Because the mapping is nonlinear, there is no reason to restrict (again...) the latent representation to be low dimensional. One can then perform dimensionality expansion 
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2026-05-05_13.png}
 	\end{center}
@@ -389,7 +392,7 @@ with $f$ being a nonlinear, element wise activation function.
 
 
 \begin{parag}{Denoising autoencoders}
-    Having a low-dimensional laten representation encourages the autoencoder to learn an '\textit{intelligent}' mapping. With dimensionality expansion, one could simply learn to copy the input. To avoid this, one can add noise to the input and aim to reconstruct a noise-free version of the input.
+    Having a low-dimensional latent representation encourages the autoencoder to learn an '\textit{intelligent}' mapping. With dimensionality expansion, one could simply learn to copy the input. To avoid this, one can add noise to the input and aim to reconstruct a noise-free version of the input.
 	\begin{center}
 	\includegraphics[scale=0.2]{screenshots/2026-05-05_14.png}
 	\end{center}

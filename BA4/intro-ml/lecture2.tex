@@ -121,7 +121,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 			\begin{align*} 
 				a^{T}b =  \sum_{i= 1}^{D}a_ib_i
 			\end{align*}
-			This give us therefor by definition of the gradient:
+			This give us by definition of the gradient:
 			\begin{align*} 
 				\nabla_b\left(a^{T}b\right) &= \begin{pmatrix} \frac{\partial a_1b_1}{\partial b_1}  \\ \frac{\partial a_2b_2}{\partial b_2}  \\ \vdots \\ \frac{\partial a_Db_D}{\partial b_D}  \end{pmatrix} \\
 				&= \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_D \end{pmatrix} = a
@@ -243,7 +243,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 			\item Test data
 			\item An evaluation metrics
 		\end{itemize}
-		We have already spoke about the test data, seperate from the training data, doesn't change the parameters of the model... On the other hand, we have never seen any evaluation metrics before, a value that could tell us wether or not our model is performing well out there in the real world.\\
+		We have already spoke about the test data, separate from the training data, doesn't change the parameters of the model... On the other hand, we have never seen any evaluation metrics before, a value that could tell us whether or not our model is performing well out there in the real world.\\
 		$ $\\
 		We have defined a loss function before, why not use it as the evaluation metrics? This function is $0$ if the model matches perfectly with all data points, the greater the loss function the greater the offset to the correct value our model is predicting.
 	\end{parag}
@@ -252,7 +252,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 	    \begin{align*} \text{MSE} = \frac{1}{N_t} \sum_{i = 1}^{N_t}\left(\hat{y}_i - y_i\right)^2 \end{align*}
 		Where $\hat{y}_i$ is the prediction for the test sample $i$ and $y_i$ is the corresponding ground-truth value.
 	    \end{definition}
-		We can also use the Square-root of the MSE.
+		We can also use the square-root of the MSE.
 	\end{parag}
 	\begin{parag}{Mean Absolute Error (MAE)}
 		\begin{definition}{Mean Absolute Error}
@@ -260,7 +260,7 @@ The derivative can also be measured for an infinitesimal change in $w$, starting
 			\text{MAE} =  \frac{1}{N_t}\sum_{i = i}^{N_t}\left\|\hat{y}_i - y_i\right\|
 		\end{align*}
 	    \end{definition}
-		Maybe it can be more intuitive to look at the error as a pourcentage:
+		Maybe it can be more intuitive to look at the error as a percentage:
 		\begin{definition}{Mean Absolute Percentage Error}
 		
 		\begin{align*} 
