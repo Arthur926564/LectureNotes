@@ -1,4 +1,3 @@
-[main.pdf](https://github.com/user-attachments/files/32142886/main.pdf)
 
 # Lecture notes
 
