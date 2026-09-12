@@ -1,0 +1,86 @@
+% !TeX program = lualatex
+% Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
+
+\documentclass[a4paper]{book}
+
+% Expanded on !p snip.rv = get_formatted_date() at !p snip.rv = get_formatted_time().
+
+\usepackage{style}
+
+\title{Introduction to quantum information processing \\ Prof. Macris Nicolas}
+\author{Arthur Herbette}
+\date{Monday 7 September 2026}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\large EPFL --- Fall 2026\par}
+    \vspace{0.5cm}
+    {\small COM-309\par}
+    
+    \vspace{2cm}
+    \rule{\linewidth}{0.4pt}
+    \vspace{0.4cm}
+    
+    {\huge\bfseries Introduction to quantum information processing\par}
+    \vspace{0.3cm}
+    {\large Prof.\ Macris Nicolas\par}
+    
+    \vspace{0.4cm}
+    \rule{\linewidth}{0.4pt}
+    
+    \vfill
+    
+    {by Arthur Herbette\par}
+    \vspace{0.3cm}
+    {\small Lecture notes --- Monday 7 September 2026\par}
+    
+    \vspace{2cm}
+\end{titlepage}
+This document was originally created for my own use, but I am sharing it because I believe it may be useful to others for studying and reference purposes. However mistake can happen and there will inevitably be some errors, if you found any, you are more than welcome to send me a message (Arthur Hbe on telegram) or to directly do a PR on the repo 
+\begin{center}
+	\texttt{\href{https://github.com/Arthur926564/LectureNotes}{https://github.com/Arthur926564/LectureNotes}}
+\end{center}
+
+If you think that something is missing or that something is not clear, I will be more than happy to add your modification to this document.\\
+$ $\\
+Unless otherwise stated, all material in these notes is based on the course content, including the diagrams, explanations, and examples.\\
+$ $\\
+Note also that these notes were taken during the lecture, but not only; some materials was added later (that's why you may read remarks that sounds like I knew the course before taking it).\\
+$ $\\
+Finally, thanks a lot to Joachim Favre for his help with the setup and whose style is used in this document.
+
+\newpage
+
+
+\tableofcontents
+\newpage
+
+\section*{Introduction}
+
+\begin{parag}{Overview of the course}
+	Quantum information processing is a sort of unification of the two followings fields: \textbf{physics} and \textbf{computer science}/ \textbf{communication}. Quantum physics is a new field of physics that emerged around 1900/1930, we found that that the behaviour of particle at a really small scale was really different of what we expected, uncertainty was the new discovery at atomic scale. We are not able to exactly predict how a particle behave even by knowing every information that could possibly be known.
+\end{parag}
+\begin{parag}{Documents}
+    The class materials are typed into lecture notes which covers this course and the quantum computation course CS-308 (chapters 9, 10, 11, 12, 13, 14).  
+\end{parag}
+
+
+\input{lecture1.tex}
+
+\section{References}
+
+\begin{parag}{Bibliographie}
+    \begin{itemize}
+        \item \textit{Michel Le Bellac}: \textit{A short introduction to quantum information and quantum computation}, Cambridge University press 2006. A small pedagogical book introducing physical aspects of the subject.
+        \item \textit{N. David Mermin}: \textit{Quantum Computer Science, An introduction}, Cambridge University press 2007. An introduction written by a physicist for computer scientists.
+        \item \textit{Neil Gershenfeld, The Physics of Information Technology}, Cambridge University Press 2000, An introduction to various phenomena, classical and quantum, underpinning information technologies.
+        \item \textit{Michael A. Nielsen and Isaac Chuang, Quantum Computation and Quantum Information}, Cambridge University Press 2000. Complete reference probably somewhat more advanced than these lectures.
+    \end{itemize}
+    
+\end{parag}
+
+
+\end{document}
