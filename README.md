@@ -1,3 +1,4 @@
+[main.pdf](https://github.com/user-attachments/files/32142886/main.pdf)
 
 # Lecture notes
 
@@ -21,7 +22,7 @@ For the first semester, I used overleaf to take my notes (yeah I know...).
 #### Remark
 During the second semester I changed my workflow, I now use neovim to write my notes and use snippets to allow me to go faster. All of this is possible because of Joachim Favre (again) and Gille Castel [How I manage my LaTeX notes](https://castel.dev/post/lecture-notes-3/)
 #### Analyse II -- Prof. Anna Lachowska
-- [Overleaf Analyse II](https://www.overleaf.com/read/hcfrbrtbtkfq#d26d64) |  [Analyse_II_Prof__Lachowska_Anna_EPFL.pdf](https://github.com/user-attachments/files/20511446/Analyse_II_Prof__Lachowska_Anna_EPFL.pdf)
+- [Overleaf Analyse II](https://www.overleaf.com/read/hcfrbrtbtkfq#d26d64) |  [Analyse_II_Prof__Lachowska_Anna_EPFL.pdf](https://github.com/user-attachments/files/32142886/main.pdf)
 
 #### Advanced Information Computation Communication II -- Prof. Michael Gastpar
 - [Overleaf AICC II](https://www.overleaf.com/read/rsgdckjsrrmf#3b69a9) | [AICC_II_Prof__Michael_Gastpar_EPFL.pdf](https://github.com/user-attachments/files/20511448/AICC_II_Prof__Michael_Gastpar_EPFL.pdf)
