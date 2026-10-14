@@ -1,0 +1,110 @@
+\section{Analysis of MZ interferometer 1}
+
+    Let us recall the experimental setup, first the Hilbert space: $\mathcal{H} = \mathbb{C}^2 = \left\{\alpha \ket{h} + \beta \ket{v}, \alpha, \beta \in \mathbb{C}\right\}$. Where $\ket{h} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} , \ket{v} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. Here the state represent the '\textit{path state}' of the given photon. Here the path state must also satisfy the normalization of the vector 
+	\begin{align*} 
+		\left|\alpha\right|^2 + \left|\beta\right|^2 = 1 
+	\end{align*}
+	The input state here is simply $\ket{h}$. The goal here is to see how this input state evolve in time. To do so let us recall the second principle which state that the evolution is given by a unitary matrices (when not measured). Hence the first semi-transparent mirror is represented by the \important{Hadamard} matrix:
+	\begin{align*} 
+		\frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}  = \frac{1}{\sqrt{2}} \left(\ket{h}\bra{h} + \ket{h}\bra{v} + \ket{v}\bra{h} - \ket{v}\bra{v}\right)
+	\end{align*}
+	And as we can see we effectively have $H H^{\dagger} = H^{\dagger} H = I$. \\
+	$ $\\
+	The output of the semi-transparent mirror is given by 
+	\begin{align*} 
+		H \ket{h}  = \frac{1}{\sqrt{2}} \left(\ket{h} + \ket{v} \right) = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} 
+	\end{align*}
+	\begin{parag}{Perfect mirror}
+	Let us continue with the second principle and see what the perfect mirrors do to our current quantum state. To see what they do let us first define them 
+	\begin{align*} 
+		X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}   = \ket{h}\bra{v} + \ket{v}\bra{h}
+	\end{align*}
+	As we can see, this unitary matrix behave as a logical negation meaning taking $X \ket{h}$ gives $\ket{v}$ and vis versa.
+	\end{parag}
+	\begin{parag}{Output of the reflection}
+	    Now let us see what is the output of the two mirrors together
+		\begin{align*} 
+			XH \ket{h} = \frac{1}{\sqrt{2}} \left(X \ket{h} + X \ket{v}\right) = \frac{1}{\sqrt{2}} \left(\ket{v} + \ket{h}\right)
+		\end{align*}
+		Finally, let us see what is the final state after the final semi-transparent mirror. As the first mirror, this one is also represented using the same unitary matrix $H$. To see the final state, we as before are required to apply $H$ to the current state which gives the following 
+		\begin{align*} 
+			HXH \ket{h} = \frac{1}{\sqrt{2}} \left(H \ket{v} + H \ket{h}\right) =  \frac{1}{\sqrt{2}} \left(\frac{\ket{h} - \ket{v}}{\sqrt{2}} \frac{\ket{h} + \ket{v}}{\sqrt{2}}\right) = \ket{h}
+		\end{align*}
+		\begin{subparag}{Remark}
+		The wave interpretation here would explain this as making the $D_2$ output being a destructive wave addition wheras the output into $D_1$ is constructive.
+		\end{subparag}
+	\end{parag}
+	\begin{parag}{Principle 4}
+	    Recall the principle: \textit{Measurement is done in a basis}, we will use $\left\{\ket{h}, \ket{v}\right\}$. Using this basis, one can use Born rule to compute the probability of each one being selected as 
+		\begin{align*} 
+			P\left(\ket{h} \text{ being selected}\right) = P\left(D_1, \text{clicks}\right) = \left|\braket{h}{h}\right|^2 =  1\\
+			P\left(\ket{v} \text{ being selected}\right) = P\left(D_2, \text{clicks}\right) = \left|\braket{v}{h}\right|^2 =  0
+		\end{align*}
+
+	\end{parag}
+
+
+	\begin{framedremark}
+	Let us first recall principle 3 which states that an \important{Observable} or quantity that I measure can be represented using a hermitian operator where each eigenvalues are an output and its correspondent eigenvector be the vector to compute the probability of the given output.\\
+	$ $\\
+	In our case the observable which can be called $C$ is defined the following way 
+	\begin{align*} 
+		C = \left(+1\right) \ket{h}\bra{h} + \left(-1\right)\ket{v}\bra{v}  = \begin{pmatrix} +1 & 0 \\ 0 & -1 \end{pmatrix} 
+	\end{align*}
+	\end{framedremark}
+	
+	
+
+\section{MZ interferometer 2}
+Here we now add \important{dephaser} which also are unitary matrices namely
+\begin{align*} 
+	P_1 = \begin{pmatrix} e^{i \phi_1} & 0 \\ 0  & 1  \end{pmatrix}  \\
+	P_2 =  \begin{pmatrix} 1 & 0 \\ 0 & e^{i \phi_2} \end{pmatrix} 
+\end{align*}
+Using those dephaser,the mirror now are also changed, namely
+\begin{align*} 
+	U_{st} =  \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & i \\ i & 1 \end{pmatrix} \\
+	U_{Riff} = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix} 
+\end{align*}
+As we can check, both $P_i$ matrices here share the same eigenbasis which implies that they are commutative which mean that the evolution in time can be computed the following way 
+\begin{align*} 
+	U_{st} U_{Riff} P_1 P_2 U_{st} \ket{h} = - \frac{e^{i \phi_2} + e^{i\phi_2}}{2} \ket{h} + i\left(\frac{e^{i \phi_1} - e^{i \phi_2}}{2}\right)\ket{v}
+\end{align*}
+Hence the probabilities are computed as 
+\begin{align*} 
+	P\left(D_1 \text{ clicks}\right) &= \left|\frac{e^{i \phi_2} + e^{i\phi_2}}{2}\right|^2 = \cos^2\left(\frac{\phi_1 - \phi_2}{2}\right)\\
+	P\left(D_2 \text{ clicks}\right) &= \left|\frac{e^{i \phi_2} - e^{i\phi_2}}{2}\right|^2 = \sin^2\left(\frac{\phi_1 - \phi_2}{2}\right)
+\end{align*}
+In this case, we can also define the following observable matrix 
+\begin{align*} 
+	C' = \left(+1\right) \ket{+}\bra{+} + \left(-1\right) \ket{-}\bra{-}
+\end{align*}
+
+
+\section{From electromagnetic to quantum mechanics}
+The way we have defined our qbit only took into account two directions. However why should we limit ourself to this? Polarization degree of freedom of a photons, spin of a particles can also be perfectly represented as qbits.\\
+\begin{parag}{Electromagnetic field}
+    First let us recall what is an electromagnetic field is, using Maxwell equations, the field can be defined using a magentic and electric field $\vec{B}$ and $\vec{E}$ respectively which vibrate into a plane normal to a given $\vec{z}$ direction. Using Maxwell equation, one can deduce $\vec{B}$ using only $\vec{E}$. Hence the field can be defined only using $\vec{E}$ which cen be defined the following way 
+	\begin{align*} 
+		\vec{E} = \text{Re}\left\{\vec{E}_0 e^{i\left(kz - \omega t\right)}\right\} 
+	\end{align*}
+	Where the $\vec{E}_0$ set the direction of the vibration of the field and the exponent defines the polarization. Which when taking this into a vector notation, we obtain 
+	\begin{align*} 
+		E_0 \begin{pmatrix} \cos \theta \\ \sin \theta e^{i \phi} \\ 0 \end{pmatrix}  
+	\end{align*}
+\end{parag}
+	Photons also retain a sort of '\textit{pole state}' defined as $\begin{pmatrix} \cos \theta \\ \sin \theta e^{i\phi} \end{pmatrix}  \in \mathbb{C}^2 =  \mathcal{H}$. As we can see here, we would like to define our state using the $x$-$y$ plane inside a plane. However this $e^{i\phi}$ gives us a problem here, what this factor implies physically is that the photon also disturb the $z-$plane. \\
+	$ $\\
+	To translate this into Dirac notation, we define it the following way 
+	\begin{align*} 
+		\cos \theta \ket{0} + \sin \theta e^{i\phi} \ket{1} 
+	\end{align*}
+	\begin{parag}{Example}
+		If for instance we define the case where $\phi = \frac{\pi}{2}$ and $\theta = \frac{\pi}{4}$ we get the following state
+		\begin{align*} 
+			 \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ \pm i \end{pmatrix} 
+		\end{align*}
+		Which as we can see implies that the polarization given by the $e^{i\phi}$ term can either rotate in both direction. Here as $\phi \neq 0$, we have that the blabla is rotating around the $z$ axis. The $\phi$ given here represent the polarization degree of freedom of our photon.
+	\end{parag}
+	
+
