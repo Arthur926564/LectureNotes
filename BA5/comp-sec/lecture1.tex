@@ -1,0 +1,159 @@
+\chapter{Introduction}%
+\label{cha:Introduction}
+\begin{parag}{What is computer security}
+    The first question that we'll answer is what are we studying in this course, what is this course about 
+	\begin{definition}{Computer Security}
+		\important{Properties} of a computer system must hold in the presence of a resourced strategic adversary.
+	\end{definition}
+\end{parag}
+\begin{parag}{What Properties?}
+    Traditional properties are such 
+	\begin{itemize}
+	    \item \important{Confidentiality} --- prevention of unauthorized disclosure of information (e.g. The adversary should not be able to read my bank statement)
+	    \item \important{Integrity} --- prevention of unauthorized modification of information (e.g. The adversary should not be able to change my bank balance)
+	    \item \important{Availability} --- prevention of unauthorized denial of service (e.g. The adversary should not prevent me accessing my bank account)
+	\end{itemize}
+	But there is also not-so-traditional (But important properties)
+	\begin{itemize}
+	    \item Authenticity
+	    \item Anonymity
+	    \item Isolation
+	    \item Non-repudiation
+	    \item $\vdots$
+	\end{itemize}
+\end{parag}
+
+\begin{parag}{The Security policy}
+	\begin{definition}{Security policy}
+    A high-level description of the \important{security properties} that must hold in the system in relation to \important{assets} and \important{principals}.
+    \end{definition}
+	\begin{itemize}
+	    \item \important{Assets} (objects): anything with value that needs to be protected
+	    \item \important{Principals} (subjects): people, computer program, services
+	\end{itemize}
+\end{parag}
+\begin{parag}{The resources strategic adversary}
+    Coming back on the definition of computer security, what do we mean by '\textit{resourced strategic adversary}'? To do so we need to define the \important{threat model}
+	\begin{definition}{Threat model}
+	Describes the \important{resources} available to the \important{adversary} and the adversary's capabilities (observe, influence, corrupt, ...)
+	\end{definition}
+	\begin{itemize}
+	    \item The \important{adversary} is a malicious entity aiming at breaching the security policy
+	    \item The \important{adversary} is \important{strategic}: the adversary will choose the \textbf{optimal} way to use her resource to mount an attack that violates the security properties.
+	\end{itemize}
+	(Threat modelling is a very hard task!)
+\end{parag}
+Here we have defined a lot of key vocabulary to talk about the adversary but we miss a few and here are those:
+\begin{definition}{Threat}
+What is the feared event, the goal of the adversary that we don’t want materialized
+\end{definition}
+For instance 
+\begin{center}
+    \textit{A hacker wants to retrieve money breaking into the bank’s system\\ A student wants to learn my password by looking over my shoulder}
+\end{center}
+
+\begin{definition}{Vulnerability}
+Specific weakness that could be exploited by adversaries with interest in a lot of different assets
+\end{definition}
+
+For instance 
+\begin{center}
+    \textit{The banking API is not protected. The password appears in plain text in my screen.}
+\end{center}
+
+\begin{definition}{Harm}
+The bad thing that happens when the threat materializes
+\end{definition}
+For instance
+\begin{center}
+    \textit{The adversary steals money, he blocks access to the bank\ldots}
+\end{center}
+
+All together this give if we were to expand the computer security definition 
+\begin{center}
+    Properties define by a security policy of a computer system must hold in presence of a resource strategic adversary described by the threat model
+\end{center}
+If the \important{properties} hold within the \important{threat model}, it means that there are no \textbf{Vulnerabilities} that can be exploited to materialize threats and no harms happens.
+
+\section{Basic concepts of security engineering}
+
+\begin{parag}{Securing a system}
+    In order to secure a system one needs a \important{security mechanism}
+	\begin{definition}{Security mechanism}
+	Technical mechanism used to ensure that the security policy is not violated by an adversary within the threat model
+	\end{definition}
+	This can be build with software (programs) + Hardware + Maths (cryptography) \& distributed systems, people and procedures. Security mechanisms can be engineered!
+	\begin{subparag}{Example 1}
+	    \textbf{Policy}:ensure the log of transactions is not tampered with by a single employee\\
+		\textbf{Mechanism}: encrypt the message before sending
+	\end{subparag}
+	\begin{center}
+		Systems are big! We need security mechanism\textbf{S}
+	\end{center}
+	Security does not necessarily increase linearly with the number of mechanisms. We could create hundred of walls with locked doors while hiding the key below the entrance carpet.
+\end{parag}
+
+\begin{parag}{How do we show systems are secure?}
+    Here we can see that there is a big asymmetry between the attacker and the defender. On the attacker case, we only need \important{one way} to violate \important{one} security property (within the threat model). The defender on the other hand need that \important{no adversary strategy} can violate the security policy.\\
+	$ $\\
+	Therefore one can see that the question '\textit{is this system secure?}' is not enough, the correct question is 
+	\begin{center}
+	    Is this system secure under \important{this} threat model?
+	\end{center}
+	A system is said 'secure' if an adversary constrained by a \important{Specific threat model} cannot violate the \important{security policy}.\\
+	$ $\\
+	Then in order to show that systems are secure we need arguments:
+	\begin{definition}{Security argument}
+	rigorous argument that the security mechanisms in place are indeed effective in maintaining the security policy (verbal of mathematical).\\
+	\begin{center}
+	    Subject to the assumptions of the threat model
+	\end{center}
+	\end{definition}
+	For a threat model to be useful, the model must constrain the adversary, otherwise we cannot make a security argument. One could just state: \textit{the adversary know everything and can do anything}.
+
+\end{parag}
+
+
+\begin{parag}{Security engineering}
+    In security engineering we have three steps 
+	\begin{enumerate}
+	    \item High-level specification
+				\begin{itemize}
+				    \item Define the architecture of the system (e.g., high level block diagram)
+				    \item Define the security policy (principals, assets, security properties)
+					\item Define the threat model 
+				\end{itemize}
+		\item  Security design
+			\begin{itemize}
+			    \item Select/Design security mechanisms
+			    \item State your security argument: which controls maintain which properties?
+			\end{itemize}
+		\item Secure implementation
+			\begin{itemize}
+			\item \important{Implement} mechanisms
+			\item Ensure they \important{conform} to the design model
+			\item Security testing
+			\end{itemize}
+	\end{enumerate}
+	\begin{subparag}{Summary}
+	    Security problems always involve an adversary.
+		\begin{itemize}
+			\item  The adversary is strategic, will take the most damaging approach
+			\item The adversary’s capabilities define a threat model
+			\item Security mechanisms aim at fulfilling a security policy within a threat model
+			\item Showing security implies providing a security argument
+		\end{itemize} 
+	\end{subparag}
+\end{parag}
+
+
+
+
+
+
+
+
+
+
+
+
