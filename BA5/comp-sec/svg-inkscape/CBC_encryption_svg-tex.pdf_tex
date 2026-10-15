@@ -1,0 +1,84 @@
+%% Creator: Inkscape 1.4.4 (dcaf3e7d9e, 2026-05-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'CBC_encryption_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{429.75bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.36814191)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.53182946,0.00580824){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Cipher Block Chaining (CBC) mode encryption\end{tabular}}}}%
+    \put(0.26520233,0.20072875){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}block cipher\\encryption\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.07965624,0.18796186){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Key\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.26581077,0.06776286){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Ciphertext\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.26537106,0.35223058){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Plaintext\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.58631926,0.20072875){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}block cipher\\encryption\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.40077319,0.18796186){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Key\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.5869277,0.06776286){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Ciphertext\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.58648799,0.35223059){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Plaintext\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.90743619,0.20072875){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}block cipher\\encryption\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.72189011,0.18796186){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Key\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.90804463,0.06776286){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Ciphertext\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{CBC_encryption_svg-tex.pdf}}%
+    \put(0.90760492,0.35223059){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Plaintext\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{CBC_encryption_svg-tex.pdf}}%
+    \put(-0.00205538,0.28634925){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Initialization Vector (IV)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{CBC_encryption_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%
