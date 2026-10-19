@@ -1,0 +1,121 @@
+\chapter{Introduction}
+
+\section{The linear algebra of qbits}
+
+\begin{parag}{Math of 2-level systems (Qbits)}
+	Two describe our system, we will need a vector space of two elements $\left(x_0, z_0\right)$. Furthermore, $x_0, z_0 \in \mathbb{C}$. In regular mathematical notation, we would just call our vector $\vec{s}$. On the other hand, quantum mechanics uses Dirac notation, we will call our vector:
+	\begin{align*} 
+		\ket{\phi} 
+	\end{align*}
+	\begin{subparag}{Ket}
+	To do so we will also need to define \important{basis} vectors, which we will call $\ket{0}, \ket{1}$. We can easily define them as 
+	\begin{align*} 
+		\ket{0} &= \begin{pmatrix} 1 \\ 0 \end{pmatrix}  \\
+		\ket{1} &=  \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+	\end{align*}
+	What this mean is that for any vector $\ket{\psi}$ we can always define it as 
+	\begin{align*} 
+		\ket{\psi}  = \alpha \ket{0} + \beta \ket{1}
+	\end{align*}
+
+
+	\end{subparag}
+	\begin{subparag}{Bra}
+		\begin{definition}{Bra}
+	    Given a vector $\ket{\phi} = \alpha \ket{0} + \beta \ket{1}$ we can define its \important{bra} as:
+		\begin{align*} 
+			\bra{\phi} = \ket{\phi}^{\dagger} = \beta^{\ast}\ket{0} + \alpha^{\ast} \ket{1}
+		\end{align*}
+		\end{definition}
+	\end{subparag}
+	\begin{subparag}{Qbit norm}
+	    For a given qbit, one require that its norm is $1$. Meaning given $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ one require that its inner product with itself equals $1$
+		\begin{align*} 
+			\braket{\psi}{\psi} =  \left(\alpha^{\ast} \mathspace \beta^{\ast}\right) \begin{pmatrix} \alpha \\ \beta \end{pmatrix} =  \left|\alpha\right|^2 + \left|\beta\right|^2 = 1
+		\end{align*}
+	\end{subparag}
+
+
+\end{parag}
+
+\begin{parag}{Measurement Postulate}
+    Given any physical measurements that is possible doing, the question that we are asking is what can we compute?\\
+	$ $\\
+	First to do so, we need to define what is a \important{measurement}. A \important{measurement} is an operator $O$ which goes from a given Hilbert space into the same Hilbert space. For a given space $\mathbb{C}^{n}$ an operator on a this space is a matrix inside $\mathbb{C}^{n \times n}$.
+	\begin{subparag}{Remark}
+	    We often like to put a hat above operator in order to have a difference between a scalar and an operator.
+	\end{subparag}
+	The question now is what is the outcome of our given measurement? The answer to this is the eigenvalues of our given operator.
+\end{parag}
+
+\begin{parag}{Example}
+	Let us have a quantum state which is represent as an arrow, and we want to measure the $z$-projection of our quantum state. To do so let us create the operator 
+	\begin{align*} 
+		\hat{O} = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  
+	\end{align*}
+	and then apply it to our $\ket{0}$ state 
+	\begin{align*} 
+		\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \left(+1\right)\begin{pmatrix} 1 \\ 0 \end{pmatrix} = +1 \ket{0}
+	\end{align*}
+	As we can see, $\ket{0}$ is an eigenvector with the eigenvalue $1$.\\
+	$ $\\
+	By doing the same thing for $\ket{1}$ we can also see that it is also an eigenvector with it's eigenvalue $-1$.
+\end{parag}
+\subsection{Postulate (Measurement)}
+
+
+    Let $A$ be a Hermitian operator on a Hilbert space $\mathcal{H}$ with non-degenerate spectrum, so that $A \ket{\lambda_i} = \lambda_i \ket{\lambda_i}$ for an orthonormal basis $\left\{\ket{\lambda_i}\right\}$. Let the system be in a normalized state $\ket{\phi} \in \mathcal{H}$. Then 
+	\begin{enumerate}
+	    \item The only possible outcomes of measuring $A$ are the eigenvalues $\lambda_i$, and these depend on $A$ alone
+		\item The outcome $\lambda_i$ occurs with probability $p\left(\lambda_i\right) = \left|\braket{\lambda_i}{\phi}\right|^2$
+		\item Immediately after an outcome $\lambda_i$ is obtained, the state of the system is $\ket{\lambda_i}$
+	\end{enumerate}
+	
+
+
+\begin{parag}{$ $}
+	The probability of outcome $\ket{x}$ and it's respective eigenvalue $\lambda_x$ is given by
+	\begin{align*} 
+		\text{Prob}(x) = \left|\braket{x}{\psi}\right|^2
+	\end{align*}
+	Let us start with $\ket{\psi} = \ket{0}$ We want to look for the probability of goin into each of our state $\ket{0}, \ket{1}$:
+	\begin{align*} 
+		P\left(\ket{0}\right) = \braket{0}{0} = 1\\
+		P\left(\ket{1}\right) = \braket{1}{1} = 1
+	\end{align*}
+	Now let us define another state given by 
+	\begin{align*} 
+		\ket{\psi} = \frac{1}{\sqrt{2}}  \ket{0} + \frac{1}{\sqrt{2}} \ket{1}
+	\end{align*}
+	If we want to compute the probability to be $\ket{1}$ or $\ket{0}$ when measuring with our projector $\hat{Z}$:
+	\begin{align*} 
+		P\left(\ket{1}\right)  = \left|\braket{\psi}{1}\right|^2 = \frac{1}{2}\\
+		P\left(\ket{0}\right)  = \left|\braket{\psi}{0}\right|^2 = \frac{1}{2}
+	\end{align*}
+	As we can see, in order to predict what our initial quantum state is, one would need to have many equal state in order to create a prediction of the probability distribution.\\
+	A note that is important here is that by '\textit{coincidence}' we have that the eigenvector of our $\hat{Z}$ are $\ket{0}$ and $\ket{1}$. What we can do to define our basis vector based on the eigenvector of our operator, which means that we don't have to define the eigenvector using numerically. To do so we can use the spectral theorem and state:
+	\begin{align*} 
+		\hat{Z}  = \left(+1\right) \ket{0}\bra{0} +  \left(-1\right)\ket{1}\bra{1}
+	\end{align*}
+	If your initial state is not a linear combination of the eigenvector of the operator, the state after measuring it using the operator will be updated with probabilities computed as above.
+    Hence we can define our operator as if $\ket{\psi}$ was one of its eigenvector. $\ket{\psi}$ also has a common notation:
+	\begin{align*} 
+		 \ket{\psi} =  \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} = \ket{+}
+	\end{align*}
+	With also it's correspondent eigenvector
+	\begin{align*} 
+		\ket{-} = \frac{1}{\sqrt{2}}  \ket{0} - \frac{1}{\sqrt{2}} \ket{1}
+	\end{align*}
+	Then define $X = \left(+1\right)\ket{+}\bra{+} + \left(-1\right)\ket{-}\bra{-}$ when measuring $X$ we are asking the question on the probability of the projection into those diagonal vector.\\
+	$ $\\
+	An interesting question now is starting from $\ket{\phi} = \ket{0}$ we want to study the question of measuring $X$. First of all, because we are asking about $X$ we know that the outcome state of our measurements will be either $\ket{+}$ or $\ket{-}$ with probabilities 
+	\begin{align*} 
+		P\left(\ket{+}\right)  &= \braket{0}{+}^2 = \frac{1}{2}\\
+		P\left(\ket{-}\right)  &= \braket{0}{+}^2 = \frac{1}{2}
+	\end{align*}
+\end{parag}
+
+
+
+
+

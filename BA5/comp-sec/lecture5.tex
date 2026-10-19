@@ -3,7 +3,9 @@
 
 \section{Introduction}
 \begin{parag}{Why cryptography matters?}
-    A lot of data need to move from one place to another while wanting to stay private (i.e. no one can stole the data during the trip). But not only, even data at rest (e.g. your password in your os) need also to not be accessible by a third party. To ensure this, one need to \important{encrypt} data.
+    A lot of data need to move from one place to another while wanting to stay private (i.e. no one can stole the data during the trip). But not only, even data at rest (e.g. your password in your os) need also to not be accessible by a third party. To ensure this, one need to \important{encrypt} data.\\
+	$ $\\
+	Cryptography allows to free you from physical security, it also reduces the TCB to the confidentiality of the key
 \end{parag}
 \begin{parag}{What can we do with cryptography}
     Cryptography is also the building block for:
@@ -29,7 +31,7 @@ information cannot be accessed by unauthorized parties
 \begin{center}
 \includegraphics[scale=0.4]{screenshots/2026-10-10.png}
 \end{center}
-The goal is that the \important{encryption} cannot be reversed without the use of the \important{key}.
+The \important{encryption} cannot be reversed without the use of the \important{key}.
 \begin{parag}{Cryptography as Functions}
     To have a more formal view of cryptography and being able to ensure confidentiality by proving it mathematically, let us define the encryption/decryption using functions. Here one should define
 	\begin{itemize}
@@ -183,7 +185,7 @@ get encrypted or a ciphertext to be decrypted.
 	\begin{align*} 
 		\text{Enc}\left(k, m\right) = m \oplus k 
 	\end{align*}
-	Here we that OTP  is \important{perfectly secure}.
+	Here we have that OTP  is \important{perfectly secure}.
 	\begin{itemize}
 	    \item For any ciphertext $C$, \important{every possible $M$ is equally likely}
 	    \item The key $k$ is uniformly random, so $C$ gives the adversary \important{zero new information} about $M$.
@@ -217,23 +219,15 @@ get encrypted or a ciphertext to be decrypted.
     Suppose Alice reuses the key $K$ to encrypt \important{two single-word english message of length 5}, $M_1$ and $M_2$, producing $C_1$ and $C_1$ 
 	\begin{align*} 
 		C_1 &=  M_1 \oplus K \\
-		C_2 = M_2 \oplus K
+		C_2 &= M_2 \oplus K
 	\end{align*}
-	The goal is to show that even can '\textit{likely}' recover the key and then the two messages $M_1$ and $M_2$. To do so let us multiply our two ciphertexts and use the commutativity of the xor operation 
-	\begin{subparag}{Development}
-		One can see it as one string $C =  C_1 + C_2$ which is encoded using $K + k$ meaning 
-		\begin{align*} 
-			C = \left(M_1 + M_2\right) \oplus \left(K + K\right) 
-		\end{align*}
-		Where $+$ is string concatenation. Here one could seek to show that $P\left(M = m | E_K\left(m\right) = c\right) > P\left(M = m\right)$ 
-		\begin{align*} 
-			P\left(M = m | E_K\left(m\right) c\right) &= \frac{P\left(M = m \cap E_K\left(m\right) = c\right)}{P\left(E_K\left(m\right) = c\right)} \\
-			&= \frac{P\left(M = m \cap \left(m_1 + m_2 \oplus K + K\right) = c_1 + c_2\right)}{P\left(E_K\left(m_1 + m_2\right) =  c_1 + c_2\right)}\\
-			&= \frac{P\left(M = m\right) \cdot  P\left(K + K =  m_1 + m_2 \oplus c_1 + c_2\right)}{P\left(K + K = m_1\right)}
-		\end{align*}
-		However here we have that $K' = K + K$ is not uniformly distributed hence
-		Things to fixhere
-	\end{subparag}
+	The goal is to show that even can '\textit{likely}' recover the key and then the two messages $M_1$ and $M_2$. To do so let us multiply our two ciphertexts and use the commutativity of the xor operation. Do so so, one can notice that 
+	\begin{align*} 
+		C_1 \oplus C_2 &=  \left(M_1 \oplus K\right) \oplus \left(M_2 \oplus K\right) \\
+					   &= M_1 \oplus M_2 \oplus K \oplus K \\
+					   &=  M_1 \oplus M_2
+	\end{align*}
+	Which reveals where the messages differ, hence one can do a frequency analysis on the ASCII patterns (space (00-) or letter (01-))
 \end{parag}
 
 
@@ -249,13 +243,26 @@ get encrypted or a ciphertext to be decrypted.
 
 \end{parag}
 
+\begin{parag}{Downsides of One Time Pad}
+    OTP is nice as it gives perfect secrecy, but if we think about it practically, this is not very useful, recall that the key has to be \important{as long as } the message, so imagine having to encrypts GiBs of data, one cannot just have a key that long. Also the key has to be pre-shared so one would need to find a way to have a key of the same sized being shared before hand.\\
+	$ $\\
+	Also in general 
+	\begin{itemize}
+	    \item Key \important{must} be random
+	    \item Key \important{cannot} be reused
+	    \item No integrity!
+	\end{itemize}
+	
+
+\end{parag}
+
 
 
 
 
 \section{From OTP to Stream Ciphers}
 \begin{parag}{Two Main Types of Symmetric Schemes}
-	\begin{definition}{Symmetric Schemes}
+	\begin{definition}{(Symmetric Schemes)}
 	Encryption of plaintext and decryption of ciphertext are done using the \important{same key}
 	\end{definition}
 	\begin{itemize}
