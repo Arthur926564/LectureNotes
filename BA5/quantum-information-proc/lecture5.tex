@@ -1,16 +1,19 @@
+\chapter{Quantum Entanglement}%
+\label{cha:Quantum Entanglement}
+
 \section{Concept of Entanglement}
 
-Let us define our total Hilbert space as $\mathcal{H}_{\text{total}} = \mathcal{H}_a \otimes \mathcal{H}_b$ (e.g. two quantum bits together $\mathcal{H}_a = \mathbb{C}^2, \mathcal{H}_b = \mathbb{C}^2$).
-\begin{definition}
+Let us define our total Hilbert space as $\mathcal{H}_{\text{total}} = \mathcal{H}_a \otimes \mathcal{H}_b$ (e.g. two quantum bits together $\mathcal{H}_a = \mathbb{C}^2, \mathcal{H}_b = \mathbb{C}^2$). Let us also recall the definition of the product state
+\begin{definition}{(Product state)}
 Product state $\ket{\varphi}$ are such that 
 \begin{align*} 
 	\exists \ket{\varphi_a} \in \mathcal{H}_a, \ket{\varphi_b} \in \mathcal{H}_b 
 \end{align*}
 such that $\mathcal{H}_{\text{total}} \in \ket{\varphi} = \ket{\varphi_a} \otimes \ket{\varphi_b}$
 \end{definition}
-What we mean is that a state is a product state if our state $\ket{\varphi}$ can be written as a tensor product between to state from each Hilbert space $\mathcal{H}_a$ and $\mathcal{H}_b$.
+What we mean is that a state is a product state if our state $\ket{\varphi}$ can be written as a tensor product between to state from each Hilbert space $\mathcal{H}_a$ and $\mathcal{H}_b$. Recallig also the definition of Entangled state
 
-\begin{definition}
+\begin{definition}{(Entangled states)}
 \important{Entangled states} are states which cannot be written as a tensor product of two state, state that are not product state.
 \end{definition} 
 
@@ -28,11 +31,11 @@ What we mean is that a state is a product state if our state $\ket{\varphi}$ can
 	\begin{align*} 
 		\ket{\psi} = \frac{1}{2}\left(\ket{00} - \ket{01} + \ket{10} + \ket{11}\right) 
 	\end{align*}
-	To prove that the state $\ket{\psi}$ is not a product state, we can do the following by contradiction. Assume that our state is entangled, then we know that there exists four coefficients such that 
+	To prove that the state $\ket{\psi}$ is not a product state, let us use contradiction. Assume that our state is a product state, then we know that there must exists four coefficients such that 
 	\begin{align*} 
 		\ket{\psi} = \left(\alpha \ket{0} + \beta \ket{1}\right) \otimes \left(\gamma \ket{0} + \delta \ket{1}\right) 
 	\end{align*}
-	Here one can just develop our four equalities giving us the following system 
+	Here one can just develop our four equalities (one for each $\ket{ij}$) giving us the following system of equations
 	\begin{align*} 
 		\begin{cases}
 			\alpha \gamma = \frac{1}{2} \\
@@ -48,9 +51,9 @@ What we mean is that a state is a product state if our state $\ket{\varphi}$ can
 	Which is a contradiction.
 \end{parag}
 
-
+Hence here we indeed find that some states cannot be written as product of other, so we have a sort of duality, the question that this arise is can we '\textit{quantify}' how much are a state entangled? We will be able to answer this question later in the course, however we will first introduces some states that we will see later are the '\textit{most}' entangled ones.
 \subsection{Bell states}
-There are four states that plays a special roles in quantum communication and information theory, namely in teleportation, dense coding but also in QKD and many more topics. Those state are the '\textit{maximum entangled}'\\
+There are four states that plays a special roles in quantum communication and information theory,  in teleportation, dense coding but also in QKD and many more topics. Those state are the '\textit{maximum entangled}'\\
 \begin{parag}{What are those?}
     The bell states form an orthogonal basis of the state of two qbits $\mathbb{C}^2 \otimes \mathbb{C}^2$. Those state are given as 
 	\begin{align*} 
@@ -82,7 +85,7 @@ There are four states that plays a special roles in quantum communication and in
 	\end{theoreme}
 	What this implies is that the entanglement here $\ket{B_{00}}$ is angle independent. In Alice's lab, the angle of our state locally is sort of '\textit{random}' but is the \important{same} as the state inside Bob's lab. What we mean here by that which we will see later is that the entropy of our angle in both labs are maximized.
 	\begin{subparag}{Remark}
-	    The prove for all $\theta$ is left to the reader.
+	    The prove for all $\theta \in \mathbb{R}$ is left to the reader.
 	\end{subparag}
 
 \end{parag}
@@ -90,12 +93,12 @@ There are four states that plays a special roles in quantum communication and in
 
 
 \subsection{Teleportation}
-Assume that we have Alice $A^{\text{earth}}$ on earth which has a photon in a state $\ket{\varphi}_1 = \alpha \ket{0}_1 + \beta \ket{1}_1$ where $\alpha, \beta \in \mathbb{C}$ are unknown.
+Assume that we have Alice $A^{\text{earth}}$ on earth which has a photon in a state $\ket{\varphi}_1 = \alpha \ket{0}_1 + \beta \ket{1}_1$ where $\alpha, \beta \in \mathbb{C}$ are unknown. Let us assume that are another state $\ket{B_{00}}$ in our system. The total composed system is then given as $\ket{\varphi}_1 \otimes \ket{B_{00}}_{23}$. Assume now that we have a source creating those two state ($\ket{\varphi}_1$ and $\ket{B_{00}}$) connected to Alice and Bob. Also assume that we have a classical communication channel between Alice and Bob :
 \begin{parag}{Protocol}
 	\begin{center}
 	\includegraphics[width=0.6\textwidth]{figures/2026-10-07.pdf}
 	\end{center}
-	Given our initial state $\ket{\varphi}_1 \otimes \ket{B_{00}}_{23}$ the goal of the protocol is to '\textit{teleport}' the state $\ket{\varphi}$ from $A$ to $B$, $\ket{\varphi}_1 \longrightsquigarrow \ket{\varphi}_3$ where we have the entangled state $\ket{B_{00}}$ being split with one qbit to Alice $\ket{\varphi}_2$ and the other to Bob $\ket{\varphi}_3$ (note that we say separate in the sense that one qbit is at Alice's location and the other at Bob's location and not as two separate states).
+	Given our initial state $\ket{\varphi}_1 \otimes \ket{B_{00}}_{23}$ the goal of the protocol is to '\textit{teleport}' the state $\ket{\varphi}$ from Alice to Bob, $\ket{\varphi}_1 \longrightsquigarrow \ket{\varphi}_3$ where we have the entangled state $\ket{B_{00}}$ being split with one qbit to Alice $\ket{\varphi}_2$ and the other to Bob $\ket{\varphi}_3$ (note that we say separate in the sense that one qbit is at Alice's location and the other at Bob's location and not as two separate states). The protocol for teleportation is given as follow :
 	\begin{subparag}{First step}
 	    Alice does a local measurement of her two qbits with apparatus that's equivalent to a Bell basis.
 	\end{subparag}
@@ -148,15 +151,21 @@ Assume that we have Alice $A^{\text{earth}}$ on earth which has a photon in a st
 \includegraphics[width=0.6\textwidth]{figures/2026-10-07_1.pdf}
 \caption{Dense coding protocol}
 \end{figure}
-The goal is that Alice transmits two classical bits to Bob using only one qbit.
+The goal is that Alice transmits two classical bits to Bob using only one qbit. A source prepare an EPR pair in state $\ket{B_{00}}$ with one particle sent to Alice and the other to Bob.
 \begin{parag}{Protocol}
     \begin{itemize}
         If Alice wants to send $00$, A will sends with $I_1$ and send the qbit to Bob $\implies$ Bob receives full EPR pair $\ket{B_{00}}_{\text{Bob}}$
-        \item If Alice want to send $01$, Alice will apply $X_1$ and send the qbit to Bob $\implies$ Bob receives $\left(X_1 \otimes I_2\right)\ket{B_{00} = \ket{B_{01}}}_{\text{Bob}}$
-        \item If Alice want to send $10$, Alice will apply $Z_1$ and send the qbit to Bob $\implies$ Bob receives $\left(Z_1 \otimes I_2\right)\ket{B_{00} = \ket{B_{10}}}_{\text{Bob}}$
-        \item If Alice want to send $11$, Alice will apply $Z_1X_1$ and send the qbit to Bob $\implies$ Bob receives $\left(Z_1X_1 \otimes I_2\right)\ket{B_{00} = \ket{B_{11}}}_{\text{Bob}}$
+	\item If Alice want to send $01$, Alice will apply $X_1$ and send the qbit to Bob $\implies$ Bob receives $\left(X_1 \otimes I_2\right)\ket{B_{00}} = \ket{B_{01}}_{\text{Bob}}$
+\item If Alice want to send $10$, Alice will apply $Z_1$ and send the qbit to Bob $\implies$ Bob receives $\left(Z_1 \otimes I_2\right)\ket{B_{00}} = \ket{B_{10}}_{\text{Bob}}$
+\item If Alice want to send $11$, Alice will apply $Z_1X_1$ and send the qbit to Bob $\implies$ Bob receives $\left(Z_1X_1 \otimes I_2\right)\ket{B_{00}} = \ket{B_{11}}_{\text{Bob}}$
     \end{itemize}
 	Finally, Bob Measure the full pair in the Bell basis which the output will be $\ket{B_{ij}}_{\text{received}}$ Where $ij$ is the bits that Alice sent.
     
 \end{parag}
 
+Let us work through the example when Alice wants to send $01$. In that case which the state that Bob will receive is 
+\begin{align*} 
+	\left(X_1 \otimes I_2\right) \frac{1}{\sqrt{2}}\left(\ket{00} + \ket{11}\right) &= \left(\left(\ket{0}\bra{1} + \ket{1}\bra{0}\right) \otimes \left(\ket{0}\bra{0} + \ket{1}\bra{1}\right)\right) \frac{1}{\sqrt{2}} \left(\ket{00}+\ket{11}\right)\\
+																					&= \frac{1}{\sqrt{2}}\left(\ket{1}\otimes \ket{0} + \ket{0} \otimes \ket{1}\right) = \ket{B_{01}}
+\end{align*}
+Now one could do it for all but I am too lazy!

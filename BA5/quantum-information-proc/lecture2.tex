@@ -1,3 +1,7 @@
+\chapter{Quantum Physics}%
+\label{cha:Quantum Physics}
+
+
 \section{Principles of Quantum Physics}
 In this section, we will introduce the principles in an axiomatic form. We will formulate them in algebraic manner appropriate for quantum information and computation in finite dimensional Hilbert space.
 \begin{parag}{Hilbert space}
@@ -89,7 +93,7 @@ One can show that unitary matrix represent rotation of the space by a specified 
 \end{framedremark}
 
 
-\begin{parag}{Example}
+\begin{parag}{Example: perfectly reflecting mirror}
     Let us take the example of a reflecting mirror :
 	\begin{center}
 	\includegraphics[width=0.6\textwidth]{figure/2026-10-19.pdf}
@@ -100,6 +104,265 @@ One can show that unitary matrix represent rotation of the space by a specified 
 	\end{align*}
 	For $\ket{H}= \begin{pmatrix} 1 \\ 0 \end{pmatrix} $ and $\ket{V} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} $. Let us take a step back on what is actually going on here. What a perfectly reflecting mirror with a tilted angle here reflect a ray that is normal  ($\braket{\psi_{t_1}}{\psi_{t_2}} = 0$) for the state after and before the mirror, so here we would require that $U\ket{H} = \ket{V}$ and vis versa which if you apply $X$ on any of those two states gives the intended results.
 \end{parag}
+\begin{parag}{Semi-transparent mirror}
+    Now let us define the same mirror but in this case we want '\textit{half}' of the rays to reflect off the mirror and the other half to go through it. Given the initial state $\ket{H}$ the output that we are looking for is $\frac{\ket{H} + \ket{V}}{\sqrt{2}}$. On the other hand given a vector $\ket{V}$ we want the final state $\frac{\ket{H} - \ket{V}}{\sqrt{2}}$
+	\begin{center}
+	\includegraphics[width=0.6\textwidth]{figure/2026-10-20.pdf}
+	\end{center}
+	The unitary matrix representing this operation is called the Hadamard matrix (gate) defined as 
+	\begin{align*} 
+		H = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}  
+	\end{align*}
+	\begin{framedremark}
+	One can find it using only the two conditions asked above. We require that $H\ket{H} = \frac{\ket{H} + \ket{V}}{\sqrt{2}}$ which implies that 
+	\begin{align*} 
+		H\ket{H} = \frac{1}{\sqrt{2}}\left(\ket{H} + \ket{V}\right)\bra{H}
+	\end{align*}
+	We also require tat $H\ket{V} = \frac{\ket{H} - \ket{V}}{\sqrt{2}}$ giving 
+	\begin{align*} 
+		H\ket{V} = \frac{1}{\sqrt{2}\left(\ket{H} - \ket{V}\right)\bra{\ket{V}}} 
+	\end{align*}
+	hence our matrix $H$ is given by 
+	\begin{align*} 
+		H &=  \frac{1}{\sqrt{2}}\left(\left(\ket{H} + \ket{V}\right)\bra{H} + \left(\ket{H} - \ket{V}\right)\bra{V}\right) \\&= \frac{1}{\sqrt{2}}\left(\ket{H}\bra{H} + \ket{V}\bra{H} + \ket{H}\bra{V} - \ket{V}\bra{V}\right)\\
+		&= \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} 
+	\end{align*}
+	\end{framedremark}
+\end{parag}
+
+\subsection{Principle 3: Observable quantities}
+\begin{center}
+An observable (or measurable) quantity (such as energy, position, momentum, magnetic moment, polarization) is given by an Hermitian matrix $A$ (i.e. $A^{\dagger} = A$)
+\end{center}
+
+\begin{parag}{Example}
+    Let us take for instance the example of a simple qbit in the Hilbert space $\mathbb{C}^2$. It can be easily shown that any hermitian matrix are of the form 
+	\begin{align*} 
+		A &= \begin{pmatrix} \alpha & \beta \\ \overline{\beta} & \gamma \end{pmatrix}  \\
+								   &= \alpha \ket{0}\bra{0} + \beta \ket{0}\bra{1} + \overline{\beta}\ket{1}\bra{0} + \gamma \ket{1}\bra{1}
+	\end{align*}
+	Such $2 \times 2$ matrices can be represented as linear combination of so-called Pauli matrices 
+	\begin{align*} 
+		I &= \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}  \\
+		\sigma_x &= X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\
+		\sigma_y &= Y = \begin{pmatrix} 0 & -i \\ 1 & 0 \end{pmatrix} \\
+		\sigma_z &= Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
+	\end{align*}
+	\begin{framedremark}
+		Pauli matrices have a lot of useful properties and are used in everywhere in quantum physics (\href{https://en.wikipedia.org/wiki/Pauli_matrices}{wiki}), there are very useful as they represent projection of a qbit on the axis $x, y, z$ when the qbit is represented on the Bloch sphere. Meaning that given the measurement of the qbit using this basis, one can deduce the projection of the qbit on those axis (on the Bloch sphere).
+	\end{framedremark}
+	\begin{subparag}{Exercises}
+	    One can show that any $2 \times 2$ matrices can be represented as a linear combination of those matrices, that is, for any $A$ s.t. $A =  A^{\dagger}$, $A$ can be written as 
+		\begin{align*} 
+			A = a_0 I + a_x \sigma_x + a_y \sigma_y + a_z \sigma_z 
+		\end{align*}
+		With $a_0, a_x, a_y, a_z \in \mathbb{R}$.
+	\end{subparag}
+\end{parag}
+\subsection{Spectral theorem for Hermitian matrices}
+Let $A$ be a $d \times d$ Hermitian matrix. Let $\ket{v_1}, \ldots, \ket{v_d}$ and $\lambda_1, \ldots, \lambda_d$ the eigenvectors and eigenvalues, i.e.
+\begin{align*} 
+	A \ket{v_i} = \lambda_i \ket{v_i} , \forall i = 1, \ldots d 
+\end{align*}
+The eigenvectors can always be chosen to form an orthonormal basis of $\mathbb{C}^{d}$ and the eigenvalues $\lambda_1, \ldots, \lambda_d$ are real ($\in \mathbb{R}$). Moreover, on can use the \important{spectral decomposition} giving 
+\begin{align*}
+	A = \sum_{i= 1}^{d} \lambda_i \bra{v_i}\ket{v_i} 
+\end{align*}
+\begin{framedremark}
+The last formula just says that in the basis $\ket{v_1}, \ldots, \ket{v_d}$ of eigenvectors, $A$ is diagonal with each $\lambda_i$ at the $A_{ii}$ positions.\\
+$ $\\
+Remark also that this definition is a lot useful here as it can be used to define functions applied to matrices. Let us for instance wanting to exponentiate our matrix $A$, meaning that we have a function $f$ (the exponential) and seek to find $f\left(A\right)$. One can define (with functional analysis) 
+\begin{align*} 
+	\exp\left(A\right) = \sum_{i= 1}^{d}\exp\left(\lambda_i\right) \ket{v_i}\bra{v_i} 
+\end{align*}
+This exponentiation here is pretty useful as one can therefore solve differential equation involving matrices (e.g. Schrödinger's equation).
+\end{framedremark}
+
+\subsection{Principle 4: Measurement postulate}
+\begin{center}
+    let $\ket{\psi}$ be a state of a system. Let $A$ be an observable that we measure.\\
+	The state of the measurement is a random outcome where the state becomes 
+	\begin{align*} 
+		\ket{v_i} \mathspace \mathspace \forall i = 1, \ldots d 
+	\end{align*}
+	The '\textit{value of $A$}' is $\lambda_i$ (associated to $\ket{v_i}$)\\
+	$ $\\
+	And the probability law is 
+	\begin{align*} 
+		P\left(i\right) = \left|\braket{v_i}{\psi}\right|^2 
+	\end{align*}
+	Given by the squared bracket between $\ket{\psi}$ and $\ket{v_i}$.
+\end{center}
+\begin{parag}{Second form of the measurement postulate often used in information theory}
+    \begin{center}
+		A measurement process is performed thanks to a 'measurement apparatus'. The measurement apparatus is modelled by an orthonormal basis of the Hilbert space $\left\{\ket{v_1}, \ket{v_2}, \ldots, \ket{v_d}\right\}$ and the measurement outcome is a random state $\ket{v_i}$ with $P\left(i\right) = \left|\braket{v_i}{\psi}\right|^2$
+    \end{center}
+	\begin{subparag}{Remark}
+	    The second form of the measurement postulate is used when we do not need to specify the observable being measured. Only the '\textit{measurement apparatus}' is specified i.e. an orthonormal basis.
+	\end{subparag}
+\end{parag}
+\begin{parag}{Property}
+    The probabilities in the measurement postulate sum to one, here is the proof
+	\begin{align*} 
+		\sum_{i= 1}^{d} P\left(i\right) &= \sum_{i= 1}^{d} \left|\braket{v_i}{\psi}\right|^2\\
+										&= \sum_{i= 1}^{d} \overline{\braket{v_i}{\psi}} \braket{v_i}{\psi}\\
+										&= \sum_{i= 1}^{d} \braket{\psi}{v_i}\braket{v_i}{\psi}\\
+										&=  \bra{\psi} \left(\sum_{i= 1}^{d}\ket{v_i}\bra{v_i}\right)\ket{\psi}\\
+										&= \braket{\psi}{\psi} = 1
+	\end{align*}
+	Here we have used the fact that $\sum_{i= 1}^{d}\ket{v_i}\bra{v_i} = I$.
+\end{parag}
+
+\subsection{Average value of an observable}
+Okay we have seen that we have now probability distribution over the eigenvectors of our observable, the question that this is raising is can we find a form of expected value? Well the answer is yes! and we can derive it ourself! For that let us recall the definition of the expected value in the classical case. Given a random variable $X$ we define its expected value as (kind of)
+\begin{align*} 
+	\mathbb{E}\left[X\right] = \sum_{i= 1}^{n} X_i P(X_i) 
+\end{align*}
+Here the probability are the defined $\overline{\braket{v_i}{\psi}}\braket{v_i}{\psi}$ and the result of the random variable are the $\lambda_i$ hence our expected value would be defined as 
+\begin{align*} 
+	\text{Av}\left(A\right) &= \sum_{i= 1}^{d}  \lambda_i \braket{\psi}{v_i} \braket{v_i}{\psi}\\
+							&= \bra{\psi}\left(\sum_{i= 1}^{d} \lambda_i\ket{v_i}\bra{v_i}\right)\ket{\psi}\\
+							&= \bra{\psi} A \ket{\psi}
+\end{align*}
+Which is a real value since $\lambda_i \in \mathbb{R}$ for any Hermitian matrix.
+
+\subsection{Heisenberg uncertainty principle}
+Let us define the mean square error (or the square root of the variance) of measurements for two observables $A$ and $B$:
+\begin{align*} 
+	\Delta A = \sqrt{\bra{\psi}A^2 \ket{\psi} - \bra{\psi}A\ket{\psi}^2} \\
+	\Delta B = \sqrt{\bra{\psi}B^2 \ket{\psi} - \bra{\psi}B\ket{\psi}^2}
+\end{align*}
+We have
+
+\begin{align*} 
+	\left(\Delta A\right)\left(\Delta B\right) \geq \frac{1}{2}\left| \bra{\psi}\left[A, B\right]\ket{\psi}\right| 
+\end{align*}
+Where $\left[A, B\right] \equiv AB - BA$ (the commutator)\\
+$ $\\
+What this property says that the foundations of $A$ and $B$ cannot simultaneously vanish if they do not commute (i.e. $\left[A, B\right] \neq 0$).
+
+
+\subsection{Principle 5: Composition of systems}
+Let $\mathcal{H}_A$ be the Hilbert space of a system $A$ and $\mathcal{H}_B$ be the Hilbert space of a system $B$. Then $\mathcal{H}_A \otimes \mathcal{H}_B$ is the Hilbert space of the composed system $A \bigcup B$. The state of the composed system is  similarly a vector in $\mathcal{H}_A \otimes \mathcal{H}_B$.
+\begin{parag}{Example}
+    Let us have the following spaces
+	\begin{align*} 
+		\mathcal{H}_A = \mathbb{C}^2\\
+		\mathcal{H}_B = \mathbb{C}^2
+	\end{align*}
+	With for instance $\mathcal{H}_A$ being the first qbit (e.g. first photon polarization) and $\mathcal{H}_B$ be the second qbit (e.g. second photon polarization). In that case states are of dimension $4$ and live inside $\mathbb{C}^2 \otimes \mathbb{C}^2$.
+\end{parag}
+
+\subsubsection{Mathematical interlude, Important definition}
+Before going down into composition of system, we need first to have notation for our new states, we need  product states and entangled states.
+\begin{definition}{(product states)}
+	Let $\ket{\psi} \in \mathcal{H}_A \otimes \mathcal{H}_B$. It is said to be a \important{product state} if there exists $\ket{\varphi_A} \in \mathcal{H}_A, \ket{\varphi_B} \in \mathcal{H}_B$ such that 
+	\begin{align*} 
+		\ket{\psi} = \ket{\varphi_A} \otimes \ket{\varphi_B} 
+	\end{align*}
+\end{definition}
+
+
+\begin{definition}{(Entangled states)}
+A state $\ket{\psi} \in \mathcal{H}_A \otimes \mathcal{H}_B$ is said to be \important{entangled} if it is not a product state.
+\end{definition}
+
+As we will see this classification of states plays a very important role in quantum information processing (e.g. quantum teleportation)
+
+\begin{parag}{Examples}
+    \begin{align*} 
+    	\ket{0} \otimes \ket{0}, \mathspace \ket{0} \otimes \ket{1} , \ket{1} \otimes \ket{0}, \ldots
+    \end{align*}
+	Are product states, one can also construct linear combination of such 
+	\begin{align*} 
+		\left(\frac{\ket{0} + \ket{1}}{\sqrt{2}}\right) \otimes \left(\frac{\ket{0} + \ket{1}}{\sqrt{2}}\right) = \frac{1}{2}\left(\ket{0} \otimes \ket{0} + \ket{0} \otimes \ket{1} + \ket{1} \otimes \ket{0} + \ket{1} \otimes \ket{1}\right)
+	\end{align*}
+	Is a product state. 
+	\begin{align*} 
+		\frac{1}{\sqrt{2}}  \left(\ket{0} \otimes \ket{0} + \ket{1} \otimes \ket{1}\right)
+	\end{align*}
+	On the other side is entangled (also called Bell state).
+\end{parag}
+
+
+\section{Geometrical representation of qbits and the Bloch sphere}
+
+Quantum state vectors belong to Hilbert space which consist of vectors with complex components. There are \important{note} vectors in usual Euclidean space and thus difficult to represent geometrically.\\
+For the particular of \important{one qbit} where is a convenient geomtrical representation which we will often use an given good intuition (for two qbits the situation is already more complicated and for multiple qbits (large) this constitutes an open problem).
+
+
+Hence, let us work through it for one qbit, recall that its space is $\mathcal{H} = \mathbb{C}^2$ 
+\begin{align*} 
+	\mathcal{H} =  \left\{\alpha \ket{0} + \beta \ket{1}; \alpha, \beta \in \mathbb{C}\right\}
+\end{align*}
+Where $\left|\alpha\right|^2 + \left|\beta\right|^2 = 1$. This implies that we have 4 real parameters with one constraints which implies that we only need 3 parameters to fully describe the space. In fact one should still remove one more parameter. The reason being that is the following :
+\begin{center}
+	\begin{align*} 
+		\ket{\psi}\mathspace \text{ and } \mathspace e^{i \gamma}\ket{\psi}  \mathspace \mathspace, \gamma \in \mathbb{R}
+	\end{align*}
+	are equivalent physically
+\end{center}
+Indeed $\gamma$ can't move the observed! To get an intuition about this recall that the probabilities in the measurement postulate satisfy the following 
+\begin{align*} 
+	\left|\braket{v_i}{\psi}\right|^2
+\end{align*}
+Now imagine that we where to shift the state by $e^{i \gamma}$ we would have the following probabilities 
+\begin{align*} 
+	\left|\bra{v_i}e^{i \gamma}\ket{\psi}\right| &= \left|e^{i \gamma}\right|^2 \left|\braket{v_i}{\psi}\right|^2\\
+													   &= \left|\braket{v_i}{\psi}\right|^2
+\end{align*}
+
+In reality this implies that we should state principle 1 in a more fundamental form stating that 
+\begin{center}
+    state vector of an isolated system are '\textit{rays}' in the Hilbert space e.g. $e^{i \gamma}\ket{\psi}$, $\gamma \in \mathbb{R}$.
+\end{center}
+\begin{framedremark}
+In $e^{ i \gamma}\ket{\psi}$ $\gamma$ is called a \important{global phase}. It \important{cannot be observed} but if you have $\ket{0} + e^{i \gamma}\ket{1}$ for example this is a \important{local phase}. And a local phase \important{can be observed} (e.g. in the interference experiments).
+\end{framedremark}
+
+Then for any qbit represented by the state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$, we can multiply by a global phase we arrive to make the component $\alpha$ real. What this gives is a grand total of $2$ parameters eventually.
+\begin{parag}{The canonical and useful parametrisation}
+    So we have a vector of \textit{norm} one and two free parameters. A good idea here would be to represent our state on a sphere based on those two parameters, let us define 
+	\begin{align*} 
+		\alpha =  \cos \frac{\theta}{2}; \mathspace \mathspace \beta = \left(\sin \frac{\theta}{2}\right)e^{i \phi} 
+	\end{align*}
+	Giving $\theta \in \left[0, \pi\right]$ and $\varphi \in \left[0, 2\pi\right]$.
+
+\end{parag}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{screenshots/2026-10-21.png}
+\caption{Representation of a qbit $\ket{\psi}$ on the Bloch sphere}
+\end{figure}
+
+\begin{framedremark}
+Let us state here useful notation for spin interpretation which will be use later, we define the '\textit{up state}' and '\textit{down state}' as
+\begin{align*} 
+	\ket{0} &=  \ket{\uparrow}\\
+	\ket{1} &= \ket{\downarrow}
+\end{align*}
+\end{framedremark}
+
+\begin{parag}{Property}
+    \begin{center}
+        Vectors that are orthogonal in $\mathbb{C}^2$ appear opposite on the Bloch sphere
+    \end{center}
+	For example let us take $\braket{1}{0} = 0$ and the same goes for $\braket{+}{-}$.\\
+    $ $\\
+	And as said before, unitary evolution present the norm of vectors. This implies that on the Bloch sphere \important{unitary evolution will appear as rotations of vectors on this sphere} (more on this later).
+\end{parag}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

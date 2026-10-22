@@ -1,13 +1,12 @@
 \section{Bell Inequalities}
-In this section we will cover only one inequality, the CHSH inequality which was first proposed in 1969. Let us first start with experimental setting, 
+In this section we will cover only one inequality, the CHSH inequality which was first proposed in 1969. Let us first start with the experimental setting :
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\textwidth]{figures/2026-10-14.pdf}
 \caption{Experimental Setting}
 \end{figure}
-
-Alice does measurements with the following basis :
+We have a source giving state to both Alice and Bob, the source produce a pair of photons. One to Alice and the other to Bob. Each Alice and Bob can choose with each of the following basis they can make a measurement with :
 \begin{align*} 
 	 &\begin{cases}
 	 	\ket{\alpha} = \cos \alpha \ket{ 0} + \sin \alpha \ket{ 1}\\
@@ -39,19 +38,26 @@ Which gives four possibilities
 	\left(\alpha, \beta'\right) &\to \left(a,b'\right)\\
 	\left(\alpha', \beta'\right) &\to \left(a', b'\right)
 \end{align*}
-Then after this they collect their strings A and B and communicate and exchange their results. After having collected everything, they will compute the \important{correlation coefficient} which is given as (knowing $N_1 \approx N_2 \approx N_3 \approx N_4 \approx \frac{N}{4}$)
+Let us also define the four possible experimental configurations 
+\begin{align*} 
+	1 = \left(\alpha, \beta\right), 2 = \left(\alpha, \beta'\right), 3 = \left(\alpha', \beta\right), 4 = \left(\alpha', \beta'\right) 
+\end{align*}
+What we will be doing in this experiment it to have a lot of '\textit{trials}' meaning we ask, for $n$ measurement we seek to do some sort of statistical analysis on the outcome of the experiment in order to deduce some kind of probability distribution.\\
+
+After having measured the outcome, Alice and Bob communicate and exchange their results. After having collected everything, they will compute the \important{correlation coefficient} which is given as (knowing $N_1 \approx N_2 \approx N_3 \approx N_4 \approx \frac{N}{4}$ which are the number of event in each experimental configurations) :
 \begin{align*} 
 	X^{\text{experimental}} = \frac{1}{N_1} \sum_{i_1 : \left(\alpha, \beta\right)} a_{i_1} b_{i_1} + \frac{1}{N_2} \sum_{i_2 : \left(\alpha, \beta'\right)}a_{i_2}b_{i_2}' - \frac{1}{N_3} \sum_{i_3 : \left(\alpha' ,\beta\right)} a_{i_3}'b_{i_3} + \frac{1}{N_4} \sum_{i_4 : \left(\alpha', \beta'\right)} a_{i_4}'b_{i_4}'
 \end{align*} 
 
+
 \begin{parag}{Theoretical prediction}
-    The theoretical prediction of our experiment is given as 
+    Now assume that we are in the case were we don't believe in the true randomness of quantum, meaning that we believe that if we were to know all that there is to know, The theoretical prediction of our experiment is given as 
 	\begin{align*} 
 		X^{\text{theory}} = \mathbb{E}_{\alpha \beta}\left(ab\right) + \mathbb{E}_{\alpha \beta'}\left(a b'\right) - \mathbb{E}_{\alpha' \beta}\left(a' b\right) + \mathbb{E}_{\alpha' \beta'}\left(a' b'\right)
 	\end{align*}
 	To be able to compute this we need to introduce the hidden variable local theory in order to give a view point of a '\textit{classical physicist}'.\\
 	$ $\\
-	What we are saying is that the outcome of a measurement of $\alpha$ into $a$ is given by the probability 
+	What we are saying is that the outcome of a measurement of $\alpha$ into $a$ is given by the probability.
 	\begin{align*} 
 		P_A\left(a | \alpha, \lambda\right) 
 	\end{align*}
@@ -82,9 +88,10 @@ Then after this they collect their strings A and B and communicate and exchange 
 		\mathbb{E}_{\alpha, \beta}\left(ab\right) &= \sum_{a, b =  \pm 1}ab \int d \lambda P\left(a, b| \alpha, \beta, \lambda\right)h\left(\lambda\right) \\
 												  &= \sum_{a, b = \pm 1} ab \int d \lambda P_A\left(a | \alpha, \lambda\right) P_B\left(b | \beta, \lambda\right)h\left(\lambda\right)
 	\end{align*}
-	Note that $h\left(\lambda\right) \geq 0$ and $\int h\left(\lambda\right)d \lambda = 1$, also adding the probability distribution of $a'$ and $b'$ (which shouldn't change anything as their sums are $1$).
+	Note that $h\left(\lambda\right) \geq 0$ and $\int h\left(\lambda\right)d \lambda = 1$, also let's add (magically) the probability distribution of $a'$ and $b'$ (which shouldn't change anything as their sums are $1$).
 	\begin{align*} 
-		= \sum_{a, a', b, b' \in \left\{\pm 1\right\}} ab \int d \lambda P_A\left(a' | \alpha', \lambda\right) P_A\left(a | \alpha,  \lambda\right)P_B \left(b' | \beta', \lambda\right) P_B\left(b | \beta, \lambda\right) h\left(\lambda\right)
+		&=  \sum_{a, b} ab \int d \lambda P_A\left(a| \alpha, \lambda\right) P_B\left(b| \beta, \lambda\right) \left[\sum_{a'}P_A\left(a'|\alpha', \lambda\right)\right] \left[\sum_{b'}P_B\left(b'| \beta', \lambda\right)\right]\\
+		&= \sum_{a, a', b, b' \in \left\{\pm 1\right\}} ab \int d \lambda P_A\left(a' | \alpha', \lambda\right) P_A\left(a | \alpha,  \lambda\right)P_B \left(b' | \beta', \lambda\right) P_B\left(b | \beta, \lambda\right) h\left(\lambda\right)
 	\end{align*}
 	Let us now define 
 	\begin{align*} 
@@ -155,6 +162,24 @@ Which therefore implies that quantum mechanics cannot be represented using the h
 		Which implies that the following distribution \important{cannot} be factorized. We therefore say that quantum mechanics is \important{non-local}.
 	\end{subparag}
 \end{parag}
+	\begin{parag}{Development}
+	    Let us develop here what we have first:
+	\end{parag}
+		\begin{align*} 
+			A \otimes B \ket{B_{00}}  &= \left(\ket{\alpha}\bra{\alpha} - \ket{\alpha_\perp}\bra{\alpha_\perp}\right) \otimes \left(\ket{\beta}\bra{\beta} - \ket{\beta_\perp}\bra{\beta_\perp}\right) \frac{1}{\sqrt{2}}\left(\ket{00} + \ket{11}\right)\\
+									  &= \left(\left( \cos \alpha \ket{0} + \sin \alpha \ket{1}\right)\left(\cos \alpha \bra{0} + \sin \alpha \bra{1}\right) - \left(-\sin \alpha \ket{0} + \cos \alpha \ket{1}\right)\left(-\sin \alpha \bra{0} + \cos \alpha \bra{1}\right)\right) \\
+									  &\mathspace \otimes \left(\left( \cos \beta \ket{0} + \sin \beta \ket{1}\right)\left(\cos \beta \bra{0} + \sin \beta \bra{1}\right) - \left(-\sin \beta \ket{0} + \cos \beta \ket{1}\right)\left(-\sin \beta \bra{0} + \cos \beta \bra{1}\right)\right) \frac{1}{\sqrt{2}}\left(\ket{00} + \ket{11}\right)\\
+									  &= \left(\cos^2 \alpha \ket{0}\bra{0} + \cos \alpha \sin \alpha \left(\ket{0}\bra{1} + \ket{1}\bra{0}\right) + \sin^2 \alpha \ket{1}\bra{1}\right)\\
+									  &\mathspace \mathspace - \left(\sin^2 \alpha \ket{0}\bra{0} - \sin \alpha \cos \alpha \left(\ket{0}\bra{1} + \ket{1}\bra{0}\right) + \cos^2 \alpha \ket{1}\bra{1}\right)\\
+									  &\mathspace \otimes   \left(\cos^2 \beta \ket{0}\bra{0} + \cos \beta \sin \beta \left(\ket{0}\bra{1} + \ket{1}\bra{0}\right) + \sin^2 \beta \ket{1}\bra{1}\right)\\
+									  &\mathspace \mathspace - \left(\sin^2 \beta \ket{0}\bra{0} - \sin \beta \cos \beta \left(\ket{0}\bra{1} + \ket{1}\bra{0}\right) + \cos^2 \beta \ket{1}\bra{1}\right)\ket{B_{00}}\\
+									  &= \left(\cos^2 \alpha + \cos \alpha \sin \alpha - \sin^2 \alpha - \sin \alpha \cos \alpha\right)\ket{0} + \left(\sin^2 \alpha + \cos \alpha \sin \alpha -\sin \alpha \cos \alpha - \cos^2 \alpha\right)\ket{1}\\
+									  &= \left(\cos^2 \alpha - \sin^2 \alpha\right)\ket{0} + \left(\sin^2 \alpha - \cos^2 \alpha\right)\ket{1}
+		\end{align*}
+		Now applying the inner product with $\bra{B_{00}}$ gives 
+		\begin{align*} 
+			\frac{1}{\sqrt{2}} \left(\bra{00} + \bra{11}\right)\left(\left(\cos^2 \alpha - \sin^2 \alpha\right)\ket{0} + \left(\sin^2 \alpha - \cos^2 \alpha\right)\ket{1}\right) &= 
+		\end{align*}
 
 Suppose that the source distributes a state $\ket{\varphi_A} \otimes \ket{\varphi_B}$, we ask ourselves what should be $X^{\text{QM, tensor prod}}$? Can this be bounded by $\pm 2$? (exercise)
 

@@ -1,4 +1,36 @@
-\section{Analysis of MZ interferometer 1}
+\section{Application of the interference experiments}
+The goal of this section if to illustrate the application of the principle to a few interference experiments. This will allows to better understand them on one hand, as well as have concrete examples of qbits, before we go on to communication protocols in the next few sections.
+
+\subsection{Example of qbits}
+Let us take the example of path states inthe Mach-Zehender experiments. Recall the simple MZ interferometer of the first lecture :
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{figure/2026-10-22.pdf}
+\caption{MZ interferometer experiment}
+\end{figure}
+Where the rectangle here are semi-transparent mirror and lines are reflecting mirror. A '\textit{toy}' model for the Hilbert space is $\mathcal{H} = \mathbb{C}^2 = \left\{\alpha \ket{H} + \beta \ket{V}\right\}$ where
+\begin{align*} 
+	\ket{H} &= \begin{pmatrix} 1 \\ 0 \end{pmatrix} =   \text{ horizontal path state of photon}\\
+	\ket{V} &=  \begin{pmatrix} 0 \\ 1 \end{pmatrix}  =  \text{ vertical path state of photon}
+\end{align*}
+With $\alpha, \beta \in \mathbb{C}$ such that $\left|\alpha\right|^2 + \left|\beta\right|^2 = 1$.
+
+\begin{parag}{Polarization of photons}
+    
+Photons carry with them a \important{polarization} vector which is analogous to the polarization of the electromagnetic vector. We will see that this is described by vectors of $\mathbb{C}^2 = \mathcal{H}$. Thus the polarization of photons is a quantum bit. The description of terms of qbit is '\textit{exact}' this time (i.e. this is not a toy model approximation).
+\end{parag}
+
+\begin{parag}{Spin $\frac{1}{2}$}
+    Many particles (e.g. electrons, photons, some nuclei) carry a small magnetic dipole whose state vector is described by a vector in $\mathcal{H} = \mathbb{C}^2$. \\
+	This is analogue (but different) to polarization of photons. We will come back to spin later in the class when we sill study its interaction with magnetic fields. Again here we have an '\textit{exact qbit}'.
+\end{parag}
+\begin{parag}{Two level systems}
+Just like atoms have energy level corresponding to different orbital states, many systems are described by some net of '\textit{energy level}'.\\
+Often one can isolate how important levels from the set of spectrum and model the system to a good approximation by $e$ qbit with Hilbert space $\mathbb{C}^2$.
+\end{parag}
+Hence after this parenthesis, let us go back to our experiment and try to analyse it.
+
+\subsection{Analysis of MZ interferometer 1}
 
     Let us recall the experimental setup, first the Hilbert space: $\mathcal{H} = \mathbb{C}^2 = \left\{\alpha \ket{h} + \beta \ket{v}, \alpha, \beta \in \mathbb{C}\right\}$. Where $\ket{h} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} , \ket{v} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. Here the state represent the '\textit{path state}' of the given photon. Here the path state must also satisfy the normalization of the vector 
 	\begin{align*} 
@@ -52,28 +84,53 @@
 		C = \left(+1\right) \ket{h}\bra{h} + \left(-1\right)\ket{v}\bra{v}  = \begin{pmatrix} +1 & 0 \\ 0 & -1 \end{pmatrix} 
 	\end{align*}
 	\end{framedremark}
+	\begin{framedremark}
+	The whole experiment has a '\textit{circuit interpretation}'. Quantum circuit constitute a representation of quantum algorithms (see in the second semester CS-308)
+	\end{framedremark}
 	
 	
 
 \section{MZ interferometer 2}
-Here we now add \important{dephaser} which also are unitary matrices namely
+Let us look at the following variation of the preceding interferometer :
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{figure/2026-10-22_1.pdf}
+\caption{MZ interferometer 2}
+\end{figure}
+\begin{itemize}
+    \item $\varphi_1$ is a '\textit{dephaser}' which changes the '\textit{phase}' of a photon by $\ket{H} \to e^{i \varphi_1}\ket{H}$
+    \item $\beta_2$ is a '\textit{dephaser}' which changed the '\textit{phase}' of a photon by $\ket{V} \to e^{i \varphi_2}\ket{V}$
+\end{itemize}
+Their corresponding unitary operation are
 \begin{align*} 
 	P_1 = \begin{pmatrix} e^{i \phi_1} & 0 \\ 0  & 1  \end{pmatrix}  \\
 	P_2 =  \begin{pmatrix} 1 & 0 \\ 0 & e^{i \phi_2} \end{pmatrix} 
 \end{align*}
-Using those dephaser,the mirror now are also changed, namely
+Now for the perfectly reflecting mirrors and semi-transparent one can choose the following operator in order to model them :
 \begin{align*} 
 	U_{st} =  \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & i \\ i & 1 \end{pmatrix} \\
-	U_{Riff} = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix} 
+	U_{r} = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix} 
 \end{align*}
 As we can check, both $P_i$ matrices here share the same eigenbasis which implies that they are commutative which mean that the evolution in time can be computed the following way 
 \begin{align*} 
-	U_{st} U_{Riff} P_1 P_2 U_{st} \ket{h} = - \frac{e^{i \phi_2} + e^{i\phi_2}}{2} \ket{h} + i\left(\frac{e^{i \phi_1} - e^{i \phi_2}}{2}\right)\ket{v}
+	U_{st} U_{r} P_1 P_2 U_{st} \ket{h} = - \frac{e^{i \phi_2} + e^{i\phi_2}}{2} \ket{h} + i\left(\frac{e^{i \phi_1} - e^{i \phi_2}}{2}\right)\ket{v}
 \end{align*}
 Hence the probabilities are computed as 
 \begin{align*} 
-	P\left(D_1 \text{ clicks}\right) &= \left|\frac{e^{i \phi_2} + e^{i\phi_2}}{2}\right|^2 = \cos^2\left(\frac{\phi_1 - \phi_2}{2}\right)\\
-	P\left(D_2 \text{ clicks}\right) &= \left|\frac{e^{i \phi_2} - e^{i\phi_2}}{2}\right|^2 = \sin^2\left(\frac{\phi_1 - \phi_2}{2}\right)
+	P\left(D_1 \text{ clicks}\right) &= \left|\bra{H}\ket{\psi_{\text{final}}}\right|^2 = \left|\frac{e^{i \phi_1} + e^{i\phi_2}}{2}\right|^2\\
+									 &= \frac{\left|1 + e^{i\left(\varphi_2 - \varphi_2\right)}\right|^2}{4}\\
+									 &= \frac{1}{4}\left[\left(1 + \cos\left(\varphi_2 - \varphi_1\right)\right)^2 + \sin^2 \left(\varphi_1 - \varphi_2\right)\right]\\
+									 &= \frac{1}{2}\left(1 + \cos \left(\varphi_2 - \varphi_1\right)\right)\\
+									 &= \left[\cos \left(\frac{\varphi_1 - \varphi_2}{2}\right)\right]^2\\
+									 &= \cos^2\left(\frac{\varphi_1 - \varphi_2}{2}\right)
+\end{align*}
+Similarly we compute 
+\begin{align*} 
+	P\left(D_2 \text{ clicks}\right)  &=  \left|\bra{V}\ket{\psi_{\text{final}}}\right|^2 = \frac{1}{4}\left|e^{i \varphi_1} - e^{i \varphi_2}\right|^2\\
+									  &= \frac{1}{4}\left|1 - e^{i\left(\varphi_2 - \varphi_1\right)}\right|^2\\
+									  &= \frac{1}{4}\left[\left(1 - \cos\left(\varphi_2 - \varphi_1\right)\right)^2 + \left(\sin\left(\varphi_2 - \varphi_1\right)\right)^2\right]\\
+									  &= \frac{1}{2}\left(1 - \cos\left(\varphi_2 - \varphi_1\right)\right)\\
+									  &= \left(\sin\left(\frac{\varphi_1 - \varphi_2}{2}\right)\right)^2
 \end{align*}
 In this case, we can also define the following observable matrix 
 \begin{align*} 
@@ -81,7 +138,30 @@ In this case, we can also define the following observable matrix
 \end{align*}
 
 
-\section{From electromagnetic to quantum mechanics}
+\subsection{From electromagnetic to quantum mechanics}
+\begin{parag}{Photon polarization}
+    Electromagnetic waves carry a degree of freedom called '\textit{polarization}'
+\end{parag}
+	\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figure/2026-10-22_2.pdf}
+	\caption{Electromagnetic Wave}
+	\end{figure}
+
+\begin{parag}{$ $}
+    Where the $\left(x, y\right)$ place is orthogonal to $z$. We have that the $\left(\vec{E}, \vec{B}\right)$ fields oscillate in the plane perpendicular to the direction of propagation. This can be modelled as follow 
+	\begin{align*} 
+		\vec{E}\left(z, t\right) = \text{Re}\left\{\vec{E}_0 e^{i\left(kz - \omega t\right)}\right\} 
+	\end{align*}
+	Where $k = \frac{2\pi}{\lambda}, \omega = 2\pi \nu$, where $\lambda = $ wavelength, $\nu = $ frequency. With finally 
+	\begin{align*} 
+		\vec{E}_0 =  \underbrace{E_0}_{\in \mathbb{R}} \begin{pmatrix} \cos \theta \\ \sin \theta e^{i \phi} \\ 0 \end{pmatrix} 
+	\end{align*}
+	\begin{subparag}{Linear polarization}
+	    In the case $\phi = 0$ the $\vec{E}-$field oscillates along $\theta$ direction in the $\left(x, y\right)$ plane, I don't have the strength to do all diagram of the course here so for this part I will invite you to check out the lecture notes, Chapter 2.1-2.4 of notes
+	\end{subparag}
+\end{parag}
+
 The way we have defined our qbit only took into account two directions. However why should we limit ourself to this? Polarization degree of freedom of a photons, spin of a particles can also be perfectly represented as qbits.\\
 \begin{parag}{Electromagnetic field}
     First let us recall what is an electromagnetic field is, using Maxwell equations, the field can be defined using a magentic and electric field $\vec{B}$ and $\vec{E}$ respectively which vibrate into a plane normal to a given $\vec{z}$ direction. Using Maxwell equation, one can deduce $\vec{B}$ using only $\vec{E}$. Hence the field can be defined only using $\vec{E}$ which cen be defined the following way 
