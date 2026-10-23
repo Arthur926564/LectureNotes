@@ -3,9 +3,23 @@
 
 \section{Quantum Key Distribution}
 
-This section is about quantum key distribution (QKD) protocol of Bennet and Brassard 1984 (BB84) for the \important{generation of common one-time pad shared by two distant parties Alice and Bob}.
-\begin{parag}{One-time pads}
-    This is a sequence of secret bits $z_1, z_2, \ldots, z_m$, $z_i \in \left\{0, 1\right\}$ shared by Alice and Bob (which are supposed to be at two distant locations). It is used as follows:
+This section is about quantum key distribution (QKD) for the \important{generation of common one-time pad shared by two distant parties Alice and Bob}. The goal is to use quantum information in order to reliably share bits between two or ore distant parties. The goal is to do this while insuring privacy of the bit being transmitted, to do so, we use qubit which have the property of non-cloning. If you have done last week exercise, you will know that given any non-orthogonal state, there is no unitary operation for which one can copy the state. Formally this can be written as there is no unitary operator $U \in \mathcal{H}$ which for all state $\ket{\psi}$ gives 
+\begin{align*} 
+	U \ket{\psi} \otimes \ket{\text{blank}}  = \ket{\psi} \otimes \ket{\psi}
+\end{align*}
+An even more general proposition can be done which state that  
+\begin{center}
+    In any attempt to distinguish between two non-orthogonal quantum states, information gain is only possible at the expense of introducing disturbance to the signal.
+\end{center}
+(This is taken from Nielsen and Chuang, the proof is also there (Sec. 12.6.3)).\\
+$ $\\
+What this implies is that one can use that fact in order to protect the states: One can create redundant qubits which we will serve as a test in which Alice and Bob will check for any disturbance of the states if they found disturbance (outside of errors), then Alice and Bob know that there has been an eavesdropper. Hence it is important to have non-orthogonality in the state being transmitted.
+
+
+\begin{framedremark}
+
+
+    Let us first recall here what one-time-pad is. This is a sequence of secret bits $z_1, z_2, \ldots, z_m$, $z_i \in \left\{0, 1\right\}$ shared by Alice and Bob (which are supposed to be at two distant locations). It is used as follows:
 	\begin{itemize}
 	    \item If Alice has a message $m_1m_2\ldots m_M$ to communicate, she encodes it as 
 			\begin{align*} 
@@ -18,7 +32,10 @@ This section is about quantum key distribution (QKD) protocol of Bennet and Bras
 			This scheme of encrypting is theoretically a secure scheme if the one-time pad is i.i.d. (independent identically distributed) uniformly random and is used only once.
 			\item The trouble is how to distribute it to Alice and Bob and make sure it is not intercepted
 	\end{itemize}
-\end{parag}
+
+
+\end{framedremark}
+
 \begin{center}
     The point of the QKD is that we do not distribute the one-time pad but generate it directly in the labs of Alice and Bob.
 \end{center}

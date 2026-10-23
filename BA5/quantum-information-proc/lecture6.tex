@@ -184,52 +184,55 @@ Which therefore implies that quantum mechanics cannot be represented using the h
 Suppose that the source distributes a state $\ket{\varphi_A} \otimes \ket{\varphi_B}$, we ask ourselves what should be $X^{\text{QM, tensor prod}}$? Can this be bounded by $\pm 2$? (exercise)
 
 
+
+
+
+
+
 \section{Ekert (1991) QKD protocol}
+The goal of this protocol is also to generate a shared key for the one-time pad. This time we use entanglement: a Bell test lets Alice and Bob detect an eavesdropper and bound the information she can have about the key.\\
+$ $\\
+\begin{parag}{Setup}
+    Alice and Bob share, at each time instant, a Bell pair in state $\ket{B_{00}}$. Measuring along angle $\theta$ means using the basis $\{\ket{\theta}, \ket{\theta_\perp}\}$ with $\ket{\theta} = \cos\theta\ket{0} + \sin\theta\ket{1}$. For $i = 1, \ldots, N$:
+    \begin{itemize}
+        \item Alice measures her qubit along an angle chosen at random from $\alpha_1 = -\frac{\pi}{4}, \alpha_2 = -\frac{\pi}{8}, \alpha_3 = 0$.
+        \item Bob measures his qubit along an angle chosen at random from $\beta_1 = -\frac{\pi}{8}, \beta_2 = 0, \beta_3 = \frac{\pi}{8}$.
+        \item Alice records $x_i = \pm 1$ according to the outcome $\alpha$ or $\alpha_\perp$.
+        \item Bob records $y_i = \pm 1$ according to the outcome $\beta$ or $\beta_\perp$.
+    \end{itemize}
+    All of this is done without communication. For $\ket{B_{00}}$,
+    \[
+        P(x_i = y_i) = \cos^2(\alpha - \beta), \qquad E(\alpha, \beta) = \langle x_i y_i \rangle = \cos 2(\alpha - \beta).
+    \]
+\end{parag}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/2026-10-14_2.pdf}
 \caption{Ekert protocol}
 \end{figure}
 
+\begin{parag}{Public communication phase}
+    After all qubits have been measured, Alice and Bob publicly announce their basis choices for each $i = 1, \ldots, N$, and sort the rounds:
+    \begin{itemize}
+        \item \textbf{Test rounds}: $(\alpha_3, \beta_3), (\alpha_3, \beta_1), (\alpha_1, \beta_1), (\alpha_1, \beta_3)$. They publicly reveal their outcomes for these rounds and estimate
+        \[
+            S = E(\alpha_3, \beta_3) + E(\alpha_3, \beta_1) + E(\alpha_1, \beta_1) - E(\alpha_1, \beta_3).
+        \]
+        Each correlator is only $\pm\frac{1}{\sqrt{2}}$, but the combination gives $S = 2\sqrt{2}$, the maximal quantum value. If $S \leq 2$, the correlations could be classical (pre-determined values Eve could copy): abort. If $S$ is close to $2\sqrt{2}$, the pairs are close to maximally entangled, and by monogamy of entanglement Eve's information is small. These rounds are then discarded, since their outcomes are public.
+        \item \textbf{Key rounds}: $(\alpha_3, \beta_2)$ and $(\alpha_2, \beta_1)$. Their outcomes are never revealed.
+        \item The remaining three combinations are discarded.
+    \end{itemize}
+\end{parag}
 
-\begin{itemize}
-    \item Alice and Bob keep secret the basis in which they will do the measurement and have either $0$ or $1$ giving $x_i = 0, 1$ and $y_i = 0, 1$.
-\end{itemize}
-Alice will have the angles
-\begin{align*} 
-	\alpha_1 &=  -\frac{\pi}{4} \\
-	\alpha_2 &= - \frac{\pi}{8}\\
-	\alpha_3 &= 0
-\end{align*}
-Bob will have 
-\begin{align*} 
-	\beta_1 &=  -\frac{\pi}{8} \\
-	 \beta_2 &=  0\\
-	 \beta_3 &= -\frac{\pi}{8}
-\end{align*}
-
-Alice and Bob reveal the basis choices for the angles $\alpha_1, \alpha_3, \beta_1, \beta_3$. They compute $X^{\text{experimental}}=  2 \sqrt{2}$ which is correct only if there is no eavesdropper. We can then produce an OTP by taking bits for angles 
-\begin{align*} 
-	\left(\alpha_2, \beta_1\right) &= \left(-\frac{\pi}{8}, - \frac{\pi}{8}\right) \\
-	\text{and }\left(\alpha_3, \beta_2\right) &= \left(0, 0\right)
-\end{align*}
-In which we have $x_i = y_i$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{parag}{Secret key generation}
+    In the key rounds the settings are
+    \begin{align*}
+        \left(\alpha_3, \beta_2\right) \mathspace &\text{ or }\mathspace \left(\alpha_2, \beta_1\right) \\
+        \left(0, 0\right) \mathspace &\text{ or } \mathspace \left(-\frac{\pi}{8}, -\frac{\pi}{8}\right)
+    \end{align*}
+    Since the angles are equal, $P(x_i = y_i) = \cos^2(0) = 1$: ideally $x_i = y_i$. Mapping $\pm 1 \mapsto 0, 1$ gives the shared key. The values of these bits are never made public. In practice, noise (and Eve) cause a few mismatches, so the key is finished with error correction and privacy amplification, which shortens it according to how far $S$ is below $2\sqrt{2}$.
+\end{parag}
 
 
 

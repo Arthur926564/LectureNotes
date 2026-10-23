@@ -1,7 +1,7 @@
 % !TeX program = lualatex
 % Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
 
-\documentclass[a4paper]{book}
+\documentclass[a4paper, openany]{book}
 
 % Expanded on !p snip.rv = get_formatted_date() at !p snip.rv = get_formatted_time().
 
@@ -77,17 +77,33 @@ Finally, thanks a lot to Joachim Favre for his help with the setup and whose sty
 
 \newpage
 
-\section{References}
+\renewcommand{\refname}{References}
 
-\begin{parag}{Bibliographie}
-    \begin{itemize}
-        \item \textit{Michel Le Bellac}: \textit{A short introduction to quantum information and quantum computation}, Cambridge University press 2006. A small pedagogical book introducing physical aspects of the subject.
-        \item \textit{N. David Mermin}: \textit{Quantum Computer Science, An introduction}, Cambridge University press 2007. An introduction written by a physicist for computer scientists.
-        \item \textit{Neil Gershenfeld, The Physics of Information Technology}, Cambridge University Press 2000, An introduction to various phenomena, classical and quantum, underpinning information technologies.
-        \item \textit{Michael A. Nielsen and Isaac Chuang, Quantum Computation and Quantum Information}, Cambridge University Press 2000. Complete reference probably somewhat more advanced than these lectures.
-    \end{itemize}
-    
-\end{parag}
+\begin{thebibliography}{9}
 
+\bibitem{lebellac2006}
+  Michel Le Bellac,
+  \emph{A Short Introduction to Quantum Information and Quantum Computation}.
+  Cambridge University Press, Cambridge, 2006. \\
+  \small A short pedagogical book introducing the physical aspects of the subject.
 
+\bibitem{mermin2007}
+  N. David Mermin,
+  \emph{Quantum Computer Science: An Introduction}.
+  Cambridge University Press, Cambridge, 2007. \\
+  \small An introduction written by a physicist for computer scientists.
+
+\bibitem{gershenfeld2000}
+  Neil Gershenfeld,
+  \emph{The Physics of Information Technology}.
+  Cambridge University Press, Cambridge, 2000. \\
+  \small An introduction to the classical and quantum phenomena underpinning information technologies.
+
+\bibitem{nielsen2000}
+  Michael A. Nielsen and Isaac L. Chuang,
+  \emph{Quantum Computation and Quantum Information}.
+  Cambridge University Press, Cambridge, 2000. \\
+  \small The complete reference; somewhat more advanced than these lectures.
+
+\end{thebibliography}
 \end{document}
