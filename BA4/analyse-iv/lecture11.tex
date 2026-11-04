@@ -216,9 +216,9 @@ What we want to decompose is a function $f: \left[0, L\right] \to \mathbb{R}$ in
 	\end{align*}
 	Where $a_n$ and $b_n$ are defined as above, where $f: \left[0, L\right] \to \mathbb{R}$ is piecewise continuous. Then 
 	\begin{align*} 
-		f_N\left(x\right) \to f\left(x\right) \text{ as } N \to \infty \mathspace \text{ at every } x \in \left[0, L\right]\\
-		f_N\left(x\right) \to \frac{f\left(x +\right) + f\left(x - \right)}{2} \mathspace \text{ when } x \text{ is a jump discontinuity of }f\\
-		\lim_{N \to \infty} \int_0^{L}\left|f_N\left(x\right) - f\left(x\right)\right|dx = 0
+		&f_N\left(x\right) \to f\left(x\right) \text{ as } N \to \infty \mathspace \text{ at every } x \in \left[0, L\right] \text{ where } f \text{ is differentiable}\\
+		&f_N\left(x\right) \to \frac{f\left(x +\right) + f\left(x - \right)}{2} \mathspace \text{ when } x \text{ is a jump discontinuity of }f\\
+		&\lim_{N \to \infty} \int_0^{L}\left|f_N\left(x\right) - f\left(x\right)\right|dx = 0
 	\end{align*}
 	\end{theoreme}
 	The definition of the $f\left(x +\right)$ and $f\left(x -\right)$ are designed in such that when we have a discontinuity, we are effectively taking the mean of those two points

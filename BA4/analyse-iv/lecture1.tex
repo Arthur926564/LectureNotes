@@ -164,9 +164,9 @@ And as we already know, $\mathbb{C}$ is not an ordered field, $2 + i$ cannot be 
 $ $\\
 One of the reason on why $\mathbb{C}$ has come up is that the field $\left(\mathbb{R}, +, \cdot \right)$ is \important{not algebraically closed}. We can find polynomials with real coefficient which don't have real roots. $x^2 + 1$ has not root over $ \mathbb{R}$. This is a major issue, we need to find a field which is algebraically closed. The question now that was asked: does $\left(\mathbb{R}^2, +\right)$ (which is already an abelian group) can be turned into a field $\left( \mathbb{R}^{2}, +, ?\right)$? And what about $\left(\mathbb{R}^{n}, +\right)$ is there a way to 'create' a multiplication which would be suitable?\\
 $ $\\
-For $n = 1$ this is just the real number. For $n = 2$ the resulting field you will get is $\mathbb{C}$. For $n =  4$ the answer is the Hamilton group (kind of) and the same for $n = 8$. For all other number it is just \important{impossible}! And this is pretty bizarre, it worked for $1, 2, 4, 8$ and then it stopped.
+For $n = 1$ this is just the real number. For $n = 2$ the resulting field you will get is $\mathbb{C}$. For $n= 4$ a Quaternions which are a division ring, since multiplication isn't commutative. Octonions for $\left(n = 8\right)$ which aren't even associative. We have things for $n= 1, 2, 4, 8$ but then it stopped.
 \begin{theoreme}
-	If we can create a field on $ \mathbb{R}^2$ then 
+	If we can create a field on $ \mathbb{R}^2$ with an $\mathbb{R}$-bilinear multiplication, then 
 	\begin{align*} \exists z \in\left(\mathbb{R}^{2}, +, \cdot \right) \text{ s.t. } z^2 =  -1 \end{align*}
 \end{theoreme}
 \begin{proof}
@@ -240,7 +240,7 @@ For $n = 1$ this is just the real number. For $n = 2$ the resulting field you wi
 		\end{proof}
 		Now our goal is to proof there exists a $y$ such that $\left(a + \frac{b^2}{4}\right)y^2 = -1$. We can set
 		\begin{align*} 
-			y := \frac{1}{-\sqrt{a + \frac{b^2}{4}}}, \mathspace \mathspace x = \frac{-b}{2}y
+			y := \frac{1}{\sqrt{-\left(a + \frac{b^2}{4}\right)}}, \mathspace \mathspace x = \frac{-b}{2}y
 		\end{align*}
 		This directly implies that:
 		\begin{align*} 
@@ -263,7 +263,7 @@ Now we can define our field $\mathbb{C}$:
 	$\mathbb{C}$ is algebraically closed
 
 \begin{theoreme}
-	Any $P \in \mathbb{C}\left[X\right]$ non-zero (not the zero polynomial) has at least a root in $\mathbb{C}$.
+	Any $P \in \mathbb{C}\left[X\right]$ non-constant has at least a root in $\mathbb{C}$.
 \end{theoreme}
 \begin{proof}
     To prove this we will do it by contradiction. Assume that $P$ is a non-constant polynomial and suppose it \important{has no root} in $\mathbb{C}$. Then this implies that:
@@ -415,8 +415,6 @@ This theorem doesn't work in $ \mathbb{R}$ a function can be infinitely differen
 	\end{cases}
 \end{align*}
 This is $C^{\infty}$ everywhere, but its Taylor series at $0$ is identically $0$, so it fails to represent $f$ near $0$\\
-$ $\\
-P.S: this comes from me reading a book and not understanding what analytic means and asking an AI what it is and what is the difference between analytic and holomorphic.
 \end{framedremark}
 \begin{definition}
 If $f$ is holomorphic on $\mathbb{C}$, we call f \important{entire}.

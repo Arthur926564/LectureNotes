@@ -13,15 +13,18 @@ be holomorphic. Then, $u, v \in C^{1}\left(w\right)$ (the space of differentiabl
 Those equation are called Cauchy-Riemann equations.
 \end{definition}
 \begin{theoreme}
-If the relation:
-\begin{align*} 
-	\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}  \\
-	\frac{\partial u}{\partial y}  &= -\frac{\partial v}{\partial x} 
-\end{align*}
-holds then $f$ is holomorphic
+	Let $\omega \subseteq \mathbb{C}$ open, $f : \omega \to \mathbb{C}$. Let
+	\begin{align*} 
+		z = x + iy \to f\left(z\right) = u\left(x, y\right) + v\left(x, y\right)i 
+	\end{align*}
+	Be holomorphic. Then $u, v \in C^{1}\left(\omega\right)$ and 
+	\begin{align}\label{Cauchy-Riemann}
+		\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}\mathspace \text{ and } \mathspace\frac{\partial u}{\partial y}  =  - \frac{\partial v}{\partial x} 
+	\end{align}
+	Conversely, if (\ref{Cauchy-Riemann}) hold then $f$ is holomorphic.
 \end{theoreme}
 
-\begin{parag}{Proof of the indirect implication '$\impliedby$'}
+\begin{parag}{Proof of the direct implication '$\implies$'}
 	Suppose that $f$ is holomorphic on $w$, therefore, $\forall z_0 \in w$ we have:
 	\begin{align*} 
 		f'\left(z_0\right) =  \lim_{z \to z_0} \frac{f\left(z\right) - f\left(z_0\right)}{z - z_0} \mathspace \text{ exists}
@@ -222,11 +225,22 @@ More precisely, computing $\log z$ for $z =  x + iy$ with $x > 0$:
 It is easy to verify that $\log$ is holomorphic on $\mathbb{C} \setminus \left\{Im = 0, Re \leq 0\right\}$ and $\left(\log z\right)' = \frac{1}{z}$
 \end{framedremark}
 \begin{parag}{logarithm rules}
-    As nice as it seems to be, we still have the same logarithm rules as in the real case namely
+    As nice as it seems to be, we don't have the same logarithm rules as in the real case
 \begin{align*}
 	\log\left(z_1z_2\right) &= \log\left(z_1\right) + \log\left(z_2\right)\\
 	\log\left(z^{\gamma}\right) &= \gamma\log \left(z\right) \mathspace \mathspace \gamma \in \mathbb{C}
 \end{align*}
+\begin{subparag}{Example}
+    If $z_1 =  z_2 =  -1$ then $\log z_1 =  \log z_2 =  i\pi$. (since $e^{i\pi}= -1$). Yet we have that $\log\left(z_1z_2\right) =  0 \neq\log\left(z_1\right) + \log \left(z_2\right)$. Similarly 
+	\begin{align*} 
+		\log \left(z_1^2\right) \neq 2\log\left(z_1\right) 
+	\end{align*}
+		However these rules remain true up to $2\pi i\mathbb{Z}$:
+		\begin{align*} 
+			\log\left(z_1z_2\right) - \log z_1 - \log z_2 \in 2\pi i \mathbb{Z} \\
+			\log\left(z^{\gamma}\right) - \gamma \log \left(z\right) \in 2\pi i \mathbb{Z}
+		\end{align*}
+\end{subparag}
 
 \begin{subparag}{Differentiation}
 	The principal logarithm function $w =  \log z$ is a continuous inverse for $z = e^{w}$  for $-\pi < \text{arg }w < \pi$. Since $e^{w}$ is holomorphic and $\left(e^{w}\right)' \neq 0$. We can conclude that $\log z$ is holomorphic. Let us compute its derivative:
@@ -262,17 +276,6 @@ Since $\left(w^2\right)' = 2w$ is not zero for $w \neq 0$, the continuous invers
 
 
 \end{framedremark}
-\begin{parag}{Example}
-    If $z_1 =  z_2 =  -1$ then $\log z_1 =  \log z_2 =  i\pi$. (since $e^{i\pi}= -1$). Yet we have that $\log\left(z_1z_2\right) =  0 \neq\log\left(z_1\right) + \log \left(z_2\right)$. Similarly 
-	\begin{align*} 
-		\log \left(z_1^2\right) \neq 2\log\left(z_1\right) 
-	\end{align*}
-		However these rules remain true up to $2\pi i\mathbb{Z}$:
-		\begin{align*} 
-			\log\left(z_1z_2\right) - \log z_1 - \log z_2 \in 2\pi i \mathbb{Z} \\
-			\log\left(z^{\gamma}\right) - \gamma \log \left(z\right) \in 2\pi i \mathbb{Z}
-		\end{align*}
-\end{parag}
 
 
 
