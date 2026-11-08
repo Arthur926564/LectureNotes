@@ -84,9 +84,6 @@ The use cases of hash function are vast, in order to support digital signatures,
 	    \item \important{Integrity}: $M$ wasn't modified. Changing $M$ changes $h\left(M\right)$, so the old signature no longer verified it.
 	\end{itemize}
 \end{parag}
-\begin{framedremark}
-Note that Preimage resistance is not needed here, as the message $m$ is already sent in public.
-\end{framedremark}
 
 \begin{parag}{All together}
     Now let us have both the encryption of the message and the signature so that we ensure, privacy and authentication. This implies that each users have \important{two pairs} of keys (2 $\times$ secret key, 2 $\times$ public key). In that case \important{confidentiality} is ensured as before with the ciphertext

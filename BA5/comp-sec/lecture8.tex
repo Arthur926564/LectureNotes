@@ -1,0 +1,163 @@
+\section{Adversarial thinking, Attacks and defenses}
+
+\begin{parag}{Why do we study (and simulate) attacks}
+	The first reason is a \important{deeper understanding of defense}: Very good attackers make very good defenders (and vice versa). Mediocre attackers, make extremely poor defenders (find some attacks...).\\ 
+	$ $\\
+    Another reason is job opportunity: penetration testing (pentesting) is a \important{major} industry. However always recall that the lack of found attacks does \important{not} guarantee that the system is secure!
+	\begin{subparag}{Remark}
+	    Remember you cannot freely hack around...
+	\end{subparag}
+\end{parag}
+
+\begin{parag}{The security engineering process}
+	Recall the following process
+    \begin{enumerate}
+        \item Define a security policy (principals, assets, properties) and a threat model. However here the adversary can exploit
+			\begin{itemize}
+			    \item Misidentified principals, assets, or properties
+			    \item Capabilities beyond what is considered in threat model (more access or more computational/algorithmic capabilities)
+			\end{itemize}
+        \item Define a security mechanisms that support the policy given the threat model. Adversary can exploit 
+			\begin{itemize}
+			    \item Design weaknesses/flaws in the security mechanisms
+			\end{itemize}
+			
+        \item Build an implementation that supports/ embodies the mechanisms. Adversary can exploit
+			\begin{itemize}
+			    \item Implementation or operation problems that allow you to subvert mechanisms
+			\end{itemize}
+			
+    \end{enumerate}
+    
+\end{parag}
+
+
+\begin{parag}{The attack engineering process}
+    The goal here it to exploit misidentified assets in the security policy.
+	\begin{subparag}{Example 1 - Extracting keys from Hardware Secure Modules (HSMs)}
+		Given the following policy: HSMs implement PKCS\#11 standard for interoperability, there is an API to create \important{internally} a new key from the secret key: Given \texttt{bits\_length} and \texttt{offset}, it uses \texttt{bits\_length} of the secret key from position \texttt{offset}.\\
+		$ $\\
+		Here let us assume a strong key exists in the HSM. We then ask the HSM to derive a new key of length 1 byte at offset 0. We then use the new key to do an operation, say HMAC on a known input (allowed by the HSM), we can then brutefors the key (input known, output known, key only 1 bytes) and then repeat with keys at different offsets until we have discovered the full key.
+	\end{subparag}
+
+	\begin{subparag}{Example 2- From cable to the Air}
+	    Here we have an Engine Control Units (ECU) that controls the vehicle. ECU is connected to GSM/WiFi which gives a remote adversary access to the CAN bus and all the (safety) functions of the vehicle
+	\end{subparag}
+
+	\begin{subparag}{Example 3 - IoT devices are a Weak Link}
+	    IoT weakly protected devices connected to internet can lead to hackers compromising the Smart  Grid with ~100k devices.
+	\end{subparag}
+
+	\begin{subparag}{Example 3 Unilateral User Authentication in GSM}
+	    When GSM was designed atenna (Base Trasceiver Stations - BTS) they were difficult to implement and expensive to build. Thus, operators decided that the network did not need to authenticate! Nowadays commodity hardware can be used to fake base station and perform a min in the middle.
+	\end{subparag}
+
+	\begin{subparag}{Example 4 - the ML and AI revolution}
+	    The power of inference at your fingertips! Apparently irrelevant information becomes critical for the security system. Break better and faster!\\
+		$ $\\
+		Machine learning substitutes complex modelling tasks by data collection, and modern LLM-based AI enables easy vulnerability discovery and exploitation. However that revoluion \important{also} works for the good guys!!
+		\begin{itemize}
+		    \item Improved malware detection
+		    \item Predicting zero days (unknown vulnerabilities)
+		    \item Identifying vulnerable devices
+		    \item Automated log analysis
+		\end{itemize}
+		
+	\end{subparag}
+\end{parag}
+
+
+\begin{parag}{Exploiting security mechanisms design weaknesses}
+    \begin{subparag}{Example 1 - Weak cryptographic primitives}
+        Tesla Model S – Key Fob algorithm to start the car allows to recover key in seconds (with pre-computation) GSM – A5/1 and A5/2 weak allow ciphertext only attacks Can be real time by FPGA parallel computation!
+    \end{subparag}
+	In both cases the algorithms were secret, but researchers reverse engineered them. Once the algorithms were known researchers identified vulnerabilities that allowed them to decrypt and read messages, and even recover the key
+	\begin{center}
+	    Security by obscurity is a bad idea --- Open design principle
+	\end{center}
+	
+\end{parag}
+
+
+
+\begin{parag}{Exploiting bad operation decisions to subvert security mechanisms}
+    
+	\begin{subparag}{Example 1 WEP bad use of RC4}
+	   WEP uses RC4, a secure stream cipher when the IV is random. \\
+	   $ $\\
+	   In WEP the IV is defined to have 24 bit. The implementation uses this 24 bits in such a way that the IV is repeated every 5000 / 6000 frames! Adversary can accelerate the attack by spoofing MAC addresses to ask for more frames 
+	\end{subparag}
+\end{parag}
+
+
+\begin{parag}{Exploint implementation flaws to subvert security mechanisms}
+    
+	\begin{subparag}{Example 2 - Bugs, bugs and more bugs}
+	    Programmers make mistakes
+		\begin{itemize}
+		    \item They forget checks, or check the wrong thing
+		    \item They do not sanitize, or do not sanitize correctly
+		    \item They forget to protect what needs to be protected
+		    \item They get confused about origin or reliability of data/ variables (Ambient authority and confused deputy)
+		\end{itemize}
+		
+	\end{subparag}
+\end{parag}
+
+
+
+
+\subsection{Reasoning as a defender}
+
+\begin{center}
+    \textbf{Idea}: help security engineers reason about threats to a system: “\textit{What can go wrong?}"
+\end{center}
+
+
+\begin{parag}{Threat modelling}
+	\begin{definition}{(Threat modelling)}
+   Process to identify potential threats and unprotected resources with the goal of prioritizing problems to implement security mechanisms. 
+    \end{definition}
+	\begin{subparag}{Systematic analysis}
+	    \begin{itemize}
+	        \item What are the most relevant threats?
+	        \item What kind of problems can threats result in?
+	        \item Where should I put more effort to protect?
+	    \end{itemize}
+	\end{subparag}
+	\begin{subparag}{Attack trees}
+	    The attack goal is the root, and the ways to achieve this goal are represented by the branches. The leafs are the weak resources
+	\end{subparag}
+	\begin{subparag}{STRIDE}
+	    Identify system entities, events, and the boundaries of the system. Reason about threats enumerating the type of threats that can be embodied by the adversary
+	\end{subparag}
+	\begin{subparag}{P.A.S.T.A.}
+	    Start from business goals, processes, and use cases.\\
+		Find threats within business model, assess impact, and prioritize based on risk
+	\end{subparag}
+\end{parag}
+
+\begin{parag}{Reasoning about attacks STRIDE (by Microsoft)}
+    
+\end{parag}
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+		Threat & Property threatened & Example \\
+		\hline 
+		\important{S}poofing & Authenticity & A member of the council of Rick convinces Morty that he is the real Rick \\
+		\hline 
+		\important{T}ampering & Integrity & The bad minion modifies the plan message send by Gru to our favorite minion Bob \\
+		\hline
+		\important{R}epudiation & Non-repudiation & Summer denies have told Morty that Rick was waiting for him \\
+		\hline
+		\important{I}nformation disclosure & Confidentiality & Summer learns about the secret plan of Rick and Mort \\
+		\hline
+		\important{D}enial of Service & Availability & The minions flood Dr. Nefario's lab with bananas and he cannot receive the latest weapons \\
+		\hline
+		\important{E}levation of Priviledge & Authorization & Bob the minion gain access to the system with Gru's credentials \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+
+
