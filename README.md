@@ -9,13 +9,13 @@
 I used Joachim Favre's style for those notes [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master) with some changes here and there. All the courses materials doesn't belong to me, the explanation and most of the images belongs to professors/labs, etc...
 
 # Notes
-#### Bachelor semester 1 (Autumn 2024)
+### Bachelor semester 1 (Autumn 2024)
 For the first semester, I used overleaf to take my notes (yeah I know...). 
 
 - #### Advanced Information Computation Communication I -- Prof. Tanja Kaser Prof. Thomas Bourgeat | [Overleaf AICC I](https://www.overleaf.com/read/httyzkgthpwd#14e403)  | [AICC_I.pdf](https://github.com/user-attachments/files/20511443/AICC_quiz_1.pdf)
 - #### Algèbre linéaire -- Prof. Jérome Sherer | [Overleaf Algèbre linéaire](https://www.overleaf.com/read/jghqdrzjrdxz#79162c) | [Algebre-lineaire-prof-sherer.pdf](https://github.com/user-attachments/files/35215981/main.pdf)
 
-### Bachelor semester 2 (Spring 2025)
+## Bachelor semester 2 (Spring 2025)
 #### Remark
 During the second semester I changed my workflow, I now use neovim to write my notes and use snippets to allow me to go faster. All of this is possible because of Joachim Favre (again) and Gille Castel [How I manage my LaTeX notes](https://castel.dev/post/lecture-notes-3/)
 
@@ -26,15 +26,20 @@ During the second semester I changed my workflow, I now use neovim to write my n
 I stoped taking notes in FDS during the semester because of the enormous quantity of schemas in this course which is not very "latex friendly"
 - #### Fundamental of Digital System -- Prof. Mirjana Stojilovic | [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf) 
 
-### Bachelor semester 3
+## Bachelor semester 3
 for this course (which has the same number of images as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used [grim](https://github.com/emersion/grim) on arch linux.
-- #### Computer Architecture -- Prof. Paulo Ienne | [Computer-Architecture-PauloIenne.pdf](https://github.com/user-attachments/files/28475834/Computer-Architecture-ArthurHerbette.pdf) - Prof. Paulo Ienne
+- #### Computer Architecture -- Prof. Paulo Ienne | [Computer-Architecture-PauloIenne.pdf](https://github.com/user-attachments/files/28475834/Computer-Architecture-ArthurHerbette.pdf)
 
 
-### Bachelor semester 4
+## Bachelor semester 4
 
- - #### Introduction to Machine Learning -- Dr. Mathieu Salzmann | [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf) - Dr. Mathieu Salzmann
-- #### Analysis IV - Mathias Braun | [Analyse-IV-MathiasBraun.pdf](https://github.com/user-attachments/files/28475810/Analyse-IV-ArthurHerbette.pdf) - Dr. Mathias Braun
+ - #### Introduction to Machine Learning -- Dr. Mathieu Salzmann | [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf)
+- #### Analysis IV - Mathias Braun | [Analyse-IV-MathiasBraun.pdf](https://github.com/user-attachments/files/28475810/Analyse-IV-ArthurHerbette.pdf)
+
+## Bachelor semester 5
+- #### Computer Security -- Prof. Bourgeat | [Computer-security.pdf](https://github.com/Arthur926564/LectureNotes/blob/main/BA5/comp-sec/main.pdf)
+- #### Introduction to Quantum Information Processing | [Introduction-to-quantum-info-proc.pdf](https://github.com/Arthur926564/LectureNotes/blob/main/BA5/quantum-information-proc/main.pdf) -
+- #### Quantum Mechanics for non Physicist | [Quantum-mechanics-for-non-physicist](https://github.com/Arthur926564/LectureNotes/blob/main/BA5/quantum-mechanics/main.pdf)
 
 
 ### Contributing
