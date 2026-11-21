@@ -15,7 +15,7 @@ For the first semester, I used overleaf to take my notes (yeah I know...).
 - [Overleaf AICC I](https://www.overleaf.com/read/httyzkgthpwd#14e403)  | [AICC_I.pdf](https://github.com/user-attachments/files/20511443/AICC_quiz_1.pdf)
 
 #### Algèbre linéaire -- Prof. Jérome Sherer
-- [Overleaf Algèbre linéaire](https://www.overleaf.com/read/jghqdrzjrdxz#79162c) | [Linear_Algebra.pdf](https://github.com/user-attachments/files/20511445/Chapter__Review_Notes.pdf)
+- [Overleaf Algèbre linéaire](https://www.overleaf.com/read/jghqdrzjrdxz#79162c) | [Algebre-lineaire-prof-sherer.pdf](https://github.com/user-attachments/files/35215981/main.pdf)
 
 ### Bachelor semester 2 (Spring 2025)
 #### Remark
