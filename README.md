@@ -11,39 +11,30 @@ I used Joachim Favre's style for those notes [GitHub](https://github.com/Joachim
 # Notes
 #### Bachelor semester 1 (Autumn 2024)
 For the first semester, I used overleaf to take my notes (yeah I know...). 
-#### Advanced Information Computation Communication I -- Prof. Tanja Kaser Prof. Thomas Bourgeat
-- [Overleaf AICC I](https://www.overleaf.com/read/httyzkgthpwd#14e403)  | [AICC_I.pdf](https://github.com/user-attachments/files/20511443/AICC_quiz_1.pdf)
 
-#### Algèbre linéaire -- Prof. Jérome Sherer
-- [Overleaf Algèbre linéaire](https://www.overleaf.com/read/jghqdrzjrdxz#79162c) | [Algebre-lineaire-prof-sherer.pdf](https://github.com/user-attachments/files/35215981/main.pdf)
+- #### Advanced Information Computation Communication I -- Prof. Tanja Kaser Prof. Thomas Bourgeat | [Overleaf AICC I](https://www.overleaf.com/read/httyzkgthpwd#14e403)  | [AICC_I.pdf](https://github.com/user-attachments/files/20511443/AICC_quiz_1.pdf)
+- #### Algèbre linéaire -- Prof. Jérome Sherer | [Overleaf Algèbre linéaire](https://www.overleaf.com/read/jghqdrzjrdxz#79162c) | [Algebre-lineaire-prof-sherer.pdf](https://github.com/user-attachments/files/35215981/main.pdf)
 
 ### Bachelor semester 2 (Spring 2025)
 #### Remark
 During the second semester I changed my workflow, I now use neovim to write my notes and use snippets to allow me to go faster. All of this is possible because of Joachim Favre (again) and Gille Castel [How I manage my LaTeX notes](https://castel.dev/post/lecture-notes-3/)
-#### Analyse II -- Prof. Anna Lachowska
-- [Overleaf Analyse II](https://www.overleaf.com/read/hcfrbrtbtkfq#d26d64) |  [Analyse_II_Prof__Lachowska_Anna_EPFL.pdf](https://github.com/user-attachments/files/32142886/main.pdf)
 
-#### Advanced Information Computation Communication II -- Prof. Michael Gastpar
-- [Overleaf AICC II](https://www.overleaf.com/read/rsgdckjsrrmf#3b69a9) | [AICC_II_Prof__Michael_Gastpar_EPFL.pdf](https://github.com/user-attachments/files/20511448/AICC_II_Prof__Michael_Gastpar_EPFL.pdf)
+- #### Analyse II -- Prof. Anna Lachowska | [Overleaf Analyse II](https://www.overleaf.com/read/hcfrbrtbtkfq#d26d64) |  [Analyse_II_Prof__Lachowska_Anna_EPFL.pdf](https://github.com/user-attachments/files/32142886/main.pdf)
+- #### Advanced Information Computation Communication II -- Prof. Michael Gastpar | [Overleaf AICC II](https://www.overleaf.com/read/rsgdckjsrrmf#3b69a9) | [AICC_II_Prof__Michael_Gastpar_EPFL.pdf](https://github.com/user-attachments/files/20511448/AICC_II_Prof__Michael_Gastpar_EPFL.pdf)
 
 
 I stoped taking notes in FDS during the semester because of the enormous quantity of schemas in this course which is not very "latex friendly"
-#### Fundamental of Digital System -- Prof. Mirjana Stojilovic
-- [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf) 
+- #### Fundamental of Digital System -- Prof. Mirjana Stojilovic | [Overlaf FDS](https://www.overleaf.com/read/mfknbgbbvfrf#8e97c6) |  [FDS_Prof__Mirjana_Stojilovic_EPFL.pdf](https://github.com/user-attachments/files/20511449/FDS_Prof__Mirjana_Stojilovic_EPFL.pdf) 
 
 ### Bachelor semester 3
 for this course (which has the same number of images as in fds) I added a way to be able to transcript screenshot quickly into my tex file. To do so I used [grim](https://github.com/emersion/grim) on arch linux.
-#### Computer Architecture -- Prof. Paulo Ienne
-- [Computer-Architecture-PauloIenne.pdf](https://github.com/user-attachments/files/28475834/Computer-Architecture-ArthurHerbette.pdf) - Prof. Paulo Ienne
+- #### Computer Architecture -- Prof. Paulo Ienne | [Computer-Architecture-PauloIenne.pdf](https://github.com/user-attachments/files/28475834/Computer-Architecture-ArthurHerbette.pdf) - Prof. Paulo Ienne
 
 
 ### Bachelor semester 4
 
-
-#### Introduction to Machine Learning -- Dr. Mathieu Salzmann
- - [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf) - Dr. Mathieu Salzmann
-#### Analysis IV - Mathias Braun
-- [Analyse-IV-MathiasBraun.pdf](https://github.com/user-attachments/files/28475810/Analyse-IV-ArthurHerbette.pdf) - Dr. Mathias Braun
+ - #### Introduction to Machine Learning -- Dr. Mathieu Salzmann | [Introduction_to_machine_learning_Salzmann.pdf](https://github.com/Arthur926564/LectureNotes/tree/main/BA4/intro-ml/main.pdf) - Dr. Mathieu Salzmann
+- #### Analysis IV - Mathias Braun | [Analyse-IV-MathiasBraun.pdf](https://github.com/user-attachments/files/28475810/Analyse-IV-ArthurHerbette.pdf) - Dr. Mathias Braun
 
 
 ### Contributing
