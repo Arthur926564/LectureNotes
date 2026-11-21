@@ -2,15 +2,15 @@
 
 \begin{parag}{La multiplication dans $\mathbb{F}_4$}
     
-        Pour ne pas confondre l'indéterminée $t$ des polynômes et l'élément $t$ donné comme reste de division, on choisit d'appeler $\alpha$ le reste $t$ ou plus précisément la classe $[t]$ de $t$ dans "\textit{l'anneau des polynôme $\mathbb{F}_2[t]$ modulo $t^2 + t + 1$}"
+        Pour ne pas confondre l'indéterminée $t$ des polynômes et l'élément $t$ donné comme reste de division, on choisit d'appeler $\alpha$ le reste $t$ ou plus précisément la classe $[t]$ de $t$ dans "\textit{l'anneau des polynômes $\mathbb{F}_2[t]$ modulo $t^2 + t + 1$}"
         \begin{enumerate}
             \item Comme \textcolor{red}{ensemble} $\mathbb{F}_4 = \{0, 1, \alpha, \alpha + 1\}$
-            \item \textcolor{red}{l'addition} est celle des polynômes, chaque éléments est son propre opposé.
+            \item \textcolor{red}{l'addition} est celle des polynômes, chaque élément est son propre opposé.
             \item la \textcolor{red}{multiplication} est celle des polynôme, modulo $t^2 + t + 1$, en particulier $\alpha^2 = \alpha + 1$. On a donc aussi $\mathbb{F}_4 = \{0, 1, \alpha, \alpha^2\}$   
         \end{enumerate}
         On peut par exemple prendre $\alpha \cdot \alpha^2 = \alpha^3 = 1$
         \begin{framedremark}
-            Ici on a choisi $t^2 + t + 1$ pour pouvoir construire nos calcul, mais le critère pour choisir est que c'est un polynôme dans $\mathbb{F}_2$ avec des coefficient irréductible
+            Ici on a choisi $t^2 + t + 1$ pour pouvoir construire nos calculs, mais le critère pour choisir est que c'est un polynôme dans $\mathbb{F}_2$ avec des coefficient irréductible
         \end{framedremark}
         \begin{subparag}{Le polynôme $t^2 + t + 1 \in \mathbb{F}_4[t]$}
             Le polynôme $p(t) = t^2 + t + 1 \in \mathbb{F}_2[t]$ est irréductible, mais on peut aussi le voir comme un polynôme de $\mathbb{F}_4[t]$, car ses coefficients sont dans $\mathbb{F}_2 \subset \mathbb{F}_4$.
@@ -21,7 +21,7 @@
                 [t]^2 + [t] + 1  = [t^2 + t + 1] = 0
             \end{cases}\]
             le deuxième cas est juste par la définition de $+$ et $\cdot $ dans $\mathbb{F}_4$\\
-            Donc, $t-\alpha = t + \alpha$ divise $t^2 + t + 1$ dans $\mathbb{F}_4$. Effectuons la divisions euclidienne.
+            Donc, $t-\alpha = t + \alpha$ divise $t^2 + t + 1$ dans $\mathbb{F}_4$. Effectuons la division euclidienne.
             
                 \begin{center}
         \begin{tabular}{c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}|l}
@@ -43,10 +43,10 @@
         \end{parag}
 
         \begin{parag}{Régression linéaire : Objectif}
-            On se donne un "\textit{nuage}" de points dans le plan, donnés par leurs ordonnées ($x_1, y_1), \dots, (x_n, y_n)$ et on aimerait trouver la droite qui donne la meilleures approximation :
-            \includegraphics[scale=0.3]{Algèbre linéaire/Screenshot 2024-12-10 153727.png}
-            On cherche la droite d'équation $y = at + b$ la plus proche des points $(x_1, y_1)\dots (x_n, y_n)$ dans le sens où les distances verticales entre les point et la droite sont minimisées (voici un exemple tiré de UC Buisness Analytics R programming Guide)
-            \includegraphics[scale = 0.5]{Algèbre linéaire/Screenshot 2024-12-10 153930.png}
+            On se donne un "\textit{nuage}" de points dans le plan, donnés par leurs coordonnées $(x_1, y_1), \dots, (x_n, y_n)$ et on aimerait trouver la droite qui donne la meilleure approximation :
+            \includegraphics[scale=0.3]{Screenshot 2024-12-10 153727.png}
+            On cherche la droite d'équation $y = at + b$ la plus proche des points $(x_1, y_1)\dots (x_n, y_n)$ dans le sens où les distances verticales entre les point et la droite sont minimisées (voici un exemple tiré de UC Business Analytics R programming Guide)
+            \includegraphics[scale = 0.5]{Screenshot 2024-12-10 153930.png}
         \end{parag}
         \begin{parag}{Forme Matricielle}
             On écrit le système ci-dessus sous forme matricielle 
@@ -59,11 +59,11 @@
             \end{pmatrix}\]
             et on utilise l'équation normale pour résoudre 
             \[\begin{pmatrix}
-                \sum (x_i^2 & \sum x_i\\
+                \sum x_i^2 & \sum x_i\\
                 \sum x_i & n
             \end{pmatrix}\begin{pmatrix}
                 \hat{a}\\ \hat{b}
-            \end{pmatrix} ) \begin{pmatrix}
+            \end{pmatrix} = \begin{pmatrix}
                 \sum x_iy_i \\ \sum y_i
             \end{pmatrix}\]
             \begin{subparag}{exemple}
@@ -97,7 +97,7 @@
                     1 &1 \\
                     \vdots  & \vdots\\
                     1 & 1
-                \end{pmatrix}$ ce qui ferait que tout les points se trouvent au même endroits.
+                \end{pmatrix}$ ce qui ferait que tous les points se trouvent au même endroit.
             \end{framedremark}
         \end{parag}
         \begin{parag}{Debriefing sur le produit scalaire}
@@ -110,23 +110,23 @@
             \end{enumerate}
         \end{parag}
         \begin{parag}{Formes bilinéaires}
-            Ceci nous motive à introduire un nom à d'autre application de deux variable, définies en général sur un espace vectoriel arbitraire.
-            \begin{deinition}
+            Ceci nous motive à introduire un nom à d'autres applications de deux variables, définies en général sur un espace vectoriel arbitraire.
+            \begin{definition}
                 Soit $V$ un espace vectoriel. Une \textcolor{red}{forme bilinéaire symétrique} est une application $V \times V \to \mathbb{R}$ qui associe à tout couple de vecteurs $(u, v)$ un nombre réel $\langle u, v \rangle$ tel que
                 \begin{enumerate}
-                    \item commutativité $\langle u, v \rangle ) \langle v, u \rangle$
+                    \item commutativité $\langle u, v \rangle = \langle v, u \rangle$
                     \item distributivité $\langle u + u', v \rangle = \langle u, v \rangle + \langle u' , v \rangle$
-                    \item linéairité $\langle \alpha u, v \rangle = \alpha \langle u, v \rangle$
+                    \item linéarité $\langle \alpha u, v \rangle = \alpha \langle u, v \rangle$
                 \end{enumerate}
                 \begin{framedremark}
                     Une forme linéaire est une application linéaire $V \to \mathbb{R}$
                 \end{framedremark}
-            \end{deinition}
+            \end{definition}
             \begin{subparag}{Exemple}
                 Le produit scalaire standard de $\mathbb{R}^2$ est une forme bilinéaire symétrique.
                 \\
-                Il y a de nombreuse autres formes bilinéaires symétriques. Par exemple $\langle \begin{pmatrix}
-                    u_1 \\ u_2,  
+                Il y a de nombreuses autres formes bilinéaires symétriques. Par exemple $\langle \begin{pmatrix}
+                    u_1 \\ u_2
                 \end{pmatrix}, \begin{pmatrix}
                     v_1 \\ v_2
                 \end{pmatrix}\rangle = 7u_1v_1 + 2u_1v_2 + 2u_2v_1 + 4u_2v_2$
@@ -146,7 +146,7 @@
                     \[\langle u, v \rangle  = u^TAv\]
                 \end{formule}
                 En effet, $u = u_1e_1 + \cdots +u_ne_n$ et $v = v_1e_1 + \cdots + v_ne_n$. Alors:
-                \[\langle e, v \rangle )\sum_i \sum_j u_iv_j\langle e_i, e_j\rangle = \sum_i \sum_j u_iv_ja_{ij} = \sum_i u_i\left(\sum_j a_{ij}v_j \right)\]
+                \[\langle u, v \rangle = \sum_i \sum_j u_iv_j\langle e_i, e_j\rangle = \sum_i \sum_j u_iv_ja_{ij} = \sum_i u_i\left(\sum_j a_{ij}v_j \right)\]
                 \[= \sum_i u_i(Av)_i = u^TAv\]
             \end{subparag}
             \begin{subparag}{Exemple}
@@ -158,7 +158,7 @@
                 \end{cases}$
                 La forme bilinéaire symétrique
             \[\langle \begin{pmatrix}
-                u_i \\ u_2
+                u_1 \\ u_2
             \end{pmatrix}, \begin{pmatrix}
                 v_1 \\ v_2
             \end{pmatrix}\rangle = 7u_1v_1 + 2u_1v_2 + 2u_2v_1 + 4u_2v_2\]
@@ -181,8 +181,8 @@
             \end{pmatrix}\]
             \end{subparag}
         \end{parag}
-        \begin{parag}{Espace préhilbertiens}
-            Le produit scalaire euclidien défini aussi une norme :
+        \begin{parag}{Espaces préhilbertiens}
+            Le produit scalaire euclidien définit aussi une norme :
             \[\vec{u}\cdot \vec{u} = ||\vec{u}||^2 \geq 0\]
             On arrive ici à la notion de produit scalaire dans le sens large.
             \begin{definition}
@@ -202,10 +202,9 @@
                     u_1 \\ u_2
                 \end{pmatrix}, \begin{pmatrix}
                     v_1 \\ v_2
-                \end{pmatrix}\rangle = 7u_1v_1 + 2u_1v_2 + 4u_2v_2\]
+                \end{pmatrix}\rangle = 7u_1v_1 + 2u_1v_2 + 2u_2v_1 + 4u_2v_2\]
                 Ici
                 \begin{align*}
-                    
                 \langle\begin{pmatrix}
                     u_1 \\ u_2
                 \end{pmatrix}, \begin{pmatrix}
@@ -222,12 +221,12 @@
             \end{subparag}
         \end{parag}
         \begin{parag}{Exemples: polynômes et fonctions}
-            Une espace vectoriel muni d'un produit scalaire est appelé \textcolor{red}{espace préhilbertien}
+            Un espace vectoriel muni d'un produit scalaire est appelé \textcolor{red}{espace préhilbertien}
             \begin{enumerate}
                 \item \textbf{Polynômes} dans $\mathbb{P}_n$ on pose (par exemple)
                 \[\langle p, q \rangle = \int_{-1}^1 p(t)q(t) dt\]
                 Ainsi $\mathbb{P}^n$ est un espace préhilbertien
-                \item \textbf{Fonction réelles}. Dans $\cmath^\infty(\mathbb{R})$ on pose (par exemple)
+                \item \textbf{Fonctions réelles}. Dans $\cmath^\infty(\mathbb{R})$ on pose (par exemple)
                 \[\langle f, g \rangle = \int_{-1}^1f(x)g(x)dx\]
                 Ainsi $\cmath^\infty (\mathbb{R})$ est un espace préhilbertien.
             \end{enumerate}
@@ -243,7 +242,7 @@
                 \[\begin{pmatrix}
                     2 & 0 \\ 0 & 2/3
                 \end{pmatrix}\]
-                On peut continuer avec toute les autres paires possible jusqu'à pourvoir construire la matrice de $\mathbb{P}_2$ tel que
+                On peut continuer avec toutes les autres paires possibles jusqu'à pouvoir construire la matrice de $\mathbb{P}_2$ tel que
                 \[A = \begin{pmatrix}
                     2 & 0 & 2/3\\
                     0 & 2/3 & 0\\
@@ -252,26 +251,26 @@
                 Cela signifie que le produit scalaire $\langle p(t), q(t) \rangle$ se calcule en effectuant le produit matriciel
                 \[(p(t))_{\cmath an}^T A(q(t))_{\cmath an}\]
                 La base canonique n'est pas orthogonale. Le procédé de Gram Schmidt permet de la rendre orthogonale: $(1, t, t^2 - 1/3)$, ici $1/3$ est la projection orthogonale de $t^2$ sur $Vect\{1, t\}$
-                \includegraphics[scale = 0.5]{Algèbre linéaire/Screenshot 2024-12-10 163537.png}
+                \includegraphics[scale = 0.5]{Screenshot 2024-12-10 163537.png}
                 
             \end{subparag}
             
         \end{parag}
 
-        \begin{parag}{Matrice symétriques}
+        \begin{parag}{Matrices symétriques}
             \begin{definition}
                 Une matrice carrée $A$ est \textcolor{red}{symétrique} si $A^T = A$
             \end{definition}
             \begin{subparag}{Exemple}
-                La matrices diagonales sont symétrique, mais aussi les matrices de la forme $B^TB$ puisque le coefficient $(i, j)$ est $\vec{b_1}\cdot\vec{b_j} = \vec{b_j}\cdot \vec{b_i}$
+                Les matrices diagonales sont symétriques, mais aussi les matrices de la forme $B^TB$ puisque le coefficient $(i, j)$ est $\vec{b_i}\cdot\vec{b_j} = \vec{b_j}\cdot \vec{b_i}$
             \end{subparag}
             \begin{theoreme}
-                Soit $A$ une matrice symétrique soient $\vec{u}$ un vecteurs propre de $A$ pour la valeurs propre $\lambda$ et $\vec{v}$ un vecteurs propre de $A$ pour une autre valeurs propre $\mu$. Alors $\vec{u}$ et $\vec{v}$ sont orthogonaux
+                Soit $A$ une matrice symétrique soient $\vec{u}$ un vecteur propre de $A$ pour la valeur propre $\lambda$ et $\vec{v}$ un vecteur propre de $A$ pour une autre valeur propre $\mu$. Alors $\vec{u}$ et $\vec{v}$ sont orthogonaux
             \end{theoreme}
             \begin{subparag}{Preuve}
                 On doit montrer que $\vec{u}\cdot \vec{v} = 0$.
                 \\
-                L'astuce est de calculer $\lambda\cdot(\vec{u}\cdot\vec{v}) \overbrace{=}^{A\vec{u} = \lambda\vec{u}} \lambda \vec{u}\cdot\vec{v} = A\vec{u}\cdot\vec{v} = (A\vec{u})^T\vec{u} = (\vec{u}^TA^T)\vec{v} = \vec{u}^T\cdot(A\vec{v}) \overbrace{=}^{déf \; \cdot} \vec{u}\cdot A\vec{v} = \vec{u}\cdot\mu\vec{v} = \mu(\vec{u}\cdot\vec{v})$ 
+                L'astuce est de calculer $\lambda\cdot(\vec{u}\cdot\vec{v}) \overbrace{=}^{A\vec{u} = \lambda\vec{u}} \lambda \vec{u}\cdot\vec{v} = A\vec{u}\cdot\vec{v} = (A\vec{u})^T\vec{v} = (\vec{u}^TA^T)\vec{v} = \vec{u}^T\cdot(A\vec{v}) \overbrace{=}^{déf \; \cdot} \vec{u}\cdot A\vec{v} = \vec{u}\cdot\mu\vec{v} = \mu(\vec{u}\cdot\vec{v})$ 
                 \\
                 Conclusion, comme $\lambda \neq \mu$, $\vec{u}\cdot\vec{v} = 0$
                 \\
@@ -291,7 +290,7 @@
                     -1 \\ 1
                 \end{pmatrix}\right\}\]
                 \\
-                On sait alors par la preuve faite au dessus. que $E_3 \perp E_1$. En normalisant les vecteurs propres on obtient une base orthonormée $\bmath = \left(\begin{pmatrix}
+                On sait alors par la preuve faite au dessus. que $E_3 \perp E_{-1}$. En normalisant les vecteurs propres on obtient une base orthonormée $\bmath = \left(\begin{pmatrix}
                     \sqrt{2}/2 \\ \sqrt{2}/2
                 \end{pmatrix}, \begin{pmatrix}
                     -\sqrt{2}/2 \\ \sqrt{2}/2
@@ -318,7 +317,7 @@
                 Soit $A$ une matrice symétrique. Alors
                 \begin{enumerate}
                     \item A admet $n$ valeurs propres réelles, compte tenu de leur multiplicité
-                    \item Pour toute valeurs propres $\lambda$ on a $mult(\lambda) = \dim E_\lambda$
+                    \item Pour toute valeur propre $\lambda$ on a $mult(\lambda) = \dim E_\lambda$
                     \item Si $\lambda \neq \mu$ alors $E_\lambda \perp E_\mu$
                     \item $A$ est orthodiagonalisable
                 \end{enumerate}

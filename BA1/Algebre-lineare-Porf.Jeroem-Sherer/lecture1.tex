@@ -1,5 +1,5 @@
 \lecture{1}{2024-09-10}{Equation linéaire}{}
-\begin{parag}{Equation linéaires}
+\begin{parag}{Equations linéaires}
     \textbf{Notation}
     \begin{itemize}
         \item Les lettres $k, m, n, \dots$ représentent des nombres entiers
@@ -9,8 +9,8 @@
 
     On note \R pour les nombres réels, qu'on représente par une droite.
     \begin{itemize}
-        \item $\mathbb{R}^2 = \mathbb{R} \times \mathbb{R} = \{(a, b) | a, b, \in \mathbb{R}\}$ est le plan (cartésien)
-        \item $\mathbb{R}^n = \{(a_1, \dots, a_n)|a_i \in \mathbb{R}^n\}$
+        \item $\mathbb{R}^2 = \mathbb{R} \times \mathbb{R} = \{(a, b) | a, b \in \mathbb{R}\}$ est le plan (cartésien)
+        \item $\mathbb{R}^n = \{(a_1, \dots, a_n)|a_i \in \mathbb{R}\}$
         \item En général $X \times Y = \{(x, y)| x \in X, y \in Y\}$
     \end{itemize}
 \end{parag}
@@ -18,24 +18,24 @@
     \begin{definition}
         Une matrice est échelonnée et \important{réduite} si
         \begin{itemize}
-            \item les lignes non nulles se trouvent au--dessus des lignes nulles;
+            \item les lignes non nulles se trouvent au-dessus des lignes nulles;
             \item le premier coefficient non nul d'une ligne (le coefficient principal) se trouve à droite du coefficient principal des lignes précédentes
             \item les coefficients situées en-dessous d'un coefficient principal des lignes précédentes
             \item les coefficients situés en-dessous d'un coefficient principal sont nuls
             \\
-            Elle est dire \important{échelonnée-réduite} si de plus
+            Elle est dite \important{échelonnée-réduite} si de plus
             \item les coefficients principaux sont tous égaux à 1
-            \item  dans la colonnes d'un coefficient principal tout les autres coefficients sont nul
+            \item  dans la colonne d'un coefficient principal tous les autres coefficients sont nuls
         \end{itemize}
     \end{definition}
 \end{parag}
 
-\begin{parag}{Pivots et comptabilité}
+\begin{parag}{Pivots et compatibilité}
     \begin{definition}
         Les emplacements des coefficients principaux sont des \important{pivots} (ou échelons). Les colonnes de ces coefficients sont les colonnes pivots.
     \end{definition}
     \begin{definition}
-        Un système d'équation linéaire est \important{compatible} s'il admet au moins une solution. Sinon il est dit incompatible
+        Un système d'équations linéaires est \important{compatible} s'il admet au moins une solution. Sinon il est dit incompatible
     \end{definition}
     S'il y a un pivot dans la dernière colonne (celle des termes inhomogènes), on a alors une équation 0 = $\bar{b}_{k+1}$ et $\bar{b}_{k+1}$ est non nul. Il n'y a donc aucune solution
 \end{parag}

@@ -5,9 +5,9 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
     \begin{subparag}{Opération élémentaire}
         Application des opération élémentaire sur le déterminant:
         \begin{itemize}
-            \item Type I: Interchanger des lignes entre elle ne change pas le determinant
-            \item Type II: changer le signe de la matrice change le signe du déterminant
-            \item Type III: En mutlipliant une ligne par un scalaire $\alpha \in \mathbb{R}$, le déterminant est aussi multiplier par ce scalaire.
+            \item Type I: Ajouter un multiple d'une ligne à une autre ne change pas le déterminant
+            \item Type II: Interchanger deux lignes change le signe du déterminant
+            \item Type III: En multipliant une ligne par un scalaire $\alpha \in \mathbb{R}$, le déterminant est aussi multiplié par ce scalaire.
         \end{itemize}
     \end{subparag}
     Soit une matrice $A$, 
@@ -26,7 +26,7 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
 \begin{parag}{Famille génératrice}
     Soit $W$ un sous espace vectoriel de $V$.
     \begin{itemize}
-        \item Le sous espace $W = Vec(v_1, \dots, v_k)$ est le sous espace engendré par les vecteurs $v_1, \dots, v_k$
+        \item Le sous espace $W = Vect(v_1, \dots, v_k)$ est le sous espace engendré par les vecteurs $v_1, \dots, v_k$
         \item Les vecteurs $v_1, \dots, v_k$ sont les générateurs de $W$
         \item L'ensemble $\{v_1, \dots, v_k\}$ forme une \textbf{partie génératrice} de $W$
     \end{itemize}
@@ -41,13 +41,13 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
     \begin{itemize}
         \item $V$ un espace vectoriel
         \item $\bmath = (b_1, \dots, b_n)$ une base de $V$
-        \item $\cmath = (c_1, \dots, c_n)$ une famille ordonnée de vecteurs de $V$
+        \item $\cmath = (c_1, \dots, c_m)$ une famille ordonnée de vecteurs de $V$
     \end{itemize}
     \begin{theoreme}
         La famille ordonnée de $\cmath$ est une base de $V$ si et seulement si la matrice $A = ((c_1)_\bmath, \dots, (c_m)_\bmath)$ a un pivot dans chaque ligne et chaque colonne.
     \end{theoreme}
     \begin{framedremark}
-        Cela ce "marie" très bien avec une matrice carré et inversible qui rejoint tout ensemble
+        Cela se "marie" très bien avec une matrice carré et inversible qui rejoint tout ensemble
     \end{framedremark}
         
     \end{subparag}
@@ -55,14 +55,14 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
         Soit $V$ un espace vectoriel de dimension $n$ et $\{e_1, \dots, e_k\}$ une famille libre de vecteurs de $V$. Il existe alors des vecteurs $e_{k+1}, \dots, e_n$ tels que $(e_1, \dots, e_n)$ forme une base de $V$.
     \end{theoreme}
     \begin{truc}
-        On utilise les parenthèse pour une base et des acollades pour les familles de vecteurs§
+        On utilise les parenthèses pour une base et des accolades pour les familles de vecteurs
     \end{truc}
 \end{parag}
 \begin{parag}{Décomposition $LU$}
-    Le but est d'avoir une matrice triangulaire inferieur ($L$) et une supérieur:
+    Le but est d'avoir une matrice triangulaire inférieure ($L$) et une supérieure:
     \begin{itemize}
-        \item $U$ est juste la matrie échelonnée (on s'arrête en bas)
-        \item $L$ est la matrice qui comment à $I_n$ et on fait l'opposé des opération faite sur la matrice (si on ajoute $1/2$ a une ligne, on enlève $1/2$ sur la colonne du même indice)
+        \item $U$ est juste la matrice échelonnée (on s'arrête en bas)
+        \item $L$ est la matrice qui commence à $I_n$ et on fait l'opposé des opérations faites sur la matrice (si on ajoute $1/2$ à une ligne, on enlève $1/2$ sur la colonne du même indice)
         \item $A = LU$
     \end{itemize}
 \end{parag}
@@ -78,7 +78,7 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
         Des vecteurs sont linéairement indépendants lorsque la seule solution de l'équation:
         \[\alpha_1v_1 + \cdots + \alpha_n v_n = 0\]
         Est:
-        \[\alpha_1 = \alpha_2 + \cdots + \alpha_n = 0\]
+        \[\alpha_1 = \alpha_2 = \cdots = \alpha_n = 0\]
         On voit que c'est le même principe que lorsqu’on cherche le noyau, on prend la matrice dans une base (canonique c'est souvent plus simple) et on échelonne. et s'il y a moins de colonnes pivots que de colonnes, alors les vecteurs sont dépendants.
         
     \end{truc}
@@ -94,7 +94,7 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
     Il y a plein de propriétés lorsqu'une matrice est injective:
     \begin{truc}
         \begin{itemize}
-            \item Une seul solution et elle est trivial pour $A\vec{x} = \vec{0}$
+            \item Une seule solution et elle est triviale pour $A\vec{x} = \vec{0}$
             \item $\ker A = \{0\}$
             \item Les colonnes sont linéairement indépendantes
         \end{itemize}
@@ -103,7 +103,7 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
             \item La matrice $A$ est inversible
             \item $\det A \neq 0$
             \item Les colonnes de $A$ forment une base de \R$^n$
-            \item $Im\; A = n$
+            \item $\dim\; Im\; A = n$
             \item $\ker A = \{0\}$
             \item $dim\; Ker\; A = 0$
         \end{itemize}
@@ -123,7 +123,7 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
     \end{truc}  
     Donc, pour qu'une application soit surjective, le rang de $f$ doit être égal à la dimension de l'espace \textbf{d'arrivée} $W$.
     \begin{itemize}
-        \item Cas où $dim\;V \> dim\;W$:
+        \item Cas où $dim\;V > dim\;W$:
         \\
         Dans ce cas il est possible pour $f$ d'être surjective
         \item Cas où $dim\;V = dim\;W$
@@ -156,7 +156,7 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
 \begin{parag}{Espace vectoriel}
     C'est le même principe que l'application linéaire:
     \begin{itemize}
-        \item \textbf{L'addition}, si on prend deux vecteur de $V$ et qu'on les additions, ils doivent rester dans $V$.
+        \item \textbf{L'addition}, si on prend deux vecteurs de $V$ et qu'on les additionne, ils doivent rester dans $V$.
         \item Si on multiplie par un réel un vecteur de $V$, il doit rester dans $V$.
     \end{itemize}
     
@@ -174,13 +174,13 @@ On voit juste mettre les formule et les trucs à savoir vite fait.\\
 \end{parag}
     
 \begin{parag}{Image}
-    L'image est tout ce qui peut être comme résultats de l'application.\\
+    L'image est tout ce qui peut être comme résultat de l'application.\\
     Elle généralise la notion de sous-espace $ColA$ engendré par les colonnes d'une matrice $A$.
     \begin{truc}
         L'image appartient à l'espace d'arrivée.
     \end{truc}
     \begin{truc}
-        L'image d'une application linéaire $T: v \to W$ est le sous-ensemble $ImT = \{ w \in W| \text{ il existe } v \in V \text{ tel que } Tv = w\}$.
+        L'image d'une application linéaire $T: V \to W$ est le sous-ensemble $ImT = \{ w \in W| \text{ il existe } v \in V \text{ tel que } Tv = w\}$.
     \end{truc}
     
 \end{parag}
@@ -215,7 +215,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
     que la dimension de l'image et la dimension du noyau ensemble sont égales à la dimension de l'ensemble de départ.\\
     C'est fort parce que l'image de base réside donc l'espace d'arrivée donc on arrive grâce à ce théorème à relier l'image à l'espace de départ. 
     \\
-    Grâce à ce théorème on peut vraiment vraiment rapidement trouver plusieurs dimensions avec la matrice d'application de taille $n \times m$.
+    Grâce à ce théorème on peut vraiment vraiment rapidement trouver plusieurs dimensions avec la matrice d'application de taille $m \times n$.
     \begin{itemize}
         \item $dim\; KerA = $nombre de colonnes sans pivot
         \item $dim\; ImA = \text{rang}A = $ nombre de colonnes-pivot
@@ -226,7 +226,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
 \begin{parag}{Changement de base}
     Si on veut passer de la base $\mathcal{B}$ à la base $\mathcal{C}$ on a le théorème:
     \begin{truc}
-        \[(Id_V)_{\mathcal{B}}^\mathcal{C}(v)_{\mathcal{B}} = (v)_{\mathcal{V}}\]
+        \[(Id_V)_{\mathcal{B}}^\mathcal{C}(v)_{\mathcal{B}} = (v)_{\mathcal{C}}\]
     \end{truc}
     \begin{theoreme}
         \[(T)_\bmath^\cmath (v)_\bmath = (Tv)_\cmath\]
@@ -241,7 +241,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
         Soit $P = (Id)_{\mathcal{B}}^{\mathcal{C}}$ la matrice de changement de base de $\mathcal{B}$ vers $\mathcal{C}$.
         \begin{itemize}
             \item La matrice $P$ est inversible
-            \item la matrice inverse $p^{-1}$ est une matrice de changement de base de $\mathcal{C}$ vers $\mathcal{B}$.
+            \item la matrice inverse $P^{-1}$ est une matrice de changement de base de $\mathcal{C}$ vers $\mathcal{B}$.
             \item Toute matrice inversible de taille $n \times n$ est une matrice de changement de base,
         \end{itemize}
     \end{truc}
@@ -252,11 +252,11 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
         \end{formule}
     \end{definition}
     \begin{truc}
-        Deux matrice semblables ont le même polynôme caractéristique
+        Deux matrices semblables ont le même polynôme caractéristique
     \end{truc}
     \begin{subparag}{les relations $\sim$ et $\approx$}
     \begin{definition}
-        Les matrices $A$ et $B$ sont équivalentes selon les lignes et les colonnes s'il existe des opérations élémentaires sur les lignes et les colonnes qui transforment $A$ en $B$. Il existe dont deux matrices inversible $P$ et $Q$ telle que:
+        Les matrices $A$ et $B$ sont équivalentes selon les lignes et les colonnes s'il existe des opérations élémentaires sur les lignes et les colonnes qui transforment $A$ en $B$. Il existe donc deux matrices inversibles $P$ et $Q$ telles que:
         \[PAQ = B\]
         On le note
         \[A \sim B\]
@@ -269,7 +269,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
 \end{parag}
 \begin{parag}{Diagonalisation}
 \begin{truc}
-    la transposée d'un produit de matrice est le produit dans l'autre sens des transposée :
+    la transposée d'un produit de matrices est le produit dans l'autre sens des transposées :
     \[(AB)^T = (B^TA^T)\]
 \end{truc}
     \begin{theoreme}
@@ -277,7 +277,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
     \end{theoreme}
     \begin{truc}
         Si la somme des coefficients de chaque lignes est égal à $\phi$ alors $\phi$ est une valeur propre et $\begin{pmatrix}
-            \phi \\ \phi \\ \phi
+            1 \\ 1 \\ 1
         \end{pmatrix}$ est un vecteur propre
     \end{truc}
     \begin{truc}
@@ -285,7 +285,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
             \phi & \phi & \phi\\
             \phi & \phi & \phi\\
             \phi & \phi & \phi
-        \end{pmatrix}$ alors par exemple ici le rang est $1$ et la $\dim \ker = 2$ est donc on sait que l'espace propre est $2$ et que $\phi$ est valeur propre
+        \end{pmatrix}$ alors par exemple ici le rang est $1$ et la $\dim \ker = 2$ et donc on sait que l'espace propre est $2$ et que $\phi$ est valeur propre
     \end{truc}
     \begin{theoreme}
         Soit $A$ une matrice de taille $n \times n$ ayant $n$ valeurs propres distinctes. Alors $A$ est diagonalisable
@@ -305,7 +305,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
     \begin{subparag}{Critère de diagonalisation}
         Une matrice $A$ est diagonalisable (sur $\mathbb{R}$) si et seulement si:
         \begin{enumerate}
-            \item Le polynôme caractéristique est \textcolor{red}{scindé}: il se décompose en produit de facteur $(\lambda - t)$ avec $\lambda \in \mathbb{R}$
+            \item Le polynôme caractéristique est \textcolor{red}{scindé}: il se décompose en produit de facteurs $(\lambda - t)$ avec $\lambda \in \mathbb{R}$
             \item Pour tout $\lambda$, on a $\dim E_\lambda = mult(\lambda)$
         \end{enumerate}
         Si $A$ est diagonalisable, on forme une base de vecteurs propres en réunissant les vecteurs de base de chaque espace propre.
@@ -313,21 +313,21 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
     \begin{subparag}{Méthode de diagonalisation}
         Soit $T: V \to V$ une application linéaire
         \begin{enumerate}
-            \item Choirsir une base $\cmath$ de $V$ (la base canonique si elle existe)
+            \item Choisir une base $\cmath$ de $V$ (la base canonique si elle existe)
             \item Ecrire la matrice $A = (T)_\cmath^\cmath$ de $T$ dans cette base
-            \item Calculer le polynôme caractérsitque $c_a(t)$
+            \item Calculer le polynôme caractéristique $c_A(t)$
             \item Si $c_A(t)$ n'est pas scindé, $A$ n'est pas \textcolor{red}{diagonalisable}.
-            \item $c_A(t)$ est scindé, extraire les racines de $\lambda$ de $c_a(t)$ et calculer les multiplicité algébrique
+            \item $c_A(t)$ est scindé, extraire les racines de $\lambda$ de $c_A(t)$ et calculer les multiplicités algébriques
             \item Calculer les espaces propres $E_\lambda$ et les multiplicités géométriques
-            \item Si $\dim E_\lambda = mult(\lambda)$ pour une valeur propre $\lambda$, alors $A$ n'est pas \textcolor{red}{diagonalisable}
+            \item Si $\dim E_\lambda \neq mult(\lambda)$ pour une valeur propre $\lambda$, alors $A$ n'est pas \textcolor{red}{diagonalisable}
             \item Si $\dim E_\lambda = mult(\lambda)$ pour tout $\lambda$, alors $A$ est \textcolor{green}{diagonalisable}
         \end{enumerate}
         Dès lors
         \begin{enumerate}
             \item Soit $T: V \to V$ une application linéaire \textcolor{green}{diagonalisable}
-            Choisir une base $\bmath_\lambda$ de $E_\lambda$ pour toute valeurs de $\lambda$
+            Choisir une base $\bmath_\lambda$ de $E_\lambda$ pour toute valeur de $\lambda$
             \item Réunir les $\bmath_\lambda$ pour former une base $\bmath$ de $V$
-            \item $D = (T)_\bmath^\bmath$ est diagonale. Les valeurs propres apparaissent dans la diagonale dans l'ordre choisi pour contruire la base $\bmath$
+            \item $D = (T)_\bmath^\bmath$ est diagonale. Les valeurs propres apparaissent dans la diagonale dans l'ordre choisi pour construire la base $\bmath$
             \item Les colonnes de la matrice de changement de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en coordonnées dans $\cmath$
             \item Les colonnes de la matrice de changement de base $P = (Id)_\bmath^\cmath$ sont les vecteurs de $\bmath$ exprimés en coordonnées dans $\cmath$:
         \end{enumerate}
@@ -345,23 +345,23 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
     \begin{definition}{Produit scalaire}
         Soit $\vec{u}, \vec{v}$ deux vecteurs de $\mathbb{R}^n$. Le produit scalaire est:
         \begin{formule}
-            \[\vec{u}\cdot \vec{v} = \vec{u}\vec{v} = u_1v_1 + \cdots + u_nv_n\]
+            \[\vec{u}\cdot \vec{v} = \vec{u}^T\vec{v} = u_1v_1 + \cdots + u_nv_n\]
         \end{formule}
     \end{definition}
     \textbf{Propriétés}
     \begin{itemize}
         \item Commutativité
         \item Distributivité
-        \item Compataibilité avec l'action scalaire
+        \item Compatibilité avec l'action scalaire
         \item Positivité $\vec{u}\cdot \vec{u} \geq 0$ et $\vec{u}\cdot \vec{u} = 0 \Leftrightarrow \vec{u} = \vec{0}$
     \end{itemize}
         
     \end{subparag}
     \begin{definition}
-     Une famille $(\vec{u}_1, \dots, \vec{u}_k)$ de vecteurs $\mathbb{R}^n$ est \textcolor{red}{orthogonale} si $\vec{u}_i \perp \vec{u_j}$ pour tout $i \neq j$. Cette famille est orthonormée si de plus $||\vec{u}_i|| = 1$ pour tout $i$.
+     Une famille $(\vec{u}_1, \dots, \vec{u}_k)$ de vecteurs de $\mathbb{R}^n$ est \textcolor{red}{orthogonale} si $\vec{u}_i \perp \vec{u_j}$ pour tout $i \neq j$. Cette famille est orthonormée si de plus $||\vec{u}_i|| = 1$ pour tout $i$.
     \end{definition}
     \begin{theoreme}
-        Les colonnes d'une matrice $U$ de taille $m \times n$ sont orthogonales si et seulement si $U^TU = I_n$
+        Les colonnes d'une matrice $U$ de taille $m \times n$ sont orthonormées si et seulement si $U^TU = I_n$
     \end{theoreme}
     \begin{theoreme}
         Soit $U$ la matrice dont les colonnes sont les vecteurs $\vec{u_1}, \dots, \vec{u_k}$ d'une base \textcolor{red}{orthonormée} de $W$. Alors
@@ -377,7 +377,7 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
         On note $\hat{y}$ la meilleur approximation quadratique de $\vec{y}$ dans $W$.
     \end{subparag}
     \begin{truc}
-        Une famille orthogonale de vecteurs non nuls est libres
+        Une famille orthogonale de vecteurs non nuls est libre
     \end{truc}
     \begin{truc}
         Soit $\{\vec{u}_1, \dots, \vec{u}_k\}$ une famille orthogonale de vecteurs non nuls de $\mathbb{R}^n$ et $U = (\vec{u}_1, \dots,\vec{u}_k)$ la matrice de taille $n\times k$ associée Alors:
@@ -387,14 +387,14 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
         Si la famille est orthonormée:
         \begin{itemize}
             \item $U^TU= I_k$
-            \item $UU^T$ est une projection orthogonale sur $ImA$
+            \item $UU^T$ est une projection orthogonale sur $ImU$
         \end{itemize}
     \end{truc}
 \begin{enumerate}
     \item Vérifie que $A$ est symétrique
     \item Calculer $c_A(t)$ et en extraire les racines (valeurs propres)
     \item Calculer les espaces propres pour chacun, le procédé de Gram-Schmidt donne une base orthonormée.
-    \item En assemblant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
+    \item En assemblant les bases des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
     \item La matrice $P$ dont les colonnes sont les vecteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
 \end{enumerate}   
 \begin{framedremark}
@@ -403,15 +403,15 @@ Soit $T: V \to W$ Une application linéaire en espaces vectoriels de dimensions 
 \end{parag}
 
 \begin{parag}{Méthode des moindres carrés}
-La meilleurs solution possible d'une système incompatible tel que $A\vec{x} = \vec{b}$ où $A$ est une matrice $m \times n$.
+La meilleure solution possible d'un système incompatible tel que $A\vec{x} = \vec{b}$ où $A$ est une matrice $m \times n$.
     \begin{definition}
-        Une vecteur $\hat{x} \in \mathbb{R}^n$ est une \textcolor{red}{solution au sens des moindres carrés} pour le système $A\vec{x} = \vec{b}$ si, pour tout $\vec{x} \in \mathbb{R}^n$
+        Un vecteur $\hat{x} \in \mathbb{R}^n$ est une \textcolor{red}{solution au sens des moindres carrés} pour le système $A\vec{x} = \vec{b}$ si, pour tout $\vec{x} \in \mathbb{R}^n$
         \begin{formule}
             \[||\vec{b} - A\hat{x}|| \leq || \vec{b} - A\vec{x}||\]
         \end{formule}
     \end{definition}
     \begin{truc}
-        Comme $A\vec{x} \in ImA$, le système est incomptabile si $b \notin ImA$. Le vecteur le plus proche de $\vec{b}$ dans $ImA$ est sa projection orthogonale.
+        Comme $A\vec{x} \in ImA$, le système est incompatible si $b \notin ImA$. Le vecteur le plus proche de $\vec{b}$ dans $ImA$ est sa projection orthogonale.
         \begin{formule}
             \[\hat{b} = \text{proj}_{ImA}\vec{b}\]
         \end{formule}
@@ -424,17 +424,17 @@ La meilleurs solution possible d'une système incompatible tel que $A\vec{x} = \
             \end{formule}
         \end{theoreme}
         \begin{truc}
-            La norme du vecteurs $\vec{b} - A\hat{x}$ est appelée \textcolor{red}{écart quadratique}
+            La norme du vecteur $\vec{b} - A\hat{x}$ est appelée \textcolor{red}{écart quadratique}
         \end{truc}
         \begin{theoreme}
-            La solution $\hat{x}$ au sens des moindres carrées est unique si et seulement si les colonnes de $A$ sont libres, ce qui est équivalent à exiger que la matrice $A^TA$ est inversible
+            La solution $\hat{x}$ au sens des moindres carrés est unique si et seulement si les colonnes de $A$ sont libres, ce qui est équivalent à exiger que la matrice $A^TA$ est inversible
         \end{theoreme}
     \end{subparag}
 \end{parag}
 
 \begin{parag}{Régression linéaire}
     \begin{enumerate}
-        \item On représente les point $(x_i, y_i)$ à l'aide de deux matrices:
+        \item On représente les points $(x_i, y_i)$ à l'aide de deux matrices:
         \begin{itemize}
             \item $A$ contient les coordonnées $x_i$ et une colonne de $1$ pour représenter $b$, 
             \item $Y$ contient les ordonnées $y_i$
@@ -442,7 +442,7 @@ La meilleurs solution possible d'une système incompatible tel que $A\vec{x} = \
         Ainsi
         \[A = \begin{pmatrix}
             x_1 & 1\\
-            x_2 & 2\\
+            x_2 & 1\\
             \vdots & \vdots\\
             x_n & 1
         \end{pmatrix}, \; \; Y = \begin{pmatrix}
@@ -452,7 +452,7 @@ La meilleurs solution possible d'une système incompatible tel que $A\vec{x} = \
             a \\ b
         \end{pmatrix}$ tel que
         \[Ap \approx Y\]
-        \item Equation normales : 
+        \item Equation normale : 
         \[A^TAp = A^TY\]
         \item Résoudre le système ce qui donne la droite de régression $y = ax + b$
     \end{enumerate}

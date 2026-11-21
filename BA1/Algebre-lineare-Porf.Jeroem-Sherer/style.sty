@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 % \usepackage[utf8]{inputenc}  % useless for LuaLaTex
-\usepackage[bottom=2.5cm, top=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+%\usepackage[bottom=2.5cm, top=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \setlength{\columnsep}{1cm}
 \usepackage{fancyhdr}
 \usepackage{lmodern}
@@ -80,7 +80,7 @@
 \usepackage{hyperref}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{fancyhdr}
  \usepackage{tikz,tkz-tab} 
 
@@ -112,7 +112,7 @@
     linecolor=orange!20, linewidth=1pt]\begin{savoir}}
     {\end{savoir}\end{mdframed}}
 
-
+\newtheorem{remark}{Remarque}
 % Définir un environnement mdframed spécifique pour les remarques
 \newenvironment{framedremark}
   {\begin{mdframed}[backgroundcolor=orange!7, linecolor=orange!20, linewidth=1pt]\begin{remark}}
@@ -182,6 +182,13 @@ linewidth=1pt]\begin{lem}}
 linecolor=blue!20,
 linewidth=1pt]\begin{pro}}
 {\end{pro}\end{mdframed}}
+
+
+
+% Aliases used in the lectures
+\newenvironment{theorem}{\begin{theoreme}}{\end{theoreme}}
+\newenvironment{thm}{\begin{theoreme}}{\end{theoreme}}
+\newenvironment{preuve}{\par\noindent\textit{Preuve.}\ }{\hfill$\square$\par}
 
 
 

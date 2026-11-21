@@ -60,17 +60,16 @@ En français, la matrice inverse est donnée par la transposée des cofacteurs m
         \item $C_{11} = (-1)^{1+1}\det(d) = d$
         \item $C_{21} = (-1)^{2+1}\det(b) = -b$
         \item $C_{12} = (-1)^{1+2}\det(c) = -c$
-        \item $C_{22} = (-1)^{2+2}\det(d) = a$
+        \item $C_{22} = (-1)^{2+2}\det(a) = a$
     \end{itemize}
 \end{exemple}
-Par conséquent $A^{-1}$ est la seule solution du sytème $A\vec{x} = \vec{e}_i$ qui est donné par la formule:
+Par conséquent $A^{-1}$ est la seule solution du système $A\vec{x} = \vec{e}_i$ qui est donné par la formule:
 \begin{formule}
 
 \[
     x_j = \frac{\det A_j (\vec{e}_i)}{\det A} = \frac{(-1)^{i+j}\det A_{ij}}{\det A} = \frac{C_{ij}}{\det A}
 \]
 \end{formule}
-\\
 On calcule la $i^{eme}$ colonne de la matrice $A\cdot\frac{1}{\det A}(ComA)^T$:
 \[
 A\cdot \frac{1}{\det A}\begin{pmatrix}
@@ -79,7 +78,6 @@ A\cdot \frac{1}{\det A}\begin{pmatrix}
     . \\
     . \\
     C_{in}
-    
 \end{pmatrix} = A\vec{x} = \vec{e}_i
 \]
 
@@ -112,13 +110,11 @@ Alors: $\det A = \begin{vmatrix}
             3 & 1 & 2 \\
             1 & -1 & 0 \\
             0 & 0 & 1
-        \end{vmatrix}$ si on dévelope selon le 1 en bas à gauche:
+        \end{vmatrix}$ si on dévelope selon le 1 en bas à droite:
         $  (-1)^{3+3} \begin{vmatrix}
             3 & 1 \\
             1 & -1
         \end{vmatrix} = -4$
-
-        \\
         \\
         Prenons maintenant:
         \[|A_{32}| = \begin{vmatrix}
@@ -128,11 +124,11 @@ Alors: $\det A = \begin{vmatrix}
         \end{vmatrix} = \dots = -1\]
         \subparagraph{Conclusion:} 
         \[b_{23} = \frac{1}{\det A}\cdot(ComA)^T = \frac{C_{32}}{\det A}\]
-        \[= \frac{(-1)^{2+3}\cdot \det A_{23}}{\det A}\]
+        \[= \frac{(-1)^{3+2}\cdot \det A_{32}}{\det A}\]
         \[b_{23} = -\frac{1}{4}\]
 \end{exemple}
 \paragraph{Aire d'un parallélogramme}
-Soit $\begin{pmatrix} a \\ c \end{pmatrix}$ et $\begin{pmatrix} b \\ d \end{pmatrix}$ deux vecteur de \R$^2$ et $A = \begin{pmatrix}
+Soit $\begin{pmatrix} a \\ c \end{pmatrix}$ et $\begin{pmatrix} b \\ d \end{pmatrix}$ deux vecteurs de \R$^2$ et $A = \begin{pmatrix}
     a & b \\
     c & d
 \end{pmatrix}$
@@ -141,17 +137,17 @@ Soit $\begin{pmatrix} a \\ c \end{pmatrix}$ et $\begin{pmatrix} b \\ d \end{pmat
 \end{theorem}
 
 \subparagraph{Preuve.}
-Quitte  échanger les vecteur $\vec{u}$ et $\vec{v}$ (resp. les colonnes de $A$), on peut supposer que $a_{11} \neq 0$ sans changer l'aire du parallélogramme (resp. sans changer la valeur absolue de $\det A$).
+Quitte à échanger les vecteurs $\vec{u}$ et $\vec{v}$ (resp. les colonnes de $A$), on peut supposer que $a_{11} \neq 0$ sans changer l'aire du parallélogramme (resp. sans changer la valeur absolue de $\det A$).
 \\
 En effectuant une opération de type I sur les colonnes de $A$ on obtient $0$ sur $a_{12}$ sans changer $\det A$, ni l'aire du parallélogramme.
 \\
-En effectuant une deuxième opération de type I sur les colonne de A, on se retrouve à une matrice $\begin{pmatrix}
+En effectuant une deuxième opération de type I sur les colonnes de A, on se retrouve à une matrice $\begin{pmatrix}
     \alpha & 0\\
     0 & \beta
 \end{pmatrix}$ le $\det$ vaut $\alpha \cdot \beta$, c'est l'aire du rectangle construit sur $\alpha \cdot \hat{e}_1$, $\beta\cdot\hat{e}_2$
 
 \begin{exemple}
-Prenons les points $A(1, 2), B(4, 3), C(8, 1), D(5, -1)$
+Prenons les points $A(1, 1), B(4, 3), C(8, 1), D(5, -1)$
 \\
 \begin{center}
     
@@ -199,10 +195,10 @@ Une application linéaire $T : \mathbb{R}^2 \to \mathbb{R}^2$ transforme les vec
 \end{formule}
 \end{theorem}
 \begin{framedremark}
-    L'aire d'un prallélogramme ou le volume d'un parraéélépiède ne dépendent que des vecteurs qui les supportent. L'un des sommets peut être l'origine ou non. L'aire et le volume sont \textbf{invariants par translation}.
+    L'aire d'un parallélogramme ou le volume d'un parallélépipède ne dépendent que des vecteurs qui les supportent. L'un des sommets peut être l'origine ou non. L'aire et le volume sont \textbf{invariants par translation}.
 \end{framedremark}
 \begin{exemple}
-    On cherche l'aire de l'ellipse d'équation$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$
+    On cherche l'aire de l'ellipse d'équation $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$
     \\
     L'application est:
     \[T: \mathbb{R}^2 \to \mathbb{R}^2 \]
@@ -216,7 +212,7 @@ Une application linéaire $T : \mathbb{R}^2 \to \mathbb{R}^2$ transforme les vec
         a & 0\\ 0 & b
     \end{pmatrix}\]
     \\
-    Le cercle unité $e$ d'équation $x^2 + y^2 ) 1$ est transformé en $\epsilon$ par $T$. Si $(x, y) \in e$:
+    Le cercle unité $e$ d'équation $x^2 + y^2 = 1$ est transformé en $\epsilon$ par $T$. Si $(x, y) \in e$:
     \[T\begin{pmatrix}
         x \\ y
     \end{pmatrix} = \begin{pmatrix}

@@ -4,7 +4,7 @@
 
     
 \begin{framedremark}
-    Si $\lambda$ est une valeurs propre de multiplicité $\geq 2$, alors la base de vecteurs prorpres de $E_\lambda$ fournie par la méthode de Gauss n'est pas orthogonale en général, il faut \textcolor{red}{Gram-Schmidter} pour obtenir une base orthonormée de vecteurs propres.
+    Si $\lambda$ est une valeur propre de multiplicité $\geq 2$, alors la base de vecteurs propres de $E_\lambda$ fournie par la méthode de Gauss n'est pas orthogonale en général, il faut \textcolor{red}{Gram-Schmidter} pour obtenir une base orthonormée de vecteurs propres.
 \end{framedremark}
 \begin{subparag}{Exemple}
     \[A = \begin{pmatrix}
@@ -19,14 +19,14 @@
             4-t & 1 & 3 & 1\\
             1 & 4-t & 1 & 3\\
             0 & -1 & 0 & 1
-        \end{vmatrix} &= (1-t)^2\cdot1\begin{pmatrix}
+        \end{vmatrix} &= (1-t)^2\cdot1\begin{vmatrix}
             7-t & 2 & 1\\
             2 & 7-t & 3\\
             0 & 0 & 1
-        \end{pmatrix}\\ 
+        \end{vmatrix}\\ 
         &= (1-t)^2\begin{vmatrix}
             7-t  & 2\\
-            2 & 7-z
+            2 & 7-t
         \end{vmatrix} \\
         &= (1-t)^2(t^2 - 14t + 45)\\
         &= (1-t)^2(t-5)(t-9)
@@ -115,7 +115,7 @@ $\bmath = \left(\begin{pmatrix}
     \item Vérifie que $A$ est symétrique
     \item Calculer $c_A(t)$ et en extraire les racines (valeurs propres)
     \item Calculer les espaces propres pour chacun, le procédé de Gram-Schmidt donne une base orthonormée.
-    \item En assemblant les base des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
+    \item En assemblant les bases des espaces propres on obtient une base orthonormée $\mathcal{U}$ de $\mathbb{R}^n$
     \item La matrice $P$ dont les colonnes sont les vecteurs $\vec{u}_i$ de $\mathcal{U}$ est orthogonale et $P^TAP$ est diagonale
 \end{enumerate}   
 \begin{framedremark}
@@ -123,7 +123,7 @@ $\bmath = \left(\begin{pmatrix}
 \end{framedremark}
 \end{parag}
 \begin{parag}{Matrice de projection}
-    Soit $\vec{u}$ un vecteurs unitaire et $A = \vec{u}\vec{u}^T$. Alors
+    Soit $\vec{u}$ un vecteur unitaire et $A = \vec{u}\vec{u}^T$. Alors
     \begin{formule}
         \[A\vec{x} = \vec{u}(\vec{u}^T\vec{x}) = (\vec{u}\cdot\vec{x})\vec{u}\]
     \end{formule}
@@ -133,7 +133,7 @@ $\bmath = \left(\begin{pmatrix}
         \item Ainsi $E_1 = W$ et $E_0 = W^\perp$
     \end{enumerate}
     \begin{subparag}{Proposition}
-        La matrice $A = \vec{u}\vec{u}^T$ est la matrice de la projection orthogonale sur $W = Vect(\vec{u}).$ On a $A\vec{x} = \text{proj}_\vec{u}\vec{x}$
+        La matrice $A = \vec{u}\vec{u}^T$ est la matrice de la projection orthogonale sur $W = Vect(\vec{u}).$ On a $A\vec{x} = \text{proj}_{\vec{u}}\vec{x}$
     \end{subparag}
     C'est un cas particulier que nous avons vu pour $UU^T$, matrice de projection orthogonale quand les colonnes de $U$ sont orthonormées.
     \begin{subparag}{Exemple}
@@ -142,12 +142,12 @@ $\bmath = \left(\begin{pmatrix}
                 1 \\ 0
             \end{pmatrix}$ Alors $\vec{u}\vec{u}^T = \begin{pmatrix}
                 1 & 0 \\ 0 & 0
-            \end{pmatrix}$ qui est une projection orthognonale sur $Ox$.
+            \end{pmatrix}$ qui est une projection orthogonale sur $Ox$.
             \item $\vec{u} = \begin{pmatrix}
                 \sqrt{2}/2\\ \sqrt{2}/2
             \end{pmatrix}$ Alors $\vec{u}\vec{u}^T = \begin{pmatrix}
                 1/2 & 1/2\\ 1/2 & 1/2
-            \end{pmatrix}$ qui est une projection orthogonal sur l'axe $x = y$
+            \end{pmatrix}$ qui est une projection orthogonale sur l'axe $x = y$
             \item $\vec{u} = \begin{pmatrix}
                 1 \\ 1
             \end{pmatrix}$ Alors $\vec{u}\vec{u}^T = \begin{pmatrix}
@@ -161,7 +161,7 @@ $\bmath = \left(\begin{pmatrix}
     \begin{definition}
         Soit $A$ symétrique, $U$ orthogonale et $U^TAU = D$ diagonale. L'ensemble des valeurs propres de $A$ est appelé \textcolor{red}{spectre} de $A$
     \end{definition}
-    On prends $A =UDU^T = (\vec{u}_1, \vec{u}_2, \dots, \vec{u}_n)\begin{pmatrix}
+    On prend $A =UDU^T = (\vec{u}_1, \vec{u}_2, \dots, \vec{u}_n)\begin{pmatrix}
         \lambda_1 & 0 & \cdots & 0\\
         0 & \lambda_2 & 0 & 0\\
         \vdots & \ddots & \ddots & 0\\
@@ -180,7 +180,7 @@ $\bmath = \left(\begin{pmatrix}
     \begin{subparag}{exemple}
         Soit $A = \begin{pmatrix}
             1 & 2 \\ 2 & 1
-        \end{pmatrix}$ la matrice symétrique que nous avons orthodiagonalisée mardi. Nous avonstrouve une base orthonormée de vecteurs propres (pour les valeurs propres -1 et 3):
+        \end{pmatrix}$ la matrice symétrique que nous avons orthodiagonalisée mardi. Nous avons trouvé une base orthonormée de vecteurs propres (pour les valeurs propres -1 et 3):
         \[\mathcal{U} = (\vec{u_1}, \vec{u_2}) = \left(\begin{pmatrix}
             -\sqrt{2}/2 \\
             \sqrt{2}/2
@@ -196,17 +196,17 @@ $\bmath = \left(\begin{pmatrix}
     Soit $K$ un corps fini (ayant un nombre fini d'éléments). Considérons l'ensemble de tous les multiples entiers de $1_K$ dans $K$, c'est à dire les éléments de la forme $n \times 1 = 1_K + \cdots + 1_K$.\\
     Comme $K$ est fini, $\{n\cdot 1_K| n \in \mathbb{Z}\}$ aussi est fini. Autrement dit, il existe des entiers n tels que $n \cdot 1_K = 0$ (si $m \cdot 1_k = m'\cdot 1_K$, alors $(m-m')\cdot 1_K = 0_K$)
     \begin{definition}
-        Le plus petit entier non nul $n$ tel que $n\cdot 1_K = 0$ s'appelle la \textcolor{red}{caractéristique} de $K$ et on le not $carK$.
+        Le plus petit entier non nul $n$ tel que $n\cdot 1_K = 0$ s'appelle la \textcolor{red}{caractéristique} de $K$ et on le note $carK$.
     \end{definition}
     \begin{theoreme}
         La caractéristique d'un corps fini $K$ est un nombre premier.
     \end{theoreme}
     \begin{framedremark}
-        La caractéristique d'un corps est un nombre entiers, ce n'est \textbf{pas} un élément du corps.
+        La caractéristique d'un corps est un nombre entier, ce n'est \textbf{pas} un élément du corps.
     \end{framedremark}
     \begin{subparag}{Exemple}
         \begin{enumerate}
-            \item $car\mathbb{F}_2 = 2$ et $\mathbb{F}_p = p$, premier
+            \item $car\mathbb{F}_2 = 2$ et $car\mathbb{F}_p = p$, premier
             \item $car\mathbb{F}_4 = 2$
             \item $car\mathbb{R} = 0$ $n\cdot1 \neq 0$
         \end{enumerate}
@@ -216,13 +216,13 @@ $\bmath = \left(\begin{pmatrix}
         \textbf{Preuve} On montre que si $x\cdot y = 0$, alors $x$ ou $y$ est nul. Supposons que l'un des deux est non nul, disons que c'est $x$. On doit prouver que $y = 0$.\\
         Comme $x \neq 0$, $x^{-1}$ existe Alors
         \[0 = x^{-1}\cdot 0 = x^{-1}(x\cdot y) = (x^{-1}x)y = 1_K\cdot y = y = 0\]
-        Soit $K$ un corps fini et $n = car(K) \in \mathbb{N}^*$. On motre que si $n = a\cdot b$, alors $a$ ou $b$ $= 1$.
+        Soit $K$ un corps fini et $n = car(K) \in \mathbb{N}^*$. On montre que si $n = a\cdot b$, alors $a$ ou $b$ $= 1$.
         \\
         Comme $n \neq 1$ car $1\cdot 1_K = 1_K \neq 0$, n sera donc premier.
         \\
-        Ce qu'on sait dès le début c'est $0 = n\cdot 1_K = a\cdot b \cdot 1_K = 1_K + \cdots + 1_K = $ par distributivité $ = (1_K + \cdots + 1_K)\cdot (1_K + \cdots + 1_K)$ où la premier parenthèse est $a$ et la deuxième est $b$ on a alors $= (a\cdot 1_K)\cdot (b\cdot 1_K)$
+        Ce qu'on sait dès le début c'est $0 = n\cdot 1_K = a\cdot b \cdot 1_K = 1_K + \cdots + 1_K = $ par distributivité $ = (1_K + \cdots + 1_K)\cdot (1_K + \cdots + 1_K)$ où la première parenthèse est $a$ et la deuxième est $b$ on a alors $= (a\cdot 1_K)\cdot (b\cdot 1_K)$
         \\
-        Par le lemme, soit $a\cdot 1_K = 0$, soit $b\cdot 1_K ) 9$. Or $n$ est le plus petit entier non nul tel que $n \cdot 1_K = 0$.
+        Par le lemme, soit $a\cdot 1_K = 0$, soit $b\cdot 1_K = 0$. Or $n$ est le plus petit entier non nul tel que $n \cdot 1_K = 0$.
         \\
         Donc soit $a = n$ et $b = 1$, soit $b = n$ et $a = 1$.
     \end{subparag}
@@ -240,9 +240,9 @@ $\bmath = \left(\begin{pmatrix}
         Soit $K$ un corps fini et $p = $car$K$. Alors il existe $n$ tel que $K$ a $p^n$ éléments. On appelle ce nombre la \textcolor{red}{cardinalité} de $K$. 
     \end{theoreme}
     \begin{subparag}{preuve}
-        Si $K$ est fini, $\dim_{\mathbb{F}_p}K < \infty$ et on peut choisir une base $\bmath$ qui a $n$ éléments. Le passage en coordonées $()_\bmath : K \to (\mathbb{F}_p)^n$ tel que $x \to (x)_\bmath$
+        Si $K$ est fini, $\dim_{\mathbb{F}_p}K < \infty$ et on peut choisir une base $\bmath$ qui a $n$ éléments. Le passage en coordonnées $()_\bmath : K \to (\mathbb{F}_p)^n$ tel que $x \to (x)_\bmath$
         \\
-        Ce passage est une application bijective. Et donc commme vu en AICC, Le nombre d'élément de le domaine et le codomaine est le même. La cardinalité de $K$ est la même que celle de $(\mathbb{F}_p)^n$ et sa cardinalité vaut $p^n$.
+        Ce passage est une application bijective. Et donc comme vu en AICC, Le nombre d'élément de le domaine et le codomaine est le même. La cardinalité de $K$ est la même que celle de $(\mathbb{F}_p)^n$ et sa cardinalité vaut $p^n$.
     \end{subparag}
     \begin{subparag}{Exemple}
         \begin{itemize}
@@ -254,12 +254,12 @@ $\bmath = \left(\begin{pmatrix}
 \end{parag}
 
 \begin{parag}{Construction de corps finis}
-    La construction de $\mathbb{F}_4$ n'est pas isolé, la méthode générale fonctionne de la même manière. Soit $p$ un nombre premier.
+    La construction de $\mathbb{F}_4$ n'est pas isolée, la méthode générale fonctionne de la même manière. Soit $p$ un nombre premier.
     \begin{itemize}
         \item Trouver un polynôme $p(t)$ unitaire irréductible de degré $n$ dans $\mathbb{F}_p[t]$
         \item Considérer l'ensemble $K$ de tous les restes de division par $p(t)$. il y en a $p^n$
         \item Définir la somme dans $K$ comme dans $\mathbb{F}_p[t]$
-        \item Défini le produit dans $K$ par celui de $\mathbb{F}_p[t]$, \textcolor{red}{modulo} $p(t)$
+        \item Définir le produit dans $K$ par celui de $\mathbb{F}_p[t]$, \textcolor{red}{modulo} $p(t)$
         \item Alors $K$ est un corps de cardinalité $p^n$
     \end{itemize}
 
@@ -269,7 +269,7 @@ $\bmath = \left(\begin{pmatrix}
             Soit $K$ un corps et $p(t) = t^2 - a$ si $a$ n'est pas un carré (dans $K$), alors $p(t)$ est irréductible.
         \end{proposition}
         \textbf{Preuve}
-        En effet $p(t)$ est irreductible si et seulement si il n'a pas de racine (car il est de degré 2), si et seulement si $p(x) \neq 0$ pour tout $x \in K$.
+        En effet $p(t)$ est irréductible si et seulement si il n'a pas de racine (car il est de degré 2), si et seulement si $p(x) \neq 0$ pour tout $x \in K$.
         \\
         Or, $p(x) = x^2 - a = 0$ si et seulement si $a = x^2$ est un carré
         \begin{framedremark}

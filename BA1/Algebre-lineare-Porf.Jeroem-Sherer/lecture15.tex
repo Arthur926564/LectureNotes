@@ -1,6 +1,6 @@
 
-\lecture{15}{2024-11-05}{Théroème du rang}{}
-\begin{parag}
+\lecture{15}{2024-11-05}{Théorème du rang}{}
+\begin{parag}{Théorème du rang}
     
 
 \begin{subparag}{remarque importante}
@@ -61,12 +61,12 @@ Supposons que $A \neq 0$, alors $A = \begin{pmatrix}
 
 \begin{theoreme}{théorème du rang}
     
-        \[rangT + \dim\; \kerT  = \dimV\]
+        \[rangT + \dim\; \ker T  = \dim V\]
     
 \end{theoreme}
 \begin{itemize}
     \item Grâce aux coordonnées on identifie $V$ avec \R$^n$ et W avec \R$^m$.
-    \item Ainsi on identifie $T$ avec une application linéaire $S: \mathbb{N} \to \mathbb{R}^m$.
+    \item Ainsi on identifie $T$ avec une application linéaire $S: \mathbb{R}^n \to \mathbb{R}^m$.
     \item Celle-ci est donnée par la multiplication matricielle \[\vec{x} \to A\vec{x} = S\left(\vec{x}\right)\]
     \item $\dim \; \ker A = $ nombre de colonnes sans pivot
     \item $\dim \; ImA = \text{rang}A = $ nombre de colonnes-pivot
@@ -80,15 +80,15 @@ Si $\dim V = n$, $\dim \; \ker T = k \leq n$ car $\ker T \subset V$. On choisit 
 \\
 Alors $\{T\left(e_1\right), \dots, T\left(e_k\right), T\left(e_{k+1}\right), \dots, T\left(e_n\right)\}$ engendrent $ImT$.
 \\
-Donc $\{T\left(e_{k+1}, \dots, T\left(e_n\right)\right)\}$ engendrent $ImT$.
+Donc $\{T\left(e_{k+1}\right), \dots, T\left(e_n\right)\}$ engendrent $ImT$.
 \\
-Mais T | $Vect\{e_{k+1}, \dots, e_n\}$ est injective car $\kerT \cap U = \{0\}$.
+Mais T | $Vect\{e_{k+1}, \dots, e_n\}$ est injective car $\ker T \cap U = \{0\}$.
 Donc $T\left(e_{k+1}\right), \dots, T\left(e_n\right)$ sont libres, donc forment une base. Conclusion \[RangT  = n - k\]
 \end{subparag}
 
 
 \begin{definition}
-Soit $T : V \to W$ une application linéaire entre espaces vectoriels de dimension finies.
+Soit $T : V \to W$ une application linéaire entre espaces vectoriels de dimension finie.
 \\
 Le \textcolor{red}{rang} de $T$ est la dimension de l'image de $T$ : 
 \[rang T = \dim \; ImT\]
@@ -109,21 +109,21 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
         \[T\left(p\right) = \begin{pmatrix}
             p\left(0\right) \\ p\left(1\right)
         \end{pmatrix}\]
-        Pour tout polynôme $p$ de degrès $\leq 2$.
+        Pour tout polynôme $p$ de degré $\leq 2$.
         \\
         Nous allons 
         \begin{itemize}
             \item Calculer le noyau
             \item en déduire la dimension de l'image grâce au théorème du rang, et
-            \item interpréter ce résultat pour conclure que deux zéros d'une fonction polynomiale de degrès $\leq 2$ déterminent le polynôme en question à un facteur près.
+            \item interpréter ce résultat pour conclure que deux zéros d'une fonction polynomiale de degré $\leq 2$ déterminent le polynôme en question à un facteur près.
         \end{itemize}
 
         \begin{align*}
         \ker T &= \{p \in \mathbb{P}_2 | p\left(0\right) = 0 = p\left(1\right)\}\\
             &= \{p \in \mathbb{P}_2 | p\left(t\right) = a\cdot t\cdot \left(t - 1\right) \text{ , pour un } a \in \mathbb{R}\} \\
-            &= Vect\{\left(t-1\right)\} \text{ de dimension 1.}
+            &= Vect\{t\left(t-1\right)\} \text{ de dimension 1.}
         \end{align*}
-        Par le théorème du rang, $rang T + \dim\;\kerT = 3$ donc $rang T = 2 = \dim \mathbb{R}^2$.
+        Par le théorème du rang, $rang T + \dim\;\ker T = 3$ donc $rang T = 2 = \dim \mathbb{R}^2$.
         \\
         L'interprétation suit: si $p\left(t\right)$ s'annule en $0$ et en $1$, alors $p\left(t\right) = a \cdot t \cdot \left(t- 1\right)$ pour $a \in $ \R.
     \end{subparag}
@@ -150,10 +150,9 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
             1 & 1 & 1 & a\\
              0 & a-1 & 0 & 1-a\\
              0 & 0 & a-1 & 1-a\\
-             0 & 1-a & 1-a & 1-a^
-             
+             0 & 1-a & 1-a & 1-a^2
          \end{pmatrix}\]
-         (les opérations sont $L_1 - L-4$, $L-2 - L_1'$, $L_3  L_1'$, $L_4 - a\cdot L_1'$)
+         (les opérations sont $L_1 \leftrightarrow L_4$, $L_2 - L_1'$, $L_3 - L_1'$, $L_4 - a\cdot L_1'$)
          Si $a - 1 = 0$ alors $a = 1$ donc:
          \\
          $rang\; A = 1$, $\dim \; \ker A = 3$
@@ -162,24 +161,22 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
  \[\begin{pmatrix}
             1 & 1 & 1 & a\\
              0 & 1 & 0 & -1\\
-             0 & 0 & a-1 & -1\\
+             0 & 0 & 1 & -1\\
              0 & 1 & 1 & 1 + a
-             
          \end{pmatrix} \to \begin{pmatrix}
             1 & 1 & 1 & a\\
              0 & 1 & 0 & -1\\
              0 & 0 & 1 & -1\\
              0 & 0 & 0 & a + 3
-             
          \end{pmatrix}\]
-         Les opération ici pour passer à la deuxième matrice sont ($L_3 - L_2 - L_3$) + $+$
+         Les opération ici pour passer à la deuxième matrice sont ($L_4 - L_2 - L_3$) + $+$
      \end{subparag}
  \end{parag}
 
  \begin{parag}{Une application linéaire}
      Soit $W$ le sous-espace vectoriel de $M_{2\times2}\left(\mathbb{R}\right)$ des matrices triangulaires supérieures.
      \\
-     En fait $W = Vect\{e_{11}, e_{12}, e_{22}$ et $\mathcal{B} = (e_{11}, e_{12}, e_{22})$ est une base de $W$.
+     En fait $W = Vect\{e_{11}, e_{12}, e_{22}\}$ et $\mathcal{B} = (e_{11}, e_{12}, e_{22})$ est une base de $W$.
      \\
      On considère $T : \mathbb{P}_2 \to W$ l'application linéaire définie par
      \[T\left(p\right) = \begin{pmatrix}
@@ -198,7 +195,7 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
          0 \\ 1 \\ 0
      \end{pmatrix} = \vec{e}_2 = \left(t\right)_{\mathcal{C}an} \text{et} t \to \begin{pmatrix}
          1 & -1 \\ 0 & 2
-     \end{pmatrix} = W_1 \text{et} \left(W_2\right)_{\mathcal{B}} = \begin{pmatrix}
+     \end{pmatrix} = W_2 \text{et} \left(W_2\right)_{\mathcal{B}} = \begin{pmatrix}
          1 \\ -1 \\ 2
      \end{pmatrix}\]
      \[\begin{pmatrix}
@@ -214,10 +211,10 @@ Soit $A$ une matrice $m \times n$, représentant une application linéaire.
  \end{parag}
 
  \begin{parag}{Résumé}
-     Le théroème du rang peut nous permettre de faire de grand raccourci lors de choix multiple.
+     Le théorème du rang peut nous permettre de faire de grands raccourcis lors de choix multiple.
      \begin{itemize}
-         \item Le rang d'une matrice $A$ de taille $n \times m$ ne peut pas dépasser $n$.
-         \[Rang  A + \dim\; \kerA = n\]
+         \item Le rang d'une matrice $A$ de taille $m \times n$ ne peut pas dépasser $n$.
+         \[Rang  A + \dim\; \ker A = n\]
          \item Pour rappel, si on prend une application $A :$ $V \to W$ on a que $\ker A$ est dans $V$ et que $Im A$ est dans $W$.                               
      \end{itemize}
  \end{parag}

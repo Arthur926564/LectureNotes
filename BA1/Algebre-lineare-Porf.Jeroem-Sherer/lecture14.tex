@@ -24,7 +24,7 @@ On vérifie que $T$ est linéaire. Le noyau de $T$ est un sous-ensemble de $M_{2
 \begin{enumerate}
     \item $0 \in Ker T$ : $T(0) = 0$ car $T$ est linéaire
     \item stabilité de $+$: Si $v, v' \in KerT$, on montre que $v+v' \in KerT$, ce qui donne $0 + 0 = 0$ (les images des éléments du noyau sont tous égaux à 0).
-    \item Stabilité de l'action: comme c'est une application linéaire on peut surtout $\alpha$ de l'application, on a donc, $\alpha \cdot 0 = 0$.
+    \item Stabilité de l'action: comme c'est une application linéaire on peut sortir $\alpha$ de l'application, on a donc, $\alpha \cdot 0 = 0$.
 \end{enumerate}
 
 
@@ -35,7 +35,7 @@ Soit $T : V \to W$ une application linéaire. Alors $T$ est injective si et seul
 \begin{exemple}
     On considère $T : \mathbb{R}^4 \to \mathbb{R}^2$ donné par
     \[A = \begin{pmatrix}
-        1 & -1 & 1 & -1 \\ 1 & 1 & 1 & 1
+        1 & -1 & 1 & -1 \\ 1 & -1 & -1 & 1
     \end{pmatrix}\]
     On a donc que 
     \[Ker T = Ker A = \{\vec{v}\in \mathbb{R}^4| A \cdot \vec{v}= \vec{0}\}\]
@@ -63,7 +63,7 @@ Soit $T : V \to W$ une application linéaire. Alors $T$ est injective si et seul
         z &= z\\
         w &= z
     \end{align*}
-    Voila d'où vient les deux vecteurs, un en fonction de $x$ et l'autre en fonction de $z$.
+    Voilà d'où viennent les deux vecteurs, un en fonction de $x$ et l'autre en fonction de $z$.
 \end{exemple}
 
 \begin{definition}
@@ -81,13 +81,13 @@ On voit d'abord que $0 = T(0)$ appartient à l'image. Il reste à montrer la sta
 \\
 On sait que $w, w' \in ImT$, donc il existe $v, v' \in V \text{ tel que } T(v) = w $ et $T(v') = w'$.\\
 On choisit $v_2 = v + v'$ et on calcule par linéarité de $T$ : \[T(v_2) = T(v + v') = T(v) + T(v') = w + w'\]
-Donc, $w + w' \in Im T$  (on a le droit de faire tout ça parce que $T$ est une application linéaire.
+Donc, $w + w' \in Im T$  (on a le droit de faire tout ça parce que $T$ est une application linéaire).
 \\
-Pour ce qui est de l'action, on peut juste faire le même procédé et grâce au faite que $T$ est une application linéaire, ça marchera aussi.
+Pour ce qui est de l'action, on peut juste faire le même procédé et grâce au fait que $T$ est une application linéaire, ça marchera aussi.
 
 
 \begin{framedremark}
-    Soit $T : V \to W$ une application linéaire. Alors $Ker T$ est un sous-espace de $V$, mais $Im T$ est un sous-espace de $W$. (Attention à où vit ces ensembles)
+    Soit $T : V \to W$ une application linéaire. Alors $Ker T$ est un sous-espace de $V$, mais $Im T$ est un sous-espace de $W$. (Attention à où vivent ces ensembles)
 \end{framedremark}
 
 \begin{exemple}
@@ -97,8 +97,8 @@ Pour ce qui est de l'action, on peut juste faire le même procédé et grâce au
 
         \item $Im D = \{q \in \mathbb{P}_3 | \exists p \in \mathbb{P}_3$ avec $D(p)  = q\}$
 \[= Vect\{1, t, t^2\} \subset \mathbb{P}_3\]
-Pour expliquer un peu, on sait que tout les polynômes qui ont que des constantes vont sur $0$ donc on prend le vecteur des constantes qui lui nous ramène de toutes les constantes à $0$.\\
-De l'autre côté, l'image reprends tout ce qui arrive de l'autre côté, on voit qu'il y a pas $t^3$ dans l'image, quand on dérive un polynôme, il devient de degrés $2$. Donc la base de l'image va, "\textit{avec le noyau}" et $t^2$
+Pour expliquer un peu, on sait que tous les polynômes qui ont que des constantes vont sur $0$ donc on prend le vecteur des constantes qui lui nous ramène de toutes les constantes à $0$.\\
+De l'autre côté, l'image reprend tout ce qui arrive de l'autre côté, on voit qu'il n'y a pas $t^3$ dans l'image, quand on dérive un polynôme, il devient de degré $2$. Donc la base de l'image va, "\textit{avec le noyau}" et $t^2$
 
     \end{itemize}
 \end{exemple}
@@ -107,16 +107,16 @@ De l'autre côté, l'image reprends tout ce qui arrive de l'autre côté, on voi
 Soit $T : \mathbb{R}^n \to \mathbb{R}^m$ une application linéaire, représentée par une matrice $A \in M_{m\times n}(\mathbb{R})$.
 \begin{itemize}
     \item Pour calculer le \textcolor{red}{noyau} de $T$ on échelonne et réduit la matrice $A$ selon les \textcolor{red}{lignes}.
-    \item Pour calculer l'\textcolor{blue}{image} de $T$ on ne garde que les \textcolor{blue}{colonnes-pivotss}. Si nécessaire on échelonne et réduit $A$ selon les \textcolor{blue}{colonnes}.
+    \item Pour calculer l'\textcolor{blue}{image} de $T$ on ne garde que les \textcolor{blue}{colonnes-pivots}. Si nécessaire on échelonne et réduit $A$ selon les \textcolor{blue}{colonnes}.
 \end{itemize}
 
 \begin{framedremark}{espace-colonne}
-    On appelle parfois \textcolor{red}{espace-colonne} le sous-espcae $ColA$ engendré par les colonnes de $A$. Il s'agit donc de $Im A$
+    On appelle parfois \textcolor{red}{espace-colonne} le sous-espace $ColA$ engendré par les colonnes de $A$. Il s'agit donc de $Im A$
 \end{framedremark}
 \paragraph{explication de pourquoi ça marche}
 Soit $A \in M_{m\times n}(\mathbb{R})$ et $B$ la matrice échelonnée associée ($B$ est juste la matrice échelonnée).
 \\
-SI une colonne n'a pas de pivot, le système $A\vec{x} = \vec{0} $ a une infinitén de solutions (les mêmes que $B\vec{x} = \vec{0}$), on peut écrire
+Si une colonne n'a pas de pivot, le système $A\vec{x} = \vec{0} $ a une infinité de solutions (les mêmes que $B\vec{x} = \vec{0}$), on peut écrire
 \[x_1\vec{a}_1 + \dots + x_n\vec{a}_n = \vec{0}\]
 
 
@@ -126,7 +126,7 @@ SI une colonne n'a pas de pivot, le système $A\vec{x} = \vec{0} $ a une infinit
 On peut donc enlever une telle colonne pour engendrer $ColA = ImA$. Les k colonnes-pivot restantes de $A$ sont libres puisque la matrice $m\times k$ formée de ces k colonnes a $k$ pivots.
 
 \begin{exemple}
-    On dont une application linéaire donnée par $A$ tel que:
+    On donne une application linéaire donnée par $A$ tel que:
     \[A = \begin{pmatrix}
         1 & 0 & 0 & -1\\
         -1 & 1 & 0 & 0\\
@@ -145,7 +145,7 @@ On peut donc enlever une telle colonne pour engendrer $ColA = ImA$. Les k colonn
     
 \end{exemple}
 
-\paragraph{Rappel critère d'injéctivité (encore)}
+\paragraph{Rappel critère d'injectivité (encore)}
 Le critère d'injectivité d'une application linéaire permet de ramener la démonstration de l'injectivité au calcul du noyau. Le noyau mesure donc le \textcolor{red}{défaut d'injectivité}.
 \begin{theoreme}
     Une application linéaire $T: V \to W$ est injective si et seulement si $Ker T = \{0\}$ 
@@ -155,7 +155,7 @@ Soit $A$ et $B$ deux matrices de taille $m\times n$ On note $A  \sim B$ quand el
 \begin{theoreme}
     Si $A \sim B$ alors les lignes de $A$ et $B$ engendrent le même sous-espace de $\mathbb{R}^n$.   
 \end{theoreme}
-\textbf{Pourquoi?} Les opération élémentaires produisent de nouvelles lignes qui sont combinaison linéaires des précédentes.
+\textbf{Pourquoi?} Les opérations élémentaires produisent de nouvelles lignes qui sont combinaisons linéaires des précédentes.
 \begin{theoreme}
     Les lignes d'une forme échelonnée de $A$ forment une base du sous-espace engendré par les lignes de $A$.
 \end{theoreme}
@@ -167,6 +167,6 @@ Soit $A$ une matrice de taille $m \times n$.
     Les colonnes pivots de $A$ forment une base de $ColA = Im A$.
 \end{theoreme}
 \textbf{Pourquoi?} Si une colonne de $A$ est combinaison linéaire d'autres colonnes, alors la même combinaison linéaire se retrouve pour les colonnes d'une matrice $B \sim A$. \\
-Si $B$ est une forme échelonnée de $A$, alors les colonnes-picots sont libres et les autres colonnes sont combinaisons linéaire des colonnes pivots.
+Si $B$ est une forme échelonnée de $A$, alors les colonnes-pivots sont libres et les autres colonnes sont combinaisons linéaires des colonnes pivots.
 \\
 Il en va donc de même pour les colonnes de $A$.

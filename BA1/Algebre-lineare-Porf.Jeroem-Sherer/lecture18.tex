@@ -24,7 +24,7 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
     $R_\alpha - \lambda I_2 = \begin{pmatrix}
         \cos \alpha - \lambda & -\sin \alpha\\
         \sin \alpha& \cos \alpha - \lambda
-    \end{pmatrix}$ n'a pas d'inverse. On sait donc qu'une matrice n'est pas inversible lorsque sont déterminant est égal à $0$:
+    \end{pmatrix}$ n'a pas d'inverse. On sait donc qu'une matrice n'est pas inversible lorsque son déterminant est égal à $0$:
     \\
     On a donc le déterminant qui est donnée par:
     \begin{align*}
@@ -72,23 +72,23 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
             \item $12$ est valeur propre de $A$, car la $4^{eme}$ ligne de $A - 12I_4$, donc $rang(A - 12I_4) = 3$, ici : 
             \[\dim \ker (A - 12 I_4) = 1 = \dim E_{12}\]
 
-            \item $5$ est valeur propre,
+            \item $-5$ est valeur propre,
             \[A - (-5)I_4 = \begin{pmatrix}
             0 & -1 & 7 & 11\\
             0 & 0  &1 & 0\\
             0 & 0 & 5 & -3\\
             0 & 0 & 0 & 17
         \end{pmatrix} \text{  est de rang }3\]
-        $E_5 = \ker (A - (-5)I_4)$ est de $\dim 1$.
+        $E_{-5} = \ker (A - (-5)I_4)$ est de $\dim 1$.
         \\
         \textbf{Attention!} $-5$ apparaît deux fois dans la diagonale, c'est une valeur propre "\textit{double}". Mais $\dim E_{-5} = 1$
         \end{enumerate}
     \end{subparag}
 \end{parag}
-\begin{parag}{Vecteur propres libres, les cas $n= 1, 2$}
+\begin{parag}{Vecteurs propres libres, les cas $n= 1, 2$}
     \begin{itemize}
         \item Soit $\vec{v_1}$ un vecteur propre de la matrice carrée $A$. Alors la famille $\{\vec{v_1}\}$ est libre car un vecteur propre est non nul.
-        \item Soit $\vec{v_1}, \vec{v_2}$ deux vecteurs proprews de la matrice carrée $A$ pour des valeurs propres $\lambda_1$ et $\lambda_2$ \textcolor{red}{difflrentes}. Alors la famille $\{\vec{v_1}, \vec{v_2}\}$ est libre.
+        \item Soit $\vec{v_1}, \vec{v_2}$ deux vecteurs propres de la matrice carrée $A$ pour des valeurs propres $\lambda_1$ et $\lambda_2$ \textcolor{red}{différentes}. Alors la famille $\{\vec{v_1}, \vec{v_2}\}$ est libre.
     \end{itemize}
 
     On a donc que $A\cdot \vec{v_1} = \lambda_1\vec{v_1}$ et $A\cdot \vec{v_2} = \lambda_2\vec{v_2}$.
@@ -107,10 +107,10 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
     Soit $\lambda_1, \dots, \lambda_k$ des valeurs propres \textcolor{red}{distinctes} et $\vec{v_1}, \dots, \vec{v_k}$ des vecteurs propres d'une matrice carrée $A$ (pour chacune de ces valeurs propres). Alors la famille $\{\vec{v_1}, \dots, \vec{v_k}\}$ est libre.
     \end{theoreme}
     \begin{subparag}{Preuve}
-        Par récurrence sur $k$. Si $k = 1$ le résultat a déja été prouvé juste au dessus.
+        Par récurrence sur $k$. Si $k = 1$ le résultat a déjà été prouvé juste au dessus.
         \\
         Supposons que $k > 1$ et que le résultat est vrai pour moins de $k$ vecteurs. Supposons que:
-        \[\alpha_1\vec{v_1} + \cdots + \alpha_{k-1}\vec{v_{k-1}} + \alpha_k\vec{v_k} = \0\]
+        \[\alpha_1\vec{v_1} + \cdots + \alpha_{k-1}\vec{v_{k-1}} + \alpha_k\vec{v_k} = \vec{0}\]
 
         Nous devons montrer que tous les scalaires $\alpha_1, \dots, \alpha_k$ soient nuls.\\
         Reprenons: $\alpha_1\vec{v_1} + \cdots + \alpha_{k-1}\vec{v_{k-1}} + \alpha_k\vec{v_k} = 0$ Alors:
@@ -121,7 +121,7 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
     \end{subparag}
 \end{parag}
 \begin{parag}{Le polynôme caractéristique}
-    Un nombre $\lambda$ est une valeur propre de $A$ si et seulement si la matrice $A - \lambdaI$ n'est pas inversible. Or une matrice est inversible si et seulement si son déterminant est non nul.
+    Un nombre $\lambda$ est une valeur propre de $A$ si et seulement si la matrice $A - \lambda I$ n'est pas inversible. Or une matrice est inversible si et seulement si son déterminant est non nul.
     \begin{theoreme}
         Un nombre $\lambda$ est valeur propre de $A$ si et seulement si $\det (A - \lambda I) = 0$.
     \end{theoreme}
@@ -140,7 +140,7 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
         Calculons algébriquement les valeurs propres.
         \\
         Les valeurs propres sont les racines du polynôme caractéristique:
-        \[C_A(t) = |A - -tI_2| = \begin{vmatrix}
+        \[C_A(t) = |A - tI_2| = \begin{vmatrix}
             -t & 1 \\ 1 & -t
         \end{vmatrix} = t^2 -1 = (t-1)(t+1)\]
         Les racines sont $1$ et $-1$, de multiplicité algébrique de $1$ chacune.\\
@@ -158,7 +158,7 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
             \end{pmatrix}\right\}$
             
         \end{itemize}
-        Ainsi on voit que $E_1$ est l'axe de symmétrique ($x =y$) et que $E_{-1}$ est perpendiculaire ($x = -y)$
+        Ainsi on voit que $E_1$ est l'axe de symétrie ($x =y$) et que $E_{-1}$ est perpendiculaire ($x = -y)$
         \\
         On choisit maintenant $\bmath = \left(\begin{pmatrix}
             1 \\ 1
@@ -169,28 +169,28 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
         Alors si $S : \mathbb{R}^2 \to \mathbb{R}^2 $ tel que $(S)_{\cmath an}^{\cmath an} = A = \begin{pmatrix}
             0 & 1 \\ 1 & 0
         \end{pmatrix}$, Alors, puisque $s(\vec{b_1})= \vec{b_1}$, $s(\vec{b_2}) = -\vec{b_2}$,
-        \[(S)_\bmath^\bmath  \begin{pmatrix}
+        \[(S)_\bmath^\bmath = \begin{pmatrix}
             1 & 0 \\ 0 & -1
         \end{pmatrix}\]
-        On voit ici qu'il y a les valeurs propres dans la diagonale, on identifie immédiatement une droite fixé.
+        On voit ici qu'il y a les valeurs propres dans la diagonale, on identifie immédiatement une droite fixée.
     \end{subparag}
     
 \end{parag}
 
 
 \begin{parag}{La multiplicité algébrique}
-    La multiplicité algébrique d'une valeur propre est sa multiplicé en tant que racin du polynôme caractéristique.
+    La multiplicité algébrique d'une valeur propre est sa multiplicité en tant que racine du polynôme caractéristique.
     \begin{subparag}{Exemple}
         Soit $A \in M_{5 \times 5}(\mathbb{R})$ et supposons que 
         \begin{itemize}
             \item $c_A(t) = t^3(t + 3)^2$. Alors on voit qu'il a une multiplicité algébrique de $5$.
             \item $c_A(t) = (t^2 + 1)^2(t-2)$. Alors
         \end{itemize}
-        Dan tous le cas il y a autant de valeurs propres. \textcolor{red}{en comptant leur mulitplicité algébrique}, que de colonnes dans la matrice, ici $5$.
+        Dans tous les cas il y a autant de valeurs propres. \textcolor{red}{en comptant leur multiplicité algébrique}, que de colonnes dans la matrice, ici $5$.
         \end{subparag}
 
         \begin{subparag}{remarque personnelle}
-            On le voit en faisant le déterminant avec les matrices $3 \times 3$ et la règle de Sarrus, on multiplie tout les polynômes ($a_{ii} - \lambda$) ensemble ce qui créer le polynôme avec le degrès le plus haut.
+            On le voit en faisant le déterminant avec les matrices $3 \times 3$ et la règle de Sarrus, on multiplie tous les polynômes ($a_{ii} - \lambda$) ensemble ce qui crée le polynôme avec le degré le plus haut.
         \end{subparag}
         
         \begin{subparag}{multiplicité géométrique}
@@ -200,8 +200,8 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
     \end{subparag}
 \end{parag}
 
-\begin{parag}{Matrice semblables}
-    Deux matrice $A$ et $B$ de taille $n \times n$ sont \textcolor{red}{semblblaes} si elles représentent la même application linéaire, mais pour des choix de bases différentes. Concrétement, si $T : V \to V$ et $\mathcal{B}, \mathcal{C}$ sont deux bases de $V$, alors $(T)_\bmath^\bmath$ et $(T)_\cmath^\cmath$ sont semblable. Or, si $P = (Id)_\bmath^\cmath$ est la matrice inversible de changement de base, alors:
+\begin{parag}{Matrices semblables}
+    Deux matrices $A$ et $B$ de taille $n \times n$ sont \textcolor{red}{semblables} si elles représentent la même application linéaire, mais pour des choix de bases différentes. Concrètement, si $T : V \to V$ et $\mathcal{B}, \mathcal{C}$ sont deux bases de $V$, alors $(T)_\bmath^\bmath$ et $(T)_\cmath^\cmath$ sont semblables. Or, si $P = (Id)_\bmath^\cmath$ est la matrice inversible de changement de base, alors:
     \[P^{-1}BP = (Id)_\cmath^\bmath(T)_\cmath^\cmath(Id)_\bmath^\cmath = (T)_\bmath^\bmath = A\]
 
     \begin{definition}
@@ -235,10 +235,10 @@ La matrice de rotation $R_\alpha = \begin{pmatrix}
         Deux matrices semblables ont le même polynôme caractéristique. Elles ont donc en particulier les mêmes valeurs propres.
     \end{theoreme}
     \begin{subparag}{Preuve}
-        Soit $A$ et $B$ deux matrice non semblables. C'est à dire, il existe une matrice inversible $P$, de taille $n \times n$ telles que $PAP^{-1} = B$.\\
+        Soit $A$ et $B$ deux matrices semblables. C'est à dire, il existe une matrice inversible $P$, de taille $n \times n$ telle que $PAP^{-1} = B$.\\
         \begin{align*}
             C_B(t) = C_{PAP^{-1}}(t) &= \det (PAP^{-1} - t\cdot I_n)\\
-            &= \det (PAP^{-1} - t\cdot p\cdot P^{-1})\\
+            &= \det (PAP^{-1} - t\cdot P\cdot P^{-1})\\
             &= \det(P) \cdot \det(A - t\cdot I_n) \cdot \det(P^{-1})\\
             &= \frac{\det(P) \cdot \det(A-t\cdot I_n)}{\det(P)} = \det(A - t\cdot I_n)\\
             &= C_A(t)

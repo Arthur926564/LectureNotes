@@ -3,9 +3,9 @@
 \begin{parag}{Rappels: changement de base}
     Soit $V$ un espace vectoriel de dimension $n$:
     \begin{enumerate}
-        \item Soit $\mathcal{B} = (e_1, \dots, e_n)$ une base. On peut alors écrire un vecteur $x \in V$ en \textcolor{red}{coorodnnées} $(x)_\bmath$, où $x = e_1x_1 + \cdots + e_nx_n$.
+        \item Soit $\mathcal{B} = (e_1, \dots, e_n)$ une base. On peut alors écrire un vecteur $x \in V$ en \textcolor{red}{coordonnées} $(x)_\bmath$, où $x = e_1x_1 + \cdots + e_nx_n$.
         \item Soit $\cmath = (f_1, \dots, f_n)$ une autre base. On peut alors écrire un vecteur $x \in V$ en \textcolor{red}{coordonnées} $(x)_\cmath$
-        \item Pour passer de $(x)_\bmath$ à $(x)_\cmath$, on utilise la matrice de changement de base $P = (Id)_\bmath^\cmath$ donc les colonnes sont $(e_i)_\cmath$.
+        \item Pour passer de $(x)_\bmath$ à $(x)_\cmath$, on utilise la matrice de changement de base $P = (Id)_\bmath^\cmath$ dont les colonnes sont $(e_i)_\cmath$.
         \\
         Alors
         \item La matrice de changement de base inverse $Q = (id)_\cmath^\bmath = P^{-1}$
@@ -14,11 +14,11 @@
 
 
     \begin{subparag}{Exemple}
-        On travaille dans l'espace vectoriel $W$ des matrices symétriue de taille $2 \tims 2$ (tel que $A = A^t$). Ainsi:
+        On travaille dans l'espace vectoriel $W$ des matrices symétriques de taille $2 \times 2$ (tel que $A = A^t$). Ainsi:
         \[W = \left\{ \begin{pmatrix}
             a & b \\ b & c
         \end{pmatrix}| a, b, c \in \mathbb{R} \right\}\]
-        On considère deux base $\bmath = (B_1, B_2, B_3)$ et $\cmath = (C_1, C_2, C_3)$:
+        On considère deux bases $\bmath = (B_1, B_2, B_3)$ et $\cmath = (C_1, C_2, C_3)$:
         \begin{align*}
             \bmath &= \left(\begin{pmatrix}
                 1 & 0 \\ 0 & 0
@@ -44,7 +44,7 @@
         \end{pmatrix} = (Id)_\cmath^\bmath = P\]
         On a aussi l'info que $(Id)_\bmath^\cmath = P^{-1}$ qui se calcule avec la méthode de Gauss:
         \[\begin{pmatrix}
-            1 & 1 & 0 & | & 1  & 0 & 0\\
+            1 & -1 & 0 & | & 1  & 0 & 0\\
             0 & 0 & 1 & | & 0 & 1 & 0 \\
             1 & 1 & 0 & | & 0 & 0 & 1
         \end{pmatrix}\]
@@ -54,7 +54,7 @@
 
 
 \begin{parag}{Double changement de base}
-    Soient $\bmath, \cmath$ et $\mathcal{D}$ trois base de $V$.
+    Soient $\bmath, \cmath$ et $\mathcal{D}$ trois bases de $V$.
     \begin{formule}
         \[(Id)_\cmath^{\mathcal{D}}(Id)_\bmath^\cmath = (Id)_\bmath^{\mathcal{D}}\]
     \end{formule}
@@ -92,11 +92,11 @@
         
 
     \begin{enumerate}
-        \item On choisit $\vec{x} \in \mathbb{R}^3$ tel que $f(\vec{x}) = \vec{x} \Leftrightarrow A\vec{x} = \vec{x} \Leftrightarrow A\vec{x} = I_b \vec{x}$
+        \item On choisit $\vec{x} \in \mathbb{R}^3$ tel que $f(\vec{x}) = \vec{x} \Leftrightarrow A\vec{x} = \vec{x} \Leftrightarrow A\vec{x} = I_3 \vec{x}$
         \\
-        \[(A - I_b)\vec{x} = \vec{0} \Leftrightarrow \vec{x} \in \ker (A - I_b)\]
+        \[(A - I_3)\vec{x} = \vec{0} \Leftrightarrow \vec{x} \in \ker (A - I_3)\]
         Calculons ce noyau:
-        \[(A - I_b) = \begin{pmatrix}
+        \[(A - I_3) = \begin{pmatrix}
             -1 & -1 & 1 \\
             -3  & -3 & 3 \\
             -2  & -2 & 2
@@ -105,9 +105,9 @@
             0 & 0 & 0 \\
             0 & 0 & 0 
         \end{pmatrix}\]
-    \item On chercher $\vec{x} \in \mathbb{R}^3$ tel que $f(\vec{x}) = -\vec{x} \Leftrightarrow A\vec{x} = -\vec{x} = -I_b\cdot\vec{x} \Leftrightarrow A\vec{x} + I_b\vec{x} = \vec{0} \Leftrightarrow (A + I_b)\vec{x} = 0 \Leftrightarrow \vec{x} \in \ker (A + I_b)$
+    \item On cherche $\vec{x} \in \mathbb{R}^3$ tel que $f(\vec{x}) = -\vec{x} \Leftrightarrow A\vec{x} = -\vec{x} = -I_3\cdot\vec{x} \Leftrightarrow A\vec{x} + I_3\vec{x} = \vec{0} \Leftrightarrow (A + I_3)\vec{x} = 0 \Leftrightarrow \vec{x} \in \ker (A + I_3)$
 
-    On chercher donc ce noyau:
+    On cherche donc ce noyau:
 \[A + I_3 = \begin{pmatrix}
     1 & -1 & 1\\
     -3 & -1 & 3\\
@@ -125,7 +125,7 @@ Donc, $\ker(A + I_3)$ est la droite \\
     1 \\ 3 \\ 2
 \end{pmatrix}\right\} = Vect \{b_3\}\]
 
-    \item Au final on a trouvé trois vecteurs linéairement indépendant (à vérifier dans le prochain cours) on a $3$ vecteurs qui forme une base;
+    \item Au final on a trouvé trois vecteurs linéairement indépendants (à vérifier dans le prochain cours) on a $3$ vecteurs qui forment une base;
     \[\bmath = \left(\vec{b_1}, \vec{b_2}, \vec{b_3} \right) \text{ dans } \mathbb{R}^3\]
     On a vu que $f(\vec{b}_1) = \vec{b_1}$, $f(\vec{b_2})= \vec{b_2}$, $f(\vec{b_3}) = -\vec{b_3}$\\
     \[(f)_{\cmath an}^{\cmath an} = A, (f)_\bmath^\bmath = \begin{pmatrix}
@@ -133,9 +133,8 @@ Donc, $\ker(A + I_3)$ est la droite \\
         0 & 1 & 0 \\
         0 & 0 & -1
     \end{pmatrix}\]
-    $f$ est la symmétrie qui fixe $W$ dans la direction $D$.
+    $f$ est la symétrie qui fixe $W$ dans la direction $D$.
     \end{enumerate}
-    \\
     La matrice de $f$ dans la base nouvelle $\bmath$ est \textcolor{red}{diagonale}!
     \begin{enumerate}
         \item Elle est plus parlante géométriquement
@@ -143,7 +142,7 @@ Donc, $\ker(A + I_3)$ est la droite \\
     \end{enumerate}
     \end{subparag}
     \begin{subparag}{Remarque personnelle}
-        Juste pour que ce soit clair de comment on a trouver la droite on a juste "\textit{reécris}" en mode système et on arrive a trouver donc que un système d'équation qui est une droite.\\
+        Juste pour que ce soit clair de comment on a trouvé la droite on a juste "\textit{reécris}" en mode système et on arrive a trouver donc que un système d'équation qui est une droite.\\
         On verra plus tard que ces vecteurs sont en fait les vecteurs propres.
     \end{subparag}
 \end{parag}
@@ -171,11 +170,11 @@ Soit $A$ une matrice carrée de taille $n \times n$
 
 
     \begin{subparag}{Proposition}
-        Une vecteur $x$ est un vecteur propre de $T$ pour la valeur propre $\lambda$ si et seulement si $(x)_\bmath$ est un vecteur propre de $A$ pour la même valeur propre $\lambda$.
+        Un vecteur $x$ est un vecteur propre de $T$ pour la valeur propre $\lambda$ si et seulement si $(x)_\bmath$ est un vecteur propre de $A$ pour la même valeur propre $\lambda$.
         \end{subparag}
     \begin{subparag}{Preuve}
         \[A(x)_\bmath = (T)_\bmath^\bmath(x)_\bmath = (T(x))_\bmath\]
-        Ainsi $T(x) = \lambda x$ si et seulement si $A(x)_\bmath = \lambda(x)\bmath$
+        Ainsi $T(x) = \lambda x$ si et seulement si $A(x)_\bmath = \lambda(x)_\bmath$
     \end{subparag}
 
     \begin{subparag}{Exemple}
@@ -190,7 +189,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
         \[(T)_{\cmath an}^{\cmath an} = \begin{pmatrix}
             -1  & 3 \\ 2 &  4
         \end{pmatrix} = A\]
-        On observe, avec un peu de change que:
+        On observe, avec un peu de chance que:
         \[A + 2I_2 = \begin{pmatrix}
             1 & 3 \\ 2 & 6
         \end{pmatrix} \text{ est de rang }1\]
@@ -211,7 +210,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
         \[(T)_\bmath^\bmath = \begin{pmatrix}
             -2 & -1 \\ 0 & 5
         \end{pmatrix} = B \hspace{3cm} \text{ Pas encore diagonale, mais triangulaire}\]
-        Cela nous aise à voir que 5 est aussi une valeur propre car Ker$(B - 5I_2) = Ker \begin{pmatrix}
+        Cela nous aide à voir que 5 est aussi une valeur propre car Ker$(B - 5I_2) = Ker \begin{pmatrix}
             -7 & -1 \\ 0 & 0
         \end{pmatrix} = Vect\left\{\begin{pmatrix}
             -1 \\ +7
@@ -221,7 +220,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
         \end{pmatrix}$ est un vecteur propre de $B$, la matrice de $T$ dans la base $\bmath$, le $\det$ dans la base $\bmath$, donc $-1p_1 + 7\cdot p_2 = 3 +  6t$ est un vecteur propre de $T$.\\
         Mais alors $1 + 2t$ est aussi un vecteur propre de $T$.
         \\
-        On choisit $\cmath = (-3 + t, 1 + 2t) = (q_1, q_2)$m composée de vecteurs propres tel que $T(q_1) = -2q_1$ et $T(q_2) = 5\cdot q_2$.
+        On choisit $\cmath = (-3 + t, 1 + 2t) = (q_1, q_2)$, composée de vecteurs propres tel que $T(q_1) = -2q_1$ et $T(q_2) = 5\cdot q_2$.
         \\
         Si on écrit maintenant notre matrice dans la nouvelle base créée:
         \[(T)_\cmath^\cmath = \begin{pmatrix}
@@ -232,7 +231,7 @@ Soit $A$ une matrice carrée de taille $n \times n$
             T(q_2) &= 5\cdot q_2
         \end{align*}
         Ce qui implique que:
-        \[(T)_\cmath^\cmath ) \begin{pmatrix}
+        \[(T)_\cmath^\cmath = \begin{pmatrix}
             -2 & 0 \\ 0 & 5
         \end{pmatrix}\]
     \end{subparag}

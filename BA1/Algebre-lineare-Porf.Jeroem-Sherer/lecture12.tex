@@ -1,7 +1,7 @@
 \lecture{12}{2024-10-17}{Générateur}{}
 
 
-Soit $W$ un sous espace vectoriel $V$.
+Soit $W$ un sous espace vectoriel de $V$.
 \begin{itemize}
     \item Le sous espace $W = Vect(v_1, \dots, v_k)$ est le sous espace engendré par les vecteurs $v_1, \dots, v_k$.
     \item Les vecteurs $v_1, \dots, v_k$ sont les générateurs de $W$
@@ -24,14 +24,14 @@ Soit $W$ un sous espace vectoriel $V$.
 \paragraph{Partie libres}
 Soit $W$ un sous-espace vectoriel de $V$.
 \begin{itemize}
-    \item Les vecteurs $v_1, \dots, v_k$ de $W$ sont linéairement indépendants si la seul combinaison linéaire $\alpha_1v_1 + \cdots + \alpha_kv_k$ qui donne le vecteur nul est la combinaison linéaire triviale:
+    \item Les vecteurs $v_1, \dots, v_k$ de $W$ sont linéairement indépendants si la seule combinaison linéaire $\alpha_1v_1 + \cdots + \alpha_kv_k$ qui donne le vecteur nul est la combinaison linéaire triviale:
     \[\alpha_1 = \cdots = \alpha_k = 0\]
 
     \item On dit que l'ensemble $\{v_1, \dots, v_k\}$ est une \textcolor{red}{partie libre} de $W$.
 \end{itemize}
 
 \begin{definition}
-    Une famille \redColor{ordonnée} de vecteur $\bmath = (b_1, \dots, b_k)$ de $W$ est une \redColor{base} de $W$ si c'est une partie libre qui engendre $W$ 
+    Une famille \redColor{ordonnée} de vecteurs $\bmath = (b_1, \dots, b_k)$ de $W$ est une \redColor{base} de $W$ si c'est une partie libre qui engendre $W$ 
 \end{definition}
 
 \paragraph{Bases canoniques}
@@ -71,7 +71,7 @@ où $e_{ij}$ est la matrice constituée de zéros, sauf le coefficient $(i, j)$ 
     0 & 0
 \end{pmatrix}, e_{12} = \begin{pmatrix}
     0 & 1 \\ 0 & 0 \\ 0 & 0
-\end{pmatrix}, e_{22} = \begin{pmatrix}
+\end{pmatrix}, e_{21} = \begin{pmatrix}
     0 & 0 \\ 1 & 0 \\ 0 & 0
 \end{pmatrix} \dots, e_{32} = \begin{pmatrix}
     0 & 0 \\ 0 & 0 \\ 0 & 1
@@ -84,9 +84,9 @@ Les vecteurs $\vec{b_1} = \begin{pmatrix}
     -1 \\ 1 \\ 0
 \end{pmatrix}$ et $\vec{b_2} =  \begin{pmatrix}
     -1 \\ 0  \\1
-\end{pmatrix}$ forment une base $\beta = (\vec{b_1}, \vec{b_2}$) de $W$.
+\end{pmatrix}$ forment une base $\beta = (\vec{b_1}, \vec{b_2})$ de $W$.
 \begin{framedremark}
-    Il n'y a pas de base canonique dans $W$. Nous avons fait des choix de paramètres, Il y a pas une "\textit{norme}" pour la base canonique ici.
+    Il n'y a pas de base canonique dans $W$. Nous avons fait des choix de paramètres, Il n'y a pas une "\textit{norme}" pour la base canonique ici.
 \end{framedremark}
 \begin{exemple}
     Si on considère $x, y$ comme inconnues libres, $z$ en principales, alors on trouve une autre base:
@@ -98,7 +98,7 @@ Les vecteurs $\vec{b_1} = \begin{pmatrix}
         0 \\ 1 \\ -1
     \end{pmatrix}\end{pmatrix}\]
 \end{exemple}
-\subparagraph{Théroème de la base extraite}
+\subparagraph{Théorème de la base extraite}
 Soit $\{v_1, \dots, v_k\}$ une famille de vecteurs qui engendrent $V$.
 \begin{theoreme}
     \begin{itemize}
@@ -108,7 +108,7 @@ Soit $\{v_1, \dots, v_k\}$ une famille de vecteurs qui engendrent $V$.
 \end{theoreme}
 \subparagraph{Preuve} \textbf{(A)} pour $i = k$. On suppose que
 \begin{formule}
-    \[v_k = \alpha_1v_i + \dots + \alpha_{k-1}v_{k-1}\]
+    \[v_k = \alpha_1v_1 + \dots + \alpha_{k-1}v_{k-1}\]
 \end{formule}
 Puisque la famille $\{v_1, \dots, v_k\}$ engendre $V$, tout vecteur $v \in V$ est combinaison linéaire de $v_i$.
 \begin{align*}
@@ -118,7 +118,7 @@ v &= \beta_1 v_1 + \cdots + \beta_{k-1} v_{k-1} + \beta_k v_k \\
 \end{align*}
 Nous avons montré que $v$ est combinaison linéaire de $v_1, \dots, v_{k-1}$.
 \\
-\textbf{(B)} Si la famille est libre on arrête tout, sinon il suffit de prendre notre point (A) et d'enlever un générateur $v_i$ et en enlevant un denouveau et un autre et un autre... jusqu'à que la famille soit libre. Le processus s'arrête puisque le nombre de vecteur au départ est \textbf{fini}.
+\textbf{(B)} Si la famille est libre on arrête tout, sinon il suffit de prendre notre point (A) et d'enlever un générateur $v_i$ et en enlevant un de nouveau et un autre et un autre... jusqu'à ce que la famille soit libre. Le processus s'arrête puisque le nombre de vecteurs au départ est \textbf{fini}.
 
 
 
@@ -128,19 +128,19 @@ Nous avons montré que $v$ est combinaison linéaire de $v_1, \dots, v_{k-1}$.
 
 
 
-\subparagraph{Combinéaisons linéaires d'une base}
-Soit $V$ un espace vectoriel et $\mathcal{B} = (e_1 + \dots, e_n)$ une base.
+\subparagraph{Combinaisons linéaires d'une base}
+Soit $V$ un espace vectoriel et $\mathcal{B} = (e_1, \dots, e_n)$ une base.
 \begin{theoreme}
     Tout vecteur $x$ de $V$ s'écrit de manière unique comme combinaison linéaire $x = x_1e_1 + \dots + x_ne_n$, pour des nombres réels $x_1, \dots, x_n$.
 \end{theoreme}
 \textbf{Existence} Une base est un \textcolor{red}{système de générateurs}!
 \\
-\textbf{Unicité} Si $x_1e_1 + \dots + x_ne_n = y_1e_1 + \dots y_ne_n$ alors, 
+\textbf{Unicité} Si $x_1e_1 + \dots + x_ne_n = y_1e_1 + \dots + y_ne_n$ alors, 
 \[(x_1 - y_1)e_1 + \dots +(x_n - y_n)e_n = 0\]
 Une base est \textcolor{red}{libre}, ainsi $x_1 = y_1, \dots, x_n = y_n$
 \paragraph{Coordonnées}
 \begin{definition}
-    Les composantes ou coordonnées d'un vecteur $x$ dans la base $\mathcal{B}$ sont les coefficients réels $x_1, \dots, x_n$ tel que
+    Les composantes ou coordonnées d'un vecteur $x$ dans la base $\mathcal{B}$ sont les coefficients réels $x_1, \dots, x_n$ tels que
     \[x = x_1e_1 + \dots + x_ne_n\]
 \end{definition}
 J'affirme que $
@@ -188,11 +188,11 @@ an} = \begin{pmatrix}
 \end{pmatrix}$
 \subparagraph{Comparaison avec \R$^n$}
 \begin{definition}
-    Une application linéaire bijective et appelée \textcolor{red}{isomorphisme}
+    Une application linéaire bijective est appelée \textcolor{red}{isomorphisme}
 \end{definition}
 Un isomorphisme permet d'identifier la source et le but de cette application linéaire $T : V \to W$. Les éléments de $V$ et $W$ se correspondent parfaitement, et les opérations de somme et d'action aussi.
 \begin{theoreme}
-    Soit $V$ une espace vectoriel et $\mathcal{B}$ une base de $n$ vecteurs. \\
+    Soit $V$ un espace vectoriel et $\mathcal{B}$ une base de $n$ vecteurs. \\
     L'application $T : V \to \mathbb{R}^n$ définie par $T(x) = (x)_{\mathcal{B}}$ est un isomorphisme.
 \end{theoreme}
 \begin{dem}
@@ -221,7 +221,7 @@ T(\lambda v) &= T ( \lambda(v_1b_1 + \dots + v_nb_n)) \\
 
 \begin{exemple}
     \begin{itemize}
-        \item $T : M_{x\times2}(\mathbb{R}) \to $ \R$^4$ est un isomorphisme. Pour la base canonique $\mathcal{C}an = (e_{11}, e_{12}, e_{21}, e_{22})$, on a:
+        \item $T : M_{2\times2}(\mathbb{R}) \to $ \R$^4$ est un isomorphisme. Pour la base canonique $\mathcal{C}an = (e_{11}, e_{12}, e_{21}, e_{22})$, on a:
 \[T\begin{pmatrix}
     a & b \\ c & d
 \end{pmatrix} = \left ( \begin{pmatrix}
@@ -256,7 +256,7 @@ On a l'application $T : W \to \mathbb{R}^2$
 Pour généraliser ce qu'on a dit avant:
 \begin{itemize}
     \item $V$ est un espace vectoriel
-    \item $\mathcal{B} = (b_1, \dots, b_n)$ une base $V$
+    \item $\mathcal{B} = (b_1, \dots, b_n)$ une base de $V$
     \item $\mathcal{C} = (c_1, \dots, c_m)$ une famille ordonnée de vecteurs de $V$.
 \end{itemize}
 
@@ -279,5 +279,5 @@ Si $V$ admet une base de $n$ vecteurs, alors une famille $\{v_1, \dots, v_k\}$ d
 \begin{itemize}
     \item $dim \mathbb{R}^n = n$
     \item $dim \mathbb{P}_n = n+1$
-    \item $M{m\times n}(\mathbb{R}) = mn$
+    \item $dim M_{m\times n}(\mathbb{R}) = mn$
 \end{itemize}
