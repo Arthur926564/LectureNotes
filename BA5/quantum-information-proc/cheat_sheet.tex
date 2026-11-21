@@ -1,0 +1,318 @@
+\documentclass[10pt]{article}
+
+% Page layout
+\usepackage[a4paper,margin=0.2in]{geometry}
+\usepackage{multicol}        % Multiple columns
+\usepackage{physics}         % \ket \bra \braket{a}{b} \dyad{a}{b} \abs \norm  (replace by your style.sty if it defines these)
+
+\usepackage{amsmath,amssymb} % Math symbols
+\usepackage{enumitem}        % Compact lists
+\usepackage{xcolor}          % Colors
+\usepackage{titlesec}        % Section formatting
+
+\newcommand{\mathspace}{\quad}
+
+% Section formatting
+\titleformat{\section}
+  {\small\bfseries}
+  {}
+  {0em}
+  {}
+  [\titlerule]
+
+\titlespacing*{\section}{0pt}{0.4em}{0.2em}
+
+% Reduce spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{8pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\setlist[itemize]{label=--, nosep, leftmargin=*, itemsep=0pt, parsep=0pt, topsep=0pt}
+
+\newcommand{\B}[1]{\ket{B_{#1}}}
+\newcommand{\trap}{\textcolor{red!70!black}}   % traps
+\newcommand{\pp}{\ket{+}}
+\newcommand{\mm}{\ket{-}}
+
+\begin{document}
+\begin{center}
+    {\small \textbf{CHEAT SHEET -- Intro to Quantum Info Processing}}\\
+    {Arthur Herbette}
+\end{center}
+\newpage
+\footnotesize
+\begin{multicols*}{3}
+
+\section{Probability tricks (conditioning!)}
+	\begin{align*} 
+  		P(A|C)=\sum_kP(A|B_k,C)\,P(B_k\,|\,C)
+  \end{align*}
+ \textbf{weights carry $C$ too}. $P(B_k|C)=P(B_k)$ only if $B_k\perp C$
+  \begin{align*} 
+	  P(B|A)=\tfrac{P(A|B)P(B)}{P(A)}\\
+	  P(A)=\sum_kP(A|B_k)P(B_k)
+  \end{align*}
+\begin{itemize}
+  \item $P(A\cap B|C)=P(A|B,C)P(B|C)$
+  \item \textbf{Safe order}: condition on the \emph{source} first (Alice's state/bit/basis), then on later random events (Eve's outcome, Bob's basis). Bases are independent of bits
+  \item Ex.\ Breidbart: $P(x=0\,|\,\text{Eve sees }\tfrac\pi8)=\cos^2\tfrac\pi8\neq\tfrac12$
+  \item $\pm1$ variables: $E[xy]=P(x{=}y)-P(x{\ne}y)=2P(x{=}y)-1$
+  \item Error rate when fraction $p$ attacked with error $q$: $pq$
+  \item Detect with $n$ test bits, per-bit error $q$: $1-(1-q)^n\ge1-\delta\iff n\ge\tfrac{\ln\delta}{\ln(1-q)}$ ($q=\tfrac14,\delta=10^{-6}$: $n=49$)
+  \item Uniform choice among $k$ options: $\tfrac1k$ each; prob.\ bases match $=\tfrac12$ (BB84), $\tfrac29$ equal angles (Ekert)
+\end{itemize}
+
+\section{Trig \& complex identities}
+\begin{itemize}
+  \item $\cos^2x=\tfrac{1+\cos2x}2$, $\sin^2x=\tfrac{1-\cos2x}2$, $2\sin x\cos x=\sin2x$
+  \item $\cos(a\pm b)=\cos a\cos b\mp\sin a\sin b$, $\sin(a\pm b)=\sin a\cos b\pm\cos a\sin b$
+  \item $\cos a\cos b+\sin a\sin b=\cos(a-b)$; $\cos^4x+\sin^4x=1-\tfrac12\sin^22x$
+  \item $\cos^2 \alpha - \sin^2 \alpha = \cos\left(2 \alpha\right)$
+  \item $2 \cos \alpha \sin \alpha =  \sin\left(2\alpha\right)$
+  \item $\cos^2\tfrac\pi8=\tfrac{2+\sqrt2}4\approx0.854$, $\sin^2\tfrac\pi8=\tfrac{2-\sqrt2}4\approx0.146$, $\cos\tfrac\pi4=\tfrac1{\sqrt2}$, $\cos\tfrac{3\pi}4=-\tfrac1{\sqrt2}$
+  \item $\abs{1\pm e^{i\varphi}}^2=2\pm2\cos\varphi$; $\abs{e^{ia}+e^{ib}}^2=4\cos^2\tfrac{a-b}2$, $\abs{e^{ia}-e^{ib}}^2=4\sin^2\tfrac{a-b}2$
+  \item $\abs{z}^2=zz^*$, $\abs{zw}=\abs{z}\abs{w}$, $\abs{e^{i\gamma}}=1$, $e^{i\pi/2}=i$
+\end{itemize}
+
+
+\section{Dirac / linear algebra tricks}
+\begin{itemize}
+  \item $\braket{\psi}{\phi}=\sum_i\psi_i^*\phi_i$: \textbf{linear in the ket}, conj.-linear in the bra. $(a\ket{x}+b\ket{y})^\dagger=a^*\bra{x}+b^*\bra{y}$
+  \item $\braket{\psi}{\phi}^*=\braket{\phi}{\psi}$, \ $\mel{\psi}{A}{\phi}^*=\mel{\phi}{A^\dagger}{\psi}$, \ $(AB)^\dagger=B^\dagger A^\dagger$
+  \item $A=\sum_{ij}A_{ij}\dyad{i}{j}$, $A_{ij}=\mel{i}{A}{j}$; \ $\dyad{a}{b}\,\ket{c}=\braket{b}{c}\ket{a}$
+  \item Completeness: $\sum_i\dyad{v_i}=I$ for any ONB $\Rightarrow$ $\ket{\psi}=\sum_i\braket{v_i}{\psi}\ket{v_i}$ (change of basis)
+  \item Spectral: $A=\sum\lambda_i\dyad{v_i}$, $f(A)=\sum f(\lambda_i)\dyad{v_i}$. Hermitian: $\lambda\in\mathbb R$, ONB of eigvecs. Unitary: $\abs{\lambda}=1$, preserves $\braket{\cdot}{\cdot}$
+  \item Build $U$ from its action: $U=\sum_i \dyad{\text{out}_i}{\text{in}_i}$ (in$_i$ ONB)
+  \item $(\hat n\cdot\vec\sigma)^2=I\Rightarrow e^{i\theta\,\hat n\cdot\vec\sigma}=\cos\theta\,I+i\sin\theta\,\hat n\cdot\vec\sigma$
+  \item Projector $P=\dyad{v}$: $P^2=P=P^\dagger$, $\norm{P\ket\psi}^2=\abs{\braket{v}{\psi}}^2$
+\end{itemize}
+
+\section{Tensor products -- computation rules}
+\begin{itemize}
+  \item $\begin{pmatrix}\alpha\\\beta\end{pmatrix}\!\otimes\!\begin{pmatrix}\gamma\\\delta\end{pmatrix}=(\alpha\gamma,\alpha\delta,\beta\gamma,\beta\delta)^T$ \ order $\ket{00},\ket{01},\ket{10},\ket{11}$
+  \item $A\otimes B=\begin{pmatrix}a_{11}B & a_{12}B\\ a_{21}B & a_{22}B\end{pmatrix}$, \ $(A\otimes B)_{ik,jl}=A_{ij}B_{kl}$
+  \item $(A\otimes B)(\ket a\otimes\ket b)=A\ket a\otimes B\ket b$
+  \item $(A\otimes B)(C\otimes D)=AC\otimes BD$; \ $(A\otimes B)^\dagger=A^\dagger\otimes B^\dagger$ (\trap{no swap})
+  \item Bilinear: $(\ket a+\ket b)\otimes\ket c=\ket{ac}+\ket{bc}$, $(\lambda\ket a)\otimes\ket b=\lambda\ket{ab}=\ket a\otimes\lambda\ket b$
+  \item $(\bra a\otimes\bra b)(\ket c\otimes\ket d)=\braket{a}{c}\braket{b}{d}$
+  \item \textbf{Partial bra}: $(\bra a_1\otimes I_2)(\ket c_1\otimes\ket d_2)=\braket{a}{c}\ket{d}_2$ (a ket of system 2!)
+  \item $\mel{\psi_A\psi_B}{A\otimes B}{\psi_A\psi_B}=\ev{A}\ev{B}$ (product states factorize)
+  \item $A\otimes I$ acts only on qubit 1: e.g.\ $(X\otimes I)\ket{01}=\ket{11}$
+  \item \textbf{Transpose trick}: $(A\otimes I)\B{00}=(I\otimes A^T)\B{00}$. Real rotations $R$: $(R\otimes R)\B{00}=\B{00}$. Any $U$: $(U\otimes U)\B{11}=\det U\,\B{11}$
+  \item Reorder systems: just keep labels, $\ket{a}_1\ket{b}_2\ket{c}_3$; regroup $(12)(3)$ freely
+  \item Product iff $a d=bc$ for $a\ket{00}+b\ket{01}+c\ket{10}+d\ket{11}$
+\end{itemize}
+
+\section{Gates \& Pauli}
+\begin{itemize}
+  \item $X\!=\!\begin{pmatrix}0&1\\1&0\end{pmatrix}$, $Y\!=\!\begin{pmatrix}0&-i\\i&0\end{pmatrix}$, $Z\!=\!\begin{pmatrix}1&0\\0&-1\end{pmatrix}$, $H\!=\!\tfrac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}\!=\!\tfrac{X+Z}{\sqrt2}$ 
+  \item $\sigma^2=I$, $\sigma^\dagger=\sigma$; $XY=iZ$, $YZ=iX$, $ZX=iY$; distinct Paulis anticommute
+  \item $[X,Y]=2iZ$, $[Y,Z]=2iX$, $[Z,X]=2iY$ ($[X,Z]=-2iY$)
+  \item $ZX=\begin{pmatrix}0&1\\-1&0\end{pmatrix}=iY$, $XZ=-ZX$. \trap{$ZX\ket\psi$: X first!}
+  \item $HXH=Z$, $HZH=X$, $HYH=-Y$, $H^2=I$; $H\ket{0}=\pp$, $H\ket{1}=\mm$
+  \item Eigenstates: $Z$: $\ket0,\ket1$; $X$: $\ket\pm=\tfrac{\ket0\pm\ket1}{\sqrt2}$; $Y$: $\tfrac{\ket0\pm i\ket1}{\sqrt2}$ (eigval $\pm1$)
+  \item $\ket{0}=\tfrac{\pp+\mm}{\sqrt2}$, $\ket1=\tfrac{\pp-\mm}{\sqrt2}$; $\braket{\pm}{0}=\tfrac1{\sqrt2}$, $\braket{\pm}{1}=\pm\tfrac1{\sqrt2}$
+  \item Phase gate $P(\varphi)=\mathrm{diag}(e^{i\varphi},1)$ on arm $h$; on Bloch: rotations
+  \item Any Hermitian $2\times2$: $a_0I+a_xX+a_yY+a_zZ$, $a\in\mathbb R$
+\end{itemize}
+
+\section{States, Bloch sphere, polarization angles}
+\begin{itemize}
+  \item $\ket\psi=\cos\tfrac\theta2\ket0+e^{i\varphi}\sin\tfrac\theta2\ket1$, $\theta\!\in\![0,\pi]$, $\varphi\!\in\![0,2\pi)$
+  \item Bloch vector $\vec n=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta)=(\ev{X},\ev{Y},\ev{Z})$
+  \item $\abs{\braket{\psi}{\phi}}^2=\tfrac{1+\vec n\cdot\vec m}{2}$; orthogonal $\Leftrightarrow$ antipodal. $\ket{\pm}$: $\pm x$; $Y$-eigst: $\pm y$
+  \item Global phase $e^{i\gamma}\ket\psi$: unobservable. Relative phase $\ket0+e^{i\gamma}\ket1$: observable (other basis)
+  \item Unitary $=$ rotation of Bloch sphere
+  \item \textbf{Linear polarization} $\ket\theta=\cos\theta\ket0+\sin\theta\ket1$, $\ket{\theta_\perp}=-\sin\theta\ket0+\cos\theta\ket1=\ket{\theta+\tfrac\pi2}$
+  \item $\abs{\braket{\alpha}{\beta}}^2=\cos^2(\alpha-\beta)$, $\abs{\braket{\alpha}{\beta_\perp}}^2=\sin^2(\alpha-\beta)$
+  \item \trap{Angles mod $\pi$}: $\ket{\theta+\pi}=-\ket\theta$. $\ket0\!=\!0$, $\pp\!=\!\tfrac\pi4$, $\ket1\!=\!\tfrac\pi2$, $\mm\!=\!-\tfrac\pi4\equiv\tfrac{3\pi}4$
+  \item \trap{Polarization angle $\theta$ = Bloch polar angle $2\theta$} ($\varphi=0$)
+  \item $Z\ket\theta=\ket{-\theta}$, $X\ket\theta=\ket{\tfrac\pi2-\theta}$, $H\ket\theta=\ket{\tfrac\pi4-\theta}$ (reflections)
+  \item Observable along $\alpha$: $A=\dyad{\alpha}-\dyad{\alpha_\perp}=\cos2\alpha\,Z+\sin2\alpha\,X$
+  \item Physical qubits: path ($h/v$, toy), photon polarization, spin-$\tfrac12$ ($\ket\uparrow=\ket0$), 2-level systems
+\end{itemize}
+
+\section{Postulates}
+\begin{itemize}
+  \item P1 state $\ket\psi$, $\braket\psi=1$ (ray). 
+  \item  P2 $\ket{\psi_t}=U_t\ket{\psi_0}$. 
+  \item P3 observable $A=A^\dagger$. P5 $\mathcal H_A\otimes\mathcal H_B$
+  \item P4 \textbf{Born}: basis $\{\ket{v_i}\}$, $P(i)=\abs{\braket{v_i}{\psi}}^2$, post-state $\ket{v_i}$, value $\lambda_i$
+  \item $\ev{A}=\mel{\psi}{A}{\psi}=\sum\lambda_iP(i)$; for $\pm1$ outcomes $\ev{A}=P(+)-P(-)$
+  \item $\Delta A=\sqrt{\ev{A^2}-\ev{A}^2}$; Pauli: $\Delta X=\sqrt{1-\ev X^2}$. 
+  \item \textbf{Uncertainty principle} :$\Delta A\Delta B\ge\tfrac12\abs{\ev{[A,B]}}$
+  \item \textbf{Partial measurement} of qubit 1 in $\{\ket{a}\}$: $P(a)=\norm{(\dyad a\otimes I)\ket\psi}^2$, post-state $=\tfrac{(\dyad a\otimes I)\ket\psi}{\sqrt{P(a)}}$ \trap{(renormalize!)}
+  \item Shortcut: write $\ket\psi=\sum_a\ket a\otimes\ket{\tilde\phi_a}$ (unnormalized). Then $P(a)=\norm{\tilde\phi_a}^2$, B left in $\tilde\phi_a/\norm{\tilde\phi_a}$
+  \item Measure in basis $\{U\ket{i}\}$ $\Leftrightarrow$ apply $U^\dagger$ then measure in $\{\ket i\}$
+  \item Sequential measurements: $P(a\text{ then }b)=\abs{\braket{a}{\psi}}^2\abs{\braket{b}{a}}^2$ (state collapses in between)
+\end{itemize}
+\section{Interferometers \& polarizers}
+\begin{itemize}
+  \item Path qubit $\ket h,\ket v$. Semi-transparent mirror $H$ (or $U_{st}=\tfrac1{\sqrt2}\begin{pmatrix}1&i\\i&1\end{pmatrix}$), perfect mirror $X$ (or $U_r=\begin{pmatrix}0&i\\i&0\end{pmatrix}$)
+  \item Method: track the state through each element (rightmost operator first), then Born rule at detectors
+  \item MZ: $HXH\ket h=\ket h$ $\Rightarrow$ $D_1$ w.p.\ 1 (classical particle: $\tfrac12,\tfrac12$)
+  \item Phases $\varphi_1,\varphi_2$ in arms: $P(D_1)=\cos^2\tfrac{\varphi_1-\varphi_2}2$, $P(D_2)=\sin^2\tfrac{\varphi_1-\varphi_2}2$
+  \item Only the \emph{phase difference} matters (global phase)
+  \item Blocking/detecting one arm = measurement $\Rightarrow$ interference lost. Use unnormalized amplitudes: joint probs $=\norm{\text{amplitude}}^2$
+  \item Unbalanced splitter $B_t=\begin{pmatrix}\cos t&\sin t\\\sin t&-\cos t\end{pmatrix}$: $P(h)=\sin^2 2t\cos^2\tfrac\varphi2$
+  \item Polarizer at $\theta$ = measure $\{\ket\theta,\ket{\theta_\perp}\}$, transmits $\ket\theta$ w.p.\ $\cos^2(\theta_{in}-\theta)$ (Malus), output $\ket\theta$
+  \item $0^\circ\to90^\circ$: 0; $0\to45\to90$: $\tfrac14$; $N$ steps: $\cos^{2N}\tfrac\pi{2N}\to1$
+  \item E-field: $\vec E_0\propto(\cos\theta,\sin\theta e^{i\varphi})$; $\varphi=0$ linear, $\varphi=\pm\tfrac\pi2,\theta=\tfrac\pi4$: circular $\tfrac{\ket0\pm i\ket1}{\sqrt2}$
+\end{itemize}
+
+\section{No-cloning \& one-time pad}
+\begin{itemize}
+  \item No $U$ with $U\ket\psi\ket{b}=\ket\psi\ket\psi$ for 2 states unless $\braket\psi\phi\in\{0,1\}$. Proof: inner product of both sides $\braket\psi\phi=\braket\psi\phi^2$
+  \item CNOT clones $\ket0,\ket1$ but $\pp\ket0\mapsto\B{00}\neq\pp\pp$
+  \item Distinguishing non-orthogonal states $\Rightarrow$ disturbance (basis of QKD security)
+  \item OTP: $c_i=m_i\oplus z_i$, $m_i=c_i\oplus z_i$; secure if $z$ i.i.d.\ uniform, used once
+\end{itemize}
+
+\section{BB84}
+\begin{itemize}
+  \item Alice: random bits $x_i$, bases $e_i$; sends $H^{e_i}\ket{x_i}\in\{\ket0,\ket1,\pp,\mm\}$
+  \item Bob: random $d_i$, measures in $\{H^{d_i}\ket0,H^{d_i}\ket1\}$, gets $y_i$
+  \item Public: announce $e_i,d_i$ (not $x,y$). \textbf{Sift}: keep $e_i=d_i$ ($\approx N/2$)
+  \item Check: reveal $\approx\varepsilon N/2$ sifted bits, compare, discard them. Too many errors $\Rightarrow$ abort
+  \item Lemma: $P(x{=}y|e{=}d)=1$; $P(x{=}y|e{\ne}d)=\tfrac12$
+  \item \textbf{Intercept-resend} (Eve random basis $E_i$, resends $H^{E_i}\ket{y^{Eve}}$): $P_{Eve}(x\ne y|e{=}d)=\tfrac12\cdot0+\tfrac12\cdot\tfrac12=\tfrac14$. Eve knows bit w.p.\ $\tfrac34$ (certain if $E_i=e_i$, info after basis announcement)
+  \item Fraction $p$ attacked: QBER $\tfrac p4$
+  \item \textbf{Breidbart}: Eve measures $\{\ket{\tfrac\pi8},\ket{\tfrac{5\pi}8}\}$, each of Alice's states at $\tfrac\pi8$ from one vector: QBER $2\cos^2\tfrac\pi8\sin^2\tfrac\pi8=\tfrac14$, Eve correct $\cos^2\tfrac\pi8\approx0.854$
+  \item Copy-and-resend impossible (no-cloning, states non-orthogonal)
+  \item Noise must be low enough to be distinguished from Eve
+\end{itemize}
+
+\section{B92 (N\&C 12.6 version)}
+Alice generates a random sequence $e_1, \ldots, e_N$ of bits kept secret. She sends $\ket{0}$ if $e_i = 0$ and $H\ket{0} = \ket{+}$ if $e_i = 1$, she sends $H^{e_i}\ket{0}$
+
+Bob generates a random sequence $d_1, \ldots d_N$, he measured the qbit received with the basis $\left\{\ket{0}, \ket{1}\right\}$ ($Z$ basis) if $d_i = 0$ and $\left\{H\ket{0}, H\ket{1}\right\}$ if $d_i = 1$.
+
+Bob announces on a public channel his measurement outcome $y_1, \ldots, y_N$. One can show that $P\left(y_i = 0| e_i = d_i\right) = 1, P\left(y_i = 0| e_i \neq d_1\right) = \frac{1}{2}$. We can deduce from the fours probabilities that $P\left(e_i = 1 - d_i| y_i = 1\right) = 1$, Hence when $y_i = 1$ Bob switches his bit.
+
+\section{Entanglement \& Bell states}
+\begin{itemize}
+  \item Product: $\ket\psi=\ket{\varphi_A}\otimes\ket{\varphi_B}$; entangled otherwise. Test $ad=bc$, or contradiction via moduli
+  \item 
+  \begin{align*} 
+ \ket{B_{00}}=\tfrac{\ket{00}+\ket{11}}{\sqrt2}\\
+\ket{B_{01}} = \frac{1}{\sqrt{2}}\left(\ket{01} + 10\right)\\
+\ket{B_{10}} = \frac{1}{\sqrt{2}}\left(\ket{00} - \ket{11}\right)\\
+\ket{B_{11}} = \frac{1}{\sqrt{2}} \left(\ket{01}-\ket{10}\right)
+  \end{align*}
+  \item $\B{ij}=(Z^iX^j\otimes I)\B{00}$; ONB of $\mathbb C^2\otimes\mathbb C^2$
+  \item Inverse: $\ket{00}=\tfrac{\B{00}+\B{10}}{\sqrt2}$, $\ket{11}=\tfrac{\B{00}-\B{10}}{\sqrt2}$, $\ket{01}=\tfrac{\B{01}+\B{11}}{\sqrt2}$, $\ket{10}=\tfrac{\B{01}-\B{11}}{\sqrt2}$
+  \item Any angle: $\B{00}=\tfrac{\ket{\theta\theta}+\ket{\theta_\perp\theta_\perp}}{\sqrt2}$, $\B{11}=\tfrac{\ket{\theta\theta_\perp}-\ket{\theta_\perp\theta}}{\sqrt2}$
+  \item Each half alone: outcomes $\tfrac12,\tfrac12$ in \emph{any} basis $\Rightarrow$ no signaling
+  \item $\B{00}$: $P(\text{same})=\cos^2(\alpha-\beta)$; $\B{11}$: $P(\text{same})=\sin^2(\alpha-\beta)$
+  \item Bell measurement: CNOT$_{1\to2}$ then $H_1$ maps $\B{ij}\mapsto\ket{ij}$
+\end{itemize}
+
+\section{Teleportation}
+We start with $\ket{\phi}_1 \otimes \ket{B_{00}}$ and the goal is to teleport the state $\ket{\phi}$ to Bob which only has locally the third qbit.
+\begin{enumerate}
+    \item Alice does a local measurement on her two qbits with app. equiv. Bell basis
+    \item Alice observe its outcome among $\ket{B_{00}}, \ket{B_{01}}, \ket{B_{10}}, \ket{B_{11}}$ and sends two classical bits through the classical channel
+    \item Bob receives the message $ij \in \left\{0, 1\right\}^{2}$ and will do a local unitary operation on his qbit, $00 \to I_3$, $01 \to X_3, 10 \to Z_3, 11 \to Z_3X_3 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} $
+\end{enumerate}
+
+\begin{itemize}
+  \item $\ket\varphi_1=\alpha\ket0+\beta\ket1$ (unknown), shared $\B{00}_{23}$; Alice has 1,2; Bob 3
+  \item Key identity: $\ket\varphi_1\B{00}_{23}=\tfrac12\big[\B{00}_{12}(\alpha\ket0+\beta\ket1)+\B{01}_{12}(\alpha\ket1+\beta\ket0)$\\ $+\B{10}_{12}(\alpha\ket0-\beta\ket1)+\B{11}_{12}(\alpha\ket1-\beta\ket0)\big]_3$
+  \item Alice Bell-measures 1,2: outcome $ij$ w.p.\ $\tfrac14$ (indep.\ of $\alpha,\beta$), sends 2 bits
+  \item Bob corrects: $00\!\to\! I$, $01\!\to\! X$, $10\!\to\! Z$, $11\!\to\! ZX$ (X then Z) i.e.\ $(Z^iX^j)^{-1}$
+  \item Method via projector: $(\dyad{B_{ij}}_{12}\otimes I_3)\ket\varphi\B{00}=\B{ij}\otimes\underbrace{\bra{B_{ij}}_{12}\ket\varphi_1\B{00}_{23}}_{\text{Bob, unnormalized}}$
+  \item Before bits: Bob's stats $\tfrac12,\tfrac12$ $\Rightarrow$ no FTL. Original destroyed (no cloning)
+  \item With $\B{11}$ resource: $00\!\to\!ZX$, $01\!\to\!Z$, $10\!\to\!X$, $11\!\to\!I$ (up to phase)
+\end{itemize}
+
+\section{Dense coding (1 ebit + 1 qubit $\to$ 2 cbits)}
+\begin{itemize}
+  \item Alice and Bob share $\B{00}$. If A wants to send $00$, she will apply $I_1$ to the qbit and send to Bob $\ket{B_{00}}$
+  \item If $01$: A applies $X_1$ and send the qbit $\implies$ Bob receives $\left(X_1 \otimes I_2\right)\ket{B_{00}} = \ket{B_{01}}$
+  \item If $10$: A applies $Z_1$ and send the qbit $\implies$ Bob receives $\left(Z_1 \otimes I_2\right)\ket{B_{00}} = \ket{B_{10}}$
+  \item If $11$: A applies $Z_1X_2$ and send the qbit $\implies$ Bob receives $\left(Z_1X_1 \otimes I_2\right)\ket{B_{00}} = \ket{B_{11}}$
+  \item Sends her qubit; Bob Bell-measures both $\Rightarrow$ $ij$ with certainty (orthogonal states)
+  \item Eve with Alice's qubit only: $\tfrac12,\tfrac12$ for every message $\Rightarrow$ learns nothing
+  \item Check e.g.\ $(Z X\otimes I)\B{00}$: $X_1\to\tfrac{\ket{10}+\ket{01}}{\sqrt2}$, $Z_1\to\tfrac{-\ket{10}+\ket{01}}{\sqrt2}=\B{11}$
+\end{itemize}
+
+\section{CHSH / Bell inequalities}
+\begin{align*} 
+	\ket{B_{00}} = \frac{1}{\sqrt{2}}\left(\ket{\alpha \alpha} + \ket{\alpha_\perp \alpha_\perp} \right) 
+\end{align*}
+\begin{itemize}
+  \item Alice settings $\alpha,\alpha'$, Bob $\beta,\beta'$, outcomes $\pm1$; $E_{\alpha\beta}=E[ab]$
+  \item $X=E_{\alpha\beta}+E_{\alpha\beta'}-E_{\alpha'\beta}+E_{\alpha'\beta'}$; experimental: averages over the $\approx N/4$ runs of each setting
+  \item LHV assumptions: realism (hidden $\lambda$), locality $P(a,b|\alpha,\beta,\lambda)=P_A(a|\alpha,\lambda)P_B(b|\beta,\lambda)$, free choice ($h(\lambda)$ indep.\ of settings)
+  \item Proof: joint $Q(a,a',b,b')$ exists; $a(b+b')+a'(b'-b)=\pm2\Rightarrow\abs{X}\le2$
+  \item QM, $\B{00}$: $E=\mel{B_{00}}{A\otimes B}{B_{00}}=\cos2(\alpha-\beta)$, $P(a,b)=\tfrac14(1+ab\cos2(\alpha-\beta))$ (not factorizable)
+  \item $\B{11}$: $E=-\cos2(\alpha-\beta)$
+  \item Optimal: $\alpha=0,\alpha'=-\tfrac\pi4,\beta=\tfrac\pi8,\beta'=-\tfrac\pi8\Rightarrow X=4\cdot\tfrac1{\sqrt2}=2\sqrt2$ (max, Tsirelson)
+  \item Product states: $E=\ev{A}\ev{B}\Rightarrow\abs{X}\le2$. $\ket{00}$: $E=\cos2\alpha\cos2\beta$
+  \item Noise: w.p.\ $p$ Bell pair, else random bits: $E\to pE$, violation iff $p>\tfrac1{\sqrt2}$
+  \item $E=\cos2(\alpha-\beta)$: compute angle \emph{differences}, $\cos(-x)=\cos x$
+\end{itemize}
+
+\section{Ekert 91}
+\begin{itemize}
+  \item Each round a $\B{00}$ pair. Alice $\alpha\in\{-\tfrac\pi4,-\tfrac\pi8,0\}$, Bob $\beta\in\{-\tfrac\pi8,0,\tfrac\pi8\}$, uniform; record $\pm1$
+  \item Announce settings (not outcomes). 9 combos, each $\tfrac19$
+  \item \textbf{Test} (4/9): $(\alpha_3,\beta_3),(\alpha_3,\beta_1),(\alpha_1,\beta_1),(\alpha_1,\beta_3)$; reveal outcomes, compute $S=E_{33}+E_{31}+E_{11}-E_{13}=4\cdot\tfrac1{\sqrt2}=2\sqrt2$
+  \item \textbf{Key} (2/9): equal angles $(\alpha_3,\beta_2)=(0,0)$, $(\alpha_2,\beta_1)=(-\tfrac\pi8,-\tfrac\pi8)$: $P(x{=}y)=1$; map $\pm1\to0/1$. Rest (3/9) discarded
+  \item $S\le2$ $\Rightarrow$ abort (classical correlations Eve could fix). $S\approx2\sqrt2$ $\Rightarrow$ monogamy: Eve knows little
+  \item Eve measures both in $Z$ \& resends $\ket{00}/\ket{11}$: $E=\cos2\alpha\cos2\beta$, $S=\sqrt2<2$ $\Rightarrow$ detected
+  \item Then error correction + privacy amplification (shorter key the further $S$ is below $2\sqrt2$)
+\end{itemize}
+
+\section{Pauli matrices}
+\begin{align*} 
+	X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}  \\
+	Y = \begin{pmatrix} 0 & -i \\i  & 0 \end{pmatrix} \\
+	Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
+\end{align*}
+Each Pauli matrices has two eigenvalues $\pm 1$. The corresponding normalized eigenvectors are 
+\begin{align*} 
+	\phi_{x+} &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}, \mathspace \phi_{x-} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \\
+	\phi_{y+} &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ i \end{pmatrix} , \mathspace \phi_{y-} = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} \\
+	\phi_{z+} &= \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \mathspace \phi_{z-} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+\end{align*}
+\section{Sanity checks}
+\begin{itemize}
+  \item Probabilities sum to 1; final state normalized; $U^\dagger U=I$
+  \item Limits: $\varphi=0$, $t=\tfrac\pi4$, $\theta=0$ reproduce known cases
+  \item Uncorrelated $\Rightarrow$ error $\tfrac12$; same basis no Eve $\Rightarrow$ error 0
+  \item Conjugate bra coefficients; $i$ signs; operator order right-to-left
+  \item Renormalize after partial measurement; relative vs global phase
+\end{itemize}
+
+\section{Extra (from other sheet)}
+\begin{itemize}
+  \item Bell eigenvalues:
+  \begin{tabular}{c|ccc}
+    & $XX$ & $YY$ & $ZZ$\\\hline
+    $B_{00}$ & $+1$ & $-1$ & $+1$\\
+    $B_{01}$ & $+1$ & $+1$ & $-1$\\
+    $B_{10}$ & $-1$ & $+1$ & $+1$\\
+    $B_{11}$ & $-1$ & $-1$ & $-1$
+  \end{tabular}
+  \item For $a\ket0+b\ket1$: $p_X(\pm)=\tfrac12\abs{a\pm b}^2$, $p_Y(+)=\tfrac12\abs{a-ib}^2$, $p_Y(-)=\tfrac12\abs{a+ib}^2$
+  \item $a=\cos\theta$, $b=e^{i\varphi}\sin\theta$: $p_X(+)=\tfrac{1+\sin2\theta\cos\varphi}2$, $p_Y(+)=\tfrac{1+\sin2\theta\sin\varphi}2$
+  \item Gates on $a\ket0+b\ket1$: $X\!:\,b\ket0+a\ket1$; $Z\!:\,a\ket0-b\ket1$; $Y\!:\,-ib\ket0+ia\ket1$; $H\!:\,\tfrac{a+b}{\sqrt2}\ket0+\tfrac{a-b}{\sqrt2}\ket1$
+  \item Teleport: $\ket\psi_1\ket{B_{00}}_{23}=\tfrac12\sum_{xy}\ket{B_{xy}}_{12}\otimes X^yZ^x\ket\psi_3$, correction $Z^xX^y$
+  \item Bloch measurement along $\hat n$: $p_\pm=\tfrac12(1\pm\hat n\cdot\vec r)$
+  \item $\mathrm{CNOT}\ket{x,y}=\ket{x,y\oplus x}$; $\ket{B_{xy}}=\mathrm{CNOT}(H\otimes I)\ket{xy}$; Bell meas.\ $=(H\otimes I)\mathrm{CNOT}$ then $Z$ (dense coding decode)
+  \item $(U_n\cdots U_1)^{-1}=U_1^{-1}\cdots U_n^{-1}$; $U_A\otimes U_B$ cannot entangle
+  \item CHSH optimal as operators: $A=Z$, $A'=-X$, $B=\tfrac{Z+X}{\sqrt2}$, $B'=\tfrac{Z-X}{\sqrt2}$
+  \item Tsirelson: $\hat X^2=4I+[A,A']\otimes[B,B']$, $\norm{[A,A']}\le2\Rightarrow\langle\hat X\rangle^2\le\langle\hat X^2\rangle\le8$
+  \item $p(b=\pm1\mid a=+1)=\tfrac12[1\pm\cos2(\alpha-\beta)]$; experiment $E=\tfrac1{N_{AB}}\sum_j a_jb_j$
+  \item Notes' MZ: $SRS=-I$; $D=\mathrm{diag}(e^{i\varphi_1},e^{i\varphi_2})$: $p(H)=\cos^2\tfrac\Delta2$; absorber (HW3): $p(D_1)=p(D_2)=\tfrac14$, $p(\mathrm{abs})=\tfrac12$
+  \item Elliptical $\cos\theta\ket x+e^{i\varphi}\sin\theta\ket y$ through analyzer $\alpha$: $p=\cos^2\!\alpha\cos^2\!\theta+\sin^2\!\alpha\sin^2\!\theta+\tfrac12\sin2\alpha\sin2\theta\cos\varphi$; $p(R)=\tfrac12+\tfrac12\sin2\theta\sin\varphi$
+  \item $H$ eigvecs: $\ket{\pi/8}$ ($+1$), $\ket{5\pi/8}$ ($-1$). Matrix: column $j$ = $M\ket j$. Degenerate outcome: project on whole eigenspace
+  \item $e^{i\varphi_1}+e^{i\varphi_2}=2e^{i\bar\varphi}\cos\tfrac\Delta2$, $e^{i\varphi_1}-e^{i\varphi_2}=2ie^{i\bar\varphi}\sin\tfrac\Delta2$ ($\bar\varphi$ mean, $\Delta=\varphi_1-\varphi_2$)
+  \item HW: Wiesner fake accepted $(7/8)^N$; cloner in wrong basis $\to$ bit error $\tfrac12$
+\end{itemize}
+\end{multicols*}
+\end{document}
