@@ -8,6 +8,8 @@
 ### Remark
 I used Joachim Favre's style for those notes [GitHub](https://github.com/JoachimFavre/UniversityNotes/tree/master) with some changes here and there. All the courses materials doesn't belong to me, the explanation and most of the images belongs to professors/labs, etc...
 
+Also note that my "best" creations are the ones starting from my BA3, previously you might find the some explanations are strangely phrased and that documents have some compilation errors. Therefore if you want to check some nice documents I suggest the computer architecture notes and the analysis IV notes.
+
 # Notes
 ### Bachelor semester 1 (Autumn 2024)
 For the first semester, I used overleaf to take my notes (yeah I know...). 
