@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1789379999.50267 "main.tex" "main.pdf" "main" 1789380001.10829 2
+["lualatex"] 1795427704.69092 "main.tex" "main.pdf" "main" 1795427706.29071 2
   "/etc/texmf/tex/generic/config/language.dat" 1784387591.84637 5983 24e8ca975bb2fef3ba51d5d3ebd6bb34 ""
   "/home/arthur/.texlive/texmf-var/luatex-cache/generic/fonts/hb/f03d1123c4cc05be70858c2ff4674ec283f2d6222038342dd2ee5a2a4f51e2c0.luc" 1788527025.09564 382231 abca3d5804b08f3969d7eda4b3a61964 ""
   "/home/arthur/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1788527025.34964 81824 2fc419936fbca23a4af140905084b7a2 ""
@@ -14,7 +14,7 @@
   "/home/arthur/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-italic.luc" 1788961986.42938 135533 f34012e31605ede762b18f5ef52e44a5 ""
   "/home/arthur/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman9-regular.luc" 1788527025.18964 127947 41c3a1d8f04c341c66aa8cf8c3c0c7c1 ""
   "/home/arthur/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmromanslant10-regular.luc" 1788527025.41264 125797 ddfcd0f4fb84cd5c53b29328387c9394 ""
-  "/home/arthur/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1776961139.11846 6966 5829c6018aaf486ba685061d3d0e6886 ""
+  "/home/arthur/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1795279732.89317 7172 c77b41adf63ffef50975c54110346e98 ""
   "/home/arthur/.texlive/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1764281470.71313 669709 82905afee497121e86984cd57edc706c ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf" 1775415801 64684 15a2082c8e31f411875a86ea2d29a0ee ""
   "/usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf" 1775415801 111240 0af0b64d6d3df41bead3f9de314afbd4 ""
@@ -426,13 +426,14 @@
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload-unicode.lua" 1775415801 7918 4272855a25780b80472f3b58edd95e33 ""
   "/usr/share/texmf-dist/tex/luatex/luaotfload/luaotfload.lua" 1775415801 13566 16df94dd2de231b2bca0aaa0190941fe ""
   "/usr/share/texmf-dist/tex/luatex/luatexbase/luatexbase.sty" 1775415801 10170 b1a2248f43cab899e3fe36f676176865 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1784387648 5536658 2ac36f662cf1aa403850632a4168d800 ""
-  "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1784387625 5658426 0fdbcd0d974e066eca0920eaf7ee7e7a ""
-  "lecture1.tex" 1789379998.5627 6136 607bd3e6580ff9de81c9032f5f9f36de ""
-  "main.aux" 1789380000.94166 1295 6053f136db96c3435ce5f1e98b5e3a1e "lualatex"
-  "main.out" 1789380000.94322 105 d0b355b6971b8fbf506a4109b2a8522a "lualatex"
-  "main.tex" 1789376262.93458 2260 3e5455c5417f764ce41a62314bd20651 ""
-  "main.toc" 1789380000.94368 463 bf682932d5e77699922c4086f03d1546 "lualatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1793218207 5536658 2ac36f662cf1aa403850632a4168d800 ""
+  "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1793218168 5657351 0696522dd934b0f81ca8890b7f1b4d85 ""
+  "lecture1.tex" 1795427700.45379 8572 d6f97a3c0718796b2e970d70e9191f99 ""
+  "lecture2.tex" 1790583333.97427 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "main.aux" 1795427706.11801 1607 9824247e7c2d70f33cb6c9998a8f9ce9 "lualatex"
+  "main.out" 1795427706.11801 960 59b5044709569b659ec6b280232d707a "lualatex"
+  "main.tex" 1795426521.92951 2635 f92d7309bd564688e2de0eea26b9f613 ""
+  "main.toc" 1795427706.11801 656 6794a53c9e33c5511cf73ece4bfb4121 "lualatex"
   "style.sty" 1788527019.67879 37178 0cc238a4a7f026c2e112e008b85b6143 ""
   (generated)
   "main.aux"

@@ -1,12 +1,14 @@
 \chapter{Introduction}
+For this first part of the course I indeed recommend reading L. Sussking Theoritical Minimum book,  Ch.2, Ch.3 which will define nicely the foundation of a one qubit system.
 
 \section{The linear algebra of qbits}
 
 \begin{parag}{Math of 2-level systems (Qbits)}
-	Two describe our system, we will need a vector space of two elements $\left(x_0, z_0\right)$. Furthermore, $x_0, z_0 \in \mathbb{C}$. In regular mathematical notation, we would just call our vector $\vec{s}$. On the other hand, quantum mechanics uses Dirac notation, we will call our vector:
+	To describe our system, we will need a vector space of two elements $\left(x_0, z_0\right)$ as we are dealing with a 2-level system. Furthermore, we will also need those elements to be complex numbers $x_0, z_0 \in \mathbb{C}$ the reason for this will be explained later. In regular mathematical notation, we would just call our vector $\vec{s}$. On the other hand, in quantum mechanics we will use Dirac notation, we will call our vector:
 	\begin{align*} 
-		\ket{\phi} 
+		\ket{\phi} \in  \mathbb{C}^2 = \mathcal{H}
 	\end{align*}
+
 	\begin{subparag}{Ket}
 	To do so we will also need to define \important{basis} vectors, which we will call $\ket{0}, \ket{1}$. We can easily define them as 
 	\begin{align*} 
@@ -21,15 +23,15 @@
 
 	\end{subparag}
 	\begin{subparag}{Bra}
-		\begin{definition}{Bra}
+		\begin{definition}{(Bra)}
 	    Given a vector $\ket{\phi} = \alpha \ket{0} + \beta \ket{1}$ we can define its \important{bra} as:
 		\begin{align*} 
 			\bra{\phi} = \ket{\phi}^{\dagger} = \beta^{\ast}\ket{0} + \alpha^{\ast} \ket{1}
 		\end{align*}
 		\end{definition}
 	\end{subparag}
-	\begin{subparag}{Qbit norm}
-	    For a given qbit, one require that its norm is $1$. Meaning given $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ one require that its inner product with itself equals $1$
+	\begin{subparag}{Qubit norm}
+		For a given qubit, one require that its norm is $1$ the norm here is given by the square of the inner product of the vector with itself ($\sqrt{\braket{\phi}}{\phi}$). Meaning given $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$ one require 
 		\begin{align*} 
 			\braket{\psi}{\psi} =  \left(\alpha^{\ast} \mathspace \beta^{\ast}\right) \begin{pmatrix} \alpha \\ \beta \end{pmatrix} =  \left|\alpha\right|^2 + \left|\beta\right|^2 = 1
 		\end{align*}
@@ -38,18 +40,19 @@
 
 \end{parag}
 
-\begin{parag}{Measurement Postulate}
-    Given any physical measurements that is possible doing, the question that we are asking is what can we compute?\\
+\subsection{Measurement Postulate}
+
+    Given any physical measurements that is possible doing, the question that we are asking is what can we measure? What can we know about a system if we follow the rule of quantum mechanics.\\
 	$ $\\
-	First to do so, we need to define what is a \important{measurement}. A \important{measurement} is an operator $O$ which goes from a given Hilbert space into the same Hilbert space. For a given space $\mathbb{C}^{n}$ an operator on a this space is a matrix inside $\mathbb{C}^{n \times n}$.
-	\begin{subparag}{Remark}
+	First to do so, we need to define what is a \important{measurement}. A \important{measurement} is an operator $\hat{O}$ which goes from a given Hilbert space into the same Hilbert space. For a given space $\mathbb{C}^{n}$ an operator on a this space is a matrix inside $\mathbb{C}^{n \times n}$.
+	\begin{framedremark}
+	
 	    We often like to put a hat above operator in order to have a difference between a scalar and an operator.
-	\end{subparag}
+	\end{framedremark}
 	The question now is what is the outcome of our given measurement? The answer to this is the eigenvalues of our given operator.
-\end{parag}
 
 \begin{parag}{Example}
-	Let us have a quantum state which is represent as an arrow, and we want to measure the $z$-projection of our quantum state. To do so let us create the operator 
+	Let us have a quantum state which is represented as an arrow, and we want to measure the $z$-projection of our quantum state. To do so let us create the operator 
 	\begin{align*} 
 		\hat{O} = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}  
 	\end{align*}
@@ -114,6 +117,23 @@
 		P\left(\ket{-}\right)  &= \braket{0}{+}^2 = \frac{1}{2}
 	\end{align*}
 \end{parag}
+
+Here I will skip most of 1-Quantum lecture notes and go directly to the section $D$
+
+\subsection{Rotating the qubit state on the Bloch sphere}
+Recall first the definition of a qubit represented on the Bloch sphere 
+\begin{align*} 
+	\ket{\Psi} = \cos \frac{\theta}{2} \ket{0} + \exp\left(i \phi\right) \sin\frac{\theta}{2}\ket{1} 
+\end{align*} 
+Recall also that the Pauli matrices are hermitian and unitary implying that the operator $\exp\left(-i \alpha \hat{Z}/2\right)$ must also be unitary. Recall that one can see complex multiplication as a rotation in the complex space, if we have $e^{i \gamma} \in \mathbb{C}$ and we multiply a given point in the complex plane $a$, this will result of $a$ being rotated by an angle $\gamma$ in the plane. We are guessing here that we should be able to do the same thing here but with operator. Using matrix exponentiation, we can show that 
+\begin{align*} 
+	\exp\left(-i\alpha \hat{Z}/2\right)  =  \hat{I}\cos \frac{\alpha}{2} - i \hat{Z} \sin \frac{\alpha}{2} = \exp\left(-i \alpha /2\right) \begin{pmatrix} 1 & 0 \\ 0 & \exp\left(i\alpha\right) \end{pmatrix} 
+\end{align*}
+We if apply this matrix to our qubit $\ket{\Psi}$
+\begin{align*} 
+	\exp\left(-i \alpha \frac{\hat{Z}}{2}\right)  &=  \exp\left(-i\alpha /2\right)\left(\cos \frac{\theta}{2} \ket{0} + \sin\frac{\theta}{2}\exp\left(i \phi + i \alpha\right)\ket{1}\right)
+\end{align*}
+Therefore the operator $\exp\left(-i\alpha /2 \hat{Z}\right)$ rotates the qubit state in the $XY-$plane by an angle $\alpha$.
 
 
 
