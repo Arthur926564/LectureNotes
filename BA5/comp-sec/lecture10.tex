@@ -1,0 +1,593 @@
+\section{Software Security}
+This section will focus on the security of software itself, and in particular on \important{memory safety}. To understand software vulnerabilities, we first need to recall some basics of C and of how a program is laid out in memory. Note that we do not need to be able to \textit{write} a lot of C, but we do need to be able to \textit{read} it (and writing a bit of C is honestly the best way to learn how to read it).
+
+\subsection{C programming: Technical Preliminaries}
+C is a \important{low-level general-purpose programming language}. Let us take for example the following program
+\begin{lstlisting}[language=C]
+#include <stdio.h>
+int print_hello()
+{
+  printf("Hello, World!\n");
+  return 0;
+}
+x = print_hello();
+\end{lstlisting}
+Here we have
+\begin{itemize}
+    \item \texttt{\#include <stdio.h>} includes a library (other C functions that do not appear in the program, here \texttt{printf})
+    \item \texttt{int print\_hello()} is the function header, it says that the function returns an \texttt{int}
+    \item \texttt{\{} \dots \texttt{\}} is the start and the end of the function
+    \item \texttt{printf(\dots)} is an instruction within the function, it prints \textit{Hello, World!} on the screen
+    \item \texttt{return 0;} returns the value 0
+    \item \texttt{x = print\_hello();} calls the function and stores the returned value in \texttt{x}
+\end{itemize}
+
+\begin{parag}{Functions and local variables}
+    Let us take the following function
+    \begin{lstlisting}[language=C]
+int addNumbers(int a, int b)
+{
+  int result;
+  result = a+b;
+  return result;
+}
+    \end{lstlisting}
+    The function receives 2 integers (\texttt{a}, \texttt{b}) and returns an integer. \texttt{result} is a \important{local variable}: it only exists inside the function, once the function returns it is gone.
+\end{parag}
+
+\begin{parag}{Pointers}
+    A \important{pointer} is a special variable that stores \textbf{addresses} rather than values
+    \begin{itemize}
+        \item \texttt{*} in a declaration indicates a pointer, e.g., \texttt{int* pc} is a pointer to an \texttt{int}
+        \item \texttt{\&} returns the address of a variable
+        \item \texttt{*} in front of a pointer (dereference) returns the content at the address pointed by the pointer
+    \end{itemize}
+    For example
+    \begin{lstlisting}[language=C]
+int* pc, c;
+c = 5;
+pc = &c;
+printf("%d", *pc);
+    \end{lstlisting}
+    Here \texttt{pc} contains the address of \texttt{c}, so \texttt{*pc} is the content at that address, i.e., the value of \texttt{c}, and the program prints 5.
+\end{parag}
+
+\begin{parag}{Layout of a C program}
+    To understand software vulnerabilities, it is necessary to know where the different variables and objects of a C program are placed in memory. From the lowest addresses to the highest we have
+    \begin{itemize}
+        \item \important{Text}: the executable instructions (code). It is placed under the heap and the stack so that it does not get overwritten if they grow
+        \item \important{Data}: global and static variables that are initialized by the programmer
+        \item \important{BSS}: global and static variables that are initialized to zero or have no explicit initialization in the source code
+        \item \important{Heap}: dynamic memory allocation (\texttt{malloc}, \texttt{calloc}, \dots), it grows upwards
+        \item \important{Stack}: a LIFO structure containing the function variables, along with information saved each time a function is called. In most architectures it grows downwards
+    \end{itemize}
+    Let us take for example
+    \begin{lstlisting}[language=C]
+char big_array[100];
+char huge_array[1000];
+int global = 0;
+int useless() { return 0; }
+int main() {
+  void *p1, *p2, *p3;
+  int local = 0;
+  p1 = malloc(28);
+  p2 = malloc(8);
+  p3 = malloc(32);
+}
+    \end{lstlisting}
+    Here the code of \texttt{useless} and \texttt{main} is in the text segment, \texttt{global} is in data/BSS, as well as \texttt{big\_array} and \texttt{huge\_array} (BSS, since they are not initialized). \texttt{p1}, \texttt{p2}, \texttt{p3} and \texttt{local} are on the stack (in the stack frame of \texttt{main}), while the 28, 8 and 32 bytes they point to are on the heap.
+    \begin{subparag}{Stack frames}
+        When a function is called, it reserves a \important{stack frame}: space on the stack for its variables. Stack frames are reserved "\textit{on top}" of each other according to how the stack grows. Whether the stack grows upwards or downwards depends on the architecture, but within an architecture it is consistent. Within the stack frame, most architectures allocate space for the variables as they come, but in some the order can be random.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Calling a function}
+    Let us take for example a call to \texttt{printf} inside \texttt{main}
+    \begin{center}
+        \texttt{printf("You scored \%d\textbackslash n", score);}
+    \end{center}
+    When this is called, the stack contains (from top to bottom) the stuff from the \texttt{main} function, then the parameters of \texttt{printf} (here \texttt{score}), then the address of the format string, and then the \important{return address} (e.g., \texttt{0x8048464}), i.e., where to continue in \texttt{main} once \texttt{printf} is done.
+
+    The first parameter of \texttt{printf} is the address of the string to be printed. This string may contain \important{format specifiers} (like \texttt{\%d}) which indicate that the subsequent parameters are variables whose values must be plugged into the string. These variables are given as parameters to \texttt{printf}, and as such are also on the stack.
+\end{parag}
+
+\begin{framedremark}
+    This is the 32-bit x86 picture where every parameter is on the stack. On x86-64 and RISC-V the first parameters are passed in registers, and only the following ones go on the stack. The idea stays the same.
+\end{framedremark}
+
+\begin{parag}{Exercise 1: The geography of variables}
+    \begin{lstlisting}[language=C]
+int counter = 0; // (A)
+void process_data(int size) { // (B: size)
+  char *buffer = malloc(size); // (C: buffer itself, D: what buffer points to)
+  char *static_str = "Fixed"; // (E: the string literal "Fixed")
+  free(buffer);
+  g(buffer);
+}
+    \end{lstlisting}
+    \begin{enumerate}
+        \item Map the letters A to E to their memory segments
+        \item At the end of \texttt{process\_data} we call \texttt{g}. Can we still access the address stored in \texttt{buffer} within \texttt{g}? Can we access the data at D within \texttt{g}?
+        \item How many allocations happened on the heap?
+    \end{enumerate}
+    \begin{subparag}{Solution}
+        \begin{enumerate}
+            \item A is in \important{Data/BSS} (global variable), B is on the \important{stack} (function argument), C is on the \important{stack} (the pointer variable itself lives in the stack frame), D is on the \important{heap} (the block allocated by \texttt{malloc}), E is in \important{read-only data} (string literals usually live in read-only memory, next to the text)
+            \item We can access C, the pointer exists until the function returns. But accessing D is a \important{use-after-free}, which is undefined behavior: the data might or might not be there, hence why it is soooo dangerous
+            \item Exactly one (the string literal is not allocated on the heap)
+        \end{enumerate}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Exercise 2: Code is data}
+    \begin{lstlisting}[language=C]
+typedef void (*func_t)();
+void secret_function() { printf("Win!\n"); }
+void trigger() {
+  func_t *heap_hook = malloc(sizeof(func_t)); // 1. space on the heap
+  *heap_hook = secret_function; // 2. store the address of the code
+  // <-- SNAPSHOT TAKEN HERE
+  free(heap_hook);
+}
+int main() {
+  trigger();
+  return 0; // Line 16
+}
+    \end{lstlisting}
+    \begin{enumerate}
+        \item At the snapshot, where does \texttt{heap\_hook} live, where does it point to, and what kind of value is stored at the location it points to (a number? an instruction? an address?)
+        \item When \texttt{main} calls \texttt{trigger()}, the system saves a value on the stack. What is that value?
+    \end{enumerate}
+    \begin{subparag}{Solution}
+        \begin{enumerate}
+            \item \texttt{heap\_hook} lives on the stack and points to the heap. The heap contains the \important{address of \texttt{secret\_function}}, i.e., an address in the text segment
+            \item The \important{return address}: the address of the instruction immediately following the call (line 16). This means that a \important{code pointer} sits on the stack, right next to the local variables of \texttt{trigger}. This is the fundamental mechanism that exploits like buffer overflows use to hijack the control flow, as we will see later
+        \end{enumerate}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{A look at the objdump (RISC-V)}
+    We can compile the program and look at the assembly with all the addresses
+    \begin{lstlisting}
+riscv64-linux-gnu-gcc test.c -o test.O
+riscv64-linux-gnu-objdump -D test.O > dump.S
+    \end{lstlisting}
+    Which gives (simplified)
+    \begin{lstlisting}
+0000000000000742 <trigger>:
+742: addi sp,sp,-32          # Reserve 32 bytes on the stack
+744: sd ra,24(sp)            # Save the return address on the stack
+74a: li a0,8
+74c: jal 610 <malloc@plt>    # Call malloc for 8 bytes
+75a: auipc a4,0x0
+75e: addi a4,a4,-54          # a4 = 0x724 <secret_function>
+762: sd a4,0(a5)             # Store 0x724 where malloc said
+768: jal 630 <free@plt>      # Call free
+76e: ld ra,24(sp)            # Restore the return address
+772: addi sp,sp,32           # Release the stack
+774: ret
+0000000000000776 <main>:
+77e: jal 742 <trigger>
+782: li a5,0                 # Write the 0 in a register for return
+    \end{lstlisting}
+    So step by step
+    \begin{enumerate}
+        \item \important{The call from \texttt{main}} (\texttt{0x77e}): \texttt{jal 742 <trigger>} makes the CPU jump to \texttt{0x742}, and sets the \important{return address register} (\texttt{ra}) to the next instruction, \texttt{0x782}
+        \item \important{The prologue of \texttt{trigger}} (\texttt{0x742}--\texttt{0x744}): the function claims 32 bytes of stack and immediately saves \texttt{ra} (\texttt{0x782}) to memory at \texttt{sp + 24}. Why? Because \texttt{trigger} calls \texttt{malloc} later, which will overwrite \texttt{ra}, so the original return address must be preserved in RAM, i.e., on the stack
+        \item \important{The heap allocation} (\texttt{0x74c}--\texttt{0x750}): \texttt{malloc} returns a heap address (let us say \texttt{0xHEAP\_100}) in register \texttt{a0}, which is then saved in the stack frame at \texttt{-24(s0)}. Since \texttt{s0} is the frame pointer (\texttt{s0 = sp + 32}), this is \texttt{sp + 8}: the local variable \texttt{heap\_hook} lives at \texttt{sp + 8}
+        \item \important{The "double indirection"} (\texttt{0x75a}--\texttt{0x762}): \texttt{auipc} and \texttt{addi} work together to compute the address of \texttt{secret\_function}, \texttt{0x724} (very tricky, all that just to produce a constant). Then \texttt{sd a4,0(a5)} writes \texttt{0x724} (a text segment address) into the memory at \texttt{0xHEAP\_100} (heap segment)
+    \end{enumerate}
+    \begin{subparag}{The memory at the snapshot}
+        So at the snapshot we have
+        \begin{itemize}
+            \item In the \important{stack frame of \texttt{trigger}}: at \texttt{sp + 8} the local variable \texttt{heap\_hook}, containing \texttt{0xHEAP\_100}, and at \texttt{sp + 24} the saved return address \texttt{0x782}
+            \item On the \important{heap}: at \texttt{0xHEAP\_100} the value \texttt{0x724}
+            \item In the \important{text}: at \texttt{0x724} the code of \texttt{secret\_function}, and at \texttt{0x782} the instruction \texttt{li a5,0} in the middle of \texttt{main}, right after the call to \texttt{trigger}
+        \end{itemize}
+        Both the stack and the heap contain \important{pointers to code}: code is data!
+    \end{subparag}
+\end{parag}
+
+\subsection{Memory Safety}
+\begin{parag}{Why all the fuss with overflows?}
+    Let us take a (fictional!) example to illustrate the damage an overflow, i.e., writing on a variable past its allocated length, can produce. An airline has a check-in form where passengers enter their first, middle and last name, their gender and date of birth. None of this is sanitized (in particular not checked for length). At the airport, this information is shown to the desk staff as
+    \begin{enumerate}
+        \item Some internal information about the flight number
+        \item The name of the passenger (from the form)
+        \item The ticket type (first class, business, coach, \dots)
+        \item (blank)
+        \item "\textit{Special Instrux:}" followed by the special requirements, \textit{None} if there are none
+    \end{enumerate}
+    The old screen at the desk allows \important{21 characters per line}, after that it starts writing on the next line. So if Alice knows that there is no length check and how the screen is configured, she can write after her last name enough spaces to reach line 3 and overwrite her ticket type (e.g., with \textit{First class}), and then continue with enough spaces to also overwrite the special instructions.
+\end{parag}
+
+\begin{parag}{Memory corruption}
+    \important{Memory corruption} is the unintended modification of a memory location due to a missing or faulty safety check. For example
+    \begin{lstlisting}[language=C]
+void vulnerable(int user1, int *array) {
+  array[user1] = 42;
+}
+    \end{lstlisting}
+    Nothing checks that \texttt{user1} is within the bounds of \texttt{array}. The C language does not check this, so it happens whenever the programmer misses a check, or does not check all possible cases.
+\end{parag}
+
+\begin{parag}{Temporal memory safety}
+    Temporal safety when accessing an object means that the pointed-to object is \important{the same as when the pointer was created}. When an object is freed (by calling \texttt{free} for heap objects, or by returning from the function for stack objects), the memory is no longer associated to the object and the pointer is no longer valid. Accessing memory through such an invalid pointer is a \important{temporal memory safety error} and results in undefined behavior
+    \begin{lstlisting}[language=C]
+void vulnerable(char *buf) {
+  free(buf);
+  buf[12] = 42;
+}
+    \end{lstlisting}
+\end{parag}
+
+\begin{parag}{Spatial memory safety}
+    Spatial memory safety ensures that all memory accesses are \important{within the bounds of the object} the pointer refers to. An object's bounds are defined when it is allocated, either explicitly (through \texttt{malloc}) or implicitly (local variables of a function). Accessing memory through a pointer that points outside of its object is a \important{spatial memory safety error} and results in undefined behavior (in many cases a segmentation fault, which stops the program)
+    \begin{lstlisting}[language=C]
+void vulnerable() {
+  char buf[12];
+  char *ptr = &buf[11];
+  *ptr++ = 10;
+  *ptr = 42;
+}
+    \end{lstlisting}
+    Here \texttt{buf[11]} is the last valid position, so the first write is fine, but after \texttt{ptr++} the pointer points to \texttt{buf[12]}, which is outside of \texttt{buf}.
+    \begin{subparag}{Variation}
+        Let us take the following function
+        \begin{lstlisting}[language=C]
+void vulnerable() {
+  int authenticated = 0;
+  char buf[80];
+  gets(buf);
+  ...
+}
+        \end{lstlisting}
+        \texttt{authenticated} stores whether the user is allowed to call a function that reads secrets, and \texttt{gets(buf)} reads a line from \texttt{stdin} and stores it in \texttt{buf}, \important{without checking the size of \texttt{buf}}. Since both variables are on the stack, if we give more than 80 characters, we overwrite \texttt{authenticated}! And since the program considers the user authenticated as soon as the value is $\neq 0$, we are in.
+    \end{subparag}
+\end{parag}
+
+\begin{framedremark}
+    This may not work as is on your computer, as it depends on the protections of your OS and on the architecture, which determines the order in which variables are stored in the stack frame. More stack manipulations in COM-402 at the master.
+\end{framedremark}
+
+\begin{parag}{Exercise: Danger of null-terminated strings}
+    \begin{lstlisting}[language=C]
+int main(int argc, char** argv) {
+  char buffer[10];
+  char secretData[60];
+  if (argc < 2) { exit(1); }
+  strcpy(secretData, "donkeysAreTheCoolestAnimal");
+  strncpy(buffer, argv[1], 10);
+  printf(buffer);
+  return 0;
+}
+    \end{lstlisting}
+    \begin{enumerate}
+        \item What does \texttt{./myProgram} do? What does \texttt{./myProgram Hello} do?
+        \item Can I craft a clever argument that will make the program print \texttt{secretData}?
+    \end{enumerate}
+    \begin{subparag}{Solution}
+        \begin{enumerate}
+            \item \texttt{./myProgram} \important{exits immediately}: without arguments \texttt{argc} is 1 (just the program name), so \texttt{argc < 2} is true and the program calls \texttt{exit(1)}. \texttt{./myProgram Hello} \important{prints Hello}: \texttt{argc} is 2, \texttt{strncpy} copies the 5 characters of \texttt{Hello}, and since the string is shorter than the limit, it fills the remaining 5 bytes with null terminators (\texttt{\textbackslash 0}). \texttt{printf} reads \texttt{Hello}, hits the first \texttt{\textbackslash 0} and stops
+            \item \important{Yes} (assuming \texttt{secretData} is placed directly after \texttt{buffer} in memory). We pass a string of exactly 10 characters or more, e.g., \texttt{./myProgram 0123456789}. When the source fills the limit completely, \texttt{strncpy} copies exactly 10 bytes and \important{does not write a null terminator}. So \texttt{buffer} is full of characters, and the "\textit{wall}" separating it from \texttt{secretData} is gone. \texttt{printf} prints the digits, finds no \texttt{\textbackslash 0} at the end of \texttt{buffer}, and blindly continues into \texttt{secretData}, printing \texttt{donkeysAreTheCoolestAnimal} until it hits its null terminator
+        \end{enumerate}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{CWE-134: Uncontrolled Format String}
+    Let us take the following program
+    \begin{lstlisting}[language=C]
+int main(int argc, char** argv) {
+  char buffer[100];
+  strncpy(buffer, argv[1], 100);
+  printf(buffer);
+  return 0;
+}
+    \end{lstlisting}
+    Here the string to print is given by the user, and it can be anything. What would this print if \texttt{argv[1]} is \texttt{"You scored \%d\textbackslash n"}? \texttt{printf} sees a format specifier, so it assumes that the corresponding parameter is at the next position on the stack, and prints it. But there is no parameter! So it prints \important{4 bytes from the stack}, whatever is there.
+    \begin{itemize}
+        \item With \texttt{"\%d \%d \%d \%d"} we read 4 positions from the stack
+        \item With \texttt{"\%s"} the value on the stack is interpreted as an address, and \texttt{printf} prints from there until it finds a \texttt{\textbackslash 0}
+        \item A format string can \important{read beyond the parameters}, e.g., \texttt{"\%4\$p"} reads the 4th parameter (even if it does not exist)
+        \item A format string can even \important{write to memory}, e.g., \texttt{"\%6\$n"} writes (the number of characters printed so far) to the address given by the 6th parameter
+    \end{itemize}
+    \begin{subparag}{Solving the problem}
+        The \important{programmer} should decide the format of the string, never the user
+        \begin{center}
+            \texttt{printf("\%s", buffer);}
+        \end{center}
+        This ensures that no extra argument, read or write, can be used: the input is only ever treated as a string to print.
+    \end{subparag}
+\end{parag}
+
+\subsection{Attack scenarios}
+\begin{parag}{Code injection}
+    The goal of a \important{code injection} attack is to execute code (e.g., access a file) in a running process, by injecting new code and modifying the program flow to execute it. The steps are
+    \begin{enumerate}
+        \item Force memory corruption to set up the attack
+        \item Redirect the control flow to the injected code
+    \end{enumerate}
+    Let us take the following function
+    \begin{lstlisting}[language=C]
+void vuln(char *u1) {
+  // strlen(u1) < MAX?
+  char tmp[MAX];
+  strcpy(tmp, u1);
+  ...
+}
+vuln(&exploit);
+    \end{lstlisting}
+    When the function is called, the program prepares a new stack frame
+    \begin{enumerate}
+        \item First, the argument of the function (\texttt{*u1}) is pushed on the stack
+        \item Then the \important{return address} (where to go once the function is finished) is pushed
+        \item Then the saved base pointer (4 bytes on 32-bit systems, 8 bytes on 64-bit, irrelevant for us)
+        \item And finally space for the local variables, here \texttt{MAX} bytes for \texttt{tmp}
+    \end{enumerate}
+    So the stack looks like this (higher addresses on top, the stack grows downwards but \texttt{strcpy} writes \textbf{upwards})
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Before} & \textbf{After \texttt{strcpy(tmp, exploit)}} \\
+            \hline
+            Next stack frame & Next stack frame \\
+            \hline
+            1st argument: \texttt{*u1} & 1st argument: \texttt{*u1} \\
+            \hline
+            Return address & Points to shellcode \\
+            \hline
+            Saved base pointer & Don't care \\
+            \hline
+            \texttt{tmp[MAX]} & Shellcode (executable attack code) \\
+            \hline
+        \end{tabular}
+    \end{center}
+    So what happens
+    \begin{itemize}
+        \item \texttt{strcpy} starts copying \texttt{u1} into \texttt{tmp}, and the adversary made \texttt{u1} start with some executable code implementing the attack (the \important{shellcode})
+        \item There is no check on the size of \texttt{u1}, so if it is longer than \texttt{MAX}, it overwrites the next value on the stack, the base pointer (we do not care what is written there). At this point there is a \important{memory safety violation}
+        \item If \texttt{u1} is even longer, it overwrites the return address with the \important{address where the shellcode starts}: the integrity of the return address is violated, and we changed where the execution will go next
+        \item When the function ends, the program uses the corrupted return address and jumps to the attack code. The adversary can now \important{execute arbitrary code}!
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Data Execution Prevention (DEP)}
+    A defense against code injection is \important{Data Execution Prevention}. It enforces code integrity at a \important{page granularity}, and it is enforced by the hardware: code on a page is executed only if its e\textbf{X}ecutable bit is set, and the policy W\textasciicircum{}X ensures that every page is either \important{writable or executable}, never both. Thus the stack, where the adversary can write, can never be executed.
+    \begin{itemize}
+        \item It mitigates code corruption attacks, with low overhead, hardware enforced and widely deployed
+        \item Limitation: no support for self-modifying code, which is a problem for applications that generate code at runtime (e.g., JavaScript executed in the browser)
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Code reuse: Control-flow hijack}
+    With DEP, the adversary cannot execute what they write anymore. To circumvent it, instead of executing injected code, the adversary finds pieces of code that \important{already exist in memory} (and are therefore executable), called \important{gadgets}, and redirects the program flow to them. The steps are
+    \begin{enumerate}
+        \item Find the addresses of gadgets
+        \item Force memory corruption to set up the attack
+        \item Redirect the control flow to the gadget chain
+    \end{enumerate}
+    The attack starts exactly as the code injection, with the same \texttt{vuln} function and the same stack frame. The difference is in what is written
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Before} & \textbf{After \texttt{strcpy(tmp, exploit)}} \\
+            \hline
+            Next stack frame & 1st argument to \texttt{system()} \\
+            \hline
+             & Return address after \texttt{system()} \\
+            \hline
+            1st argument: \texttt{*u1} & \dots \\
+            \hline
+            Return address & Points to \texttt{\&system()} \\
+            \hline
+            Saved base pointer & Don't care \\
+            \hline
+            \texttt{tmp[MAX]} & Don't care \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{itemize}
+        \item Since the stack cannot be executed, the adversary does not care anymore about what is written in the first \texttt{MAX} bytes
+        \item The return address is overwritten not with the address of \texttt{tmp}, but with the \important{location of an existing executable function}, e.g., \texttt{system()}
+        \item The adversary also prepares the stack to be in the state that \texttt{system()} expects: the return address after \texttt{system()}, and the argument of \texttt{system()}, i.e., the command to execute
+        \item When \texttt{vuln()} ends, the program continues to \texttt{system()}: the adversary has \important{hijacked the control flow}
+    \end{itemize}
+    Typically the adversary will chain several gadgets in a row in order to execute arbitrary sequences of instructions.
+\end{parag}
+
+\begin{framedremark}
+    Putting the argument of \texttt{system()} directly on the stack is the 32-bit x86 convention. On 64-bit systems the argument is passed in a register, so the adversary first needs a gadget that loads it into that register, hence the chains of gadgets.
+\end{framedremark}
+
+\subsection{Defenses}
+\begin{parag}{Address Space Layout Randomization (ASLR)}
+    Hijack attacks are enabled by the fact that the adversary \important{knows where the functions are in memory}. ASLR \important{randomizes the locations of the code and data regions}, so that the adversary cannot know a priori where to redirect the flow, which prevents the attack from reaching a target address.
+    \begin{itemize}
+        \item It is a \important{probabilistic defense}: the adversary does not know where things are, but can still guess (with a probability depending on how much is randomized)
+        \item It depends on the loader and the OS
+    \end{itemize}
+    \begin{subparag}{Weaknesses and limitations}
+        \begin{itemize}
+            \item The adversary can still redirect the program. This does not guarantee the attack's success, but it does not guarantee that nothing bad happens either: it is undefined behavior, and the adversary may trigger other unintended functionality, e.g., \important{information leaks} revealing the layout
+            \item Some regions remain static (on x86), and ASLR does not protect them
+            \item Performance impact: small on modern machines, bigger on older ones
+        \end{itemize}
+        Note that a wrong guess usually crashes the program, which is reminiscent of the principle of \textit{compromise recording}: we can record attempts of attacks!
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Stack canaries}
+    Like the canaries in coal mines, stack canaries are a way to \important{detect that something fishy is going on}. The compiler modifies the stack layout to place a value (the canary) between the part of the stack writable by the program and the return address. If the canary value has changed (the canary "\textit{died}") when the function returns, it is not safe to use the return address, as it could have been overwritten.
+    \begin{subparag}{Weaknesses and limitations}
+        \begin{itemize}
+            \item It is also \important{probabilistic}: the adversary may be able to predict the canary and overwrite it with the right value
+            \item It is prone to \important{information leaks}: not being able to write beyond the canary does not mean the adversary cannot read it (e.g., with an uncontrolled format string)
+            \item No protection against \important{targeted writes/reads} that hit a specific address without going through the canary
+        \end{itemize}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Status of deployed defenses}
+    The currently deployed defenses are
+    \begin{itemize}
+        \item \important{DEP}: the text (the original program) is executable but cannot be overwritten, the data and the stack can be written but not executed
+        \item \important{ASLR}: acts across the whole memory, scrambling the addresses (e.g., some bytes of the addresses are unknown to the adversary)
+        \item \important{Stack canaries}: inserted in the stack to detect overflows
+        \item \important{Safe exception handlers} (Windows): only a pre-defined set of handler addresses can be executed after an error, so that errors do not lead to undefined behavior
+    \end{itemize}
+    For example, for the memory permissions
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Region} & \textbf{No defense} & \textbf{DEP + ASLR} \\
+            \hline
+            text & \texttt{0x400 RWX} & \texttt{0x4?? R-X} \\
+            \hline
+            data & \texttt{0x800 RWX} & \texttt{0x8?? RW-} \\
+            \hline
+            stack & \texttt{0xfff RWX} & \texttt{0xf?? RW-} \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{parag}
+
+\subsection{Software Testing}
+\important{Testing} is the process of executing a program to find errors, where an \important{error} is a deviation between the observed behavior and the specified behavior (a violation of the specification). This can be
+\begin{itemize}
+    \item a \important{functional} error: the program does not provide the expected result
+    \item an \important{operational} error: the program crashes, is too slow (or never terminates)
+    \item but what about \important{security} requirements?
+\end{itemize}
+Testing for security is hard: the adversary will do things that have not been (or cannot be) tested, so we cannot prove the absence of security-critical bugs by testing. Still, finding as many bugs as possible increases the safety of the software.
+\begin{center}
+    "\textit{Testing can only show the presence of bugs, never their absence.}" (Edsger W. Dijkstra)
+\end{center}
+
+\begin{parag}{Control-flow vs data-flow}
+    Ideally, we would like to test all possible
+    \begin{itemize}
+        \item \important{control-flows}: all paths through the program, i.e., all outcomes of the branches (\texttt{if}/\texttt{else}, \texttt{for}, \texttt{while}, \dots)
+        \item \important{data-flows}: all values used at each location of the program
+    \end{itemize}
+    Of course, in practice this is impossible because of \important{state explosion}. Let us take for example
+    \begin{lstlisting}[language=C]
+void program() {
+  int a = read();
+  int x[100] = read();
+  if (a >= 0 && a <= 100) {
+    x[a] = 42;
+  }
+  ...
+}
+    \end{lstlisting}
+    The values \texttt{a = 12} and \texttt{a = 101} cover all control-flows: with 12 the condition is true and \texttt{x[a] = 42} is executed, with 101 it is false and it is not. However, not all data-flows are covered, and \texttt{a = 100} triggers a bug: the condition is true, but \texttt{x} has 100 positions starting at 0, so \texttt{x[100]} is out of bounds!
+\end{parag}
+
+\begin{parag}{How to test security properties}
+    There are two ways
+    \begin{itemize}
+        \item \important{Manual testing}: the tests are designed by a human, trying to identify corner cases that may appear in reality, through heuristic test cases checked at runtime, or through \important{code reviews} where humans read each other's code looking for errors
+        \item \important{Automated testing}: the tests are decided algorithmically, a human designs an algorithm that runs the program to find bugs, possibly enhanced by means to detect at runtime when security properties are violated
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Manual testing}
+    Manual tests can be guided by the following principles
+    \begin{itemize}
+        \item \important{Exhaustive}: cover all inputs. Not feasible due to the massive state space (it grows exponentially with the number of variables and branches)
+        \item \important{Functional}: cover all requirements. Depends on the specification being available and on all requirements being identifiable from it
+        \item \important{Random}: automate the test generation. Incomplete, random inputs will almost never pass hard checks on a particular value, e.g., \texttt{if (a == sha256("Hello World"))}
+        \item \important{Structural}: cover all code. Only works for small code bases, e.g., unit testing
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Automated testing}
+    The algorithms can be based on three approaches
+    \begin{itemize}
+        \item \important{Static analysis}: analyze the program \textbf{without executing it}. It can find basic errors, but it is imprecise because it lacks runtime information, e.g., the values of the variables, or \textit{aliasing} (when the same memory location is accessed through different pointers)
+        \item \important{Symbolic analysis}: execute the program \textbf{symbolically}. The program state is represented by logic formulas, and every decision point (e.g., \texttt{if}) becomes a condition that can be met or not, so that we keep track of the branch conditions. Very effective since it can consider all paths, but it needs to keep an enormous amount of state, so it is \important{not scalable}. It also performs poorly with calls to components outside the program (e.g., system calls), or when memory is accessed under different names
+        \item \important{Dynamic analysis} (e.g., fuzzing): inspect the program \textbf{by executing it} with diverse inputs. The challenge is to cover all paths (control- and data-flows)
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Coverage}
+    Testing needs a metric. The intuition is that a flaw is only detected if the flawed statement is executed, so the effectiveness of a test suite depends on how much of the program it executes
+    \begin{itemize}
+        \item \important{Statement coverage}: how many statements (an assignment, a comparison, etc.) have been executed
+        \item \important{Branch coverage}: how many branches (for each \texttt{if}, loop, \dots) have been executed at least once. This is the current practice
+    \end{itemize}
+    Neither is complete: all statements or branches may be executed, without having tested all the values of the variables. Let us take for example
+    \begin{lstlisting}[language=C]
+int func(int elem, int *inp, int len) {
+  int ret = -1;
+  for (int i = 0; i <= len; ++i) {
+    if (inp[i] == elem) { ret = i; break; }
+  }
+  return ret;
+}
+    \end{lstlisting}
+    The input \texttt{elem = 2, inp = [1, 2], len = 2} executes every statement, so we have full statement coverage. But the element is found at \texttt{i = 1}, so we \texttt{break} and the loop never runs until its end condition, where the bug is: because of \texttt{i <= len}, the last iteration reads \texttt{inp[2]}, which is out of bounds. \important{Statement coverage does not imply full coverage}.
+\end{parag}
+
+\begin{parag}{Fuzzing}
+    \important{Fuzzing} is a random testing technique that \important{mutates inputs} to improve test coverage. State-of-the-art fuzzers use the \important{coverage as feedback} to mutate the inputs: generate inputs, run the tests, measure the coverage, and use it to generate the next inputs (and debug what crashed).
+    \begin{subparag}{Input generation}
+        \begin{itemize}
+            \item \important{Dumb fuzzing}: unaware of the input structure, randomly mutates the input
+            \item \important{Generation-based}: has a model describing the inputs, and generates new inputs from it in each round
+            \item \important{Mutation-based}: starts from a set of valid seed inputs, and modifies them based on the feedback from the previous rounds
+        \end{itemize}
+    \end{subparag}
+    \begin{subparag}{Knowledge of the program}
+        The mutations can be informed by the structure of the program
+        \begin{itemize}
+            \item \important{White-box}: full knowledge of the code, which can be used to choose optimal mutations (e.g., find inputs that pass hard checks)
+            \item \important{Grey-box}: does not know the instructions, but uses the results of previous rounds (e.g., coverage) to infer information about the program
+            \item \important{Black-box}: generates inputs without any knowledge of the program
+        \end{itemize}
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Sanitization}
+    Test cases detect bugs through assertions (e.g., \texttt{assert(var != 0x23 \&\& "illegal value");}), segmentation faults, division by zero traps, uncaught exceptions, or mitigations triggering termination. But these only detect an error \textbf{if it visibly happens}: an out-of-bounds write that does not crash goes unnoticed. \important{Sanitizers} enforce some policy to detect bugs earlier, which increases the effectiveness of testing.
+    \begin{subparag}{AddressSanitizer (ASan)}
+        ASan detects \important{memory errors}. Around every object it places \important{red zones}, i.e., memory the program should never touch, and it does the same with freed memory. This is recorded in a \important{shadow memory} that is checked at runtime on every access: if a red zone is accessed, ASan raises an alarm. It detects
+        \begin{itemize}
+            \item out-of-bounds accesses to heap, stack and globals
+            \item use-after-free
+            \item use-after-return and use-after-scope (configurable)
+            \item double-free, invalid free
+            \item memory leaks (experimental)
+        \end{itemize}
+        It is quite light, the slowdown is about 2x.
+    \end{subparag}
+    \begin{subparag}{UndefinedBehaviorSanitizer (UBSan)}
+        UBSan detects \important{undefined behavior}, which is typically a source of danger. It instruments the code to trap on typical undefined behavior in C/C++
+        \begin{itemize}
+            \item misaligned pointers
+            \item signed integer overflow
+            \item conversion between floating point types leading to overflow
+            \item illegal use of NULL pointers
+            \item illegal pointer arithmetic
+            \item \dots
+        \end{itemize}
+        The slowdown depends on the amount and frequency of checks. It is the \important{only sanitizer that can be used in production}, with a special minimal runtime library that has a minimal attack surface.
+    \end{subparag}
+\end{parag}
+
+\begin{framedremark}
+    More sanitizers (LeakSanitizer, MemorySanitizer, ThreadSanitizer) are documented at \texttt{https://clang.llvm.org/docs/}.
+\end{framedremark}
+
+\begin{parag}{Summary}
+    Some reminders (that we never \textit{fully} understand)
+    \begin{itemize}
+        \item \important{Code is data}: data (input) from the user can become code \dots{} Boooom
+        \item The abstraction gap between C and assembly (e.g., RISC-V) is nontrivial, and gremlins are hiding in the details
+    \end{itemize}
+    There are two approaches to catch the gremlins
+    \begin{itemize}
+        \item \important{Mitigations} stop unknown vulnerabilities: they make exploitation harder, not impossible
+        \item \important{Testing} discovers bugs during development: automatically generate test cases through fuzzing, and make bug detection more likely through sanitization
+    \end{itemize}
+\end{parag}

