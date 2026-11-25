@@ -92,11 +92,11 @@ With a density matrix assiociated to $\ket{\psi}$ defined as
 		\ket{B_{00}}  &= \frac{1}{\sqrt{2}}\left(\ket{0_A}\otimes\ket{0_B} + \ket{1_A}\otimes \ket{1_B}\right)\\
 		\rho_{AB} = \ket{B_{00}}\bra{B_{00}}
 	\end{align*}
-	Here it is easy as always to see that $S\left(\rho_{AB}\right)= 0$ as our state is pure. Now the intresting question arises when we ask about the entangled entropy. To do so we need to compute 
+	here it is easy as always to see that $S\left(\rho_{AB}\right)= 0$ as our state is pure. Now the intresting question arises when we ask about the entangled entropy. To do so we need to compute 
 	\begin{align*} 
 		\rho_A &= \frac{1}{2}\text{Tr}_{\mathcal{H}_B}\left(\ket{0_A} \otimes \ket{0_B} + \ket{1_A} \otimes \ket{1_B}\right)\left(\bra{0_A} \otimes \bra{0_B} + \bra{1_A} \otimes \bra{1_B}\right)\\
 		&= \frac{1}{2}\text{Tr}_{\mathcal{H}_B}[\ket{0_A}\bra{0_A} \otimes \ket{0_B}\bra{0_B} + \ket{0_A}\bra{1_A} \otimes \ket{0_B}\bra{1_B}\\
-		&\mathspace \mathspace+ \ket{1_A}\bra{0_A} \otimes \ket{1_B}\bra{0_B} + \ket{1_A}\bra{1_A} \otimes \ket{1_B}\bra{1_B}]\\
+	&\mathspace \mathspace+ \ket{1_A}\bra{0_A} \otimes \ket{1_B}\bra{0_B} + \ket{1_A}\bra{1_A} \otimes \ket{1_B}\bra{1_B}]\\
 		&= \frac{1}{2} \left(\ket{0_A}\bra{0_A} + \ket{1_A}\bra{1_A}\right)
 	\end{align*}
 	Here we found that 
@@ -123,7 +123,42 @@ This is one of the main difference between classical information theory and quan
     	\left|S\left(\rho_A\right) - S\left(\rho_B\right)\right| \leq S\left(\rho_{AB}\right)  \leq S\left(\rho_A\right) + S\left(\rho_B\right)
     \end{align*}
     \end{theoreme}
-	Which we will prove next lecture.
+	\begin{proof}
+	    We will use the concept of purification, we want to add degree of freedom in order to be able to rewrite the system as a pure state. Given $\rho$ that acts on the system $\mathcal{H}_S$. Our goal is to rewrite using a system $\mathcal{H}_S \otimes \mathcal{H}_A$ and $\ket{\psi}$ such that 
+		\begin{align*} 
+			\text{Tr}\left(\ket{\psi}\bra{\psi}\right)  = \rho
+		\end{align*}
+	Therefore let us construct our purification. Given $\rho_S$ one can always do a spectral decomposition written as 
+	\begin{align*} 
+		\rho_S =  \sum_{i= 1}^{\dim \mathcal{H}} \lambda_i \ket{\phi_i}\bra{\phi_i}
+	\end{align*}
+	Where $\ket{\phi_i}$ is the eigenvector corresponding to $\lambda_i$. We then define an extra $\mathcal{H}_R$ by construction which is a space spanned by the basis $\ket{i}_R, i = 1, \ldots, D$ which is the same dimension of $\mathcal{H}_S$. The purification by definition  
+	\begin{align*} 
+		\ket{\psi}_{RS} = \sum_{i= 1}^{D} \sqrt{\lambda_i} \ket{\phi_i}_S \otimes \ket{i}_R
+	\end{align*}
+	Which is a pure state inside $\mathcal{H}_S \otimes \mathcal{H}_R$. Given that we can rewrite 
+	\begin{align*} 
+		\rho_{S R} =  \ket{\psi}_{S R}\bra{\psi}_{S R} = \sum_{i, j = 1}^{D} \sqrt{\lambda_i}\sqrt{\lambda_i} \ket{\phi_i} \otimes \ket{i} \bra{\phi_i} \otimes \bra{i} 
+	\end{align*}
+	Which implies for the partial trace over $R$  
+	\begin{align*} 
+		\text{Tr}_{R} \rho_{S R} = \sum_{i} \lambda_i \ket{\psi_i}_S \bra{\psi_i}_S = \rho_S
+	\end{align*}
+	Given this, let us proof the actual inequality. We therefore have $\mathcal{H}_A \otimes \mathcal{H}_B$ with a density matrix $\rho_{AB}$, we can purify our state into $\mathcal{H}_A \otimes \mathcal{H}_B \mathcal{H}_C$ which is now a pure state inside this new Hilbert space $\ket{\psi}_{ABC}$ with $\rho_{ABC} = \ket{\psi_{ABC}}\bra{\psi_{ABC}}$. Let's suppose without loss of generality that $S\left(\rho_A\right) \geq S\left(\rho_B\right)$. Now our goal is to prove 
+	\begin{align*} 
+		S\left(\rho_A\right) - S\left(\rho_B\right) \geq S\left(\rho_{AB}\right) 
+	\end{align*}
+	Now recall that the state $\rho_{ABC}$ can be split in two with $\rho_{AB}$ and $\rho_C$ as $\rho_{ABC}$ is a pure state we have that the entropy of $\rho_{AB}$ and $\rho_C$ are equal (using Schimdt theorem) We therefore have 
+	\begin{align*} 
+		S\left(\rho_A\right) \leq S\left(\rho_B\right) + S\left(\rho_C\right) 
+	\end{align*}
+	Then we can use the same trick and bipartie with $\rho_A$ and $\rho_{BC}$ giving 
+	\begin{align*} 
+		S\left(\rho_A\right) = S\left(\rho_{BC}\right)  \leq S\left(\rho_B\right) + S\left(\rho_C\right)
+	\end{align*}
+	by subadditivity.
+	\end{proof}
+	
 \end{parag}
 
 

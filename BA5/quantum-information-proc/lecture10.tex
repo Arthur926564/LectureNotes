@@ -1,0 +1,148 @@
+\section{Basic inequalities of quantum information theory}
+
+\begin{parag}{Inequalities for Shannon's classical entropy}
+    Recall the definition of a random variable
+	\begin{definition}{(Random Variable)}
+	Define $X$ taking value $x \in \mathcal{A}$ called the alphabet. Define the probability of the event $X$ being $x \in \mathcal{A}$ as 
+	\begin{align*} 
+		P\left(X = x\right) = p_x 
+	\end{align*}
+	\end{definition}
+	For instance a Bernoulli random variable have an alphabet $\mathcal{A} = \left\{0, 1\right\}$
+	\begin{definition}{(Shannon's entropy)}
+	Given a random variable $X$ we define 
+	\begin{align*} 
+		H\left(X\right) = - \sum_{x \in \mathcal{A}}p_x \log_2 p_x
+	\end{align*}
+	\end{definition}
+\end{parag}
+
+\begin{parag}{Joint Distribution}
+    One can also define a joint distribution, given two random variable $\left(X, Y\right)$ with the probability mass function $P_{X, Y}$ with 
+	\begin{align*} 
+		P_{X, Y}\left(X = x, Y = y\right) = p_{xy} 
+	\end{align*}
+	With the marginals is defined as 
+	\begin{align*} 
+		P_X\left(X = x\right) = \sum_{y}p_{xy}\\
+		P_Y\left(Y = y\right) = \sum_{x}p_{xy}
+	\end{align*}
+	We then define the conditional probability as, the probability of an event $X = x$ conditioned on the event $Y = y$ is given as 
+	\begin{align*} 
+		P_{X|Y} \left(X =x | Y = y\right)  = \frac{p_{xy}}{p_y}
+	\end{align*}
+	For $p_y \neq 0$.
+\end{parag}
+\begin{parag}{Joint Entropy}
+    One can then define the joint entropy using the same formula as the entropy by summing over all $y$ and $x$ 
+	\begin{align*} 
+		H\left(X, Y\right) = - \sum_{x, y} p_{xy} \log_2 p_{xy}
+	\end{align*}
+	One can also define the conditional entropy by 
+	\begin{align*} 
+		H\left(X|Y\right) &= - \sum_{y} p_y \sum_{x}p_{xy}\log_2 p_{x|y}\\
+						  &=  - \sum_{x, y}p_{xy}\log_2 p_{x|y}
+	\end{align*}
+	A thing we can notice is by the definition of the conditional probability we have $p_{x|y} = \frac{p_{xy}}{p_y}$, hence when we take the logarithm of this, we actually get $\log_2\left(\frac{p_{xy}}{p_y}\right) = \log_2\left(p_{xy}\right) - \log_2\left(p_y\right)$ Hence, when taking the entropy of $X$ conditionned over $Y$ we get 
+	\begin{align*} 
+		H\left(X | Y\right) &=  -\sum_{x, y}p_{xy}\log_2\left(\frac{p_{xy}}{p_y}\right) \\
+							&= - \sum_{x, y} p_{xy}\log_2\left(p_{xy}\right) + \underbrace{\sum_{x, y}p_{x, y}\log_2\left(p_y\right)}_{= \sum_{y}p_y \log_2 p_y}\\
+							&= H\left(X, Y\right) - H\left(Y\right)
+	\end{align*}
+\end{parag}
+
+
+
+
+\subsection{Inequalities}
+We first have the following entropies
+\begin{align*} 
+	H\left(X\right) \geq 0, H\left(X, Y\right) \geq 0, H\left(X | Y\right) \geq 0 
+\end{align*}
+
+\begin{theoreme}{(Subadditivity, Convexity)}
+\begin{align*} 
+	H\left(X, Y\right) \leq H\left(X\right) + H\left(Y\right) 
+\end{align*}
+\end{theoreme}
+\begin{theoreme}{(Convexity)}
+	Given two probability distribution $P^{\left(1\right)}, P^{\left(2\right)}$
+\begin{align*} 
+	P_X =  \alpha P_X^{\left(1\right)} + \left(1 - \alpha\right)P_X^{\left(2\right)} \mathspace \mathspace 0 \leq \alpha \leq 1
+\end{align*}
+We have the following inequality for the entropy 
+\begin{align*} 
+	H\left(P_X\right) \geq \alpha H\left(P_X^{\left(1\right)}\right)  + \left(1 - \alpha\right)H\left(P_X^{\left(2\right)}\right)
+\end{align*}
+\end{theoreme}
+
+
+
+
+\begin{parag}{Inequalities for Shannon's classical entropy}
+    As we have positivity of the conditional entropy 
+	\begin{align*} 
+		H\left(X| Y\right) \geq 0 \iff &H\left(X, Y\right) \geq H\left(Y\right)\\
+									   &H\left(X, Y\right) \geq H\left(X\right)
+	\end{align*}
+\end{parag}
+
+
+\begin{parag}{Notion of Mutual information}
+	\begin{definition}{(Mutual Information)}
+    	We define the mutual information as 
+		\begin{align*} 
+			I\left(X; Y\right) &= H\left(X\right) - H\left(X|Y\right)= H\left(X\right) + H\left(y\right) - H\left(X, Y\right)\\
+			&= H\left(Y\right) - H\left(Y | X\right)
+		\end{align*}
+
+    \end{definition}
+	And by Subadditivity we have always $I\left(X;Y\right) \geq 0$.
+	\begin{subparag}{Remark}
+	    If $X$ and $Y$ are independent $X \perp Y$ which implies 
+		\begin{align*} 
+			p_{xy} = p_yp_x 
+		\end{align*}
+		We have the followings equalities
+		\begin{align*} 
+			H\left(X, Y\right) &= H\left(X\right) + H\left(Y\right) \\
+			I\left(X;Y\right) &= 0
+		\end{align*}
+	\end{subparag}
+\end{parag}
+
+
+Going now into quantum information inequalities, we recall the definition of Von Neumman entropy. Given a density matrix $\rho$ we define the Von Neumman entropy by 
+\begin{align*} 
+	S\left(\rho\right) = - \text{Tr}\left(\rho \ln \rho\right) 
+\end{align*}
+Let us work wit bipartite system $AB$ with a Hilbert space $\mathcal{H}_A \otimes \mathcal{H}_B$ with a joint density matrix $\rho_{AB}$. We also have a form of marginal distribution by the partial trace giving $\rho_A = \text{Tr}_{\mathcal{H}_A}\rho_{AB}$. This implies that one can define the three entropies 
+\begin{align*} 
+	S\left(\rho_{AB}\right) , S\left(\rho_A\right), S\left(\rho_B\right)
+\end{align*}
+In this case recall that the entropy is maximized whenever $\rho =  \frac{1}{\dim \mathcal{H}}I_{D \times D}$ which when going back on the qubit in the Bloch Ball was indeed in the center of the Ball which represented the state $\frac{1}{2}I$. As in the classical case, we also have subadditivity giving as 
+\begin{align*} 
+	S\left(\rho_{AB}\right) \leq S\left(\rho_A\right) + S\left(\rho_B\right) 
+\end{align*}
+This comes from the concativity. If we take the example for a qubit, recall the definition of $\rho = \frac{1}{2}\left(I + \vec{a} \cdot  \vec{\sigma}\right)$ with $\left\|\vec{a}\right\| \leq 1$ we had that the entropy was given as 
+\begin{align*} 
+	S\left(\rho\right) = - \frac{1 + \left\|\vec{a}\right\|}{2}\ln\left(\frac{1 + \left\|\vec{a}\right\|}{2}\right)  0 \frac{1 - \left\|\vec{a}\right\|}{2}\ln\left(\frac{1 + \left\|\vec{a}\right\|}{2}\right)
+\end{align*}
+
+
+\begin{parag}{Condition entropy}
+    Here we coud define a '\textit{sort of}' conditional entropy by 
+	\begin{align*} 
+		S_{A|B} =  S\left(\rho_{AB}\right)  - S\left(\rho_B\right)
+	\end{align*}
+	However this entropy can be negative, recall that for bell state we had found that the entropy of the density matrix of Alice or Bob, we where able to find a maximized entropy whereas the entropy of the all system was zero. We defined our Bell state as $\ket{\text{Bell}}\bra{\text{Bell}} = \frac{1}{2}\left(\ket{00} + \ket{11}\right)\left(\bra{00}+\bra{11}\right)$ we get that the partial trace of Alice or Bob is given as 
+	\begin{align*} 
+		\text{Tr}_A \left(\ket{\text{Bell}\bra{\text{Bell}}}\right) = \frac{1}{2}\left(\ket{0}\bra{0} + \ket{1}\bra{1}\right)
+	\end{align*}
+	Which indeed gives 
+	\begin{align*} 
+		S\left(\rho_{AB}\right)  &= 0\\
+		S\left(\rho_B\right) &= \ln 2
+	\end{align*}
+\end{parag}
+
